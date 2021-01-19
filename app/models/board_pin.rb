@@ -1,0 +1,2 @@
+class BoardPin < ApplicationRecord
+end
