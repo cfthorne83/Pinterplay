@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Redirect } from "react-router-dom";
 
 class SessionForm extends React.Component {
     constructor(props) {
@@ -41,11 +41,15 @@ class SessionForm extends React.Component {
     }
 
     render() {
+        if (this.props.currentUser) {
+            return <Redirect to='/' />
+        }
 
         return (
+
             <div>
                 <h1>{this.props.formType}</h1>
-                
+
                 <form onSubmit={this.handleSubmit}>
                     {this.renderErrors()}
                     <br />
@@ -67,8 +71,10 @@ class SessionForm extends React.Component {
 
                     <p>{this.props.navLink}</p>
 
-                </form>
+                </form> 
+                {/* if (this.prop.currentUser !== undefined) < Redirect to='/'/>;   */}
             </div>
+
         );
     }
 }

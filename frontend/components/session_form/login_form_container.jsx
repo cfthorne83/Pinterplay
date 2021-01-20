@@ -7,6 +7,7 @@ import { login } from '../../actions/session_actions';
 
 const msp = (state, ownProps) => {
     return {
+        currentUser: state.entities.users[state.session.id],
         errors: state.errors.session,
         formType: 'login',
         navLink: <Link to='/signup'>Sign Up</Link>
