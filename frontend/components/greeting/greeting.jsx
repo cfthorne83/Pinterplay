@@ -10,14 +10,12 @@ const Greeting = (props) => {
     const links = () => (
         <div >
             <button onClick={() => props.openModal('login')}>Login</button>
-
             <button onClick={() => props.openModal('signup')}>Signup</button>
         </div>
     );
 
     const greeting = () => (
         <div >
-            {/* <h1 >Welcome {props.currentUser.username}</h1> */}
             <button onClick={props.logout}>Log Out</button>
         </div>
     );

@@ -5,17 +5,18 @@ class SessionForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            username: "",
+            email: "",
             password: ""
         };
 
         this.updatePassword = this.updatePassword.bind(this);
-        this.updateUsername = this.updateUsername.bind(this);
+        this.updateEmail = this.updateEmail.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDemo = this.handleDemo.bind(this);
     }
 
-    updateUsername(e) {
-        this.setState({ username: e.currentTarget.value })
+    updateEmail(e) {
+        this.setState({ email: e.currentTarget.value })
     }
 
     updatePassword(e) {
@@ -26,6 +27,10 @@ class SessionForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.processForm(user);
+    }
+
+    handleDemo(){
+        this.props.login({email: 'demoname', password: '123456'});
     }
 
     renderErrors() {
@@ -50,21 +55,19 @@ class SessionForm extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     {this.renderErrors()}
                     <br />
-                    <label >Enter Username:
                         <input
                             type="text"
-                            value={this.state.username}
-                            onChange={this.updateUsername} />
-                    </label>
+                            value={this.state.email}
+                            onChange={this.updateEmail} />
                     <br />
-                    <label> Enter Password:
                         <input
                             type="password"
                             value={this.state.password}
                             onChange={this.updatePassword} />
-                    </label>
                     <br />
                     <button>{this.props.formType}</button>
+                    <p>or</p>
+                    <button onClick={this.handleDemo}>Demo Log in</button>
 
                     <p>{this.props.navLink}</p>
 

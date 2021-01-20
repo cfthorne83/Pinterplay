@@ -11,7 +11,7 @@ const msp = (state, ownProps) => {
         currentUser: state.entities.users[state.session.id],
         errors: state.errors.session,
         formType: 'login',
-        // navLink: <Link to='/signup'>Sign Up</Link>
+        navLink: <Link to='/signup'>Not on myPin yet? Sign Up</Link>
     }
 }
 
@@ -23,7 +23,8 @@ const mdp = (dispatch, ownProps) => {
                 Signup
             </button>
         ),
-        closeModal: () => dispatch(closeModal())
+        closeModal: () => dispatch(closeModal()),
+        login: (user) => dispatch(login(user))
     }
 }
 
