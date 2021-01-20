@@ -9,9 +9,8 @@ const Greeting = (props) => {
 
     const links = () => (
         <div >
+            <Link to="/login">Log in</Link>
             <Link to="/signup">Sign up</Link>
-            <p>or</p>
-            <Link to="/login">Log In</Link>
         </div>
     );
 

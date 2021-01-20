@@ -8,6 +8,7 @@ import SignupFormContainer from './session_form/signup_form_container';
 
 const App = () => (
     <div>
+        <Modal />
         <header>
             <h1>myPin</h1>
             <GreetingContainer />
