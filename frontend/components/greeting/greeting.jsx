@@ -7,22 +7,27 @@ const Greeting = (props) => {
 
     // const {currentUser, logout} = props;
 
-    const sessionLinks = () => (
+    const links = () => (
         <div >
-            <Link to="/login">Login</Link>
+            <Link to="/signup">Sign up</Link>
             <p>or</p>
-            <Link to="/signup">Sign up!</Link>
+            <Link to="/login">Log In</Link>
         </div>
     );
 
-    const personalGreeting = () => (
+    const greeting = () => (
         <div >
-            <h1 >Hello, {props.currentUser.username}</h1>
+            <h1 >Welcome {props.currentUser.username}</h1>
             <button onClick={props.logout}>Log Out</button>
         </div>
     );
 
-    return props.currentUser ? personalGreeting() : sessionLinks();
+
+    if (props.currentUser !== undefined){
+        return greeting();
+    } else {
+        return links();
+    }
 };
 
 
