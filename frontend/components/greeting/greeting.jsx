@@ -3,20 +3,21 @@ import { Link } from 'react-router-dom';
 
 
 
-const Greeting = (props) => {
 
-    // const {currentUser, logout} = props;
+
+const Greeting = (props) => {
 
     const links = () => (
         <div >
-            <Link to="/login">Log in</Link>
-            <Link to="/signup">Sign up</Link>
+            <button onClick={() => props.openModal('login')}>Login</button>
+
+            <button onClick={() => props.openModal('signup')}>Signup</button>
         </div>
     );
 
     const greeting = () => (
         <div >
-            <h1 >Welcome {props.currentUser.username}</h1>
+            {/* <h1 >Welcome {props.currentUser.username}</h1> */}
             <button onClick={props.logout}>Log Out</button>
         </div>
     );
