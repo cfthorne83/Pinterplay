@@ -125,22 +125,40 @@ var receiveErrors = function receiveErrors(errors) {
     type: RECEIVE_SESSION_ERRORS,
     errors: errors
   };
-};
+}; // export const signup = user => {
+//     return (dispatch) => {
+//         return APIUtil.signup(user).then(user => {
+//             dispatch(receiveCurrentUser(user)).then(err => {
+//                 dispatch(receiveErrors(err.resposeJSON))
+//             })
+//         })
+//     }
+// };
+
 var signup = function signup(user) {
   return function (dispatch) {
     return _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["signup"](user).then(function (user) {
-      dispatch(receiveCurrentUser(user)).then(function (err) {
-        dispatch(receiveErrors(err.resposeJSON));
-      });
+      return dispatch(receiveCurrentUser(user));
+    }, function (err) {
+      return dispatch(receiveErrors(err.responseJSON));
     });
   };
-};
+}; // export const login = user => {
+//     return (dispatch) => {
+//         return APIUtil.login(user).then(user => {
+//             dispatch(receiveCurrentUser(user)).then(err => {
+//                 dispatch(receiveErrors(err.resposeJSON))
+//             })
+//         })
+//     }
+// };
+
 var login = function login(user) {
   return function (dispatch) {
     return _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["login"](user).then(function (user) {
-      dispatch(receiveCurrentUser(user)).then(function (err) {
-        dispatch(receiveErrors(err.resposeJSON));
-      });
+      return dispatch(receiveCurrentUser(user));
+    }, function (err) {
+      return dispatch(receiveErrors(err.responseJSON));
     });
   };
 };
@@ -204,27 +222,23 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var Greeting = function Greeting(_ref) {
-  var currentUser = _ref.currentUser,
-      logout = _ref.logout;
-
+var Greeting = function Greeting(props) {
+  // const {currentUser, logout} = props;
   var sessionLinks = function sessionLinks() {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
-      className: "login-signup"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
       to: "/login"
-    }, "Login"), "\xA0or\xA0", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    }, "Login"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "or"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
       to: "/signup"
     }, "Sign up!"));
   };
 
   var personalGreeting = function personalGreeting() {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hgroup", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Hi, ", currentUser.username, "!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-      onClick: logout
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Hello, ", props.currentUser.username), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      onClick: props.logout
     }, "Log Out"));
   };
 
-  return currentUser ? personalGreeting() : sessionLinks();
+  return props.currentUser ? personalGreeting() : sessionLinks();
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Greeting);
@@ -247,15 +261,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var mSTP = function mSTP(_ref) {
-  var session = _ref.session,
-      users = _ref.entities.users;
+var mSTP = function mSTP(state, ownProps) {
   return {
-    currentUser: users[session.id]
+    currentUser: state.entities.users[state.session.id]
   };
 };
 
-var mDTP = function mDTP(dispatch) {
+var mDTP = function mDTP(dispatch, ownProps) {
   return {
     logout: function logout() {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["logout"])());
@@ -422,7 +434,7 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "renderErrors",
     value: function renderErrors() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.props.errors.map(function (error) {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.props.errors.map(function (error, i) {
         /*#__PURE__*/
         react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           key: "error-".concat(i)
@@ -511,31 +523,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./store/store */ "./frontend/store/store.js");
 /* harmony import */ var _components_root__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/root */ "./frontend/components/root.jsx");
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 
 
 
 
 document.addEventListener('DOMContentLoaded', function () {
-  var store;
-
-  if (window.currentUser) {
-    var preloadedState = {
-      entities: {
-        users: _defineProperty({}, window.currentUser.id, window.currentUser)
-      },
-      session: {
-        id: window.currentUser.id
-      }
-    };
-    store = Object(_store_store__WEBPACK_IMPORTED_MODULE_2__["default"])(preloadedState);
-    delete window.currentUser;
-  } else {
-    store = Object(_store_store__WEBPACK_IMPORTED_MODULE_2__["default"])();
-  }
-
+  // let store;
+  // if (window.currentUser) {
+  //     const preloadedState = {
+  //         entities: {
+  //             users: { [window.currentUser.id]: window.currentUser }
+  //         },
+  //         session: { id: window.currentUser.id }
+  //     };
+  //     store = configureStore(preloadedState);
+  //     delete window.currentUser;
+  // } else {
+  //     store = configureStore();
+  // }
+  var store = Object(_store_store__WEBPACK_IMPORTED_MODULE_2__["default"])();
   var root = document.getElementById('root');
+  window.store = store;
   window.getState = store.getState;
   window.dispatch = store.dispatch;
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_root__WEBPACK_IMPORTED_MODULE_3__["default"], {
