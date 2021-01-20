@@ -72,7 +72,6 @@ class SessionForm extends React.Component {
                     <p>{this.props.navLink}</p>
 
                 </form> 
-                {/* if (this.prop.currentUser !== undefined) < Redirect to='/'/>;   */}
             </div>
 
         );
