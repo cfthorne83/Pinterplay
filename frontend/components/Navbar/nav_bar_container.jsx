@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 
 import { logout } from '../../actions/session_actions';
 import { openModal } from '../../actions/modal_actions';
-import Greeting from './greeting'
+import NavLinks from './nav_links'
 
 const mSTP = (state, ownProps) => {
     return {
@@ -17,4 +17,4 @@ const mDTP = (dispatch, ownProps) => {
     };
 };
 
-export default connect(mSTP, mDTP)(Greeting);
+export default connect(mSTP, mDTP)(NavLinks);

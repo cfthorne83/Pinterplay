@@ -5,28 +5,27 @@ import { Link } from 'react-router-dom';
 
 
 
-const Greeting = (props) => {
+const NavLinks = (props) => {
 
-    const links = () => (
+    const loginSignup = () => (
         <div >
             <button onClick={() => props.openModal('login')}>Login</button>
             <button onClick={() => props.openModal('signup')}>Signup</button>
         </div>
     );
 
-    const greeting = () => (
+    const logout = () => (
         <div >
             <button onClick={props.logout}>Log Out</button>
         </div>
     );
 
-
-    if (props.currentUser !== undefined){
-        return greeting();
-    } else {
-        return links();
-    }
+        if (props.currentUser !== undefined){
+            return logout();
+        } else {
+            return loginSignup();
+        }
 };
 
 
-export default Greeting;
+export default NavLinks;

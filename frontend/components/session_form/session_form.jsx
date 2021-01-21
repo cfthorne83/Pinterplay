@@ -6,7 +6,8 @@ class SessionForm extends React.Component {
         super(props);
         this.state = {
             email: "",
-            password: ""
+            password: "",
+            demo: null
         };
 
         this.updatePassword = this.updatePassword.bind(this);
@@ -25,14 +26,27 @@ class SessionForm extends React.Component {
         this.setState({ password: e.currentTarget.value });
     }
 
+    // handleSubmit(e) {
+    //     e.preventDefault();
+    //     this.props.processForm(this.state).then(this.props.closeModal);
+    // }
     handleSubmit(e) {
         e.preventDefault();
-        this.props.processForm(this.state);
+        if (this.state.demo){
+            this.setState({ email: 'demoEmail', password: '123456' });
+            this.props.login({ email: 'demoEmail', password: '123456' }).then(this.props.closeModal);
+        } else {
+            this.props.processForm(this.state).then(this.props.closeModal);
+        }
     }
 
+    // handleDemo(e){
+    //     this.setState({ email: 'demoEmail', password: '123456' });
+    //     this.props.login({ email: 'demoEmail', password: '123456' }).then(this.props.closeModal);
+    // }
+    
     handleDemo(){
-        this.setState({ email: 'demoEmail', password: '123456' });
-        this.props.login({email: 'demoEmail', password: '123456'});
+        this.setState({demo: 'demo'});
     }
 
     renderErrors() {
@@ -77,6 +91,7 @@ class SessionForm extends React.Component {
                     <br />
                     <button>{this.props.formType}</button>
                     <p>or</p>
+                    {/* <button onClick={this.handleDemo}>Demo Log in</button> */}
                     <button onClick={this.handleDemo}>Demo Log in</button>
 
                     <span>{this.props.otherForm}</span>
