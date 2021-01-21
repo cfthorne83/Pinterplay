@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 
 import SessionForm from './session_form'
 import { login } from '../../actions/session_actions';
@@ -23,7 +22,6 @@ const mdp = (dispatch, ownProps) => {
             </button>
         ),
         closeModal: () => dispatch(closeModal()),
-        openModal: () => dispatch(openModal('login')),
         login: (user) => dispatch(login(user))
     }
 }

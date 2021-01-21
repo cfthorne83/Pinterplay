@@ -27,7 +27,7 @@ class SessionForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.processForm(this.state);
+        this.props.processForm(this.state).then(this.props.closeModal);
     }
 
     handleDemo(){
@@ -61,7 +61,7 @@ class SessionForm extends React.Component {
                 <h1>{this.props.formType}</h1>
 
                 <form onSubmit={this.handleSubmit}>
-                    
+                    <div onClick={this.props.closeModal}>X</div>
                     <br />
                         <input
                             type="text"
@@ -77,8 +77,8 @@ class SessionForm extends React.Component {
                     <br />
                     <button>{this.props.formType}</button>
                     <p>or</p>
-                    <button onClick={this.handleDemo}>Demo Log in</button>
-
+                    {/* <button onClick={this.handleDemo}>Demo Log in</button> */}
+                    <input type="submit" value='Demo Log in' onClick={this.handleDemo}/>
                     <span>{this.props.otherForm}</span>
 
                     {/* <span>{this.renderErrors()}</span> */}
