@@ -2,7 +2,8 @@ import { connect } from 'react-redux';
 
 import { logout } from '../../actions/session_actions';
 import { openModal } from '../../actions/modal_actions';
-import NavLinks from './nav_links'
+import NavBar from './nav_bar'
+
 
 const mSTP = (state, ownProps) => {
     return {
@@ -17,4 +18,4 @@ const mDTP = (dispatch, ownProps) => {
     };
 };
 
-export default connect(mSTP, mDTP)(NavLinks);
+export default connect(mSTP, mDTP)(NavBar);

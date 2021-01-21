@@ -8,9 +8,9 @@ import { Link } from 'react-router-dom';
 const NavLinks = (props) => {
 
     const loginSignup = () => (
-        <div >
-            <button onClick={() => props.openModal('login')}>Login</button>
-            <button onClick={() => props.openModal('signup')}>Signup</button>
+        <div className='nav-links' >
+            <button className='login' onClick={() => props.openModal('login')}>Log in</button>
+            <button className='signup' onClick={() => props.openModal('signup')}>Sign up</button>
         </div>
     );
 
