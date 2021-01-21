@@ -14,6 +14,7 @@ class SessionForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDemo = this.handleDemo.bind(this);
         this.handleErrors = this.handleErrors.bind(this);
+        this.renderErrors = this.renderErrors.bind(this);
     }
 
     updateEmail(e) {
@@ -45,7 +46,9 @@ class SessionForm extends React.Component {
     }
 
     handleErrors() {
-        if (this.props.errors.length !== 0) this.props.closeModal();
+        if (this.props.errors.length === 0){
+            return this.props.closeModal();
+        } 
     }
 
     render() {
@@ -54,7 +57,7 @@ class SessionForm extends React.Component {
         }
 
         return (
-            <div onSubmit={this.handleErrors}>
+            <div>
                 <h1>{this.props.formType}</h1>
 
                 <form onSubmit={this.handleSubmit}>
@@ -70,15 +73,19 @@ class SessionForm extends React.Component {
                             value={this.state.password}
                             onChange={this.updatePassword} />
                     <br />
+                    <span>{this.props.errors}</span>
+                    <br />
                     <button>{this.props.formType}</button>
                     <p>or</p>
                     <button onClick={this.handleDemo}>Demo Log in</button>
 
                     <span>{this.props.otherForm}</span>
-                    <span>{this.renderErrors()}</span>
-                </form> 
-            </div>
 
+                    {/* <span>{this.renderErrors()}</span> */}
+                    
+                </form> 
+                
+            </div>
         );
     }
 }
