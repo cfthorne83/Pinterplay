@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 
 import SessionForm from './session_form'
 import { signup, login } from '../../actions/session_actions';
+import { openModal, closeModal } from '../../actions/modal_actions';
 
 const msp = (state, ownProps) => {
     return {
         currentUser: state.entities.users[state.session.id],
         errors: state.errors.session,
-        formType: 'signup',
-        navLink: <Link to='/signup'>Already a member? Log in</Link>
+        formType: 'signup'
 
     }
 }
@@ -18,6 +18,12 @@ const msp = (state, ownProps) => {
 const mdp = (dispatch) => {
     return {
         processForm: (user) => dispatch(signup(user)),
+        otherForm: (
+            <button onClick={() => dispatch(openModal('login'))}>
+                Already a member? Log in
+            </button>
+        ),
+        closeModal: () => dispatch(closeModal()),
         login: (user) => dispatch(login(user))
     }
 }
