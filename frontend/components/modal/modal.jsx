@@ -5,8 +5,8 @@ import { closeModal } from '../../actions/modal_actions';
 import LoginFormContainer from '../session_form/login_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
 
-const Modal = ({ modal, closeModal }) =>  {
-    if (!modal) {
+const Modal = ({ modal, closeModal, errors }) =>  {
+    if (!modal && errors.length === 0) {
         return null;
     }
     let component;
@@ -31,7 +31,8 @@ const Modal = ({ modal, closeModal }) =>  {
 
 const mapStateToProps = state => {
     return {
-        modal: state.ui.modal
+        modal: state.ui.modal,
+        errors: state.errors.session
     };
 };
 

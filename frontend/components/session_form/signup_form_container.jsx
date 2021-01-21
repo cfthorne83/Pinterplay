@@ -11,7 +11,6 @@ const msp = (state, ownProps) => {
         currentUser: state.entities.users[state.session.id],
         errors: state.errors.session,
         formType: 'signup'
-
     }
 }
 

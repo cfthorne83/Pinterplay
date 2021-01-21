@@ -345,9 +345,10 @@ __webpack_require__.r(__webpack_exports__);
 
 var Modal = function Modal(_ref) {
   var modal = _ref.modal,
-      closeModal = _ref.closeModal;
+      closeModal = _ref.closeModal,
+      errors = _ref.errors;
 
-  if (!modal) {
+  if (!modal && errors.length === 0) {
     return null;
   }
 
@@ -379,7 +380,8 @@ var Modal = function Modal(_ref) {
 
 var mapStateToProps = function mapStateToProps(state) {
   return {
-    modal: state.ui.modal
+    modal: state.ui.modal,
+    errors: state.errors.session
   };
 };
 
@@ -469,6 +471,9 @@ var mdp = function mdp(dispatch, ownProps) {
     closeModal: function closeModal() {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_5__["closeModal"])());
     },
+    openModal: function openModal() {
+      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_5__["openModal"])('signup'));
+    },
     login: function login(user) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_4__["login"])(user));
     }
@@ -535,6 +540,7 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
     _this.updateEmail = _this.updateEmail.bind(_assertThisInitialized(_this));
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     _this.handleDemo = _this.handleDemo.bind(_assertThisInitialized(_this));
+    _this.handleErrors = _this.handleErrors.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -556,12 +562,15 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
     key: "handleSubmit",
     value: function handleSubmit(e) {
       e.preventDefault();
-      var user = Object.assign({}, this.state);
-      this.props.processForm(user);
+      this.props.processForm(this.state);
     }
   }, {
     key: "handleDemo",
     value: function handleDemo() {
+      this.setState({
+        email: 'demoEmail',
+        password: '123456'
+      });
       this.props.login({
         email: 'demoEmail',
         password: '123456'
@@ -578,6 +587,11 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
       }));
     }
   }, {
+    key: "handleErrors",
+    value: function handleErrors() {
+      if (this.props.errors.length !== 0) this.props.closeModal();
+    }
+  }, {
     key: "render",
     value: function render() {
       if (this.props.currentUser) {
@@ -586,9 +600,11 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
         });
       }
 
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, this.props.formType), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        onSubmit: this.handleErrors
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, this.props.formType), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.handleSubmit
-      }, this.renderErrors(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         value: this.state.email,
         onChange: this.updateEmail
@@ -598,7 +614,7 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
         onChange: this.updatePassword
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, this.props.formType), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "or"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.handleDemo
-      }, "Demo Log in"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.props.otherForm)));
+      }, "Demo Log in"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.props.otherForm), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.renderErrors())));
     }
   }]);
 

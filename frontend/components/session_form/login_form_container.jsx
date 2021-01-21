@@ -23,6 +23,7 @@ const mdp = (dispatch, ownProps) => {
             </button>
         ),
         closeModal: () => dispatch(closeModal()),
+        openModal: () => dispatch(openModal('signup')),
         login: (user) => dispatch(login(user))
     }
 }
