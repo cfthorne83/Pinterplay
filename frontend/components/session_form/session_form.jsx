@@ -30,7 +30,7 @@ class SessionForm extends React.Component {
     }
 
     handleDemo(){
-        this.props.login({email: 'demoname', password: '123456'});
+        this.props.login({email: 'demoEmail', password: '123456'});
     }
 
     renderErrors() {
@@ -69,7 +69,7 @@ class SessionForm extends React.Component {
                     <p>or</p>
                     <button onClick={this.handleDemo}>Demo Log in</button>
 
-                    <p>{this.props.navLink}</p>
+                    <span>{this.props.otherForm}</span>
 
                 </form> 
             </div>

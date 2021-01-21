@@ -172,28 +172,29 @@ var signup = function signup(user) {
       return dispatch(receiveErrors(err.responseJSON));
     });
   };
-};
+}; // export const login = user => {
+//     return (dispatch) => {
+//         const receiveErrorCB = err => {
+//             dispatch(receiveErrors(err.resposeJSON))
+//         }
+//         const receiveUserCB = user => {
+//             return dispatch(receiveCurrentUser(user))
+//         }
+//         return APIUtil.login(user).then(
+//             receiveUserCB, receiveErrorCB
+//         )
+//     }
+// };
+
 var login = function login(user) {
   return function (dispatch) {
-    var receiveErrorCB = function receiveErrorCB(err) {
-      dispatch(receiveErrors(err.resposeJSON));
-    };
-
-    var receiveUserCB = function receiveUserCB(user) {
+    return _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["login"](user).then(function (user) {
       return dispatch(receiveCurrentUser(user));
-    };
-
-    return _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["login"](user).then(receiveUserCB, receiveErrorCB);
+    }, function (err) {
+      return dispatch(receiveErrors(err.responseJSON));
+    });
   };
-}; // export const login = user => dispatch => (
-//     debugger
-//     APIUtil.login(user).then(user => (
-//         dispatch(receiveCurrentUser(user))
-//     ), err => (
-//         dispatch(receiveErrors(err.responseJSON))
-//     ))
-// );
-
+};
 var logout = function logout() {
   return function (dispatch) {
     return _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["logout"]().then(function (user) {
@@ -451,10 +452,7 @@ var msp = function msp(state, ownProps) {
   return {
     currentUser: state.entities.users[state.session.id],
     errors: state.errors.session,
-    formType: 'login',
-    navLink: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-      to: "/signup"
-    }, "Not on myPin yet? Sign Up")
+    formType: 'login'
   };
 };
 
@@ -467,7 +465,7 @@ var mdp = function mdp(dispatch, ownProps) {
       onClick: function onClick() {
         return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_5__["openModal"])('signup'));
       }
-    }, "Signup"),
+    }, "Not on myPin yet? Sign Up"),
     closeModal: function closeModal() {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_5__["closeModal"])());
     },
@@ -565,7 +563,7 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
     key: "handleDemo",
     value: function handleDemo() {
       this.props.login({
-        email: 'demoname',
+        email: 'demoEmail',
         password: '123456'
       });
     }
@@ -600,7 +598,7 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
         onChange: this.updatePassword
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, this.props.formType), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "or"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.handleDemo
-      }, "Demo Log in"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.navLink)));
+      }, "Demo Log in"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.props.otherForm)));
     }
   }]);
 
@@ -626,6 +624,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _session_form__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./session_form */ "./frontend/components/session_form/session_form.jsx");
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
+/* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
+
 
 
 
@@ -636,10 +636,7 @@ var msp = function msp(state, ownProps) {
   return {
     currentUser: state.entities.users[state.session.id],
     errors: state.errors.session,
-    formType: 'signup',
-    navLink: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-      to: "/signup"
-    }, "Already a member? Log in")
+    formType: 'signup'
   };
 };
 
@@ -647,6 +644,14 @@ var mdp = function mdp(dispatch) {
   return {
     processForm: function processForm(user) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_4__["signup"])(user));
+    },
+    otherForm: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      onClick: function onClick() {
+        return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_5__["openModal"])('login'));
+      }
+    }, "Already a member? Log in"),
+    closeModal: function closeModal() {
+      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_5__["closeModal"])());
     },
     login: function login(user) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_4__["login"])(user));
