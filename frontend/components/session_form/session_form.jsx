@@ -56,10 +56,6 @@ class SessionForm extends React.Component {
         } 
     }
 
-    // clearField(){
-    //     this.setState({email: ""})
-    // }
-
     render() {
         if (this.props.currentUser) {
             return <Redirect to='/' />
