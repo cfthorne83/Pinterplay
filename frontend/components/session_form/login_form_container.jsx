@@ -9,7 +9,7 @@ const msp = (state, ownProps) => {
     return {
         currentUser: state.entities.users[state.session.id],
         errors: state.errors.session,
-        formType: 'login'
+        formType: 'Log in'
     }
 }
 
@@ -17,7 +17,7 @@ const mdp = (dispatch, ownProps) => {
     return {
         processForm: (user) => dispatch(login(user)),
         otherForm: (
-            <button onClick={() => dispatch(openModal('signup'))}>
+            <button className='other-form' onClick={() => dispatch(openModal('signup'))}>
                 Not on myPin yet? Sign Up
             </button>
         ),

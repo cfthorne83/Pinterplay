@@ -63,36 +63,39 @@ class SessionForm extends React.Component {
 
         return (
             <div>
-                <li><img className='logo' src="https://seeklogo.com/images/P/pinterest-badge-logo-82C89A5E42-seeklogo.com.png" alt="myPin Logo" /></li>
-                <h1>Welcome to myPin</h1>
-
-                <form onSubmit={this.handleSubmit}>
                 <div onClick={this.props.closeModal} className="close-x">X</div>
+                <img className='form-logo' src="https://seeklogo.com/images/P/pinterest-badge-logo-82C89A5E42-seeklogo.com.png" alt="myPin Logo" />
+                <div className='session-form'>
+                    <h1>Welcome to myPin</h1>
 
-                    <br />
-                        <input
-                            type="text"
-                            value={this.state.email}
-                            onChange={this.updateEmail} />
-                    <br />
-                        <input
-                            type="password"
-                            value={this.state.password}
-                            onChange={this.updatePassword} />
-                    <br />
-                    <span>{this.props.errors}</span>
-                    <br />
-                    <button>{this.props.formType}</button>
-                    <p>or</p>
-                    {/* <button onClick={this.handleDemo}>Demo Log in</button> */}
-                    <button onClick={this.handleDemo}>Demo Log in</button>
+                    <form className='session-inputs' onSubmit={this.handleSubmit}>
+                            <br />
+                                <input
+                                    type="text"
+                                    value={this.state.email}
+                                    onChange={this.updateEmail} />
+                            <br />
+                                <input
+                                    type="password"
+                                    value={this.state.password}
+                                    onChange={this.updatePassword} />
+                            <br />
+                        <span>{this.props.errors}</span>
+                        <br />
+                        <button className='modal-login'>{this.props.formType}</button>
+                        <p className='or'>OR</p>
+                        <button className='demo' onClick={this.handleDemo}>Demo Log in</button>
+                        
+                        <p>By continuing, you agree to myPin's </p>
+                        <p>Terms of Service, Privacy policy.</p>
+                        
 
-                    <span>{this.props.otherForm}</span>
+                        <span className='other-form'>{this.props.otherForm}</span>
 
-                    {/* <span>{this.renderErrors()}</span> */}
-                    
-                </form> 
-                
+                        {/* <span>{this.renderErrors()}</span> */}
+
+                    </form> 
+                </div>
             </div>
         );
     }
