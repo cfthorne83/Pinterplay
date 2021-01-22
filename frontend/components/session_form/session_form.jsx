@@ -28,16 +28,12 @@ class SessionForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-<<<<<<< HEAD
-        this.props.processForm(this.state).then(this.props.closeModal);
-=======
         if (this.state.demo){
             this.setState({ email: 'demoEmail', password: '123456' });
             this.props.login({ email: 'demoEmail', password: '123456' }).then(this.props.closeModal);
         } else {
             this.props.processForm(this.state).then(this.props.closeModal);
         }
->>>>>>> user-auth
     }
     
     handleDemo(){
@@ -71,12 +67,8 @@ class SessionForm extends React.Component {
                 <h1>Welcome to myPin</h1>
 
                 <form onSubmit={this.handleSubmit}>
-<<<<<<< HEAD
-                    <div onClick={this.props.closeModal}>X</div>
-=======
                 <div onClick={this.props.closeModal} className="close-x">X</div>
 
->>>>>>> user-auth
                     <br />
                         <input
                             type="text"
@@ -93,12 +85,8 @@ class SessionForm extends React.Component {
                     <button>{this.props.formType}</button>
                     <p>or</p>
                     {/* <button onClick={this.handleDemo}>Demo Log in</button> */}
-<<<<<<< HEAD
-                    <input type="submit" value='Demo Log in' onClick={this.handleDemo}/>
-=======
                     <button onClick={this.handleDemo}>Demo Log in</button>
 
->>>>>>> user-auth
                     <span>{this.props.otherForm}</span>
 
                     {/* <span>{this.renderErrors()}</span> */}
