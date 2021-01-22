@@ -639,11 +639,7 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
       this.setState({
         password: e.currentTarget.value
       });
-    } // handleSubmit(e) {
-    //     e.preventDefault();
-    //     this.props.processForm(this.state).then(this.props.closeModal);
-    // }
-
+    }
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
@@ -661,11 +657,7 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
       } else {
         this.props.processForm(this.state).then(this.props.closeModal);
       }
-    } // handleDemo(e){
-    //     this.setState({ email: 'demoEmail', password: '123456' });
-    //     this.props.login({ email: 'demoEmail', password: '123456' }).then(this.props.closeModal);
-    // }
-
+    }
   }, {
     key: "handleDemo",
     value: function handleDemo() {
@@ -699,9 +691,16 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
         });
       }
 
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, this.props.formType), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "logo",
+        src: "https://seeklogo.com/images/P/pinterest-badge-logo-82C89A5E42-seeklogo.com.png",
+        alt: "myPin Logo"
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Welcome to myPin"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.handleSubmit
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        onClick: this.props.closeModal,
+        className: "close-x"
+      }, "X"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         value: this.state.email,
         onChange: this.updateEmail

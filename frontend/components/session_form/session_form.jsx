@@ -26,10 +26,6 @@ class SessionForm extends React.Component {
         this.setState({ password: e.currentTarget.value });
     }
 
-    // handleSubmit(e) {
-    //     e.preventDefault();
-    //     this.props.processForm(this.state).then(this.props.closeModal);
-    // }
     handleSubmit(e) {
         e.preventDefault();
         if (this.state.demo){
@@ -39,11 +35,6 @@ class SessionForm extends React.Component {
             this.props.processForm(this.state).then(this.props.closeModal);
         }
     }
-
-    // handleDemo(e){
-    //     this.setState({ email: 'demoEmail', password: '123456' });
-    //     this.props.login({ email: 'demoEmail', password: '123456' }).then(this.props.closeModal);
-    // }
     
     handleDemo(){
         this.setState({demo: 'demo'});
@@ -72,10 +63,12 @@ class SessionForm extends React.Component {
 
         return (
             <div>
-                <h1>{this.props.formType}</h1>
+                <li><img className='logo' src="https://seeklogo.com/images/P/pinterest-badge-logo-82C89A5E42-seeklogo.com.png" alt="myPin Logo" /></li>
+                <h1>Welcome to myPin</h1>
 
                 <form onSubmit={this.handleSubmit}>
-                    
+                <div onClick={this.props.closeModal} className="close-x">X</div>
+
                     <br />
                         <input
                             type="text"
