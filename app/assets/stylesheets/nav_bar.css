@@ -68,6 +68,11 @@ li {
  padding-right: 18px;
 }
 
+.mid-links li:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .nav-links{
   padding-left: 0px; 
 }
@@ -81,13 +86,23 @@ li {
   
 }
 
-.login {
+.nav-links .login {
   background-color: rgb(214, 0, 11);
   color: white; 
   margin-right: 10px;
 }
 
-.signup {
+.nav-links .login:hover {
+  background-color: rgb(165, 0, 8);
+  cursor: pointer;  
+}
+
+.nav-links .signup {
   background-color: rgb(236, 236, 236);
   color: black;
+}
+
+.nav-links .signup:hover {
+  background-color: rgb(219, 218, 218);
+  cursor: pointer;
 }
