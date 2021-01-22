@@ -1,9 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-
-
-
-
+import LogoutDropdown from './logout_drop_down'
 
 const NavLinks = (props) => {
 
@@ -15,14 +11,15 @@ const NavLinks = (props) => {
         
     );
 
-    const logout = () => (
-        <div >
-            <button onClick={props.logout}>Log Out</button>
-        </div>
-    );
+    // const logout = () => (
+    //     <div >
+    //         <button onClick={props.logout}>Log Out</button>
+    //     </div>
+    // );
 
         if (props.currentUser !== undefined){
-            return logout();
+            // return logout();
+            return <LogoutDropdown logout={props.logout}/>
         } else {
             return loginSignup();
         }
