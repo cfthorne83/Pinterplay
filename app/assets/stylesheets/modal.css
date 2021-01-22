@@ -75,6 +75,10 @@ h1, h2, p, strong, em, a, input, div, span, form, button {
     border-color: rgb(167, 167, 167);
 }
 
+.session-form input:focus {
+    border: 3px solid rgb(138, 192, 255);
+}
+
 .session-form button {
     border: none;
     color: white;
@@ -138,10 +142,3 @@ p.or {
     padding-top: 7px;
 }
 
-input[type="text"] {  
-    text-align: left; 
-}
-
-input[type="password"] {  
-    text-align: left; 
-}
