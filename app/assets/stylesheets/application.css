@@ -46,13 +46,12 @@ h1, h2, p, strong, em, a {
 
 /*navbar */
 
-.nav-container {
-  /* display:flex; */
+/* .header {
   padding: 10px;
 }
 
 .logo-container{
-
+  float: left;
 }
 
 .logo {
@@ -65,29 +64,109 @@ h1, h2, p, strong, em, a {
 }
 
 
-.nav-links {
-  justify-content: flex-end;
+
+.link-container {
+  float: right;
+}
+
+.link-container span {
+  padding-left: 5px;
+  font-size: 9px;
+  font-weight: bold;
+}
+
+.mid-links {
+  margin-right: 50 px;
+}
+
+.nav-links button{
+  margin-right: 8px;
+  border: none;
+  border-radius: 12px;
+  font-size: 9px;
+  font-weight: bold;
+  padding: 6px;
 }
 
 .login {
   background-color: rgb(228, 0, 19);
   color: white;
-  border: none;
-  border-radius: 12px;
-  padding: 5px;
-  text: bold;
-  font-size: 9px;
-  font-weight: bold;
 }
 
 .signup {
   background-color: rgb(236, 236, 236);
   color: black;
-  border: none;
-  border-radius: 12px;
+} */
+
+li {
+    list-style: none;
+}
+
+.logo {
+  height: 18px;
+  width: 18px;
+}
+
+.header {
+   font-family: Helvetica;
+   color: black;
+   font-size: 9px;
+   font-weight: bold;
+ }
+
+.header-logo {
+    float: left;
+    display: flex;
+    padding-left: 13px;
+    padding-top: 3px;
+}
+
+.header-logo li{
+    color:rgb(214, 0, 11);
+    padding: 1px;
+}
+
+.app-name {
+  margin-top: 3px;
+  font-size: 11px;
+}
+
+.header-nav-lists {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 17px;
+    padding-top: 3px;
+}
+
+.header-nav-lists ul {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.mid-links li {
   padding: 5px;
-  text: bold;
+}
+
+.nav-links{
+
+  
+}
+.nav-links button {
+  border-radius: 12px;
+  border: none;
   font-size: 9px;
   font-weight: bold;
-  padding: 6px
+  padding: 6px;
+
+}
+
+.login {
+  background-color: rgb(214, 0, 11);
+  color: white; 
+  margin-right: 10px;
+}
+
+.signup {
+  background-color: rgb(236, 236, 236);
+  color: black;
 }

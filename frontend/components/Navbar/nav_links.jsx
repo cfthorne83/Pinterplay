@@ -8,10 +8,11 @@ import { Link } from 'react-router-dom';
 const NavLinks = (props) => {
 
     const loginSignup = () => (
-        <div className='nav-links' >
+        <ul className='nav-links'>
             <button className='login' onClick={() => props.openModal('login')}>Log in</button>
             <button className='signup' onClick={() => props.openModal('signup')}>Sign up</button>
-        </div>
+        </ul>
+        
     );
 
     const logout = () => (
