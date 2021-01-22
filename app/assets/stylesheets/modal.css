@@ -100,31 +100,19 @@ span .other-form {
 }
 
 .session-form p {
-    font-size: 7px;
+    font-size: 6px;
+    color:rgb(131, 130, 130)
+}
+
+.session-form p.bold {
+    font-weight: 600;
+    color: rgb(24, 24, 24);
 }
 
 p.or {
     font-size: 8px;
     font-weight: 600;
     padding: 6px;
+    color: black;
 }
 
-/* .test {
-    display: flex;
-    flex-direction: column-reverse;
-} */
-/* .test {
-    display: flex;
-    flex-direction: column-reverse;
-} */
-
-
-/* .test {
-    display: flex;
-    flex-direction: column-reverse;
-} */
-
-.test li {
-    text-align: center;
-
-}

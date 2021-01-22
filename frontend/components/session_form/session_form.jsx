@@ -74,20 +74,21 @@ class SessionForm extends React.Component {
                                     type="text"
                                     value={this.state.email}
                                     onChange={this.updateEmail} />
-                            <br />
+
+                            <p className="errors">{this.props.errors}</p>
+                         
                                 <input
                                     type="password"
                                     value={this.state.password}
                                     onChange={this.updatePassword} />
                             <br />
-                        <span>{this.props.errors}</span>
                         <br />
                         <button className='modal-login'>{this.props.formType}</button>
                         <p className='or'>OR</p>
                         <button className='demo' onClick={this.handleDemo}>Demo Log in</button>
                         
                         <p>By continuing, you agree to myPin's </p>
-                        <p>Terms of Service, Privacy policy.</p>
+                        <p className='bold'>Terms of Service, Privacy policy.</p>
                         
 
                         <span className='other-form'>{this.props.otherForm}</span>
