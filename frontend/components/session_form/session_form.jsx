@@ -56,6 +56,10 @@ class SessionForm extends React.Component {
         } 
     }
 
+    // clearField(){
+    //     this.setState({email: ""})
+    // }
+
     render() {
         if (this.props.currentUser) {
             return <Redirect to='/' />
@@ -70,16 +74,21 @@ class SessionForm extends React.Component {
 
                     <form className='session-inputs' onSubmit={this.handleSubmit}>
                             <br />
+                            <div >
                                 <input
                                     type="text"
                                     value={this.state.email}
-                                    onChange={this.updateEmail} />
+                                    placeholder="   Email"
+                                    onChange={this.updateEmail} 
+                                    />
+                            </div>
 
                             <p className="errors">{this.props.errors}</p>
                          
                                 <input
                                     type="password"
                                     value={this.state.password}
+                                    placeholder="   Password"
                                     onChange={this.updatePassword} />
                             <br />
                         <br />
@@ -89,7 +98,7 @@ class SessionForm extends React.Component {
                         
                         <p>By continuing, you agree to myPin's </p>
                         <p className='bold'>Terms of Service, Privacy policy.</p>
-                        
+                        <p className='border'></p>
 
                         <span className='other-form'>{this.props.otherForm}</span>
 
