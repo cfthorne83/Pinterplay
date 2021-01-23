@@ -1,0 +1,26 @@
+
+
+
+
+
+
+.dropdown-outer {
+  position: relative;  
+  padding-right: 90px;
+  padding-top: 5px;
+}
+
+.dropdown-outer span {
+  text-align: right;
+}
+
+.dropdown-inner {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+}
+
+.update-bell {
+   height: 20px;
+   width: 20px;
+}

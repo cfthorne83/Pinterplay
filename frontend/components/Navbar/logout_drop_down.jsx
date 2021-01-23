@@ -1,11 +1,5 @@
 import React from 'react';
 
-// const LogoutDropdown = (props) => (
-//     <div >
-//         <button onClick={props.logout}>Log Out</button>
-//     </div>
-// );
-
 class LogoutDropdown extends React.Component{
     constructor(props){
         super(props);
