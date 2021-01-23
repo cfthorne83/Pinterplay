@@ -106,3 +106,36 @@ li {
   cursor: pointer;
 }
 
+/* .dropdown-contents {
+  position: absolute;
+}
+
+.dropdown-list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding-top: 10px;
+  margin-right: 10px;
+} */
+
+.dropdown-outer {
+  position: relative;  
+  padding-right: 90px;
+  padding-top: 5px;
+}
+
+.dropdown-outer span {
+  text-align: right;
+}
+
+.dropdown-inner {
+  position: absolute;
+  display: flex;
+}
+
+.dropdown-inner ul {
+  flex-direction: column;
+  
+}
+

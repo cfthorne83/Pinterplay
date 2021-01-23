@@ -1,5 +1,5 @@
 html, body, section, article,
-h1, h2, p, strong, em, a, input, div, span, form, button {
+h1, h2, p, strong, em, a, input, div, span, form, button, ul, li {
   margin: 0;
   border: 0;
   padding: 0;
