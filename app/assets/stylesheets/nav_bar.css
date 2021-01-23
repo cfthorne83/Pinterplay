@@ -131,11 +131,10 @@ li {
 
 .dropdown-inner {
   position: absolute;
-  display: flex;
+  display: flex
 }
 
 .dropdown-inner ul {
   flex-direction: column;
   
 }
-
