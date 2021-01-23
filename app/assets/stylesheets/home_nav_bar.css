@@ -1,26 +1,52 @@
+.home-nav-bar {
+    display: flex;
+    justify-content: space-between;
+}
 
+.home-logo {
+    height: 13px;
+    width: 13px;
+}
 
+.home-nav-bar .nav-links {
+    display: flex;
+    justify-content: space-around;
+}
 
+.home-nav-bar .nav-links li {
+    padding: 5px;
+}
 
+.home-nav-bar .nav-dropdowns li {
+    padding: 5px;
+}
 
+.update-bell {
+    height: 13px;
+    width: 13px;
+}
+
+.inbox-link {
+    height: 13px;
+    width: 13px;
+}
+
+.home-nav-bar .searchbar {
+    background-color: rgb(233, 233, 233);
+    width: 175px;
+    margin: 5px;
+}
+
+.home-nav-bar .nav-dropdowns {
+    display: flex;
+}
 
 .dropdown-outer {
   position: relative;  
-  padding-right: 90px;
-  padding-top: 5px;
-}
-
-.dropdown-outer span {
-  text-align: right;
 }
 
 .dropdown-inner {
   position: absolute;
   display: flex;
   flex-direction: column;
-}
-
-.update-bell {
-   height: 20px;
-   width: 20px;
 }
