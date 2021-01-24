@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom';
 import { AuthRoute } from '../util/route_util'
 import NavBarContainer from './Navbar/nav_bar_container';
 import Modal from './modal/modal';
+import MainContainer from "./main/main_container";
 
 const App = () => (
     <div>
@@ -11,6 +12,10 @@ const App = () => (
         <header>
             <NavBarContainer />
         </header>
+        <body>
+            <MainContainer/>
+        </body>
+
     </div>
 );
 
