@@ -20,10 +20,10 @@ const App = () => (
         <header>
             <NavBarContainer />
         </header>
-        <Switch >
+        {/* <Switch >
             <Route exact path="/users/:userId" component={ProfileContainer} />
             <Route exact path="/" component={MainContainer} />
-        </Switch>
+        </Switch> */}
     </div>
 );
 
