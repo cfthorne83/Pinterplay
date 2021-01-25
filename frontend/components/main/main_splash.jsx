@@ -6,8 +6,8 @@ class MainSplash extends React.Component{
         return (
             <div className="splash">
                 <ul className='left'>
-                    <img classname="crop" src="https://i.pinimg.com/564x/b8/37/44/b8374405d939f619cbe3d6da220605fe.jpg" alt=""/>
-                    <img classname="crop" src="https://i.pinimg.com/236x/e5/2e/fc/e52efc533c98cbc37d5e6220d5839f24.jpg" alt="" />
+                    <img className="crop" src="https://i.pinimg.com/564x/b8/37/44/b8374405d939f619cbe3d6da220605fe.jpg" alt=""/>
+                    <img className="crop" src="https://i.pinimg.com/236x/e5/2e/fc/e52efc533c98cbc37d5e6220d5839f24.jpg" alt="" />
                 </ul> 
 
                 <section className="outer-section">
