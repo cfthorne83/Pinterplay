@@ -5,3 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Board.create(title: "board1", description: "test1", user_id: 11)
+Board.create(title: "board2", description: "test2", user_id: 11)
+Board.create(title: "board3", description: "test3", user_id: 11)

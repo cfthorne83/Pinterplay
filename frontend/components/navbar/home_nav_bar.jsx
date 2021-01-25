@@ -27,8 +27,8 @@ class HomeNavBar extends React.Component {
 
                 <nav className='nav-dropdowns-container'>
                     <ul className='nav-dropdowns'>
-                        <li><img className='update-bell' src="https://www.flaticon.com/svg/vstatic/svg/1827/1827347.svg?token=exp=1611428875~hmac=a2ec2aa117173d2d676fb56775dabbb9" alt="update bell" /></li>
-                        <li><img className='inbox-link' src="https://www.flaticon.com/svg/vstatic/svg/684/684849.svg?token=exp=1611428751~hmac=8da5ce304e20dd595c1c7beaea8b919e" alt="inbox link" /></li>
+                        {/* <li><img className='update-bell' src="https://www.flaticon.com/svg/vstatic/svg/1827/1827347.svg?token=exp=1611428875~hmac=a2ec2aa117173d2d676fb56775dabbb9" alt="update bell" /></li>
+                        <li><img className='inbox-link' src="https://www.flaticon.com/svg/vstatic/svg/684/684849.svg?token=exp=1611428751~hmac=8da5ce304e20dd595c1c7beaea8b919e" alt="inbox link" /></li> */}
                         <li id='initial'><Link to={`/users/${this.props.currentUser.id}`}>{this.props.currentUser.email[0]}</Link></li>
                         <li>
                             <LogoutDropdown
