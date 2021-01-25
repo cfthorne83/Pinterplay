@@ -16,7 +16,7 @@ class LogoutDropdown extends React.Component{
     handleBlur(){
         window.setTimeout(() => {
             this.setState({ show: false })
-        }, 50);
+        }, 100);
     }
 
     render() {
@@ -25,7 +25,7 @@ class LogoutDropdown extends React.Component{
             <button 
                 className='dropdown-outer'
                 onClick={this.handleClick} 
-                // onBlur={this.handleBlur}
+                onBlur={this.handleBlur}
                 >
     
                 <span>
