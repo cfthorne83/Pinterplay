@@ -28,7 +28,6 @@ class LogoutDropdown extends React.Component{
                 // onBlur={this.handleBlur}
                 >
     
-                    {/* <span>V</span> */}
                 <span>
                     <img className='dropdown-icon' src="https://cdn1.iconfinder.com/data/icons/arrows-vol-1-4/24/dropdown_arrow-512.png" alt=""/>
                 </span>

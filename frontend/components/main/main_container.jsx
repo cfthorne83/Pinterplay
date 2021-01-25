@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import MainSplash from './main_splash';
+import Main from './main';
 
 const mSTP = (state, ownProps) => {
     return {
@@ -14,4 +14,4 @@ const mDTP = (dispatch, ownProps) => {
     };
 };
 
-export default connect(mSTP, mDTP)(MainSplash);
+export default connect(mSTP, mDTP)(Main);

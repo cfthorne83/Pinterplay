@@ -12,9 +12,9 @@ const App = () => (
         <header>
             <NavBarContainer />
         </header>
-        <body>
+        <section>
             <MainContainer/>
-        </body>
+        </section>
 
     </div>
 );
