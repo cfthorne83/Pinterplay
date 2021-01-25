@@ -11,9 +11,11 @@ class MainSplash extends React.Component{
                 </ul> 
 
                 <section className="outer-section">
-                    <h1>Get your next</h1> 
-                    <h1 id="highlight">brilliant idea here</h1>
-                    <h1>. . . .</h1>
+                    <section className="title-section">
+                        <h1>Get your next</h1> 
+                        <h1 id="highlight">brilliant idea here</h1>
+                        <h1>. . . .</h1>
+                    </section>
 
                     <section className="inner-section">
                         <ul className="outer">

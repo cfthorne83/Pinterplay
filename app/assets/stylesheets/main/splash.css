@@ -1,31 +1,3 @@
-.splash img {
-    width: 130px;
-    padding: 4px;
-    border-radius: 12px;
-}
-
-.splash {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-} 
-
-.splash ul {
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-    width: 100%;
-} 
-
-.splash .inner-section {
-    display: flex;
-    flex-direction: row;
-}
-
-.outer-section {
-    margin-top: 20px;
-}
-
 .outer-section h1{
     font-size: 35px;
     margin: 0px;
@@ -34,6 +6,7 @@
     width: 100%;
     left: 0px;
     color: rgb(97, 140, 123);
+    width: 100%;
 }
 
 .outer-section h1:first-child {
@@ -44,6 +17,41 @@
     color: rgb(190, 190, 190);
 }
 
+.splash img {
+    width: 100%;
+    padding: 4px;
+    border-radius: 12px;
+}
+
+.splash {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+
+} 
+
+.splash ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    width: 100%;
+    padding: 4px;
+} 
+
+.splash .inner-section {
+    display: flex;
+    flex-direction: row;
+}
+
+.outer-section {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.splash section {
+    width: 100%;
+}
 
 
 .splash ul li {
@@ -64,16 +72,16 @@
 
 
 .splash .left img {
-    height: 200px;
-    width: 33px;
+    min-height: 200px;
+
     object-fit: cover;
     border-radius: 0px 12px 12px 0px;
     padding-left: 0px;
 }
 
 .splash .right img {
-    height: 220px;
-    width: 33px;
+    min-height: 220px;
+ 
     object-fit: cover;
     border-radius: 12px 0px 0px 12px;
     padding-right: 0px;
@@ -81,4 +89,6 @@
 
 .splash .right, .splash .left {
     margin-top: 80px;
+    width: 3%;
+    height: 100%
 }
