@@ -27,7 +27,7 @@ export const removeBoard = (boardId) => {
 
 export const fetchBoards = () => {
     return dispatch => {
-        return PostApiUtil.fetchBoards().then(boards => {
+        return BoardApiUtil.fetchBoards().then(boards => {
             dispatch(receiveBoards(boards))
         })
     }
@@ -35,7 +35,7 @@ export const fetchBoards = () => {
 
 export const fetchBoard = (boardId) => {
     return dispatch => {
-        return PostApiUtil.fetchBoard(boardId).then(board => {
+        return BoardApiUtil.fetchBoard(boardId).then(board => {
             dispatch(receiveBoard(board))
         })
     }
@@ -43,7 +43,7 @@ export const fetchBoard = (boardId) => {
 
 export const createBoard = (board) => {
     return dispatch => {
-        return PostApiUtil.createBoard(board).then(board => {
+        return BoardApiUtil.createBoard(board).then(board => {
             dispatch(receiveBoard(board))
         })
     }
@@ -51,14 +51,14 @@ export const createBoard = (board) => {
 
 export const updateBoard = (board) => {
     return dispatch => {
-        return PostApiUtil.updateBoard(board).then(board => {
+        return BoardApiUtil.updateBoard(board).then(board => {
             dispatch(receiveBoard(board))
         })
     }
 }
 export const deleteBoard = (boardId) => {
     return dispatch => {
-        return PostApiUtil.deleteBoard(boardId).then(() => {
+        return BoardApiUtil.deleteBoard(boardId).then(() => {
             dispatch(removeBoard(boardId))
         })
     }

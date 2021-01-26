@@ -5,7 +5,7 @@ import {
 } from '../actions/board_actions';
 
 
-const BoardsReducer = (state = {}, action) => {
+const boardsReducer = (state = {}, action) => {
     Object.freeze(state);
 
     switch (action.type) {
@@ -22,4 +22,4 @@ const BoardsReducer = (state = {}, action) => {
     }
 }
 
-export default BoardsReducer;
+export default boardsReducer;
