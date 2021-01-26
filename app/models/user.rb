@@ -15,6 +15,9 @@ class User < ApplicationRecord
     validates :email, :password_digest, presence: true
     validates :email, uniqueness: true
     validates :password, allow_nil: true, length: {minimum: 6}
+    # validates :username, :password_digest, :session_token, presence: true
+    # validates :username, uniqueness: true
+    # validates :password, length: { minimum: 6 }, allow_nil: true
 
     before_validation :ensure_session_token
 
@@ -36,20 +39,39 @@ class User < ApplicationRecord
         self.password_digest = BCrypt::Password.create(password)
     end
     
+    # def reset_session_token!
+    #     self.session_token = User.generate_session_token
+    #     self.save!
+    #     self.session_token
+    # end
+
     def reset_session_token!
-        self.session_token = User.generate_session_token
-        self.save!
+        generate_unique_session_token
+        save!
         self.session_token
     end
     
     private
 
-    def self.generate_session_token
-        SecureRandom.base64(64)
+    # def self.generate_session_token
+    #     SecureRandom.base64(64)
+    # end
+
+    def new_session_token
+        SecureRandom.urlsafe_base64
     end
 
     def ensure_session_token
-        self.session_token ||= User.generate_session_token
+        # self.session_token ||= User.generate_session_token
+        generate_unique_session_token unless self.session_token
+    end
+
+    def generate_unique_session_token
+        self.session_token = new_session_token
+        while User.find_by(session_token: self.session_token)
+          self.session_token = new_session_token
+        end
+        self.session_token
     end
 end
 
