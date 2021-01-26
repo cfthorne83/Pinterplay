@@ -14,10 +14,7 @@ class Profile extends React.Component{
             
         return (
             <div>
-                <ul>
-
-                <button>test</button>
-                </ul>
+                
                 {/* <button onClick={() => this.props.openModal('createBoard')}>+</button> */}
                 <BoardIndexContainer />
             </div>
