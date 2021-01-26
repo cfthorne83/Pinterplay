@@ -8,3 +8,5 @@
 Board.create(title: "board1", description: "test1", user_id: 11)
 Board.create(title: "board2", description: "test2", user_id: 11)
 Board.create(title: "board3", description: "test3", user_id: 11)
+
+User.create(email: "demoEmail", password: "123456")
