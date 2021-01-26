@@ -13,6 +13,7 @@ import NavBarContainer from './navbar/nav_bar_container';
 import Modal from './modal/modal';
 import MainContainer from "./main/main_container";
 import ProfileContainer from "./profile/profile_container";
+import BoardShowContainer from './boards/board_show_container';
 
 const App = () => (
     <div>
@@ -22,6 +23,7 @@ const App = () => (
         </header>
         <Switch >
             <Route exact path="/users/:userId" component={ProfileContainer} />
+            <Route exact path="/boards/:boardId" component={BoardShowContainer} />
             <Route exact path="/" component={MainContainer} />
         </Switch>
     </div>
