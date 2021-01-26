@@ -25,7 +25,7 @@ class LogoutDropdown extends React.Component{
             <button 
                 className='dropdown-outer'
                 onClick={this.handleClick} 
-                onBlur={this.handleBlur}
+                // onBlur={this.handleBlur}
                 >
     
                 <span>
