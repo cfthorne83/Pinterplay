@@ -10,7 +10,7 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = (dispatch, ownProps) => {
     return {
-        
+        openModal: modal => dispatch(openModal(modal))
     };
 };
 

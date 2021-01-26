@@ -8,12 +8,23 @@ class Profile extends React.Component{
 
     render() {
 
-        if (this.props.currentUser) {
-            return <BoardIndexContainer />
-            // return <h1>Profile Page</h1>
-        } else {
+        if (!this.props.currentUser) {
             return <Redirect to='/'/>
-        }
+        } 
+            
+        return (
+            <div>
+                <ul>
+
+                <button>test</button>
+                </ul>
+                {/* <button onClick={() => this.props.openModal('createBoard')}>+</button> */}
+                <BoardIndexContainer />
+            </div>
+
+        )
+
+        
     }
 }
 
