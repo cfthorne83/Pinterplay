@@ -14,7 +14,7 @@
  *= require_self
  */
 html, body, section, article, header
-h1, h2, p, strong, em, a, div, span, ul, li, nav, button, img {
+h1, h2, p, strong, em, a, div, span, ul, li, nav, img {
   margin: 0;
   border: 0;
   padding: 0;
