@@ -81,8 +81,8 @@ class SessionForm extends React.Component {
                                     />
                             </div>
 
-                            {/* <p className="errors">{this.props.errors}</p> */}
-                            <span className="errors">{this.renderErrors()}</span>
+                            <p className="errors">{Object.values(this.props.errors)}</p>
+                            {/* <span className="errors">{this.renderErrors()}</span> */}
                          
                                 <input
                                     type="password"
