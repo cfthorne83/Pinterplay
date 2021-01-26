@@ -43,9 +43,11 @@ class SessionForm extends React.Component {
     renderErrors() {
         return (
             <ul>
-                {this.props.errors.map((error, i) => {
-                    <li key={i}>{error}</li> 
-                })}
+                {this.props.errors.map((error, i) => (
+                    <li key={`error-${i}`}>
+                        {error}
+                    </li>
+                ))}
             </ul>
         );
     }
@@ -79,7 +81,8 @@ class SessionForm extends React.Component {
                                     />
                             </div>
 
-                            <p className="errors">{this.props.errors}</p>
+                            {/* <p className="errors">{this.props.errors}</p> */}
+                            <span className="errors">{this.renderErrors()}</span>
                          
                                 <input
                                     type="password"
@@ -98,7 +101,7 @@ class SessionForm extends React.Component {
 
                         <span className='other-form'>{this.props.otherForm}</span>
 
-                        {/* <span>{this.renderErrors()}</span> */}
+                        
 
                     </form> 
                 </div>
