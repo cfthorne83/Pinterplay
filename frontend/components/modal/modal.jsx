@@ -12,7 +12,7 @@ const Modal = ({ modal, closeModal, errors }) =>  {
         return null;
     }
     let component;
-    switch (modal) {
+    switch (modal.modal) {
         case 'login':
             component = <LoginFormContainer />;
             break;

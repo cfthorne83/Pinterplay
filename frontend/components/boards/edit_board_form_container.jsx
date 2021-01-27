@@ -1,38 +1,27 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import BoardForm from './board_form';
-import { fetchBoard, updateBoard } from '../../actions/board_actions';
+import EditBoardForm from './edit_board_form';
+import { fetchBoard, updateBoard, deleteBoard } from '../../actions/board_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
 
-class EditBoardForm extends React.Component {
 
-    componentDidMount() {
-        this.props.fetchBoard(this.props.match.params.postId);
-    }
-
-    render() {
-
-        if (!board) return null;
-        return (
-            <BoardForm
-                action={this.propsaction}
-                formType={this.propsformType}
-                post={this.propspost} />
-        );
-    }
-}
 
 const msp = (state, ownProps) => {
+// debugger
     return {
-        board: state.entities.boards[ownProps.match.params.postId],
-        formType: 'Update Board'
+        board: state.entities.boards[state.ui.modal.options],
+        boardId: state.ui.modal.options
     }
 }
+
 const mdp = (dispatch, ownProps) => {
     return {
         fetchBoard: (boardId) => dispatch(fetchBoard(boardId)),
-        action: (board) => dispatch(updateBoard(board))
+        updateBoard: (board) => dispatch(updateBoard(board)),
+        deleteBoard: (boardId) => dispatch(deleteBoard(boardId)),
+        openModal: (modal) => dispatch(openModal(modal)),
+        closeModal: (modal) => dispatch(closeModal(modal))            
     }
 }
 
