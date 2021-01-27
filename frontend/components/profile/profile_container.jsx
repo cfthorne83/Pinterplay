@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { openModal } from '../../actions/modal_actions';
+import { openModal, closeModal } from '../../actions/modal_actions';
 
 import Profile from './profile'
 
@@ -11,7 +11,8 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = (dispatch, ownProps) => {
     return {
-        openModal: modal => dispatch(openModal(modal))
+        openModal: modal => dispatch(openModal(modal)),
+        closeModal: modal => dispatch(closeModal(modal)) 
     };
 };
 

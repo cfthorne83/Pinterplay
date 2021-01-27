@@ -10,4 +10,3 @@ demo_user = User.create(email: "demoEmail", password: "123456")
 Board.create(title: "title1", description: "description1", user_id: demo_user.id)
 Board.create(title: "title2", description: "description2", user_id: demo_user.id)
 Board.create(title: "title3", description: "description3", user_id: demo_user.id)
-
