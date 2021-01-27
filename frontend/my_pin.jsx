@@ -3,7 +3,8 @@ import ReactDOM from "react-dom";
 
 import configureStore from './store/store';
 import Root from './components/root';
-import {fetchBoards, createBoard} from './actions/board_actions'
+// import {fetchBoards, createBoard} from './actions/board_actions'
+import {fetchBoards, createBoard} from './util/board_api_util'
 
 
 document.addEventListener('DOMContentLoaded', () => {

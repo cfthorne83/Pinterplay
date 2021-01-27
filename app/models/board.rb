@@ -9,7 +9,7 @@
 #  updated_at :datetime         not null
 #
 class Board < ApplicationRecord
-    validates :title, :description, :user_id, presence: true
+    validates :title, presence: true
 
     has_many :pins
 

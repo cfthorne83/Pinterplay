@@ -14,17 +14,19 @@ class Api::BoardsController < ApplicationController
 
     def create 
         @board = Board.new(board_params)
-
+        # debugger
         if @board.save
-            render :show
+            # debugger
+            render 'api/boards/show'
         else
-            render @board.errors.full_messages, status: 422
+            # debugger
+            render json: @board.errors.full_messages, status: 422
         end
     end
 
     def edit
         @board = Board.find(params[:id])
-
+        # debugger
         if @board.id == current_user.id
             render :edit
         else
@@ -34,12 +36,14 @@ class Api::BoardsController < ApplicationController
     end
 
     def update
-        @board = Board.find_by(params[:id])
-
+        @board = Board.find_by(id: params[:id])
+        # debugger
         if @board.update(board_params) && @board.user_id == current_user.id
+            # debugger
             render 'api/boards/show'
         else
-            render @board.errors.full_messages
+            # debugger
+            render json: @board.errors.full_messages, status: 422
         end
     end
 
