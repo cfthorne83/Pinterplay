@@ -11,7 +11,7 @@ class EditBoardForm extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchBoard(this.props.board);
+        this.props.fetchBoard(this.props.boardId);
     }
 
     handleSubmit(e) {
@@ -34,11 +34,11 @@ class EditBoardForm extends React.Component {
             <div>
                 <h1>Edit your board</h1>
 
-                {/* <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit}>
                     <input type="text" value={this.state.title} onChange={this.updateTitle} />
                     <textarea value={this.state.description} onChange={this.updateDescription} />
                     <button>Done</button>
-                </form> */}
+                </form>
             </div>
         );
     }

@@ -12,7 +12,7 @@ const msp = (state, ownProps) => {
 const mdp = (dispatch, ownProps) => {
     return {
         fetchBoard: (boardId) => dispatch(fetchBoard(boardId)),
-        openModal: modal => dispatch(openModal(modal)),
+        openModal: (modal, options) => { dispatch(openModal(modal, options))},
         closeModal: modal => dispatch(closeModal(modal)),
         updateBoard: (board) => dispatch(updateBoard(board)),
         deleteBoard: (boardId) => dispatch(deleteBoard(boardId)) 

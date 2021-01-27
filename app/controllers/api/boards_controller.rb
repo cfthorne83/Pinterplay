@@ -16,7 +16,7 @@ class Api::BoardsController < ApplicationController
         @board = Board.new(board_params)
 
         if @board.save
-            render 'api/boards/show'
+            render :show
         else
             render @board.errors.full_messages, status: 422
         end
@@ -55,6 +55,6 @@ class Api::BoardsController < ApplicationController
     private
 
     def board_params
-        params.require(:board).permit(:title, :user_id)
+        params.require(:board).permit(:title, :description)
     end
 end

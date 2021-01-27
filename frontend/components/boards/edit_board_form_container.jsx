@@ -20,7 +20,7 @@ const mdp = (dispatch, ownProps) => {
         fetchBoard: (boardId) => dispatch(fetchBoard(boardId)),
         updateBoard: (board) => dispatch(updateBoard(board)),
         deleteBoard: (boardId) => dispatch(deleteBoard(boardId)),
-        openModal: (modal) => dispatch(openModal(modal)),
+        openModal: (modal) => { dispatch(openModal(modal))},
         closeModal: (modal) => dispatch(closeModal(modal))            
     }
 }
