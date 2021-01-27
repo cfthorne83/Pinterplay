@@ -6,8 +6,7 @@ const modalReducer = (state = null, action) => {
 
     switch (action.type) {
         case OPEN_MODAL:
-            // debugger
-            // return action.modal;
+           
             return Object.assign({}, { modal: action.modal }, { options: action.options })
         case CLOSE_MODAL:
             return null;

@@ -20,11 +20,11 @@ class EditBoardForm extends React.Component {
     }
 
     updateDescription(e) {
-        this.setState({ body: e.currentTarget.value })
+        this.setState({ description: e.currentTarget.value })
     }
 
     updateTitle(e) {
-        this.setState({ description: e.currentTarget.value })
+        this.setState({ title: e.currentTarget.value })
     }
 
     render() {
