@@ -25,11 +25,15 @@ class BoardShow extends React.Component {
             if (!this.props.board) return null;
             
             return (
-                <div>
-                <p>{this.props.board.title}</p>
-                <p>{this.props.board.description}</p>
-                <img onClick={()  => {this.props.openModal('editBoard', this.props.board.id)}} src="https://static.thenounproject.com/png/384290-200.png" alt=""/>
-            </div>
+                <div className='board-show'>
+                    <h1>{this.props.board.title}</h1>
+                    <img 
+                        onClick={()  => {this.props.openModal('editBoard', this.props.board.id)}} 
+                        src="https://static.thenounproject.com/png/384290-200.png" 
+                        alt="edit-form-link"
+                        className='edit-form-link'
+                        />
+                </div>
         );
 
     }

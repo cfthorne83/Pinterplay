@@ -9,11 +9,11 @@
 }
 
 .board-index li {
-    width: 200px;
-    height: 150px;
+    width: 238px;
+    height: 153px;
     background-color: rgb(236, 236, 236);
     margin: 10px;
-    border-radius: 12px;  
+    border-radius: 19px;  
     font-size: 25px; 
 }
 

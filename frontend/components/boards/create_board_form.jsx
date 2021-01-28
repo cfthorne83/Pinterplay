@@ -31,8 +31,13 @@ class CreateBoardForm extends React.Component {
                 <h1>Create Board</h1>
                 <h2>Name</h2>
                 <form onSubmit={this.handleSubmit}>
-                    <input type="text" value={this.state.title} onChange={this.updateTitle} />
-                    <button>Create</button>
+                    <input 
+                        type="text" value={this.state.title} 
+                        onChange={this.updateTitle} 
+                        placeholder='Like "Places to go"'/>
+                    <div>
+                        <button>Create</button>
+                    </div>
                 </form>
             </div>
         )

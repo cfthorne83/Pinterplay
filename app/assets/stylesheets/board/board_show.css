@@ -1,0 +1,25 @@
+.board-show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 113px;
+}
+
+.board-show h1{
+    font-size: 35px;
+    font-weight: 600;
+    padding-right: 10px;
+}
+
+.board-show .edit-form-link {
+    height: 34px;
+    box-sizing: border-box;
+    background-color: rgb(236, 236, 236);
+    padding: 7px;
+    border-radius: 50%;
+}
+
+.board-show .edit-form-link:hover {
+    cursor: pointer;
+    background-color: rgb(236, 236, 236);
+}
