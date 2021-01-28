@@ -1,0 +1,16 @@
+.create-board-form h1{
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+    padding-top: 30px;    
+    padding-bottom: 30px;    
+}
+
+.create-board-form h2{
+    font-size: 12px;    
+}
+
+.create-board-form form{
+    display: flex;
+    flex-direction: column;
+}

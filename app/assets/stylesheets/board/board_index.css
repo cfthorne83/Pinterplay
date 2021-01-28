@@ -4,13 +4,16 @@
     list-style: none;
     margin-left: 40px;
     margin-right: 40px;
+    flex-wrap: wrap;
     /* background-color: darkmagenta; */
 }
 
 .board-index li {
     width: 200px;
+    height: 150px;
     background-color: rgb(236, 236, 236);
     margin: 10px;
     border-radius: 12px;  
     font-size: 25px; 
 }
+

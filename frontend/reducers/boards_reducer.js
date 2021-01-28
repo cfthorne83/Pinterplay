@@ -4,7 +4,6 @@ import {
     REMOVE_BOARD,
 } from '../actions/board_actions';
 
-
 const boardsReducer = (state = {}, action) => {
     Object.freeze(state);
 

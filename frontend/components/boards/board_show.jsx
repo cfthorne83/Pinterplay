@@ -11,17 +11,18 @@ class BoardShow extends React.Component {
         this.props.fetchBoard(this.props.match.params.boardId)
     }
 
-    componentDidUpdate(prevProps) {
+    // componentDidUpdate(prevProps) {
 
-        if (this.props.match.params.boardId !== prevProps.match.params.boardId){
-            this.props.fetchBoard(this.props.match.params.boardId);
-        }
-    }
+    //     if (this.props.match.params.boardId !== prevProps.match.params.boardId){
+    //         this.props.fetchBoard(this.props.match.params.boardId);
+    //     }
+    // }
 
     render() {
         // let pins = this.props.board.pins.map((pin, i) => {
             //     return <li>{pin.photo.attached}</li>
             // })
+            if (!this.props.board) return null;
             
             return (
                 <div>

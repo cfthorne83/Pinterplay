@@ -21,17 +21,20 @@ class Profile extends React.Component{
             
         return (
             <div className='profile-page'>
+
                 <section className='heading'>
                     <h1 className='initial-container'>
                         <p>{this.props.currentUser.email[0].toUpperCase()}</p>
                     </h1>
                     <h2>{this.props.currentUser.email}</h2>
                 </section>
+
                 <section className='mid'>
                     <div className='create-button-container'>
                         <button onClick={this.handleSubmit}>+</button>
                     </div>
                 </section>
+                
                 <BoardIndexContainer />
             </div>
 

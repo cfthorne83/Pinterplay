@@ -27,12 +27,11 @@ class CreateBoardForm extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className='create-board-form'>
                 <h1>Create Board</h1>
-
+                <h2>Name</h2>
                 <form onSubmit={this.handleSubmit}>
                     <input type="text" value={this.state.title} onChange={this.updateTitle} />
-                    <textarea value={this.state.description} onChange={this.updateDescription} />
                     <button>Create</button>
                 </form>
             </div>

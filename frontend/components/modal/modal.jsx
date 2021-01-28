@@ -11,6 +11,8 @@ const Modal = ({ modal, closeModal, errors }) =>  {
     if (!modal) {
         return null;
     }
+
+    let type = modal.modal
     let component;
     switch (modal.modal) {
         case 'login':
