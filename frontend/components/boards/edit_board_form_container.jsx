@@ -8,7 +8,6 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 
 
 const msp = (state, ownProps) => {
-// debugger
     return {
         board: state.entities.boards[state.ui.modal.options],
         boardId: state.ui.modal.options

@@ -25,7 +25,7 @@ class Api::BoardsController < ApplicationController
 
     def edit
         @board = Board.find(params[:id])
-        # debugger
+        
         if @board.id == current_user.id
             render :edit
         else
@@ -36,23 +36,22 @@ class Api::BoardsController < ApplicationController
 
     def update
         @board = Board.find_by(id: params[:id])
-        # debugger
-        if @board.update(board_params) && @board.user_id == current_user.id
-            # debugger
+        
+        if @board.update(board_params) && @board.user_id == current_user.id           
             render 'api/boards/show'
-        else
-            # debugger
+        else       
             render json: @board.errors.full_messages, status: 422
         end
     end
 
     def destroy
-        @board = current_user.board.find(params[:id])
-        if @board
-            @board.destroy
-        else
-            render 'api/boards/show'
-        end
+        @board = current_user.boards.find(params[:id])
+
+        @board.destroy
+        #     render :show
+        # else
+        #     render json @board.errors.full_messages, status: 422
+        # end
     end
 
     private

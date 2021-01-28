@@ -1,11 +1,13 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 
 class EditBoardForm extends React.Component {
     constructor(props) {
         super(props)
         this.state = this.props.board;
 
-        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleUpdate = this.handleUpdate.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
         this.updateTitle = this.updateTitle.bind(this);
         this.updateDescription = this.updateDescription.bind(this);
     }
@@ -14,9 +16,14 @@ class EditBoardForm extends React.Component {
         this.props.fetchBoard(this.props.boardId);
     }
 
-    handleSubmit(e) {
+    handleUpdate(e) {
         e.preventDefault();
         this.props.updateBoard(this.state).then(this.props.closeModal);
+    }
+
+    handleDelete(e) {
+        e.preventDefault();
+        this.props.deleteBoard(this.props.board.id).then(this.props.closeModal);
     }
 
     updateDescription(e) {
@@ -28,16 +35,21 @@ class EditBoardForm extends React.Component {
     }
 
     render() {
-        if (!this.props.board) return null;
+        // if (!this.props.board) return null;
+        if (!this.props.board) {
+            return <Redirect to='/' />
+            // return <Redirect to='/users/:userId' />
+        }
 
         return (
             <div>
                 <h1>Edit your board</h1>
 
-                <form onSubmit={this.handleSubmit}>
+                <form >
                     <input type="text" value={this.state.title} onChange={this.updateTitle} />
                     <textarea value={this.state.description} onChange={this.updateDescription} />
-                    <button>Done</button>
+                    <button onClick={this.handleUpdate}>Done</button>
+                    <button onClick={this.handleDelete}>Delete</button>
                 </form>
             </div>
         );
