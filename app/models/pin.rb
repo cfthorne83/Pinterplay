@@ -15,13 +15,17 @@ class Pin < ApplicationRecord
 
     has_one_attached :photo
 
+    belongs_to :user, 
+        foreign_key: :creator_id,
+        class_name: :User,
+        optional: true
+
     belongs_to :board, 
         foreign_key: :board_id,
         class_name: :Board,
         optional: true
 
-    belongs_to :user, 
-        foreign_key: :creator_id,
-        class_name: :User,
-        optional: true
+    has_many :boards,
+        through: :board_pin
+
 end
