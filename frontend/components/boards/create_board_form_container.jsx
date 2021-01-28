@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 
 import CreateBoardForm from './create_board_form';
 import { createBoard } from '../../actions/board_actions';
-// import { openModal, closeModal } from '../../actions/modal_actions';
+import { closeModal } from '../../actions/modal_actions';
 
 
 const msp = (state, ownProps) => {
@@ -13,7 +13,8 @@ const msp = (state, ownProps) => {
 
 const mdp = (dispatch, ownProps) => {
     return {
-        createBoard: (board) => dispatch(createBoard(board))
+        createBoard: (board) => dispatch(createBoard(board)),
+        closeModal: () => dispatch(closeModal())
     }
 }
 

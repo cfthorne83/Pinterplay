@@ -16,7 +16,7 @@ class EditBoardForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.updateBoard(this.state);
+        this.props.updateBoard(this.state).then(this.props.closeModal);
     }
 
     updateDescription(e) {
@@ -28,7 +28,7 @@ class EditBoardForm extends React.Component {
     }
 
     render() {
-        // if (!board) return null;
+        if (!this.props.board) return null;
 
         return (
             <div>

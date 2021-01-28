@@ -14,9 +14,11 @@ class BoardIndex extends React.Component {
         })
         
         return (
-            <div>
-                <ul>{boards}</ul>
-            </div>
+            
+                <ul className='board-index'>
+                        {boards}
+                </ul>  
+    
         )
     }
 }

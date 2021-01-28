@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 
 class CreateBoardForm extends React.Component {
     constructor(props) {
@@ -12,7 +13,7 @@ class CreateBoardForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.createBoard(this.state);
+        this.props.createBoard(this.state).then(this.props.closeModal)     
     }
 
     updateTitle(e) {

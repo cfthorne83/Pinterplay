@@ -7,6 +7,9 @@ class SessionForm extends React.Component {
         this.state = {
             email: "",
             password: "",
+            fname: "", 
+            lname: "", 
+            username: "",
             demo: null
         };
 
@@ -29,8 +32,8 @@ class SessionForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         if (this.state.demo){
-            this.setState({ email: 'demoEmail', password: '123456' });
-            this.props.login({ email: 'demoEmail', password: '123456' }).then(this.props.closeModal);
+            this.setState({ fname: "Demo", lname: "User", username: "demoUser", email: "demo@fakemail.com", password: "123456"});
+            this.props.login({ fname: "Demo", lname: "User", username: "demoUser", email: "demo@fakemail.com", password: "123456"}).then(this.props.closeModal);
         } else {
             this.props.processForm(this.state).then(this.props.closeModal);
         }

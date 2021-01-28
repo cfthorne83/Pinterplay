@@ -1,0 +1,54 @@
+.profile-page .heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 280px;
+}
+
+.profile-page .heading .initial-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(236, 236, 236);
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    margin-top: 45px;
+}
+
+.profile-page .heading h1 {
+    background-color: rgb(236, 236, 236);
+    font-size: 45px;
+    font-weight: 600;
+}
+
+.profile-page .heading h2 {
+    font-size: 30px;
+    font-weight: 550;
+    padding: 10px;
+}
+
+.profile-page .mid {
+    width: 100%;
+    height: 40px;
+    font-size: 40px;
+    display: flex;
+    justify-content: flex-end;
+    /* background-color: cyan; */
+
+}
+
+.profile-page .mid .create-button-container{
+    /* height: 100%; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
