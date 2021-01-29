@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import { closeModal } from '../../actions/modal_actions';
 import LoginFormContainer from '../session_form/login_form_container';
-import SignupFormContainer from '../session_form/login_form_container';
+import SignupFormContainer from '../session_form/signup_form_container';
 import CreateBoardFormContainer from '../boards/create_board_form_container';
 import EditBoardFormContainer from '../boards/edit_board_form_container';
 
@@ -12,13 +12,17 @@ const Modal = ({ modal, closeModal, errors }) =>  {
         return null;
     }
 
-    let type = modal.modal
+    // let type = modal.modal
     let component;
     switch (modal.modal) {
+    // switch (modal) {
+        
         case 'login':
+            
             component = <LoginFormContainer />;
             break;
         case 'signup':
+            debugger
             component = <SignupFormContainer />;
             break;
         case 'createBoard':
