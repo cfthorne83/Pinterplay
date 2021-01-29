@@ -1,4 +1,9 @@
-.create-board-form h1{
+.edit-board-form{
+    padding: 25px;
+    height: 514px;
+
+}
+.edit-board-form h1{
     font-size: 25px;
     font-weight: 600;
     text-align: center;
@@ -6,31 +11,64 @@
     padding-bottom: 30px;    
 }
 
-.create-board-form h2{
+.edit-board-form h2{
     font-size: 12px;  
     margin-bottom: 9px;  
+    margin-top: 19px;  
 }
 
-.create-board-form form{
+.edit-board-form form{
     display: flex;
     flex-direction: column;
 }
 
-.create-board-form form input{
+.edit-board-form form input{
     border-radius: 12px;
-    border: 1px solid rgb(219, 219, 219);
+    border: 2px solid rgb(219, 219, 219);
     min-height: 23px;
     padding: 9px;
 }
+.edit-board-form form input:hover{
+    border-color: rgb(219, 219, 219);
+}
+.edit-board-form form input:focus {
+    border: 3px solid rgb(138, 192, 255);
+    background-color: rgb(232, 240, 251);
+}
+.edit-board-form form textarea{
+    border-radius: 12px;
+    border: 2px solid rgb(219, 219, 219);
+    min-height: 123px;
+    padding: 9px;
+    font-size: 17px;
+    font-family: "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica;
 
-.create-board-form form div{
+}
+.edit-board-form form textarea:hover{
+        border-color: rgb(219, 219, 219);
+
+}
+.edit-board-form form textarea:focus{
+     border: 3px solid rgb(138, 192, 255);
+    background-color: rgb(232, 240, 251);
+    outline: none;
+
+}
+
+.edit-board-form form div{
     display: flex;
     justify-content: flex-end;
     height: 150px;
     align-items: flex-end;
 }
 
-.create-board-form form button{
+.edit-board-form ul{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 104px;
+}
+
+.edit-board-form form button{
     box-sizing: border-box;
     text-align: center;
     font-weight: 500;
@@ -39,4 +77,16 @@
     height: 45px;
     border-radius: 20px;
     color: rgb(86 86 86);
+}
+
+.edit-board-form .done{
+    color: white;
+    background-color: rgb(214, 0, 11);  
+}
+.edit-board-form .done:hover{
+    color: white;
+    background-color: rgb(156, 1, 8);  
+}
+.edit-board-form .delete:hover{
+     background-color: rgb(219, 218, 218);
 }

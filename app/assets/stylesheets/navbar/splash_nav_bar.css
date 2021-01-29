@@ -1,4 +1,74 @@
+.splash-nav-bar .logo {
+  height: 30px;
+  /* margin-left: 23px; */
+  /* width: 18px; */
+}
+
 li {
+    list-style: none;
+}
+
+.splash-nav-bar{
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  /* background-color: turquoise; */
+  height: 83px;  
+  padding: 30px
+}
+
+.splash-nav-bar ul{
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.splash-nav-bar li{
+  padding: 2px;
+  color: rgb(214, 0, 11);
+  font-size: 17px;
+}
+
+.splash-nav-bar .nav-links{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.splash-nav-bar .nav-links button {
+  box-sizing: border-box ;
+  width: 74px;
+  height: 40px;
+  text-align: center;
+  border-radius: 54px;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.splash-nav-bar .nav-links .login {
+  background-color: rgb(214, 0, 11);
+  color: white; 
+  margin-right: 17px;
+}
+
+.splash-nav-bar .nav-links .signup {
+  background-color: rgb(236, 236, 236);
+  color: black;
+}
+
+.nav-links .signup:hover {
+  background-color: rgb(219, 218, 218);
+  cursor: pointer;
+} 
+
+.nav-links .login:hover {
+  background-color: rgb(165, 0, 8);
+  cursor: pointer;
+}
+
+
+/* li {
     list-style: none;
 }
 
@@ -82,4 +152,4 @@ li {
 .nav-links .signup:hover {
   background-color: rgb(219, 218, 218);
   cursor: pointer;
-}
+} */

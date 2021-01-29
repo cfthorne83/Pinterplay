@@ -1,14 +1,20 @@
+.create-board-form {
+    padding: 25px;
+    height: 514px;
+}
+
 .create-board-form h1{
     font-size: 25px;
     font-weight: 600;
     text-align: center;
     padding-top: 30px;    
-    padding-bottom: 30px;    
+    padding-bottom: 28px;    
 }
 
 .create-board-form h2{
     font-size: 12px;  
-    margin-bottom: 9px;  
+    margin-bottom: 9px; 
+    margin-top: 22px; 
 }
 
 .create-board-form form{
@@ -18,15 +24,42 @@
 
 .create-board-form form input{
     border-radius: 12px;
-    border: 1px solid rgb(219, 219, 219);
+    border: 2px solid rgb(235, 235, 235);
     min-height: 23px;
     padding: 9px;
 }
+.create-board-form form input:hover{
+    border-color: rgb(219, 219, 219);
+}
+.create-board-form form input:focus {
+    border: 3px solid rgb(138, 192, 255);
+    background-color: rgb(232, 240, 251);
+}
+.create-board-form form textarea{
+    border-radius: 12px;
+    border: 2px solid rgb(235, 235, 235);
+    min-height: 124px;
+    padding: 9px;
+    font-size: 17px;
+    font-family: "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica;
+
+}
+.create-board-form form textarea:hover{
+        border-color: rgb(219, 219, 219);
+
+}
+.create-board-form form textarea:focus{
+     border: 3px solid rgb(138, 192, 255);
+    background-color: rgb(232, 240, 251);
+    outline: none;
+
+}
+
 
 .create-board-form form div{
     display: flex;
     justify-content: flex-end;
-    height: 150px;
+    height: 145px;
     align-items: flex-end;
 }
 
@@ -39,5 +72,9 @@
     height: 45px;
     border-radius: 20px;
     color: rgb(86 86 86);
+}
+
+.create-board-form form button:hover{
+     background-color: rgb(219, 218, 218);
 }
 

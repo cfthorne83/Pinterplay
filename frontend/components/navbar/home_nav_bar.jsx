@@ -14,7 +14,6 @@ class HomeNavBar extends React.Component {
                     <img className='home-logo' src="https://seeklogo.com/images/P/pinterest-badge-logo-82C89A5E42-seeklogo.com.png" alt="myPin Logo" />
                     <ul className='nav-links'>
                         <li><Link to='/'>Home</Link></li>
-                        <li>Today</li>
                         <li><Link to=''>Following</Link></li>
                     </ul>
                 </nav>
@@ -28,7 +27,7 @@ class HomeNavBar extends React.Component {
                 <nav className='nav-dropdowns-container'>
                     <ul className='nav-dropdowns'>
                         
-                        <li id='initial'><Link to={`/users/${this.props.currentUser.id}`}>{this.props.currentUser.email[0]}</Link></li>
+                        <li id='initial'><Link to={`/users/${this.props.currentUser.id}`}>{this.props.currentUser.email[0].toUpperCase()}</Link></li>
                         <li>
                             <LogoutDropdown
                             logout={this.props.logout}

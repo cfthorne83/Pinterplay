@@ -46,10 +46,14 @@ class EditBoardForm extends React.Component {
                 <h1>Edit your board</h1>
 
                 <form >
+                    <h2>Name</h2>
                     <input type="text" value={this.state.title} onChange={this.updateTitle} />
+                    <h2>Description</h2>
                     <textarea value={this.state.description} onChange={this.updateDescription} />
-                    <button onClick={this.handleUpdate}>Done</button>
-                    <button onClick={this.handleDelete}>Delete</button>
+                    <ul>
+                        <button className='delete'onClick={this.handleDelete}>Delete</button>
+                        <button className='done' onClick={this.handleUpdate}>Done</button>
+                    </ul>
                 </form>
             </div>
         );

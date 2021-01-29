@@ -35,6 +35,12 @@ class CreateBoardForm extends React.Component {
                         type="text" value={this.state.title} 
                         onChange={this.updateTitle} 
                         placeholder='Like "Places to go"'/>
+                    <h2>Description</h2>
+                    <textarea 
+                        type="text"
+                        onChange={this.updateDescription}
+                        />
+
                     <div>
                         <button>Create</button>
                     </div>

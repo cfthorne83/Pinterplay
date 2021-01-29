@@ -29,9 +29,9 @@ h1, h2, p, strong, em, a, input, div, span, form, button, ul, li {
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: white;
-  height: 310px;
-  width: 255px;
-  border-radius: 5px;
+  height: 560px;
+  width: 453px;
+  border-radius: 16px;
   padding: 10px;
 }
 .session-form {
@@ -42,9 +42,13 @@ h1, h2, p, strong, em, a, input, div, span, form, button, ul, li {
     font-family: 'Quicksand';
     font-weight: 900;
     float: right;
-    border-radius: 100px;
-    padding: 3px;
+    padding-right: 17px;
+    font-size: 25px;
+    padding: 11px;
+    border-radius: 50%;
+    width: 29px;
 }
+
 
 .session-form .close-x:hover {
    cursor: pointer;
@@ -57,24 +61,24 @@ h1, h2, p, strong, em, a, input, div, span, form, button, ul, li {
 }
 
 .form-logo {
-    height: 19px;
-    width: 19px;
+    height: 34px;;
+    /* width: 19px; */
     display: block;
-    margin-left: 120px;
-    margin-right: 120px;
-    padding-top: 9px;
+    margin-left: 215px;
+    /* margin-right: 120px; */
+    padding-top: 20px;
 }
 
 .session-form button, .session-form input {
-    width: 153px;
-    border-radius: 8px;
+    width: 261px;
+    border-radius: 14px;
     border-style: solid;
-    border-color: lightgrey;
-    border-width: 1px;
-    height: 22px;
+    border-color: #eaeaea;
+    border-width: 2px;
+    height: 44px;
     margin-bottom: 2px;
     margin-top: 2px;
-    font-size: 9px;
+    font-size: 16px;
 }
 
 .session-form input:hover {
@@ -110,27 +114,24 @@ h1, h2, p, strong, em, a, input, div, span, form, button, ul, li {
 
 .session-form h1 {
     color: rgb(51, 51, 51);
-    font-size: 20px;
+    font-size: 36px;
     font-weight: 550;
     letter-spacing: -.5px;
-    padding-top: 10px;
+    padding-top: 16px;
 }
 
 span .other-form {
     background-color: transparent;
     color: black;
-    font-size: 8px;
+    font-size: 15px;
     font-weight: 600;
-}
-
-span .other-form {
     cursor: pointer;
 }
 
 .session-form p {
-    font-size: 6px;
+    font-size: 11px;
     color:rgb(175, 175, 175);
-    padding-top: 2px;
+    padding-top: 5px;
 }
 
 .session-form p.bold {
@@ -139,18 +140,19 @@ span .other-form {
 }
 
 p.or {
-    font-size: 8px;
+    font-size: 13px;
     font-weight: 600;
-    padding: 6px;
+    padding: 13px;
     color: black;
 }
 
 .session-form .errors {
     color: red;
-    font-size: 7px;
+    font-size: 9px;
     font-weight: 400;
-    margin-left: 55px;
-    width: 145px;
+    margin-left: 85px;
+    width: 261px;
+    padding: 8px;
 }
 
 .session-form .border {

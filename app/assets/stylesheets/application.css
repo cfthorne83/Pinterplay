@@ -31,9 +31,7 @@ h1, h2, p, strong, em, a, div, span, ul, li, nav, img {
 header {
    color: rgb(17, 17, 17);
    font-size: 9px;
-   font-weight: bold;
-   padding-top: 4px;
-   
+   font-weight: bold;   
  }
 
  
