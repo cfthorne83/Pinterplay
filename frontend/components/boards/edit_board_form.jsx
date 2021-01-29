@@ -42,7 +42,7 @@ class EditBoardForm extends React.Component {
         }
 
         return (
-            <div>
+            <div className='edit-board-form'>
                 <h1>Edit your board</h1>
 
                 <form >

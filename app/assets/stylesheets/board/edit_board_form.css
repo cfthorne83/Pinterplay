@@ -1,0 +1,42 @@
+.create-board-form h1{
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+    padding-top: 30px;    
+    padding-bottom: 30px;    
+}
+
+.create-board-form h2{
+    font-size: 12px;  
+    margin-bottom: 9px;  
+}
+
+.create-board-form form{
+    display: flex;
+    flex-direction: column;
+}
+
+.create-board-form form input{
+    border-radius: 12px;
+    border: 1px solid rgb(219, 219, 219);
+    min-height: 23px;
+    padding: 9px;
+}
+
+.create-board-form form div{
+    display: flex;
+    justify-content: flex-end;
+    height: 150px;
+    align-items: flex-end;
+}
+
+.create-board-form form button{
+    box-sizing: border-box;
+    text-align: center;
+    font-weight: 500;
+    background-color: rgb(236, 236, 236);
+    width: 82px;
+    height: 45px;
+    border-radius: 20px;
+    color: rgb(86 86 86);
+}

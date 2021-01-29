@@ -6,7 +6,8 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 
 const msp = (state, ownProps) => {
     return {
-        board: state.entities.boards[ownProps.match.params.boardId]
+        board: state.entities.boards[ownProps.match.params.boardId],
+        currentUser: state.entities.users[state.session.id]
     }
 }
 const mdp = (dispatch, ownProps) => {

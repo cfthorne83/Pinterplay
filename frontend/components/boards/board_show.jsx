@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { Redirect } from 'react-router-dom';
 
 
 class BoardShow extends React.Component {
@@ -22,8 +22,12 @@ class BoardShow extends React.Component {
         // let pins = this.props.board.pins.map((pin, i) => {
             //     return <li>{pin.photo.attached}</li>
             // })
-            if (!this.props.board) return null;
-            
+            if (!this.props.board){
+                return null;
+            } else if (!this.props.currentUser) {
+                return <Redirect to='/' />
+            };
+
             return (
                 <div className='board-show'>
                     <h1>{this.props.board.title}</h1>
