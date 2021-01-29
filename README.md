@@ -1,25 +1,39 @@
-# README
+# myPin
+https://mypin-ct.herokuapp.com/#/
+## Overview
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+myPin is a pared down Pinterest clone that enables users to create profiles containing any number of personalized boards..
 
-Things you may want to cover:
+## Technologies
+- Ruby on Rails
+- Javascript
+- React
+- Redux
+- HTML
+- CSS
+- Postgres
+- AWS photo storage
 
-* Ruby version
+## Features
 
-* System dependencies
+### Board CRUD capabilty
+  My biggest challenge with this feature was fully implementing all aspects of fontend to backend interaction via the use of modals. A problem I faced was fetching the proper board to edit and without access to the ownProps match object. As a solution, I added an options key to the modal object. This key points to the board id to be updated or deleted. The board id is passed in at the board show page when the modal is opened as a second argument. 
 
-* Configuration
+## Full User Authorization
+  
+  
+##Future Direction
 
-* Database creation
+###Pins
+- Ability to pin other users' pins to boards or upload images to pin and share
+- Ability to view, edit, and create a single pin
+- Ability to view all pins associated with a single board
+- Ablility to view all pins associated with a user
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
+###Follows
+- Ablility to follow and unfolow other users' profiles and boards
+- Searching ca  
+ 
 
 * ...
 # myPin
