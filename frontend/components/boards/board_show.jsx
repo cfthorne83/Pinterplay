@@ -30,7 +30,7 @@ class BoardShow extends React.Component {
 
             return (
                 <div className='board-show'>
-                    <div>
+                    <div className="header"> 
                     <h1>{this.props.board.title}</h1>
                     <img 
                         onClick={()  => {this.props.openModal('editBoard', this.props.board.id)}} 
