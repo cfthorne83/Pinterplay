@@ -40,6 +40,9 @@ class BoardShow extends React.Component {
                         />
                     </div>
                         <button className="add-pin-btn">+</button>
+                        <div className="test">
+                            asdfsdfas
+                        </div>
                 </div>
         );
 
