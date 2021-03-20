@@ -10,7 +10,7 @@ class BoardIndex extends React.Component {
     render() {
 
         let boards = this.props.boards.map(board => {
-            return <li key={`${board.id}`}><Link to={`/boards/${board.id}`}>{board.title}</Link></li>
+            return <Link to={`/boards/${board.id}`}><li key={`${board.id}`}>{board.title}</li></Link>
         })
         
         return (
