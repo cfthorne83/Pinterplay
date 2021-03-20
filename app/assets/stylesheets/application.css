@@ -18,12 +18,26 @@ header {
    color: rgb(17, 17, 17);
    font-size: 9px;
    font-weight: bold;   
- }
-
- 
+}
 
  .home {
     height: 200px;
     width: 150px;
-
 }
+
+html {
+   height: 100%;
+}
+
+body {
+   height: 100%;
+}
+
+#root {
+   height: 100%;
+}
+
+.app {
+   height: 100%;
+}
+
