@@ -1,27 +1,28 @@
 html {
-    min-height: 100vh;
+    height: 100%;
 }
 
 body {
     // box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    // display: flex;
+    // flex-direction: column;
+    height: 100%;
+    background-color: red;
 }
 
 #root {
-    // box-sizing: border-box;
-    background-color: red;
-    display: flex;
-    flex-direction: column;
-    // min-height: 100%;
-    min-height: 100vh;
+    // // box-sizing: border-box;
+    // background-color: red;
+    // display: flex;
+    // flex-direction: column;
+    // // min-height: 100%;
+    // min-height: 100vh;
 }
 
 .app {   
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: aqua;
-    box-sizing: border-box;
+    // display: flex;
+    // flex-direction: column;
+    // min-height: 100vh;
+    // background-color: aqua;
+    // box-sizing: border-box;
 }
