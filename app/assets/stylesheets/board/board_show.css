@@ -23,3 +23,7 @@
     cursor: pointer;
     background-color: rgb(236, 236, 236);
 }
+
+.add-pin-btn {
+    position: sticky;
+}
