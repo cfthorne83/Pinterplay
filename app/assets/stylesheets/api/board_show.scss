@@ -1,29 +1,34 @@
 .board-show {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    height: 113px;
+    min-height: 100vh;
 
-    h1 {
-        font-size: 35px;
-    font-weight: 600;
-    padding-right: 10px;
-    }
+    .header {
+        display: flex;
+    
+        h1 {
+            font-size: 35px;
+            font-weight: 600;
+            padding-right: 10px;
+        }
 
-    .edit-form-link {
-        height: 34px;
-        box-sizing: border-box;
-        background-color: rgb(236, 236, 236);
-        padding: 7px;
-        border-radius: 50%;
-    }
+        .edit-form-link {
+            height: 34px;
+            box-sizing: border-box;
+            background-color: rgb(236, 236, 236);
+            padding: 7px;
+            border-radius: 50%;
+        }
 
-    .edit-form-link:hover {
-        cursor: pointer;
-        background-color: rgb(236, 236, 236);
+        .edit-form-link:hover {
+            cursor: pointer;
+            background-color: var(--hov-grey);
+        }
     }
 
     .add-pin-btn {
-        background-color: red;
+        cursor: pointer;
+        bottom: 0;
     }
 }
