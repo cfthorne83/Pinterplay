@@ -16,7 +16,7 @@ import ProfileContainer from "./profile/profile_container";
 import BoardShowContainer from './boards/board_show_container';
 
 const App = () => (
-    <div>
+    <div className="app">
         <Modal />
         <header>
             <NavBarContainer />
