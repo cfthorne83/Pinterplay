@@ -11,7 +11,8 @@ const msp = (state, ownProps) => {
 
 const mdp = (state, ownProps) => {
     return {
-        openModal: (modal, options) => dispatch(openModal(modal, options))
+        closeModal: (modal) => dispatch(closeModal(modal)),
+        openModal: (modal) => dispatch(openModal(modal))
     }
 }
 
