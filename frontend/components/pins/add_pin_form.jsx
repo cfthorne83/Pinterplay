@@ -26,23 +26,45 @@ class AddPinForm extends React.Component{
         e.preventDefault();
         
         let dropZone = document.querySelector(".drop-zone");
-        dropZone.classList.add("drop-zone--over")
+        dropZone.classList.add("drop-zone--over");
     }
     
     handleDragLeave() {
         let dropZone = document.querySelector(".drop-zone");
-        dropZone.classList.remove("drop-zone--over")
+        dropZone.classList.remove("drop-zone--over");
     }
     
     handleDragEnter() {
         let dropZone = document.querySelector(".drop-zone");
-        dropZone.classList.remove("drop-zone--over")
+        dropZone.classList.remove("drop-zone--over");
     }
-
+    
     handleDrop(e) {
         e.preventDefault();
+        
+        let dropZone = document.querySelector(".drop-zone");
+        let inputElement = document.querySelector(".drop-zone__input")
+        // console.log(e.dataTransfer.files);
+        if (e.dataTransfer.files.length) {
+            inputElement.files = e.dataTransfer.files;
+            console.log(dropZone);
+            console.log(inputElement.files[0]);
+            addDeleteBtn(inputElement.files[0]);
+        }
+        
+        dropZone.classList.remove("drop-zone--over");
+    }
+    
+    addDeleteBtn(file) {
+        let dropZone = document.querySelector(".drop-zone");
+        let deleteBtn = document.querySelector(".drop-zone__delete");
 
-        console.log(e.dataTransfer.files);
+        if (!deleteBtn) {
+            deleteBtn = document.createElement("button");
+            deleteBtn.classList.add("drop-zone__delete");
+            dropZone.append(deleteBtn);
+        }
+
     }
 
     render() {
@@ -78,8 +100,8 @@ class AddPinForm extends React.Component{
                         onDragEnd={this.handleDragEnter}
                         onDrop={this.handleDrop}
                     >
-                        {/* <span className="drop-zone__prompt">Drag and drop or click to upload</span> */}
-                        <div className="drop-zone__thumb" data-label="myfile-txt"></div>
+                        <span className="drop-zone__prompt">Drag and drop or click to upload</span>
+                        {/* <div className="drop-zone__thumb" data-label="myfile-txt"></div> */}
                         <input type="file" name="myFile" className="drop-zone__input" />
                     </div>
                 </form>
