@@ -40,9 +40,11 @@ class AddPinForm extends React.Component{
         dropZone.classList.remove("drop-zone--over");
     }
 
-    addDeleteBtn() {
-        let dropZone = document.querySelector(".drop-zone");
+    addDeleteBtn(dropZone, file) {
+        // let dropZone = document.querySelector(".drop-zone");
         let deleteBtn = document.querySelector(".drop-zone__delete");
+
+        console.log(file);
 
         if (dropZone.querySelector(".drop-zone__prompt")){
             dropZone.querySelector(".drop-zone__prompt").remove();
@@ -54,6 +56,15 @@ class AddPinForm extends React.Component{
             deleteBtn.innerText = "Delete";
             dropZone.append(deleteBtn);
         }
+
+        if (file.type.startsWith("image/")) {
+            const reader = new FileReader();
+
+            reader.readAsDataURL(file);
+            reader.onload = () => {
+                
+            }
+        }
     }
     
     handleDrop(e) {
@@ -64,9 +75,9 @@ class AddPinForm extends React.Component{
 
         if (e.dataTransfer.files.length) {
             inputElement.files = e.dataTransfer.files;
-            console.log(dropZone);
-            console.log(inputElement.files[0]);
-            this.addDeleteBtn();
+            // console.log(dropZone);
+            // console.log(inputElement.files[0]);
+            this.addDeleteBtn(dropZone, inputElement.files[0]);
         }
         
         dropZone.classList.remove("drop-zone--over");
