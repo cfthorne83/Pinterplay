@@ -4,6 +4,20 @@ class AddPinForm extends React.Component{
     constructor(props){
         super(props);
 
+        state = { selectedFile: null}
+
+        this.handleFileSelected = this.handleFileSelected.bind(this);
+        this.handleFileUpload = this.handleFileUpload.bind(this);
+    }
+
+
+    handleFileSelected(e) {
+        // console.log(e.target);
+        this.setState({ selectedFile = e.target })
+    }
+
+    handleFileUpload() {
+
     }
 
     render() {
@@ -13,8 +27,9 @@ class AddPinForm extends React.Component{
                     <input 
                         type="text"   
                         placeholder='Add your title'/>
-                    <h2>Description</h2>
                     <textarea />
+                    <input type="file" onChange={this.handleFileSelected}/>
+                    <button onClick={this.handleFileUpload}>Save</button>
                 </form>
             </div>
         )
