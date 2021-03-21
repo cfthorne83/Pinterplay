@@ -27,20 +27,25 @@ class AddPinForm extends React.Component{
                     <input 
                         type="text"   
                         placeholder='Add your title'/>
-                    <br/>
-                    <br/>
+                        <br/>
+                        <br/>
                     <textarea placeholder="Tell everyone what your Pin is about"/>
-                    <br/>
-                    <br/>
+                        <br/>
+                        <br/>
                     <input 
                         style={{display: "none"}} 
                         type="file" 
                         onChange={this.handleFileSelected}
                         ref={ fileInput => this.fileInput = fileInput }/>
                     <button onClick={ () => this.fileInput.click() }>Drag and drop or click to upload</button>
-                    <br/>
-                    <br/>
+                        <br/>
+                        <br/>
                     <button onClick={this.handleFileUpload}>Save</button>
+                        <br/>
+                        <br/>
+                    <div className="drop-zone">
+                        <span className="drop-zone__prompt">Drag and drop or click to upload</span>
+                    </div>
                 </form>
             </div>
         )
