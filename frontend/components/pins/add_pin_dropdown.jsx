@@ -8,7 +8,7 @@ class AddPinDropdown extends React.Component{
 
         this.handleBlur = this.handleBlur.bind(this);
         this.handleClick = this.handleClick.bind(this);
-        this.handlePinClick = this.handlePinClick.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleClick() {
@@ -21,8 +21,8 @@ class AddPinDropdown extends React.Component{
         }, 100);
     }
 
-    handlePinClick() {
-        console.log("gabba");
+    handleSubmit() {
+        this.props.openModal('createBoard');
     }
 
     render() {
@@ -36,8 +36,9 @@ class AddPinDropdown extends React.Component{
                     +
                         {this.state.show && (
                             <div className='dropdown-inner'>           
-                                <button onClick={this.props.openModal
-                                            ("addPin")} >
+                                {/* <button onClick={this.props.openModal
+                                            ("addPin")} > */}
+                                <button onClick={this.handleSubmit}>
                                     Pin
                                 </button>
                             </div>

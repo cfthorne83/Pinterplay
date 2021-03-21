@@ -1,7 +1,7 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 
-import AddPinDropdown from "../pins/add_pin_dropdown";
+import AddPinDropdownContainer from "../pins/add_pin_dropdown_container";
 
 
 class BoardShow extends React.Component {
@@ -43,7 +43,7 @@ class BoardShow extends React.Component {
                     </div>
                         {/* <button className="add-pin-btn">+</button> */}
                         {/* <input type="submit" value="+" className="add-pin-btn"/> */}
-                        <AddPinDropdown/>
+                        <AddPinDropdownContainer/>
                 </div>
         );
 
