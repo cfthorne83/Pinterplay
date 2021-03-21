@@ -14,6 +14,8 @@ import Modal from './modal/modal';
 import MainContainer from "./main/main_container";
 import ProfileContainer from "./profile/profile_container";
 import BoardShowContainer from './boards/board_show_container';
+import AddPinDropdown from "./pins/add_pin_dropdown";
+import AddPinFormContainer from "./pins/add_pin_form_container";
 
 const App = () => (
     <div className="app">
@@ -25,6 +27,7 @@ const App = () => (
             <Route exact path="/users/:userId" component={ProfileContainer} />
             <Route exact path="/boards/:boardId" component={BoardShowContainer} />
             <Route exact path="/" component={MainContainer} />
+            <Route exact path="/test" component={AddPinFormContainer} />
         </Switch>
     </div>
 );

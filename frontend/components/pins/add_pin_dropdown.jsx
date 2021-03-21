@@ -22,7 +22,7 @@ class AddPinDropdown extends React.Component{
     }
 
     handleSubmit() {
-        this.props.openModal('createBoard');
+        this.props.openModal('addPin');
     }
 
     render() {

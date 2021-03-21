@@ -1,5 +1,6 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import AddPinDropdownContainer from "../pins/add_pin_dropdown_container";
 
@@ -43,6 +44,7 @@ class BoardShow extends React.Component {
                     </div>
                        
                         <AddPinDropdownContainer/>
+                        <Link to="/test">test</Link>
                 </div>
         );
 

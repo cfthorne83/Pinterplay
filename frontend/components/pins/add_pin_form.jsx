@@ -8,23 +8,13 @@ class AddPinForm extends React.Component{
 
     render() {
         return (
-            <div className='create-board-form'>
-                <h1>Create Board</h1>
-                <h2>Name</h2>
-                <form onSubmit={this.handleSubmit}>
+            <div>
+                <form>
                     <input 
-                        type="text" value={this.state.title} 
-                        onChange={this.updateTitle} 
-                        placeholder='Like "Places to go"'/>
+                        type="text"   
+                        placeholder='Add your title'/>
                     <h2>Description</h2>
-                    <textarea 
-                        type="text"
-                        onChange={this.updateDescription}
-                        />
-
-                    <div>
-                        <button>Create</button>
-                    </div>
+                    <textarea />
                 </form>
             </div>
         )
