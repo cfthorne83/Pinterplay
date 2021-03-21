@@ -36,7 +36,8 @@ class AddPinDropdown extends React.Component{
                     +
                         {this.state.show && (
                             <div className='dropdown-inner'>           
-                                <button onClick={this.handlePinClick}>
+                                <button onClick={this.handlePinClick}
+                                        onClick={this.props.openModal()}>
                                     Pin
                                 </button>
                             </div>

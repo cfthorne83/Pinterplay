@@ -11,6 +11,8 @@ const msp = (state, ownProps) => {
 
 const mdp = (state, ownProps) => {
     return {
-        openModal: modal => dispatch(openModal(modal))
+        openModal: (modal, options) => dispatch(openModal(modal, options))
     }
 }
+
+export default connect(msp, mdp)(AddPinDropdown);
