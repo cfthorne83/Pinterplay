@@ -1,4 +1,5 @@
 import React from  "react";
+import { Link } from 'react-router-dom';
 
 class AddPinDropdown extends React.Component{
     constructor(props){
@@ -22,7 +23,7 @@ class AddPinDropdown extends React.Component{
     }
 
     handleSubmit() {
-        this.props.openModal('addPin');
+        // this.props.openModal('addPin');
     }
 
     render() {
@@ -36,9 +37,11 @@ class AddPinDropdown extends React.Component{
                     +
                         {this.state.show && (
                             <div className='dropdown-inner'>           
-                                <button onClick={this.handleSubmit}>
+                                {/* <button onClick={this.handleSubmit}>
                                     Pin
-                                </button>
+                                </button> */}
+                                {/* <Link to="/test">Pin</Link> */}
+                                <Link to="/test">Pin</Link>
                             </div>
                         )}
             </button>

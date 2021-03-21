@@ -24,10 +24,10 @@ const App = () => (
             <NavBarContainer />
         </header>
         <Switch >
+            <Route exact path="/test" component={AddPinFormContainer} />
             <Route exact path="/users/:userId" component={ProfileContainer} />
             <Route exact path="/boards/:boardId" component={BoardShowContainer} />
             <Route exact path="/" component={MainContainer} />
-            <Route exact path="/test" component={AddPinFormContainer} />
         </Switch>
     </div>
 );
