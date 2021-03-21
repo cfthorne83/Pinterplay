@@ -32,17 +32,16 @@ class BoardShow extends React.Component {
 
             return (
                 <div className='board-show'>
+
                     <div className="header"> 
-                    <h1>{this.props.board.title}</h1>
-                    <img 
-                        onClick={()  => {this.props.openModal('editBoard', this.props.board.id)}} 
-                        src="https://static.thenounproject.com/png/384290-200.png" 
-                        alt="edit-form-link"
-                        className='edit-form-link'
-                        />
+                        <h1>{this.props.board.title}</h1>
+                        <img 
+                            onClick={()  => {this.props.openModal('editBoard', this.props.board.id)}} 
+                            src="https://static.thenounproject.com/png/384290-200.png" 
+                            alt="edit-form-link"
+                            className='edit-form-link'/>
                     </div>
-                        {/* <button className="add-pin-btn">+</button> */}
-                        {/* <input type="submit" value="+" className="add-pin-btn"/> */}
+                       
                         <AddPinDropdownContainer/>
                 </div>
         );
