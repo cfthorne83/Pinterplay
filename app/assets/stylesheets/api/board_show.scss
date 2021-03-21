@@ -4,11 +4,19 @@
     flex-direction: column;
     align-items: center;
     min-height: 100%;
-    background-color: yellow;
 
-    button {
-        outline: none;
-    }
+    // button {
+    //     display: flex;
+    //     justify-content: center;
+    //     align-items: center;
+        
+    //     font-size: 3rem;
+    //     box-sizing: border-box;
+    //     background-color: red;
+    //     padding: 1rem;
+    //     // width: 50%;
+    //     border-radius: 50%;
+    // }
 
     .header {
         display: flex;
@@ -35,17 +43,9 @@
 
     .add-pin-btn {
         cursor: pointer;
-        position: sticky;
-        bottom: 0.25rem;
-        // position: -webkit-sticky;
-        position: sticky;
-        bottom: 0;
-        // bottom: 0px;
-    }
-
-    .test {
         background-color: red;
-        height: 500vh;
-        width: 100%;
+        border-radius: 50%;
+        padding: 1rem;
+        font-size: 2rem;
     }
 }
