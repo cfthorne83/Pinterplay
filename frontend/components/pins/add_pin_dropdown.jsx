@@ -32,17 +32,15 @@ class AddPinDropdown extends React.Component{
             <button
                 className="dropdown-outer"
                 onClick={this.handleClick}
-                onBlur={this.handleBlur}
+                // onBlur={this.handleBlur}
                 >
                     +
                         {this.state.show && (
-                            <div className='dropdown-inner'>           
-                                {/* <button onClick={this.handleSubmit}>
+                            <Link to="/pin-builder">
+                                <div className='dropdown-inner'>           
                                     Pin
-                                </button> */}
-                                {/* <Link to="/test">Pin</Link> */}
-                                <Link to="/test">Pin</Link>
-                            </div>
+                                </div>
+                            </Link>
                         )}
             </button>
 
