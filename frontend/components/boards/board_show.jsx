@@ -43,7 +43,7 @@ class BoardShow extends React.Component {
                     </div>
                         {/* <button className="add-pin-btn">+</button> */}
                         {/* <input type="submit" value="+" className="add-pin-btn"/> */}
-                        {/* <AddPinDropdown/> */}
+                        <AddPinDropdown/>
                 </div>
         );
 

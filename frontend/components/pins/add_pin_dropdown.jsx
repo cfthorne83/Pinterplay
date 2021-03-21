@@ -8,6 +8,7 @@ class AddPinDropdown extends React.Component{
 
         this.handleBlur = this.handleBlur.bind(this);
         this.handleClick = this.handleClick.bind(this);
+        this.handlePinClick = this.handlePinClick.bind(this);
     }
 
     handleClick() {
@@ -20,6 +21,10 @@ class AddPinDropdown extends React.Component{
         }, 100);
     }
 
+    handlePinClick() {
+        console.log("gabba");
+    }
+
     render() {
 
         return (
@@ -28,12 +33,10 @@ class AddPinDropdown extends React.Component{
                 onClick={this.handleClick}
                 onBlur={this.handleBlur}
                 >
-                    <span>
-                        <img className='dropdown-icon' src="https://cdn1.iconfinder.com/data/icons/arrows-vol-1-4/24/dropdown_arrow-512.png" alt=""/>
-                    </span>
+                    +
                         {this.state.show && (
                             <div className='dropdown-inner'>           
-                                <button>
+                                <button onClick={this.handlePinClick}>
                                     Pin
                                 </button>
                             </div>
