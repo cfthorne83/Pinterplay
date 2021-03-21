@@ -6,6 +6,7 @@ import LoginFormContainer from '../session_form/login_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
 import CreateBoardFormContainer from '../boards/create_board_form_container';
 import EditBoardFormContainer from '../boards/edit_board_form_container';
+import AddPinFormContainer from '../pins/add_pin_form_container';
 
 const Modal = ({ modal, closeModal, errors }) =>  {
     if (!modal) {
@@ -18,7 +19,6 @@ const Modal = ({ modal, closeModal, errors }) =>  {
     // switch (modal) {
         
         case 'login':
-            
             component = <LoginFormContainer />;
             break;
         case 'signup':
@@ -31,6 +31,8 @@ const Modal = ({ modal, closeModal, errors }) =>  {
         case 'editBoard':
             component = <EditBoardFormContainer />;
             break;
+        case "addPin":
+            component = <AddPinFormContainer />;
         default:
             return null;
     }
