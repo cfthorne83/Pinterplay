@@ -1,6 +1,8 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 
+import AddPinDropdown from "../pins/add_pin_dropdown";
+
 
 class BoardShow extends React.Component {
     constructor(props){
@@ -39,8 +41,9 @@ class BoardShow extends React.Component {
                         className='edit-form-link'
                         />
                     </div>
-                        <button className="add-pin-btn">+</button>
+                        {/* <button className="add-pin-btn">+</button> */}
                         {/* <input type="submit" value="+" className="add-pin-btn"/> */}
+                        {/* <AddPinDropdown/> */}
                 </div>
         );
 
