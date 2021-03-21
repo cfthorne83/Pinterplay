@@ -10,6 +10,7 @@ class AddPinForm extends React.Component{
         this.handleFileUpload = this.handleFileUpload.bind(this);
         this.handleDragOver = this.handleDragOver.bind(this);
         this.handleDrop = this.handleDrop.bind(this);
+        this.addDeleteBtn = this.addDeleteBtn.bind(this);
     }
 
 
@@ -38,60 +39,66 @@ class AddPinForm extends React.Component{
         let dropZone = document.querySelector(".drop-zone");
         dropZone.classList.remove("drop-zone--over");
     }
+
+    addDeleteBtn() {
+        let dropZone = document.querySelector(".drop-zone");
+        let deleteBtn = document.querySelector(".drop-zone__delete");
+
+        if (dropZone.querySelector(".drop-zone__prompt")){
+            dropZone.querySelector(".drop-zone__prompt").remove();
+        }
+
+        if (!deleteBtn) {
+            deleteBtn = document.createElement("button");
+            deleteBtn.classList.add("drop-zone__delete");
+            deleteBtn.innerText = "Delete";
+            dropZone.append(deleteBtn);
+        }
+    }
     
     handleDrop(e) {
         e.preventDefault();
         
         let dropZone = document.querySelector(".drop-zone");
         let inputElement = document.querySelector(".drop-zone__input")
-        // console.log(e.dataTransfer.files);
+
         if (e.dataTransfer.files.length) {
             inputElement.files = e.dataTransfer.files;
             console.log(dropZone);
             console.log(inputElement.files[0]);
-            addDeleteBtn(inputElement.files[0]);
+            this.addDeleteBtn();
         }
         
         dropZone.classList.remove("drop-zone--over");
     }
     
-    addDeleteBtn(file) {
-        let dropZone = document.querySelector(".drop-zone");
-        let deleteBtn = document.querySelector(".drop-zone__delete");
-
-        if (!deleteBtn) {
-            deleteBtn = document.createElement("button");
-            deleteBtn.classList.add("drop-zone__delete");
-            dropZone.append(deleteBtn);
-        }
-
-    }
+    
 
     render() {
         return (
-            <div>
-                <form>
-                    <input 
-                        type="text"   
-                        placeholder='Add your title'/>
-                        <br/>
-                        <br/>
-                    <textarea placeholder="Tell everyone what your Pin is about"/>
-                        <br/>
-                        <br/>
-                    <input 
-                        style={{display: "none"}} 
-                        type="file" 
-                        onChange={this.handleFileSelected}
-                        ref={ fileInput => this.fileInput = fileInput }/>
-                    <button onClick={ () => this.fileInput.click() }>Drag and drop or click to upload</button>
-                        <br/>
-                        <br/>
-                    <button onClick={this.handleFileUpload}>Save</button>
-                </form>
-                        <br/>
-                        <br/>
-                <form action="">
+            // <div>
+            //     <form>
+            //         <input 
+            //             type="text"   
+            //             placeholder='Add your title'/>
+            //             <br/>
+            //             <br/>
+            //         <textarea placeholder="Tell everyone what your Pin is about"/>
+            //             <br/>
+            //             <br/>
+            //         <input 
+            //             style={{display: "none"}} 
+            //             type="file" 
+            //             onChange={this.handleFileSelected}
+            //             ref={ fileInput => this.fileInput = fileInput }/>
+            //         <button onClick={ () => this.fileInput.click() }>Drag and drop or click to upload</button>
+            //             <br/>
+            //             <br/>
+            //         <button onClick={this.handleFileUpload}>Save</button>
+            //     </form>
+            //             <br/>
+            //             <br/>
+                <form >
 
                     <div 
                         className="drop-zone"  
@@ -99,13 +106,14 @@ class AddPinForm extends React.Component{
                         onDragLeave={this.handleDragLeave}
                         onDragEnd={this.handleDragEnter}
                         onDrop={this.handleDrop}
+                        // onDrop={this.addDeleteBtn}
                     >
                         <span className="drop-zone__prompt">Drag and drop or click to upload</span>
                         {/* <div className="drop-zone__thumb" data-label="myfile-txt"></div> */}
                         <input type="file" name="myFile" className="drop-zone__input" />
                     </div>
                 </form>
-            </div>
+            // </div>
         )
     }
 }
