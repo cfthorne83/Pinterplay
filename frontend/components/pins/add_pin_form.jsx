@@ -4,7 +4,7 @@ class AddPinForm extends React.Component{
     constructor(props){
         super(props);
 
-        state = { selectedFile: null}
+        this.state = { selectedFile: null}
 
         this.handleFileSelected = this.handleFileSelected.bind(this);
         this.handleFileUpload = this.handleFileUpload.bind(this);
@@ -13,11 +13,11 @@ class AddPinForm extends React.Component{
 
     handleFileSelected(e) {
         // console.log(e.target);
-        this.setState({ selectedFile = e.target })
+        this.setState({ selectedFile: e.target })
     }
 
     handleFileUpload() {
-
+        return null;
     }
 
     render() {
@@ -27,8 +27,19 @@ class AddPinForm extends React.Component{
                     <input 
                         type="text"   
                         placeholder='Add your title'/>
-                    <textarea />
-                    <input type="file" onChange={this.handleFileSelected}/>
+                    <br/>
+                    <br/>
+                    <textarea placeholder="Tell everyone what your Pin is about"/>
+                    <br/>
+                    <br/>
+                    <input 
+                        style={{display: "none"}} 
+                        type="file" 
+                        onChange={this.handleFileSelected}
+                        ref={ fileInput => this.fileInput = fileInput }/>
+                    <button onClick={ () => this.fileInput.click() }>Drag and drop or click to upload</button>
+                    <br/>
+                    <br/>
                     <button onClick={this.handleFileUpload}>Save</button>
                 </form>
             </div>
