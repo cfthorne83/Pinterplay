@@ -41,8 +41,8 @@ class AddPinForm extends React.Component{
     }
 
     addDeleteBtn(dropZone, file) {
-        // let dropZone = document.querySelector(".drop-zone");
         let deleteBtn = document.querySelector(".drop-zone__delete");
+        let thumbnail = document.querySelector(".drop-zone__thumb");
 
         console.log(file);
 
@@ -50,11 +50,15 @@ class AddPinForm extends React.Component{
             dropZone.querySelector(".drop-zone__prompt").remove();
         }
 
-        if (!deleteBtn) {
+        if (!thumbnail) {
+            thumbnail = document.createElement("div");
+            thumbnail.classList.add("drop-zone__thumb"); 
+            dropZone.append(thumbnail);
+
             deleteBtn = document.createElement("button");
             deleteBtn.classList.add("drop-zone__delete");
             deleteBtn.innerText = "Delete";
-            dropZone.append(deleteBtn);
+            thumbnail.append(deleteBtn);
         }
 
         if (file.type.startsWith("image/")) {
@@ -62,7 +66,8 @@ class AddPinForm extends React.Component{
 
             reader.readAsDataURL(file);
             reader.onload = () => {
-                
+                thumbnail.style.backgroundImage = "url(`${reader.result}`)";
+                // console.log("url(`${reader.result}`)");
             }
         }
     }
