@@ -9,6 +9,7 @@ class AddPinForm extends React.Component{
         this.handleFileSelected = this.handleFileSelected.bind(this);
         this.handleFileUpload = this.handleFileUpload.bind(this);
         this.handleDragOver = this.handleDragOver.bind(this);
+        this.handleDrop = this.handleDrop.bind(this);
     }
 
 
@@ -21,7 +22,9 @@ class AddPinForm extends React.Component{
         return null;
     }
 
-    handleDragOver() {
+    handleDragOver(e) {
+        e.preventDefault();
+        
         let dropZone = document.querySelector(".drop-zone");
         dropZone.classList.add("drop-zone--over")
     }
@@ -29,6 +32,17 @@ class AddPinForm extends React.Component{
     handleDragLeave() {
         let dropZone = document.querySelector(".drop-zone");
         dropZone.classList.remove("drop-zone--over")
+    }
+    
+    handleDragEnter() {
+        let dropZone = document.querySelector(".drop-zone");
+        dropZone.classList.remove("drop-zone--over")
+    }
+
+    handleDrop(e) {
+        e.preventDefault();
+
+        console.log(e.dataTransfer.files);
     }
 
     render() {
@@ -61,6 +75,8 @@ class AddPinForm extends React.Component{
                         className="drop-zone"  
                         onDragOver={this.handleDragOver}
                         onDragLeave={this.handleDragLeave}
+                        onDragEnd={this.handleDragEnter}
+                        onDrop={this.handleDrop}
                     >
                         {/* <span className="drop-zone__prompt">Drag and drop or click to upload</span> */}
                         <div className="drop-zone__thumb" data-label="myfile-txt"></div>
