@@ -21,11 +21,11 @@ class Pin < ApplicationRecord
         class_name: :User,
         optional: true
 
-    belongs_to :board, 
-        primary_key: :id,
-        foreign_key: :board_id,
-        class_name: :Board,
-        optional: true
+    # belongs_to :board, 
+    #     primary_key: :id,
+    #     foreign_key: :board_id,
+    #     class_name: :Board,
+    #     optional: true
 
     has_many :board_pins,
         primary_key: :id, 
@@ -35,5 +35,6 @@ class Pin < ApplicationRecord
 
     has_many :boards,
         through: :board_pin,
-        source: :board_id
+        source: :board, 
+        optional: true
 end
