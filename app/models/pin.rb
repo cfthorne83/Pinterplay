@@ -13,7 +13,7 @@ class Pin < ApplicationRecord
     validates :title, presence: true
     # validates :user_id, presence: true
 
-    has_one_attached :photo
+    # has_one_attached :photo
 
     belongs_to :user, 
         primary_key: :id,
@@ -21,11 +21,11 @@ class Pin < ApplicationRecord
         class_name: :User,
         optional: true
 
-    # belongs_to :board, 
-    #     primary_key: :id,
-    #     foreign_key: :board_id,
-    #     class_name: :Board,
-    #     optional: true
+    belongs_to :board, 
+        primary_key: :id,
+        foreign_key: :board_id,
+        class_name: :Board,
+        optional: true
 
     has_many :board_pins,
         primary_key: :id, 
@@ -34,7 +34,7 @@ class Pin < ApplicationRecord
         optional: true
 
     has_many :boards,
-        through: :board_pin,
+        through: :board_pins,
         source: :board, 
-        optional: true
+        # optional: true
 end
