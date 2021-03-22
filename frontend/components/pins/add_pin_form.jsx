@@ -1,4 +1,5 @@
 import React from "react";
+import arrow from "../../../images/up_arrow.png";
 
 class AddPinForm extends React.Component{
     constructor(props){
@@ -140,6 +141,8 @@ class AddPinForm extends React.Component{
                             onDrop={this.handleDrop}
                             onClick={this.handleClick}
                         >
+                            <div className="arrow"></div>
+                            {/* <img src={arrow} alt=""/> */}
                             <span className="drop-zone__prompt">Drag and drop or click to upload</span>
                             <input type="file" name="myFile" className="drop-zone__input" multiple/>
                         </div>
