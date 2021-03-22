@@ -128,24 +128,26 @@ class AddPinForm extends React.Component{
             //     </form>
             //             <br/>
             //             <br/>
-                <form >
-
-                    <div 
-                        className="drop-zone"  
-                        onDragOver={this.handleDragOver}
-                        onDragLeave={this.handleDragLeave}
-                        onDragEnd={this.handleDragEnter}
-                        onDrop={this.handleDrop}
-                        onClick={this.handleClick}
-                        // onDrop={this.addDeleteBtn}
-                    >
-                        <span className="drop-zone__prompt">Drag and drop or click to upload</span>
-                        {/* <div className="drop-zone__thumb" data-label="myfile-txt"></div> */}
-                        <input type="file" name="myFile" className="drop-zone__input" multiple/>
+            // </div>
+            <div className="add-pin-form-con">
+                <form className="add-pin-form">
+                    <div className="drop-zone-con"> 
+                        {/* <div 
+                            className="drop-zone"  
+                            onDragOver={this.handleDragOver}
+                            onDragLeave={this.handleDragLeave}
+                            onDragEnd={this.handleDragEnter}
+                            onDrop={this.handleDrop}
+                            onClick={this.handleClick}
+                        >
+                            <span className="drop-zone__prompt">Drag and drop or click to upload</span>
+                            <input type="file" name="myFile" className="drop-zone__input" multiple/>
+                        </div> */}
                     </div>
                 </form>
-            // </div>
-        )
+            </div>
+
+            )
     }
 }
 
