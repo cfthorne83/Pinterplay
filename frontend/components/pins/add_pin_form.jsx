@@ -44,7 +44,7 @@ class AddPinForm extends React.Component{
         let deleteBtn = document.querySelector(".drop-zone__delete");
         let thumbnail = document.querySelector(".drop-zone__thumb");
 
-        console.log(file);
+        // console.log(file.name);
 
         if (dropZone.querySelector(".drop-zone__prompt")){
             dropZone.querySelector(".drop-zone__prompt").remove();
@@ -65,10 +65,9 @@ class AddPinForm extends React.Component{
             const reader = new FileReader();
 
             reader.readAsDataURL(file);
-            reader.onLoad = () => {
-                thumbnail.style.backgroundImage = "url(`${reader.result}`)";
-                // console.log("url(`${reader.result}`)");
-            }
+            reader.onload = () => {
+                thumbnail.style.backgroundImage = `url(${reader.result})`;
+            };
         }
     }
     
