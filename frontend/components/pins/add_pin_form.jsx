@@ -142,7 +142,7 @@ class AddPinForm extends React.Component{
                         </div>
                     </div>
 
-                    <div className="add-pin-title">
+                    <div className="pin-title-con">
                         <input 
                             type="text"   
                             placeholder='Add your title'/>
