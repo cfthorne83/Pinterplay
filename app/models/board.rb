@@ -12,7 +12,7 @@ class Board < ApplicationRecord
     validates :title, presence: true
 
     belongs_to :user 
-    
+
     has_many :board_pins, 
         primary_key: :id,
         foreign_key: :board_id,
@@ -20,7 +20,7 @@ class Board < ApplicationRecord
 
     has_many :pins, 
         through: :board_pins,
-        source: :pin,
-        optional: true
+        source: :pin
+        # optional: true
 
 end
