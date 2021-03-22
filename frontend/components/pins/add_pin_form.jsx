@@ -11,6 +11,7 @@ class AddPinForm extends React.Component{
         this.handleDragOver = this.handleDragOver.bind(this);
         this.handleDrop = this.handleDrop.bind(this);
         this.addDeleteBtn = this.addDeleteBtn.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
 
@@ -63,11 +64,12 @@ class AddPinForm extends React.Component{
 
         if (file.type.startsWith("image/")) {
             const reader = new FileReader();
-
             reader.readAsDataURL(file);
             reader.onload = () => {
                 thumbnail.style.backgroundImage = `url(${reader.result})`;
             };
+        } else {
+            thumbnail.style.backgroundImage = null;
         }
     }
     
@@ -76,7 +78,7 @@ class AddPinForm extends React.Component{
         
         let dropZone = document.querySelector(".drop-zone");
         let inputElement = document.querySelector(".drop-zone__input")
-
+        
         if (e.dataTransfer.files.length) {
             inputElement.files = e.dataTransfer.files;
             // console.log(dropZone);
@@ -85,6 +87,19 @@ class AddPinForm extends React.Component{
         }
         
         dropZone.classList.remove("drop-zone--over");
+    }
+    
+    handleClick() {
+        let inputElement = document.querySelector(".drop-zone__input")
+        let dropZone = document.querySelector(".drop-zone");
+
+        inputElement.click();
+
+        inputElement.addEventListener("change", e => {
+            if (inputElement.files.length) {
+                this.addDeleteBtn(dropZone, inputElement.files[0]);
+            }
+        });
     }
     
     
@@ -121,11 +136,12 @@ class AddPinForm extends React.Component{
                         onDragLeave={this.handleDragLeave}
                         onDragEnd={this.handleDragEnter}
                         onDrop={this.handleDrop}
+                        onClick={this.handleClick}
                         // onDrop={this.addDeleteBtn}
                     >
                         <span className="drop-zone__prompt">Drag and drop or click to upload</span>
                         {/* <div className="drop-zone__thumb" data-label="myfile-txt"></div> */}
-                        <input type="file" name="myFile" className="drop-zone__input" />
+                        <input type="file" name="myFile" className="drop-zone__input" multiple/>
                     </div>
                 </form>
             // </div>
