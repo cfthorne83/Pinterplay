@@ -9,4 +9,12 @@
 #  updated_at :datetime         not null
 #
 class BoardPin < ApplicationRecord
+
+    belongs_to :pin,
+        primary_key: :id,
+        foreign_key: :pin_id
+
+    belongs_to :board,
+        primary_key: :id,
+        foreign_key: :board_id 
 end

@@ -11,26 +11,29 @@
 #
 class Pin < ApplicationRecord
     validates :title, presence: true
-    # validates :creator_id, presence: true
+    # validates :user_id, presence: true
 
     has_one_attached :photo
 
     belongs_to :user, 
-        foreign_key: :creator_id,
+        primary_key: :id,
+        foreign_key: :user_id,
         class_name: :User,
         optional: true
 
     belongs_to :board, 
+        primary_key: :id,
         foreign_key: :board_id,
         class_name: :Board,
         optional: true
 
-    # has_many :board_pins, 
-    #     foreign_key: :pin_id,
-
+    has_many :board_pins,
+        primary_key: :id, 
+        foreign_key: :pin_id,
+        class_name: :BoardPin,
+        optional: true
 
     has_many :boards,
-        through: :board_pin
-
-
+        through: :board_pin,
+        source: :board_id
 end
