@@ -132,7 +132,7 @@ class AddPinForm extends React.Component{
             <div className="add-pin-form-con">
                 <form className="add-pin-form">
                     <div className="drop-zone-con"> 
-                        {/* <div 
+                        <div 
                             className="drop-zone"  
                             onDragOver={this.handleDragOver}
                             onDragLeave={this.handleDragLeave}
@@ -142,7 +142,7 @@ class AddPinForm extends React.Component{
                         >
                             <span className="drop-zone__prompt">Drag and drop or click to upload</span>
                             <input type="file" name="myFile" className="drop-zone__input" multiple/>
-                        </div> */}
+                        </div>
                     </div>
                 </form>
             </div>
