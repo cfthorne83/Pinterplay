@@ -64,11 +64,11 @@ class AddPinForm extends React.Component{
         if (file.type.startsWith("image/")) {
             const reader = new FileReader();
 
-            // reader.readAsDataURL(file);
-            // reader.onload = () => {
-            //     thumbnail.style.backgroundImage = "url(`${reader.result}`)";
-            //     // console.log("url(`${reader.result}`)");
-            // }
+            reader.readAsDataURL(file);
+            reader.onLoad = () => {
+                thumbnail.style.backgroundImage = "url(`${reader.result}`)";
+                // console.log("url(`${reader.result}`)");
+            }
         }
     }
     
