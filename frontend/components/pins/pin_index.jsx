@@ -1,18 +1,18 @@
 import { connect } from 'react-redux';
-import BoardIndex from './board_index';
-import { fetchBoards, deleteBoard } from '../../actions/board_actions';
+import PinIndex from './pin_index';
+import { fetchPins, deletePin } from '../../actions/pin_actions';
 
 const msp = (state, ownProps) => {
     return { 
-        boards: Object.values(state.entities.boards)
+        pins: Object.values(state.entities.pins)
     }
 }
 
 const mdp = (dispatch, ownProps) => {
     return {
-        fetchBoards: () => dispatch(fetchBoards()),
-        deleteBoard: (boardId) => dispatch(deleteBoard(boardId))
+        fetchPins: () => dispatch(fetchPins()),
+        deletePin: (pinId) => dispatch(deletePin(pinId))
     }
 }
 
-export default connect(msp, mdp)(BoardIndex);
+export default connect(msp, mdp)(PinIndex);
