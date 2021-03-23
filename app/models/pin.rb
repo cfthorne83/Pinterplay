@@ -16,15 +16,15 @@ class Pin < ApplicationRecord
 
     # has_one_attached :photo
 
-    belongs_to :user
+    # belongs_to :user
     # , 
         # primary_key: :id,
         # foreign_key: :user_id,
         # class_name: :User,
         # optional: true
 
-    belongs_to :board
-    # , 
+    # belongs_to :board
+    # p, 
         # primary_key: :id,
         # foreign_key: :board_id,
         # class_name: :Board,
