@@ -11,25 +11,25 @@ export const fetchPin = (pinId) => {
     })
 }
 
-export const createBoard = (board) => {
+export const createPin = (pin) => {
     return $.ajax({
-        url: '/api/boards',
+        url: '/api/pins',
         method: 'POST',
-        data: { board }
+        data: { pin }
     })
 }
 
-export const updateBoard = (board) => {
+export const updatePin = (pin) => {
     return $.ajax({
-        url: `/api/boards/${board.id}`,
+        url: `/api/pins/${pin.id}`,
         method: 'PATCH',
-        data: { board }
+        data: { pin }
     })
 }
 
-export const deleteBoard = (boardId) => {
+export const deletePin = (pinId) => {
     return $.ajax({
-        url: `/api/boards/${boardId}`,
+        url: `/api/pins/${pinId}`,
         method: "DELETE"
     })
 }
