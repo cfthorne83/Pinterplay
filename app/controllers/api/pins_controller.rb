@@ -9,7 +9,7 @@ class PinsController < ApplicationController
 
     def show 
         @pin = Pin.find(params[:id])
-        reder :show
+        render :show
     end
 
     def create
