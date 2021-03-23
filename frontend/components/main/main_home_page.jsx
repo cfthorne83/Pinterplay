@@ -1,4 +1,5 @@
 import React from 'react';
+import PinIndexContainer from "../pins/pin_index_container";
 
 class MainHome extends React.Component{
 
@@ -7,8 +8,7 @@ class MainHome extends React.Component{
         return (
 
         <div>
-            <section className='home-page'>     
-            </section>
+            <PinIndexContainer />       
         </div>
         );
     }
