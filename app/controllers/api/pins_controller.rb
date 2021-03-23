@@ -1,4 +1,4 @@
-class PinsController < ApplicationController
+class Api::PinsController < ApplicationController
 
     before_action :ensure_logged_in
 
@@ -11,7 +11,7 @@ class PinsController < ApplicationController
         @pin = Pin.find(params[:id])
         render :show
     end
-
+ 
     def create
         @pin = Pin.new(pin_params)
         @pin.user_id = current_user.id
