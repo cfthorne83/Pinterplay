@@ -33,33 +33,33 @@ export const fetchPins = () => {
     }
 }
 
-export const fetchBoard = (boardId) => {
+export const fetchPin = (pinId) => {
     return dispatch => {
-        return BoardApiUtil.fetchBoard(boardId).then(data => {
-            dispatch(receiveBoard(data))
+        return PinApiUtil.fetchPin(pinId).then(data => {
+            dispatch(receivePin(data))
         })
     }
 }
 
-export const createBoard = (board) => {
+export const createPin = (pin) => {
     return dispatch => {
-        return BoardApiUtil.createBoard(board).then(board => {
-            dispatch(receiveBoard(board))
+        return PinApiUtil.createPin(pin).then(pin => {
+            dispatch(receivePin(pin))
         })
     }
 }
 
-export const updateBoard = (board) => {
+export const updatePin = (pin) => {
     return dispatch => {
-        return BoardApiUtil.updateBoard(board).then(board => {
-            dispatch(receiveBoard(board))
+        return PinApiUtil.updatePin(pin).then(pin => {
+            dispatch(receivePin(pin))
         })
     }
 }
-export const deleteBoard = (boardId) => {
+export const deletePin = (pinId) => {
     return dispatch => {
-        return BoardApiUtil.deleteBoard(boardId).then(() => {
-            dispatch(removeBoard(boardId))
+        return PinApiUtil.deletePin(pinId).then(() => {
+            dispatch(removePin(pinId))
         })
     }
 }
