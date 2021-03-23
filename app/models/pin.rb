@@ -27,14 +27,14 @@ class Pin < ApplicationRecord
         class_name: :Board,
         optional: true
 
-    has_many :board_pins,
-        primary_key: :id, 
-        foreign_key: :pin_id,
-        class_name: :BoardPin,
-        optional: true
+    # has_many :board_pins,
+    #     primary_key: :id, 
+    #     foreign_key: :pin_id,
+    #     class_name: :BoardPin,
+    #     optional: true
 
-    has_many :boards,
-        through: :board_pins,
-        source: :board, 
-        # optional: true
+    # has_many :boards,
+    #     through: :board_pins,
+    #     source: :board, 
+    #     # optional: true
 end
