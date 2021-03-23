@@ -11,7 +11,11 @@ class PinIndex extends React.Component {
 
         let pins = this.props.pins.map(pin => {
             // return <Link to={`/pins/${pin.id}`}><li key={`${pin.id}`}>{pin.title}</li></Link>
-            return pin.title;
+            return (
+                    // <li key={`${pin.id}`}>{pin.title}</li>
+                    <li key={`${pin.id}`}><img src={`${pin.image_url}`} alt=""/></li>
+                )
+                
         })
         
         return (
