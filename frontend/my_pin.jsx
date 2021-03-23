@@ -4,7 +4,9 @@ import ReactDOM from "react-dom";
 import configureStore from './store/store';
 import Root from './components/root';
 // import {fetchBoards, createBoard} from './actions/board_actions'
-import {fetchBoards, createBoard, deleteBoard} from './util/board_api_util'
+import {fetchBoards, createBoard, deleteBoard} from './util/board_api_util';
+import { fetchPins } from './util/pin_api_util';
+
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -29,6 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
     window.fetchBoards = fetchBoards;
     window.createBoard = createBoard;
     window.deleteBoard = deleteBoard;
+
+    window.fetchPins = fetchPins;
 
 
     ReactDOM.render(<Root store={store}/>, root)

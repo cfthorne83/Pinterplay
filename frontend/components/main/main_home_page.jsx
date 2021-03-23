@@ -8,7 +8,7 @@ class MainHome extends React.Component{
         return (
 
         <div>
-            <PinIndexContainer />       
+            {/* <PinIndexContainer />        */}
         </div>
         );
     }
