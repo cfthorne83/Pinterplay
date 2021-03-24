@@ -1,6 +1,7 @@
 import React from "react";
 // import arrow from "../../../images/up_arrow.png";
-import PinIndexContainer from "./pin_index_container"
+import PinIndexContainer from "./pin_index_container";
+import BoardDropdownContainer from "../boards/board_dropdown_container";
 
 class CreatePinForm extends React.Component{
     constructor(props){
@@ -19,6 +20,7 @@ class CreatePinForm extends React.Component{
         this.handleSubmit = this.handleSubmit.bind(this);
         this.updateTitle = this.updateTitle.bind(this);
         this.updateDescription = this.updateDescription.bind(this);
+        this.updateBoard = this.updateBoard.bind(this);
         // this.updateImageUrl = this.updateImageUrl.bind(this);
     }
 
@@ -157,6 +159,11 @@ class CreatePinForm extends React.Component{
             console.log(this.state);
     }
 
+    updateBoard(e) {
+        this.setState({ board_id: e.currentTarget.value });
+            console.log(this.state);
+    }
+
     // updateImageUrl(e) {
     //     this.setState({ image_url: "image" });
     // }
@@ -166,8 +173,7 @@ class CreatePinForm extends React.Component{
 
         let boards = this.props.boards.map( board => {
             return (
-                // <li>{board.title}</li>
-                <option value={board.title}> 
+                <option key={board.id} value={board.title}> 
                     {board.title}
                 </option>
             )
@@ -175,7 +181,6 @@ class CreatePinForm extends React.Component{
 
         return (
             <div className="create-pin-form-con">
-                {/* <ul>{boards}</ul> */}
                 
                 <form 
                     onSubmit={this.handleSubmit} 
@@ -201,9 +206,15 @@ class CreatePinForm extends React.Component{
                     </div>
 
                     <div className="pin-title-con">
-                        <select name="" id="">
-                    {boards}
-                </select>
+
+                        {/* <select 
+                            value={this.state.board_id}
+                            onChange={this.updateBoard}>
+                            {boards}
+                        </select> */}
+                        <BoardDropdownContainer/>
+                            <br/>
+                            <br/>
                         <input 
                             type="text"
                             value={this.state.title}  
@@ -214,11 +225,6 @@ class CreatePinForm extends React.Component{
                         <textarea 
                             onChange={this.updateDescription}
                             placeholder="Tell everyone what your Pin is about"/>
-                            <br/>
-                            <br/>
-                        {/* <input type="file" 
-                                onChange={this.handleInput}
-                        /> */}
                             <br/>
                             <br/>
                         <button>Save</button>
