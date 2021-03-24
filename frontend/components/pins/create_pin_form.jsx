@@ -18,7 +18,8 @@ class CreatePinForm extends React.Component{
         this.handleInput = this.handleInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.updateTitle = this.updateTitle.bind(this);
-        this.updateImageUrl = this.updateImageUrl.bind(this);
+        this.updateDescription = this.updateDescription.bind(this);
+        // this.updateImageUrl = this.updateImageUrl.bind(this);
     }
 
 
@@ -148,9 +149,14 @@ class CreatePinForm extends React.Component{
             console.log(this.state);
     }
 
-    updateImageUrl(e) {
-        this.setState({ image_url: "image" });
+    updateDescription(e) {
+        this.setState({ description: e.currentTarget.value });
+            console.log(this.state);
     }
+
+    // updateImageUrl(e) {
+    //     this.setState({ image_url: "image" });
+    // }
     
 
     render() {
@@ -206,7 +212,7 @@ class CreatePinForm extends React.Component{
                             <br/>
                             <br/>
                         <textarea 
-                        
+                            onChange={this.updateDescription}
                             placeholder="Tell everyone what your Pin is about"/>
                             <br/>
                             <br/>

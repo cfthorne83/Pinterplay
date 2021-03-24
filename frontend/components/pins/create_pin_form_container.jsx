@@ -5,7 +5,7 @@ import { createPin } from '../../actions/pin_actions';
 
 const msp = (state, ownProps) => {
     return {
-        pin: { title: "", image_url: "" }
+        pin: { title: "", image_url: "", description: "", board_id: "" }
     }
 }
 
