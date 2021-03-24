@@ -13,7 +13,7 @@ class PinIndex extends React.Component {
             // return <Link to={`/pins/${pin.id}`}><li key={`${pin.id}`}>{pin.title}</li></Link>
             return (
 
-                    <li key={`${pin.id}`}>
+                    <li className="pin-item" key={`${pin.id}`}>
                         <h1>{pin.title}</h1>
                         <img src={`${pin.image_url}`} alt=""/>
                     </li>
