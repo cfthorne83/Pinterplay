@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 
-import AddPinForm from "./create_pin_form";
+import CreatePinForm from "./create_pin_form";
 import { createPin } from '../../actions/pin_actions';
 
 const msp = (state, ownProps) => {
@@ -15,4 +15,4 @@ const mdp = (state, ownProps) => {
     }
 }   
 
-export default connect(msp, mdp)(AddPinForm);
+export default connect(msp, mdp)(CreatePinForm);

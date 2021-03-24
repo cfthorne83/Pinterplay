@@ -14,7 +14,7 @@ import Modal from './modal/modal';
 import MainContainer from "./main/main_container";
 import ProfileContainer from "./profile/profile_container";
 import BoardShowContainer from './boards/board_show_container';
-import AddPinDropdown from "./pins/create_pin_dropdown";
+import CreatePinDropdown from "./pins/create_pin_dropdown";
 import CreatePinFormContainer from "./pins/create_pin_form_container";
 
 const App = () => (

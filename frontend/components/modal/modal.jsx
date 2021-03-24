@@ -32,9 +32,6 @@ const Modal = ({ modal, closeModal, errors }) =>  {
         case 'editBoard':
             component = <EditBoardFormContainer />;
             break;
-        case 'addPin':
-            component = <CreatePinFormContainer/>;
-            break;
         default:
             return null;
     }
