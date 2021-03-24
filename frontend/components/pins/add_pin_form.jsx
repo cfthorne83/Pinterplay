@@ -13,6 +13,7 @@ class AddPinForm extends React.Component{
         this.handleDrop = this.handleDrop.bind(this);
         this.addDeleteBtn = this.addDeleteBtn.bind(this);
         this.handleClick = this.handleClick.bind(this);
+        this.handleInput = this.handleInput.bind(this);
     }
 
 
@@ -42,6 +43,7 @@ class AddPinForm extends React.Component{
         dropZone.classList.remove("drop-zone--over");
     }
 
+    // adds delete btn and displays file image
     addDeleteBtn(dropZone, file) {
         let deleteBtn = document.querySelector(".drop-zone__delete");
         let thumbnail = document.querySelector(".drop-zone__thumb");
@@ -66,6 +68,7 @@ class AddPinForm extends React.Component{
         if (file.type.startsWith("image/")) {
             const reader = new FileReader();
             reader.readAsDataURL(file);
+
             reader.onload = () => {
                 thumbnail.style.backgroundImage = `url(${reader.result})`;
             };
@@ -74,6 +77,20 @@ class AddPinForm extends React.Component{
         }
     }
     
+    handleClick() {
+        let inputElement = document.querySelector(".drop-zone__input")
+        let dropZone = document.querySelector(".drop-zone");
+
+        inputElement.click();
+
+        inputElement.addEventListener("change", e => {
+            // console.log(e.target.files)
+            if (inputElement.files.length) {
+                this.addDeleteBtn(dropZone, inputElement.files[0]);
+            }
+        });
+    }
+
     handleDrop(e) {
         e.preventDefault();
         
@@ -90,19 +107,18 @@ class AddPinForm extends React.Component{
         dropZone.classList.remove("drop-zone--over");
     }
     
-    handleClick() {
-        let inputElement = document.querySelector(".drop-zone__input")
-        let dropZone = document.querySelector(".drop-zone");
+    handleInput(e) {
+        let files = e.target.files;
 
-        inputElement.click();
+        let reader = new FileReader();
+        reader.readAsDataURL(files[0]);
 
-        inputElement.addEventListener("change", e => {
-            if (inputElement.files.length) {
-                this.addDeleteBtn(dropZone, inputElement.files[0]);
-            }
-        });
+        reader.onload = () => {
+            // console.log(e.target.result);
+            const imageUrl = e.target.result;
+            console.log(imageUrl);
+        }
     }
-    
     
 
     render() {
@@ -138,7 +154,12 @@ class AddPinForm extends React.Component{
                         >
                             {/* <img src={arrow} alt=""/> */}
                             <span className="drop-zone__prompt">Drag and drop or click to upload</span>
-                            <input type="file" name="myFile" className="drop-zone__input" multiple/>
+                            <input 
+                                // onChange={this.handleInput}
+                                type="file" 
+                                name="myFile" 
+                                className="drop-zone__input" 
+                                multiple/>
                         </div>
                     </div>
 
@@ -149,6 +170,12 @@ class AddPinForm extends React.Component{
                             <br/>
                             <br/>
                         <textarea placeholder="Tell everyone what your Pin is about"/>
+                        <br/>
+                        <br/>
+                <input type="file" 
+                        name="" 
+                        onChange={this.handleInput}
+                        />
                     </div>
                 </form>
             </div>
