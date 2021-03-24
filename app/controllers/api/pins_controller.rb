@@ -16,7 +16,6 @@ class Api::PinsController < ApplicationController
         @pin = Pin.new(pin_params)
         # @pin.user_id = current_user.id
         # @pin.board_id = current_user.id
-
         if @pin.save 
             render "api/pins/show"
         else
@@ -55,6 +54,6 @@ class Api::PinsController < ApplicationController
     private
 
     def pin_params
-        params.require(:pin).permit(:title, :user_id)
+        params.require(:pin).permit(:title, :image_url)
     end
 end

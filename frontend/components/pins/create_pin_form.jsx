@@ -124,7 +124,7 @@ class CreatePinForm extends React.Component{
             const image = reader.result;
             // console.log(image);
         }
-        this.setState({ imageUrl: "image" });
+        this.setState({ image_url: "image" });
         // debugger
     }
 
