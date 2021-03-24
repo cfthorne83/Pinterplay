@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 
-import AddPinDropdown from "./add_pin_dropdown";
+import CreatePinDropdown from "./create_pin_dropdown";
 import { openModal, closeModal } from '../../actions/modal_actions';
 
 const msp = (state, ownProps) => {
@@ -16,4 +16,4 @@ const mdp = (state, ownProps) => {
     }
 }
 
-export default connect(msp, mdp)(AddPinDropdown);
+export default connect(msp, mdp)(CreatePinDropdown);

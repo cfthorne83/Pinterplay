@@ -1,7 +1,7 @@
 import React from "react";
 // import arrow from "../../../images/up_arrow.png";
 
-class AddPinForm extends React.Component{
+class CreatePinForm extends React.Component{
     constructor(props){
         super(props);
 
@@ -183,4 +183,4 @@ class AddPinForm extends React.Component{
     }
 }
 
-export default AddPinForm;
+export default CreatePinForm;

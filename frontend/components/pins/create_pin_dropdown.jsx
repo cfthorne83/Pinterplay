@@ -1,7 +1,7 @@
 import React from  "react";
 import { Link } from 'react-router-dom';
 
-class AddPinDropdown extends React.Component{
+class CreatePinDropdown extends React.Component{
     constructor(props){
         super(props);
 
@@ -48,4 +48,4 @@ class AddPinDropdown extends React.Component{
     }
 }
 
-export default AddPinDropdown;
+export default CreatePinDropdown;

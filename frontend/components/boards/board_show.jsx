@@ -2,7 +2,7 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
-import AddPinDropdownContainer from "../pins/add_pin_dropdown_container";
+import CreatePinDropdownContainer from "../pins/create_pin_dropdown_container";
 
 
 class BoardShow extends React.Component {
@@ -43,7 +43,7 @@ class BoardShow extends React.Component {
                             className='edit-form-link'/>
                     </div>
                        
-                        <AddPinDropdownContainer/>
+                        <CreatePinDropdownContainer/>
                         <Link to="/test">test</Link>
                 </div>
         );
