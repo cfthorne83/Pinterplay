@@ -22,7 +22,6 @@ class User < ApplicationRecord
     before_validation :ensure_session_token
 
     has_many :boards
-
     has_many :pins
 
     def self.find_by_credentials(email, password)

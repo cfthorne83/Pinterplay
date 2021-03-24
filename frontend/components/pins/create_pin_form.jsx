@@ -205,7 +205,9 @@ class CreatePinForm extends React.Component{
                             placeholder='Add your title'/>
                             <br/>
                             <br/>
-                        <textarea placeholder="Tell everyone what your Pin is about"/>
+                        <textarea 
+                        
+                            placeholder="Tell everyone what your Pin is about"/>
                             <br/>
                             <br/>
                         {/* <input type="file" 

@@ -10,20 +10,19 @@
 #  updated_at :datetime         not null
 #
 class Pin < ApplicationRecord
-    validates :title, presence: true
-    # validate :ensure_image
-    # validates :user_id, presence: true
+    validates :title, :user_id, :board_id, :image_url, presence: true
+    validate :ensure_image
 
     # has_one_attached :photo
 
-    # belongs_to :user
+    belongs_to :user
     # , 
         # primary_key: :id,
         # foreign_key: :user_id,
         # class_name: :User,
         # optional: true
 
-    # belongs_to :board
+    belongs_to :board
     # p, 
         # primary_key: :id,
         # foreign_key: :board_id,
@@ -41,9 +40,9 @@ class Pin < ApplicationRecord
     #     source: :board, 
     #     # optional: true
 
-    # def ensure_image
-    #     unless self.image#.attached?
-    #       errors[:photo] << "is required to create a Pin."
-    #     end
-    # end
+    def ensure_image
+        unless self.image_url #.attached?
+          errors[:photo] << "is required to create a Pin."
+        end
+    end
 end
