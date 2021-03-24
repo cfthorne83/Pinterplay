@@ -58,7 +58,7 @@ class BoardDropdown extends React.Component{
                 >
     
                 <span>
-                    <h1>asdf</h1>
+                    <h1>asdfasf</h1>
                     <img className='dropdown-icon' src="https://cdn1.iconfinder.com/data/icons/arrows-vol-1-4/24/dropdown_arrow-512.png" alt=""/>
                 </span>
 
