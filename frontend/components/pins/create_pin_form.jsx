@@ -114,36 +114,34 @@ class CreatePinForm extends React.Component{
     
     handleInput(e) {
         let files = e.target.files;
-        // let image;
+        let image;
+        let that = this;
 
         let reader = new FileReader();
         reader.readAsDataURL(files[0]);
 
         reader.onload = () => {
             // const image = e.target.result;
-            const image = reader.result;
+            image = reader.result;
             // console.log(image);
+            that.setState({ image_url: image });
+            console.log(that.state);
         }
-        this.setState({ image_url: "image" });
-        // debugger
+        // console.log(image);
     }
 
     handleSubmit(e) {
-        // debugger
         e.preventDefault();
         this.props.createPin(this.state)
     }
 
     updateTitle(e) {
-        this.setState({ 
-            title: e.currentTarget.value, 
-            image_url: "image" });
+        this.setState({ title: e.currentTarget.value });
             console.log(this.state);
     }
 
     updateImageUrl(e) {
         this.setState({ image_url: "image" });
-        // debugger
     }
     
 
@@ -203,8 +201,7 @@ class CreatePinForm extends React.Component{
                             <br/>
                             <br/>
                         <input type="file" 
-                                // onChange={this.handleInput}
-                                onChange={this.updateImageUrl}
+                                onChange={this.handleInput}
                         />
                             <br/>
                             <br/>
@@ -212,7 +209,8 @@ class CreatePinForm extends React.Component{
                     </div>
 
                 </form>
-
+                <PinIndexContainer />
+                
             </div>
 
             )
