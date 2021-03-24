@@ -114,9 +114,8 @@ class AddPinForm extends React.Component{
         reader.readAsDataURL(files[0]);
 
         reader.onload = () => {
-            // console.log(e.target.result);
             const imageUrl = e.target.result;
-            console.log(imageUrl);
+            // console.log(imageUrl);
         }
     }
     
