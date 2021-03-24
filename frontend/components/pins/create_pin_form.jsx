@@ -1,5 +1,6 @@
 import React from "react";
 // import arrow from "../../../images/up_arrow.png";
+import PinIndexContainer from "./pin_index_container"
 
 class CreatePinForm extends React.Component{
     constructor(props){
@@ -209,11 +210,10 @@ class CreatePinForm extends React.Component{
                     </div>
 
                 </form>
-                <PinIndexContainer />
                 
             </div>
 
-            )
+        )
     }
 }
 
