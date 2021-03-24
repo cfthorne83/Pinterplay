@@ -22,7 +22,10 @@ class CreatePinForm extends React.Component{
         // this.updateImageUrl = this.updateImageUrl.bind(this);
     }
 
-
+    componentDidMount() {
+        this.props.fetchBoards();
+    }
+    
     // handleFileSelected(e) {
     //     // console.log(e.target);
     //     this.setState({ selectedFile: e.target })
@@ -160,26 +163,20 @@ class CreatePinForm extends React.Component{
     
 
     render() {
+
+        let boards = this.props.boards.map( board => {
+            return (
+                // <li>{board.title}</li>
+                <option value={board.title}> 
+                    {board.title}
+                </option>
+            )
+        })
+
         return (
-            // <div>
-            //     <form>
-            //         
-            //             <br/>
-            //             <br/>
-            //         <input 
-            //             style={{display: "none"}} 
-            //             type="file" 
-            //             onChange={this.handleFileSelected}
-            //             ref={ fileInput => this.fileInput = fileInput }/>
-            //         <button onClick={ () => this.fileInput.click() }>Drag and drop or click to upload</button>
-            //             <br/>
-            //             <br/>
-            //         <button onClick={this.handleFileUpload}>Save</button>
-            //     </form>
-            //             <br/>
-            //             <br/>
-            // </div>
             <div className="create-pin-form-con">
+                {/* <ul>{boards}</ul> */}
+                
                 <form 
                     onSubmit={this.handleSubmit} 
                     className="create-pin-form">
@@ -204,6 +201,9 @@ class CreatePinForm extends React.Component{
                     </div>
 
                     <div className="pin-title-con">
+                        <select name="" id="">
+                    {boards}
+                </select>
                         <input 
                             type="text"
                             value={this.state.title}  
