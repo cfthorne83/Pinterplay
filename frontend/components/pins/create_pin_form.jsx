@@ -53,6 +53,9 @@ class CreatePinForm extends React.Component{
         let deleteBtn = document.querySelector(".drop-zone__delete");
         let thumbnail = document.querySelector(".drop-zone__thumb");
 
+        let that = this;
+        let image;
+
         // console.log(file.name);
 
         if (dropZone.querySelector(".drop-zone__prompt")){
@@ -76,6 +79,10 @@ class CreatePinForm extends React.Component{
 
             reader.onload = () => {
                 // console.log(reader.result);
+            image = reader.result;
+            // console.log(image);
+            that.setState({ image_url: image });
+            console.log(that.state);
                 thumbnail.style.backgroundImage = `url(${reader.result})`;
             };
         } else {
@@ -184,7 +191,7 @@ class CreatePinForm extends React.Component{
                             <input 
                                 // onChange={this.handleInput}
                                 type="file" 
-                                name="myFile" 
+                                // name="myFile" 
                                 className="drop-zone__input" 
                                 multiple/>
                         </div>
