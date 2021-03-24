@@ -9,7 +9,6 @@ class CreatePinDropdown extends React.Component{
 
         this.handleBlur = this.handleBlur.bind(this);
         this.handleClick = this.handleClick.bind(this);
-        // this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleClick() {

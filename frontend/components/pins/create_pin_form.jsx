@@ -5,7 +5,8 @@ class CreatePinForm extends React.Component{
     constructor(props){
         super(props);
 
-        this.state = { selectedFile: null}
+        // this.state = { selectedFile: null}
+        this.state = this.props.pin;
 
         this.handleFileSelected = this.handleFileSelected.bind(this);
         this.handleFileUpload = this.handleFileUpload.bind(this);
@@ -14,6 +15,7 @@ class CreatePinForm extends React.Component{
         this.addDeleteBtn = this.addDeleteBtn.bind(this);
         this.handleClick = this.handleClick.bind(this);
         this.handleInput = this.handleInput.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
 
@@ -118,6 +120,19 @@ class CreatePinForm extends React.Component{
             // console.log(imageUrl);
         }
     }
+
+    handleSubmit(e) {
+        e.preventDefault();
+        this.props.createPin(this.state);
+    }
+
+    updateTitle(e) {
+        this.setState({ title: e.currentTarget.value })
+    }
+
+    updateImageUrl(e) {
+        this.setState({ imagUrl: e.currentTarget.value })
+    }
     
 
     render() {
@@ -141,7 +156,10 @@ class CreatePinForm extends React.Component{
             //             <br/>
             // </div>
             <div className="create-pin-form-con">
-                <form className="create-pin-form">
+                <form 
+                    onSubmit={this.handleSubmit} 
+                    className="create-pin-form">
+
                     <div className="drop-zone-con"> 
                         <div 
                             className="drop-zone"  
@@ -151,7 +169,6 @@ class CreatePinForm extends React.Component{
                             onDrop={this.handleDrop}
                             onClick={this.handleClick}
                         >
-                            {/* <img src={arrow} alt=""/> */}
                             <span className="drop-zone__prompt">Drag and drop or click to upload</span>
                             <input 
                                 // onChange={this.handleInput}
@@ -164,18 +181,21 @@ class CreatePinForm extends React.Component{
 
                     <div className="pin-title-con">
                         <input 
-                            type="text"   
+                            type="text"
+                            value={this.state.title}  
+                            onChange={this.updateTitle} 
                             placeholder='Add your title'/>
                             <br/>
                             <br/>
                         <textarea placeholder="Tell everyone what your Pin is about"/>
-                        <br/>
-                        <br/>
-                <input type="file" 
-                        name="" 
-                        onChange={this.handleInput}
+                            <br/>
+                            <br/>
+                        <input type="file" 
+                                name="" 
+                                onChange={this.handleInput}
                         />
-
+                            <br/>
+                            <br/>
                         <button>Save</button>
                     </div>
                 </form>
