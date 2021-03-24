@@ -9,7 +9,7 @@ class CreatePinDropdown extends React.Component{
 
         this.handleBlur = this.handleBlur.bind(this);
         this.handleClick = this.handleClick.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+        // this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleClick() {
@@ -20,10 +20,6 @@ class CreatePinDropdown extends React.Component{
         window.setTimeout( () => {
             this.setState({ show: false })
         }, 100);
-    }
-
-    handleSubmit() {
-        // this.props.openModal('addPin');
     }
 
     render() {

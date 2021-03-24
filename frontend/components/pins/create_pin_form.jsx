@@ -140,8 +140,8 @@ class CreatePinForm extends React.Component{
             //             <br/>
             //             <br/>
             // </div>
-            <div className="add-pin-form-con">
-                <form className="add-pin-form">
+            <div className="create-pin-form-con">
+                <form className="create-pin-form">
                     <div className="drop-zone-con"> 
                         <div 
                             className="drop-zone"  
@@ -175,6 +175,8 @@ class CreatePinForm extends React.Component{
                         name="" 
                         onChange={this.handleInput}
                         />
+
+                        <button>Save</button>
                     </div>
                 </form>
             </div>
