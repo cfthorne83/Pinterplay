@@ -24,9 +24,9 @@ class CreatePinForm extends React.Component{
         // this.updateImageUrl = this.updateImageUrl.bind(this);
     }
 
-    componentDidMount() {
-        this.props.fetchBoards();
-    }
+    // componentDidMount() {
+    //     this.props.fetchBoards();
+    // }
     
     // handleFileSelected(e) {
     //     // console.log(e.target);
