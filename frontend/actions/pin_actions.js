@@ -11,10 +11,10 @@ export const receivePins = (pins) => {
     }
 };
 
-export const receivePin = (data) => {
+export const receivePin = (pin) => {
     return {
         type: RECEIVE_PIN,
-        board: data.pin
+        pin
     }
 };
 

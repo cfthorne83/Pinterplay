@@ -8,25 +8,27 @@ class CreatePinForm extends React.Component{
         // this.state = { selectedFile: null}
         this.state = this.props.pin;
 
-        this.handleFileSelected = this.handleFileSelected.bind(this);
-        this.handleFileUpload = this.handleFileUpload.bind(this);
+        // this.handleFileSelected = this.handleFileSelected.bind(this);
+        // this.handleFileUpload = this.handleFileUpload.bind(this);
         this.handleDragOver = this.handleDragOver.bind(this);
         this.handleDrop = this.handleDrop.bind(this);
         this.addDeleteBtn = this.addDeleteBtn.bind(this);
         this.handleClick = this.handleClick.bind(this);
         this.handleInput = this.handleInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.updateTitle = this.updateTitle.bind(this);
+        this.updateImageUrl = this.updateImageUrl.bind(this);
     }
 
 
-    handleFileSelected(e) {
-        // console.log(e.target);
-        this.setState({ selectedFile: e.target })
-    }
+    // handleFileSelected(e) {
+    //     // console.log(e.target);
+    //     this.setState({ selectedFile: e.target })
+    // }
 
-    handleFileUpload() {
-        return null;
-    }
+    // handleFileUpload() {
+    //     return null;
+    // }
 
     handleDragOver(e) {
         e.preventDefault();
@@ -72,6 +74,7 @@ class CreatePinForm extends React.Component{
             reader.readAsDataURL(file);
 
             reader.onload = () => {
+                // console.log(reader.result);
                 thumbnail.style.backgroundImage = `url(${reader.result})`;
             };
         } else {
@@ -111,27 +114,36 @@ class CreatePinForm extends React.Component{
     
     handleInput(e) {
         let files = e.target.files;
+        // let image;
 
         let reader = new FileReader();
         reader.readAsDataURL(files[0]);
 
         reader.onload = () => {
-            const imageUrl = e.target.result;
-            // console.log(imageUrl);
+            // const image = e.target.result;
+            const image = reader.result;
+            // console.log(image);
         }
+        this.setState({ imageUrl: "image" });
+        // debugger
     }
 
     handleSubmit(e) {
+        // debugger
         e.preventDefault();
-        this.props.createPin(this.state);
+        this.props.createPin(this.state)
     }
 
     updateTitle(e) {
-        this.setState({ title: e.currentTarget.value })
+        this.setState({ 
+            title: e.currentTarget.value, 
+            image_url: "image" });
+            console.log(this.state);
     }
 
     updateImageUrl(e) {
-        this.setState({ imagUrl: e.currentTarget.value })
+        this.setState({ image_url: "image" });
+        // debugger
     }
     
 
@@ -191,14 +203,16 @@ class CreatePinForm extends React.Component{
                             <br/>
                             <br/>
                         <input type="file" 
-                                name="" 
-                                onChange={this.handleInput}
+                                // onChange={this.handleInput}
+                                onChange={this.updateImageUrl}
                         />
                             <br/>
                             <br/>
                         <button>Save</button>
                     </div>
+
                 </form>
+
             </div>
 
             )
