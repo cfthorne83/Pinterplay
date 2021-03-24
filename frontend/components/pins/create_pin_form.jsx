@@ -208,9 +208,9 @@ class CreatePinForm extends React.Component{
                         <textarea placeholder="Tell everyone what your Pin is about"/>
                             <br/>
                             <br/>
-                        <input type="file" 
+                        {/* <input type="file" 
                                 onChange={this.handleInput}
-                        />
+                        /> */}
                             <br/>
                             <br/>
                         <button>Save</button>
