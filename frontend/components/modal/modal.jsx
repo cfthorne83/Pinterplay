@@ -23,7 +23,6 @@ const Modal = ({ modal, closeModal, errors }) =>  {
             component = <LoginFormContainer />;
             break;
         case 'signup':
-            debugger
             component = <SignupFormContainer />;
             break;
         case 'createBoard':
