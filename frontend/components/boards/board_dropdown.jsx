@@ -35,9 +35,11 @@ class BoardDropdown extends React.Component{
     render() {
 
         let firstBoard;
+        let firstId;
         let boards = this.props.boards.map( (board, i) => {
             if (i === 0) {
                 firstBoard = board.title
+                firstId = board.id
             }
             return (
                 // <option key={board.id} value={board.title}> 
@@ -65,7 +67,7 @@ class BoardDropdown extends React.Component{
                 >
     
                 <span>
-                    <p className="selected-board">{firstBoard}</p>
+                    <p data-id={firstId} className="selected-board">{firstBoard}</p>
                     <img className='dropdown-icon' src="https://cdn1.iconfinder.com/data/icons/arrows-vol-1-4/24/dropdown_arrow-512.png" alt=""/>
                 </span>
 
