@@ -16,7 +16,6 @@ class BoardDropdown extends React.Component{
 
     handleClick(){
         this.setState({ show: !this.state.show });
-        console.log(this.state);
     }
 
     handleBlur(){
@@ -27,9 +26,10 @@ class BoardDropdown extends React.Component{
 
     updateBoard(e) {
         let board = document.querySelector(".selected-board");
-        // let butt = document.querySelector(".board-dropdown-input");
+        let button = document.querySelector(".board-dropdown-input");
+
         board.innerText = e.currentTarget.value;
-        // board.innerText = butt.dataset.id;
+        board.setAttribute("data", e.currentTarget.dataset.id);
     }
 
     render() {
@@ -43,14 +43,16 @@ class BoardDropdown extends React.Component{
                 // <option key={board.id} value={board.title}> 
                 //     {board.title}
                 // </option>
-                <li className="board-dropdown-btn" data-columns="3" key={board.id}>
-                    <input 
-                        type="submit" 
-                        className="board-dropdown-input"
-                        data-id={board.id}
-                        value={board.title}
-                        onClick={this.updateBoard}
-                    />
+                <li 
+                    className="board-dropdown-btn" 
+                    key={board.id}>
+                        <input 
+                            type="submit" 
+                            className="board-dropdown-input"
+                            data-id={board.id} 
+                            value={board.title}
+                            onClick={this.updateBoard}
+                        />
                 </li>
             )
         })

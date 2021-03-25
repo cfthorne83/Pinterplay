@@ -20,7 +20,7 @@ class CreatePinForm extends React.Component{
         this.handleSubmit = this.handleSubmit.bind(this);
         this.updateTitle = this.updateTitle.bind(this);
         this.updateDescription = this.updateDescription.bind(this);
-        this.updateBoard = this.updateBoard.bind(this);
+        this.updateBoardId = this.updateBoardId.bind(this);
         // this.updateImageUrl = this.updateImageUrl.bind(this);
     }
 
@@ -150,7 +150,7 @@ class CreatePinForm extends React.Component{
     }
 
     updateTitle(e) {
-        this.setState({ title: e.currentTarget.value, board_id: 98 });
+        this.setState({ title: e.currentTarget.value });
             console.log(this.state);
     }
 
@@ -160,9 +160,10 @@ class CreatePinForm extends React.Component{
     }
 
     updateBoardId(e) {
-        let butt = document.querySelector(".board-dropdown-input");
-        let data = butt.dataset.id;
-        this.setState({ board_id: data});
+        let board = document.querySelector(".selected-board");
+        let data = board.dataset.id;
+        
+        // this.setState({ board_id: data});
             console.log(this.state);
     }
 
