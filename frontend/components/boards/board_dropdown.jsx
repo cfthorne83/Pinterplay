@@ -29,7 +29,7 @@ class BoardDropdown extends React.Component{
         let button = document.querySelector(".board-dropdown-input");
 
         board.innerText = e.currentTarget.value;
-        board.setAttribute("data", e.currentTarget.dataset.id);
+        board.setAttribute("data-id", e.currentTarget.dataset.id);
     }
 
     render() {

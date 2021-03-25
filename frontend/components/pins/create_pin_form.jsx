@@ -161,9 +161,9 @@ class CreatePinForm extends React.Component{
 
     updateBoardId(e) {
         let board = document.querySelector(".selected-board");
-        let data = board.dataset.id;
+        // let data = board.dataset.id;
         
-        // this.setState({ board_id: data});
+        this.setState({ board_id: board.dataset.id});
             console.log(this.state);
     }
 
@@ -186,7 +186,7 @@ class CreatePinForm extends React.Component{
             <div className="create-pin-form-con">
                 
                 <form 
-                    // onSubmit={this.handleSubmit} 
+                    onSubmit={this.handleSubmit} 
                     className="create-pin-form">
 
                     <div className="drop-zone-con"> 
