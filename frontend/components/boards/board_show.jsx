@@ -22,14 +22,21 @@ class BoardShow extends React.Component {
     // }
 
     render() {
-        // let pins = this.props.board.pins.map((pin, i) => {
-            //     return <li>{pin.photo.attached}</li>
-            // })
-            if (!this.props.board){
-                return null;
-            } else if (!this.props.currentUser) {
-                return <Redirect to='/' />
-            };
+        
+        if (!this.props.board){
+            return null;
+        } else if (!this.props.currentUser) {
+            return <Redirect to='/' />
+        };
+        
+        
+        // let pins = this.props.board.pins;
+
+        // const boardPins = Object.values(this.props.board).pins.map((pin, idx) => {
+        //     return (
+        //         <li>{pin.title}</li>
+        //     )
+        // })
 
             return (
                 <div className='board-show'>
@@ -44,7 +51,6 @@ class BoardShow extends React.Component {
                     </div>
                        
                         <CreatePinDropdownContainer/>
-                        <Link to="/test">test</Link>
                 </div>
         );
 
