@@ -3,10 +3,11 @@ import React from 'react';
 class BoardDropdown extends React.Component{
     constructor(props){
         super(props);
-        this.state = { show: false, board: "" }
+        this.state = { show: false, board_id: "" }
 
         this.handleClick = this.handleClick.bind(this);
         this.handleBlur = this.handleBlur.bind(this);
+        this.updateBoard = this.updateBoard.bind(this);
     }
 
     componentDidMount() {
@@ -24,6 +25,11 @@ class BoardDropdown extends React.Component{
         }, 100);
     }
 
+    updateBoard(e) {
+        this.setState({ board_id: e.currentTarget.data });
+        console.log(this.state);
+    }
+
     render() {
 
         let firstBoard;
@@ -35,10 +41,12 @@ class BoardDropdown extends React.Component{
                 // <option key={board.id} value={board.title}> 
                 //     {board.title}
                 // </option>
-                <li key={board.id}>
+                <li className="board-dropdown-btn" key={board.id}>
                     <input 
                         type="submit" 
+                        data-id="adfa"
                         value={board.title}
+                        onClick={this.updateBoard}
                     />
                 </li>
             )
