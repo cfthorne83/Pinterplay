@@ -24,9 +24,9 @@ class CreatePinForm extends React.Component{
         // this.updateImageUrl = this.updateImageUrl.bind(this);
     }
 
-    componentDidMount() {
-        this.props.fetchBoards();
-    }
+    // componentDidMount() {
+    //     this.props.fetchBoards();
+    // }
     
     // handleFileSelected(e) {
     //     // console.log(e.target);
@@ -174,13 +174,13 @@ class CreatePinForm extends React.Component{
 
     render() {
 
-        let boards = this.props.boards.map( board => {
-            return (
-                <option key={board.id} value={board.title}> 
-                    {board.title}
-                </option>
-            )
-        })
+        // let boards = this.props.boards.map( board => {
+        //     return (
+        //         <option key={board.id} value={board.title}> 
+        //             {board.title}
+        //         </option>
+        //     )
+        // })
 
         return (
             <div className="create-pin-form-con">
