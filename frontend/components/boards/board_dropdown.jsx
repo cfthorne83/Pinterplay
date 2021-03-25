@@ -7,7 +7,7 @@ class BoardDropdown extends React.Component{
 
         this.handleClick = this.handleClick.bind(this);
         this.handleBlur = this.handleBlur.bind(this);
-        this.updateBoardId = this.updateBoardId.bind(this);
+        this.updateBoard = this.updateBoard.bind(this);
     }
 
     componentDidMount() {
@@ -15,7 +15,7 @@ class BoardDropdown extends React.Component{
     }
 
     handleClick(){
-        this.setState({ show: !this.state.show })
+        this.setState({ show: !this.state.show });
     }
 
     handleBlur(){
@@ -24,31 +24,41 @@ class BoardDropdown extends React.Component{
         }, 100);
     }
 
-    updateBoardId(e) {
-        this.setState({ board_id: e.target.value });
-        console.log("sadf");
+    updateBoard(e) {
+        let board = document.querySelector(".selected-board");
+        let button = document.querySelector(".board-dropdown-input");
+
+        board.innerText = e.currentTarget.value;
+        board.setAttribute("data-id", e.currentTarget.dataset.id);
     }
 
     render() {
-        let boards = this.props.boards.map( board => {
+
+        let firstBoard;
+        let firstId;
+        let boards = this.props.boards.map( (board, i) => {
+            if (i === 0) {
+                firstBoard = board.title
+                firstId = board.id
+            }
             return (
                 // <option key={board.id} value={board.title}> 
                 //     {board.title}
                 // </option>
-                <li key={board.id}>
-                    {/* <input 
-                        type="submit" 
-                        value={board.title}
-                        onChange={this.updateBoardId}
-                    /> */}
-                    <button>
-                        {board.title}
-                    </button>
+                <li 
+                    className="board-dropdown-btn" 
+                    key={board.id}>
+                        <input 
+                            type="submit" 
+                            className="board-dropdown-input"
+                            data-id={board.id} 
+                            value={board.title}
+                            onClick={this.updateBoard}
+                        />
                 </li>
             )
         })
 
-        let firstBoard = this.props.boards[0];
 
         return (
             <button 
@@ -58,7 +68,7 @@ class BoardDropdown extends React.Component{
                 >
     
                 <span>
-                    <h1>asdfasf</h1>
+                    <p data-id={firstId} className="selected-board">{firstBoard}</p>
                     <img className='dropdown-icon' src="https://cdn1.iconfinder.com/data/icons/arrows-vol-1-4/24/dropdown_arrow-512.png" alt=""/>
                 </span>
 

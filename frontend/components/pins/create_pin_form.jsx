@@ -20,7 +20,7 @@ class CreatePinForm extends React.Component{
         this.handleSubmit = this.handleSubmit.bind(this);
         this.updateTitle = this.updateTitle.bind(this);
         this.updateDescription = this.updateDescription.bind(this);
-        this.updateBoard = this.updateBoard.bind(this);
+        this.updateBoardId = this.updateBoardId.bind(this);
         // this.updateImageUrl = this.updateImageUrl.bind(this);
     }
 
@@ -159,8 +159,11 @@ class CreatePinForm extends React.Component{
             console.log(this.state);
     }
 
-    updateBoard(e) {
-        this.setState({ board_id: e.currentTarget.value });
+    updateBoardId(e) {
+        let board = document.querySelector(".selected-board");
+        // let data = board.dataset.id;
+        
+        this.setState({ board_id: board.dataset.id});
             console.log(this.state);
     }
 
@@ -171,13 +174,13 @@ class CreatePinForm extends React.Component{
 
     render() {
 
-        let boards = this.props.boards.map( board => {
-            return (
-                <option key={board.id} value={board.title}> 
-                    {board.title}
-                </option>
-            )
-        })
+        // let boards = this.props.boards.map( board => {
+        //     return (
+        //         <option key={board.id} value={board.title}> 
+        //             {board.title}
+        //         </option>
+        //     )
+        // })
 
         return (
             <div className="create-pin-form-con">
@@ -227,7 +230,7 @@ class CreatePinForm extends React.Component{
                             placeholder="Tell everyone what your Pin is about"/>
                             <br/>
                             <br/>
-                        <button>Save</button>
+                        <button onClick={this.updateBoardId}>Save</button>
                     </div>
 
                 </form>
