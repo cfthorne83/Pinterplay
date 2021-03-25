@@ -150,7 +150,7 @@ class CreatePinForm extends React.Component{
     }
 
     updateTitle(e) {
-        this.setState({ title: e.currentTarget.value });
+        this.setState({ title: e.currentTarget.value, board_id: 98 });
             console.log(this.state);
     }
 
