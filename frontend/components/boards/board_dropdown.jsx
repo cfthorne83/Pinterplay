@@ -26,8 +26,9 @@ class BoardDropdown extends React.Component{
     }
 
     updateBoard(e) {
-        this.setState({ board_id: e.currentTarget.data });
-        console.log(this.state);
+        let board = document.querySelector(".selected-board");
+        board.innerText = e.currentTarget.value
+        // console.log(e.currentTarget.value);
     }
 
     render() {
@@ -60,7 +61,7 @@ class BoardDropdown extends React.Component{
                 >
     
                 <span>
-                    <p>{firstBoard}</p>
+                    <p className="selected-board">{firstBoard}</p>
                     <img className='dropdown-icon' src="https://cdn1.iconfinder.com/data/icons/arrows-vol-1-4/24/dropdown_arrow-512.png" alt=""/>
                 </span>
 
