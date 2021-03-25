@@ -30,6 +30,7 @@ class BoardDropdown extends React.Component{
         let boards = this.props.boards.map( (board, i) => {
             if (i === 0) {
                 firstBoard = board.title
+            }
             return (
                 // <option key={board.id} value={board.title}> 
                 //     {board.title}
