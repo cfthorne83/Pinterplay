@@ -27,8 +27,9 @@ class BoardDropdown extends React.Component{
 
     updateBoard(e) {
         let board = document.querySelector(".selected-board");
-        board.innerText = e.currentTarget.value
-        // console.log(e.currentTarget.value);
+        // let butt = document.querySelector(".board-dropdown-input");
+        board.innerText = e.currentTarget.value;
+        // board.innerText = butt.dataset.id;
     }
 
     render() {
@@ -42,10 +43,11 @@ class BoardDropdown extends React.Component{
                 // <option key={board.id} value={board.title}> 
                 //     {board.title}
                 // </option>
-                <li className="board-dropdown-btn" key={board.id}>
+                <li className="board-dropdown-btn" data-columns="3" key={board.id}>
                     <input 
                         type="submit" 
-                        data-id="adfa"
+                        className="board-dropdown-input"
+                        data-id={board.id}
                         value={board.title}
                         onClick={this.updateBoard}
                     />

@@ -159,8 +159,10 @@ class CreatePinForm extends React.Component{
             console.log(this.state);
     }
 
-    updateBoard(e) {
-        this.setState({ board_id: e.currentTarget.value });
+    updateBoardId(e) {
+        let butt = document.querySelector(".board-dropdown-input");
+        let data = butt.dataset.id;
+        this.setState({ board_id: data});
             console.log(this.state);
     }
 
@@ -183,7 +185,7 @@ class CreatePinForm extends React.Component{
             <div className="create-pin-form-con">
                 
                 <form 
-                    onSubmit={this.handleSubmit} 
+                    // onSubmit={this.handleSubmit} 
                     className="create-pin-form">
 
                     <div className="drop-zone-con"> 
@@ -227,7 +229,7 @@ class CreatePinForm extends React.Component{
                             placeholder="Tell everyone what your Pin is about"/>
                             <br/>
                             <br/>
-                        <button>Save</button>
+                        <button onClick={this.updateBoardId}>Save</button>
                     </div>
 
                 </form>
