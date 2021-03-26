@@ -29,7 +29,7 @@ class CreatePinForm extends React.Component{
     // }
     
     // handleFileSelected(e) {
-    //     // console.log(e.target);
+    //     // (e.target);
     //     this.setState({ selectedFile: e.target })
     // }
 
@@ -62,7 +62,6 @@ class CreatePinForm extends React.Component{
         let that = this;
         let image;
 
-        // console.log(file.name);
 
         if (dropZone.querySelector(".drop-zone__prompt")){
             dropZone.querySelector(".drop-zone__prompt").remove();
@@ -84,11 +83,8 @@ class CreatePinForm extends React.Component{
             reader.readAsDataURL(file);
 
             reader.onload = () => {
-                // console.log(reader.result);
             image = reader.result;
-            // console.log(image);
             that.setState({ image_url: image });
-            console.log(that.state);
                 thumbnail.style.backgroundImage = `url(${reader.result})`;
             };
         } else {
@@ -103,7 +99,6 @@ class CreatePinForm extends React.Component{
         inputElement.click();
 
         inputElement.addEventListener("change", e => {
-            // console.log(e.target.files)
             if (inputElement.files.length) {
                 this.addDeleteBtn(dropZone, inputElement.files[0]);
             }
@@ -118,8 +113,6 @@ class CreatePinForm extends React.Component{
         
         if (e.dataTransfer.files.length) {
             inputElement.files = e.dataTransfer.files;
-            // console.log(dropZone);
-            // console.log(inputElement.files[0]);
             this.addDeleteBtn(dropZone, inputElement.files[0]);
         }
         
@@ -135,13 +128,9 @@ class CreatePinForm extends React.Component{
         reader.readAsDataURL(files[0]);
 
         reader.onload = () => {
-            // const image = e.target.result;
             image = reader.result;
-            // console.log(image);
             that.setState({ image_url: image });
-            console.log(that.state);
         }
-        // console.log(image);
     }
 
     handleSubmit(e) {
@@ -151,12 +140,10 @@ class CreatePinForm extends React.Component{
 
     updateTitle(e) {
         this.setState({ title: e.currentTarget.value });
-            console.log(this.state);
     }
 
     updateDescription(e) {
         this.setState({ description: e.currentTarget.value });
-            console.log(this.state);
     }
 
     updateBoardId(e) {
@@ -164,7 +151,6 @@ class CreatePinForm extends React.Component{
         // let data = board.dataset.id;
         
         this.setState({ board_id: board.dataset.id});
-            console.log(this.state);
     }
 
     // updateImageUrl(e) {
