@@ -5,7 +5,7 @@ import { fetchPin } from "../../actions/pin_actions";
 
 const msp = (state, ownProps) => {
     return {
-        pin: state.entities.pins[ownProps.params.match.pinId]
+        pin: state.entities.pins[ownProps.match.params.pinId]
     }
 }
 

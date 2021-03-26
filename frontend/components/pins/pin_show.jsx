@@ -12,7 +12,9 @@ class PinShow extends React.Component {
     render() {
         return (
             <>
-                <h1>{this.props.pin.title}</h1>
+                <h1>Pin show</h1>
+                {/* <h1>{this.props.pin.title}</h1> */}
+
             </>
         )
     }
