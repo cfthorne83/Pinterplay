@@ -134,9 +134,7 @@ class CreatePinForm extends React.Component{
     }
 
     updateBoardId(e) {
-        let board = document.querySelector(".selected-board");
-        // let data = board.dataset.id;
-        
+        let board = document.querySelector(".selected-board");        
         this.setState({ board_id: board.dataset.id});
     }
 
@@ -160,9 +158,7 @@ class CreatePinForm extends React.Component{
                         >
                             <span className="drop-zone__prompt">Drag and drop or click to upload</span>
                             <input 
-                                // onChange={this.handleInput}
                                 type="file" 
-                                // name="myFile" 
                                 className="drop-zone__input" 
                                 multiple/>
                         </div>
