@@ -18,6 +18,7 @@ class CreatePinForm extends React.Component{
         this.updateTitle = this.updateTitle.bind(this);
         this.updateDescription = this.updateDescription.bind(this);
         this.updateBoardId = this.updateBoardId.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
     }
 
     // componentDidMount() {
@@ -49,7 +50,6 @@ class CreatePinForm extends React.Component{
         let that = this;
         let image;
 
-
         if (dropZone.querySelector(".drop-zone__prompt")){
             dropZone.querySelector(".drop-zone__prompt").remove();
         }
@@ -62,6 +62,7 @@ class CreatePinForm extends React.Component{
             deleteBtn = document.createElement("button");
             deleteBtn.classList.add("drop-zone__delete");
             deleteBtn.innerText = "Delete";
+            deleteBtn.addEventListener("click", that.handleDelete);
             thumbnail.append(deleteBtn);
         }
 
@@ -77,6 +78,15 @@ class CreatePinForm extends React.Component{
         } else {
             thumbnail.style.backgroundImage = null;
         }
+
+    }
+    
+    handleDelete(e) {
+        e.stopPropagation();
+        
+        let thumbnail = document.querySelector(".drop-zone__thumb");
+        this.setState(this.props.pin);
+        thumbnail.remove();
     }
     
     handleClick() {
