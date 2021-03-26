@@ -4,6 +4,7 @@ class Api::PinsController < ApplicationController
 
     def index
         @pins = Pin.all
+        # @pins = board.pins
         render :index
     end
 
