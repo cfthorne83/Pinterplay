@@ -3,19 +3,21 @@ class Api::BoardsController < ApplicationController
     before_action :ensure_logged_in
 
     def index
-        @boards = Board.all
-
-        # @board.user_id == current_user.id
+        # @boards = Board.all
+        # @boards = Board.where(user_id: current_user.id)
+        @boards = current_user.boards
         render :index
     end
 
     def show
-        @board = Board.find(params[:id])
-        if @board.user_id == current_user.id
+        # @board = Board.find(params[:id])
+        # @board = Board.find(params[:id]).where(user_id: current_user.id)
+        @board = current_user.boards.find(params[:id])
+        # if @board.user_id == current_user.id
             render :show
-        else       
-            render json: @board.errors.full_messages, status: 422
-        end
+        # else       
+        #     render json: @board.errors.full_messages, status: 422
+        # end
     end
 
     def create 
