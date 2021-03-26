@@ -51,7 +51,7 @@ class BoardShow extends React.Component {
                     </div>
                        
                         <CreatePinDropdownContainer/>
-                        <PinIndexContainer board={this.props.board} />
+                        <PinIndexContainer />
                 </div>
         );
 
