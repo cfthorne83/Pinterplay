@@ -4,12 +4,18 @@ class Api::BoardsController < ApplicationController
 
     def index
         @boards = Board.all
+
+        # @board.user_id == current_user.id
         render :index
     end
 
     def show
         @board = Board.find(params[:id])
-        render :show
+        if @board.user_id == current_user.id
+            render :show
+        else       
+            render json: @board.errors.full_messages, status: 422
+        end
     end
 
     def create 
