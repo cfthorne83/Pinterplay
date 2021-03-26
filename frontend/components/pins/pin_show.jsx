@@ -6,10 +6,16 @@ class PinShow extends React.Component {
     }
 
     componentDidMount() {
+        debugger
         this.props.fetchPin(this.props.match.params.pinId)
     }
 
     render() {
+        debugger
+        if (!this.props.pins) {
+            return null;
+        }
+
         return (
             <>
                 <h1>Pin show</h1>
