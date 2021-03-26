@@ -6,14 +6,14 @@ class PinShow extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchPin(this.props.match.params.pinId);
+        this.props.fetchPin(this.props.match.params.pinId)
     }
 
     render() {
         return (
             <>
                 <h1>Pin show</h1>
-                {/* <h1>{this.props.pin.title}</h1> */}
+                {/* <h1>{this.props.pin}</h1> */}
 
             </>
         )
