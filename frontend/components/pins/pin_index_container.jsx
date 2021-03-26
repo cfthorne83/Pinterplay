@@ -4,13 +4,14 @@ import { fetchPins, deletePin } from '../../actions/pin_actions';
 
 const msp = (state, ownProps) => {
     return { 
-        pins: Object.values(state.entities.pins)
+        pins: Object.values(state.entities.pins),
+        board: ownProps.board
     }
 }
 
 const mdp = (dispatch, ownProps) => {
     return {
-        fetchPins: () => dispatch(fetchPins()),
+        fetchPins: (board) => dispatch(fetchPins(board)),
         deletePin: (pinId) => dispatch(deletePin(pinId))
     }
 }
