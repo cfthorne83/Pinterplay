@@ -3,8 +3,12 @@ class Api::PinsController < ApplicationController
     before_action :ensure_logged_in
 
     def index
-        @pins = Pin.all
-        # @pins = board.pins
+        if params[:board]
+            board = Board.find(params[:board][:id])
+            @pins = board.pins
+        else
+            @pins = Pin.all
+        end
         render :index
     end
 

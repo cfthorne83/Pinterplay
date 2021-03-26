@@ -7,11 +7,8 @@ class CreatePinForm extends React.Component{
     constructor(props){
         super(props);
 
-        // this.state = { selectedFile: null}
         this.state = this.props.pin;
 
-        // this.handleFileSelected = this.handleFileSelected.bind(this);
-        // this.handleFileUpload = this.handleFileUpload.bind(this);
         this.handleDragOver = this.handleDragOver.bind(this);
         this.handleDrop = this.handleDrop.bind(this);
         this.addDeleteBtn = this.addDeleteBtn.bind(this);
@@ -21,20 +18,11 @@ class CreatePinForm extends React.Component{
         this.updateTitle = this.updateTitle.bind(this);
         this.updateDescription = this.updateDescription.bind(this);
         this.updateBoardId = this.updateBoardId.bind(this);
-        // this.updateImageUrl = this.updateImageUrl.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
     }
 
     // componentDidMount() {
     //     this.props.fetchBoards();
-    // }
-    
-    // handleFileSelected(e) {
-    //     // console.log(e.target);
-    //     this.setState({ selectedFile: e.target })
-    // }
-
-    // handleFileUpload() {
-    //     return null;
     // }
 
     handleDragOver(e) {
@@ -62,8 +50,6 @@ class CreatePinForm extends React.Component{
         let that = this;
         let image;
 
-        // console.log(file.name);
-
         if (dropZone.querySelector(".drop-zone__prompt")){
             dropZone.querySelector(".drop-zone__prompt").remove();
         }
@@ -76,6 +62,7 @@ class CreatePinForm extends React.Component{
             deleteBtn = document.createElement("button");
             deleteBtn.classList.add("drop-zone__delete");
             deleteBtn.innerText = "Delete";
+            deleteBtn.addEventListener("click", that.handleDelete);
             thumbnail.append(deleteBtn);
         }
 
@@ -84,16 +71,22 @@ class CreatePinForm extends React.Component{
             reader.readAsDataURL(file);
 
             reader.onload = () => {
-                // console.log(reader.result);
             image = reader.result;
-            // console.log(image);
             that.setState({ image_url: image });
-            console.log(that.state);
                 thumbnail.style.backgroundImage = `url(${reader.result})`;
             };
         } else {
             thumbnail.style.backgroundImage = null;
         }
+
+    }
+    
+    handleDelete(e) {
+        e.stopPropagation();
+        
+        let thumbnail = document.querySelector(".drop-zone__thumb");
+        this.setState(this.props.pin);
+        thumbnail.remove();
     }
     
     handleClick() {
@@ -103,7 +96,6 @@ class CreatePinForm extends React.Component{
         inputElement.click();
 
         inputElement.addEventListener("change", e => {
-            // console.log(e.target.files)
             if (inputElement.files.length) {
                 this.addDeleteBtn(dropZone, inputElement.files[0]);
             }
@@ -118,8 +110,6 @@ class CreatePinForm extends React.Component{
         
         if (e.dataTransfer.files.length) {
             inputElement.files = e.dataTransfer.files;
-            // console.log(dropZone);
-            // console.log(inputElement.files[0]);
             this.addDeleteBtn(dropZone, inputElement.files[0]);
         }
         
@@ -135,13 +125,9 @@ class CreatePinForm extends React.Component{
         reader.readAsDataURL(files[0]);
 
         reader.onload = () => {
-            // const image = e.target.result;
             image = reader.result;
-            // console.log(image);
             that.setState({ image_url: image });
-            console.log(that.state);
         }
-        // console.log(image);
     }
 
     handleSubmit(e) {
@@ -151,36 +137,18 @@ class CreatePinForm extends React.Component{
 
     updateTitle(e) {
         this.setState({ title: e.currentTarget.value });
-            console.log(this.state);
     }
 
     updateDescription(e) {
         this.setState({ description: e.currentTarget.value });
-            console.log(this.state);
     }
 
     updateBoardId(e) {
-        let board = document.querySelector(".selected-board");
-        // let data = board.dataset.id;
-        
+        let board = document.querySelector(".selected-board");        
         this.setState({ board_id: board.dataset.id});
-            console.log(this.state);
     }
 
-    // updateImageUrl(e) {
-    //     this.setState({ image_url: "image" });
-    // }
-    
-
     render() {
-
-        // let boards = this.props.boards.map( board => {
-        //     return (
-        //         <option key={board.id} value={board.title}> 
-        //             {board.title}
-        //         </option>
-        //     )
-        // })
 
         return (
             <div className="create-pin-form-con">
@@ -200,9 +168,7 @@ class CreatePinForm extends React.Component{
                         >
                             <span className="drop-zone__prompt">Drag and drop or click to upload</span>
                             <input 
-                                // onChange={this.handleInput}
                                 type="file" 
-                                // name="myFile" 
                                 className="drop-zone__input" 
                                 multiple/>
                         </div>
@@ -210,11 +176,6 @@ class CreatePinForm extends React.Component{
 
                     <div className="pin-title-con">
 
-                        {/* <select 
-                            value={this.state.board_id}
-                            onChange={this.updateBoard}>
-                            {boards}
-                        </select> */}
                         <BoardDropdownContainer/>
                             <br/>
                             <br/>

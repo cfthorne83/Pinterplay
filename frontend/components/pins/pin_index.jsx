@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 class PinIndex extends React.Component {
 
     componentDidMount() {
-        this.props.fetchPins();
+        this.props.fetchPins(this.props.board);
     }
 
     render() {
