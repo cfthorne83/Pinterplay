@@ -7,11 +7,8 @@ class CreatePinForm extends React.Component{
     constructor(props){
         super(props);
 
-        // this.state = { selectedFile: null}
         this.state = this.props.pin;
 
-        // this.handleFileSelected = this.handleFileSelected.bind(this);
-        // this.handleFileUpload = this.handleFileUpload.bind(this);
         this.handleDragOver = this.handleDragOver.bind(this);
         this.handleDrop = this.handleDrop.bind(this);
         this.addDeleteBtn = this.addDeleteBtn.bind(this);
@@ -21,20 +18,10 @@ class CreatePinForm extends React.Component{
         this.updateTitle = this.updateTitle.bind(this);
         this.updateDescription = this.updateDescription.bind(this);
         this.updateBoardId = this.updateBoardId.bind(this);
-        // this.updateImageUrl = this.updateImageUrl.bind(this);
     }
 
     // componentDidMount() {
     //     this.props.fetchBoards();
-    // }
-    
-    // handleFileSelected(e) {
-    //     // (e.target);
-    //     this.setState({ selectedFile: e.target })
-    // }
-
-    // handleFileUpload() {
-    //     return null;
     // }
 
     handleDragOver(e) {
@@ -153,20 +140,7 @@ class CreatePinForm extends React.Component{
         this.setState({ board_id: board.dataset.id});
     }
 
-    // updateImageUrl(e) {
-    //     this.setState({ image_url: "image" });
-    // }
-    
-
     render() {
-
-        // let boards = this.props.boards.map( board => {
-        //     return (
-        //         <option key={board.id} value={board.title}> 
-        //             {board.title}
-        //         </option>
-        //     )
-        // })
 
         return (
             <div className="create-pin-form-con">
@@ -196,11 +170,6 @@ class CreatePinForm extends React.Component{
 
                     <div className="pin-title-con">
 
-                        {/* <select 
-                            value={this.state.board_id}
-                            onChange={this.updateBoard}>
-                            {boards}
-                        </select> */}
                         <BoardDropdownContainer/>
                             <br/>
                             <br/>
