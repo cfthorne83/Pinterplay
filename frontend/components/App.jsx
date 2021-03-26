@@ -24,7 +24,7 @@ const App = () => (
             <NavBarContainer />
         </header>
         <Switch >
-            <Route exact path="/pins/:pinId" component={PinShowContainer} />
+            {/* <Route exact path="/pins/:pinId" component={PinShowContainer} /> */}
             <Route exact path="/pin-builder" component={CreatePinFormContainer} />
             <Route exact path="/users/:userId" component={ProfileContainer} />
             <Route exact path="/boards/:boardId" component={BoardShowContainer} />

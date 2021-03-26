@@ -13,7 +13,6 @@ class PinShow extends React.Component {
         return (
             <>
                 <h1>{this.props.pin.title}</h1>
-                <h1>sadfasdf</h1>
             </>
         )
     }
