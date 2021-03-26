@@ -12,7 +12,7 @@ const msp = (state, ownProps) => {
 
 const mdp = (dispatch, ownProps) => {
     return {
-        fetchPin: (PinId) => dispatch(fetchPin(PinId))
+        fetchPin: (pinId) => dispatch(fetchPin(pinId))
     }
 }
 
