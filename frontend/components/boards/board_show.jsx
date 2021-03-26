@@ -2,6 +2,7 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 
 import CreatePinDropdownContainer from "../pins/create_pin_dropdown_container";
+import PinIndexContainer from "../pins/pin_index_container";
 
 
 class BoardShow extends React.Component {
@@ -50,7 +51,7 @@ class BoardShow extends React.Component {
                     </div>
                        
                         <CreatePinDropdownContainer/>
-                        {/* <PinIndexContainer board={this.props.board} /> */}
+                        <PinIndexContainer board={this.props.board} />
                 </div>
         );
 
