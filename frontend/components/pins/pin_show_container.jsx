@@ -4,7 +4,6 @@ import PinShow from "./pin_show";
 import { fetchPin } from "../../actions/pin_actions";
 
 const msp = (state, ownProps) => {
-    debugger
     return {
         pin: state.entities.pins[ownProps.match.params.pinId]
     }
