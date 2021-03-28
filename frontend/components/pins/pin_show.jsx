@@ -20,10 +20,7 @@ class PinShow extends React.Component {
         if (!this.props.pin) {
             return null;
         }
-<<<<<<< HEAD
-=======
         
->>>>>>> main
         return (
             <>
                 <h1>Pin show</h1>
