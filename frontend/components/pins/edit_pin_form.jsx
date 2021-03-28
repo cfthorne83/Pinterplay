@@ -11,9 +11,10 @@ class EditPinForm extends React.Component {
 
     render() {
 
-    if (!this.props.pin){
-        return null;
-    }
+        if (!this.props.pin){
+            return null;
+        }
+        
         return (
             <h1>edit pin form</h1>
         )
