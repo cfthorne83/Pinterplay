@@ -14,13 +14,6 @@ class BoardShow extends React.Component {
         this.props.fetchBoard(this.props.match.params.boardId)
     }
 
-    // componentDidUpdate(prevProps) {
-
-    //     if (this.props.match.params.boardId !== prevProps.match.params.boardId){
-    //         this.props.fetchBoard(this.props.match.params.boardId);
-    //     }
-    // }
-
     render() {
         
         if (!this.props.board){
@@ -28,15 +21,6 @@ class BoardShow extends React.Component {
         } else if (!this.props.currentUser) {
             return <Redirect to='/' />
         };
-        
-        
-        // let pins = this.props.board.pins;
-
-        // const boardPins = Object.values(this.props.board).pins.map((pin, idx) => {
-        //     return (
-        //         <li>{pin.title}</li>
-        //     )
-        // })
 
             return (
                 <div className='board-show'>
