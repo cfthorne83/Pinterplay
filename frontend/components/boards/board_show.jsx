@@ -11,7 +11,6 @@ class BoardShow extends React.Component {
     }
 
     componentDidMount() {
-        
         this.props.fetchBoard(this.props.match.params.boardId)
     }
 
@@ -23,6 +22,7 @@ class BoardShow extends React.Component {
     // }
 
     render() {
+        
         if (!this.props.board){
             return null;
         } else if (!this.props.currentUser) {
@@ -51,7 +51,7 @@ class BoardShow extends React.Component {
                     </div>
                        
                         <CreatePinDropdownContainer/>
-                        <PinIndexContainer />
+                        <PinIndexContainer board={this.props.board} />
                 </div>
         );
 

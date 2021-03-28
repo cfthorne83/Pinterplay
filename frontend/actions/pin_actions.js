@@ -1,4 +1,3 @@
-// import * as PinApiUtil from '.././util/pin_api_util';
 import * as PinApiUtil from "../util/pin_api_util"
 
 export const RECEIVE_ALL_PINS = 'RECEIVE_ALL_PINS';
@@ -6,7 +5,6 @@ export const RECEIVE_PIN = 'RECEIVE_PIN';
 export const REMOVE_PIN = 'REMOVE_PIN';
 
 export const receivePins = (pins) => {
-        debugger
     return {
         type: RECEIVE_ALL_PINS,
         pins
@@ -14,7 +12,6 @@ export const receivePins = (pins) => {
 };
 
 export const receivePin = (pin) => {
-    
     return {
         type: RECEIVE_PIN,
         pin: pin.pin
@@ -29,7 +26,6 @@ export const removePin = (pinId) => {
 };
 
 export const fetchPins = (board) => {
-        debugger
     return dispatch => {
         return PinApiUtil.fetchPins(board).then(pins => {
             dispatch(receivePins(pins))
@@ -37,13 +33,6 @@ export const fetchPins = (board) => {
     }
 }
 
-// export const fetchPin = (pinId) => {
-//     return dispatch => {
-//         return PinApiUtil.fetchPin(pinId).then(pin => {
-//             dispatch(receivePin(pin))
-//         })
-//     }
-// }
 export const fetchPin = (pinId) => {
     return dispatch => {
         return PinApiUtil.fetchPin(pinId).then( pin => {

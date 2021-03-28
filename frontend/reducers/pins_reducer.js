@@ -9,8 +9,9 @@ const pinsReducer = (state = {}, action) => {
 
   switch (action.type) {
     case RECEIVE_ALL_PINS:
-        debugger
       return action.pins;
+    case RECEIVE_PIN:
+      return Object.assign({}, state, { [action.pin.id]: action.pin});
     case RECEIVE_PIN:
       return Object.assign({}, state, { [action.pin.id]: action.pin});
     case REMOVE_PIN:
