@@ -1,4 +1,5 @@
-import * as PinApiUtil from '.././util/pin_api_util';
+// import * as PinApiUtil from '.././util/pin_api_util';
+import * as PinApiUtil from "../util/pin_api_util"
 
 export const RECEIVE_ALL_PINS = 'RECEIVE_ALL_PINS';
 export const RECEIVE_PIN = 'RECEIVE_PIN';
@@ -11,10 +12,17 @@ export const receivePins = (pins) => {
     }
 };
 
+// export const receivePin = (pin) => {
+//     return {
+//         type: RECEIVE_PIN,
+//         pin
+//     }
+// };
 export const receivePin = (pin) => {
+    debugger
     return {
         type: RECEIVE_PIN,
-        pin
+        pin: pin
     }
 };
 
@@ -33,9 +41,17 @@ export const fetchPins = (board) => {
     }
 }
 
+// export const fetchPin = (pinId) => {
+//     return dispatch => {
+//         return PinApiUtil.fetchPin(pinId).then(pin => {
+//             dispatch(receivePin(pin))
+//         })
+//     }
+// }
 export const fetchPin = (pinId) => {
+    debugger
     return dispatch => {
-        return PinApiUtil.fetchPin(pinId).then(pin => {
+        return PinApiUtil.fetchPin(pinId).then( pin => {
             dispatch(receivePin(pin))
         })
     }

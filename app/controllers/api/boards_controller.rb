@@ -11,7 +11,6 @@ class Api::BoardsController < ApplicationController
 
     def show
         # @board = Board.find(params[:id])
-        # @board = Board.find(params[:id]).where(user_id: current_user.id)
         @board = current_user.boards.find(params[:id])
         # if @board.user_id == current_user.id
             render :show
