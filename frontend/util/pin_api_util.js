@@ -1,5 +1,6 @@
 
 export const fetchPins = (board) => {
+        debugger
     return $.ajax({
         url: '/api/pins',
         method: 'GET',
