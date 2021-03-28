@@ -19,7 +19,7 @@ export const receivePins = (pins) => {
 //     }
 // };
 export const receivePin = (pin) => {
-    debugger
+    
     return {
         type: RECEIVE_PIN,
         pin: pin
@@ -49,7 +49,6 @@ export const fetchPins = (board) => {
 //     }
 // }
 export const fetchPin = (pinId) => {
-    debugger
     return dispatch => {
         return PinApiUtil.fetchPin(pinId).then( pin => {
             dispatch(receivePin(pin))

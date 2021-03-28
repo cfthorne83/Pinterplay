@@ -11,7 +11,7 @@ class BoardShow extends React.Component {
     }
 
     componentDidMount() {
-        debugger
+        
         this.props.fetchBoard(this.props.match.params.boardId)
     }
 
@@ -23,7 +23,6 @@ class BoardShow extends React.Component {
     // }
 
     render() {
-        debugger
         if (!this.props.board){
             return null;
         } else if (!this.props.currentUser) {
