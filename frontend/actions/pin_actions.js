@@ -11,10 +11,10 @@ export const receivePins = (pins) => {
     }
 };
 
-export const receivePin = (pin) => {
+export const receivePin = (data) => {
     return {
         type: RECEIVE_PIN,
-        pin: pin.pin
+        pin: data.pin
     }
 };
 
@@ -35,8 +35,8 @@ export const fetchPins = (board) => {
 
 export const fetchPin = (pinId) => {
     return dispatch => {
-        return PinApiUtil.fetchPin(pinId).then( pin => {
-            dispatch(receivePin(pin))
+        return PinApiUtil.fetchPin(pinId).then( data => {
+            dispatch(receivePin(data))
         })
     }
 }

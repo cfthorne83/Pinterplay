@@ -6,15 +6,13 @@ import LoginFormContainer from '../session_form/login_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
 import CreateBoardFormContainer from '../boards/create_board_form_container';
 import EditBoardFormContainer from '../boards/edit_board_form_container';
-import CreatePinFormContainer from '../pins/create_pin_form_container';
-import CreatePinForm from '../pins/create_pin_form';
+import EditPinFormContainer from '../pins/edit_pin_form_container';
 
 const Modal = ({ modal, closeModal, errors }) =>  {
     if (!modal) {
         return null;
     }
 
-    // let type = modal.modal
     let component;
     switch (modal.modal) {
     // switch (modal) {
@@ -30,6 +28,9 @@ const Modal = ({ modal, closeModal, errors }) =>  {
             break;
         case 'editBoard':
             component = <EditBoardFormContainer />;
+            break;
+        case 'editPin':
+            component = <EditPinFormContainer />;
             break;
         default:
             return null;

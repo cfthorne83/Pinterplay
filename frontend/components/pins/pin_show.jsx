@@ -26,6 +26,11 @@ class PinShow extends React.Component {
                 <h1>Pin show</h1>
                 <h1>{this.props.pin.title}</h1>
                 <img src={this.props.pin.image_url} alt=""/>
+                <img 
+                    onClick={()  => {this.props.openModal("editPin", this.props.pin.id)}} 
+                    src="https://static.thenounproject.com/png/384290-200.png" 
+                    alt="edit-form-link"
+                    className='edit-pin-modal'/>
             </div>
         )
     }
