@@ -6,7 +6,6 @@ export const fetchBoards = () => {
 }
 
 export const fetchBoard = (boardId) => {
-    debugger
     return $.ajax({
         url: `/api/boards/${boardId}`
     })

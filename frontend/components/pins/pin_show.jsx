@@ -6,7 +6,6 @@ class PinShow extends React.Component {
     }
 
     componentDidMount() {
-        debugger
         this.props.fetchPin(this.props.match.params.pinId)
     }
 
@@ -21,7 +20,7 @@ class PinShow extends React.Component {
         if (!this.props.pins) {
             return null;
         }
-debugger
+        
         return (
             <>
                 <h1>Pin show</h1>

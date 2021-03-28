@@ -4,15 +4,13 @@ import { Link } from 'react-router-dom';
 class PinIndex extends React.Component {
 
     componentDidMount() {
-        debugger
         this.props.fetchPins(this.props.board);
         // this.props.fetchPins(this.props.match.params.boardId)
     }
 
     render() {
-        debugger
 
-        if (!(this.props.pins && this.props.board)) {
+        if (!this.props.pins) {
             return null;
         }
 

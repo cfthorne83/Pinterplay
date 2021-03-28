@@ -6,7 +6,6 @@ export const RECEIVE_PIN = 'RECEIVE_PIN';
 export const REMOVE_PIN = 'REMOVE_PIN';
 
 export const receivePins = (pins) => {
-    debugger
     return {
         type: RECEIVE_ALL_PINS,
         pins
@@ -28,7 +27,6 @@ export const removePin = (pinId) => {
 };
 
 export const fetchPins = (board) => {
-    debugger
     return dispatch => {
         return PinApiUtil.fetchPins(board).then(pins => {
             dispatch(receivePins(pins))
