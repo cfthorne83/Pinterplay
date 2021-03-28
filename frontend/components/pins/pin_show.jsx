@@ -19,7 +19,7 @@ debugger
             <>
                 <h1>Pin show</h1>
                 <h1>{this.props.pin.title}</h1>
-
+                <img src={this.props.pin.image_url} alt=""/>
             </>
         )
     }
