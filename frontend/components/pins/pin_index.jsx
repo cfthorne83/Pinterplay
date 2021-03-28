@@ -10,8 +10,9 @@ class PinIndex extends React.Component {
     }
 
     render() {
+        debugger
 
-        if (!this.props.pins) {
+        if (!(this.props.pins && this.props.board)) {
             return null;
         }
 
