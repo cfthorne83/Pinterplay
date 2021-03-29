@@ -40,35 +40,38 @@ class ProfileSettings extends React.Component {
                 <h1>Edit profile</h1>
                 <h2>People visiting your profile will see the following info</h2>
 
-                <img src={this.state.image_url}/>
-                <button onClick={this.updatePhoto}>Change</button>
+                <form>
+                    <img src={this.state.image_url}/>
+                    <button onClick={this.updatePhoto}>Change</button>
 
-                <label>First Name
-                    <input 
-                        type="text"
-                        value={this.state.fname}
-                        onChange={this.updateFname}/>
-                </label>
+                    <label>First Name
+                        <input 
+                            type="text"
+                            value={this.state.fname}
+                            onChange={this.updateFname}/>
+                    </label>
 
-                <label>Last Name
-                    <input 
-                        type="text"
-                        value={this.state.lname}
-                        onChange={this.updateLname}/>
-                </label>
+                    <label>Last Name
+                        <input 
+                            type="text"
+                            value={this.state.lname}
+                            onChange={this.updateLname}/>
+                    </label>
 
-                <label>Username
-                    <input 
-                        type="text"
-                        value={this.state.username}
-                        onChange={this.updateUsername}/>
-                </label>
+                    <label>Username
+                        <input 
+                            type="text"
+                            value={this.state.username}
+                            onChange={this.updateUsername}/>
+                    </label>
 
-                <label>About your profile
-                    <textarea 
-                        placeholder="Write a little bit about yourself here"
-                        onChange={this.updateDescription}/>
-                </label>
+                    <label>About your profile
+                        <textarea 
+                            placeholder="Write a little bit about yourself here"
+                            onChange={this.updateDescription}/>
+                    </label>
+                </form>
+
             </div>
         )
     }
