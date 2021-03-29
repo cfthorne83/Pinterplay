@@ -71,9 +71,9 @@ class CreatePinForm extends React.Component{
             reader.readAsDataURL(file);
 
             reader.onload = () => {
-            image = reader.result;
-            that.setState({ image_url: image });
-                thumbnail.style.backgroundImage = `url(${reader.result})`;
+                let image = reader.result;
+                that.setState({ image_url: image });
+                    thumbnail.style.backgroundImage = `url(${reader.result})`;
             };
         } else {
             thumbnail.style.backgroundImage = null;

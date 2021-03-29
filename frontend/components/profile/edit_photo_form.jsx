@@ -10,27 +10,27 @@ class EditPhotoForm extends React.Component{
 
     handleClick() {
         let input = document.querySelector(".profile-photo__input")
-
         input.click();
     }
 
     handleInput(e) {
+        let that = this;
 
-        console.log(e.target.files[0]);
-        // let reader = new FileReader();
-        // reader.readAsDataURL(files[0]);
+        const file = e.target.files[0];
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
 
-        // reader.onload = () => {
-        //     image = reader.result;
-        //     // that.setState({ image_url: image });
-        //     console.log(image);
-        // }
+        reader.onload = () => {
+            let image = reader.result;
+            // that.setState({ image_url: image });
+            console.log(image);
+        }
     }
 
     render() {
         return (
             <div>
-                <h1>edit photo</h1>
+                <h1>Change your picture</h1>
                 <input 
                     onChange={this.handleInput}
                     type="file" 
