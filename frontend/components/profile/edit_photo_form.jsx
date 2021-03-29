@@ -1,6 +1,6 @@
 import React from "react";
 
-class EditPhoto extends React.Component{
+class EditPhotoForm extends React.Component{
     constructor(props){
         super(props);
 
@@ -12,3 +12,5 @@ class EditPhoto extends React.Component{
         )
     }
 }
+
+export default EditPhotoForm;

@@ -9,6 +9,7 @@ class ProfileSettings extends React.Component {
         this.updateLname = this.updateLname.bind(this);
         this.updateUsername = this.updateUsername.bind(this);
         this.updateDescription = this.updateDescription.bind(this);
+        this.updatePhoto = this.updatePhoto.bind(this);
     }
 
     updatePhoto(e) {
