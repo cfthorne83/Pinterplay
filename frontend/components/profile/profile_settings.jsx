@@ -12,7 +12,7 @@ class ProfileSettings extends React.Component {
     }
 
     updatePhoto(e) {
-        
+        this.props.openModal("editPhoto", this.props.currentUser.id );
     }
 
     updateFname(e) {

@@ -7,6 +7,7 @@ import SignupFormContainer from '../session_form/signup_form_container';
 import CreateBoardFormContainer from '../boards/create_board_form_container';
 import EditBoardFormContainer from '../boards/edit_board_form_container';
 import EditPinFormContainer from '../pins/edit_pin_form_container';
+import EditPhotoForm from '../pins/edit_pin_form_container';
 
 const Modal = ({ modal, closeModal, errors }) =>  {
     if (!modal) {
@@ -31,6 +32,9 @@ const Modal = ({ modal, closeModal, errors }) =>  {
             break;
         case 'editPin':
             component = <EditPinFormContainer />;
+            break;
+        case 'editPhoto':
+            component = <EditPhotoForm/>;
             break;
         default:
             return null;
