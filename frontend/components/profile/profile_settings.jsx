@@ -7,6 +7,12 @@ class ProfileSettings extends React.Component {
 
         this.updateFname = this.updateFname.bind(this);
         this.updateLname = this.updateLname.bind(this);
+        this.updateUsername = this.updateUsername.bind(this);
+        this.updateDescription = this.updateDescription.bind(this);
+    }
+
+    updatePhoto(e) {
+        
     }
 
     updateFname(e) {
@@ -17,6 +23,14 @@ class ProfileSettings extends React.Component {
         this.setState({ lname: e.currentTarget.value })
     }
 
+    updateUsername(e) {
+        this.setState({ username: e.currentTarget.value })
+    }
+
+    updateDescription(e) {
+        this.setState({ description: e.currentTarget.value })
+    }
+
     render() {
         const { currentUser } = this.props;
 
@@ -24,6 +38,9 @@ class ProfileSettings extends React.Component {
             <div>
                 <h1>Edit profile</h1>
                 <h2>People visiting your profile will see the following info</h2>
+
+                <img src={this.state.image_url}/>
+                <button onClick={this.updatePhoto}>Change</button>
 
                 <label>First Name
                     <input 
@@ -37,6 +54,20 @@ class ProfileSettings extends React.Component {
                         type="text"
                         value={this.state.lname}
                         onChange={this.updateLname}/>
+                </label>
+
+                <label>Username
+                    <input 
+                        type="text"
+                        value={this.state.username}
+                        onChange={this.updateUsername}/>
+                </label>
+
+                <label>About your profile
+                    <textarea 
+                        placeholder="Write a little bit about yourself here"
+                        value={this.state.description}
+                        onChange={this.updateDescription}/>
                 </label>
             </div>
         )
