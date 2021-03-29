@@ -45,7 +45,6 @@ class ProfileSettings extends React.Component {
                 <h2>People visiting your profile will see the following info</h2>
 
                 <form>
-                    {/* <img src={this.state.image_url}/> */}
                     <button onClick={this.updatePhoto}>Change</button>
 
                     <label>First Name
