@@ -5,6 +5,7 @@ class EditPinForm extends React.Component {
         super(props);
         this.state = this.props.pin;
 
+        this.handleUpdate = this.handleUpdate.bind(this);
         this.handleDelete = this.handleDelete.bind(this);
         this.handleCancel = this.handleCancel.bind(this);
         this.updateTitle = this.updateTitle.bind(this);
@@ -13,6 +14,11 @@ class EditPinForm extends React.Component {
 
     componentDidMount() {
         this.props.fetchPin(this.props.pinId);
+    }
+
+    handleUpdate(e) {
+        e.preventDefault();
+        this.props.updatePin(this.state).then(this.props.closeModal);
     }
 
     handleDelete(e) {
@@ -57,7 +63,7 @@ class EditPinForm extends React.Component {
                             />
                     </label>
 
-                    <button>Save</button>
+                    <button onClick={this.handleUpdate}>Save</button>
                     <button onClick={this.handleCancel}>Cancel</button>
                     <button onClick={this.handleDelete}>Delete</button>
                 </form>
