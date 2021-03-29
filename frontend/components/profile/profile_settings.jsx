@@ -40,7 +40,7 @@ class ProfileSettings extends React.Component {
         }
 
         return (
-            <div>
+            <div className="edit-profile-form">
                 <h1>Edit profile</h1>
                 <h2>People visiting your profile will see the following info</h2>
 
@@ -74,15 +74,8 @@ class ProfileSettings extends React.Component {
                             placeholder="Write a little bit about yourself here"
                             onChange={this.updateDescription}/>
                     </label>
+                    <img src={this.state.image_url} alt="profile-pic"/>
                 </form>
-                    <br/>
-                    <br/>
-                <h1>{this.state.email}</h1>
-                <h1>{this.state.id}</h1>
-                <h1>{this.state.fname}</h1>
-                <h1>{this.state.lname}</h1>
-                <h1>{this.state.image_url}</h1>
-
             </div>
         )
     }

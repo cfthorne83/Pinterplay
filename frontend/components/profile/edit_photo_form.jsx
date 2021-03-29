@@ -25,7 +25,9 @@ class EditPhotoForm extends React.Component{
         reader.onload = () => {
             let image = reader.result;
             that.setState({ image_url: image });
-            console.log(that.state);
+            // console.log(that.props.updateUser);
+            debugger
+            that.props.updateUser(that.state);
         }
     }
 
