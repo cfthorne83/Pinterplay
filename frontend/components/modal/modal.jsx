@@ -7,7 +7,7 @@ import SignupFormContainer from '../session_form/signup_form_container';
 import CreateBoardFormContainer from '../boards/create_board_form_container';
 import EditBoardFormContainer from '../boards/edit_board_form_container';
 import EditPinFormContainer from '../pins/edit_pin_form_container';
-import EditPhotoForm from '../profile/edit_photo_form';
+import EditPhotoFormContainer from '../profile/edit_photo_form_container';
 
 const Modal = ({ modal, closeModal, errors }) =>  {
     if (!modal) {
@@ -16,7 +16,6 @@ const Modal = ({ modal, closeModal, errors }) =>  {
 
     let component;
     switch (modal.modal) {
-    // switch (modal) {
         
         case 'login':
             component = <LoginFormContainer />;
@@ -34,7 +33,7 @@ const Modal = ({ modal, closeModal, errors }) =>  {
             component = <EditPinFormContainer />;
             break;
         case 'editPhoto':
-            component = <EditPhotoForm/>;
+            component = <EditPhotoFormContainer/>;
             break;
         default:
             return null;

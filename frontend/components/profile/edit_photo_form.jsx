@@ -4,6 +4,8 @@ class EditPhotoForm extends React.Component{
     constructor(props){
         super(props);
 
+        this.state = this.props.currentUser;
+
         this.handleClick = this.handleClick.bind(this);
         this.handleInput = this.handleInput.bind(this);
     }
@@ -22,8 +24,8 @@ class EditPhotoForm extends React.Component{
 
         reader.onload = () => {
             let image = reader.result;
-            // that.setState({ image_url: image });
-            console.log(image);
+            that.setState({ image_url: image });
+            console.log(that.state);
         }
     }
 
@@ -31,11 +33,13 @@ class EditPhotoForm extends React.Component{
         return (
             <div>
                 <h1>Change your picture</h1>
-                <input 
-                    onChange={this.handleInput}
-                    type="file" 
-                    className="profile-photo__input"/>
-                <button onClick={this.handleClick}>Choose photo</button>
+                <form onSubmit={this.handleSubmit}>
+                    <input 
+                        onChange={this.handleInput}
+                        type="file" 
+                        className="profile-photo__input"/>
+                    <button onClick={this.handleClick}>Choose photo</button>
+                </form>
             </div>
         )
     }

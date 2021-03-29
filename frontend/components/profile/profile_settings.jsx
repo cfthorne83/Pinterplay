@@ -12,8 +12,8 @@ class ProfileSettings extends React.Component {
         this.updatePhoto = this.updatePhoto.bind(this);
     }
 
-    updatePhoto(e) {
-        this.props.openModal("editPhoto", this.props.currentUser.id );
+    updatePhoto() {
+        this.props.openModal( "editPhoto", this.props.currentUser );
     }
 
     updateFname(e) {
