@@ -12,12 +12,10 @@ class EditPinForm extends React.Component {
     }
 
     componentDidMount() {
-        debugger
         this.props.fetchPin(this.props.pinId);
     }
 
     handleDelete(e) {
-        debugger
         e.preventDefault();
         this.props.deletePin(this.props.pin.id).then(this.props.closeModal);
     }
@@ -37,9 +35,6 @@ class EditPinForm extends React.Component {
     }
 
     render() {
-        debugger
-
-        const { closeModal } = this.props;
 
         if (!this.props.pin) return null;
 

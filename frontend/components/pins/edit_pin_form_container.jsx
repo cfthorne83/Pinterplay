@@ -6,7 +6,6 @@ import { fetchPin, updatePin, deletePin } from '../../actions/pin_actions';
 import { closeModal } from "../../actions/modal_actions";
 
 const msp = (state, ownProps) => {
-    // debugger
     return {
         pin: state.entities.pins[state.ui.modal.options],
         pinId: state.ui.modal.options
@@ -17,7 +16,7 @@ const mdp = (dispatch, ownProps) => {
     return {
         fetchPin: (pinId) => dispatch(fetchPin(pinId)),
         updatePin: (pin) => dispatch(updatePin(pin)),
-        deletePin: (pin) => dispatch(deletePin(pinId)),
+        deletePin: (pinId) => dispatch(deletePin(pinId)),
         closeModal: () => dispatch(closeModal())
     }
 }
