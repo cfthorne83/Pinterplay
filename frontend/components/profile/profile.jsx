@@ -1,5 +1,6 @@
 import React from 'react'
-import { Redirect } from 'react-router-dom';
+import { Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import BoardIndexContainer from '../boards/board_index_container';
 
@@ -15,6 +16,9 @@ class Profile extends React.Component{
     }
 
     render() {
+
+        const { currentUser } = this.props;
+
         if (!this.props.currentUser) {
             return <Redirect to='/'/>
         } 
@@ -24,12 +28,13 @@ class Profile extends React.Component{
 
                 <section className='heading'>
                     <h1 className='initial-container'>
-                        <p>{this.props.currentUser.email[0].toUpperCase()}</p>
+                        <p>{currentUser.email[0].toUpperCase()}</p>
                     </h1>
-                    <h2>{this.props.currentUser.email}</h2>
+                    <h2>{currentUser.email}</h2>
                 </section>
 
                 <section className='mid'>
+                    <Link to={`/users/${currentUser.id}/settings`}>Edit Profile</Link>
                     <div className='create-button-container'>
                         <button onClick={this.handleSubmit}>+</button>
                     </div>

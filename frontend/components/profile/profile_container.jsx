@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { openModal, closeModal } from '../../actions/modal_actions';
 
-import Profile from './profile'
+import Profile from './profile';
 
 const mSTP = (state, ownProps) => {
     return {
