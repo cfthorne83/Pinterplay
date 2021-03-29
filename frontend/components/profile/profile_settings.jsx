@@ -10,18 +10,9 @@ class ProfileSettings extends React.Component {
         this.updateUsername = this.updateUsername.bind(this);
         this.updateDescription = this.updateDescription.bind(this);
         this.updatePhoto = this.updatePhoto.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    // componentDidUpdate(prevProps) {
-
-    //     if (this.props.currentUser !== prevProps.currentUser){
-    //         console.log("different");
-    //     }
-    // }
-
-    componentDidMount() {
-        this.setState(this.props.currentUser);
-    }
 
     updatePhoto() {
         this.props.openModal( "editPhoto", this.props.currentUser );
@@ -43,19 +34,22 @@ class ProfileSettings extends React.Component {
         this.setState({ description: e.currentTarget.value })
     }
 
+    handleSubmit(e) {
+        e.preventDefault();
+        this.props.updateUser(this.state);
+    }
+
     render() {
         const { currentUser } = this.props;
 
-        if (!this.props.currentUser){
-            return null;
-        }
+        if (!this.props.currentUser) return null;
 
         return (
             <div className="edit-profile-form">
                 <h1>Edit profile</h1>
                 <h2>People visiting your profile will see the following info</h2>
 
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <button onClick={this.updatePhoto}>Change</button>
 
                     <label>First Name
@@ -84,7 +78,10 @@ class ProfileSettings extends React.Component {
                             placeholder="Write a little bit about yourself here"
                             onChange={this.updateDescription}/>
                     </label>
+
+                    <button>Save</button>
                     <img src={this.state.image_url} alt="profile-pic"/>
+
                 </form>
             </div>
         )

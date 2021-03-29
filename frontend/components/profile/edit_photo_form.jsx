@@ -26,7 +26,7 @@ class EditPhotoForm extends React.Component{
             let image = reader.result;
             that.setState({ image_url: image });
             // console.log(that.props.updateUser);
-            that.props.updateUser(that.state).then(this.props.closeModal);
+            that.props.updateUser(that.state)
         }
     }
 
@@ -40,6 +40,7 @@ class EditPhotoForm extends React.Component{
                         type="file" 
                         className="profile-photo__input"/>
                     <button onClick={this.handleClick}>Choose photo</button>
+                    {/* <img src={this.state.image_url} alt=""/> */}
                 </form>
             </div>
         )
