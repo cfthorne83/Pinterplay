@@ -4,14 +4,25 @@ class EditPinForm extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = this.state.pin;
+        this.state = this.props.pin;
+
+        this.handleDelete = this.handleDelete.bind(this);
     }
 
     componentDidMount() {
+        debugger
         this.props.fetchPin(this.props.pinId);
     }
 
+    handleDelete() {
+        debugger
+        this.props.deletePin(this.props.pinId);
+    }
+
     render() {
+        debugger
+
+        const { closeModal } = this.props;
 
         if (!this.props.pin) return null;
 
@@ -19,19 +30,23 @@ class EditPinForm extends React.Component {
             <div>
                 <h1>Edit this pin</h1>
 
-                <form action="">
-                    <label>Edit Title
+                <form>
+                    <label>Title
                         <input 
                             type="text"
                             value={this.state.title}
-                            onChange={}/>
+                            />
                     </label>
 
                     <label>Description
                         <textarea
                             value={this.state.description}
-                            onChange={}/>
+                            />
                     </label>
+
+                    <button>Save</button>
+                    <button onClick={() => closeModal}>Cancel</button>
+                    <button onClick={this.handleDelete}>Delete</button>
                 </form>
 
             </div>
