@@ -7,6 +7,8 @@ import Root from './components/root';
 import {fetchBoards, fetchBoard, createBoard, deleteBoard} from './util/board_api_util';
 import { fetchPins, fetchPin, createPin, deletePin } from './util/pin_api_util';
 
+import { updateUser } from './util/user.api.util';
+
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -37,6 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
     window.createPin = createPin;
     window.fetchPin = fetchPin;
     window.deletePin = deletePin;
+
+    window.updateUser = updateUser;
 
 
     ReactDOM.render(<Root store={store}/>, root)

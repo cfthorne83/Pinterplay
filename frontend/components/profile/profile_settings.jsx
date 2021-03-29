@@ -35,13 +35,17 @@ class ProfileSettings extends React.Component {
     render() {
         const { currentUser } = this.props;
 
+        if (!this.props.currentUser){
+            return null;
+        }
+
         return (
             <div>
                 <h1>Edit profile</h1>
                 <h2>People visiting your profile will see the following info</h2>
 
                 <form>
-                    <img src={this.state.image_url}/>
+                    {/* <img src={this.state.image_url}/> */}
                     <button onClick={this.updatePhoto}>Change</button>
 
                     <label>First Name
@@ -71,6 +75,13 @@ class ProfileSettings extends React.Component {
                             onChange={this.updateDescription}/>
                     </label>
                 </form>
+                    <br/>
+                    <br/>
+                <h1>{this.state.email}</h1>
+                <h1>{this.state.id}</h1>
+                <h1>{this.state.fname}</h1>
+                <h1>{this.state.lname}</h1>
+                <h1>{this.state.image_url}</h1>
 
             </div>
         )
