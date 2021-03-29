@@ -67,7 +67,6 @@ class ProfileSettings extends React.Component {
                 <label>About your profile
                     <textarea 
                         placeholder="Write a little bit about yourself here"
-                        value={this.state.description}
                         onChange={this.updateDescription}/>
                 </label>
             </div>
