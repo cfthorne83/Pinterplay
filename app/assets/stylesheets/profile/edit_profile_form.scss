@@ -1,6 +1,11 @@
 .edit-profile-form {
     display: flex;
     flex-direction: column;
+    width: 100%;
+
+    form {
+        align-self: flex-start;
+    }
 
     h1 {
         font-size: 1.75rem;
@@ -31,10 +36,18 @@
         background-color: var(--hov-grey);
     }
 
+    
     input {
         border: 2px solid var(--border-gry);
         padding: .7rem;
         border-radius: .5em;
+    }
+    
+    textarea {
+        padding: .7rem;
+        border-radius: .5em;
+        border: 2px solid var(--border-gry);
+        width: 100%;
     }
 
     .photo-change {
@@ -51,6 +64,10 @@
         button {
             margin-left: 1.5rem;
         }
+    }
+
+    .name-input-con {
+        display: flex;
     }
 }
 
