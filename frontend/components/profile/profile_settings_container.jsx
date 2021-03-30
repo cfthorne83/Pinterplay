@@ -7,7 +7,8 @@ import { updateUser } from "../../actions/user_actions";
 
 const msp = (state, ownProps) => {
     return {
-        currentUser: state.entities.users[state.session.id]
+        currentUser: state.entities.users[state.session.id],
+        imageUrl: state.entities.users[state.session.id].image_url
     }
 }
 

@@ -14,8 +14,10 @@ class ProfileSettings extends React.Component {
     }
 
 
-    updatePhoto() {
+    updatePhoto(e) {
+        e.preventDefault();
         this.props.openModal( "editPhoto", this.props.currentUser );
+        this.setState({ image_url: this.props.currentUser.image_url})
     }
 
     updateFname(e) {
@@ -92,7 +94,7 @@ class ProfileSettings extends React.Component {
                     <button>Save</button>
                         <br/>
                         <br/>
-                    <img src={this.state.image_url} alt="profile-pic"/>
+                    <img src={this.props.imageUrl} alt="profile-pic"/>
                         <br/>
                         <br/>
                 </form>
