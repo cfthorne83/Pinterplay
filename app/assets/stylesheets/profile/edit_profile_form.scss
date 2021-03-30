@@ -11,10 +11,11 @@
     form {
         // align-self: stretch;
         box-sizing: border-box;
-        padding: .5rem;
+        padding: 1rem;
         margin-top: 1.5rem;
         max-width: 488px;
         background-color: white;
+        border-radius: var(--b-rad-lg);
     }
 
     h1 {
