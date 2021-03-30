@@ -42,6 +42,11 @@ class ProfileSettings extends React.Component {
         this.props.updateUser(this.state);
     }
 
+    handleReset(e) {
+        e.preventDefault();
+        this.state = this.props.currentUser;
+    }
+
     render() {
 
         if (!this.props.currentUser) return null;
@@ -101,6 +106,7 @@ class ProfileSettings extends React.Component {
                     </section>
 
                     <button>Save</button>
+                    <button onClick={this.handleReset}>Reset</button>
                 </form>
             </div>
         )
