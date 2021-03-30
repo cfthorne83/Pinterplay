@@ -57,37 +57,32 @@ class ProfileSettings extends React.Component {
                         <button onClick={this.updatePhoto}>Change</button>
                     </div>
 
-                    <label>First Name
-                        <br/>
+                    <h3>First Name</h3>
                         <input 
                             type="text"
                             value={this.state.fname}
                             onChange={this.updateFname}/>
-                    </label>
-                        <br/>
-                    <label>Last Name
-                        <br/>
+                    
+                    <h3>Last Name</h3>
                         <input 
                             type="text"
                             value={this.state.lname}
                             onChange={this.updateLname}/>
-                    </label>
+                    
 
 
-                    <label>Username
-                        <br/>
+                    <h3>Username</h3>
                         <input 
                             type="text"
                             value={this.state.username}
                             onChange={this.updateUsername}/>
-                    </label>
+                    
 
-                    <label>About your profile
-                    <br/>
+                    <h3>About your profile</h3>
                         <textarea 
                             placeholder="Write a little bit about yourself here"
                             onChange={this.updateDescription}/>
-                    </label>
+                    
 
                     <button>Save</button>
                 </form>
