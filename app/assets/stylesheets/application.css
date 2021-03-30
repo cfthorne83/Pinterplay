@@ -68,14 +68,14 @@ body {
    height: 100%;
 }
 
-/* button {
-   cursor: pointer;
-   border-radius: 9999px;
+button {
+   /* border-radius: 9999px;
    padding: .8rem;
    font-size: 1rem;
-   font-weight: 600;
-} */
+   font-weight: 600; */
+}
 
-/* input {
-   padding: .8rem;
-} */
+input, button, textarea {
+   /* padding: .8rem; */
+   cursor: pointer;
+}

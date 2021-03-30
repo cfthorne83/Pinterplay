@@ -8,7 +8,6 @@
     box-sizing: border-box;    
     
     form {
-        align-self: flex-start;
         box-sizing: border-box;
         padding: .5rem;
         margin-top: 2rem;
@@ -23,6 +22,7 @@
     h2 {
         letter-spacing: var(--lett-space);
         font-weight: 100;
+        padding: .5rem 0
     }
     
     h3 {
@@ -53,6 +53,10 @@
         letter-spacing: var(--lett-space);
     }
     
+    input:hover, textarea:hover {
+        border: 2px solid var(--input-hov-grey);  
+    }
+    
     .username__input, textarea {
         width: 100%;
     }
@@ -61,6 +65,10 @@
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica;
         min-height: 100px;
         resize: none;
+    }
+
+    .section {
+        padding: 5rem 0;
     }
 
     .photo-change {

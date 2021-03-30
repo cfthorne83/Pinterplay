@@ -49,15 +49,18 @@ class ProfileSettings extends React.Component {
         return (
             <div className="edit-profile-form">
                 <form onSubmit={this.handleSubmit}>
-                <h1>Edit profile</h1>
-                <h2>People visiting your profile will see the following info</h2>
-                    <h3>Photo</h3>
-                    <div className="photo-change">
-                        <img src={this.props.imageUrl} alt="profile-pic"/>
-                        <button onClick={this.updatePhoto}>Change</button>
-                    </div>
+                    <h1>Edit profile</h1>
+                    <h2>People visiting your profile will see the following info</h2>
+                    
+                    <section className="photo-con">
+                        <h3>Photo</h3>
+                        <div className="photo-change">
+                            <img src={this.props.imageUrl} alt="profile-pic"/>
+                            <button onClick={this.updatePhoto}>Change</button>
+                        </div>
+                    </section>
 
-                    <div className="name-input-con">
+                    <section className="name-input-con">
                         <div>  
                             <h3>First Name</h3>
                                 <input 
@@ -73,25 +76,26 @@ class ProfileSettings extends React.Component {
                                     value={this.state.lname}
                                     onChange={this.updateLname}/>
                         </div>
-                    </div>
+                    </section>
                     
 
-
-                    <h3>Username</h3>
-                        <input 
-                            className="username__input"
-                            type="text"
-                            value={this.state.username}
-                            onChange={this.updateUsername}/>
+                    <section>
+                        <h3>Username</h3>
+                            <input 
+                                className="username__input"
+                                type="text"
+                                value={this.state.username}
+                                onChange={this.updateUsername}/>
+                    </section>
                     
-
-                    <h3>About your profile</h3>
-                        <textarea 
-                            className="about__input"
-                            type="text"
-                            placeholder="Write a little bit about yourself here"
-                            onChange={this.updateDescription}/>
-                    
+                    <section>
+                        <h3>About your profile</h3>
+                            <textarea 
+                                className="about__input"
+                                type="text"
+                                placeholder="Write a little bit about yourself here"
+                                onChange={this.updateDescription}/>        
+                    </section>
 
                     <button>Save</button>
                 </form>
