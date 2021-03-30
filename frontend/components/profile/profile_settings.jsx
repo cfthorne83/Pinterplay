@@ -11,6 +11,7 @@ class ProfileSettings extends React.Component {
         this.updateDescription = this.updateDescription.bind(this);
         this.updatePhoto = this.updatePhoto.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleReset = this.handleReset.bind(this);
     }
 
 
@@ -22,7 +23,6 @@ class ProfileSettings extends React.Component {
 
     updateFname(e) {
         this.setState({ fname: e.currentTarget.value });
-        console.log(this.state);
     }
 
     updateLname(e) {
@@ -44,7 +44,8 @@ class ProfileSettings extends React.Component {
 
     handleReset(e) {
         e.preventDefault();
-        this.state = this.props.currentUser;
+        this.setState(this.props.currentUser);
+        console.log(this.state);
     }
 
     render() {
@@ -105,8 +106,10 @@ class ProfileSettings extends React.Component {
                                 onChange={this.updateDescription}/>        
                     </section>
 
-                    <button>Save</button>
-                    <button onClick={this.handleReset}>Reset</button>
+                    <section className="btn-con">
+                        <button onClick={this.handleReset}>Reset</button>
+                        <button className="red-btn">Save</button>
+                    </section>
                 </form>
             </div>
         )

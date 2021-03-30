@@ -115,6 +115,20 @@
             margin-left: .5rem;
         }
     }
+
+    .btn-con {
+        text-align: end;
+
+        .red-btn {
+            background-color: red;
+            color: white;
+            margin-left: 1rem;
+        }
+
+        .red-btn:hover {
+            background-color: var(--red-btn-hov);
+        }
+    }
 }
 
 .profile-photo__input {
