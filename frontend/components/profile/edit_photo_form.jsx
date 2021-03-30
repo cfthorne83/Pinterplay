@@ -1,5 +1,5 @@
 import React from "react";
-import { BounceLoader } from "react-spinners";
+import { BeatLoader } from "react-spinners";
 
 
 class EditPhotoForm extends React.Component{
@@ -44,7 +44,7 @@ class EditPhotoForm extends React.Component{
                         className="profile-photo__input"/>
                     <button onClick={this.handleClick}>Choose photo</button>
                     {/* <img src={this.state.image_url} alt=""/> */}
-                    <BounceLoader loading={this.state.loading}/>
+                    <BeatLoader loading={this.state.loading}/>
                 </form>
             </div>
         )
