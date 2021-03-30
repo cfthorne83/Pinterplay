@@ -25,6 +25,8 @@ class EditPhotoForm extends React.Component{
         reader.readAsDataURL(file);
 
         reader.onload = () => {
+            const button = document.querySelector(".choose-photo--btn");
+            button.style.display = "none";
             let image = reader.result;
             that.setState({ image_url: image });
             that.setState({ loading: true });
@@ -42,9 +44,12 @@ class EditPhotoForm extends React.Component{
                         onChange={this.handleInput}
                         type="file" 
                         className="profile-photo__input"/>
-                    <button onClick={this.handleClick}>Choose photo</button>
-                    {/* <img src={this.state.image_url} alt=""/> */}
-                    <BeatLoader loading={this.state.loading}/>
+                    <button 
+                        className="choose-photo--btn"
+                        onClick={this.handleClick}>
+                            Choose photo
+                    </button>
+                    <BeatLoader size={25} color="red" loading={this.state.loading}/>
                 </form>
             </div>
         )
