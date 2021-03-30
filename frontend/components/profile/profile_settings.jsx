@@ -19,19 +19,20 @@ class ProfileSettings extends React.Component {
     }
 
     updateFname(e) {
-        this.setState({ fname: e.currentTarget.value })
+        this.setState({ fname: e.currentTarget.value });
+        console.log(this.state);
     }
 
     updateLname(e) {
-        this.setState({ lname: e.currentTarget.value })
+        this.setState({ lname: e.currentTarget.value });
     }
 
     updateUsername(e) {
-        this.setState({ username: e.currentTarget.value })
+        this.setState({ username: e.currentTarget.value });
     }
 
     updateDescription(e) {
-        this.setState({ description: e.currentTarget.value })
+        this.setState({ description: e.currentTarget.value });
     }
 
     handleSubmit(e) {
@@ -40,7 +41,6 @@ class ProfileSettings extends React.Component {
     }
 
     render() {
-        const { currentUser } = this.props;
 
         if (!this.props.currentUser) return null;
 
@@ -89,9 +89,12 @@ class ProfileSettings extends React.Component {
                     </label>
                         <br/>
                         <br/>
-                    <img src={this.state.image_url} alt="profile-pic"/>
                     <button>Save</button>
-
+                        <br/>
+                        <br/>
+                    <img src={this.state.image_url} alt="profile-pic"/>
+                        <br/>
+                        <br/>
                 </form>
             </div>
         )

@@ -25,16 +25,15 @@ class EditPhotoForm extends React.Component{
         reader.onload = () => {
             let image = reader.result;
             that.setState({ image_url: image });
-            // console.log(that.props.updateUser);
-            that.props.updateUser(that.state)
+            this.props.updateUser(this.state).then(this.props.closeModal);
         }
     }
-
+    
     render() {
         return (
             <div>
                 <h1>Change your picture</h1>
-                <form onSubmit={this.handleSubmit}>
+                <form>
                     <input 
                         onChange={this.handleInput}
                         type="file" 
