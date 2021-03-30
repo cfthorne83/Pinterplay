@@ -48,9 +48,9 @@ class ProfileSettings extends React.Component {
 
         return (
             <div className="edit-profile-form">
+                <form onSubmit={this.handleSubmit}>
                 <h1>Edit profile</h1>
                 <h2>People visiting your profile will see the following info</h2>
-                <form onSubmit={this.handleSubmit}>
                     <h3>Photo</h3>
                     <div className="photo-change">
                         <img src={this.props.imageUrl} alt="profile-pic"/>
@@ -66,7 +66,7 @@ class ProfileSettings extends React.Component {
                                     onChange={this.updateFname}/>
                         </div>
                         
-                        <div>
+                        <div className="lname__input">
                             <h3>Last Name</h3>
                                 <input 
                                     type="text"
@@ -79,6 +79,7 @@ class ProfileSettings extends React.Component {
 
                     <h3>Username</h3>
                         <input 
+                            className="username__input"
                             type="text"
                             value={this.state.username}
                             onChange={this.updateUsername}/>
@@ -86,6 +87,8 @@ class ProfileSettings extends React.Component {
 
                     <h3>About your profile</h3>
                         <textarea 
+                            className="about__input"
+                            type="text"
                             placeholder="Write a little bit about yourself here"
                             onChange={this.updateDescription}/>
                     
