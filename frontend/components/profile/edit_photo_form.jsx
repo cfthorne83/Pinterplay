@@ -27,6 +27,7 @@ class EditPhotoForm extends React.Component{
         reader.onload = () => {
             const button = document.querySelector(".choose-photo--btn");
             button.style.display = "none";
+            
             let image = reader.result;
             that.setState({ image_url: image });
             that.setState({ loading: true });
