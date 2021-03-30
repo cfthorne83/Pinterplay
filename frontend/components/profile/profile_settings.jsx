@@ -49,8 +49,10 @@ class ProfileSettings extends React.Component {
         return (
             <div className="edit-profile-form">
                 <form onSubmit={this.handleSubmit}>
-                    <h1>Edit profile</h1>
-                    <h2>People visiting your profile will see the following info</h2>
+                    <section>
+                        <h1>Edit profile</h1>
+                        <h2>People visiting your profile will see the following info</h2>
+                    </section>
                     
                     <section className="photo-con">
                         <h3>Photo</h3>
