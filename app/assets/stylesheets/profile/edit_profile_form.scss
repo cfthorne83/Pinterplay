@@ -19,15 +19,22 @@
     }
 
     button {
-        // background-color: var(--lt-grey);
+        cursor: pointer;
+        border-radius: 9999px;
+        padding: .8rem;
+        font-size: 1rem;
+        font-weight: 600;
         background-color: var(--lt-grey);
-        // font-size: var(--btn-font-size);
-        // font-weight: var(--btn-font-w);
-        // padding: var(--btn-pad);
     }
 
     button:hover {
         background-color: var(--hov-grey);
+    }
+
+    input {
+        border: 2px solid var(--border-gry);
+        padding: .7rem;
+        border-radius: .5em;
     }
 
     .photo-change {
