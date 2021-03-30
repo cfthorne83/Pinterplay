@@ -1,6 +1,5 @@
 .edit-profile-form {
     display: flex;
-    // justify-content: center;
     flex-direction: column;
 
     width: 100%;
@@ -28,11 +27,15 @@
         padding: .5rem 0
     }
     
-    h3 {
+    h3, h4{
         letter-spacing: var(--lett-space);
         font-size: 12px;
         padding: .5em 0;
         font-weight: 100;
+    }
+
+    h4 {
+        color: rgb(134, 134, 134);
     }
 
     button {

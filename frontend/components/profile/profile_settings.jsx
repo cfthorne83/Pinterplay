@@ -88,6 +88,7 @@ class ProfileSettings extends React.Component {
                                 type="text"
                                 value={this.state.username}
                                 onChange={this.updateUsername}/>
+                                <h4>www.mypin.com/{this.state.username}</h4>
                     </section>
                     
                     <section>
