@@ -1,11 +1,42 @@
 .edit-profile-form {
-     img {
-        width: 80px;
-        height: 80px;
-        object-fit: cover;
-        // overflow: hidden;
-        clip-path: circle(40px at center);
-     }
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+        font-size: 1.75rem;
+        font-weight: 640;
+        letter-spacing: var(--lett-space);
+    }
+    
+    h2 {
+        letter-spacing: var(--lett-space);
+        font-weight: 100;
+    }
+    
+    h3 {
+        letter-spacing: var(--lett-space);
+        font-size: 12px;
+    }
+
+    button {
+        // background-color: var(--lt-grey);
+        background-color: red;
+        font-size: var(--btn-font-size);
+        font-weight: var(--btn-font-w);
+        padding: var(--btn-pad);
+    }
+
+    .photo-change {
+        display: flex;
+        align-items: center;
+
+        img {
+           width: 80px;
+           height: 80px;
+           object-fit: cover;
+           clip-path: circle(40px at center);
+        }
+    }
 }
 
 .profile-photo__input {

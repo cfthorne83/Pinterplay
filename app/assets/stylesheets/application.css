@@ -67,3 +67,7 @@ body {
 .app {
    height: 100%;
 }
+
+button {
+   cursor: pointer;
+}
