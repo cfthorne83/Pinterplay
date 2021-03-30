@@ -53,7 +53,11 @@ class ProfileSettings extends React.Component {
                     <br/>
                     <br/>
                 <form onSubmit={this.handleSubmit}>
-                    <button onClick={this.updatePhoto}>Change Photo</button>
+                        <label>Photo
+                            <br/>
+                            <img src={this.props.imageUrl} alt="profile-pic"/>
+                            <button onClick={this.updatePhoto}>Change</button>
+                        </label>
                         <br/>
                         <br/>
                     <label>First Name
@@ -92,11 +96,6 @@ class ProfileSettings extends React.Component {
                         <br/>
                         <br/>
                     <button>Save</button>
-                        <br/>
-                        <br/>
-                    <img src={this.props.imageUrl} alt="profile-pic"/>
-                        <br/>
-                        <br/>
                 </form>
             </div>
         )

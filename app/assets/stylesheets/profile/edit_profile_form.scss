@@ -1,6 +1,9 @@
 .edit-profile-form {
      img {
         width: 80px;
+        height: 80px;
+        object-fit: cover;
+        // overflow: hidden;
         clip-path: circle(40px at center);
      }
 }
