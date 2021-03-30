@@ -48,39 +48,49 @@ class ProfileSettings extends React.Component {
             <div className="edit-profile-form">
                 <h1>Edit profile</h1>
                 <h2>People visiting your profile will see the following info</h2>
-
+                    <br/>
+                    <br/>
                 <form onSubmit={this.handleSubmit}>
-                    <button onClick={this.updatePhoto}>Change</button>
-
+                    <button onClick={this.updatePhoto}>Change Photo</button>
+                        <br/>
+                        <br/>
                     <label>First Name
+                        <br/>
                         <input 
                             type="text"
                             value={this.state.fname}
                             onChange={this.updateFname}/>
                     </label>
-
+                        <br/>
+                        <br/>
                     <label>Last Name
+                        <br/>
                         <input 
                             type="text"
                             value={this.state.lname}
                             onChange={this.updateLname}/>
                     </label>
-
+                        <br/>
+                        <br/>
                     <label>Username
+                        <br/>
                         <input 
                             type="text"
                             value={this.state.username}
                             onChange={this.updateUsername}/>
                     </label>
-
+                        <br/>
+                        <br/>
                     <label>About your profile
+                        <br/>
                         <textarea 
                             placeholder="Write a little bit about yourself here"
                             onChange={this.updateDescription}/>
                     </label>
-
-                    <button>Save</button>
+                        <br/>
+                        <br/>
                     <img src={this.state.image_url} alt="profile-pic"/>
+                    <button>Save</button>
 
                 </form>
             </div>

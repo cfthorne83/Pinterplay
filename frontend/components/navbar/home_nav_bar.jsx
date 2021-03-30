@@ -27,7 +27,11 @@ class HomeNavBar extends React.Component {
                 <nav className='nav-dropdowns-container'>
                     <ul className='nav-dropdowns'>
                         
-                        <li id='initial'><Link to={`/users/${this.props.currentUser.id}`}>{this.props.currentUser.email[0].toUpperCase()}</Link></li>
+                        <li id='initial'>
+                            <Link to={`/users/${this.props.currentUser.id}`}>
+                                <img src={this.props.currentUser.image_url} alt=""/>
+                                {/* {this.props.currentUser.email[0].toUpperCase()} */}
+                            </Link></li>
                         <li>
                             <LogoutDropdown
                             logout={this.props.logout}

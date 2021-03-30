@@ -117,9 +117,13 @@
     text-align: center;
 }
 
-#initial:hover {
-   background-color: rgb(211, 211, 211);
+#initial img {
+    width: 20px;
 }
+
+/* #initial:hover {
+   background-color: rgb(211, 211, 211);
+} */
 
 
 .dropdown-outer {
