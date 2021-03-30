@@ -20,10 +20,14 @@
 
     button {
         // background-color: var(--lt-grey);
-        background-color: red;
-        font-size: var(--btn-font-size);
-        font-weight: var(--btn-font-w);
-        padding: var(--btn-pad);
+        background-color: var(--lt-grey);
+        // font-size: var(--btn-font-size);
+        // font-weight: var(--btn-font-w);
+        // padding: var(--btn-pad);
+    }
+
+    button:hover {
+        background-color: var(--hov-grey);
     }
 
     .photo-change {
@@ -35,6 +39,10 @@
            height: 80px;
            object-fit: cover;
            clip-path: circle(40px at center);
+        }
+
+        button {
+            margin-left: 1.5rem;
         }
     }
 }

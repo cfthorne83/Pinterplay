@@ -70,4 +70,8 @@ body {
 
 button {
    cursor: pointer;
+   border-radius: 9999px;
+   padding: .8rem;
+   font-size: 1rem;
+   font-weight: 600;
 }
