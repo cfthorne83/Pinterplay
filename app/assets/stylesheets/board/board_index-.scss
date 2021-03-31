@@ -3,17 +3,25 @@
     display: flex;
     list-style: none;
     flex-wrap: wrap;
-    margin: 2rem;
-    // align-content: center;
     justify-content: center;
     background-color: yellow;
+    margin: 0 4rem;
 
     li {
         box-sizing: border-box;
         // margin: 1rem;
         background-color: red;
-        width: 250px;
+        width: 20%;
+        min-width: 200px;
         padding: .5rem;
+
+        h1 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: var(--lett-space);
+            padding: .5rem;
+            color: var(--font-drk-grey);
+        }
 
         .outer {
             box-sizing: border-box;
@@ -38,7 +46,7 @@
                 flex-direction: column;
                 background-color: rgb(65, 188, 225);
                 border-radius: 0 1.1rem 1.1rem 0;
-                
+
                 .two { 
                     height: 50%;
                     width: 100%;
