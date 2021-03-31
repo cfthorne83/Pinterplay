@@ -85,8 +85,8 @@ class Profile extends React.Component{
                 </section>
 
                 <section className='mid'>
-                    {/* <img src={editIcon} alt=""/> */}
                     
+                    <img src="/images/edit_pen.png" alt=""/>
                     <Link to={`/users/${currentUser.id}/settings`}>Edit Profile</Link>
                         <button 
                             className='create-button'

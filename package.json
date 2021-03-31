@@ -44,5 +44,8 @@
   "bugs": {
     "url": "https://github.com/cfthorne83/myPin/issues"
   },
-  "homepage": "https://github.com/cfthorne83/myPin#readme"
+  "homepage": "https://github.com/cfthorne83/myPin#readme",
+  "devDependencies": {
+    "react-image-element-loader": "^2.0.2"
+  }
 }
