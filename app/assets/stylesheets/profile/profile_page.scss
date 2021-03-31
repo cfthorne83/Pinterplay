@@ -3,7 +3,6 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 280px;
 }
 
 .profile-page .heading .initial-container {
@@ -47,23 +46,31 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-
         padding: 0 1rem;
-        background-color: red;
 
         img {
             width: 25px;
-            background-color: green;
         }
 
-        .edit-link {
-            
-        }
+        .edit-link, button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+        }
+        
+        .edit-link:hover, button:hover {
+            background-color: var(--lt-grey); 
+        }
         
         // button {
+        //     height: 50px;
+        //     width: 50px;
+        //     border-radius: 50%;
         //     background-color: yellow;
-        //     padding: 1rem;
         //     border-radius: 50%;
         //     height: 100%;
         // }
