@@ -16,8 +16,8 @@ class BoardIndex extends React.Component {
                         <div className="outer">
                             <div className="one"></div>
                             <div className="inner">
-                                {/* <div className="two"></div>
-                                <div className="three"></div> */}
+                                <div className="two"></div>
+                                <div className="three"></div>
                             </div>
                         </div>
                         <h1>{board.title}</h1>
