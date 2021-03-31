@@ -4,6 +4,10 @@ import { Link } from "react-router-dom";
 
 import BoardIndexContainer from '../boards/board_index_container';
 
+// import { editIcon } from "../../../app/assets/images/edit_pen.png";
+import { editIcon } from "./edit_pen.png";
+// import { sky } from "./sky2.jpg";
+
 class Profile extends React.Component{
     constructor(props){
         super(props);
@@ -14,6 +18,7 @@ class Profile extends React.Component{
         this.capitalize = this.capitalize.bind(this);
         this.name = this.name.bind(this);
         this.image = this.image.bind(this);
+        this.username = this.username.bind(this);
     }
 
     handleSubmit(e){
@@ -53,6 +58,14 @@ class Profile extends React.Component{
         }
     }
 
+    username() {
+        if (this.state.username){
+            return (
+                <h3>@{this.state.username}</h3>
+            )
+        }
+    }
+
 
     render() {
 
@@ -66,19 +79,20 @@ class Profile extends React.Component{
             <div className='profile-page'>
 
                 <section className='heading'>
-                    {/* <h1 className='initial-container'>
-                        <p>{currentUser.email[0].toUpperCase()}</p>
-                    </h1> */}
                     {this.image()}
                     {this.name()}
-                    <h3>@{currentUser.username}</h3>
+                    {this.username()}
                 </section>
 
                 <section className='mid'>
+                    <img src={editIcon} alt=""/>
+                    
                     <Link to={`/users/${currentUser.id}/settings`}>Edit Profile</Link>
-                    <div className='create-button-container'>
-                        <button onClick={this.handleSubmit}>+</button>
-                    </div>
+                        <button 
+                            className='create-button'
+                            onClick={this.handleSubmit}>
+                                +
+                        </button>
                 </section>
                 
                 <BoardIndexContainer />
