@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import BoardIndexContainer from '../boards/board_index_container';
 
 // import { editIcon } from "../../../app/assets/images/edit_pen.png";
-import { editIcon } from "./edit_pen.png";
+// import { editIcon } from "./edit_pen.png";
 // import { sky } from "./sky2.jpg";
 
 class Profile extends React.Component{
@@ -85,7 +85,7 @@ class Profile extends React.Component{
                 </section>
 
                 <section className='mid'>
-                    <img src={editIcon} alt=""/>
+                    {/* <img src={editIcon} alt=""/> */}
                     
                     <Link to={`/users/${currentUser.id}/settings`}>Edit Profile</Link>
                         <button 
