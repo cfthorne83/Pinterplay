@@ -15,32 +15,39 @@ const Modal = ({ modal, closeModal, errors }) =>  {
     }
 
     let component;
+    let modalClass;
     switch (modal.modal) {
         
         case 'login':
             component = <LoginFormContainer />;
+            modalClass = "login-mod";
             break;
         case 'signup':
             component = <SignupFormContainer />;
+            modalClass = "signup-mod";
             break;
         case 'createBoard':
             component = <CreateBoardFormContainer />;
+            modalClass = "create-board-mod"; 
             break;
         case 'editBoard':
             component = <EditBoardFormContainer />;
+            modalClass = "edit-board-mod";
             break;
         case 'editPin':
             component = <EditPinFormContainer />;
+            modalClass = "edit-pin-mod";
             break;
         case 'editPhoto':
             component = <EditPhotoFormContainer/>;
+            modalClass = "edit-photo-mod";
             break;
         default:
             return null;
     }
     return (
         <div className="modal-background" onClick={closeModal}>
-            <div className="modal-child" onClick={e => e.stopPropagation()}>
+            <div className={`modal-child ${modalClass}`} onClick={e => e.stopPropagation()}>
                 {component}
             </div>
         </div>
