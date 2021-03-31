@@ -1,9 +1,11 @@
+
 .board-index {
     display: flex;
     list-style: none;
     flex-wrap: wrap;
+    margin: 2rem;
+    // align-content: center;
     justify-content: center;
-
     background-color: yellow;
 
     li {
@@ -16,7 +18,6 @@
         .outer {
             box-sizing: border-box;
             display: flex;
-
             background-color: green;
             width: 100%;
             height: 150px;
@@ -33,12 +34,11 @@
                 box-sizing: border-box;
                 width: 35%;
                 height: 100%;
-
                 display: flex;
                 flex-direction: column;
                 background-color: rgb(65, 188, 225);
                 border-radius: 0 1.1rem 1.1rem 0;
-
+                
                 .two { 
                     height: 50%;
                     width: 100%;
