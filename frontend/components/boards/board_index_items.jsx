@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 class BoardIndexItem extends React.Component {
 
     componentDidMount() {
-        debugger
         this.props.fetchPins(this.props.board);
     }
 
@@ -13,10 +12,8 @@ class BoardIndexItem extends React.Component {
         const {board, pins} = this.props;
 
         if (pins.length === 0) {
-            debugger
             return null;
         } else {
-        debugger
         return (
             <li key={board.id}>
                 <Link key={`${board.id}`} to={`/boards/${board.id}`}>
