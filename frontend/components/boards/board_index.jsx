@@ -1,6 +1,6 @@
 import React from 'react';
 
-import BoardIndexItem from "./board_index_items";
+import BoardIndexItemContainer from "./board_index_item_container";
 
 class BoardIndex extends React.Component {
 
@@ -10,20 +10,21 @@ class BoardIndex extends React.Component {
 
     render() {
 
+        const {fetchPins} = this.props;
+
         let boards = this.props.boards.map(board => {
             return (
-                <BoardIndexItem
+                <BoardIndexItemContainer
                     board={board}
                     key={board.id}/>
-            )
+            );
         })
         
         return (
-            
                 <ul className='board-index'>
                     {boards}
                 </ul>  
-        )
+        );
     }
 }
 
