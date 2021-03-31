@@ -1,0 +1,52 @@
+.board-index {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    background-color: yellow;
+
+    li {
+        box-sizing: border-box;
+        margin: 1rem;
+        background-color: red;
+        width: 17%;
+
+        .outer {
+            box-sizing: border-box;
+            display: flex;
+
+            background-color: green;
+            width: 100%;
+            height: 100px;
+            
+            .one {
+                background-color: purple;
+                height: 100%;
+                width: 50%;
+            }
+            
+            .inner {
+                box-sizing: border-box;
+                width: 50%;
+                height: 100%;
+
+                display: flex;
+                flex-direction: column;
+                background-color: rgb(65, 188, 225);
+
+                .two { 
+                    height: 50%;
+                    width: 100%;
+                    background-color: salmon;
+                }
+                
+                .three { 
+                    height: 50%;
+                    width: 100%;
+                    background-color: rgb(114, 245, 250);
+                }
+            }
+        }
+    }
+}
