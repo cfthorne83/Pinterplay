@@ -4,13 +4,11 @@
     list-style: none;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: yellow;
     margin: 0 4rem;
 
     li {
         box-sizing: border-box;
         // margin: 1rem;
-        background-color: red;
         width: 20%;
         min-width: 200px;
         padding: .5rem;
@@ -26,16 +24,17 @@
         .outer {
             box-sizing: border-box;
             display: flex;
-            background-color: green;
             width: 100%;
             height: 150px;
             border-radius: 1.1rem;
             
-            .one {
-                background-color: purple;
+            .p0 {
                 height: 100%;
                 width: 65%;
                 border-radius: 1.1rem 0 0 1.1rem ;
+                border-right: 1px solid white;
+                
+                object-fit: cover;
             }
             
             .inner {
@@ -44,21 +43,25 @@
                 height: 100%;
                 display: flex;
                 flex-direction: column;
-                background-color: rgb(65, 188, 225);
                 border-radius: 0 1.1rem 1.1rem 0;
 
-                .two { 
+                .p1 { 
                     height: 50%;
                     width: 100%;
-                    background-color: salmon;
+                    background-color: var(--lt-grey);
                     border-radius: 0 1.1rem 0 0;
+                    border-bottom: 1px solid white;
+
+                    object-fit: cover;
                 }
                 
-                .three { 
+                .p2 { 
                     height: 50%;
                     width: 100%;
-                    background-color: rgb(0, 255, 34);
+                    background-color: var(--lt-grey);
                     border-radius: 0 0 1.1rem 0;
+
+                    object-fit: cover;
                 }
             }
         }
