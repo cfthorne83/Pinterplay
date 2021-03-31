@@ -8,9 +8,12 @@ class Profile extends React.Component{
     constructor(props){
         super(props);
 
+        this.state = this.props.currentUser;
+
         this.handleSubmit = this.handleSubmit.bind(this);
         this.capitalize = this.capitalize.bind(this);
         this.name = this.name.bind(this);
+        this.image = this.image.bind(this);
     }
 
     handleSubmit(e){
@@ -20,23 +23,36 @@ class Profile extends React.Component{
     capitalize(name) {
         return name.charAt(0).toUpperCase() + name.slice(1);
     }
-
+    
     name() {
-        const { currentUser } = this.props;
-
-        if (currentUser.fname && currentUser.lname) {
+        if (this.state.fname && this.state.lname) {
             return (
                 <h2>
-                    {this.capitalize(currentUser.fname)}&nbsp;
-                    {this.capitalize(currentUser.lname)}
+                    {this.capitalize(this.state.fname)}&nbsp;
+                    {this.capitalize(this.state.lname)}
                 </h2>
             )
         } else {
             return (
-                <h2>{currentUser.email}</h2>
+                <h2>{this.state.email}</h2>
             )
         }
     }
+
+    image() {
+        if (this.state.image_url) {
+            return (
+                <img src={this.state.image_url} alt="profile-image"/>
+            )
+        } else {
+            return (
+                <h1 className='initial-container'>
+                    <p>{currentUser.email[0].toUpperCase()}</p>
+                </h1>
+            )
+        }
+    }
+
 
     render() {
 
@@ -50,14 +66,11 @@ class Profile extends React.Component{
             <div className='profile-page'>
 
                 <section className='heading'>
-                    <h1 className='initial-container'>
+                    {/* <h1 className='initial-container'>
                         <p>{currentUser.email[0].toUpperCase()}</p>
-                    </h1>
-                    {/* <h2>
-                        {this.capitalize(currentUser.fname)}&nbsp;
-                        {this.capitalize(currentUser.lname)}
-                    </h2> */}
-                    <h2>{this.name()}</h2>
+                    </h1> */}
+                    {this.image()}
+                    {this.name()}
                     <h3>@{currentUser.username}</h3>
                 </section>
 
