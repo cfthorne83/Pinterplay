@@ -5,6 +5,22 @@ import LogoutDropdown from './logout_drop_down';
 
 class HomeNavBar extends React.Component {
 
+    profileLink() {
+        if (this.props.currentUser.image_url) {
+            return (
+                <li id='initial'>
+                    <img src={this.props.currentUser.image_url} alt=""/>
+                </li>
+            )
+        } else {
+            return (
+                <li id='initial'>
+                    {this.props.currentUser.email[0].toUpperCase()}
+                </li>
+            )
+        }
+    }
+
     render() {
 
         return (
@@ -26,16 +42,11 @@ class HomeNavBar extends React.Component {
 
                 <nav className='nav-dropdowns-container'>
                     <ul className='nav-dropdowns'>
-                        
-                        <li id='initial'>
-                            <Link to={`/users/${this.props.currentUser.id}`}>
-                                <img src={this.props.currentUser.image_url} alt=""/>
-                                {/* {this.props.currentUser.email[0].toUpperCase()} */}
-                            </Link></li>
+                        <Link to={`/users/${this.props.currentUser.id}`}>
+                            {this.profileLink()}
+                        </Link>
                         <li>
-                            <LogoutDropdown
-                            logout={this.props.logout}
-                            />
+                            <LogoutDropdown logout={this.props.logout} />
                         </li>
                     </ul>
                 </nav>

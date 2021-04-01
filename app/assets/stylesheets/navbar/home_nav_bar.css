@@ -108,9 +108,6 @@
     font-size: 15px;
     font-weight: 400;
     background-color: rgb(236, 236, 236);
-    /* height: 8px;
-    padding-top: 1px;
-    margin-top: 4px; */
     box-sizing: border-box;
     border-radius: 50%;
     width: 28px;
@@ -118,7 +115,11 @@
 }
 
 #initial img {
-    width: 20px;
+    width: 27px;
+    height: 27px;
+    object-fit: cover;
+    clip-path: circle(13px at center);
+
 }
 
 /* #initial:hover {
