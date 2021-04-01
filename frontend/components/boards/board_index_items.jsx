@@ -12,10 +12,10 @@ class BoardIndexItem extends React.Component {
 
         const {board} = this.props;
         const pins = board.pins;
+        let pinDivs;
+        
 
-        if (pins.length !== 0) {
-
-            let pinDivs = [0, 1, 2].map( i => {
+            pinDivs = [0, 1, 2].map( i => {
                 if (pins[i]){
                     debugger
                     return (
@@ -30,7 +30,7 @@ class BoardIndexItem extends React.Component {
                     );
                 }
             });
-        } 
+         
 
 
         return (
