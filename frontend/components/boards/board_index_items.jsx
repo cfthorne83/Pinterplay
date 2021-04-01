@@ -2,22 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 class BoardIndexItem extends React.Component {
-    constructor(props){
-        super(props);
-
-
-    }
 
     render() {
 
         const {board} = this.props;
-        const pins = board.pins;
+        const pins = board.pins || [];
         let pinDivs;
         
-
             pinDivs = [0, 1, 2].map( i => {
-                if (pins[i]){
-                    debugger
+                if (pins && pins.length >= 3){
                     return (
                         <img 
                             className={`p${i}`}
