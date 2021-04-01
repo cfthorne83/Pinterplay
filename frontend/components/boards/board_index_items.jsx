@@ -45,14 +45,10 @@ class BoardIndexItem extends React.Component {
                 <Link key={`${board.id}`} to={`/boards/${board.id}`}>
 
                     <div className="outer">
-                            {/* <img className="p0" src={pins[0].image_url} alt=""/> */}
                             {pinDivs[0]}
                         <div className="inner">
-                            {/* <div className="p1"></div>
-                            <div className="p2"></div> */}
                             {pinDivs[1]}
                             {pinDivs[2]}
-
                         </div>
                     </div>
 
