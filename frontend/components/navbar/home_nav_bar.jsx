@@ -8,7 +8,7 @@ class HomeNavBar extends React.Component {
     profileLink() {
         if (this.props.currentUser.image_url) {
             return (
-                <li id='initial'>
+                <li className="prof-pic">
                     <img src={this.props.currentUser.image_url} alt=""/>
                 </li>
             )

@@ -38,9 +38,7 @@
     justify-content: center;
     align-items: center;
     padding: 14px;
-    border-radius: 20px;
-    text-align: center;
-    border-radius: 54px;
+    border-radius: 50%;
     border: none;
     font-size: 16px;
     font-weight: 600;
@@ -114,13 +112,16 @@
     text-align: center;
 }
 
-#initial img {
+.prof-pic img {
     width: 27px;
     height: 27px;
     object-fit: cover;
     clip-path: circle(13px at center);
-
 }
+
+/* .prof-pic:hover {
+    background-color: var(--lt-grey );
+} */
 
 /* #initial:hover {
    background-color: rgb(211, 211, 211);
