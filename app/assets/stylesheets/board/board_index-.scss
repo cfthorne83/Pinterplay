@@ -22,6 +22,13 @@
             color: var(--font-drk-grey);
         }
 
+        h2 {
+            padding: 0 .5rem;
+            letter-spacing: var(--lett-space);
+            font-weight: 100;
+            font-size: .8rem;
+        }
+
         .outer {
             box-sizing: border-box;
             display: flex;
