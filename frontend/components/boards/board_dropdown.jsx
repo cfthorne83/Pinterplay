@@ -22,7 +22,6 @@ class BoardDropdown extends React.Component{
     }
 
     updateBoard(e) {
-        // debugger
         let board = document.querySelector(".selected-board");
         let button = document.querySelector(".board-dropdown-input");
 
@@ -31,7 +30,6 @@ class BoardDropdown extends React.Component{
     }
 
     render() {
-        // debugger
         let firstBoard;
         let firstId;
         let boards = this.props.boards.map( (board, i) => {
