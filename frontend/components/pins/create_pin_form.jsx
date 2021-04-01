@@ -134,6 +134,7 @@ class CreatePinForm extends React.Component{
     handleSubmit(e) {
         e.preventDefault();
         this.props.createPin(this.state)
+        debugger
     }
 
     updateTitle(e) {
@@ -147,6 +148,7 @@ class CreatePinForm extends React.Component{
     updateBoardId(e) {
         let board = document.querySelector(".selected-board");        
         this.setState({ board_id: board.dataset.id});
+        debugger
     }
 
     render() {
@@ -154,7 +156,7 @@ class CreatePinForm extends React.Component{
         // debugger
         return (
             <div className="create-pin-form-con">
-                
+                <BoardDropdown boards={this.props.boards}/>
                 <form 
                     onSubmit={this.handleSubmit} 
                     className="create-pin-form">
@@ -178,7 +180,7 @@ class CreatePinForm extends React.Component{
 
                     <div className="pin-title-con">
 
-                        <BoardDropdown boards={this.props.boards}/>
+                        {/* <BoardDropdown boards={this.props.boards}/> */}
                             <br/>
                             <br/>
                         <input 

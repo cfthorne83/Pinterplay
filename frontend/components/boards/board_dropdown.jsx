@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useDebugValue } from 'react';
 
 class BoardDropdown extends React.Component{
     constructor(props){
@@ -10,7 +10,8 @@ class BoardDropdown extends React.Component{
         this.updateBoard = this.updateBoard.bind(this);
     }
 
-    handleClick(){
+    handleClick(e){
+        e.stopPropagation();
         this.setState({ show: !this.state.show });
     }
 
