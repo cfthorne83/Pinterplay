@@ -13,6 +13,7 @@
         min-width: 200px;
         padding: .5rem;
 
+
         h1 {
             font-size: 1.2rem;
             font-weight: 600;
@@ -33,6 +34,7 @@
                 width: 65%;
                 border-radius: 1.1rem 0 0 1.1rem ;
                 border-right: 1px solid white;
+                background-color: var(--lt-grey);
                 
                 object-fit: cover;
             }

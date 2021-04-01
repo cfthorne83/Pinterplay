@@ -10,6 +10,8 @@ class BoardIndex extends React.Component {
 
     render() {
 
+        if (this.props.boards.length === 0) return null;
+
         let boards = this.props.boards.map(board => {
             return (
                 <BoardIndexItemContainer

@@ -22,7 +22,7 @@ class BoardIndexItem extends React.Component {
 
         const {board, pins} = this.props;
 
-        if (pins.length === 0) return null;
+        // if (pins.length === 0) return null;
 
         let pinDivs = [0, 1, 2].map( i => {
             if (pins[i]){
