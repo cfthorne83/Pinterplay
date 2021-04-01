@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useDebugValue } from 'react';
 
 class BoardDropdown extends React.Component{
     constructor(props){
@@ -10,11 +10,8 @@ class BoardDropdown extends React.Component{
         this.updateBoard = this.updateBoard.bind(this);
     }
 
-    componentDidMount() {
-        this.props.fetchBoards();
-    }
-
-    handleClick(){
+    handleClick(e){
+        e.stopPropagation();
         this.setState({ show: !this.state.show });
     }
 
@@ -33,18 +30,14 @@ class BoardDropdown extends React.Component{
     }
 
     render() {
-
         let firstBoard;
         let firstId;
         let boards = this.props.boards.map( (board, i) => {
             if (i === 0) {
-                firstBoard = board.title
-                firstId = board.id
+                firstBoard = board.title;
+                firstId = board.id;
             }
             return (
-                // <option key={board.id} value={board.title}> 
-                //     {board.title}
-                // </option>
                 <li 
                     className="board-dropdown-btn" 
                     key={board.id}>
