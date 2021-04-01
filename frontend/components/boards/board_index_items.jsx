@@ -12,6 +12,13 @@ class BoardIndexItem extends React.Component {
         this.props.fetchPins(this.props.board);
     }
 
+    // componentDidUpdate(prevProps) {
+
+    //     if (this.props.board !== prevProps.board){
+    //         this.props.fetchPins(this.props.board);
+    //     }
+    // }
+
     image(pin) {
         if (pin) {
             return <img className="one" src={pins[0].image_url} alt=""/>
@@ -32,14 +39,19 @@ class BoardIndexItem extends React.Component {
                         src={pins[i].image_url} 
                         alt=""/>
                     // <div>{pins[i].title}</div>
-                )
+                );
             } else {
                 return (
                     <div className={`p${i}`}></div>
-                )
+                );
             }
-        })
+        });
 
+        let pinTitle;
+        if (pins.length !== 0) {
+            pinTitle = pins[0].title;
+        }
+        
         return (
             <li key={board.id}>
                 <Link key={`${board.id}`} to={`/boards/${board.id}`}>
@@ -53,8 +65,7 @@ class BoardIndexItem extends React.Component {
                     </div>
 
                     <h1>{board.title}</h1>
-                    {/* <h1>{pinDivs[2]}</h1> */}
-
+                    <h1>{pinTitle}</h1>
                 </Link>
             </li>
         )

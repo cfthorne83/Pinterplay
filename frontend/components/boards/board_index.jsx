@@ -8,11 +8,20 @@ class BoardIndex extends React.Component {
         this.props.fetchBoards();
     }
 
-    render() {
+    render() { 
 
         if (this.props.boards.length === 0) return null;
 
         let boards = this.props.boards.map(board => {
+
+            const pins = (board) => {
+                return $.ajax({
+                    url: '/api/pins',
+                    method: 'GET',
+                    data: {board}
+                })
+            }
+
             return (
                 <BoardIndexItemContainer
                     board={board}
