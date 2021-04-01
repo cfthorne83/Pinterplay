@@ -10,10 +10,6 @@ class BoardDropdown extends React.Component{
         this.updateBoard = this.updateBoard.bind(this);
     }
 
-    componentDidMount() {
-        this.props.fetchBoards();
-    }
-
     handleClick(){
         this.setState({ show: !this.state.show });
     }
@@ -25,6 +21,7 @@ class BoardDropdown extends React.Component{
     }
 
     updateBoard(e) {
+        // debugger
         let board = document.querySelector(".selected-board");
         let button = document.querySelector(".board-dropdown-input");
 
@@ -33,18 +30,15 @@ class BoardDropdown extends React.Component{
     }
 
     render() {
-
+        // debugger
         let firstBoard;
         let firstId;
         let boards = this.props.boards.map( (board, i) => {
             if (i === 0) {
-                firstBoard = board.title
-                firstId = board.id
+                firstBoard = board.title;
+                firstId = board.id;
             }
             return (
-                // <option key={board.id} value={board.title}> 
-                //     {board.title}
-                // </option>
                 <li 
                     className="board-dropdown-btn" 
                     key={board.id}>

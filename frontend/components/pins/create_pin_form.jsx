@@ -1,7 +1,8 @@
 import React from "react";
 // import arrow from "../../../images/up_arrow.png";
 import PinIndexContainer from "./pin_index_container";
-import BoardDropdownContainer from "../boards/board_dropdown_container";
+// import BoardDropdownContainer from "../boards/board_dropdown_container";
+import BoardDropdown from "../boards/board_dropdown";
 
 class CreatePinForm extends React.Component{
     constructor(props){
@@ -21,9 +22,9 @@ class CreatePinForm extends React.Component{
         this.handleDelete = this.handleDelete.bind(this);
     }
 
-    // componentDidMount() {
-    //     this.props.fetchBoards();
-    // }
+    componentDidMount() {
+        this.props.fetchBoards();
+    }
 
     handleDragOver(e) {
         e.preventDefault();
@@ -150,6 +151,7 @@ class CreatePinForm extends React.Component{
 
     render() {
 
+        // debugger
         return (
             <div className="create-pin-form-con">
                 
@@ -176,7 +178,7 @@ class CreatePinForm extends React.Component{
 
                     <div className="pin-title-con">
 
-                        <BoardDropdownContainer/>
+                        <BoardDropdown boards={this.props.boards}/>
                             <br/>
                             <br/>
                         <input 
