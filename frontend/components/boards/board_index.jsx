@@ -1,6 +1,7 @@
 import React from 'react';
 
 import BoardIndexItemContainer from "./board_index_item_container";
+import BoardIndexItem from "./board_index_items";
 
 class BoardIndex extends React.Component {
 
@@ -11,19 +12,13 @@ class BoardIndex extends React.Component {
     render() { 
 
         if (this.props.boards.length === 0) return null;
-
+        
+        let that = this; 
         let boards = this.props.boards.map(board => {
-
-            const pins = (board) => {
-                return $.ajax({
-                    url: '/api/pins',
-                    method: 'GET',
-                    data: {board}
-                })
-            }
-
+            
             return (
-                <BoardIndexItemContainer
+                <BoardIndexItem
+                    fetchPins={that.props.fetchPins}
                     board={board}
                     key={board.id}/>
             );
