@@ -9,7 +9,9 @@ class BoardIndex extends React.Component {
         this.props.fetchBoards();
     }
 
-    render() { 
+    
+
+    render() {  
 
         if (this.props.boards.length === 0) return null;
         
@@ -18,7 +20,6 @@ class BoardIndex extends React.Component {
             
             return (
                 <BoardIndexItem
-                    fetchPins={that.props.fetchPins}
                     board={board}
                     key={board.id}/>
             );

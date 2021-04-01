@@ -5,7 +5,7 @@ class Api::BoardsController < ApplicationController
     def index
         # @boards = Board.all
         # @boards = Board.where(user_id: current_user.id)
-        @boards = current_user.boards
+        @boards = current_user.boards.includes(:pins)
         render :index
     end
 
