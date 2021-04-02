@@ -5,7 +5,7 @@ class CreatePinDropdown extends React.Component{
     constructor(props){
         super(props);
 
-        this.state = {show: false};
+        this.state = {show: true};
 
         this.handleBlur = this.handleBlur.bind(this);
         this.handleClick = this.handleClick.bind(this);
@@ -27,20 +27,20 @@ class CreatePinDropdown extends React.Component{
             <div className="crt-pin-drop">
                 <button
                     className="crt-pin-drop__outer"
-                    onClick={this.handleClick}
-                    onBlur={this.handleBlur}
+                    // onClick={this.handleClick}
+                    // onBlur={this.handleBlur}
                     >
                         <div className="crt-pin-drop__image">
                             <img src="/images/plus-icon.png" alt=""/>
                         </div>
             
                             {this.state.show && (
-                                <Link to="/pin-builder">
-                                    <div className='crt-pin-drop__inner'>
+                                <div className='crt-pin-drop__inner'>
                                         <h2>Create</h2> 
-                                        <h1>Pin</h1>          
+                                        <Link to="/pin-builder">
+                                            <h1>Pin</h1>          
+                                        </Link>
                                     </div>
-                                </Link>
                             )}
                 </button>
             </div>

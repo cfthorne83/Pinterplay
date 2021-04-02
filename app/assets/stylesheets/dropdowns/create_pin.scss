@@ -1,10 +1,17 @@
+@mixin small-text {
+    font-size: .8rem;
+    font-weight: 100;
+    letter-spacing: var(--lett-space);
+}
+
 .crt-pin-drop {
-    bottom: 0px;
+    bottom: 15px;
     position: fixed;
     
     &__outer {
         display: flex;
         flex-direction: column-reverse;
+        align-items: center;
     }
 
     &__image {
@@ -12,17 +19,41 @@
         justify-content: center;
         align-items: center;
         border-radius: 50%;
-        width: 50px;
-        height: 50px;
-        background-color: red;
+        width: 60px;
+        height: 60px;
+        background-color: white;
 
         img {
-           width: 25px; 
+           width: 26px; 
         }
     }
 
     &__inner {
-        background-color: green;
+        box-sizing: border-box;
+        background-color: white;
+        padding: 1.2rem .8rem;
+        border-radius: var(--b-rad-sm);
+        margin-bottom: .5rem;
+        width: 150px;
+        cursor: auto;
+        
+        h1 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            width: 100%;
+            border-radius: var(--b-rad-sm);
+            padding: .5rem;
+        }
+
+        h1:hover {
+            background-color: var(--lt-grey);
+            cursor: pointer;
+        }
+
+        h2 {
+            @include small-text;
+            padding: .5rem;
+        }
     }
 
 }
