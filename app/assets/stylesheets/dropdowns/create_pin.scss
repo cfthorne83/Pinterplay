@@ -22,10 +22,15 @@
         width: 60px;
         height: 60px;
         background-color: white;
+        box-shadow: 0 0 10px #77777757;
 
         img {
            width: 26px; 
         }
+    }
+
+    &__image:hover {
+        background-color: var(--lt-grey);
     }
 
     &__inner {
@@ -36,6 +41,7 @@
         margin-bottom: .5rem;
         width: 150px;
         cursor: auto;
+        box-shadow: 0 0 10px #77777757;
         
         h1 {
             font-size: 1.2rem;
