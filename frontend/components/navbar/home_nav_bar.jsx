@@ -25,10 +25,13 @@ class HomeNavBar extends React.Component {
 
         return (
             <header className='home-nav-bar'>
-
                 <nav className='nav-link-container'>
-                    <img className='home-logo' src="https://seeklogo.com/images/P/pinterest-badge-logo-82C89A5E42-seeklogo.com.png" alt="myPin Logo" />
                     <ul className='nav-links'>
+                        <Link to='/'>
+                            <span>
+                                <img className='home-logo' src="https://seeklogo.com/images/P/pinterest-badge-logo-82C89A5E42-seeklogo.com.png" alt="myPin Logo" />
+                            </span>
+                        </Link>                      
                         <li><Link to='/'>Home</Link></li>
                         <li><Link to=''>Following</Link></li>
                     </ul>

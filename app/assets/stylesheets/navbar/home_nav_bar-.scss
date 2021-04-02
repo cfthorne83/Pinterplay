@@ -7,40 +7,53 @@
     padding: 13px;
 }
 
-.home-logo {
-    height: 34px;
-    /* width: 10px; */
-    padding: 5px;
-    margin-top: 6px;
-    margin-right: 6px;
-    margin-left: 16px;
-}
 
-.nav-link-container{
-    display: flex;
-    justify-content: flex-start; 
-}
+.home-nav-bar {
+    
+    .nav-link-container{
+        display: flex;
+        justify-content: flex-start; 
+        
+        .nav-links {
+            display: flex;
+            align-items: center;
 
-.home-nav-bar .nav-links {
-    display: flex;
-    justify-content: flex-start;
-}
+            span {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                align-self: center;
+                padding: .7rem;
+                border-radius: 50%;
 
-.home-nav-bar .nav-links li {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    padding: 14px;
-    border-radius: 50%;
-    border: none;
-    font-size: 16px;
-    font-weight: 600;
-    box-sizing: border-box;
+
+                .home-logo {
+                    height: 27px;
+                }
+            }
+
+            span:hover {
+                background-color: var(--lt-grey);
+            }
+
+            li {
+                display: flex;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+                padding: 14px;
+                border-radius: 9999px;
+                border: none;
+                font-size: 16px;
+                font-weight: 600;
+                box-sizing: border-box;
+            }
+        } 
+    }
 }
 
 .home-nav-bar li:hover {
-    background-color:rgb(236, 236, 236);
+    background-color: var(--lt-grey);
 }
 
 .home-nav-bar .nav-links li:focus  {
@@ -72,13 +85,11 @@
 }
 
 .home-nav-bar .searchbar {
-    background-color: rgb(236, 236, 236);
-    border-radius: 36px;
+    background-color: var(--lt-grey);
+    border-radius: 9999px;
     height: 48px;
     width: 100%;
     padding-left: 25px;
-    /* margin-right: 15px;
-    border: 3px */
     box-sizing: border-box;
     font-size: 16px;
     font-weight: 500;
