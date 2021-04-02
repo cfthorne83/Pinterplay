@@ -1,26 +1,17 @@
 .board-show {
-    min-height: 100%;
-
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 100%;
 
-
-    // button {
-    //     display: flex;
-    //     justify-content: center;
-    //     align-items: center;
-        
-    //     font-size: 3rem;
-    //     box-sizing: border-box;
-    //     background-color: red;
-    //     padding: 1rem;
-    //     // width: 50%;
-    //     border-radius: 50%;
-    // }
+    button {
+        outline: none;
+    }
 
     .header {
         display: flex;
+        align-items: center;
+        padding-top: 1.3rem;
     
         h1 {
             font-size: 35px;
@@ -44,9 +35,12 @@
 
     .add-pin-btn {
         cursor: pointer;
-        background-color: red;
-        border-radius: 50%;
-        padding: 1rem;
-        font-size: 2rem;
+        position: sticky;
+        bottom: 0.25rem;
+        // position: -webkit-sticky;
+        position: sticky;
+        bottom: 0;
+        // bottom: 0px;
     }
+
 }
