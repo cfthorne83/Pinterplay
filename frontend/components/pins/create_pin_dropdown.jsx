@@ -5,10 +5,11 @@ class CreatePinDropdown extends React.Component{
     constructor(props){
         super(props);
 
-        this.state = {show: true};
+        this.state = {show: false};
 
         this.handleBlur = this.handleBlur.bind(this);
         this.handleClick = this.handleClick.bind(this);
+        this.handleFocus = this.handleFocus.bind(this);
     }
 
     handleClick() {
@@ -19,6 +20,19 @@ class CreatePinDropdown extends React.Component{
         window.setTimeout( () => {
             this.setState({ show: false })
         }, 100);
+        let button = document.querySelector(".crt-pin-drop__image");
+        let cross = document.querySelector(".cross");
+        button.classList.remove("butt-focus");
+        button.classList.add("butt-blur");
+        cross.classList.remove("cro-focus");
+    }
+
+    handleFocus() {
+        let button = document.querySelector(".crt-pin-drop__image");
+        let cross = document.querySelector(".cross");
+        button.classList.remove("butt-blur");
+        button.classList.add("butt-focus");
+        cross.classList.add("cro-focus");
     }
 
     render() {
@@ -27,11 +41,14 @@ class CreatePinDropdown extends React.Component{
             <div className="crt-pin-drop">
                 <button
                     className="crt-pin-drop__outer"
-                    // onClick={this.handleClick}
-                    // onBlur={this.handleBlur}
+                    onClick={this.handleClick}
+                    onBlur={this.handleBlur}
+                    onFocus={this.handleFocus}
                     >
-                        <div className="crt-pin-drop__image">
-                            <img src="/images/plus-icon.png" alt=""/>
+                        <div className="crt-pin-drop__image butt-blur">
+                            <img  
+                                className="cross" 
+                                src="/images/plus-icon.png" alt=""/>
                         </div>
             
                             {this.state.show && (

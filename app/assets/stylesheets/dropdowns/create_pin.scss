@@ -21,17 +21,34 @@
         border-radius: 50%;
         width: 60px;
         height: 60px;
-        background-color: white;
         box-shadow: 0 0 10px #77777757;
-
+        
         img {
-           width: 26px; 
+            width: 26px; 
+            //    filter: invert(100%);
         }
     }
 
-    &__image:hover {
+    .butt-blur {
+        background-color: white;
+    }
+
+    .butt-blur:hover {
         background-color: var(--lt-grey);
     }
+
+    .butt-focus {
+        background-color: black;
+    }
+
+    .cro-focus {
+        filter: invert(100%);
+    }
+
+
+    // &__image:hover {
+    //     background-color: var(--lt-grey);
+    // }
 
     &__inner {
         box-sizing: border-box;
