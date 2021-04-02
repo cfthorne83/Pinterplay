@@ -1,3 +1,9 @@
 // Place all the styles related to the api/boards controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@mixin btn {
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 1em;
+    border-radius: 9999px;
+}

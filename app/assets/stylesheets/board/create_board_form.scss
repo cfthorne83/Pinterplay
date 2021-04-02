@@ -1,20 +1,35 @@
+@mixin btn {
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 1em;
+    border-radius: 9999px;
+}
+    
+@mixin red-btn { 
+    background-color: var(--red);
+    color: white;
+}
+
+@mixin grey-btn {
+    background-color: var(--lt-grey);
+    color: var(--font-drk-grey);  
+}
+
 .create-board-form {
-    padding: 25px;
-    height: 514px;
+    padding: 2.3rem;
 }
 
 .create-board-form h1{
-    font-size: 25px;
+    font-size: 1.8rem;
     font-weight: 600;
     text-align: center;
-    padding-top: 30px;    
-    padding-bottom: 28px;    
+    padding: 1rem 0;    
+    letter-spacing: var(--lett-space);    
 }
 
 .create-board-form h2{
     font-size: 12px;  
-    margin-bottom: 9px; 
-    margin-top: 22px; 
+    padding: .7rem 0; 
 }
 
 .create-board-form form{
@@ -27,12 +42,13 @@
     border: 2px solid rgb(235, 235, 235);
     min-height: 23px;
     padding: 9px;
+    margin-bottom: 1rem;
 }
 .create-board-form form input:hover{
     border-color: rgb(219, 219, 219);
 }
 .create-board-form form input:focus {
-    border: 3px solid rgb(138, 192, 255);
+    border: 2px solid rgb(138, 192, 255);
     background-color: rgb(232, 240, 251);
 }
 .create-board-form form textarea{
@@ -42,7 +58,7 @@
     padding: 9px;
     font-size: 17px;
     font-family: "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica;
-
+    resize: none;
 }
 .create-board-form form textarea:hover{
         border-color: rgb(219, 219, 219);
@@ -59,22 +75,27 @@
 .create-board-form form div{
     display: flex;
     justify-content: flex-end;
-    height: 145px;
+    // height: 145px;
     align-items: flex-end;
 }
 
-.create-board-form form button{
-    box-sizing: border-box;
-    text-align: center;
-    font-weight: 500;
-    background-color: rgb(236, 236, 236);
-    width: 82px;
-    height: 45px;
-    border-radius: 20px;
-    color: rgb(86, 86, 86);
-}
 
-.create-board-form form button:hover{
-     background-color: rgb(219, 218, 218);
+
+
+.create-board-form {
+    
+    .disabled {
+        @include grey-btn;
+        color: grey;
+    }
+
+    .abled {
+        @include red-btn;
+    }
+
+    &__btn {
+        @include btn;
+        margin-top: 2rem;
+    }
 }
 

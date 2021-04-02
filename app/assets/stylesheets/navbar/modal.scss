@@ -33,6 +33,7 @@ h1, h2, p, strong, em, a, input, div, span, form, button, ul, li {
   width: 453px;
   border-radius: 16px;
   padding: 10px; */
+  border-radius: var(--b-rad-lg);
 }
 .session-form {
     text-align: center;
@@ -162,3 +163,14 @@ p.or {
     padding-top: 7px;
 }
 
+.create-board-mod {
+    box-sizing: border-box;
+    width: 40%;
+    min-width: 500px;
+    // height: 30%;
+}
+
+.edit-board-mod {
+    width: 40%;
+    min-width: 500px;
+}

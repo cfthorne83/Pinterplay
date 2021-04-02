@@ -1,14 +1,12 @@
 .edit-board-form{
-    padding: 25px;
-    height: 514px;
-
+    padding: 2.3rem;
 }
+
 .edit-board-form h1{
-    font-size: 25px;
+    font-size: 1.8rem;
     font-weight: 600;
     text-align: center;
-    padding-top: 30px;    
-    padding-bottom: 30px;    
+    padding: 1rem 0;    
 }
 
 .edit-board-form h2{
@@ -42,7 +40,7 @@
     padding: 9px;
     font-size: 17px;
     font-family: "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica;
-
+    resize: none;
 }
 .edit-board-form form textarea:hover{
         border-color: rgb(219, 219, 219);

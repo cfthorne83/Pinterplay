@@ -11,10 +11,27 @@
     --input__focus-border: 2px solid rgb(138, 192, 255);
 
     --b-rad-sm: .3rem;
-    --b-rad-lg: 1.3rem;
+    --b-rad-lg: 2.5rem;
 
     --lett-space: .02rem;
     --btn-font-size: 1.1rem;
     --btn-font-w: 600;
     --btn-pad: 1em;
+
+    @mixin btn {
+        font-size: 1.1rem;
+        font-weight: 600;
+        padding: 1em;
+        border-radius: 9999px;
+    }
+    
+    @mixin red-btn { 
+        background-color: var(--red);
+        color: white;
+    }
+    
+    @mixin grey-btn {
+        background-color: var(--lt-grey);
+        color: var(--font-drk-grey);  
+    }
 }

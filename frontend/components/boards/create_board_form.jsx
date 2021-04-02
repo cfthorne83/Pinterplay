@@ -17,7 +17,20 @@ class CreateBoardForm extends React.Component {
     }
 
     updateTitle(e) {
-        this.setState({ title: e.currentTarget.value })
+        let that = this;
+        let button = document.querySelector(".create-board-form__btn");
+
+        this.setState({ title: e.currentTarget.value });
+
+            if (e.currentTarget.value === ""){
+                button.disabled = true;
+                button.classList.remove("abled");
+                button.classList.add("disabled");
+            } else {
+                button.disabled = false;
+                button.classList.add("abled");
+                button.classList.remove("disabled");
+            }
     }
 
     updateDescription(e) {
@@ -34,7 +47,7 @@ class CreateBoardForm extends React.Component {
                     <input 
                         type="text" value={this.state.title} 
                         onChange={this.updateTitle} 
-                        placeholder='Like "Places to go"'/>
+                        placeholder='Like "Places to Go" ro "Recipes to Make"'/>
                     <h2>Description</h2>
                     <textarea 
                         type="text"
@@ -42,7 +55,7 @@ class CreateBoardForm extends React.Component {
                         />
 
                     <div>
-                        <button>Create</button>
+                        <button className="create-board-form__btn disabled" disabled>Create</button>
                     </div>
                 </form>
             </div>
