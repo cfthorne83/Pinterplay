@@ -32,15 +32,4 @@
             background-color: var(--hov-grey);
         }
     }
-
-    .add-pin-btn {
-        cursor: pointer;
-        position: sticky;
-        bottom: 0.25rem;
-        // position: -webkit-sticky;
-        position: sticky;
-        bottom: 0;
-        // bottom: 0px;
-    }
-
 }

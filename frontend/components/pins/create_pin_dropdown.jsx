@@ -24,20 +24,26 @@ class CreatePinDropdown extends React.Component{
     render() {
 
         return (
-            <button
-                className="dropdown-outer"
-                onClick={this.handleClick}
-                // onBlur={this.handleBlur}
-                >
-                    +
-                        {this.state.show && (
-                            <Link to="/pin-builder">
-                                <div className='dropdown-inner'>           
-                                    Pin
-                                </div>
-                            </Link>
-                        )}
-            </button>
+            <div className="crt-pin-drop">
+                <button
+                    className="crt-pin-drop__outer"
+                    onClick={this.handleClick}
+                    onBlur={this.handleBlur}
+                    >
+                        <div className="crt-pin-drop__image">
+                            <img src="/images/plus-icon.png" alt=""/>
+                        </div>
+            
+                            {this.state.show && (
+                                <Link to="/pin-builder">
+                                    <div className='crt-pin-drop__inner'>
+                                        <h2>Create</h2> 
+                                        <h1>Pin</h1>          
+                                    </div>
+                                </Link>
+                            )}
+                </button>
+            </div>
 
         )
     }
