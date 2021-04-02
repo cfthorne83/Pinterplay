@@ -105,13 +105,20 @@
   position: relative; 
 
     span {
-        
-        .dropdown-icon {
-            background-color: red;
-            width: 16px;
-            box-sizing: border-box;
-            padding: .8rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 27px;
+        height: 27px;
+        border-radius: 50%;
+
+        img {
+                width: 16px;
         }
+    }
+
+    span:hover {
+        background-color: var(--lt-grey);
     }
 
     .dropdown-inner {

@@ -29,7 +29,7 @@ class LogoutDropdown extends React.Component{
                 >
     
                 <span>
-                    <img className='dropdown-icon' src="https://cdn1.iconfinder.com/data/icons/arrows-vol-1-4/24/dropdown_arrow-512.png" alt=""/>
+                    <img src="/images/dropdwn-icon.png" alt=""/>
                 </span>
                     {this.state.show && (
                         <div className='dropdown-inner'>
