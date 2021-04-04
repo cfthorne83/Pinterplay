@@ -1,4 +1,6 @@
 .pin-index-con {
+    width: 100%;
+    background-color: pink;
 
     h1 {
         font-size: 1.3rem;
@@ -7,9 +9,12 @@
 
     .pin-index {
         box-sizing: border-box;
-        display: flex;
-        flex-wrap: wrap;
+        // display: flex;
+        // flex-wrap: wrap;
         width: 100%;
+        display: grid;
+        grid-template-columns: 20% 20% 20% 20% 20%;
+        background-color: rgb(200, 42, 200);
         
         &__item {
             display: flex;
