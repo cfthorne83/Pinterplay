@@ -1,93 +1,78 @@
-// Place all the styles related to the pins controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// // Place all the styles related to the pins controller here.
+// // They will automatically be included in application.css.
+// // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
 
-.create-pin-form-con {
-    box-sizing: border-box;
-    background-color: var(--lt-grey);
-    width: 100%;
-    height: 100%;
-    
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
-    .create-pin-form {
-        box-sizing: border-box;
-        width: 880px;
-        height: 600px;
-        background-color: white;
-        border-radius: var(--b-rad-lg);
-        padding: 40px;
-
-        display: flex;
-        align-items: flex-start;
-
-        
-        
-        .drop-zone-con {
-            border-radius: var(--b-rad);
-            background-color: var(--lt-grey);
-            padding: 10px; 
-            height: 100%;
-            // margin: 1rem;
-            border-radius: var(--b-rad-sm);
-            // align-self: flex-start;           
-
-
-            .drop-zone {
-                width: 400px;
-                height: 100%;
-                padding: 25px;
-            
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            
-                cursor: pointer;
-                border: 3px dashed rgb(214, 214, 214);
-                border-radius: var(--b-rad-sm);
-
-                font-size: 1.2rem;
-            }
-        }
-    }
-
-    .pin-title-con {
-        display: flex;
-        flex-direction: column;
-
-    }
-}
-
-
-.drop-zone--over {
-    border: solid;
-}
-
-.drop-zone__input {
-    display: none;
-}
-
-.drop-zone__thumb {
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    overflow: hidden;
-    background-color: var(--lt-grey);
-    background-size: cover;
-    // position: relative;
-}
-
-
-
-// .drop-zone__thumb::after {
-//     content: attr(data-label);
-//     position: absolute;
-//     bottom: 0;
-//     left: 0;
+// .create-pin-form-con {
+//     box-sizing: border-box;
+//     background-color: var(--lt-grey);
 //     width: 100%;
+//     height: 100%;
+    
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+    
+//     .create-pin-form {
+//         box-sizing: border-box;
+//         width: 880px;
+//         height: 600px;
+//         background-color: white;
+//         border-radius: var(--b-rad-lg);
+//         padding: 40px;
+
+//         display: flex;
+//         align-items: flex-start;
+
+        
+        
+//         .drop-zone-con {
+//             border-radius: var(--b-rad);
+//             background-color: var(--lt-grey);
+//             padding: 10px; 
+//             height: 100%;
+//             border-radius: var(--b-rad-sm);
+
+//             .drop-zone {
+//                 width: 400px;
+//                 height: 100%;
+//                 padding: 25px;
+            
+//                 display: flex;
+//                 align-items: center;
+//                 justify-content: center;
+            
+//                 cursor: pointer;
+//                 border: 3px dashed rgb(214, 214, 214);
+//                 border-radius: var(--b-rad-sm);
+
+//                 font-size: 1.2rem;
+//             }
+//         }
+//     }
+
+//     .pin-title-con {
+//         display: flex;
+//         flex-direction: column;
+
+//     }
+// }
+
+// .drop-zone--over {
+//     border: solid;
+// }
+
+// .drop-zone__input {
+//     display: none;
+// }
+
+// .drop-zone__thumb {
+//     width: 100%;
+//     height: 100%;
+//     border-radius: 10px;
+//     overflow: hidden;
+//     background-color: var(--lt-grey);
+//     background-size: cover;
 // }
