@@ -15,6 +15,10 @@ class PinIndex extends React.Component {
         }
     }
 
+    capitalize(title) {
+        return title.charAt(0).toUpperCase() + title.slice(1);
+    }
+
     render() {
         
         if (!this.props.pins) {
@@ -29,7 +33,7 @@ class PinIndex extends React.Component {
                         to={`/pins/${pin.id}`}
                         className="pin-index__item">
                             <img src={`${pin.image_url}`} alt=""/>
-                            <h2>{pin.title}</h2>
+                            <h2>{this.capitalize(pin.title)}</h2>
                     </Link>
              )
         })
