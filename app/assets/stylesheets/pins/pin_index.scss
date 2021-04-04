@@ -23,9 +23,10 @@
             align-items: center;
             box-sizing: border-box;
             // width: 20%;
-            padding: .5rem 0;
+            padding: .4rem 0;
             // background-color: red;
             align-self: flex-start;
+            cursor: zoom-in;
     
             img {
                 width: 100%;
@@ -34,10 +35,10 @@
     
             h2 {
                 width: 95%;
-                text-align: start;
-                padding: .5rem 1rem;
-                font-weight: 600;
+                padding: .4rem;
+                font-weight: 500;
                 letter-spacing: var(--lett-space);
+                font-size: .95rem;
             }
         }
     }
