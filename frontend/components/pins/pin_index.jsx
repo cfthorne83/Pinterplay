@@ -4,9 +4,7 @@ import { Link } from 'react-router-dom';
 class PinIndex extends React.Component {
 
     componentDidMount() {
-        
         this.props.fetchPins(this.props.board);
-        // this.props.fetchPins(this.props.match.params.boardId)
     }
 
     render() {
@@ -18,10 +16,15 @@ class PinIndex extends React.Component {
         let pins = this.props.pins.map(pin => {
 
             return (
-                <Link key={`${pin.id}`} to={`/pins/${pin.id}`}>
-                    <li>{pin.title}</li>
-                    <img src={`${pin.image_url}`} alt=""/>
-                </Link>
+                // <div className="pin-index__item" key={pin.id}>
+                    <Link 
+                        key={`${pin.id}`} 
+                        to={`/pins/${pin.id}`}
+                        className="pin-index__item">
+                            <img src={`${pin.image_url}`} alt=""/>
+                            <li>{pin.title}</li>
+                    </Link>
+                // </div>
             )
         })
         
