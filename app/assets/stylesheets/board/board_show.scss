@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     min-height: 100%;
-    background-color: green;
+    padding: 0 3.5rem;
 
     button {
         outline: none;
@@ -12,10 +12,11 @@
     .header {
         display: flex;
         align-items: center;
-        padding-top: 1.3rem;
+        padding-top: 2rem;
+        padding-bottom: 1rem;
     
         h1 {
-            font-size: 35px;
+            font-size: 2.5rem;
             font-weight: 600;
             padding-right: 10px;
         }
