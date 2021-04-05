@@ -100,13 +100,24 @@
         &__input {
             font-size: 2rem;
             font-weight: 600;
-            border-bottom: 1px solid grey;
+            border-bottom: 1px solid #8f8f8f;
+            padding: 1rem 0
         }
         
         &__textarea {
             resize: none;
-            border-bottom: 1px solid rgb(143, 143, 143);
-
+            font-weight: 200;
+            letter-spacing: var(--lett-space);
+            padding-top: 1rem;
+        }
+        
+        &__textarea::placeholder {
+            color: rgb(172, 172, 172);
+        }
+        
+        &__border {
+            border-top: 1px solid #8f8f8f;
+            width: 100%;
         }
     }
 }
