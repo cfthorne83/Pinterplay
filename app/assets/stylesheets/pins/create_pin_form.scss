@@ -12,7 +12,7 @@
         box-sizing: border-box;
         background-color: white;
         width: 65%;
-        min-width: 880px;
+        min-width: 700px;
         border-radius: 1.5rem;
         padding: 35px;
         
@@ -52,26 +52,36 @@
         .create-pin-form__inner {
             display: flex;
 
-            .drop-zone-con {
+            .drop-zone {
                 border-radius: var(--b-rad);
                 background-color: var(--lt-grey);
                 padding: 10px; 
                 height: 100%;
                 border-radius: var(--b-rad-sm);
+                color: var(--font-drk-grey);
+                letter-spacing: var(--lett-space);
     
-                .drop-zone {
+                &__inner {
                     height: 100%;
                     padding: 25px;
                 
                     display: flex;
+                    flex-direction: column;
                     align-items: center;
                     justify-content: center;
                 
                     cursor: pointer;
                     border: 3px dashed rgb(214, 214, 214);
                     border-radius: var(--b-rad-sm);
-    
-                    font-size: 1.2rem;
+
+                    h1 {
+                        font-size: 1.1rem;
+                    }
+                }
+
+                &__img {
+                    width: 40px;
+                    filter: invert(50%);
                 }
             }
 

@@ -175,19 +175,24 @@ class CreatePinForm extends React.Component{
                     </div>
 
                     <div className="create-pin-form__inner">
-                        <div className="drop-zone-con"> 
+                        <div className="drop-zone"> 
                             <div 
-                                className="drop-zone"  
+                                className="drop-zone__inner"  
                                 onDragOver={this.handleDragOver}
                                 onDragLeave={this.handleDragLeave}
                                 onDragEnd={this.handleDragEnter}
                                 onDrop={this.handleDrop}
                                 onClick={this.handleClick}>
-                                <span className="drop-zone__prompt">
+
+                                <img 
+                                    className="drop-zone__img"
+                                    src="/images/arrow.png"/>
+                                <h1 className="drop-zone__prompt">
                                     Drag and drop or click to upload
-                                </span>
-                                <img src="/images/arrow.png" alt=""/>
-                                
+                                </h1>
+                                <h2>Reccomendation: Use high-quality .jpg</h2>
+                                <h2>files less than 20MB</h2>
+
                                 <input 
                                     type="file" 
                                     className="drop-zone__input" 
