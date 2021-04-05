@@ -48,6 +48,8 @@ class CreatePinForm extends React.Component{
         let deleteBtn = document.querySelector(".drop-zone__delete");
         let thumbnail = document.querySelector(".drop-zone__thumb");
         let dropZoneInner = document.querySelector(".drop-zone__inner");
+        let dropZoneImg = document.querySelector(".drop-zone__img");
+
 
         let that = this;
         let image;
@@ -60,10 +62,10 @@ class CreatePinForm extends React.Component{
             dropZoneInner.remove();
         }
 
-        if (!thumbnail) {
-            // thumbnail = document.createElement("div");
+        if (!dropZoneImg) {
+            dropZoneImg = document.createElement("img");
             // thumbnail.classList.add("drop-zone__thumb"); 
-            // dropZoneInner.append(thumbnail);
+            dropZone.append(dropZoneImg);
 
             deleteBtn = document.createElement("button");
             deleteBtn.classList.add("drop-zone__delete");
@@ -81,7 +83,9 @@ class CreatePinForm extends React.Component{
                 let image = reader.result;
                 that.setState({ image_url: image });
                     // thumbnail.style.backgroundImage = `url(${reader.result})`;
-                    dropZone.style.backgroundImage = `url(${reader.result})`;
+                    // dropZone.style.backgroundImage = `url(${reader.result})`;
+                    dropZoneImg.style.width = "100%";
+                    dropZoneImg.src = "${image}";
             };
         } else {
             dropZone.style.backgroundImage = null;
