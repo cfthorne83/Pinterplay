@@ -47,18 +47,20 @@ class CreatePinForm extends React.Component{
     addDeleteBtn(dropZone, file) {
         let deleteBtn = document.querySelector(".drop-zone__delete");
         let thumbnail = document.querySelector(".drop-zone__thumb");
+        let dropZoneInner = document.querySelector(".drop-zone__inner");
 
         let that = this;
         let image;
 
         if (dropZone.querySelector(".drop-zone__prompt")){
             dropZone.querySelector(".drop-zone__prompt").remove();
+            dropZone.querySelector(".drop-zone__text").remove();
         }
 
         if (!thumbnail) {
             thumbnail = document.createElement("div");
             thumbnail.classList.add("drop-zone__thumb"); 
-            dropZone.append(thumbnail);
+            dropZoneInner.append(thumbnail);
 
             deleteBtn = document.createElement("button");
             deleteBtn.classList.add("drop-zone__delete");
@@ -188,11 +190,13 @@ class CreatePinForm extends React.Component{
                                     <img 
                                         className="drop-zone__img"
                                         src="/images/arrow.png"/>
-                                    <h1 className="drop-zone__prompt">
+                                    <h1>
                                         Drag and drop or click to upload
                                     </h1 >
                                 </div>
-                                <h2>Recommendation: Use high-quality .jpg files less than 20MB</h2>
+                                <h2 className="drop-zone__prompt">
+                                    Recommendation: Use high-quality .jpg files less than 20MB
+                                </h2>
 
                                 <input 
                                     type="file" 
