@@ -53,6 +53,7 @@
             display: flex;
 
             .drop-zone {
+                width: 40%;
                 border-radius: var(--b-rad);
                 background-color: var(--lt-grey);
                 padding: 10px; 
@@ -75,18 +76,29 @@
                     
                     h1 {
                         color: var(--font-drk-grey);
-                        font-weight: 300;                        
+                        font-weight: 300; 
+                        text-align: center; 
+                        padding: 0 2rem;                      
                     }
 
                     h2 {
                         color: #949494;
                         font-size: .9rem;
+                        text-align: center;
                     }
+                }
+
+                &__text {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    padding: 8rem 0;
                 }
 
                 &__img {
                     width: 40px;
                     filter: invert(50%);
+                    padding: 1rem 0;
                 }
             }
 
@@ -94,30 +106,44 @@
 
         &__text {
             display: flex;
-            flex-direction: column;
+            justify-content: center;
+            width: 60%;
+        }
+
+        &__text-inner {
+            padding: 2.5rem;
         }
     
         &__input {
-            font-size: 2rem;
+            width: 100%;
+            font-size: 2.2rem;
             font-weight: 600;
             border-bottom: 1px solid #8f8f8f;
-            padding: 1rem 0
+            padding: 1rem 0;
+            // background-color: pink;
+        }
+        
+        &__input:focus {
+            border-bottom: 2px solid rgb(42, 92, 228);
         }
         
         &__textarea {
+            width: 100%;
+            // background-color: pink;
             resize: none;
             font-weight: 200;
             letter-spacing: var(--lett-space);
             padding-top: 1rem;
+            border-bottom: 1px solid #8f8f8f;
+            margin: 3rem 0;
         }
         
         &__textarea::placeholder {
             color: rgb(172, 172, 172);
         }
         
-        &__border {
-            border-top: 1px solid #8f8f8f;
-            width: 100%;
+        &__textarea:focus {
+            border-bottom: 2px solid rgb(42, 92, 228);
         }
     }
 }
