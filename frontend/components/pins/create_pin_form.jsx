@@ -85,7 +85,7 @@ class CreatePinForm extends React.Component{
                     // thumbnail.style.backgroundImage = `url(${reader.result})`;
                     // dropZone.style.backgroundImage = `url(${reader.result})`;
                     dropZoneImg.style.width = "100%";
-                    dropZoneImg.src = "${image}";
+                    dropZoneImg.src = `${image}`;
             };
         } else {
             dropZone.style.backgroundImage = null;
