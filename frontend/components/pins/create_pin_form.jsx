@@ -52,21 +52,25 @@ class CreatePinForm extends React.Component{
         let that = this;
         let image;
 
-        if (dropZone.querySelector(".drop-zone__prompt")){
-            dropZone.querySelector(".drop-zone__prompt").remove();
-            dropZone.querySelector(".drop-zone__text").remove();
+        // if (dropZone.querySelector(".drop-zone__prompt")){
+        //     dropZone.querySelector(".drop-zone__prompt").remove();
+        //     dropZone.querySelector(".drop-zone__text").remove();
+        // }
+        if (dropZoneInner) {
+            dropZoneInner.remove();
         }
 
         if (!thumbnail) {
-            thumbnail = document.createElement("div");
-            thumbnail.classList.add("drop-zone__thumb"); 
-            dropZoneInner.append(thumbnail);
+            // thumbnail = document.createElement("div");
+            // thumbnail.classList.add("drop-zone__thumb"); 
+            // dropZoneInner.append(thumbnail);
 
             deleteBtn = document.createElement("button");
             deleteBtn.classList.add("drop-zone__delete");
             deleteBtn.innerText = "Delete";
             deleteBtn.addEventListener("click", that.handleDelete);
-            thumbnail.append(deleteBtn);
+            // thumbnail.append(deleteBtn);
+            dropZone.append(deleteBtn);
         }
 
         if (file.type.startsWith("image/")) {
@@ -76,10 +80,11 @@ class CreatePinForm extends React.Component{
             reader.onload = () => {
                 let image = reader.result;
                 that.setState({ image_url: image });
-                    thumbnail.style.backgroundImage = `url(${reader.result})`;
+                    // thumbnail.style.backgroundImage = `url(${reader.result})`;
+                    dropZone.style.backgroundImage = `url(${reader.result})`;
             };
         } else {
-            thumbnail.style.backgroundImage = null;
+            dropZone.style.backgroundImage = null;
         }
 
     }
@@ -177,32 +182,31 @@ class CreatePinForm extends React.Component{
                     </div>
 
                     <div className="create-pin-form__inner">
-                        <div className="drop-zone"> 
-                            <div 
-                                className="drop-zone__inner"  
-                                onDragOver={this.handleDragOver}
-                                onDragLeave={this.handleDragLeave}
-                                onDragEnd={this.handleDragEnter}
-                                onDrop={this.handleDrop}
-                                onClick={this.handleClick}>
+                        <div className="drop-zone"
+                            onDragOver={this.handleDragOver}
+                            onDragLeave={this.handleDragLeave}
+                            onDragEnd={this.handleDragEnter}
+                            onDrop={this.handleDrop}
+                            onClick={this.handleClick}> 
 
+                            <div className="drop-zone__inner">
                                 <div className="drop-zone__text">
                                     <img 
                                         className="drop-zone__img"
                                         src="/images/arrow.png"/>
                                     <h1>
                                         Drag and drop or click to upload
-                                    </h1 >
+                                    </h1>
                                 </div>
                                 <h2 className="drop-zone__prompt">
                                     Recommendation: Use high-quality .jpg files less than 20MB
                                 </h2>
 
+                            </div>
                                 <input 
                                     type="file" 
                                     className="drop-zone__input" 
                                     multiple/>
-                            </div>
                         </div>
 
                         <div className="create-pin-form__text">

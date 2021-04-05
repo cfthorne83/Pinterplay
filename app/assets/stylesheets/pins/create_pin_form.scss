@@ -51,15 +51,18 @@
         
         .create-pin-form__inner {
             display: flex;
+            height: 480px;
 
             .drop-zone {
-                width: 40%;
+                width: 45%;
                 border-radius: var(--b-rad);
                 background-color: var(--lt-grey);
                 padding: 10px; 
                 height: 100%;
                 border-radius: var(--b-rad-sm);
                 letter-spacing: var(--lett-space);
+                background-repeat: no-repeat;
+                background-size: cover;
                 
                 &__inner {
                     height: 100%;
@@ -107,7 +110,7 @@
         &__text {
             display: flex;
             justify-content: center;
-            width: 60%;
+            width: 55%;
         }
 
         &__text-inner {
