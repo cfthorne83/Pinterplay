@@ -201,19 +201,18 @@ class CreatePinForm extends React.Component{
                             </div>
                         </div>
 
-                        <div className="pin-title-con">
+                        <div className="create-pin-form__text">
                             <input 
+                                className="create-pin-form__input"
                                 type="text"
                                 value={this.state.title}  
                                 onChange={this.updateTitle} 
                                 placeholder='Add your title'/>
-                                <br/>
-                                <br/>
+                            <img src="" alt=""/>
                             <textarea 
+                                className="create-pin-form__textarea"
                                 onChange={this.updateDescription}
                                 placeholder="Tell everyone what your Pin is about"/>
-                                <br/>
-                                <br/>
                         </div>
                     </div>
                 </form>
