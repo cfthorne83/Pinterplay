@@ -21,7 +21,7 @@
 
         &__drop {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end;
 
             .ellipsis {
                 width: 30px;
