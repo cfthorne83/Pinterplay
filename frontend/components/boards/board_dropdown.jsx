@@ -3,7 +3,7 @@ import React, { useDebugValue } from 'react';
 class BoardDropdown extends React.Component{
     constructor(props){
         super(props);
-        this.state = { show: true, board_id: "" }
+        this.state = { show: false, board_id: "" }
 
         this.handleClick = this.handleClick.bind(this);
         this.handleBlur = this.handleBlur.bind(this);
@@ -61,8 +61,8 @@ class BoardDropdown extends React.Component{
             // <div>
                 <button 
                     className='board-drop'
-                    // onClick={this.handleClick} 
-                    // onBlur={this.handleBlur}
+                    onClick={this.handleClick} 
+                    onBlur={this.handleBlur}
                     >
         
                     <span className="board-drop__select">

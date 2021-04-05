@@ -18,6 +18,8 @@
     --btn-font-w: 600;
     --btn-pad: 1em;
 
+    --drop-box-shad: box-shadow: 0 0 10px #77777757;
+
     @mixin btn {
         font-size: 1.1rem;
         font-weight: 600;

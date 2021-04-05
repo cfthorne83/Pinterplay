@@ -27,6 +27,9 @@
         width: 250px;
         padding: .8rem;
         border-radius: .8rem;
+        box-shadow: 0 0 10px #77777757;
+        margin-top: .5rem;
+
 
         h2 {
             @include small-text;
