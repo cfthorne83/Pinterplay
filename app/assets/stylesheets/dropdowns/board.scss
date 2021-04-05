@@ -23,19 +23,26 @@
 
     &__inner {
         position: absolute;
-        background-color: pink;
+        background-color: white;
         width: 250px;
+        padding: .8rem;
+        border-radius: .8rem;
 
         h2 {
             @include small-text;
+            padding: .5rem 0;
         }
 
         input {
-            background-color: red;
             width: 100%;
             font-weight: 500;
-            padding: .5rem;
-            border-radius: .5rem;
+            padding: .8rem;
+            border-radius: .8rem;
+            letter-spacing: var(--lett-space);
+        }
+
+        input:hover {
+            background-color: var(--lt-grey);
         }
     }
 }
