@@ -164,12 +164,14 @@ class CreatePinForm extends React.Component{
                             src="https://static.thenounproject.com/png/384290-200.png"
                             className="ellipsis"
                         />
-                        <BoardDropdown boards={this.props.boards}/>
-                        {/* <button 
-                            className="create-pin-form__save"
-                            onClick={this.updateBoardId}>
-                                Save
-                        </button> */}
+                        <div className="create-pin-form__drop-inner">
+                            <BoardDropdown boards={this.props.boards}/>
+                            <button 
+                                className="create-pin-form__save"
+                                onClick={this.updateBoardId}>
+                                    Save
+                            </button>
+                        </div>
                     </div>
 
                     <div className="drop-zone-con"> 

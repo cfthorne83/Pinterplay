@@ -1,17 +1,41 @@
+@mixin small-text {
+    font-size: .8rem;
+    font-weight: 100;
+    letter-spacing: var(--lett-space);
+}
+
 .board-drop {
+    width: 100%;
 
     &__select {
+        width: 100%;
         display: flex;
         justify-content: space-between;
-        background-color: var(--lt-grey);
         font-size: 1rem;
         font-weight: 300;
-        padding: .8rem;
-        width: 200px;
-        border-radius: .5rem;
+        padding: .7rem;
+        letter-spacing: var(--lett-space);
 
         img {
             width: 20px;
+        }
+    }
+
+    &__inner {
+        position: absolute;
+        background-color: pink;
+        width: 250px;
+
+        h2 {
+            @include small-text;
+        }
+
+        input {
+            background-color: red;
+            width: 100%;
+            font-weight: 500;
+            padding: .5rem;
+            border-radius: .5rem;
         }
     }
 }

@@ -33,8 +33,22 @@
             }
         }
 
+        &__drop-inner {
+            box-sizing: border-box;
+            background-color: var(--lt-grey);
+            display: flex;
+            width: 250px;
+            justify-content: space-between;
+            border-radius: .5rem;
+            position: relative;
+        }
+
         &__save {
             background-color: var(--red);
+            width: 25%;
+            color: white;
+            border-radius: 0 .6rem .6rem 0;
+            text-align: center;
         }
         
         .drop-zone-con {

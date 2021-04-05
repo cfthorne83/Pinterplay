@@ -3,7 +3,7 @@ import React, { useDebugValue } from 'react';
 class BoardDropdown extends React.Component{
     constructor(props){
         super(props);
-        this.state = { show: false, board_id: "" }
+        this.state = { show: true, board_id: "" }
 
         this.handleClick = this.handleClick.bind(this);
         this.handleBlur = this.handleBlur.bind(this);
@@ -30,24 +30,28 @@ class BoardDropdown extends React.Component{
     }
 
     render() {
+
         let firstBoard;
         let firstId;
+        let pin;
+
         let boards = this.props.boards.map( (board, i) => {
             if (i === 0) {
                 firstBoard = board.title;
                 firstId = board.id;
             }
+            // pin = board.pins[0].title;
+
             return (
-                <li 
-                    className="board-dropdown-btn" 
-                    key={board.id}>
-                        <input 
-                            type="submit" 
-                            className="board-dropdown-input"
-                            data-id={board.id} 
-                            value={board.title}
-                            onClick={this.updateBoard}
-                        />
+                <li>
+                    <input
+                        key={board.id} 
+                        type="submit" 
+                        className="board-dropdown-input"
+                        data-id={board.id} 
+                        value={board.title}
+                        onClick={this.updateBoard}
+                    />
                 </li>
             )
         })
@@ -57,8 +61,8 @@ class BoardDropdown extends React.Component{
             // <div>
                 <button 
                     className='board-drop'
-                    onClick={this.handleClick} 
-                    onBlur={this.handleBlur}
+                    // onClick={this.handleClick} 
+                    // onBlur={this.handleBlur}
                     >
         
                     <span className="board-drop__select">
@@ -67,7 +71,8 @@ class BoardDropdown extends React.Component{
                     </span>
     
                         {this.state.show && (
-                            <div className='board-drop__inner'>        
+                            <div className='board-drop__inner'>   
+                                <h2>All boards</h2>     
                                 <ul>{boards}</ul> 
                             </div>
                         )}
