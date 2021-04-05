@@ -62,7 +62,7 @@
                 border-radius: var(--b-rad-sm);
                 letter-spacing: var(--lett-space);
                 background-repeat: no-repeat;
-                background-size: cover;
+                background-size: contain;
                 
                 &__inner {
                     height: 100%;
