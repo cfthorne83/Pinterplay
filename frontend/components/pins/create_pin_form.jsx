@@ -174,38 +174,42 @@ class CreatePinForm extends React.Component{
                         </div>
                     </div>
 
-                    <div className="drop-zone-con"> 
-                        <div 
-                            className="drop-zone"  
-                            onDragOver={this.handleDragOver}
-                            onDragLeave={this.handleDragLeave}
-                            onDragEnd={this.handleDragEnter}
-                            onDrop={this.handleDrop}
-                            onClick={this.handleClick}>
-                            <span className="drop-zone__prompt">
-                                Drag and drop or click to upload
-                            </span>
-                            
+                    <div className="create-pin-form__inner">
+                        <div className="drop-zone-con"> 
+                            <div 
+                                className="drop-zone"  
+                                onDragOver={this.handleDragOver}
+                                onDragLeave={this.handleDragLeave}
+                                onDragEnd={this.handleDragEnter}
+                                onDrop={this.handleDrop}
+                                onClick={this.handleClick}>
+                                <span className="drop-zone__prompt">
+                                    Drag and drop or click to upload
+                                </span>
+                                <img src="/images/arrow.png" alt=""/>
+                                
+                                <input 
+                                    type="file" 
+                                    className="drop-zone__input" 
+                                    multiple/>
+                            </div>
+                        </div>
+
+                        <div className="pin-title-con">
                             <input 
-                                type="file" 
-                                className="drop-zone__input" 
-                                multiple/>
+                                type="text"
+                                value={this.state.title}  
+                                onChange={this.updateTitle} 
+                                placeholder='Add your title'/>
+                                <br/>
+                                <br/>
+                            <textarea 
+                                onChange={this.updateDescription}
+                                placeholder="Tell everyone what your Pin is about"/>
+                                <br/>
+                                <br/>
                         </div>
                     </div>
-                    {/* <div className="pin-title-con">
-                        <input 
-                            type="text"
-                            value={this.state.title}  
-                            onChange={this.updateTitle} 
-                            placeholder='Add your title'/>
-                            <br/>
-                            <br/>
-                        <textarea 
-                            onChange={this.updateDescription}
-                            placeholder="Tell everyone what your Pin is about"/>
-                            <br/>
-                            <br/>
-                    </div> */}
                 </form>
 
             </div>
