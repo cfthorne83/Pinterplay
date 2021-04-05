@@ -145,6 +145,7 @@ class CreatePinForm extends React.Component{
     }
 
     updateBoardId(e) {
+        e.stopPropagation();
         let board = document.querySelector(".selected-board");        
         this.setState({ board_id: board.dataset.id});
     }
@@ -152,11 +153,20 @@ class CreatePinForm extends React.Component{
     render() {
 
         return (
-            <div className="create-pin-form-con">
-                <BoardDropdown boards={this.props.boards}/>
+            <div className="create-pin-form-con">                    
+
                 <form 
                     onSubmit={this.handleSubmit} 
                     className="create-pin-form">
+
+                    <div className="create-pin-form__drop">
+                            <BoardDropdown boards={this.props.boards}/>
+                        {/* <button 
+                            className="create-pin-form__save"
+                            onClick={this.updateBoardId}>
+                                Save
+                        </button> */}
+                    </div>
 
                     <div className="drop-zone-con"> 
                         <div 
@@ -165,21 +175,18 @@ class CreatePinForm extends React.Component{
                             onDragLeave={this.handleDragLeave}
                             onDragEnd={this.handleDragEnter}
                             onDrop={this.handleDrop}
-                            onClick={this.handleClick}
-                        >
-                            <span className="drop-zone__prompt">Drag and drop or click to upload</span>
+                            onClick={this.handleClick}>
+                            <span className="drop-zone__prompt">
+                                Drag and drop or click to upload
+                            </span>
+                            
                             <input 
                                 type="file" 
                                 className="drop-zone__input" 
                                 multiple/>
                         </div>
                     </div>
-
-                    <div className="pin-title-con">
-
-                        {/* <BoardDropdown boards={this.props.boards}/> */}
-                            <br/>
-                            <br/>
+                    {/* <div className="pin-title-con">
                         <input 
                             type="text"
                             value={this.state.title}  
@@ -192,11 +199,9 @@ class CreatePinForm extends React.Component{
                             placeholder="Tell everyone what your Pin is about"/>
                             <br/>
                             <br/>
-                        <button onClick={this.updateBoardId}>Save</button>
-                    </div>
-
+                    </div> */}
                 </form>
-                
+
             </div>
 
         )

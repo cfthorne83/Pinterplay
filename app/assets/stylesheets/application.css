@@ -68,12 +68,12 @@ body {
    height: 100%;
 }
 
-button {
-   /* border-radius: 9999px;
+/* button {
+   border-radius: 9999px;
    padding: .8rem;
    font-size: 1rem;
-   font-weight: 600; */
-}
+   font-weight: 600;
+} */
 
 input, button, textarea {
    /* padding: .8rem; */

@@ -23,11 +23,10 @@ import PinShowContainer from "./pins/pin_show_container";
 
 const App = () => (
     <div className="app">
-        <Modal />
-        
         <header>
             <NavBarContainer />
         </header>
+        <Modal />
 
         <Switch >
             <Route exact path="/pins/:pinId" component={PinShowContainer} />

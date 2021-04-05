@@ -54,24 +54,26 @@ class BoardDropdown extends React.Component{
 
 
         return (
-            <button 
-                className='dropdown-outer'
-                onClick={this.handleClick} 
-                onBlur={this.handleBlur}
-                >
+            // <div>
+                <button 
+                    className='board-drop'
+                    onClick={this.handleClick} 
+                    onBlur={this.handleBlur}
+                    >
+        
+                    <span className="board-drop__select">
+                        <p data-id={firstId} className="selected-board">{firstBoard}</p>
+                        <img className='board-drop__img' src="https://cdn1.iconfinder.com/data/icons/arrows-vol-1-4/24/dropdown_arrow-512.png" alt=""/>
+                    </span>
     
-                <span>
-                    <p data-id={firstId} className="selected-board">{firstBoard}</p>
-                    <img className='dropdown-icon' src="https://cdn1.iconfinder.com/data/icons/arrows-vol-1-4/24/dropdown_arrow-512.png" alt=""/>
-                </span>
+                        {this.state.show && (
+                            <div className='board-drop__inner'>        
+                                <ul>{boards}</ul> 
+                            </div>
+                        )}
+                </button>
+            // </div>
 
-                    {this.state.show && (
-                        <div className='dropdown-inner'>        
-                            <ul>{boards}</ul> 
-                        </div>
-                    )}
-
-            </button>
             
         )
     }

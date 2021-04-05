@@ -1,10 +1,14 @@
 .home-nav-bar {
+    position: fixed;
+    top: 0;
     display: flex;
     justify-content: space-between;
     height: 83px;
     align-items: center;
     box-sizing: border-box;
     padding: 13px;
+    background-color: white;
+    width: 100%;
 }
 
 
