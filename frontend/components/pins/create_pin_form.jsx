@@ -188,9 +188,10 @@ class CreatePinForm extends React.Component{
                                     className="drop-zone__img"
                                     src="/images/arrow.png"/>
                                 <h1 className="drop-zone__prompt">
-                                    Drag and drop or click to upload
-                                </h1>
-                                <h2>Reccomendation: Use high-quality .jpg</h2>
+                                    Drag and drop or click to
+                                </h1 >
+                                <h1 className="drop-zone__prompt">upload</h1>
+                                <h2>Recommendation: Use high-quality .jpg</h2>
                                 <h2>files less than 20MB</h2>
 
                                 <input 
