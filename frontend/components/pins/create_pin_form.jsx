@@ -84,6 +84,7 @@ class CreatePinForm extends React.Component{
             dropZoneImg.style.width = "90%";
             dropZoneImg.style.borderRadius = "1rem";
         }
+        this.dropZoneReset();
     }
     
     handleDelete(e) {
@@ -91,9 +92,7 @@ class CreatePinForm extends React.Component{
         
         let dropZoneImg = document.querySelector(".drop-zone__img");
         dropZoneImg.src = "";
-        // debugger
-        
-        // debugger
+      
         let dropZoneInner = document.querySelector(".drop-zone__inner");
         dropZoneInner.style.display = "inline-block";
 
@@ -103,12 +102,6 @@ class CreatePinForm extends React.Component{
 
         this.setState(this.props.pin);
 
-        let deleteIcon = document.querySelector(".drop-zone__delete-icon");
-        // deleteIcons.forEach( icon => {
-        //     icon.remove();
-        // });
-
-        // deleteIcon.remove();
         let deleteBtn = document.querySelector(".drop-zone__delete");
         deleteBtn.remove();
     }
@@ -117,8 +110,9 @@ class CreatePinForm extends React.Component{
         let inputElement = document.querySelector(".drop-zone__input")
         let dropZone = document.querySelector(".drop-zone");
 
+        
         inputElement.click();
-
+        
         inputElement.addEventListener("change", e => {
             if (inputElement.files.length) {
                 this.addDeleteBtn(dropZone, inputElement.files[0]);
@@ -191,8 +185,21 @@ class CreatePinForm extends React.Component{
         this.props.createPin(this.state);
     }
 
-    handleImageError() {
+    dropZoneReset() {
+        const dropZone = document.querySelector(".drop-zone");
+            dropZone.style.border = "none";
+            dropZone.style.backgroundColor = "var(--lt-grey)";
 
+        const dropZoneImg = document.querySelector(".drop-zone__arrow");
+            dropZoneImg.src = "/images/arrow.png";
+            dropZoneImg.style.filter = "invert(50%)";
+
+        const dropZonePrompt1 = document.querySelector(".drop-zone__prompt1");
+            dropZonePrompt1.innerText = "Drag and drop or click to upload";
+            dropZonePrompt1.style.color = "var(--font-drk-grey)";
+
+        const dropZonePrompt = document.querySelector(".drop-zone__prompt");
+            dropZonePrompt.style.color = "#949494";
     }
 
     render() {
