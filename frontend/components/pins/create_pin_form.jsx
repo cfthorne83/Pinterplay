@@ -84,7 +84,6 @@ class CreatePinForm extends React.Component{
             dropZoneImg.style.width = "90%";
             dropZoneImg.style.borderRadius = "1rem";
         }
-
     }
     
     handleDelete(e) {
@@ -166,14 +165,28 @@ class CreatePinForm extends React.Component{
     handleSubmit(e) {
         e.stopPropagation();
 
-        console.log(this.dropZone);
-        // if (!this.state.image_url){
-        //     const dropZone = document.querySelector
-        // }
-        // let board = document.querySelector(".selected-board");        
-        // this.setState({ board_id: board.dataset.id});
+        if (!this.state.image_url){
+
+            const dropZone = document.querySelector(".drop-zone");
+            dropZone.style.border = "1px solid red";
+                    
+            const dropZoneImg = document.querySelector(".drop-zone__arrow");
+            dropZoneImg.src = "/images/exclamation.png";
+            
+            const dropZonePrompt1 = document.querySelector(".drop-zone__prompt1");
+            dropZonePrompt1.innerText = "An image is required to create a Pin.";
+            dropZonePrompt1.style.color = "red";
+
+            const dropZonePrompt = document.querySelector(".drop-zone__prompt");
+            dropZonePrompt.style.color = "red";
+            
+            // dropZoneImg.style.width = ""
+            
+        }
+        let board = document.querySelector(".selected-board");        
+        this.setState({ board_id: board.dataset.id});
         
-        // this.props.createPin(this.state);
+        this.props.createPin(this.state);
     }
 
     handleImageError() {
@@ -217,7 +230,7 @@ class CreatePinForm extends React.Component{
                                     <img 
                                         className="drop-zone__arrow"
                                         src="/images/arrow.png"/>
-                                    <h1>
+                                    <h1 className="drop-zone__prompt1">
                                         Drag and drop or click to upload
                                     </h1>
                                 </div>
