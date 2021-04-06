@@ -158,9 +158,22 @@ class CreatePinForm extends React.Component{
     handleSubmit(e) {
         e.stopPropagation();
 
-        if (!this.state.image_url){
+        let board = document.querySelector(".selected-board");        
+        this.setState({ board_id: board.dataset.id});
 
-            const dropZone = document.querySelector(".drop-zone");
+        if (!this.state.image_url){
+            this.pinError();
+
+        } else if (!this.state.title) {
+            this.titleError();
+
+        } else {
+            this.props.createPin(this.state);  
+        } 
+    }
+
+    pinError() {
+        const dropZone = document.querySelector(".drop-zone");
             dropZone.style.border = "1px solid red";
             dropZone.style.backgroundColor = "#fef7f8";
 
@@ -173,21 +186,12 @@ class CreatePinForm extends React.Component{
             dropZonePrompt1.style.color = "red";
 
             const dropZonePrompt = document.querySelector(".drop-zone__prompt");
-            dropZonePrompt.style.color = "red";
-            
-            // dropZoneImg.style.width = ""
-            
-        }
-        let board = document.querySelector(".selected-board");        
-        this.setState({ board_id: board.dataset.id});
-        
-        this.props.createPin(this.state);
+            dropZonePrompt.style.color = "red"; 
     }
 
     dropZoneReset() {
         const dropZone = document.querySelector(".drop-zone");
             dropZone.style.border = "none";
-            // dropZone.style.backgroundColor = "var(--lt-grey)";
 
         const dropZoneImg = document.querySelector(".drop-zone__arrow");
             dropZoneImg.src = "/images/arrow.png";
@@ -199,6 +203,12 @@ class CreatePinForm extends React.Component{
 
         const dropZonePrompt = document.querySelector(".drop-zone__prompt");
             dropZonePrompt.style.color = "#949494";
+    }
+
+    titleError() {
+        const titleError = document.querySelector(".title-error");
+            titleError.innerText = "Pins must have a title.";
+            titleError.style.color = "red";
     }
 
     render() {
@@ -262,7 +272,10 @@ class CreatePinForm extends React.Component{
                                     type="text"
                                     value={this.state.title}  
                                     onChange={this.updateTitle} 
-                                    placeholder='Add your title'/>                            
+                                    placeholder='Add your title'/> 
+
+                                <h3 className="title-error"></h3>
+
                                 <textarea 
                                     className="create-pin-form__textarea"
                                     onChange={this.updateDescription}
