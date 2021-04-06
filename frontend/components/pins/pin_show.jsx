@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import BoardDropdown from "../boards/board_dropdown";
 
 class PinShow extends React.Component {
     constructor(props){
@@ -9,7 +9,8 @@ class PinShow extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchPin(this.props.match.params.pinId)
+        this.props.fetchPin(this.props.match.params.pinId);
+        this.props.fetchBoards();
     }
 
     // componentDidUpdate(prevProps) {
@@ -47,12 +48,15 @@ class PinShow extends React.Component {
                         alt="pin-image"/>
 
                     <div className="pin-show__text">
-                        
+
                         <img
                             className="pin-show__edit-modal"
                             onClick={()  => {this.props.openModal("editPin", this.props.pin.id)}} 
                             src="https://static.thenounproject.com/png/384290-200.png" 
                             alt="edit-form-link"/>
+
+                        <BoardDropdown boards={this.props.boards}/>
+
                         <h1>{this.props.pin.title}</h1>
                     </div>
                 </div>
