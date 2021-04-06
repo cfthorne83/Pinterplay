@@ -171,9 +171,9 @@ class CreatePinForm extends React.Component{
             dropZone.style.border = "1px solid red";
             dropZone.style.backgroundColor = "#fef7f8";
 
-                    
             const dropZoneImg = document.querySelector(".drop-zone__arrow");
             dropZoneImg.src = "/images/exclamation.png";
+            dropZoneImg.style.filter = "invert(50%) sepia(1) saturate(10000%)";
 
             const dropZonePrompt1 = document.querySelector(".drop-zone__prompt1");
             dropZonePrompt1.innerText = "An image is required to create a Pin.";
