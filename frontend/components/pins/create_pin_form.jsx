@@ -64,7 +64,6 @@ class CreatePinForm extends React.Component{
                 dropZoneImg.src = `${image}`;
         };
         
-
         if (!deleteBtn){
             deleteBtn = document.createElement("button");
             deleteBtn.classList.add("drop-zone__delete");
@@ -188,7 +187,7 @@ class CreatePinForm extends React.Component{
     dropZoneReset() {
         const dropZone = document.querySelector(".drop-zone");
             dropZone.style.border = "none";
-            dropZone.style.backgroundColor = "var(--lt-grey)";
+            // dropZone.style.backgroundColor = "var(--lt-grey)";
 
         const dropZoneImg = document.querySelector(".drop-zone__arrow");
             dropZoneImg.src = "/images/arrow.png";
