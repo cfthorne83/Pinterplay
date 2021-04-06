@@ -115,7 +115,7 @@
                         text-align: center;
                     }
                 }
-
+                
                 &__text {
                     display: flex;
                     flex-direction: column;
@@ -129,7 +129,6 @@
                     padding: 1rem 0;
                 }
             }
-
         }
 
         &__text {
@@ -153,6 +152,15 @@
         
         &__input:focus {
             border-bottom: 2px solid rgb(42, 92, 228);
+        }
+
+        &__input-error {
+            color: red;
+            height: 1rem;
+            font-size: .8rem;
+            font-weight: 100;
+            letter-spacing: var(--lett-space);
+            padding-top: .5rem;
         }
         
         &__textarea {

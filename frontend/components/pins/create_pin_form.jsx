@@ -165,7 +165,7 @@ class CreatePinForm extends React.Component{
             this.pinError();
 
         } else if (!this.state.title) {
-            this.titleError();
+            this.inputError();
 
         } else {
             this.props.createPin(this.state);  
@@ -205,10 +205,10 @@ class CreatePinForm extends React.Component{
             dropZonePrompt.style.color = "#949494";
     }
 
-    titleError() {
-        const titleError = document.querySelector(".title-error");
-            titleError.innerText = "Pins must have a title.";
-            titleError.style.color = "red";
+    inputError() {
+        const inputError = document.querySelector(".create-pin-form__input-error");
+            inputError.innerText = "Pins must have a title.";
+            inputError.style.color = "red";
     }
 
     render() {
@@ -274,7 +274,7 @@ class CreatePinForm extends React.Component{
                                     onChange={this.updateTitle} 
                                     placeholder='Add your title'/> 
 
-                                <h3 className="title-error"></h3>
+                                <h3 className="create-pin-form__input-error"></h3>
 
                                 <textarea 
                                     className="create-pin-form__textarea"
