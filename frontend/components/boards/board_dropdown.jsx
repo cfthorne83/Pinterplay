@@ -43,7 +43,7 @@ class BoardDropdown extends React.Component{
             // pin = board.pins[0].title;
 
             return (
-                <li>
+                <li key={board.id}>
                     <input
                         key={board.id} 
                         type="submit" 

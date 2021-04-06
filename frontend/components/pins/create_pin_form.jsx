@@ -18,7 +18,6 @@ class CreatePinForm extends React.Component{
         this.handleSubmit = this.handleSubmit.bind(this);
         this.updateTitle = this.updateTitle.bind(this);
         this.updateDescription = this.updateDescription.bind(this);
-        this.updateBoardId = this.updateBoardId.bind(this);
         this.handleDelete = this.handleDelete.bind(this);
     }
 
@@ -155,26 +154,30 @@ class CreatePinForm extends React.Component{
             that.setState({ image_url: image });
         }
     }
-
-    handleSubmit(e) {
-        e.preventDefault();
-        this.props.createPin(this.state)
-    }
-
+    
     updateTitle(e) {
         this.setState({ title: e.currentTarget.value });
     }
-
+    
     updateDescription(e) {
         this.setState({ description: e.currentTarget.value });
     }
-
-    updateBoardId(e) {
+    
+    handleSubmit(e) {
         e.stopPropagation();
-        let board = document.querySelector(".selected-board");        
-        this.setState({ board_id: board.dataset.id});
+
+        console.log(this.dropZone);
+        // if (!this.state.image_url){
+        //     const dropZone = document.querySelector
+        // }
+        // let board = document.querySelector(".selected-board");        
+        // this.setState({ board_id: board.dataset.id});
         
-        this.handleSubmit();
+        // this.props.createPin(this.state);
+    }
+
+    handleImageError() {
+
     }
 
     render() {
@@ -195,7 +198,7 @@ class CreatePinForm extends React.Component{
                             <BoardDropdown boards={this.props.boards}/>
                             <button 
                                 className="create-pin-form__save"
-                                onClick={this.updateBoardId}>
+                                onClick={this.handleSubmit}>
                                     Save
                             </button>
                         </div>
