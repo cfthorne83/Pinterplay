@@ -20,3 +20,12 @@
     font-weight: 100;
     letter-spacing: var(--lett-space);
 }
+
+@mixin link-con {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}

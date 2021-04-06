@@ -1,10 +1,54 @@
+@mixin link-con {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
 .pin-show {
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: chartreuse;
+
     &__back {
-        width: 20px;
+        @include link-con;
+        position: fixed;
+        top: 100px;
+        left: 20px;
+
+        img {
+            width: 25px;
+        }
     }
 
-    img {
-        width: 300px;
+    &__back:hover {
+        background-color: var(--lt-grey);
+    }
+
+    &__inner {
+        background-color: pink;
+        width: 65%;
+        min-width: 500px;
+        margin: 2rem 0;
+        border-radius: 3rem;
+
+        display: flex;
+    }
+
+    &__img {
+        width: 50%;
+        border-radius: 3rem 0 0 3rem;
+    }
+
+    &__text {
+        width: 50%;
+    }
+
+    &__edit-modal {
+        width: 25px;
     }
 }
