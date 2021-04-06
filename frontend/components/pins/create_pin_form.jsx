@@ -77,7 +77,7 @@ class CreatePinForm extends React.Component{
             deleteBtn.append(deleteIcon);
 
             dropZone.style.padding = "0px";
-            dropZone.style.backgroundColor = "pink";
+            dropZone.style.backgroundColor = "transparent";
             dropZone.style.position = "relative";
             
             dropZoneImg.style.width = "90%";
