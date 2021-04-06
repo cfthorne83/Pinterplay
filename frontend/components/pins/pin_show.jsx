@@ -30,7 +30,9 @@ class PinShow extends React.Component {
         
         return (
             <div className="pin-show">
-                <button onClick={this.handleGoBack}>go back</button>
+                <button onClick={this.handleGoBack}>
+                    <img src="/images/back-arrow2.png" alt=""/>
+                </button>
 
                 <h1>Pin show</h1>
                 <h1>{this.props.pin.title}</h1>
