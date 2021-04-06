@@ -56,18 +56,15 @@ class CreatePinForm extends React.Component{
             dropZoneInner.style.display = "none";
         }
 
-        if (file.type.startsWith("image/")) {
-            const reader = new FileReader();
-            reader.readAsDataURL(file);
-
-            reader.onload = () => {
-                let image = reader.result;
-                that.setState({ image_url: image });
-                    // thumbnail.style.backgroundImage = `url(${reader.result})`;
-                    // dropZone.style.backgroundImage = `url(${reader.result})`;
-                    dropZoneImg.src = `${image}`;
-            };
-        }
+       
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => {
+            let image = reader.result;
+            this.setState({ image_url: image });
+                dropZoneImg.src = `${image}`;
+        };
+        
 
         if (!deleteBtn){
             deleteBtn = document.createElement("button");
@@ -229,8 +226,9 @@ class CreatePinForm extends React.Component{
                                 <img className="drop-zone__img" src="" alt=""/>
                                 <input 
                                     type="file" 
-                                    className="drop-zone__input" 
-                                    multiple/>
+                                    className="drop-zone__input"
+                                    multiple accept="image/*" 
+                                />
                         </div>
 
                         <div className="create-pin-form__text">
