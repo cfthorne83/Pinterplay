@@ -73,6 +73,7 @@ class CreatePinForm extends React.Component{
             deleteBtn.addEventListener("click", that.handleDelete);
             // thumbnail.append(deleteBtn);
             dropZone.append(deleteBtn);
+            dropZone.style.padding = "0px";
         }
 
         if (file.type.startsWith("image/")) {
