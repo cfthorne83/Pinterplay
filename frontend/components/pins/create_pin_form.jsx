@@ -164,16 +164,16 @@ class CreatePinForm extends React.Component{
         let board = document.querySelector(".selected-board");        
         this.setState({ board_id: board.dataset.id});
 
-        if (!this.state.image_url){
+        if (!this.state.title && !this.state.image_url){
+            this.pinError();
+            this.inputError();
+
+        } else if (!this.state.image_url){
             this.pinError();
             
         } else if (!this.state.title) {
             this.inputError();
-            
-        } else if (!this.state.title && !this.state.image_url){
-            this.pinError();
-            this.inputError();
-            
+               
         } else {
             this.props.createPin(this.state); 
         }
