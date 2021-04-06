@@ -66,7 +66,10 @@ class CreatePinForm extends React.Component{
             dropZoneImg = document.createElement("img");
             dropZone.append(dropZoneImg);
 
-            deleteBtn = document.createElement("button");
+            deleteBtn = document.createElement("input");
+            deleteBtn.type = "image";
+            deleteBtn.src = "/images/delete.png";
+
             deleteBtn.classList.add("drop-zone__delete");
             deleteBtn.innerText = "Delete";
             deleteBtn.addEventListener("click", that.handleDelete);
