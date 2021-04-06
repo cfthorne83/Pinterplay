@@ -39,7 +39,7 @@
             width: 250px;
             justify-content: space-between;
             border-radius: .5rem;
-            position: relative;
+            // position: relative;
         }
 
         &__save {
@@ -71,7 +71,7 @@
                 letter-spacing: var(--lett-space);
 
                 &__delete {
-                    position: absolute;
+                    // position: absolute;
                     background-color: white;
                     width: 45px;
                     height: 45px;

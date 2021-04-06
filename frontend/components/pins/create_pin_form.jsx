@@ -49,7 +49,6 @@ class CreatePinForm extends React.Component{
         let dropZoneInner = document.querySelector(".drop-zone__inner");
         let dropZoneImg = document.querySelector(".drop-zone__img");
         let deleteIcon;
-        debugger
 
         let that = this;
         let image;
@@ -60,17 +59,16 @@ class CreatePinForm extends React.Component{
         // }
         if (dropZoneInner) {
             dropZoneInner.style.display = "none";
-            debugger
         }
 
         // if (!dropZoneImg) {
-            debugger
             // dropZoneImg = document.createElement("img");
             // dropZoneImg.classList.add("drop-zone__img");
             // dropZone.append(dropZoneImg);
 
             deleteBtn = document.createElement("button");
             deleteIcon = document.createElement("img");
+            deleteIcon.classList.add("drop-zone__delete-icon");
             deleteIcon.src = "/images/delete.png";
 
             deleteBtn.classList.add("drop-zone__delete");
@@ -105,11 +103,28 @@ class CreatePinForm extends React.Component{
     
     handleDelete(e) {
         e.stopPropagation();
-        console.log("dlele")
         
         let dropZoneImg = document.querySelector(".drop-zone__img");
-        this.setState(this.props.pin);
         dropZoneImg.remove();
+        // debugger
+        
+        // debugger
+        let dropZoneInner = document.querySelector(".drop-zone__inner");
+        dropZoneInner.style.display = "inline-block";
+
+        let dropZone = document.querySelector(".drop-zone");
+        dropZone.style.backgroundColor = "var(--lt-grey)";
+        dropZone.style.padding = "10px";
+
+        this.setState(this.props.pin);
+
+        // deleteBtn.classList.remove("drop-zone__delete");
+        // // deleteBtn.classList.add("drop-zone__delete2")
+        // // deleteBtn.style.position = "static";
+        let deleteIcon = document.querySelector(".drop-zone__delete-icon");
+        deleteIcon.remove();
+        let deleteBtn = document.querySelector(".drop-zone__delete");
+        deleteBtn.remove();
     }
     
     handleClick() {
