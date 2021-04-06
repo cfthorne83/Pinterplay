@@ -49,6 +49,7 @@ class CreatePinForm extends React.Component{
         let thumbnail = document.querySelector(".drop-zone__thumb");
         let dropZoneInner = document.querySelector(".drop-zone__inner");
         let dropZoneImg = document.querySelector(".drop-zone__img");
+        let deleteIcon;
 
 
         let that = this;
@@ -66,14 +67,14 @@ class CreatePinForm extends React.Component{
             dropZoneImg = document.createElement("img");
             dropZone.append(dropZoneImg);
 
-            deleteBtn = document.createElement("input");
-            deleteBtn.type = "image";
-            deleteBtn.src = "/images/delete.png";
+            deleteBtn = document.createElement("button");
+            deleteIcon = document.createElement("img");
+            deleteIcon.src = "/images/delete.png";
 
             deleteBtn.classList.add("drop-zone__delete");
-            deleteBtn.innerText = "Delete";
             deleteBtn.addEventListener("click", that.handleDelete);
             dropZone.append(deleteBtn);
+            deleteBtn.append(deleteIcon);
 
             dropZone.style.padding = "0px";
             dropZone.style.backgroundColor = "pink";
