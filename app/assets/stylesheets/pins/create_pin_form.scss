@@ -65,8 +65,14 @@
                 height: 100%;
                 border-radius: var(--b-rad-sm);
                 letter-spacing: var(--lett-space);
-                background-repeat: no-repeat;
-                background-size: contain;
+
+                &__delete {
+                    position: absolute;
+                    background-color: red;
+                    padding: 1rem;
+                    bottom: 45%;
+                    left: 5%;
+                }
                 
                 &__inner {
                     height: 100%;
