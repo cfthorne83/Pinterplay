@@ -49,6 +49,10 @@
             border-radius: 0 .6rem .6rem 0;
             text-align: center;
         }
+
+        &__save:hover {
+            background-color: var(--red-btn-hov);
+        }
         
         .create-pin-form__inner {
             display: flex;

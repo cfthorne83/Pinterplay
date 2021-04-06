@@ -46,7 +46,6 @@ class CreatePinForm extends React.Component{
     // adds delete btn and displays file image
     addDeleteBtn(dropZone, file) {
         let deleteBtn = document.querySelector(".drop-zone__delete");
-        let thumbnail = document.querySelector(".drop-zone__thumb");
         let dropZoneInner = document.querySelector(".drop-zone__inner");
         let dropZoneImg = document.querySelector(".drop-zone__img");
         let deleteIcon;
@@ -65,6 +64,7 @@ class CreatePinForm extends React.Component{
 
         if (!dropZoneImg) {
             dropZoneImg = document.createElement("img");
+            dropZoneImg.classList.add("drop-zone__img2");
             dropZone.append(dropZoneImg);
 
             deleteBtn = document.createElement("button");
@@ -103,10 +103,11 @@ class CreatePinForm extends React.Component{
     
     handleDelete(e) {
         e.stopPropagation();
+        console.log("dlele")
         
-        let thumbnail = document.querySelector(".drop-zone__thumb");
+        let dropZoneImg = document.querySelector(".drop-zone__img2");
         this.setState(this.props.pin);
-        thumbnail.remove();
+        dropZoneImg.remove();
     }
     
     handleClick() {
@@ -167,6 +168,8 @@ class CreatePinForm extends React.Component{
         e.stopPropagation();
         let board = document.querySelector(".selected-board");        
         this.setState({ board_id: board.dataset.id});
+        
+        this.handleSubmit();
     }
 
     render() {
@@ -175,7 +178,7 @@ class CreatePinForm extends React.Component{
             <div className="create-pin-form-con">                    
 
                 <form 
-                    onSubmit={this.handleSubmit} 
+                    // onSubmit={this.handleSubmit} 
                     className="create-pin-form">
 
                     <div className="create-pin-form__drop">
