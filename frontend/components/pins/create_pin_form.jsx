@@ -51,38 +51,10 @@ class CreatePinForm extends React.Component{
         let deleteIcon;
 
         let that = this;
-        let image;
 
-        // if (dropZone.querySelector(".drop-zone__prompt")){
-        //     dropZone.querySelector(".drop-zone__prompt").remove();
-        //     dropZone.querySelector(".drop-zone__text").remove();
-        // }
         if (dropZoneInner) {
             dropZoneInner.style.display = "none";
         }
-
-        // if (!dropZoneImg) {
-            // dropZoneImg = document.createElement("img");
-            // dropZoneImg.classList.add("drop-zone__img");
-            // dropZone.append(dropZoneImg);
-
-            deleteBtn = document.createElement("button");
-            deleteIcon = document.createElement("img");
-            deleteIcon.classList.add("drop-zone__delete-icon");
-            deleteIcon.src = "/images/delete.png";
-
-            deleteBtn.classList.add("drop-zone__delete");
-            deleteBtn.addEventListener("click", that.handleDelete);
-            dropZone.append(deleteBtn);
-            deleteBtn.append(deleteIcon);
-
-            dropZone.style.padding = "0px";
-            dropZone.style.backgroundColor = "transparent";
-            dropZone.style.position = "relative";
-            
-            dropZoneImg.style.width = "90%";
-            dropZoneImg.style.borderRadius = "1rem";
-        // }
 
         if (file.type.startsWith("image/")) {
             const reader = new FileReader();
@@ -95,8 +67,26 @@ class CreatePinForm extends React.Component{
                     // dropZone.style.backgroundImage = `url(${reader.result})`;
                     dropZoneImg.src = `${image}`;
             };
-        } else {
-            dropZone.style.backgroundImage = null;
+        }
+
+        if (!deleteBtn){
+            deleteBtn = document.createElement("button");
+            deleteBtn.classList.add("drop-zone__delete");
+            deleteBtn.addEventListener("click", that.handleDelete);
+
+            deleteIcon = document.createElement("img");
+            deleteIcon.classList.add("drop-zone__delete-icon");
+            deleteIcon.src = "/images/delete.png";
+
+            dropZone.append(deleteBtn);
+            deleteBtn.append(deleteIcon);
+
+            dropZone.style.padding = "0px";
+            dropZone.style.backgroundColor = "transparent";
+            dropZone.style.position = "relative";
+            
+            dropZoneImg.style.width = "90%";
+            dropZoneImg.style.borderRadius = "1rem";
         }
 
     }
@@ -105,7 +95,7 @@ class CreatePinForm extends React.Component{
         e.stopPropagation();
         
         let dropZoneImg = document.querySelector(".drop-zone__img");
-        dropZoneImg.remove();
+        dropZoneImg.src = "";
         // debugger
         
         // debugger
@@ -118,11 +108,12 @@ class CreatePinForm extends React.Component{
 
         this.setState(this.props.pin);
 
-        // deleteBtn.classList.remove("drop-zone__delete");
-        // // deleteBtn.classList.add("drop-zone__delete2")
-        // // deleteBtn.style.position = "static";
         let deleteIcon = document.querySelector(".drop-zone__delete-icon");
-        deleteIcon.remove();
+        // deleteIcons.forEach( icon => {
+        //     icon.remove();
+        // });
+
+        // deleteIcon.remove();
         let deleteBtn = document.querySelector(".drop-zone__delete");
         deleteBtn.remove();
     }
