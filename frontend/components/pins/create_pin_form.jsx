@@ -49,7 +49,7 @@ class CreatePinForm extends React.Component{
         let dropZoneInner = document.querySelector(".drop-zone__inner");
         let dropZoneImg = document.querySelector(".drop-zone__img");
         let deleteIcon;
-
+        debugger
 
         let that = this;
         let image;
@@ -59,13 +59,15 @@ class CreatePinForm extends React.Component{
         //     dropZone.querySelector(".drop-zone__text").remove();
         // }
         if (dropZoneInner) {
-            dropZoneInner.remove();
+            dropZoneInner.style.display = "none";
+            debugger
         }
 
-        if (!dropZoneImg) {
-            dropZoneImg = document.createElement("img");
-            dropZoneImg.classList.add("drop-zone__img2");
-            dropZone.append(dropZoneImg);
+        // if (!dropZoneImg) {
+            debugger
+            // dropZoneImg = document.createElement("img");
+            // dropZoneImg.classList.add("drop-zone__img");
+            // dropZone.append(dropZoneImg);
 
             deleteBtn = document.createElement("button");
             deleteIcon = document.createElement("img");
@@ -82,7 +84,7 @@ class CreatePinForm extends React.Component{
             
             dropZoneImg.style.width = "90%";
             dropZoneImg.style.borderRadius = "1rem";
-        }
+        // }
 
         if (file.type.startsWith("image/")) {
             const reader = new FileReader();
@@ -105,7 +107,7 @@ class CreatePinForm extends React.Component{
         e.stopPropagation();
         console.log("dlele")
         
-        let dropZoneImg = document.querySelector(".drop-zone__img2");
+        let dropZoneImg = document.querySelector(".drop-zone__img");
         this.setState(this.props.pin);
         dropZoneImg.remove();
     }
@@ -207,7 +209,7 @@ class CreatePinForm extends React.Component{
                             <div className="drop-zone__inner">
                                 <div className="drop-zone__text">
                                     <img 
-                                        className="drop-zone__img"
+                                        className="drop-zone__arrow"
                                         src="/images/arrow.png"/>
                                     <h1>
                                         Drag and drop or click to upload
@@ -216,8 +218,9 @@ class CreatePinForm extends React.Component{
                                 <h2 className="drop-zone__prompt">
                                     Recommendation: Use high-quality .jpg files less than 20MB
                                 </h2>
-
                             </div>
+
+                                <img className="drop-zone__img" src="" alt=""/>
                                 <input 
                                     type="file" 
                                     className="drop-zone__input" 
