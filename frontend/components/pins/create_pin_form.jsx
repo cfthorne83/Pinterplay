@@ -148,6 +148,9 @@ class CreatePinForm extends React.Component{
     }
     
     updateTitle(e) {
+        const inputError = document.querySelector(".create-pin-form__input-error");
+            inputError.innerText = "";
+
         this.setState({ title: e.currentTarget.value });
     }
     
@@ -163,13 +166,17 @@ class CreatePinForm extends React.Component{
 
         if (!this.state.image_url){
             this.pinError();
-
+            
         } else if (!this.state.title) {
             this.inputError();
-
+            
+        } else if (!this.state.title && !this.state.image_url){
+            this.pinError();
+            this.inputError();
+            
         } else {
-            this.props.createPin(this.state);  
-        } 
+            this.props.createPin(this.state); 
+        }
     }
 
     pinError() {
@@ -272,6 +279,7 @@ class CreatePinForm extends React.Component{
                                     type="text"
                                     value={this.state.title}  
                                     onChange={this.updateTitle} 
+                                    onClick={this.updateTitle} 
                                     placeholder='Add your title'/> 
 
                                 <h3 className="create-pin-form__input-error"></h3>
