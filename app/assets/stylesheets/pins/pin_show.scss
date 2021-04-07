@@ -46,11 +46,12 @@
 
     &__text {
         width: 50%;
+        padding: 1.5rem;
     }
 
     &__drop {
         display: flex;
-        background-color: rgb(219, 120, 219);
+        justify-content: space-between;
     }
 
     &__drop-inner {
@@ -74,5 +75,10 @@
         color: white;
         border-radius: 0 .6rem .6rem 0;
         text-align: center;
+    }
+
+    &__title {
+        font-size: 2rem;
+        font-weight: 600;
     }
 }
