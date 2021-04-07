@@ -26,9 +26,11 @@
     min-height: 23px;
     padding: 9px;
 }
+
 .edit-board-form form input:hover{
     border: 2px solid var(--input-hov-grey);
 }
+
 .edit-board-form form input:focus {
     border: 2px solid rgb(138, 192, 255);
     background-color: rgb(232, 240, 251);

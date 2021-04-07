@@ -62,6 +62,8 @@ class EditPinForm extends React.Component {
                             onChange={this.updateDescription}
                             />
                     </label>
+                    
+                    <img src={this.props.pin.image_url} alt=""/>
 
                     <button onClick={this.handleUpdate}>Save</button>
                     <button onClick={this.handleCancel}>Cancel</button>
