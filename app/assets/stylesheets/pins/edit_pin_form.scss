@@ -21,6 +21,22 @@
     letter-spacing: var(--lett-space);
 }
 
+@mixin btn {
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 1em;
+    border-radius: 9999px;
+}
+
+@mixin red-btn { 
+    background-color: var(--red);
+    color: white;
+}
+
+@mixin grey-btn {
+    background-color: var(--lt-grey);
+    color: var(--font-drk-grey);  
+}
 
 .edit-pin-form {
     padding: 2.3rem;
@@ -56,14 +72,25 @@
 
     label { 
         display: flex; 
+        align-items: center;
         justify-content: space-between;
         @include small-text;
+        border-bottom: 1px solid grey;
     }
 
     img {
         width: 227px;
         border-radius: .5rem;
         margin: 0 1rem 1rem 1rem;
+    }
+
+    &__btns {
+        display: flex;
+        justify-content: space-between;
+
+        button {
+            @include btn;
+        }
     }
 
 }

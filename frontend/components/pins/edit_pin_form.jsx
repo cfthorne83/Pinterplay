@@ -50,8 +50,8 @@ class EditPinForm extends React.Component {
 
                 <form className="edit-pin-form__inner">
 
-                    <div className="edit-pin-form__mid">
-                        <section>
+                    <section className="edit-pin-form__mid">
+                        <div>
                             <label>Title
                                 <input 
                                     type="text"
@@ -65,14 +65,18 @@ class EditPinForm extends React.Component {
                                     onChange={this.updateDescription}
                                     />
                             </label>
-                        </section>
+                        </div>
                         
                         <img src={this.props.pin.image_url} alt=""/>
-                    </div>
+                    </section>
 
-                    <button onClick={this.handleUpdate}>Save</button>
-                    <button onClick={this.handleCancel}>Cancel</button>
-                    <button onClick={this.handleDelete}>Delete</button>
+                    <section className="edit-pin-form__btns">
+                        <button onClick={this.handleUpdate}>Save</button>
+                        <div>
+                            <button onClick={this.handleCancel}>Cancel</button>
+                            <button onClick={this.handleDelete}>Delete</button>
+                        </div>
+                    </section>
                 </form>
 
             </div>
