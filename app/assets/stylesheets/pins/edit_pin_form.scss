@@ -10,11 +10,15 @@
 
     &__inner {
         display: flex;
-        flex-direction: column;
+    }
+
+    input {
+        border: var(--input__border);
+        width: 100%;
     }
 
     img {
-        width: 100px;
+        width: 200px;
     }
 
 }
