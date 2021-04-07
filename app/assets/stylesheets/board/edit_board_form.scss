@@ -30,7 +30,7 @@
     border: 2px solid var(--input-hov-grey);
 }
 .edit-board-form form input:focus {
-    border: 3px solid rgb(138, 192, 255);
+    border: 2px solid rgb(138, 192, 255);
     background-color: rgb(232, 240, 251);
 }
 .edit-board-form form textarea{
@@ -46,7 +46,7 @@
     border: 2px solid var(--input-hov-grey);
 }
 .edit-board-form form textarea:focus{
-     border: 3px solid rgb(138, 192, 255);
+    border: 2px solid rgb(138, 192, 255);
     background-color: rgb(232, 240, 251);
     outline: none;
 
