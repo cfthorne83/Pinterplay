@@ -45,10 +45,10 @@ class EditPinForm extends React.Component {
         if (!this.props.pin) return null;
 
         return (
-            <div>
+            <div className="edit-pin-form">
                 <h1>Edit this pin</h1>
 
-                <form>
+                <form className="edit-pin-form__inner">
                     <label>Title
                         <input 
                             type="text"

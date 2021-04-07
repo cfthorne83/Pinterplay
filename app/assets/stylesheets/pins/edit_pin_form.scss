@@ -1,0 +1,16 @@
+.edit-pin-form {
+    padding: 2.3rem;
+    
+    h1 {
+        font-size: 1.8rem;
+        font-weight: 600;
+        text-align: center;
+        padding: 1rem 0; 
+    }
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+    }
+
+}

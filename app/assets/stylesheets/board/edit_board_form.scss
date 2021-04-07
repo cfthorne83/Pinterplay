@@ -27,7 +27,7 @@
     padding: 9px;
 }
 .edit-board-form form input:hover{
-    border-color: rgb(219, 219, 219);
+    border: 2px solid var(--input-hov-grey);
 }
 .edit-board-form form input:focus {
     border: 3px solid rgb(138, 192, 255);
@@ -43,8 +43,7 @@
     resize: none;
 }
 .edit-board-form form textarea:hover{
-        border-color: rgb(219, 219, 219);
-
+    border: 2px solid var(--input-hov-grey);
 }
 .edit-board-form form textarea:focus{
      border: 3px solid rgb(138, 192, 255);
