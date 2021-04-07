@@ -8,11 +8,9 @@
 }
 
 .pin-show {
-
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(194, 255, 133);
 
     &__back {
         @include link-con;
@@ -30,11 +28,11 @@
     }
 
     &__inner {
-        background-color: pink;
         width: 65%;
         min-width: 500px;
         margin: 2rem 0;
         border-radius: 3rem;
+        box-shadow: 0 0 10px #77777757;;
 
         display: flex;
     }
@@ -52,8 +50,10 @@
     &__drop {
         display: flex;
         justify-content: space-between;
+        align-items: center;
     }
 
+    
     &__drop-inner {
         box-sizing: border-box;
         background-color: var(--lt-grey);
@@ -62,11 +62,18 @@
         justify-content: space-between;
         border-radius: .5rem;
     }
-    
-    &__edit-modal {
-        width: 25px;
-        height: 25px;
 
+    &__ellipsis {
+        @include link-con;
+        cursor: pointer;
+
+        img {
+            width: 25px;
+        }
+    }
+
+    &__ellipsis:hover {
+        background-color: var(--lt-grey);
     }
 
     &__save {
