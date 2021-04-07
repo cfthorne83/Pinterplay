@@ -63,6 +63,7 @@ class EditPinForm extends React.Component {
                             <label>
                                 <h3>Title</h3>
                                 <input 
+                                    className="edit-pin-form__input"
                                     type="text"
                                     onChange={this.updateTitle}
                                     />

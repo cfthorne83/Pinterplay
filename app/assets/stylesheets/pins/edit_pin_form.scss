@@ -65,7 +65,7 @@
         }
     }
 
-    input {
+    &__input {
         @include form-input;
         font-size: 1rem;
         width: 100%;
@@ -81,11 +81,11 @@
         margin: 1rem 0;
     }
     
-    input:hover, textarea:hover {
+    &__input:hover, textarea:hover {
         border: var(--input__hov-border);
     }
 
-    input:focus, textarea:focus {
+    &__input:focus, textarea:focus {
         border: var(--input__focus-border);
         background-color: var(--input__focus-back-clr);
     } 
