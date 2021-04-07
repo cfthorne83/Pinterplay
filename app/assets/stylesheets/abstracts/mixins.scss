@@ -29,3 +29,20 @@
     width: 50px;
     border-radius: 50%;
 }
+
+@mixin form-input {
+    border-radius: 12px;
+    border: 2px solid rgb(219, 219, 219);
+    min-height: 23px;
+    padding: 9px;
+}
+
+@mixin form-textarea {
+    border-radius: 12px;
+    border: 2px solid rgb(219, 219, 219);
+    min-height: 123px;
+    padding: 9px;
+    font-size: 17px;
+    font-family: "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica;
+    resize: none;
+}

@@ -50,23 +50,25 @@ class EditPinForm extends React.Component {
 
                 <form className="edit-pin-form__inner">
 
-                    <section>
-                        <label>Title
-                            <input 
-                                type="text"
-                                onChange={this.updateTitle}
-                                />
-                        </label>
+                    <div className="edit-pin-form__mid">
+                        <section>
+                            <label>Title
+                                <input 
+                                    type="text"
+                                    onChange={this.updateTitle}
+                                    />
+                            </label>
 
-                        <label>Description
-                            <textarea
-                                placeholder="Tell us about this Pin..."
-                                onChange={this.updateDescription}
-                                />
-                        </label>
-                    </section>
-                    
-                    <img src={this.props.pin.image_url} alt=""/>
+                            <label>Description
+                                <textarea
+                                    placeholder="Tell us about this Pin..."
+                                    onChange={this.updateDescription}
+                                    />
+                            </label>
+                        </section>
+                        
+                        <img src={this.props.pin.image_url} alt=""/>
+                    </div>
 
                     <button onClick={this.handleUpdate}>Save</button>
                     <button onClick={this.handleCancel}>Cancel</button>
