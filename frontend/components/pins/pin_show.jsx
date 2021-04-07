@@ -49,13 +49,22 @@ class PinShow extends React.Component {
 
                     <div className="pin-show__text">
 
-                        <img
-                            className="pin-show__edit-modal"
-                            onClick={()  => {this.props.openModal("editPin", this.props.pin.id)}} 
-                            src="https://static.thenounproject.com/png/384290-200.png" 
-                            alt="edit-form-link"/>
+                        <div className="pin-show__drop">
+                            <img
+                                className="pin-show__edit-modal"
+                                onClick={()  => {this.props.openModal("editPin", this.props.pin.id)}} 
+                                src="https://static.thenounproject.com/png/384290-200.png" 
+                                alt="edit-form-link"/>
 
-                        <BoardDropdown boards={this.props.boards}/>
+                            <div className="pin-show__drop-inner">
+                                <BoardDropdown boards={this.props.boards}/>
+                                <button 
+                                    className="pin-show__save"
+                                    onClick={this.handleSubmit}>
+                                        Save
+                                </button>
+                            </div>
+                        </div>
 
                         <h1>{this.props.pin.title}</h1>
                     </div>

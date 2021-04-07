@@ -48,7 +48,19 @@
         width: 50%;
     }
 
+    &__drop {
+        display: flex;
+    }
+    
     &__edit-modal {
         width: 25px;
+    }
+
+    &__save {
+        background-color: var(--red);
+        width: 35%;
+        color: white;
+        border-radius: 0 .6rem .6rem 0;
+        text-align: center;
     }
 }
