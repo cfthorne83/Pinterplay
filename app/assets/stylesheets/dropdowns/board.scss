@@ -53,10 +53,13 @@
 .edit-pin-form {
 
     .board-drop {
-        width: 100%;
+        // width: 100%;
+        box-sizing: border-box;
     
         &__select {
-            width: 100%;
+            box-sizing: border-box;
+            border-radius: .5rem;
+            // width: 100%;
             display: flex;
             justify-content: space-between;
             font-size: 1rem;
@@ -73,11 +76,12 @@
         &__inner {
             position: absolute;
             background-color: white;
-            width: 250px;
+            // width: 100px;
             padding: .8rem;
             border-radius: .8rem;
             box-shadow: 0 0 10px #77777757;
             margin-top: .5rem;
+            box-sizing: border-box;
     
     
             h2 {
@@ -86,15 +90,17 @@
             }
     
             input {
-                width: 100%;
+                // width: 100%;
                 font-weight: 500;
                 padding: .8rem;
                 border-radius: .8rem;
                 letter-spacing: var(--lett-space);
+                border: none;
             }
     
             input:hover {
                 background-color: var(--lt-grey);
+                border: none;
             }
         }
     }

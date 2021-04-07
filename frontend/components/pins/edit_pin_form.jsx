@@ -57,7 +57,7 @@ class EditPinForm extends React.Component {
                             <label >
                                 <h3>Board</h3>
                                 <BoardDropdown
-                                    className="edit-pin-form__board-drop" 
+                                    class="edit-pin-board-drop" 
                                     boards={this.props.boards}/>
                             </label>
                             <label>

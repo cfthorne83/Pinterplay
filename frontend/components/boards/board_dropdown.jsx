@@ -29,6 +29,14 @@ class BoardDropdown extends React.Component{
         board.setAttribute("data-id", e.currentTarget.dataset.id);
     }
 
+    class() {
+        if (this.props.class) {
+            return this.props.class;
+        } else {
+            return "board-drop"
+        }
+    }
+
     render() {
 
         let firstBoard;
