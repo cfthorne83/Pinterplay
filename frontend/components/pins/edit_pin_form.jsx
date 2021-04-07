@@ -1,4 +1,5 @@
 import React from "react";
+import BoardDropdown from "../boards/board_dropdown";
 
 class EditPinForm extends React.Component {
     constructor(props) {
@@ -14,6 +15,7 @@ class EditPinForm extends React.Component {
 
     componentDidMount() {
         this.props.fetchPin(this.props.pinId);
+        this.props.fetchBoards();
     }
 
     handleUpdate(e) {
@@ -52,6 +54,8 @@ class EditPinForm extends React.Component {
 
                     <section className="edit-pin-form__mid">
                         <div>
+
+                            <BoardDropdown boards={this.props.boards}/>
                             <label>
                                 <h3>Title</h3>
                                 <input 

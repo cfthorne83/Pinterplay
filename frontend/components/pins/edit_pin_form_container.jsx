@@ -4,11 +4,13 @@ import EditPinForm from "./edit_pin_form";
 
 import { fetchPin, updatePin, deletePin } from '../../actions/pin_actions';
 import { closeModal } from "../../actions/modal_actions";
+import { fetchBoards } from '../../actions/board_actions';
 
 const msp = (state, ownProps) => {
     return {
         pin: state.entities.pins[state.ui.modal.options],
-        pinId: state.ui.modal.options
+        pinId: state.ui.modal.options,
+        boards: Object.values(state.entities.boards)
     }
 }
 
@@ -17,7 +19,8 @@ const mdp = (dispatch, ownProps) => {
         fetchPin: (pinId) => dispatch(fetchPin(pinId)),
         updatePin: (pin) => dispatch(updatePin(pin)),
         deletePin: (pinId) => dispatch(deletePin(pinId)),
-        closeModal: () => dispatch(closeModal())
+        closeModal: () => dispatch(closeModal()),
+        fetchBoards: () => dispatch(fetchBoards())
     }
 }
 
