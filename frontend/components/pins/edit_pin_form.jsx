@@ -71,10 +71,13 @@ class EditPinForm extends React.Component {
                     </section>
 
                     <section className="edit-pin-form__btns">
-                        <button onClick={this.handleUpdate}>Save</button>
+                            <button onClick={this.handleDelete}>Delete</button>
                         <div>
                             <button onClick={this.handleCancel}>Cancel</button>
-                            <button onClick={this.handleDelete}>Delete</button>
+                            <button 
+                                className="red"
+                                onClick={this.handleUpdate}>Save
+                            </button>
                         </div>
                     </section>
                 </form>

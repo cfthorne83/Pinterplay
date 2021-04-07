@@ -63,12 +63,22 @@
         @include form-input;
         font-size: 1rem;
     }
+
     
     textarea {
         @include form-textarea;
         min-height: 40px;
         font-size: 1rem;
     }
+    
+    input:hover, textarea:hover {
+        border: var(--input__hov-border);
+    }
+
+    input:focus, textarea:focus {
+        border: var(--input__focus-border);
+        background-color: var(--input__focus-back-clr);
+    } 
 
     label { 
         display: flex; 
@@ -90,6 +100,11 @@
 
         button {
             @include btn;
+            @include grey-btn;
+        }
+
+        .red {
+            @include red-btn;
         }
     }
 
