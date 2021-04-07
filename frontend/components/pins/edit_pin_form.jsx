@@ -54,8 +54,12 @@ class EditPinForm extends React.Component {
 
                     <section className="edit-pin-form__mid">
                         <div>
-
-                            <BoardDropdown boards={this.props.boards}/>
+                            <label >
+                                <h3>Board</h3>
+                                <BoardDropdown
+                                    className="edit-pin-form__board-drop" 
+                                    boards={this.props.boards}/>
+                            </label>
                             <label>
                                 <h3>Title</h3>
                                 <input 
@@ -73,7 +77,10 @@ class EditPinForm extends React.Component {
                             </label>
                         </div>
                         
-                        <img src={this.props.pin.image_url} alt=""/>
+                        <img 
+                            className="edit-pin-form__pin-img"
+                            src={this.props.pin.image_url} 
+                            alt="pin-image"/>
                     </section>
 
                     <section className="edit-pin-form__btns">

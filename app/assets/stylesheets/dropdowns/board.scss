@@ -49,3 +49,53 @@
         }
     }
 }
+
+.edit-pin-form {
+
+    .board-drop {
+        width: 100%;
+    
+        &__select {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            font-size: 1rem;
+            font-weight: 300;
+            padding: .7rem;
+            letter-spacing: var(--lett-space);
+            background-color: var(--lt-grey);
+    
+            img {
+                width: 20px;
+            }
+        }
+    
+        &__inner {
+            position: absolute;
+            background-color: white;
+            width: 250px;
+            padding: .8rem;
+            border-radius: .8rem;
+            box-shadow: 0 0 10px #77777757;
+            margin-top: .5rem;
+    
+    
+            h2 {
+                @include small-text;
+                padding: .5rem 0;
+            }
+    
+            input {
+                width: 100%;
+                font-weight: 500;
+                padding: .8rem;
+                border-radius: .8rem;
+                letter-spacing: var(--lett-space);
+            }
+    
+            input:hover {
+                background-color: var(--lt-grey);
+            }
+        }
+    }
+}
