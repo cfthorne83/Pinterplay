@@ -51,24 +51,34 @@
     &__inner {
         display: flex;
         flex-direction: column;
-        background-color: grey;
+        // background-color: grey;
     }
 
     &__mid {
         display: flex;
-        background-color: red;
+        // background-color: red;
+        padding-bottom: 1rem;
+
+        div {
+            // background-color: green;
+            min-width: 438px;
+        }
     }
 
     input {
         @include form-input;
         font-size: 1rem;
+        width: 100%;
+        margin: 1rem 0;
     }
-
+    
     
     textarea {
         @include form-textarea;
         min-height: 40px;
+        width: 100%;
         font-size: 1rem;
+        margin: 1rem 0;
     }
     
     input:hover, textarea:hover {
@@ -85,7 +95,12 @@
         align-items: center;
         justify-content: space-between;
         @include small-text;
-        border-bottom: 1px solid grey;
+        border-bottom: 1px solid rgb(195, 195, 195);
+        padding: 0 1rem;
+
+        h3 {
+            width: 200px;
+        }
     }
 
     img {
@@ -105,7 +120,7 @@
 
         .red {
             @include red-btn;
+            margin-left: 1rem;
         }
     }
-
 }

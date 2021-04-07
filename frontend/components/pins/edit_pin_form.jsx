@@ -52,14 +52,16 @@ class EditPinForm extends React.Component {
 
                     <section className="edit-pin-form__mid">
                         <div>
-                            <label>Title
+                            <label>
+                                <h3>Title</h3>
                                 <input 
                                     type="text"
                                     onChange={this.updateTitle}
                                     />
                             </label>
 
-                            <label>Description
+                            <label>
+                                <h3>Description</h3>
                                 <textarea
                                     placeholder="Tell us about this Pin..."
                                     onChange={this.updateDescription}
