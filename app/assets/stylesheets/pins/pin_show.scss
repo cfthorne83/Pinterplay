@@ -12,7 +12,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: chartreuse;
+    background-color: rgb(194, 255, 133);
 
     &__back {
         @include link-con;
@@ -50,10 +50,22 @@
 
     &__drop {
         display: flex;
+        background-color: rgb(219, 120, 219);
+    }
+
+    &__drop-inner {
+        box-sizing: border-box;
+        background-color: var(--lt-grey);
+        display: flex;
+        width: 250px;
+        justify-content: space-between;
+        border-radius: .5rem;
     }
     
     &__edit-modal {
         width: 25px;
+        height: 25px;
+
     }
 
     &__save {
