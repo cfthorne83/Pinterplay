@@ -52,7 +52,7 @@ class Profile extends React.Component{
         } else {
             return (
                 <h1 className='initial-container'>
-                    <p>{currentUser.email[0].toUpperCase()}</p>
+                    <p>{this.props.currentUser.email[0].toUpperCase()}</p>
                 </h1>
             )
         }
