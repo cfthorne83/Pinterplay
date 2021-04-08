@@ -7,7 +7,7 @@ class MainHome extends React.Component{
 
         return (
 
-        <div>
+        <div className="main-home-page">
             <PinIndexContainer />       
         </div>
         );
