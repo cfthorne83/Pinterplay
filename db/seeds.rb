@@ -32,10 +32,10 @@ Pin.create(
             user_id: demo_user.id,
             board_id: board.id
         )
+
 Pin.create(
             title: "pin3",
             image_url: "https://i.pinimg.com/564x/2d/6e/28/2d6e28b21c53f7e36148392e798c2541.jpg",
             user_id: demo_user.id,
             board_id: board.id
-
         )
