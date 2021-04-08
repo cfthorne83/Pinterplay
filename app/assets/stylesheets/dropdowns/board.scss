@@ -55,6 +55,7 @@
     .edit-pin-board-drop {
         width: 100%;
         box-sizing: border-box;
+        margin-bottom: 1rem;
     
         &__select {
             box-sizing: border-box;
@@ -76,7 +77,7 @@
         &__inner {
             position: absolute;
             background-color: white;
-            width: 100px;
+            width: 272px;
             padding: .8rem;
             border-radius: .8rem;
             box-shadow: 0 0 10px #77777757;
@@ -97,6 +98,7 @@
                 border-radius: .8rem;
                 letter-spacing: var(--lett-space);
                 border: none;
+                width: 100%;
             }
     
             input:hover {
