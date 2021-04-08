@@ -24,7 +24,7 @@ const Modal = ({ modal, closeModal, errors }) =>  {
             break;
         case 'signup':
             component = <SignupFormContainer />;
-            modalClass = "signup-mod";
+            modalClass = "login-mod";
             break;
         case 'createBoard':
             component = <CreateBoardFormContainer />;
