@@ -5,7 +5,10 @@ class PinShow extends React.Component {
     constructor(props){
         super(props);
 
+        this.state = this.props.newPin;
+
         this.handleGoBack = this.handleGoBack.bind(this);
+        this.handleCreatePin = this.handleCreatePin.bind(this);
     }
 
     componentDidMount() {
@@ -22,6 +25,19 @@ class PinShow extends React.Component {
 
     handleGoBack() {
         history.back();
+    }
+
+    handleCreatePin(e) {
+
+        let board = document.querySelector(".selected-board");        
+        this.setState({ 
+                        board_id: board.dataset.id, 
+                        title: this.props.pin.title,
+                        image_url: this.props.pin.image_url
+                    })
+       
+        console.log(this.state);
+        this.props.createPin(this.state); 
     }
 
     render() {
@@ -64,7 +80,7 @@ class PinShow extends React.Component {
                                 <BoardDropdown boards={this.props.boards}/>
                                 <button 
                                     className="pin-show__save"
-                                    onClick={this.handleSubmit}>
+                                    onClick={this.handleCreatePin}>
                                         Save
                                 </button>
                             </div>
