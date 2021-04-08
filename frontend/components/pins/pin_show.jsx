@@ -5,7 +5,12 @@ class PinShow extends React.Component {
     constructor(props){
         super(props);
 
-        this.state = this.props.newPin;
+        this.state = this.props.pin;
+        // {
+        //                 image_url: this.props.pin.image_url, 
+        //                 title: this.props.pin.title,
+        //                 board_id: ""
+        //             }
 
         this.handleGoBack = this.handleGoBack.bind(this);
         this.handleCreatePin = this.handleCreatePin.bind(this);
@@ -34,17 +39,17 @@ class PinShow extends React.Component {
                         board_id: board.dataset.id, 
                         title: this.props.pin.title,
                         image_url: this.props.pin.image_url
-                    })
-       
-        console.log(this.state);
-        this.props.createPin(this.state); 
+                    }, () => {
+                        this.props.createPin(this.state); 
+                    });                
     }
 
     render() {
         if (!this.props.pin) {
+            debugger
             return null;
         }
-        
+        debugger
         return (
             <div className="pin-show">
                 <button 

@@ -9,7 +9,7 @@ const msp = (state, ownProps) => {
     return {
         pin: state.entities.pins[ownProps.match.params.pinId],
         boards: Object.values(state.entities.boards),
-        newPin: { title: "", board_id: "", image_url: ""}
+        newPin: { board_id: "" }
     }
 }
 
