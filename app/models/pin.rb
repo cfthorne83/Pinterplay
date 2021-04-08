@@ -10,10 +10,10 @@
 #  updated_at :datetime         not null
 #
 class Pin < ApplicationRecord
-    validates :title, :user_id, :image_url, presence: true
+    validates :title, :user_id, presence: true
     # validate :ensure_image
 
-    # has_one_attached :photo
+    has_one_attached :photo
 
     belongs_to :user
     # , 
