@@ -53,7 +53,7 @@ class EditPinForm extends React.Component {
                 <form className="edit-pin-form__inner">
 
                     <section className="edit-pin-form__mid">
-                        <div>
+                        <div className="edit-pin-form__mid-inner">
                             <label >
                                 <h3>Board</h3>
                                 <BoardDropdown

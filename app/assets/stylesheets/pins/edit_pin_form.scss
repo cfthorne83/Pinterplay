@@ -59,10 +59,13 @@
         // background-color: red;
         padding-bottom: 1rem;
 
-        div {
-            // background-color: green;
-            min-width: 438px;
-        }
+        // div {
+        //     // background-color: green;
+        // }
+    }
+    
+    &__mid-inner {
+        min-width: 438px;
     }
 
     &__input {
