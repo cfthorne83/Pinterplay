@@ -13,39 +13,29 @@ demo_user = User.create(
     password: "123456"
 )
 
-Board.create(title: "title2", description: "description2", user_id: demo_user.id)
+board = Board.create(
+    title: "board1", 
+    description: "description1", 
+    user_id: demo_user.id
+)
 
 Pin.create([
     {
         title: "pin1", 
         image_url: "https://i.pinimg.com/564x/b8/37/44/b8374405d939f619cbe3d6da220605fe.jpg",
-        user_id: demo_user.id
+        user_id: demo_user.id,
+        board_id: board.id
     },
     {
         title: "pin2",
         image_url: "https://i.pinimg.com/236x/e5/2e/fc/e52efc533c98cbc37d5e6220d5839f24.jpg",
-        user_id: demo_user.id
+        user_id: demo_user.id,
+        board_id: board.id
     },
     {
         title: "pin3",
         image_url: "https://i.pinimg.com/564x/2d/6e/28/2d6e28b21c53f7e36148392e798c2541.jpg",
-        user_id: demo_user.id
+        user_id: demo_user.id,
+        board_id: board.id
     }
 ])
-# Pin.create(
-#     title: "pin2"
-#     # , 
-#     # image: "https://i.pinimg.com/564x/b8/37/44/b8374405d939f619cbe3d6da220605fe.jpg",
-#     # user_id: demo_user.id
-# )
-# Pin.create(
-#     title: "pin3"
-#     # , 
-# #     image: "https://i.pinimg.com/236x/e5/2e/fc/e52efc533c98cbc37d5e6220d5839f24.jpg",
-# #     # user_id: demo_user.id
-# )
-# # Pin.create(
-# #     title: "pin3", 
-# #     image: "https://i.pinimg.com/564x/2d/6e/28/2d6e28b21c53f7e36148392e798c2541.jpg",
-# #     # user_id: demo_user.id
-# # )
