@@ -21,13 +21,6 @@ class PinShow extends React.Component {
         this.props.fetchBoards();
     }
 
-    // componentDidUpdate(prevProps) {
-
-    //     if (this.props.match.params.pinId !== prevProps.match.params.pinId){
-    //         this.props.fetchPin(this.props.match.params.PinId);
-    //     }
-    // }
-
     handleGoBack() {
         history.back();
     }
@@ -45,11 +38,11 @@ class PinShow extends React.Component {
     }
 
     render() {
+        
         if (!this.props.pin) {
-            debugger
             return null;
         }
-        debugger
+
         return (
             <div className="pin-show">
                 <button 
