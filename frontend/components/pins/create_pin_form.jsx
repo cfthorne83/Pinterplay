@@ -85,6 +85,20 @@ class CreatePinForm extends React.Component{
         }
         this.dropZoneReset();
     }
+
+    handleInput(e) {
+        let files = e.target.files;
+        let image;
+        let that = this;
+
+        let reader = new FileReader();
+        reader.readAsDataURL(files[0]);
+
+        reader.onload = () => {
+            image = reader.result;
+            that.setState({ image_url: image });
+        }
+    }
     
     handleDelete(e) {
         e.stopPropagation();
@@ -131,20 +145,6 @@ class CreatePinForm extends React.Component{
         }
         
         dropZone.classList.remove("drop-zone--over");
-    }
-    
-    handleInput(e) {
-        let files = e.target.files;
-        let image;
-        let that = this;
-
-        let reader = new FileReader();
-        reader.readAsDataURL(files[0]);
-
-        reader.onload = () => {
-            image = reader.result;
-            that.setState({ image_url: image });
-        }
     }
     
     updateTitle(e) {
