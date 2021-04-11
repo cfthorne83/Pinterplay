@@ -44,6 +44,7 @@ class CreatePinForm extends React.Component{
 
     // adds delete btn and displays file image
     handleInput(e) {
+        // debugger
         let dropZone = document.querySelector(".drop-zone");
         let deleteBtn = document.querySelector(".drop-zone__delete");
         let dropZoneInner = document.querySelector(".drop-zone__inner");
@@ -171,26 +172,36 @@ class CreatePinForm extends React.Component{
         let board = document.querySelector(".selected-board");        
         this.setState({ board_id: board.dataset.id}, () => {
                 // console.log(this.state);
-            if (!this.state.title && !this.state.image_url){
-                this.pinError();
-                this.inputError();
+            // if (!this.state.title && !this.state.image_url){
+            //     this.pinError();
+            //     this.inputError();
                 
-            } else if (!this.state.image_url){
-                this.pinError();
+            // } else if (!this.state.image_url){
+            //     this.pinError();
                 
-            } else if (!this.state.title) {
-                this.inputError();
+            // } else if (!this.state.title) {
+            //     this.inputError();
                 
-            } else {
-                // const formData = new FormData();
-                // formData.append("pin[title]", this.state.title );
-                // formData.append("pin[board_id]", this.state.board_id);
-                // formData.append("pin[image_url]", this.state.image_url);
-                // formData.append("pin[description]", this.state.description);
-                console.log(this.state);
-                this.props.createPin(this.state);
+            // } else {
+                const formData = new FormData();
+                formData.append("pin[title]", this.state.title);
+                formData.append("pin[board_id]", this.state.board_id);
+                formData.append("pin[photo]", this.state.image_url);
+                formData.append("pin[description]", this.state.description);
+                // console.log(this.state);
+                // this.props.createPin(this.state);
                 // console.log(Array.from(formData)); 
-            }
+                $.ajax ({
+                    url: "/api/pins",
+                    method: "POST",
+                    data: formData,
+                    contentType: false, 
+                    processData: false
+                }).then(
+                    (response) => console.log(response.message),
+                    (response) => console.log(response.responseJSON)
+                );
+            // }
         });
 
     }
