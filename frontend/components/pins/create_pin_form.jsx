@@ -14,7 +14,7 @@ class CreatePinForm extends React.Component{
         this.handleDrop = this.handleDrop.bind(this);
         this.addDeleteBtn = this.addDeleteBtn.bind(this);
         this.handleClick = this.handleClick.bind(this);
-        this.handleInput = this.handleInput.bind(this);
+        // this.handleInput = this.handleInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.updateTitle = this.updateTitle.bind(this);
         this.updateDescription = this.updateDescription.bind(this);
@@ -123,14 +123,14 @@ class CreatePinForm extends React.Component{
         let inputElement = document.querySelector(".drop-zone__input")
         let dropZone = document.querySelector(".drop-zone");
 
-        this.setState({image_url: inputElement.files[0] })
         inputElement.click();
+        this.setState({ image_url: inputElement.files[0] });
         
-        inputElement.addEventListener("change", e => {
-            if (inputElement.files.length) {
-                this.addDeleteBtn(dropZone, inputElement.files[0]);
-            }
-        });
+        // inputElement.addEventListener("change", e => {
+        //     if (inputElement.files.length) {
+        //         this.addDeleteBtn(dropZone, inputElement.files[0]);
+        //     }
+        // });
     }
 
     handleDrop(e) {
@@ -163,6 +163,10 @@ class CreatePinForm extends React.Component{
 
         let board = document.querySelector(".selected-board");        
         this.setState({ board_id: board.dataset.id});
+
+        const formData = new FormData();
+        formData.append("pin[title]", this.state.title );
+        formData.append("pin[photo]", this.state.image_url)
 
         if (!this.state.title && !this.state.image_url){
             this.pinError();
@@ -219,7 +223,7 @@ class CreatePinForm extends React.Component{
     }
 
     render() {
-
+        console.log(this.state);
         return (
             <div className="create-pin-form-con">                    
 

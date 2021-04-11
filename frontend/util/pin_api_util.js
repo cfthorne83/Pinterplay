@@ -17,8 +17,13 @@ export const createPin = (pin) => {
     return $.ajax({
         url: '/api/pins',
         method: 'POST',
-        data: { pin }
-    })
+        data: formData,
+        contentType: false,
+        processData: false
+    }).then(
+        (response) => console.log(response.message),
+        (response) => console.log(response.responseJSON)
+    );
 }
 
 export const updatePin = (pin) => {
