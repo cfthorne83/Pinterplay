@@ -14,16 +14,18 @@ export const fetchPin = (pinId) => {
 }
 
 export const createPin = (pin) => {
+    debugger
     return $.ajax({
         url: '/api/pins',
         method: 'POST',
-        data: formData,
-        contentType: false,
-        processData: false
-    }).then(
-        (response) => console.log(response.message),
-        (response) => console.log(response.responseJSON)
-    );
+        data: {pin}
+        // contentType: false,
+        // processData: false
+    })
+    // .then(
+    //     (response) => console.log(response.message),
+    //     (response) => console.log(response.responseJSON)
+    // );
 }
 
 export const updatePin = (pin) => {

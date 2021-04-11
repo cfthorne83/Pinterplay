@@ -12,9 +12,9 @@ class CreatePinForm extends React.Component{
 
         this.handleDragOver = this.handleDragOver.bind(this);
         this.handleDrop = this.handleDrop.bind(this);
-        this.addDeleteBtn = this.addDeleteBtn.bind(this);
+        // this.addDeleteBtn = this.addDeleteBtn.bind(this);
         this.handleClick = this.handleClick.bind(this);
-        // this.handleInput = this.handleInput.bind(this);
+        this.handleInput = this.handleInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.updateTitle = this.updateTitle.bind(this);
         this.updateDescription = this.updateDescription.bind(this);
@@ -43,7 +43,8 @@ class CreatePinForm extends React.Component{
     }
 
     // adds delete btn and displays file image
-    addDeleteBtn(dropZone, file) {
+    handleInput(e) {
+        let dropZone = document.querySelector(".drop-zone");
         let deleteBtn = document.querySelector(".drop-zone__delete");
         let dropZoneInner = document.querySelector(".drop-zone__inner");
         let dropZoneImg = document.querySelector(".drop-zone__img");
@@ -51,39 +52,59 @@ class CreatePinForm extends React.Component{
 
         let that = this;
 
-        if (dropZoneInner) {
-            dropZoneInner.style.display = "none";
-        }
+        this.setState({ image_url: e.currentTarget.files[0]}, () => {
+            console.log(this.state);
+        });
+
+        // if (dropZoneInner) {
+        //     dropZoneInner.style.display = "none";
+        // }
 
        
-        const reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onload = () => {
-            let image = reader.result;
-            this.setState({ image_url: image });
-                dropZoneImg.src = `${image}`;
-        };
+        // const reader = new FileReader();
+        // reader.readAsDataURL(file);
+        // reader.onload = () => {
+        //     let image = reader.result;
+        //     this.setState({ image_url: image });
+        //         dropZoneImg.src = `${image}`;
+        // };
         
-        if (!deleteBtn){
-            deleteBtn = document.createElement("button");
-            deleteBtn.classList.add("drop-zone__delete");
-            deleteBtn.addEventListener("click", that.handleDelete);
+        // if (!deleteBtn){
+        //     deleteBtn = document.createElement("button");
+        //     deleteBtn.classList.add("drop-zone__delete");
+        //     deleteBtn.addEventListener("click", that.handleDelete);
 
-            deleteIcon = document.createElement("img");
-            deleteIcon.classList.add("drop-zone__delete-icon");
-            deleteIcon.src = "/images/delete.png";
+        //     deleteIcon = document.createElement("img");
+        //     deleteIcon.classList.add("drop-zone__delete-icon");
+        //     deleteIcon.src = "/images/delete.png";
 
-            dropZone.append(deleteBtn);
-            deleteBtn.append(deleteIcon);
+        //     dropZone.append(deleteBtn);
+        //     deleteBtn.append(deleteIcon);
 
-            dropZone.style.padding = "0px";
-            dropZone.style.backgroundColor = "transparent";
-            dropZone.style.position = "relative";
+        //     dropZone.style.padding = "0px";
+        //     dropZone.style.backgroundColor = "transparent";
+        //     dropZone.style.position = "relative";
             
-            dropZoneImg.style.width = "90%";
-            dropZoneImg.style.borderRadius = "1rem";
-        }
-        this.dropZoneReset();
+        //     dropZoneImg.style.width = "90%";
+        //     dropZoneImg.style.borderRadius = "1rem";
+        // }
+        // this.dropZoneReset();
+    }
+
+    handleClick() {
+        let inputElement = document.querySelector(".drop-zone__input")
+        let dropZone = document.querySelector(".drop-zone");
+
+        inputElement.click();
+        // this.setState({ image_url: inputElement.files[0] }, () => {
+        //     console.log(this.state);
+        // });
+        
+        // inputElement.addEventListener("change", e => {
+        //     if (inputElement.files.length) {
+        //         this.addDeleteBtn(dropZone, inputElement.files[0]);
+        //     }
+        // });
     }
 
     // handleInput(e) {
@@ -118,20 +139,6 @@ class CreatePinForm extends React.Component{
         let deleteBtn = document.querySelector(".drop-zone__delete");
         deleteBtn.remove();
     }
-    
-    handleClick() {
-        let inputElement = document.querySelector(".drop-zone__input")
-        let dropZone = document.querySelector(".drop-zone");
-
-        inputElement.click();
-        this.setState({ image_url: inputElement.files[0] });
-        
-        // inputElement.addEventListener("change", e => {
-        //     if (inputElement.files.length) {
-        //         this.addDeleteBtn(dropZone, inputElement.files[0]);
-        //     }
-        // });
-    }
 
     handleDrop(e) {
         e.preventDefault();
@@ -162,25 +169,30 @@ class CreatePinForm extends React.Component{
         e.stopPropagation();
 
         let board = document.querySelector(".selected-board");        
-        this.setState({ board_id: board.dataset.id});
+        this.setState({ board_id: board.dataset.id}, () => {
+                // console.log(this.state);
+            if (!this.state.title && !this.state.image_url){
+                this.pinError();
+                this.inputError();
+                
+            } else if (!this.state.image_url){
+                this.pinError();
+                
+            } else if (!this.state.title) {
+                this.inputError();
+                
+            } else {
+                // const formData = new FormData();
+                // formData.append("pin[title]", this.state.title );
+                // formData.append("pin[board_id]", this.state.board_id);
+                // formData.append("pin[image_url]", this.state.image_url);
+                // formData.append("pin[description]", this.state.description);
+                console.log(this.state);
+                this.props.createPin(this.state);
+                // console.log(Array.from(formData)); 
+            }
+        });
 
-        const formData = new FormData();
-        formData.append("pin[title]", this.state.title );
-        formData.append("pin[photo]", this.state.image_url)
-
-        if (!this.state.title && !this.state.image_url){
-            this.pinError();
-            this.inputError();
-
-        } else if (!this.state.image_url){
-            this.pinError();
-            
-        } else if (!this.state.title) {
-            this.inputError();
-               
-        } else {
-            this.props.createPin(this.state); 
-        }
     }
 
     pinError() {
@@ -223,7 +235,7 @@ class CreatePinForm extends React.Component{
     }
 
     render() {
-        console.log(this.state);
+        // console.log(this.state);
         return (
             <div className="create-pin-form-con">                    
 
@@ -270,9 +282,10 @@ class CreatePinForm extends React.Component{
 
                                 <img className="drop-zone__img" src="" alt=""/>
                                 <input 
-                                    type="file" 
+                                    type="file"
                                     className="drop-zone__input"
-                                    multiple accept="image/*" 
+                                    multiple accept="image/*"
+                                    onChange={this.handleInput} 
                                 />
                         </div>
 
