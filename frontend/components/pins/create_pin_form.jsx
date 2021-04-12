@@ -185,21 +185,23 @@ class CreatePinForm extends React.Component{
         let board = document.querySelector(".selected-board");        
         this.setState({ board_id: board.dataset.id}, () => {
                 // console.log(this.state);
-            // if (!this.state.title && !this.state.image_url){
-            //     this.pinError();
-            //     this.inputError();
+            if (!this.state.title && !this.state.image_url){
+                this.pinError();
+                this.inputError();
                 
-            // } else if (!this.state.image_url){
-            //     this.pinError();
+            } else if (!this.state.image_url){
+                this.pinError();
                 
-            // } else if (!this.state.title) {
-            //     this.inputError();
+            } else if (!this.state.title) {
+                this.inputError();
                 
-            // } else {
+            } else {
                 const formData = new FormData();
                 formData.append("pin[title]", this.state.title);
                 formData.append("pin[board_id]", this.state.board_id);
-                formData.append("pin[photo]", this.state.image_url);
+                if (this.state.image_url) {
+                    formData.append("pin[photo]", this.state.image_url);
+                }
                 formData.append("pin[description]", this.state.description);
                 // console.log(this.state);
                 // this.props.createPin(this.state);
@@ -214,7 +216,7 @@ class CreatePinForm extends React.Component{
                     (response) => console.log(response.message),
                     (response) => console.log(response.responseJSON)
                 );
-            // }
+            }
         });
 
     }
