@@ -6,7 +6,7 @@ import { fetchBoards } from '../../actions/board_actions';
 
 const msp = (state, ownProps) => {
     return {
-        pin: { title: "", photo: "", description: "", board_id: "" },
+        pin: { title: "", image_url: "", description: "", board_id: "", photoUrl: "" },
         boards: Object.values(state.entities.boards)
     }
 }

@@ -20,7 +20,7 @@ class CreatePinForm extends React.Component{
         this.handleDrop = this.handleDrop.bind(this);
         // this.addDeleteBtn = this.addDeleteBtn.bind(this);
         this.handleClick = this.handleClick.bind(this);
-        this.handleInput = this.handleInput.bind(this);
+        this.handleFile = this.handleFile.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.updateTitle = this.updateTitle.bind(this);
         this.updateDescription = this.updateDescription.bind(this);
@@ -49,7 +49,7 @@ class CreatePinForm extends React.Component{
     }
 
     // adds delete btn and displays file image
-    handleInput(e) {
+    handleFile(e) {
         // debugger
         let dropZone = document.querySelector(".drop-zone");
         let deleteBtn = document.querySelector(".drop-zone__delete");
@@ -59,17 +59,22 @@ class CreatePinForm extends React.Component{
 
         let that = this;
 
-        this.setState({ image_url: e.currentTarget.files[0]}, () => {
-            console.log(this.state);
-        });
+
+        const file = e.currentTarget.files[0];
+        const reader = new FileReader();
+        reader.onloadend = () => {
+            this.setState({ image_url: e.currentTarget.files[0], photoUrl: reader.result});
+        }
+        if (file) {
+            reader.readAsDataURL();
+        }
+
 
         // if (dropZoneInner) {
         //     dropZoneInner.style.display = "none";
         // }
 
        
-        // const reader = new FileReader();
-        // reader.readAsDataURL(file);
         // reader.onload = () => {
         //     let image = reader.result;
         //     this.setState({ image_url: image });
@@ -252,7 +257,7 @@ class CreatePinForm extends React.Component{
     }
 
     render() {
-        // console.log(this.state);
+        console.log(this.state);
         return (
             <div className="create-pin-form-con">                    
 
@@ -302,7 +307,7 @@ class CreatePinForm extends React.Component{
                                     type="file"
                                     className="drop-zone__input"
                                     multiple accept="image/*"
-                                    onChange={this.handleInput} 
+                                    onChange={this.handleFile} 
                                 />
                         </div>
 
