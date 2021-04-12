@@ -63,17 +63,18 @@ class CreatePinForm extends React.Component{
         const file = e.currentTarget.files[0];
         const reader = new FileReader();
         reader.onloadend = () => {
-            debugger
-            this.setState({ image_url: file, photoUrl: reader.result});
+            let image = reader.result;
+            this.setState({ image_url: file });
+            dropZoneImg.src = `${image}`;
         }
         if (file) {
             reader.readAsDataURL(file);
         }
 
 
-        // if (dropZoneInner) {
-        //     dropZoneInner.style.display = "none";
-        // }
+        if (dropZoneInner) {
+            dropZoneInner.style.display = "none";
+        }
 
        
         // reader.onload = () => {
@@ -82,26 +83,26 @@ class CreatePinForm extends React.Component{
         //         dropZoneImg.src = `${image}`;
         // };
         
-        // if (!deleteBtn){
-        //     deleteBtn = document.createElement("button");
-        //     deleteBtn.classList.add("drop-zone__delete");
-        //     deleteBtn.addEventListener("click", that.handleDelete);
+        if (!deleteBtn){
+            deleteBtn = document.createElement("button");
+            deleteBtn.classList.add("drop-zone__delete");
+            deleteBtn.addEventListener("click", that.handleDelete);
 
-        //     deleteIcon = document.createElement("img");
-        //     deleteIcon.classList.add("drop-zone__delete-icon");
-        //     deleteIcon.src = "/images/delete.png";
+            deleteIcon = document.createElement("img");
+            deleteIcon.classList.add("drop-zone__delete-icon");
+            deleteIcon.src = "/images/delete.png";
 
-        //     dropZone.append(deleteBtn);
-        //     deleteBtn.append(deleteIcon);
+            dropZone.append(deleteBtn);
+            deleteBtn.append(deleteIcon);
 
-        //     dropZone.style.padding = "0px";
-        //     dropZone.style.backgroundColor = "transparent";
-        //     dropZone.style.position = "relative";
+            dropZone.style.padding = "0px";
+            dropZone.style.backgroundColor = "transparent";
+            dropZone.style.position = "relative";
             
-        //     dropZoneImg.style.width = "90%";
-        //     dropZoneImg.style.borderRadius = "1rem";
-        // }
-        // this.dropZoneReset();
+            dropZoneImg.style.width = "90%";
+            dropZoneImg.style.borderRadius = "1rem";
+        }
+        this.dropZoneReset();
     }
 
     handleClick() {
