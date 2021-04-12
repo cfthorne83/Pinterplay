@@ -21,7 +21,6 @@ class Api::PinsController < ApplicationController
     def create
         @pin = Pin.new(pin_params)
         @pin.user_id = current_user.id
-        debugger
         if @pin.save 
             # render "api/pins/show"
             render json: {message: "Wooooh!!"}
