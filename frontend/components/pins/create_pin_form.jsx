@@ -63,10 +63,11 @@ class CreatePinForm extends React.Component{
         const file = e.currentTarget.files[0];
         const reader = new FileReader();
         reader.onloadend = () => {
-            this.setState({ image_url: e.currentTarget.files[0], photoUrl: reader.result});
+            debugger
+            this.setState({ image_url: file, photoUrl: reader.result});
         }
         if (file) {
-            reader.readAsDataURL();
+            reader.readAsDataURL(file);
         }
 
 
