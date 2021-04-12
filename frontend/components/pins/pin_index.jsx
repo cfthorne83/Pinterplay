@@ -26,8 +26,7 @@ class PinIndex extends React.Component {
         }
 
         let pins = this.props.pins.map(pin => {
-
-            debugger
+            
             return (
                     <Link 
                         key={`${pin.id}`} 

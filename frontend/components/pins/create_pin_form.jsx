@@ -9,6 +9,12 @@ class CreatePinForm extends React.Component{
         super(props);
 
         this.state = this.props.pin;
+        // {
+        //     title: "",
+        //     description: "", 
+        //     board_id: null, 
+        //     photoFile: null 
+        // }
 
         this.handleDragOver = this.handleDragOver.bind(this);
         this.handleDrop = this.handleDrop.bind(this);
