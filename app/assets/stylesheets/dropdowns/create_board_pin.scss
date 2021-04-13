@@ -3,11 +3,23 @@
     flex-direction: column;
 
     &__outer {
-        // background-color: green;
         position: relative;
-
+        // border-radius: 50%;
+        
         // display: flex;
         // flex-direction: column;
+        
+    }
+
+    &__img-con {
+        background-color: green;
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     
     &__inner {

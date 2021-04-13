@@ -28,9 +28,9 @@ class CreateDropdown extends React.Component{
                 // onBlur={this.handleBlur}
                 >
 
-                <span>
+                <div className="board-pin-drop__img-con">
                     <img src="/images/plus-icon.png" alt=""/>
-                </span>
+                </div>
 
                     {this.state.show && (
                         <div className='board-pin-drop__inner'>         
