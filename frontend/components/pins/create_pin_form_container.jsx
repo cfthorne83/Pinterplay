@@ -13,7 +13,7 @@ const msp = (state, ownProps) => {
 
 const mdp = (state, ownProps) => {
     return {
-        createPin: (pin) => dispatch(createPin(pin)),
+        createPin: (formData) => dispatch(createPin(formData)),
         fetchBoards: () => dispatch(fetchBoards())
     }
 }   

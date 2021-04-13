@@ -7,8 +7,7 @@ class CreatePinForm extends React.Component{
     constructor(props){
         super(props);
 
-        this.state = this.props.pin;
-        // {
+        this.state = Object.assign(this.props.pin, {loading: false});        // {
         //     title: "",
         //     description: "", 
         //     board_id: null, 
@@ -194,6 +193,7 @@ class CreatePinForm extends React.Component{
                 this.inputError();
                 
             } else {
+                this.setState({loading: true});
                 const formData = new FormData();
                 formData.append("pin[title]", this.state.title);
                 formData.append("pin[board_id]", this.state.board_id);
@@ -204,16 +204,18 @@ class CreatePinForm extends React.Component{
                 // console.log(this.state);
                 // this.props.createPin(this.state);
                 // console.log(Array.from(formData)); 
-                $.ajax ({
-                    url: "/api/pins",
-                    method: "POST",
-                    data: formData,
-                    contentType: false, 
-                    processData: false
-                }).then(
-                    (response) => console.log(response.message),
-                    (response) => console.log(response.responseJSON)
-                );
+                // let that = this;
+                // $.ajax ({
+                //     url: "/api/pins",
+                //     method: "POST",
+                //     data: formData,
+                //     contentType: false, 
+                //     processData: false
+                // }).then(
+                //     (response) => console.log(response.message),
+                //     (response) => console.log(response.responseJSON)
+                // );
+                this.props.createPin(this.formData);
             }
         });
 
@@ -259,9 +261,10 @@ class CreatePinForm extends React.Component{
     }
 
     render() {
-        console.log(this.state);
         return (
+            
             <div className="create-pin-form-con">                    
+            <BeatLoader size={25} color="red" loading={this.state.loading}/>
 
                 <form 
                     // onSubmit={this.handleSubmit} 
