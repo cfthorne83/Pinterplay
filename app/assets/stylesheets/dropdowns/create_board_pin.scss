@@ -5,12 +5,16 @@
     &__outer {
         background-color: green;
         position: relative;
+
+        // display: flex;
+        // flex-direction: column;
     }
     
     &__inner {
         background-color: red;
         position: absolute;
-        padding: .5rem;
+        right: 0rem;
+        // padding: .5rem; 
 
         button {
             // padding: .5rem;
