@@ -21,7 +21,6 @@ class CreateDropdown extends React.Component{
     }
 
     handleBoard(e){
-        debugger
         this.props.openModal('createBoard');
     }
 
