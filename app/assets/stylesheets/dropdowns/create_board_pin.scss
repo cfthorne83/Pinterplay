@@ -1,3 +1,9 @@
+@mixin small-text {
+    font-size: .8rem;
+    font-weight: 100;
+    letter-spacing: var(--lett-space);
+}
+
 .board-pin-drop {
     display: flex;
     flex-direction: column;
@@ -21,15 +27,34 @@
         justify-content: center;
         align-items: center;
     }
+
+    &__img-con:hover {
+        background-color: var(--lt-grey);
+    }
     
     &__inner {
         background-color: red;
         position: absolute;
         right: 0rem;
-        // padding: .5rem; 
+        padding: .5rem;
+        border-radius: .8rem;
+        box-sizing: border-box;
+        min-width: 150px; 
 
+        h1 {
+            @include small-text;
+            padding: .5rem 0;
+        }
+        
         button {
-            // padding: .5rem;
+            border-radius: .8rem; 
+            padding: .5rem;
+            background-color: pink;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: var(--lt-grey);
         }
     }
 }
