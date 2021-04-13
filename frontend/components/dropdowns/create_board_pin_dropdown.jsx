@@ -7,6 +7,7 @@ class CreateDropdown extends React.Component{
 
         this.handleClick = this.handleClick.bind(this);
         this.handleBlur = this.handleBlur.bind(this);
+        this.handleBoard = this.handleBoard.bind(this);
     }
 
     handleClick(){
@@ -17,6 +18,11 @@ class CreateDropdown extends React.Component{
         window.setTimeout(() => {
             this.setState({ show: false })
         }, 100);
+    }
+
+    handleBoard(e){
+        debugger
+        this.props.openModal('createBoard');
     }
 
     render() {
@@ -35,7 +41,8 @@ class CreateDropdown extends React.Component{
                     {this.state.show && (
                         <div className='board-pin-drop__inner'>         
                             <h1>Create</h1>     
-                            <button >
+                            <button 
+                                onClick={this.handleBoard}>
                                 Board
                             </button> 
                             <button >

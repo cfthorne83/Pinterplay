@@ -88,11 +88,10 @@ class Profile extends React.Component{
                         </Link>
                     </div>
 
-                        {/* <button 
-                            onClick={this.handleSubmit}>
-                            <img src="/images/plus-icon.png" alt=""/>
-                        </button> */}
-                        <CreateDropdown className="board-pin-drop"/>
+                    <CreateDropdown 
+                        className="board-pin-drop"
+                        openModal={this.props.openModal}
+                    />
                 </section>
                 
                 <BoardIndexContainer />
