@@ -3,10 +3,7 @@ import { Redirect } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 import BoardIndexContainer from '../boards/board_index_container';
-
-// import { editIcon } from "../../../app/assets/images/edit_pen.png";
-// import { editIcon } from "./edit_pen.png";
-// import { sky } from "./sky2.jpg";
+import CreateDropdown from "../dropdowns/create_board_pin_dropdown";
 
 class Profile extends React.Component{
     constructor(props){
@@ -91,10 +88,11 @@ class Profile extends React.Component{
                         </Link>
                     </div>
 
-                        <button 
+                        {/* <button 
                             onClick={this.handleSubmit}>
                             <img src="/images/plus-icon.png" alt=""/>
-                        </button>
+                        </button> */}
+                        <CreateDropdown className="board-pin-drop"/>
                 </section>
                 
                 <BoardIndexContainer />
