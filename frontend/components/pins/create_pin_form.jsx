@@ -1,7 +1,6 @@
 import React from "react";
-// import arrow from "../../../images/up_arrow.png";
-import PinIndexContainer from "./pin_index_container";
-// import BoardDropdownContainer from "../boards/board_dropdown_container";
+import { BeatLoader } from "react-spinners";
+
 import BoardDropdown from "../boards/board_dropdown";
 
 class CreatePinForm extends React.Component{
