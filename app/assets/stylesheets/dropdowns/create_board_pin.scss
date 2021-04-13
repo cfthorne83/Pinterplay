@@ -10,15 +10,9 @@
 
     &__outer {
         position: relative;
-        // border-radius: 50%;
-        
-        // display: flex;
-        // flex-direction: column;
-        
     }
 
     &__img-con {
-        background-color: green;
         height: 50px;
         width: 50px;
         border-radius: 50%;
@@ -33,24 +27,25 @@
     }
     
     &__inner {
-        background-color: red;
         position: absolute;
         right: 0rem;
         padding: .5rem;
         border-radius: .8rem;
         box-sizing: border-box;
         min-width: 150px; 
+        box-shadow: var(--drop-box-shad);
 
         h1 {
             @include small-text;
-            padding: .5rem 0;
+            padding: .5rem;
         }
         
         button {
             border-radius: .8rem; 
             padding: .5rem;
-            background-color: pink;
             width: 100%;
+            font-weight: 600;
+            letter-spacing: var(--lett-space);
         }
 
         button:hover {

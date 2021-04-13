@@ -3,7 +3,7 @@ import React from 'react';
 class CreateDropdown extends React.Component{
     constructor(props){
         super(props);
-        this.state = { show: true }
+        this.state = { show: false }
 
         this.handleClick = this.handleClick.bind(this);
         this.handleBlur = this.handleBlur.bind(this);
@@ -24,8 +24,8 @@ class CreateDropdown extends React.Component{
         return (
             <button 
                 className='board-pin-drop__outer'
-                // onClick={this.handleClick} 
-                // onBlur={this.handleBlur}
+                onClick={this.handleClick} 
+                onBlur={this.handleBlur}
                 >
 
                 <div className="board-pin-drop__img-con">
