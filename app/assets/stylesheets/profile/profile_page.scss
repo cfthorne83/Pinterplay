@@ -53,18 +53,23 @@
             width: 25px;
         }
 
-        .edit-link {
+        // .edit-link {
+            
+            //     background-color: green;
+            // }
+            
+        .edit-link {
             display: flex;
             justify-content: center;
             align-items: center;
-
             height: 50px;
             width: 50px;
             border-radius: 50%;
+            background-color: green;
         }
-        
-        .edit-link:hover{
-            background-color: var(--lt-grey); 
+
+        .edit-link:hover {
+            background-color: var(--lt-grey);
         }
         
         // button {
