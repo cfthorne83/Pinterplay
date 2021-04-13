@@ -1,0 +1,19 @@
+.board-pin-drop {
+    display: flex;
+    flex-direction: column;
+
+    &__outer {
+        background-color: green;
+        position: relative;
+    }
+    
+    &__inner {
+        background-color: red;
+        position: absolute;
+        padding: .5rem;
+
+        button {
+            // padding: .5rem;
+        }
+    }
+}

@@ -31,7 +31,7 @@ class CreateDropdown extends React.Component{
                 <span>
                     <img src="/images/plus-icon.png" alt=""/>
                 </span>
-                
+
                     {this.state.show && (
                         <div className='board-pin-drop__inner'>         
                             <h1>Create</h1>     
