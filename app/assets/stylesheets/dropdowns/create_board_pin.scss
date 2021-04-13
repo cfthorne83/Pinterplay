@@ -40,7 +40,7 @@
             padding: .5rem;
         } 
         
-        button {
+        input {
             border-radius: .8rem; 
             padding: .5rem;
             width: 100%;
@@ -48,7 +48,7 @@
             letter-spacing: var(--lett-space);
         }
 
-        button:hover {
+        input:hover {
             background-color: var(--lt-grey);
         }
     }

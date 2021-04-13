@@ -41,12 +41,17 @@ class CreateDropdown extends React.Component{
                     {this.state.show && (
                         <div className='board-pin-drop__inner'>         
                             <h1>Create</h1>     
-                            <button 
-                                onClick={this.handleBoard}>
-                                Board
-                            </button> 
+                            <input 
+                                type="submit"
+                                onClick={this.handleBoard}
+                                value="Board"
+                            />
+
                             <Link to="/pin-builder">
-                                <button>Pin</button>       
+                                <input type="submit"   
+                                    value="Pin"
+                                />
+
                             </Link>
                 
                         </div>
