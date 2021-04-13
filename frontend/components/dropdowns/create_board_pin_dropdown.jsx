@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class CreateDropdown extends React.Component{
     constructor(props){
@@ -44,9 +45,9 @@ class CreateDropdown extends React.Component{
                                 onClick={this.handleBoard}>
                                 Board
                             </button> 
-                            <button >
-                                Pin
-                            </button>                              
+                            <Link to="/pin-builder">
+                                <button>Pin</button>       
+                            </Link>
                 
                         </div>
                     )}
