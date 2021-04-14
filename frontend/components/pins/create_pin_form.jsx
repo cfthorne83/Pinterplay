@@ -217,7 +217,7 @@ class CreatePinForm extends React.Component{
                 //     // (response) => console.log(response.responseJSON),
                 //     // this.setState({loading: true})   
                 // ).then(console.log("done"))
-                this.props.createPin(formData);
+                this.props.createPin(formData).then(console.log("done"));
             }
         });
 
