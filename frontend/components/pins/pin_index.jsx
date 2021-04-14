@@ -1,7 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { BeatLoader } from "react-spinners";
 
 class PinIndex extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = { loading: true }
+    }
 
     componentDidMount() {
         this.props.fetchPins(this.props.board);
@@ -24,11 +30,11 @@ class PinIndex extends React.Component {
         if (!this.props.pins) {
             return null;
         }
-
+        
         let pins = this.props.pins.map(pin => {
             
             return (
-                    <Link 
+                <Link 
                         key={`${pin.id}`} 
                         to={`/pins/${pin.id}`}
                         className="pin-index__item">
@@ -41,6 +47,7 @@ class PinIndex extends React.Component {
         return (
             
             <div className="pin-index-con">
+                <BeatLoader size={25} color="red" loading={this.state.loading}/>;
                 {this.pinCount()}
                 <ul className='pin-index'>
                     {pins}
