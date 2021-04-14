@@ -201,8 +201,7 @@ class CreatePinForm extends React.Component{
                     formData.append("pin[photo]", this.state.image_url);
                 }
                 formData.append("pin[description]", this.state.description);
-                console.log(this.state);
-                console.log(formData);
+
                 // this.props.createPin(this.state);
                 // console.log(Array.from(formData)); 
 
@@ -267,11 +266,15 @@ class CreatePinForm extends React.Component{
         return (
             
             <div className="create-pin-form-con">                    
-            <BeatLoader size={25} color="red" loading={this.state.loading}/>
 
                 <form 
                     // onSubmit={this.handleSubmit} 
                     className="create-pin-form">
+                        
+                    <BeatLoader 
+                        className="create-pin-form__loader"
+                        size={25} color="red" 
+                        loading={this.state.loading}/>
 
                     <div className="create-pin-form__drop">
                         {/* <img 
