@@ -218,12 +218,19 @@ class CreatePinForm extends React.Component{
                 //     // (response) => console.log(response.responseJSON),
                 //     // this.setState({loading: true})   
                 // ).then(console.log("done"))
+                
+                this.setState({ loading: true });
                 this.props.createPin(formData);
+                this.handleDelete();
             }
         });
-
     }
 
+    handleLoading()  {
+        let loader = document.querySelector(".loader");
+        loader.remove();
+    }
+ 
     pinError() {
         const dropZone = document.querySelector(".drop-zone");
             dropZone.style.border = "1px solid red";
@@ -273,10 +280,12 @@ class CreatePinForm extends React.Component{
                     // onSubmit={this.handleSubmit} 
                     className="create-pin-form">
                         
-                    <BeatLoader 
-                        className="create-pin-form__loader"
-                        size={25} color="red" 
-                        loading={this.state.loading}/>
+                    <div className="loader">
+                        <BeatLoader 
+                            className="create-pin-form__loader"
+                            size={25} color="red" 
+                            loading={this.state.loading}/>
+                    </div>
 
                     <div className="create-pin-form__drop">
                         {/* <img 
