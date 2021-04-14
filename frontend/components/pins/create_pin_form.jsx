@@ -208,18 +208,17 @@ class CreatePinForm extends React.Component{
 
                 let that = this;
                 
-                // debugger
-                // $.ajax ({
-                //     url: "/api/pins",
-                //     method: "POST",
-                //     data: formData,
-                //     contentType: false, 
-                //     processData: false
-                // }).then(
-                //     (response) => console.log(response.message),
-                //     (response) => console.log(response.responseJSON)
-                // );
-                this.props.createPin(formData);
+                $.ajax ({
+                    url: "/api/pins",
+                    method: "POST",
+                    data: formData,
+                    contentType: false, 
+                    processData: false
+                }).then(
+                    (response) => console.log(response.message),
+                    (response) => console.log(response.responseJSON)
+                );
+                // this.props.createPin(formData);
             }
         });
 

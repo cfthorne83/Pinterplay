@@ -12,7 +12,6 @@ export const receivePins = (pins) => {
 };
 
 export const receivePin = (data) => {
-    // debugger
     return {
         type: RECEIVE_PIN,
         pin: data.pin
