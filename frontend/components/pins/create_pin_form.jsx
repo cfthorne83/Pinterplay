@@ -193,7 +193,6 @@ class CreatePinForm extends React.Component{
                 this.inputError();
                 
             } else {
-                this.setState({loading: true});
                 const formData = new FormData();
                 formData.append("pin[title]", this.state.title);
                 formData.append("pin[board_id]", this.state.board_id);
@@ -214,9 +213,10 @@ class CreatePinForm extends React.Component{
                     contentType: false, 
                     processData: false
                 }).then(
-                    (response) => console.log(response.message),
-                    (response) => console.log(response.responseJSON),
-                );
+                    // (response) => console.log(response.message),
+                    // (response) => console.log(response.responseJSON),
+                    // this.setState({loading: true})   
+                ).then(console.log("done"))
                 // this.props.createPin(formData);
             }
         });
