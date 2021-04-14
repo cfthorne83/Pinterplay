@@ -133,7 +133,7 @@ class CreatePinForm extends React.Component{
     // }
     
     handleDelete(e) {
-        e.stopPropagation();
+        // e.stopPropagation();
         
         let dropZoneImg = document.querySelector(".drop-zone__img");
         dropZoneImg.src = "";
@@ -182,17 +182,17 @@ class CreatePinForm extends React.Component{
         let board = document.querySelector(".selected-board");        
         this.setState({ board_id: board.dataset.id}, () => {
                 // console.log(this.state);
-            if (!this.state.title && !this.state.image_url){
-                this.pinError();
-                this.inputError();
+            // if (!this.state.title && !this.state.image_url){
+            //     this.pinError();
+            //     this.inputError();
                 
-            } else if (!this.state.image_url){
-                this.pinError();
+            // } else if (!this.state.image_url){
+            //     this.pinError();
                 
-            } else if (!this.state.title) {
-                this.inputError();
+            // } else if (!this.state.title) {
+            //     this.inputError();
                 
-            } else {
+            // } else {
 
                 this.setState({ loading: true});
 
@@ -220,8 +220,7 @@ class CreatePinForm extends React.Component{
                 // ).then(console.log("done"))
                 
                 this.setState({ loading: true });
-                this.props.createPin(formData);
-                this.handleDelete();
+                this.props.createPin(formData).then(this.handleDelete());
             }
         });
     }
