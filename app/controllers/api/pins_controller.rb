@@ -22,8 +22,8 @@ class Api::PinsController < ApplicationController
         @pin = Pin.new(pin_params)
         @pin.user_id = current_user.id
         if @pin.save 
-            # render "api/pins/show"
-            render json: {message: "Wooooh!!"}
+            render "api/pins/show"
+            # render json: {message: "Wooooh!!"}
         else
             render json: @pin.errors.full_messages
         end
