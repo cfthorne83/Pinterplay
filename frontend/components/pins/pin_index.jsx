@@ -10,7 +10,7 @@ class PinIndex extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchPins(this.props.board);
+        this.props.fetchPins(this.props.board).then(this.setState({loading: false}));
     }
 
     pinCount() {
@@ -26,28 +26,27 @@ class PinIndex extends React.Component {
     }
 
     render() {
-        
-        if (!this.props.pins) {
+
+        if (!this.props.pins){
             return null;
         }
         
+        
         let pins = this.props.pins.map(pin => {
-            
             return (
                 <Link 
-                        key={`${pin.id}`} 
-                        to={`/pins/${pin.id}`}
-                        className="pin-index__item">
+                key={`${pin.id}`} 
+                to={`/pins/${pin.id}`}
+                className="pin-index__item">
                             <img src={`${pin.image_url}`} alt=""/>
                             <h2>{this.capitalize(pin.title)}</h2>
                     </Link>
-             )
+            )
         })
-        
+            
         return (
             
             <div className="pin-index-con">
-                <BeatLoader size={25} color="red" loading={this.state.loading}/>;
                 {this.pinCount()}
                 <ul className='pin-index'>
                     {pins}
