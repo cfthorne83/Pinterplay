@@ -1,5 +1,4 @@
-import React from "react";
-
+import React, {useState, useEffect} from "react";
 import { AuthRoute } from '../util/route_util'
 import {
     Route,
@@ -22,6 +21,7 @@ import CreatePinFormContainer from "./pins/create_pin_form_container";
 import PinShowContainer from "./pins/pin_show_container";
 
 const App = () => (
+    const [loading, setLoading] = useState(false);
     <div className="app">
         <header>
             <NavBarContainer />
