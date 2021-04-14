@@ -202,11 +202,13 @@ class CreatePinForm extends React.Component{
                 }
                 formData.append("pin[description]", this.state.description);
                 console.log(this.state);
+                console.log(formData);
                 // this.props.createPin(this.state);
                 // console.log(Array.from(formData)); 
 
                 let that = this;
                 
+                // debugger
                 // $.ajax ({
                 //     url: "/api/pins",
                 //     method: "POST",
@@ -217,7 +219,6 @@ class CreatePinForm extends React.Component{
                 //     (response) => console.log(response.message),
                 //     (response) => console.log(response.responseJSON)
                 // );
-                debugger
                 this.props.createPin(formData);
             }
         });

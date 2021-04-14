@@ -13,18 +13,15 @@ export const fetchPin = (pinId) => {
     })
 }
 
-export const createPin = (pin) => {
-    // debugger
+export const createPin = (formData) => {
     return $.ajax ({
                     url: "/api/pins",
                     method: "POST",
-                    data: {pin},
+                    data: formData,
                     contentType: false, 
                     processData: false
-                }).then(
-                    (response) => console.log(response.message),
-                    (response) => console.log(response.responseJSON)
-                );
+                })
+                //
     // $.ajax({
     //     url: '/api/pins',
     //     method: 'POST',
