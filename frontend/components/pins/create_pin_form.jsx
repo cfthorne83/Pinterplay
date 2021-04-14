@@ -193,6 +193,9 @@ class CreatePinForm extends React.Component{
                 this.inputError();
                 
             } else {
+
+                this.setState({ loading: true});
+
                 const formData = new FormData();
                 formData.append("pin[title]", this.state.title);
                 formData.append("pin[board_id]", this.state.board_id);
@@ -204,8 +207,6 @@ class CreatePinForm extends React.Component{
                 // this.props.createPin(this.state);
                 // console.log(Array.from(formData)); 
 
-                let that = this;
-                
                 // $.ajax ({
                 //     url: "/api/pins",
                 //     method: "POST",
@@ -217,7 +218,7 @@ class CreatePinForm extends React.Component{
                 //     // (response) => console.log(response.responseJSON),
                 //     // this.setState({loading: true})   
                 // ).then(console.log("done"))
-                this.props.createPin(formData).then(console.log("done"));
+                this.props.createPin(formData);
             }
         });
 
@@ -263,6 +264,7 @@ class CreatePinForm extends React.Component{
     }
 
     render() {
+        
         return (
             
             <div className="create-pin-form-con">                    
