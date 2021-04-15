@@ -15,11 +15,11 @@ class BoardDropdown extends React.Component{
         this.setState({ show: !this.state.show });
     }
 
-    // handleBlur(){
-    //     window.setTimeout(() => {
-    //         this.setState({ show: false })
-    //     }, 100);
-    // }
+    handleBlur(){
+        window.setTimeout(() => {
+            this.setState({ show: false })
+        }, 100);
+    }
 
     updateBoard(e) {
         let board = document.querySelector(".selected-board");
