@@ -21,7 +21,7 @@ import CreatePinFormContainer from "./pins/create_pin_form_container";
 import PinShowContainer from "./pins/pin_show_container";
 
 const App = () => (
-    const [loading, setLoading] = useState(false);
+    // const [loading, setLoading] = useState(false);
     <div className="app">
         <header>
             <NavBarContainer />
