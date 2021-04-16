@@ -16,7 +16,7 @@ class PinShowLink extends React.Component{
         return (
 
             <div>
-                <h1>pin show link</h1>
+                <h1>Saved to {this.props.board}</h1>
                 <Link 
                     onClick={this.handleClick}
                     to={`/pins/${this.props.pinId}`}>
