@@ -212,14 +212,15 @@ class CreatePinForm extends React.Component{
                     // (response) => console.log(response.pin.id)
                     // this.setState({loading: true}),  
                     (response) => {
-                        this.setState({ newPinId: response.pin.id });
-                        console.log(this.state);
+                        // this.setState({ newPinId: response.pin.id });
+                        // console.log(this.state);
                         this.setState({loading: false})
+                        this.props.openModal("createBoard")
                     } 
                 )
                 
                 // this.setState({ loading: true });
-                // this.props.createPin(formData).then(this.props.openModal("createBoard"));
+                // this.props.createPin(formData).then);
             }
         });
     }
