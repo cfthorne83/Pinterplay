@@ -43,7 +43,7 @@ const Modal = ({ modal, closeModal, errors }) =>  {
             component = <EditPhotoFormContainer/>;
             modalClass = "edit-photo-mod";
             break;
-        case 'createPin':
+        case 'pinShowLink':
             component = <PinShowLink/>;
             modalClass = "edit-photo-mod";
             break;
