@@ -210,10 +210,11 @@ class CreatePinForm extends React.Component{
                 }).then(
                     // (response) => console.log(response.message),
                     // (response) => console.log(response.pin.id)
-                    // this.setState({loading: true})  
+                    // this.setState({loading: true}),  
                     (response) => {
                         this.setState({ newPinId: response.pin.id });
                         console.log(this.state);
+                        this.setState({loading: false})
                     } 
                 )
                 
