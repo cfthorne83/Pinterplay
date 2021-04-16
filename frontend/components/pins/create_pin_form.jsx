@@ -221,9 +221,7 @@ class CreatePinForm extends React.Component{
                 // ).then(console.log("done"))
                 
                 // this.setState({ loading: true });
-                this.props.createPin(formData).then(
-                    <Redirect to='/' />
-                );
+                this.props.createPin(formData);
             }
         });
     }
