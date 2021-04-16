@@ -17,6 +17,7 @@ class PinShowLink extends React.Component{
 
             <div>
                 <h1>Saved to {this.props.board}</h1>
+                <img src={this.props.image} alt="pin image"/>
                 <Link 
                     onClick={this.handleClick}
                     to={`/pins/${this.props.pinId}`}>

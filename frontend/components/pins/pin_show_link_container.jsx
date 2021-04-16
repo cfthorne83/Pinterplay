@@ -7,7 +7,8 @@ const msp = (state, ownProps) => {
     // debugger
     return {
         pinId: state.ui.modal.options.id, 
-        board: state.ui.modal.options.board
+        board: state.ui.modal.options.board,
+        image: state.ui.modal.options.image
     }
 }
 
