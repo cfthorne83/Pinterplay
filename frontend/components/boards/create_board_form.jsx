@@ -47,7 +47,7 @@ class CreateBoardForm extends React.Component {
                     <input 
                         type="text" value={this.state.title} 
                         onChange={this.updateTitle} 
-                        placeholder='Like "Places to Go" ro "Recipes to Make"'/>
+                        placeholder='Like "Places to Go" or "Recipes to Make"'/>
                     <h2>Description</h2>
                     <textarea 
                         type="text"
