@@ -17,7 +17,7 @@ const mdp = (state, ownProps) => {
     return {
         createPin: (formData) => dispatch(createPin(formData)),
         fetchBoards: () => dispatch(fetchBoards()), 
-        openModal: modal => dispatch(openModal(modal))
+        openModal: (modal, options) => dispatch(openModal(modal, options))
     }
 }   
 
