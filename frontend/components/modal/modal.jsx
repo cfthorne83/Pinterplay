@@ -8,7 +8,7 @@ import CreateBoardFormContainer from '../boards/create_board_form_container';
 import EditBoardFormContainer from '../boards/edit_board_form_container';
 import EditPinFormContainer from '../pins/edit_pin_form_container';
 import EditPhotoFormContainer from '../profile/edit_photo_form_container';
-import CreatePinLink from '../pins/pin_show_link';
+import PinShowLink from '../pins/pin_show_link';
 
 const Modal = ({ modal, closeModal, errors }) =>  {
     if (!modal) {
@@ -44,7 +44,7 @@ const Modal = ({ modal, closeModal, errors }) =>  {
             modalClass = "edit-photo-mod";
             break;
         case 'createPin':
-            component = <CreatePinLink/>;
+            component = <PinShowLink/>;
             modalClass = "edit-photo-mod";
             break;
         default:
