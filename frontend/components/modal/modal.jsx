@@ -8,7 +8,7 @@ import CreateBoardFormContainer from '../boards/create_board_form_container';
 import EditBoardFormContainer from '../boards/edit_board_form_container';
 import EditPinFormContainer from '../pins/edit_pin_form_container';
 import EditPhotoFormContainer from '../profile/edit_photo_form_container';
-import PinShowLink from '../pins/pin_show_link';
+import PinShowLinkContainer from '../pins/pin_show_link_container';
 
 const Modal = ({ modal, closeModal, errors }) =>  {
     if (!modal) {
