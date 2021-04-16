@@ -1,6 +1,6 @@
 import React from "react";
 import { BeatLoader } from "react-spinners";
-import { Redirect } from 'react-router-dom';
+import { Redirect } from "react-router-dom";
 
 import BoardDropdown from "../boards/board_dropdown";
 
