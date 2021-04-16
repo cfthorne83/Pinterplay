@@ -15,7 +15,7 @@ class PinShowLink extends React.Component{
     render() {
         return (
 
-            <div>
+            <div className="pin-show-link">
                 <h1>Saved to {this.props.board}</h1>
                 <img src={this.props.image} alt="pin image"/>
                 <Link 

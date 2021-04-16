@@ -20,6 +20,10 @@
         display: flex;
         flex-direction: column;
 
+        &__loader {
+            position: absolute;
+        }
+
         &__drop {
             display: flex;
             justify-content: flex-end;

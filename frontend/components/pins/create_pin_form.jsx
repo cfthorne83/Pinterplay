@@ -223,9 +223,6 @@ class CreatePinForm extends React.Component{
                                                             });
                     } 
                 )
-                
-                // this.setState({ loading: true });
-                // this.props.createPin(formData).then);
             }
         });
     }
@@ -284,7 +281,7 @@ class CreatePinForm extends React.Component{
                     // onSubmit={this.handleSubmit} 
                     className="create-pin-form">
                         
-                    <div className="loader">
+                    <div className="create-pin-form__loader">
                         <BeatLoader 
                             className="create-pin-form__loader"
                             size={25} color="red" 
