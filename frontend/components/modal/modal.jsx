@@ -10,6 +10,15 @@ import EditPinFormContainer from '../pins/edit_pin_form_container';
 import EditPhotoFormContainer from '../profile/edit_photo_form_container';
 import PinShowLinkContainer from '../pins/pin_show_link_container';
 
+const closeScreen = () => {
+    const screen = document.querySelector(".create-pin-form__screen");
+
+    if (screen) {
+        screen.style.display = "none";
+    }
+
+}
+
 const Modal = ({ modal, closeModal, errors }) =>  {
     if (!modal) {
         return null;
@@ -51,7 +60,7 @@ const Modal = ({ modal, closeModal, errors }) =>  {
             return null;
     }
     return (
-        <div className="modal-background" onClick={closeModal}>
+        <div className="modal-background" onClick={closeModal} onClick={closeScreen}>
             <div className={`modal-child ${modalClass}`} onClick={e => e.stopPropagation()}>
                 {component}
             </div>
@@ -68,7 +77,13 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        closeModal: () => dispatch(closeModal())
+        closeModal: () => dispatch(closeModal()),
+        // closeScreen: () => {
+        //     const screen = document.querySelector(".create-pin-form__screen");
+        //     if (screen) {
+        //         screen.style.display = "none";
+        //     }
+        // }
     };
 };
 
