@@ -203,25 +203,23 @@ class CreatePinForm extends React.Component{
                 if (this.state.image_url) {
                     formData.append("pin[photo]", this.state.image_url);
                 }
-                formData.append("pin[description]", this.state.description);
 
-                // this.props.createPin(this.state);
                 // console.log(Array.from(formData)); 
 
-                // $.ajax ({
-                //     url: "/api/pins",
-                //     method: "POST",
-                //     data: formData,
-                //     contentType: false, 
-                //     processData: false
-                // }).then(
-                //     // (response) => console.log(response.message),
-                //     // (response) => console.log(response.responseJSON),
-                //     // this.setState({loading: true})   
-                // ).then(console.log("done"))
+                $.ajax ({
+                    url: "/api/pins",
+                    method: "POST",
+                    data: formData,
+                    contentType: false, 
+                    processData: false
+                }).then(
+                    // (response) => console.log(response.message),
+                    (response) => console.log(response.pin.id),
+                    // this.setState({loading: true})   
+                )
                 
                 // this.setState({ loading: true });
-                this.props.createPin(formData).then(this.props.openModal("createBoard"));
+                // this.props.createPin(formData).then(this.props.openModal("createBoard"));
             }
         });
     }
