@@ -275,7 +275,9 @@ class CreatePinForm extends React.Component{
         
         return (
             
-            <div className="create-pin-form-con">                    
+            <div className="create-pin-form-con">
+                 
+                                   
                 <div className="create-pin-form__loader">
                     <BeatLoader 
                         className="create-pin-form__loader"
@@ -283,14 +285,10 @@ class CreatePinForm extends React.Component{
                         loading={this.state.loading}/>
                 </div>
 
-                <form className="create-pin-form">
-                        
+                <form className="create-pin-form">  
 
                     <div className="create-pin-form__drop">
-                        {/* <img 
-                            src="https://static.thenounproject.com/png/384290-200.png"
-                            className="ellipsis"
-                        /> */}
+        
                         <div className="create-pin-form__drop-inner">
                             <BoardDropdown boards={this.props.boards}/>
                             <button 
@@ -311,6 +309,8 @@ class CreatePinForm extends React.Component{
 
                             <div className="drop-zone__inner">
                                 <div className="drop-zone__text">
+                    
+                                    
                                     <img 
                                         className="drop-zone__arrow"
                                         src="/images/arrow.png"/>
@@ -334,6 +334,8 @@ class CreatePinForm extends React.Component{
 
                         <div className="create-pin-form__text">
                             <div className="create-pin-form__text-inner">
+                                    <div className="create-pin-form__screen"></div>
+
                                 <input 
                                     className="create-pin-form__input"
                                     type="text"
@@ -353,7 +355,6 @@ class CreatePinForm extends React.Component{
                         </div>
                     </div>
                 </form>
-
             </div>
 
         )
