@@ -190,7 +190,7 @@ class CreatePinForm extends React.Component{
                 
             } else {
 
-                // this.setState({ loading: true});
+                this.setState({ loading: true});
 
                 const formData = new FormData();
                 formData.append("pin[title]", this.state.title);
