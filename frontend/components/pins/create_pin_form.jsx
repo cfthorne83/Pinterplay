@@ -176,7 +176,9 @@ class CreatePinForm extends React.Component{
         e.stopPropagation();
 
         const screen = document.querySelector(".create-pin-form__screen");
-        screen.style.display = "inline-block";
+        screen.style.display = "flex";
+        screen.style.justifyContent = "center";
+        screen.style.alignItems = "center";
 
         let board = document.querySelector(".selected-board");        
         this.setState({ board_id: board.dataset.id}, () => {
@@ -279,14 +281,6 @@ class CreatePinForm extends React.Component{
         return (
             
             <div className="create-pin-form-con">
-                 
-                                   
-                <div className="create-pin-form__loader">
-                    <BeatLoader 
-                        className="create-pin-form__loader"
-                        size={25} color="red" 
-                        loading={this.state.loading}/>
-                </div>
 
                 <form className="create-pin-form">  
 
@@ -338,7 +332,14 @@ class CreatePinForm extends React.Component{
                         <div className="create-pin-form__text">
                             <div className="create-pin-form__text-inner">
                                 
-                                <div className="create-pin-form__screen"></div>
+                                <div className="create-pin-form__screen">
+                                    <div className="create-pin-form__loader">
+                                        <BeatLoader 
+                                            className="create-pin-form__loader"
+                                            size={25} color="red" 
+                                            loading={this.state.loading}/>
+                                    </div>
+                                </div>
 
                                 <input 
                                     className="create-pin-form__input"
