@@ -8,12 +8,7 @@ class CreatePinForm extends React.Component{
     constructor(props){
         super(props);
 
-        this.state = Object.assign(this.props.pin, {loading: false});        // {
-        //     title: "",
-        //     description: "", 
-        //     board_id: null, 
-        //     photoFile: null 
-        // }
+        this.state = Object.assign(this.props.pin, {loading: false, newPinId: null});
 
         this.handleDragOver = this.handleDragOver.bind(this);
         this.handleDrop = this.handleDrop.bind(this);
@@ -214,8 +209,12 @@ class CreatePinForm extends React.Component{
                     processData: false
                 }).then(
                     // (response) => console.log(response.message),
-                    (response) => console.log(response.pin.id),
-                    // this.setState({loading: true})   
+                    // (response) => console.log(response.pin.id)
+                    // this.setState({loading: true})  
+                    (response) => {
+                        this.setState({ newPinId: response.pin.id });
+                        console.log(this.state);
+                    } 
                 )
                 
                 // this.setState({ loading: true });
