@@ -218,7 +218,7 @@ class CreatePinForm extends React.Component{
                         this.props.openModal("pinShowLink", response.pin.id);
                         this.props.openModal("pinShowLink", { 
                                                                 id: response.pin.id, 
-                                                                board: response.pin.board.title});
+                                                                board: board.innerText});
                     } 
                 )
                 
