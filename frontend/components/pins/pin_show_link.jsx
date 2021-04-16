@@ -21,7 +21,7 @@ class PinShowLink extends React.Component{
                 <Link 
                     onClick={this.handleClick}
                     to={`/pins/${this.props.pinId}`}>
-                        gooble
+                        See it now
                 </Link>
             </div>
         )

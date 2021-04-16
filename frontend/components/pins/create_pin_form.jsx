@@ -276,17 +276,15 @@ class CreatePinForm extends React.Component{
         return (
             
             <div className="create-pin-form-con">                    
+                <div className="create-pin-form__loader">
+                    <BeatLoader 
+                        className="create-pin-form__loader"
+                        size={25} color="red" 
+                        loading={this.state.loading}/>
+                </div>
 
-                <form 
-                    // onSubmit={this.handleSubmit} 
-                    className="create-pin-form">
+                <form className="create-pin-form">
                         
-                    <div className="create-pin-form__loader">
-                        <BeatLoader 
-                            className="create-pin-form__loader"
-                            size={25} color="red" 
-                            loading={this.state.loading}/>
-                    </div>
 
                     <div className="create-pin-form__drop">
                         {/* <img 
