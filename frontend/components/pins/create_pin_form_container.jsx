@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import CreatePinForm from "./create_pin_form";
 import { createPin } from '../../actions/pin_actions';
 import { fetchBoards } from '../../actions/board_actions';
+import { openModal } from '../../actions/modal_actions';
 
 const msp = (state, ownProps) => {
     return {
@@ -15,7 +16,8 @@ const msp = (state, ownProps) => {
 const mdp = (state, ownProps) => {
     return {
         createPin: (formData) => dispatch(createPin(formData)),
-        fetchBoards: () => dispatch(fetchBoards())
+        fetchBoards: () => dispatch(fetchBoards()), 
+        openModal: modal => dispatch(openModal(modal))
     }
 }   
 
