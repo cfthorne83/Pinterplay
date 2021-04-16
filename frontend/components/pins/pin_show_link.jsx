@@ -1,13 +1,17 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
-const PinShowLink = () => {
-    return (
+class PinShowLink extends React.Component{
 
-        <h1>pin show link</h1>
+    render() {
+        return (
 
-    )
-    
+            <div>
+                <h1>pin show link</h1>
+                <Link to={`/pins/${this.props.pinId}`}>gooble</Link>
+            </div>
+        )
+    }
 }
 
 export default PinShowLink;
