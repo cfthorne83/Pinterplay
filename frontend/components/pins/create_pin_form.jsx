@@ -175,6 +175,9 @@ class CreatePinForm extends React.Component{
     handleSubmit(e) {
         e.stopPropagation();
 
+        const screen = document.querySelector(".create-pin-form__screen");
+        screen.style.display = "inline-block";
+
         let board = document.querySelector(".selected-board");        
         this.setState({ board_id: board.dataset.id}, () => {
                 // console.log(this.state);
@@ -334,7 +337,8 @@ class CreatePinForm extends React.Component{
 
                         <div className="create-pin-form__text">
                             <div className="create-pin-form__text-inner">
-                                    <div className="create-pin-form__screen"></div>
+                                
+                                <div className="create-pin-form__screen"></div>
 
                                 <input 
                                     className="create-pin-form__input"
