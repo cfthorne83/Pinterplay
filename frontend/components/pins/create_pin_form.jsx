@@ -210,7 +210,7 @@ class CreatePinForm extends React.Component{
                     data: formData,
                     contentType: false, 
                     processData: false
-                })
+                }).then(
                 // this.props.createPin.then(  
                     (response) => {
                         screen.style.display = "none";
