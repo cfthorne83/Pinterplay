@@ -228,10 +228,10 @@ class CreatePinForm extends React.Component{
         });
     }
 
-    handleLoading()  {
-        let loader = document.querySelector(".loader");
-        loader.remove();
-    }
+    // handleLoading()  {
+    //     let loader = document.querySelector(".loader");
+    //     loader.remove();
+    // }
  
     pinError() {
         const dropZone = document.querySelector(".drop-zone");
@@ -332,7 +332,7 @@ class CreatePinForm extends React.Component{
                                     <div className="create-pin-form__loader">
                                         <BeatLoader 
                                             className="create-pin-form__loader"
-                                            size={25} color="red" 
+                                            size={30} color="red" 
                                             loading={this.state.loading}/>
                                     </div>
                                 </div>
