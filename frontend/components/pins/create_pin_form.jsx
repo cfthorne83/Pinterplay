@@ -145,8 +145,6 @@ class CreatePinForm extends React.Component{
 
         let deleteBtn = document.querySelector(".drop-zone__delete");
         deleteBtn.remove();
-        // debugger
-        // document.querySelector(".drop-zone__input").addEventListener("input", this.handleFile);
     }
 
     handleDrop(e) {
@@ -224,8 +222,6 @@ class CreatePinForm extends React.Component{
                                                                 image: response.pin.image_url
                                                             });
                         this.handleDelete();
-                        // document.querySelector(".drop-zone__input").addEventListener("input", that.handleFile);
-                        // debugger
                         
                     } 
                 )
