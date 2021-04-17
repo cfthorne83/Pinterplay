@@ -204,14 +204,16 @@ class CreatePinForm extends React.Component{
                     formData.append("pin[photo]", this.state.image_url);
                 }
 
-                $.ajax ({
-                    url: "/api/pins",
-                    method: "POST",
-                    data: formData,
-                    contentType: false, 
-                    processData: false
-                }).then(
-                // this.props.createPin.then(  
+                // $.ajax ({
+                //     url: "/api/pins",
+                //     method: "POST",
+                //     data: formData,
+                //     contentType: false, 
+                //     processData: false
+                // }).then(
+                // this.props.createPin.then( 
+                    debugger
+                this.props.createPin(this.formData).then(
                     (response) => {
                         screen.style.display = "none";
                         this.setState({loading: false});
