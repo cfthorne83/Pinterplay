@@ -27,15 +27,16 @@
             border-radius: 1rem;
         }
     
-        &__btn-con {
-            box-sizing: border-box;
-            width: 100%;
-            background-color: green;
-        }
+        // &__btn-con {
+        //     box-sizing: border-box;
+        //     width: 100%;
+        //     background-color: green;
+        // }
     
         &__btn {
             background-color: var(--red);
-            width: 50px;
+            // width: 50px;
+            padding: 1rem;
         }
     }
 }

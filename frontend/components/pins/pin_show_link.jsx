@@ -16,16 +16,17 @@ class PinShowLink extends React.Component{
         return (
 
             <div className="pin-show-link">
-                <div>
+                {/* <div> */}
                     <h1>Saved to {this.props.board}</h1>
                     <img src={this.props.image} alt="pin image"/>
-                </div>
+                {/* </div> */}
                 {/* <div className="pin-show-link__btn-con"> */}
                     <Link 
-                        className="pin-show-link__btn"
                         onClick={this.handleClick}
                         to={`/pins/${this.props.pinId}`}>
-                            See it now
+                            <button className="pin-show-link__btn">
+                                See it now
+                            </button>
                     </Link>
                 {/* </div> */}
             </div>
