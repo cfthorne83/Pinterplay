@@ -195,7 +195,7 @@ class CreatePinForm extends React.Component{
                 
             } else {
 
-                // this.setState({ loading: true});
+                this.setState({ loading: true});
 
                 const formData = new FormData();
                 formData.append("pin[title]", this.state.title);
@@ -204,16 +204,15 @@ class CreatePinForm extends React.Component{
                     formData.append("pin[photo]", this.state.image_url);
                 }
 
-                // $.ajax ({
-                //     url: "/api/pins",
-                //     method: "POST",
-                //     data: formData,
-                //     contentType: false, 
-                //     processData: false
-                // }).then(
-                this.props.createPin(formData).then(
+                // this.props.createPin(formData)//.then(
+                $.ajax ({
+                    url: "/api/pins",
+                    method: "POST",
+                    data: formData,
+                    contentType: false, 
+                    processData: false
+                }).then(
                     (response) => {
-                        debugger
                         screen.style.display = "none";
                         this.setState({loading: false});
                         this.props.openModal("pinShowLink", response.pin.id);

@@ -1,5 +1,11 @@
 .pin-show-link {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     img {
         width: 230px;
+        border-radius: 1rem;
     }
 }

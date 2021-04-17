@@ -28,16 +28,10 @@
             bottom: 0;
             right: 0;
             left: 0;
-            background-color: rgba(0, 0, 0, 0.452);
+            background-color: rgba(255, 255, 255, 0.664);
             position: absolute;
             display: none;
         }
-
-        // &__loader {
-        //     position: absolute;
-        //     top: 50%;
-        //     left: 50%;
-        // }
 
         &__drop {
             display: flex;
