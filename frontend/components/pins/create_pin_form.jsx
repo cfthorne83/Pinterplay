@@ -213,19 +213,19 @@ class CreatePinForm extends React.Component{
                 // }).then(
                 // this.props.createPin.then( 
                     debugger
-                this.props.createPin(this.formData).then(
-                    (response) => {
-                        screen.style.display = "none";
-                        this.setState({loading: false});
-                        this.props.openModal("pinShowLink", response.pin.id);
-                        this.props.openModal("pinShowLink", { 
-                                                                id: response.pin.id, 
-                                                                board: board.innerText,
-                                                                image: response.pin.image_url
-                                                            });
-                        this.handleDelete();
-                    } 
-                )
+                this.props.createPin(this.formData)//.then(
+                //     (response) => {
+                //         screen.style.display = "none";
+                //         this.setState({loading: false});
+                //         this.props.openModal("pinShowLink", response.pin.id);
+                //         this.props.openModal("pinShowLink", { 
+                //                                                 id: response.pin.id, 
+                //                                                 board: board.innerText,
+                //                                                 image: response.pin.image_url
+                //                                             });
+                //         this.handleDelete();
+                //     } 
+                // )
             }
         });
     }
