@@ -41,9 +41,9 @@ export const fetchPin = (pinId) => {
     }
 }
 
-export const createPin = (pin) => {
+export const createPin = (formData) => {
     return dispatch => {
-        return PinApiUtil.createPin(pin).then(pin => {
+        return PinApiUtil.createPin(formData).then(pin => {
             dispatch(receivePin(pin))
         })
     }

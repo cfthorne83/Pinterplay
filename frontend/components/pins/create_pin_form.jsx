@@ -195,7 +195,7 @@ class CreatePinForm extends React.Component{
                 
             } else {
 
-                this.setState({ loading: true});
+                // this.setState({ loading: true});
 
                 const formData = new FormData();
                 formData.append("pin[title]", this.state.title);
@@ -211,21 +211,20 @@ class CreatePinForm extends React.Component{
                 //     contentType: false, 
                 //     processData: false
                 // }).then(
-                // this.props.createPin.then( 
-                    debugger
-                this.props.createPin(this.formData)//.then(
-                //     (response) => {
-                //         screen.style.display = "none";
-                //         this.setState({loading: false});
-                //         this.props.openModal("pinShowLink", response.pin.id);
-                //         this.props.openModal("pinShowLink", { 
-                //                                                 id: response.pin.id, 
-                //                                                 board: board.innerText,
-                //                                                 image: response.pin.image_url
-                //                                             });
-                //         this.handleDelete();
-                //     } 
-                // )
+                this.props.createPin(formData).then(
+                    (response) => {
+                        debugger
+                        screen.style.display = "none";
+                        this.setState({loading: false});
+                        this.props.openModal("pinShowLink", response.pin.id);
+                        this.props.openModal("pinShowLink", { 
+                                                                id: response.pin.id, 
+                                                                board: board.innerText,
+                                                                image: response.pin.image_url
+                                                            });
+                        this.handleDelete();
+                    } 
+                )
             }
         });
     }
