@@ -20,7 +20,7 @@ class PinShowLink extends React.Component{
                     <h1>Saved to {this.props.board}</h1>
                     <img src={this.props.image} alt="pin image"/>
                 {/* </div> */}
-                {/* <div className="pin-show-link__btn-con"> */}
+                <div className="pin-show-link__btn-con">
                     <Link 
                         onClick={this.handleClick}
                         to={`/pins/${this.props.pinId}`}>
@@ -28,7 +28,7 @@ class PinShowLink extends React.Component{
                                 See it now
                             </button>
                     </Link>
-                {/* </div> */}
+                </div>
             </div>
         )
     }

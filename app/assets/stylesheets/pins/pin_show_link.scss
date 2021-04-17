@@ -12,31 +12,49 @@
 
 .pin-show-link-mod {
     box-sizing: border-box;
-    background-color: pink;
-    padding: 1rem;
-
+    // background-color: pink;
+    width: 50%;
+    min-width: 300px;
+    // padding: 1rem;
+    
     .pin-show-link {
-        background-color: red;
+        min-height: 500px;
+        border-radius: var(--b-rad-lg);
+        // background-color: red;
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: space-between;
         box-sizing: border-box;
+
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            text-align: center;
+            padding: 2rem 0;
+            letter-spacing: var(--lett-space);
+        }
     
         img {
             width: 230px;
             border-radius: 1rem;
         }
     
-        // &__btn-con {
-        //     box-sizing: border-box;
-        //     width: 100%;
-        //     background-color: green;
-        // }
+        &__btn-con {
+            box-sizing: border-box;
+            width: 100%;
+            // background-color: green;
+            border-top: 1px solid var(--grey);
+            display: flex;
+            justify-content: flex-end;
+            border-radius: 0 0 var(--b-rad-lg) var(--b-rad-lg);
+            margin-top: 2rem;
+        }
     
         &__btn {
-            background-color: var(--red);
-            // width: 50px;
-            padding: 1rem;
+            @include btn;
+            @include red-btn;
+            margin: .8rem;
         }
     }
 }
