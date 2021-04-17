@@ -54,13 +54,13 @@ const Modal = ({ modal, closeModal, errors }) =>  {
             break;
         case 'pinShowLink':
             component = <PinShowLinkContainer/>;
-            modalClass = "edit-photo-mod";
+            modalClass = "pin-show-link-mod";
             break;
         default:
             return null;
     }
     return (
-        <div className="modal-background" onClick={closeModal}> onClick={closeScreen}>
+        <div className="modal-background" onClick={closeModal}>
             <div className={`modal-child ${modalClass}`} onClick={e => e.stopPropagation()}>
                 {component}
             </div>
