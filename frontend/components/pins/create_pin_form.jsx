@@ -204,21 +204,16 @@ class CreatePinForm extends React.Component{
                     formData.append("pin[photo]", this.state.image_url);
                 }
 
-                // console.log(Array.from(formData)); 
-
                 $.ajax ({
                     url: "/api/pins",
                     method: "POST",
                     data: formData,
                     contentType: false, 
                     processData: false
-                }).then(
-                    // (response) => console.log(response.message),
-                    // (response) => console.log(response.pin.id)
-                    // this.setState({loading: true}),  
+                })
+                // this.props.createPin.then(  
                     (response) => {
-                        // this.setState({ newPinId: response.pin.id });
-                        // console.log(this.state);
+                        screen.style.display = "none";
                         this.setState({loading: false});
                         this.props.openModal("pinShowLink", response.pin.id);
                         this.props.openModal("pinShowLink", { 
@@ -226,6 +221,7 @@ class CreatePinForm extends React.Component{
                                                                 board: board.innerText,
                                                                 image: response.pin.image_url
                                                             });
+                        this.handleDelete();
                     } 
                 )
             }
