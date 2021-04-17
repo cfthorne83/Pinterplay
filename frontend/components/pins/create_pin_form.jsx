@@ -52,7 +52,7 @@ class CreatePinForm extends React.Component{
 
         let that = this;
 
-
+        // debugger
         const file = e.currentTarget.files[0];
         const reader = new FileReader();
         reader.onloadend = () => {
@@ -145,6 +145,8 @@ class CreatePinForm extends React.Component{
 
         let deleteBtn = document.querySelector(".drop-zone__delete");
         deleteBtn.remove();
+        // debugger
+        // document.querySelector(".drop-zone__input").addEventListener("input", this.handleFile);
     }
 
     handleDrop(e) {
@@ -191,7 +193,7 @@ class CreatePinForm extends React.Component{
             } else {
 
                 this.setState({ loading: true});
-                
+
                 const screen = document.querySelector(".create-pin-form__screen");
                 screen.style.display = "flex";
                 screen.style.justifyContent = "center";
@@ -222,8 +224,11 @@ class CreatePinForm extends React.Component{
                                                                 image: response.pin.image_url
                                                             });
                         this.handleDelete();
+                        document.querySelector(".drop-zone__input").addEventListener("input", this.handleFile);
+                        debugger
+                        
                     } 
-                )
+                    )
             }
         });
     }
@@ -321,7 +326,7 @@ class CreatePinForm extends React.Component{
                                     type="file"
                                     className="drop-zone__input"
                                     multiple accept="image/*"
-                                    onChange={this.handleFile} 
+                                    onInput={this.handleFile} 
                                 />
                         </div>
 
