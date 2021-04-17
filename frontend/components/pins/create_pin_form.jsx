@@ -76,7 +76,7 @@ class CreatePinForm extends React.Component{
         //         dropZoneImg.src = `${image}`;
         // };
         
-        if (!deleteBtn){
+        // if (!deleteBtn){
             deleteBtn = document.createElement("button");
             deleteBtn.classList.add("drop-zone__delete");
             deleteBtn.addEventListener("click", that.handleDelete);
@@ -94,7 +94,7 @@ class CreatePinForm extends React.Component{
             
             dropZoneImg.style.width = "90%";
             dropZoneImg.style.borderRadius = "1rem";
-        }
+        // }
         this.dropZoneReset();
     }
 
@@ -175,11 +175,6 @@ class CreatePinForm extends React.Component{
     handleSubmit(e) {
         e.stopPropagation();
 
-        const screen = document.querySelector(".create-pin-form__screen");
-        screen.style.display = "flex";
-        screen.style.justifyContent = "center";
-        screen.style.alignItems = "center";
-
         let board = document.querySelector(".selected-board");        
         this.setState({ board_id: board.dataset.id}, () => {
                 // console.log(this.state);
@@ -196,6 +191,11 @@ class CreatePinForm extends React.Component{
             } else {
 
                 this.setState({ loading: true});
+                
+                const screen = document.querySelector(".create-pin-form__screen");
+                screen.style.display = "flex";
+                screen.style.justifyContent = "center";
+                screen.style.alignItems = "center";
 
                 const formData = new FormData();
                 formData.append("pin[title]", this.state.title);
