@@ -176,7 +176,7 @@ class CreatePinForm extends React.Component{
     
     handleSubmit(e) {
         e.stopPropagation();
-
+        // let that = this;
         let board = document.querySelector(".selected-board");        
         this.setState({ board_id: board.dataset.id}, () => {
                 // console.log(this.state);
@@ -224,11 +224,11 @@ class CreatePinForm extends React.Component{
                                                                 image: response.pin.image_url
                                                             });
                         this.handleDelete();
-                        document.querySelector(".drop-zone__input").addEventListener("input", this.handleFile);
-                        debugger
+                        // document.querySelector(".drop-zone__input").addEventListener("input", that.handleFile);
+                        // debugger
                         
                     } 
-                    )
+                )
             }
         });
     }
