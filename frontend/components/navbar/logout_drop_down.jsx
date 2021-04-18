@@ -3,7 +3,7 @@ import React from 'react';
 class LogoutDropdown extends React.Component{
     constructor(props){
         super(props);
-        this.state = { show: false }
+        this.state = { show: true }
 
         this.handleClick = this.handleClick.bind(this);
         this.handleBlur = this.handleBlur.bind(this);
@@ -24,8 +24,8 @@ class LogoutDropdown extends React.Component{
         return (
             <button 
                 className='dropdown-outer'
-                onClick={this.handleClick} 
-                onBlur={this.handleBlur}
+                // onClick={this.handleClick} 
+                // onBlur={this.handleBlur}
                 >
     
                 <span>
@@ -35,6 +35,7 @@ class LogoutDropdown extends React.Component{
                         <div className='dropdown-inner'>
                             
                                
+                        <h3>Options</h3>
                         <button onClick={this.props.logout}>
                             Log out
                         </button> 
