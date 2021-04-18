@@ -68,13 +68,6 @@ class CreatePinForm extends React.Component{
         if (dropZoneInner) {
             dropZoneInner.style.display = "none";
         }
-
-       
-        // reader.onload = () => {
-        //     let image = reader.result;
-        //     this.setState({ image_url: image });
-        //         dropZoneImg.src = `${image}`;
-        // };
         
         // if (!deleteBtn){
             deleteBtn = document.createElement("button");
@@ -222,7 +215,8 @@ class CreatePinForm extends React.Component{
                                                                 image: response.pin.image_url
                                                             });
                         this.handleDelete();
-                        
+                        e.currentTarget.value = null;
+                        debugger
                     } 
                 )
             }
