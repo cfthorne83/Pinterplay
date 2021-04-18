@@ -14,10 +14,12 @@ class PinIndex extends React.Component {
     }
 
     pinCount() {
-        if (this.props.pins.length === 1) {
+        if (this.props.pins.length === 1 && this.props.board) {
             return <h1>1 Pin</h1>; 
-        } else {
+        } else if (this.props.board) {
             return <h1>{this.props.pins.length} Pins</h1>;
+        } else {
+            return null;
         }
     }
 

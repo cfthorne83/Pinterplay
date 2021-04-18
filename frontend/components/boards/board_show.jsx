@@ -33,7 +33,7 @@ class BoardShow extends React.Component {
                             alt="edit-form-link"
                             className='edit-form-link'/>
                     </div>
-                        <PinIndexContainer board={this.props.board} />
+                        <PinIndexContainer board={this.props.board}/>
                         <CreatePinDropdownContainer />
                 </div>
         );
