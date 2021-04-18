@@ -56,15 +56,15 @@ class ProfileSettings extends React.Component {
             );
         } else if (currentUser.fname) {
             return (
-                <div className="initial">
+                <span className="edit-profile-form__initial">
                     {currentUser.fname[0].toUpperCase()}
-                </div>
+                </span>
             );
         } else {
             return (
-                <div className="initial">
+                <span className="edit-profile-form__initial">
                     {currentUser.email[0].toUpperCase()}
-                </div>     
+                </span>     
             );
         }
     }
@@ -83,8 +83,8 @@ class ProfileSettings extends React.Component {
                     
                     <section className="photo-con">
                         <h3>Photo</h3>
-                        {this.profilePic()}
                         <div className="photo-change">
+                        {this.profilePic()}
                             <button onClick={this.updatePhoto}>Change</button>
                         </div>
                     </section>
