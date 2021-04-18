@@ -25,6 +25,10 @@ class CreateDropdown extends React.Component{
         this.props.openModal('createBoard');
     }
 
+    boardLink() {
+        
+    }
+
     render() {
 
         return (
@@ -51,7 +55,6 @@ class CreateDropdown extends React.Component{
                                 <input type="submit"   
                                     value="Pin"
                                 />
-
                             </Link>
                 
                         </div>
