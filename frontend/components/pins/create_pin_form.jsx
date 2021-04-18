@@ -44,6 +44,7 @@ class CreatePinForm extends React.Component{
 
     // adds delete btn and displays file image
     handleFile(e) {
+        debugger
         let dropZone = document.querySelector(".drop-zone");
         let deleteBtn = document.querySelector(".drop-zone__delete");
         let dropZoneInner = document.querySelector(".drop-zone__inner");
@@ -52,7 +53,6 @@ class CreatePinForm extends React.Component{
 
         let that = this;
 
-        // debugger
         const file = e.currentTarget.files[0];
         const reader = new FileReader();
         reader.onloadend = () => {
