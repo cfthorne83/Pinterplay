@@ -44,7 +44,6 @@ class CreatePinForm extends React.Component{
 
     // adds delete btn and displays file image
     handleFile(e) {
-        debugger
         let dropZone = document.querySelector(".drop-zone");
         let deleteBtn = document.querySelector(".drop-zone__delete");
         let dropZoneInner = document.querySelector(".drop-zone__inner");
@@ -64,12 +63,11 @@ class CreatePinForm extends React.Component{
             reader.readAsDataURL(file);
         }
 
-
         if (dropZoneInner) {
             dropZoneInner.style.display = "none";
         }
         
-        // if (!deleteBtn){
+        if (!deleteBtn){
             deleteBtn = document.createElement("button");
             deleteBtn.classList.add("drop-zone__delete");
             deleteBtn.addEventListener("click", that.handleDelete);
@@ -87,7 +85,7 @@ class CreatePinForm extends React.Component{
             
             dropZoneImg.style.width = "90%";
             dropZoneImg.style.borderRadius = "1rem";
-        // }
+        }
         this.dropZoneReset();
     }
 
@@ -215,8 +213,8 @@ class CreatePinForm extends React.Component{
                                                                 image: response.pin.image_url
                                                             });
                         this.handleDelete();
-                        e.currentTarget.value = null;
-                        debugger
+                        const input = document.querySelector(".drop-zone__input");
+                        input.value = null;
                     } 
                 )
             }
