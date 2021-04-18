@@ -48,6 +48,27 @@ class ProfileSettings extends React.Component {
         console.log(this.state);
     }
 
+    profilePic() {
+        const currentUser = this.props.currentUser;
+        if (this.props.imageUrl) {
+            return (
+                <img src={this.props.imageUrl} alt="profile-pic"/>
+            );
+        } else if (currentUser.fname) {
+            return (
+                <div className="initial">
+                    {currentUser.fname[0].toUpperCase()}
+                </div>
+            );
+        } else {
+            return (
+                <div className="initial">
+                    {currentUser.email[0].toUpperCase()}
+                </div>     
+            );
+        }
+    }
+
     render() {
 
         if (!this.props.currentUser) return null;
@@ -62,8 +83,8 @@ class ProfileSettings extends React.Component {
                     
                     <section className="photo-con">
                         <h3>Photo</h3>
+                        {this.profilePic()}
                         <div className="photo-change">
-                            <img src={this.props.imageUrl} alt="profile-pic"/>
                             <button onClick={this.updatePhoto}>Change</button>
                         </div>
                     </section>
@@ -73,7 +94,7 @@ class ProfileSettings extends React.Component {
                             <h3>First Name</h3>
                                 <input 
                                     type="text"
-                                    value={this.state.fname}
+                                    value={this.state.fname || ""}
                                     onChange={this.updateFname}/>
                         </div>
                         
@@ -81,7 +102,7 @@ class ProfileSettings extends React.Component {
                             <h3>Last Name</h3>
                                 <input 
                                     type="text"
-                                    value={this.state.lname}
+                                    value={this.state.lname || ""}
                                     onChange={this.updateLname}/>
                         </div>
                     </section>
@@ -92,7 +113,7 @@ class ProfileSettings extends React.Component {
                             <input 
                                 className="username__input"
                                 type="text"
-                                value={this.state.username}
+                                value={this.state.username || ""}
                                 onChange={this.updateUsername}/>
                                 <h4>www.mypin.com/{this.state.username}</h4>
                     </section>
