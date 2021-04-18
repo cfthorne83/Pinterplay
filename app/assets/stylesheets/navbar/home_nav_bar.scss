@@ -1,3 +1,9 @@
+@mixin small-text {
+    font-size: .8rem;
+    font-weight: 100;
+    letter-spacing: var(--lett-space);
+}
+
 .home-nav-bar {
     // position: fixed;
     // top: 0;
@@ -145,9 +151,10 @@
         margin-top: 16px;
         font-size: 16px;
         padding: 7px;
-        text-align: center;
+        // text-align: center;
         background-color: white;
         box-shadow: var(--drop-box-shad);
+        padding: 1rem;
 
         // .dropdown-inner:hover {
         //     background-color: rgb(219, 218, 218);
@@ -155,13 +162,15 @@
         // }
 
         h3 {
-
+            padding: .6rem;
+            @include small-text;
         }
         
         button {
             width: 100%;
-            height: 28px;
-            border-radius: 14px;
+            border-radius: .6rem;
+            padding: .6rem;
+            cursor: pointer;
         }
 
         button:hover {
