@@ -91,6 +91,7 @@ class Profile extends React.Component{
                     <CreateDropdown 
                         className="board-pin-drop"
                         openModal={this.props.openModal}
+                        board={this.props.lastBoard}
                     />
                 </section>
                 

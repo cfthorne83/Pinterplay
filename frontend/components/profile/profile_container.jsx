@@ -6,7 +6,7 @@ import Profile from './profile';
 const mSTP = (state, ownProps) => {
     return {
         currentUser: state.entities.users[state.session.id],
-        last_board: Object.values(state.entities.boards)[0]
+        lastBoard: Object.values(state.entities.boards)[0]
     };
 };
 
