@@ -13,26 +13,30 @@ demo_user = User.create(
                         password: "123456"
                     )
 
-board = Board.create(
-                        title: "board1", 
-                        description: "description1", 
-                        user_id: demo_user.id
-                    )   
-
-Pin.create(
-            title: "pin1", 
-            user_id: demo_user.id,
-            board_id: board.id
-        )
-
-Pin.create(
-            title: "pin2",
-            user_id: demo_user.id,
-            board_id: board.id
-        )
-
-Pin.create(
-            title: "pin3",
-            user_id: demo_user.id,
-            board_id: board.id
-        )
+Board.create([
+    {
+        title: "Fire", 
+        description: "Fire!", 
+        user_id: demo_user.id   
+    },
+    {
+        title: "Water", 
+        description: "Water!", 
+        user_id: demo_user.id   
+    },
+    {
+        title: "Earth", 
+        description: "Earth!", 
+        user_id: demo_user.id   
+    },
+    {
+        title: "Air", 
+        description: "Air!", 
+        user_id: demo_user.id   
+    },
+    {
+        title: "Ice", 
+        description: "Ice!", 
+        user_id: demo_user.id   
+    }
+])
