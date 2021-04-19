@@ -45,7 +45,7 @@ board = Board.create(
 
 # demo_user = User.create(username: "Andy", email: "andy@email.com", password: "password")
 
-pin = Pin.create(title: "test", board_id: board.id)
+pin = Pin.create(title: "test", board_id: board.id, user_id: demo_user.id)
 # debugger
 # file = open('https://mypin-ct-dev.us-east-1.amazonaws.com/DoK7jF9urfjU8QcYEVpmbCHR')
 # file = open("https://hyperallergic.com/wp-content/uploads/2021/04/The-GREEN-Rendering_captioned-1200x900.jpeg?crop=1")
