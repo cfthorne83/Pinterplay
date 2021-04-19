@@ -47,6 +47,6 @@ board = Board.create(
 
 pin = Pin.create(title: "test", board_id: board.id)
 
-file = open('https://mypin-ct-pro.us-east-1.amazonaws.com//Users/christopherthorne/Desktop/fran-hogan-gMca5DJ25Qo-unsplash.jpg')
+file = open('https://mypin-ct-dev.us-east-1.amazonaws.com/DoK7jF9urfjU8QcYEVpmbCHR')
 
-pin.photo.attach(io: file, filename: 'fran-hogan-gMca5DJ25Qo-unsplash.jpg')
+pin.photo.attach(io: file, filename: 'DoK7jF9urfjU8QcYEVpmbCHR')
