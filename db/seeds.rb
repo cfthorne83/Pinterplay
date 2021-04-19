@@ -47,6 +47,7 @@ board = Board.create(
 
 pin = Pin.create(title: "test", board_id: board.id)
 
-file = open('https://mypin-ct-dev.us-east-1.amazonaws.com/DoK7jF9urfjU8QcYEVpmbCHR')
-
-pin.photo.attach(io: file, filename: 'DoK7jF9urfjU8QcYEVpmbCHR')
+# file = open('https://mypin-ct-dev.us-east-1.amazonaws.com/DoK7jF9urfjU8QcYEVpmbCHR')
+file = open("https://hyperallergic.com/wp-content/uploads/2021/04/The-GREEN-Rendering_captioned-1200x900.jpeg?crop=1")
+debugger
+pin.photo.attach(io: file, filename: 'The-GREEN-Rendering_captioned-1200x900.jpeg')
