@@ -43,3 +43,11 @@ Board.create([
         user_id: demo_user.id   
     }
 ])
+
+# demo_user = User.create(username: "Andy", email: "andy@email.com", password: "password")
+
+pin = Pin.create(title: "test")
+
+file = open('https://mypin-ct-dev.us-east-1.amazonaws.com/https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y29kZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')
+
+pin.photo.attach(io: file, filename: 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y29kZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')
