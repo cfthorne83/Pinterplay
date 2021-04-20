@@ -50,5 +50,7 @@ pin = Pin.create(title: "test", board_id: board.id, user_id: demo_user.id)
 # file = open('https://mypin-ct-dev.us-east-1.amazonaws.com/DoK7jF9urfjU8QcYEVpmbCHR')
 # file = open("https://hyperallergic.com/wp-content/uploads/2021/04/The-GREEN-Rendering_captioned-1200x900.jpeg?crop=1")
 # debugger
-file = File.open("/Users/christopherthorne/Desktop/fran-hogan-gMca5DJ25Qo-unsplash.jpg")
+# file = File.open("/Users/christopherthorne/Desktop/fran-hogan-gMca5DJ25Qo-unsplash.jpg")
+https://images.unsplash.com/photo-1487139975590-b4f1dce9b035?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80
+
 pin.photo.attach(io: file, filename: 'fran-hogan-gMca5DJ25Qo-unsplash.jpg')
