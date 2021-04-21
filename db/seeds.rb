@@ -46,5 +46,5 @@ board = Board.create(
 pin = Pin.create(title: "test", board_id: board.id, user_id: demo_user.id)
 # file = File.open("/Users/christopherthorne/Desktop/fran-hogan-gMca5DJ25Qo-unsplash.jpg")
 file = open('https://mypin-seeds.s3.amazonaws.com/fran-hogan-gMca5DJ25Qo-unsplash.jpg')
-pin.photo.attach(io: file, filename: 'test.jpg')
+pin.photo.attach(io: file, filename: 'fran-hogan-gMca5DJ25Qo-unsplash.jpg')
 pin.save
