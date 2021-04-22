@@ -18,27 +18,27 @@ demo_user = User.create(
 
 board = Board.create(
         title: "Abstract", 
-        description: "Abstract stuff", 
+        description: "Abstract stuff!", 
         user_id: demo_user.id   
     )
 #     {
-#         title: "Water", 
-#         description: "Water!", 
+#         title: "Geometric", 
+#         description: "Geometric stuff!", 
 #         user_id: demo_user.id   
 #     },
 #     {
-#         title: "Earth", 
-#         description: "Earth!", 
+#         title: "Distorted", 
+#         description: "Distorted stuff!", 
 #         user_id: demo_user.id   
 #     },
 #     {
-#         title: "Air", 
-#         description: "Air!", 
+#         title: "Representational", 
+#         description: "Representational stufff!", 
 #         user_id: demo_user.id   
 #     },
 #     {
-#         title: "Ice", 
-#         description: "Ice!", 
+#         title: "Figurative", 
+#         description: "Figurative stuff!", 
 #         user_id: demo_user.id   
 #     }
 # ])
