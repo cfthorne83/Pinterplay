@@ -17,8 +17,8 @@ demo_user = User.create(
                     )
 
 board = Board.create(
-        title: "Fire", 
-        description: "Fire!", 
+        title: "Abstract", 
+        description: "Abstract stuff", 
         user_id: demo_user.id   
     )
 #     {
