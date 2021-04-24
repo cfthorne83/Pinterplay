@@ -29,9 +29,9 @@ class PinIndex extends React.Component {
 
     render() {
 
-        if (!this.props.pins){
-            return null;
-        }
+        // if (!this.props.pins){
+        //     return null;
+        // }
         
         
         let pins = this.props.pins.map(pin => {
@@ -49,9 +49,10 @@ class PinIndex extends React.Component {
         return (
             
             <div className="pin-index-con">
-                {this.pinCount()}
+                {/* {this.pinCount()} */}
                 <ul className='pin-index'>
-                    {pins}
+                    {/* {pins} */}
+                    
                 </ul>  
             </div>
     
