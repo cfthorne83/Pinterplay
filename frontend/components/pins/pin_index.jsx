@@ -67,14 +67,14 @@ class PinIndex extends React.Component {
                     <div className="pin-index__item">
                         <img  src="https://images.unsplash.com/photo-1560579499-ab30d29dfd9a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt=""/>
                     </div>
-                    <div className="pin-index__item">
-                        <img  src="" alt=""/>
+                    {/* <div className="pin-index__item">
+                        <img  src="https://images.unsplash.com/photo-1601159091942-9241e4b36c4e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=709&q=80" alt=""/>
                     </div>
                     <div className="pin-index__item">
-                        <img  src="" alt=""/>
-                    </div>
+                        <img  src="https://images.unsplash.com/photo-1599665931057-2edc467008eb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=357&q=80" alt=""/>
+                    </div> */}
                     <div className="pin-index__item">
-                        <img  src="" alt=""/>
+                        <img  src="https://images.unsplash.com/photo-1518656291-ba160b5554e9?ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8OTB8Njk5NjM3ODh8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60" alt=""/>
                     </div>
                     <div className="pin-index__item">
                         <img  src="" alt=""/>
