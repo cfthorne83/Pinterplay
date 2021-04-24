@@ -79,59 +79,14 @@ class PinIndex extends React.Component {
                     <div className="pin-index__item">
                         <img  src="https://images.unsplash.com/photo-1506813561347-cbbdf7b3f520?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTEwfDY5OTYzNzg4fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=400&q=60" alt=""/>
                     </div>
-                    {/* <div className="pin-index__item">
-                        <img  src="https://images.unsplash.com/photo-1535376472810-5d229c65da09?ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8NDh8Njk5NjM3ODh8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60" alt=""/>
-                    </div> */}
-                    {/* <div className="pin-index__item">
-                        <img  src="https://images.unsplash.com/photo-1579783900613-6eba8db797a8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8NHw2OTk2Mzc4OHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=400&q=60" alt=""/>
-                    </div> */}
-                    {/* <div className="pin-index__item">
-                        <img  src="https://images.unsplash.com/photo-1578301978018-3005759f48f7?ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTR8Njk5NjM3ODh8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60" alt=""/>
-                    </div> */}
-                    {/* <div className="pin-index__item">
-                        <img  src="https://images.unsplash.com/photo-1581592487771-132f53bd2b48?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTJ8Njk5NjM3ODh8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=60" alt=""/>
-                    </div> */}
-                    {/* <div className="pin-index__item">
-                        <img  src="https://images.unsplash.com/photo-1518350889293-e1eb9449956a?ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MjR8Njk5NjM3ODh8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60" alt=""/>
-                    </div> */}
-                    {/* <div className="pin-index__item">
-                        <img  src="https://images.unsplash.com/photo-1495482432709-15807c8b3e2b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8NjB8Njk5NjM3ODh8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=60" alt=""/>
-                    </div> */}
                     <div className="pin-index__item">
                         <img  src="https://images.unsplash.com/photo-1520642197828-b053b701d590?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8Njd8Njk5NjM3ODh8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=60" alt=""/>
                     </div>
-                    {/* <div className="pin-index__item">
-                        <img  src="https://images.unsplash.com/photo-1531164659940-21e9011115f7?ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8Nzh8Njk5NjM3ODh8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60" alt=""/>
-                    </div> */}
                     <div className="pin-index__item">
                         <img  src="https://images.unsplash.com/photo-1562576650-27130b06c0ab?ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8OTV8Njk5NjM3ODh8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60" alt=""/>
                     </div>
                     <div className="pin-index__item">
-                        <img  src="https://images.unsplash.com/photo-1599894019794-50339c9ad89c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTE2fDY5OTYzNzg4fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=400&q=60" alt=""/>
-                    </div>
-                    <div className="pin-index__item">
-                        <img  src="https://images.unsplash.com/photo-1578926375605-eaf7559b1458?ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTIyfDY5OTYzNzg4fHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60" alt=""/>
-                    </div>
-                    <div className="pin-index__item">
-                        <img  src="https://images.unsplash.com/photo-1552728334-2fe0294b5a08?ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8NDl8Njk5NjM3ODh8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60" alt=""/>
-                    </div>
-                    <div className="pin-index__item">
                         <img  src="https://images.unsplash.com/photo-1509114397022-ed747cca3f65?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8YWJzdHJhY3QlMjBwaW5rfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60" alt=""/>
-                    </div>
-                    <div className="pin-index__item">
-                        <img  src="https://images.unsplash.com/photo-1496450080853-5f78c43af9e9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDh8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=400&q=60" alt=""/>
-                    </div>
-                    <div className="pin-index__item">
-                        <img  src="https://images.unsplash.com/photo-1496147195884-6ab7f7c0a027?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt=""/>
-                    </div>
-                    <div className="pin-index__item">
-                        <img  src="https://images.unsplash.com/photo-1506815444479-bfdb1e96c566?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8cGluayUyMHNreXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=300&q=60" alt=""/>
-                    </div>
-                    <div className="pin-index__item">
-                        <img  src="https://images.unsplash.com/photo-1514893077758-a486369778b6?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDV8fHBpbmslMjBza3l8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=60" alt=""/>
-                    </div>
-                    <div className="pin-index__item">
-                        <img  src="https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHBpbmslMjBzdGFyc3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60" alt=""/>
                     </div>
                     <div className="pin-index__item">
                         <img  src="" alt=""/>
