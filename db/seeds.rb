@@ -16,37 +16,43 @@ demo_user = User.create(
                         password: "123456"
                     )
 
-board = Board.create([
-    {
-        title: "Blue", 
-        description: "Blue!", 
-        user_id: demo_user.id   
-    },
-#     {
-#         title: "Light", 
-#         description: "Pastels!", 
-#         user_id: demo_user.id   
-#     },
-#     {
-#         title: "Pink", 
-#         description: "Pink!", 
-#         user_id: demo_user.id   
-#     },
-#     {
-#         title: "Dark", 
-#         description: "Mood!", 
-#         user_id: demo_user.id   
-#     },
-#     {
-#         title: "Gold", 
-#         description: "Gold!", 
-#         user_id: demo_user.id   
-#     }
-# ])
+blue = Board.create(
+                title: "Blue", 
+                description: "Blue!", 
+                user_id: demo_user.id   
+            )            
+light = Board.create(
+                title: "Pastel", 
+                description: "Pastel!", 
+                user_id: demo_user.id   
+            )
+pink = Board.create(
+                title: "Pink", 
+                description: "Pink!", 
+                user_id: demo_user.id   
+            )
+dark = Board.create(
+                title: "Shadow", 
+                description: "Shadow!", 
+                user_id: demo_user.id   
+            )
+gold = Board.create(
+                title: "Gold", 
+                description: "Gold!", 
+                user_id: demo_user.id   
+            )
 
-pin = Pin.create(title: "test", board_id: board.id, user_id: demo_user.id)
+boards = ["blue", "light", "pink", "dark", "gold"]
+
+boards.each do |board|
+    (0..9).each do |index|
+
+    end
+end
+
+pin = Pin.create(title: "Blue 0", board_id: blue.id, user_id: demo_user.id)
 # file = File.open("/Users/christopherthorne/Desktop/fran-hogan-gMca5DJ25Qo-unsplash.jpg")
-file = URI.open('https://mypin-seeds.s3.amazonaws.com/fran-hogan-gMca5DJ25Qo-unsplash.jpg')
+file = URI.open('https://mypin-seeds.s3.amazonaws.com/b0.jpg')
 # file = open('https://i.ytimg.com/vi/MRfIkTwUxIw/maxresdefault.jpg')
 # pin.photo.attach(io: file, filename: 'fran-hogan-gMca5DJ25Qo-unsplash.jpg')
 pin.photo.attach(io: file, filename: 'test.jpg')
