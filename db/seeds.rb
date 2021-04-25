@@ -42,18 +42,15 @@ gold = Board.create(
                 user_id: demo_user.id   
             )
 
-boards = ["blue", "light", "pink", "dark", "gold"]
+boards = ["Blue", "Light", "Pink", "Dark", "Gold"]
+nums = ["One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen"]
 
 boards.each do |board|
-    (0..9).each do |index|
-
+    (0..2).each do |i| 
+        initial = board[0].downcase+ "i"
+        pin = Pin.create(title: "#{board} #{nums[i]}", board_id: board.id, user_id: demo_user.id)
+        file = URI.open('https://mypin-seeds.s3.amazonaws.com/#{initial}.jpg')
+        pin.photo.attach(io: file, filename: '#{initial}.jpg')
+        pin.save
     end
 end
-
-pin = Pin.create(title: "Blue 0", board_id: blue.id, user_id: demo_user.id)
-# file = File.open("/Users/christopherthorne/Desktop/fran-hogan-gMca5DJ25Qo-unsplash.jpg")
-file = URI.open('https://mypin-seeds.s3.amazonaws.com/b0.jpg')
-# file = open('https://i.ytimg.com/vi/MRfIkTwUxIw/maxresdefault.jpg')
-# pin.photo.attach(io: file, filename: 'fran-hogan-gMca5DJ25Qo-unsplash.jpg')
-pin.photo.attach(io: file, filename: 'test.jpg')
-pin.save
