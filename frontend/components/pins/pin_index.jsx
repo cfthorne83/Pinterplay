@@ -326,9 +326,6 @@ class PinIndex extends React.Component {
                         <img  src="https://images.unsplash.com/photo-1601832836543-c7582a412b25?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Z3JhZml0dGklMjBkYXJrfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60" alt=""/>
                     </div>
                     <div className="pin-index__item">
-                        <img  src="https://images.unsplash.com/photo-1488730792340-bdc88feffb98?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTB8fGdyYWZpdHRpJTIwZGFya3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60" alt=""/>
-                    </div>
-                    <div className="pin-index__item">
                         <img  src="https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTN8fGdyYWZpdHRpJTIwZGFya3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" alt=""/>
                     </div>
                     <div className="pin-index__item">
@@ -344,16 +341,13 @@ class PinIndex extends React.Component {
                         <img  src="https://images.unsplash.com/photo-1529578168432-30b16c2f66fe?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Z29sZCUyMG1vb258ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60" alt=""/>
                     </div>
                     <div className="pin-index__item">
-                        <img  src="" alt=""/>
+                        <img  src="https://images.unsplash.com/photo-1577049092145-c8c58b21f33f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjJ8fHZhbiUyMGdvZ2h8ZW58MHx8MHx8&auto=format&fit=crop&w=400&q=60" alt=""/>
                     </div>
                     <div className="pin-index__item">
-                        <img  src="" alt=""/>
+                        <img  src="https://images.unsplash.com/photo-1615304001748-fde575b7d968?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8dmFuJTIwZ29naHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60" alt=""/>
                     </div>
                     <div className="pin-index__item">
-                        <img  src="" alt=""/>
-                    </div>
-                    <div className="pin-index__item">
-                        <img  src="" alt=""/>
+                        <img  src="https://images.unsplash.com/photo-1493841160601-33a4807cb6de?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8dmFuJTIwZ29naHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60" alt=""/>
                     </div>
                 </ul>  
             </div>
