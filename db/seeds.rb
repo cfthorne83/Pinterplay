@@ -16,29 +16,30 @@ demo_user = User.create(
                         password: "123456"
                     )
 
-board = Board.create(
-        title: "Abstract", 
-        description: "Abstract stuff!", 
+board = Board.create([
+    {
+        title: "Blue", 
+        description: "Blue!", 
         user_id: demo_user.id   
-    )
+    },
 #     {
-#         title: "Geometric", 
-#         description: "Geometric stuff!", 
+#         title: "Light", 
+#         description: "Pastels!", 
 #         user_id: demo_user.id   
 #     },
 #     {
-#         title: "Distorted", 
-#         description: "Distorted stuff!", 
+#         title: "Pink", 
+#         description: "Pink!", 
 #         user_id: demo_user.id   
 #     },
 #     {
-#         title: "Representational", 
-#         description: "Representational stufff!", 
+#         title: "Dark", 
+#         description: "Mood!", 
 #         user_id: demo_user.id   
 #     },
 #     {
-#         title: "Figurative", 
-#         description: "Figurative stuff!", 
+#         title: "Gold", 
+#         description: "Gold!", 
 #         user_id: demo_user.id   
 #     }
 # ])
