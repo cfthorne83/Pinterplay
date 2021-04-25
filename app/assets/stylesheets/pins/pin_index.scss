@@ -16,6 +16,22 @@
         columns: 5;
         // grid-template-columns: repeat(5, 1fr);
         // background-color: pink;
+
+        .teal {
+            border: 5px solid rgb(0, 153, 158);
+        }
+        .magenta {
+            border: 5px solid rgb(255, 0, 191);
+        }
+        .gold {
+            border: 5px solid rgb(218, 167, 0);
+        }
+        .light {
+            border: 5px solid rgb(207, 207, 207);
+        }
+        .dark {
+            border: 5px solid rgb(41, 41, 41);
+        }
         
         &__item {
             display: flex;
@@ -47,3 +63,5 @@
         break-inside: avoid;
     }
 }
+
+

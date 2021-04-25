@@ -52,8 +52,24 @@ class PinIndex extends React.Component {
                 {/* {this.pinCount()} */}
                 <ul className='pin-index'>
                     {/* {pins} */}
-                    <div className="pin-index__item">
-                        <img  src="https://images.unsplash.com/photo-1520985244272-9d0b8067a4ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzB8fHNreXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=400&q=60" alt=""/>
+
+                    <div className="teal">
+
+                        <div className="pin-index__item">
+                            <img  src="https://images.unsplash.com/photo-1520985244272-9d0b8067a4ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzB8fHNreXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=400&q=60" alt=""/>
+                        </div>
+                    </div>
+                    <div className="magenta">
+
+                    </div>
+                    <div className="gold">
+
+                    </div>
+                    <div className="light">
+
+                    </div>
+                    <div className="dark">
+
                     </div>
                     <div className="pin-index__item">
                         <img  src="https://images.unsplash.com/photo-1579783901586-d88db74b4fe4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8M3w2OTk2Mzc4OHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=400&q=60" alt=""/>
