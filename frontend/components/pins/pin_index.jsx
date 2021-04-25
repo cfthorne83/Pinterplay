@@ -317,6 +317,36 @@ class PinIndex extends React.Component {
                         <img  src="https://images.unsplash.com/photo-1526161786553-10e498506370?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDl8fGdyYWZpdHRpfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60" alt=""/>
                     </div>
                     <div className="pin-index__item">
+                        <img  src="https://images.unsplash.com/photo-1533142727438-0ef56e9a66b2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTV8fGdyYWZpdHRpfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60" alt=""/>
+                    </div>
+                    <div className="pin-index__item">
+                        <img  src="https://images.unsplash.com/photo-1504685937808-73bee8d6e3ce?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Njd8fGdyYWZpdHRpfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60" alt=""/>
+                    </div>
+                    <div className="pin-index__item">
+                        <img  src="https://images.unsplash.com/photo-1601832836543-c7582a412b25?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Z3JhZml0dGklMjBkYXJrfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60" alt=""/>
+                    </div>
+                    <div className="pin-index__item">
+                        <img  src="https://images.unsplash.com/photo-1488730792340-bdc88feffb98?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTB8fGdyYWZpdHRpJTIwZGFya3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60" alt=""/>
+                    </div>
+                    <div className="pin-index__item">
+                        <img  src="https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTN8fGdyYWZpdHRpJTIwZGFya3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" alt=""/>
+                    </div>
+                    <div className="pin-index__item">
+                        <img  src="https://images.unsplash.com/photo-1510987836583-e3fb9586c7b3?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTd8fGdyYWZpdHRpJTIwZGFya3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60" alt=""/>
+                    </div>
+                    <div className="pin-index__item">
+                        <img  src="https://images.unsplash.com/photo-1508522802063-da3458d34254?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTV8fGdyYWZpdHRpJTIwZGFya3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60" alt=""/>
+                    </div>
+                    <div className="pin-index__item">
+                        <img  src="https://images.unsplash.com/photo-1596420267212-20126ea23a38?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Z29sZCUyMG1vb258ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60" alt=""/>
+                    </div>
+                    <div className="pin-index__item">
+                        <img  src="https://images.unsplash.com/photo-1529578168432-30b16c2f66fe?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Z29sZCUyMG1vb258ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60" alt=""/>
+                    </div>
+                    <div className="pin-index__item">
+                        <img  src="" alt=""/>
+                    </div>
+                    <div className="pin-index__item">
                         <img  src="" alt=""/>
                     </div>
                     <div className="pin-index__item">
