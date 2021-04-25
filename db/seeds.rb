@@ -22,7 +22,7 @@ blue = Board.create(
                 user_id: demo_user.id   
             )            
 light = Board.create(
-                title: "Pastel", 
+                title: "Light", 
                 description: "Pastel!", 
                 user_id: demo_user.id   
             )
@@ -32,7 +32,7 @@ pink = Board.create(
                 user_id: demo_user.id   
             )
 dark = Board.create(
-                title: "Shadow", 
+                title: "Dark", 
                 description: "Shadow!", 
                 user_id: demo_user.id   
             )
@@ -42,14 +42,17 @@ gold = Board.create(
                 user_id: demo_user.id   
             )
 
-boards = ["Blue", "Light", "Pink", "Dark", "Gold"]
+boards = [blue, light, pink, dark, gold]
 nums = ["One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen"]
 
 boards.each do |board|
     (0..2).each do |i| 
-        initial = board[0].downcase+ "i"
-        pin = Pin.create(title: "#{board} #{nums[i]}", board_id: board.id, user_id: demo_user.id)
-        file = URI.open('https://mypin-seeds.s3.amazonaws.com/#{initial}.jpg')
+        initial = board.to_s[0] + "i"
+        title = "#{board}".capitalize + nums[i]
+        uri = "https://mypin-seeds.s3.amazonaws.com/#{initial}.jpg"
+debugger
+        pin = Pin.create(title: title, board_id: board.id, user_id: demo_user.id)
+        file = URI.open(uri)
         pin.photo.attach(io: file, filename: '#{initial}.jpg')
         pin.save
     end
