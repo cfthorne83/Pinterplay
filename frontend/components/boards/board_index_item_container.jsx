@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 
 import BoardIndexItem from './board_index_items';
 
-import { fetchPins } from "../../actions/pin_actions";
+import { fetchPins, fetchPin } from "../../actions/pin_actions";
 
 const msp = (state, ownProps) => {
     return { 
@@ -13,7 +13,8 @@ const msp = (state, ownProps) => {
 
 const mdp = (dispatch, ownProps) => {
     return {
-        fetchPins: (board) => dispatch(fetchPins(board))
+        fetchPins: (board) => dispatch(fetchPins(board)),
+        fetchPin: (pinId) => dispatch(fetchPin(pinId))
     }
 }
 
