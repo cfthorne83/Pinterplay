@@ -46,19 +46,18 @@ boards = [blue, light, pink, dark, gold]
 nums = ["One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen"]
 
 arr = []
-(0..3).each do |board_i|
+(0..4).each do |board_i|
     (0..9).each do |i| 
         arr << [board_i, i]
     end
 end
-
-arr.shuffle.map do |inner|
+debugger
+arr.each do |inner|
     board = boards[inner[0]]
     i = inner[1]
 
-    # initial = board.qtitle[0].downcase + i.to_s
-    board.title + " " + nums[i]
-
+    initial = board.title[0].downcase + i.to_s
+    [board.title + " " + nums[i], initial]
     # uri = "https://mypin-seeds.s3.amazonaws.com/#{initial}.jpg"
     
     # pin = Pin.create(title: title, board_id: board.id, user_id: demo_user.id)
