@@ -11,6 +11,7 @@ class BoardIndexItem extends React.Component {
         
             pinDivs = [0, 1, 2].map( i => {
                 if (pins && pins.length >= 3){
+                    debugger
                     return (
                         <img 
                             className={`p${i}`}
@@ -25,7 +26,7 @@ class BoardIndexItem extends React.Component {
             });
          
 
-
+// debugger
         return (
             <li key={board.id}>
                 <Link key={`${board.id}`} to={`/boards/${board.id}`}>
