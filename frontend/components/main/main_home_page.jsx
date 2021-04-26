@@ -8,7 +8,7 @@ class MainHome extends React.Component{
         return (
 
         <div className="main-home-page">
-            <PinIndexContainer />       
+            <PinIndexContainer shuffle={true}/>       
         </div>
         );
     }

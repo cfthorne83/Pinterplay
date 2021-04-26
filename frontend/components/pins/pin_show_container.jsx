@@ -9,7 +9,8 @@ const msp = (state, ownProps) => {
     return {
         pin: state.entities.pins[ownProps.match.params.pinId],
         boards: Object.values(state.entities.boards),
-        newPin: { board_id: "" }
+        newPin: { board_id: "" },
+        shuffle: ownProps.shuffle
     }
 }
 
