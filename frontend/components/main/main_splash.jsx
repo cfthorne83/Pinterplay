@@ -30,13 +30,13 @@ class MainSplash extends React.Component{
                         </ul>
 
                         <ul className="middle">
-                            <img src="https://i.pinimg.com/236x/2f/ef/f6/2feff6d9635fee41f4b9a08c8e721eee.jpg" alt=""/>
-                            <img src="https://i.pinimg.com/564x/a9/05/97/a90597ed51f396d48a8cdc170f27506b.jpg" alt=""/>
+                            <img src="images/splash15.jpg" alt=""/>
+                            <img src="images/splash16.jpg" alt=""/>
                         </ul> 
 
                         <ul className="middle-outer">
-                            <img src="https://i.pinimg.com/564x/2b/f3/4d/2bf34d8bc4f23a8e1c8c566e27a6627f.jpg" alt=""/>
-                            <img src="https://i.pinimg.com/564x/a6/cf/29/a6cf2917f5465141d47ad662ce19d0ab.jpg" alt=""/>
+                            <img src="images/splash13.jpg" alt=""/>
+                            <img src="images/splash9.jpg" alt=""/>
                         </ul>
 
                         <ul className="outer">
