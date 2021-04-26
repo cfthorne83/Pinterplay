@@ -51,18 +51,24 @@ arr = []
         arr << [board_i, i]
     end
 end
-debugger
-arr.each do |inner|
+
+(3..4).each do |board_i|
+    (10..11).each do |i|
+        arr << [board_i, i]
+    end
+end
+# debugger
+arr.shuffle.each do |inner|
     board = boards[inner[0]]
     i = inner[1]
 
     initial = board.title[0].downcase + i.to_s
-    [board.title + " " + nums[i], initial]
-    # uri = "https://mypin-seeds.s3.amazonaws.com/#{initial}.jpg"
-    
-    # pin = Pin.create(title: title, board_id: board.id, user_id: demo_user.id)
-    # if file = URI.open(uri)
-    #     pin.photo.attach(io: file, filename: '#{initial}.jpg')
-    #     pin.save
-    # end
+    title = board.title + " " + nums[i]
+    uri = "https://mypin-seeds.s3.amazonaws.com/#{initial}.jpg"
+
+    file = URI.open(uri)
+    pin = Pin.create(title: title, board_id: board.id, user_id: demo_user.id)
+    pin.photo.attach(io: file, filename: '#{initial}.jpg')
+    pin.save
+   
 end
