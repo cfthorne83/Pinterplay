@@ -27,22 +27,28 @@ class PinIndex extends React.Component {
         return title.charAt(0).toUpperCase() + title.slice(1);
     }
 
+    shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+
     render() {
 
         if (!this.props.pins){
             return null;
         }
         
-        
         let pins = this.props.pins.map(pin => {
             return (
                 <Link 
-                key={`${pin.id}`} 
-                to={`/pins/${pin.id}`}
-                className="pin-index__item">
-                            <img src={`${pin.image_url}`} alt=""/>
-                            <h2>{this.capitalize(pin.title)}</h2>
-                    </Link>
+                    key={`${pin.id}`} 
+                    to={`/pins/${pin.id}`}
+                    className="pin-index__item">
+                        <img src={`${pin.image_url}`} alt=""/>
+                        <h2>{this.capitalize(pin.title)}</h2>
+                </Link>
             )
         })
             
