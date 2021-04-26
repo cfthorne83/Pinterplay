@@ -64,5 +64,3 @@ arr = []
         end
     end
 end
-debugger
-arr2 = arr
