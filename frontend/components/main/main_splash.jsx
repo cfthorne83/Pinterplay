@@ -6,8 +6,8 @@ class MainSplash extends React.Component{
         return (
             <div className="splash">
                 <ul className='left'>
-                    <img className="crop" src="https://i.pinimg.com/564x/b8/37/44/b8374405d939f619cbe3d6da220605fe.jpg" alt=""/>
-                    <img className="crop" src="https://i.pinimg.com/236x/e5/2e/fc/e52efc533c98cbc37d5e6220d5839f24.jpg" alt="" />
+                    <img src="images/splash5.jpg" alt=""/>
+                    <img src="images/splash10.jpg" alt=""/>
                 </ul> 
 
                 <section className="outer-section">
@@ -19,36 +19,37 @@ class MainSplash extends React.Component{
 
                     <section className="inner-section">
                         <ul className="outer">
-                            <img src="https://i.pinimg.com/564x/8b/98/88/8b98886a5cc8f37bafd8654193e06187.jpg" alt=""/>
-                            <img src="https://i.pinimg.com/564x/2d/6e/28/2d6e28b21c53f7e36148392e798c2541.jpg" alt=""/>    
+                            <img src="images/splash7.jpg" alt=""/>
+                            <img src="images/splash15.jpg" alt=""/>
                         </ul>
 
 
                         <ul className="middle-outer">
-                            <img src="https://i.pinimg.com/564x/99/c7/c9/99c7c9b91e571023246299f7e1d31b9e.jpg" alt=""/>
-                            <img src="https://i.pinimg.com/564x/86/35/ed/8635ed5915279d94693cd5ea8a47937e.jpg" alt=""/>
+
+                            <img src="images/splash8.jpg" alt=""/>
+                            <img src="images/splash3.jpg" alt=""/>
                         </ul>
 
                         <ul className="middle">
-                            <img src="images/splash15.jpg" alt=""/>
                             <img src="images/splash16.jpg" alt=""/>
+                            <img src="images/splash9.jpg" alt=""/>
                         </ul> 
 
                         <ul className="middle-outer">
                             <img src="images/splash13.jpg" alt=""/>
-                            <img src="images/splash9.jpg" alt=""/>
+                            <img src="images/splash2.jpg" alt=""/>
                         </ul>
 
                         <ul className="outer">
-                            <img src="https://i.pinimg.com/564x/50/67/cb/5067cb3d054b6c65952192b6b7e6e565.jpg" alt=""/>
-                            <img src="https://i.pinimg.com/564x/08/84/c3/0884c364b3b6d5da21ecf245d21a419c.jpg" alt=""/>
+                            <img src="images/splash4.jpg" alt=""/>
+                            <img src="images/splash11.jpg" alt=""/>
                         </ul>
                     </section>
                 </section>
 
                 <ul className='right'>
-                    <img src="https://i.pinimg.com/564x/bd/6d/19/bd6d1995e07fff3ccbd4693dc0f126d9.jpg" alt=""/>
-                    <img src="https://i.pinimg.com/564x/1b/79/0a/1b790afa83b0bad47fc4b13c2283e5b3.jpg" alt=""/>
+                    <img src="images/splash6.jpg" alt=""/>
+                    <img src="images/splash14.jpg" alt=""/>
                 </ul>
                 
             </div>
