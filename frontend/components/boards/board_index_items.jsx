@@ -5,18 +5,19 @@ class BoardIndexItem extends React.Component {
     constructor(props){
         super(props);
 
-        this.state = {pins: []}
+        this.state = { pinsImages: [] }
     }
 
     componentDidMount() {
         let that = this;
+        const arr = [];
         [0, 1, 2].forEach( i => {
-            // debugger
             $.ajax({
                 url: `/api/pins/${that.props.board.pins[i].id}`
             }).then(
                 (response) => {
-                    console.log(response.pin.image_url);
+                    arr.push(response.pin.image_url);
+                    that.setState({ pinsImages: arr })
                 }
             )
         })
@@ -27,25 +28,23 @@ class BoardIndexItem extends React.Component {
         // if (this.props.board.pins.length !== 0 && !this.props.pin){
         //     return null;
         // }
-
         const {board} = this.props;
-        const pins = this.props.pins || [];
-        // let pinDivs;
+        const pins = board.pins;
         
-        //     pinDivs = [0, 1, 2].map( i => {
-        //         if (pins && pins.length >= 3){
-        //             return (
-        //                 <img 
-        //                     className={`p${i}`}
-        //                     src={pins[i].image_url} 
-        //                     alt=""/>
-        //             );
-        //         } else {
-        //             return (
-        //                 <div className={`p${i}`}></div>
-        //             );
-        //         }
-        //     });
+            pinDivs = [0, 1, 2].map( i => {
+                if (pins[i]){
+                    return (
+                        <img 
+                            className={`p${i}`}
+                            src={pins[i].image_url} 
+                            alt=""/>
+                    );
+                } else {
+                    return (
+                        <div className={`p${i}`}></div>
+                    );
+                }
+            });
          
         return (
             <li key={board.id}>
