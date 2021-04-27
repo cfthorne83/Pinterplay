@@ -3,7 +3,7 @@ import React from "react";
 class ProfileSettings extends React.Component {
     constructor(props) {
         super(props);
-        this.state = Object.assign( this.props.currentUser, {image: false})
+        this.state = this.props.currentUser;
         // this.state = { 
         //                 email: this.props.currentUser.email,
         //                 fname: this.props.currentUser.fname,
@@ -20,6 +20,10 @@ class ProfileSettings extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleReset = this.handleReset.bind(this);
     }
+
+    // componentDidUpdate() {
+    //     this.setState({ image_url: this.props.currentUser.image_url })
+    // }
 
 
     updatePhoto(e) {
@@ -46,6 +50,7 @@ class ProfileSettings extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        this.setState({ image_url: this.props.currentUser.image_url})
         this.props.updateUser(this.state);
     }
 
@@ -79,7 +84,7 @@ class ProfileSettings extends React.Component {
     render() {
 
         if (!this.props.currentUser) return null;
-
+        console.log(this.state);
         return (
             <div className="edit-profile-form">
                 <form onSubmit={this.handleSubmit}>
@@ -91,7 +96,7 @@ class ProfileSettings extends React.Component {
                     <section className="photo-con">
                         <h3>Photo</h3>
                         <div className="photo-change">
-                        {this.profilePic()}
+                            {this.profilePic()}
                             <button onClick={this.updatePhoto}>Change</button>
                         </div>
                     </section>
