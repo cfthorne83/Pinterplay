@@ -15,7 +15,7 @@ class BoardIndexItem extends React.Component {
         // }
 
         const {board} = this.props;
-        // const pins = this.props.pins || [];
+        const pins = this.props.pins || [];
         let pinDivs;
         
             pinDivs = [0, 1, 2].map( i => {
@@ -33,7 +33,6 @@ class BoardIndexItem extends React.Component {
                 }
             });
          
-debugger
         return (
             <li key={board.id}>
                 <Link key={`${board.id}`} to={`/boards/${board.id}`}>
