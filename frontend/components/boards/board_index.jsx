@@ -8,14 +8,17 @@ class BoardIndex extends React.Component {
     componentDidMount() {
         this.props.fetchBoards();
     }
+    
+    componentDidUpdate() {
+        this.props.fetchBoards();
+    }
 
     render() {  
         
         if (this.props.boards.length === 0) return null;
+
         
-        let that = this; 
         let boards = this.props.boards.map(board => {
-            debugger
             return (
                 <BoardIndexItem
                     board={board}
