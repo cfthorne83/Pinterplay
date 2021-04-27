@@ -11,26 +11,22 @@ class BoardIndexItem extends React.Component {
     componentDidMount() {
         let that = this;
         const arr = [];
-        // if (this.props.board.pins.length !== 0){
-            [0, 1, 2].forEach( i => {
-                if (that.props.board.pins[i])
-                $.ajax({
-                    url: `/api/pins/${that.props.board.pins[i].id}`
-                }).then(
-                    (response) => {
-                        arr.push(response.pin.image_url);
-                        that.setState({ pinsImages: arr })
-                    }
-                )
-            })
-        // }
+
+        [0, 1, 2].forEach( i => {
+            if (that.props.board.pins[i])
+            $.ajax({
+                url: `/api/pins/${that.props.board.pins[i].id}`
+            }).then(
+                (response) => {
+                    arr.push(response.pin.image_url);
+                    that.setState({ pinsImages: arr })
+                }
+            )
+        })
     }
 
     render() {
 
-        // if (this.props.board.pins.length !== 0 && !this.props.pin){
-        //     return null;
-        // }
         const {board} = this.props;
         const pins = board.pins;
         
@@ -48,7 +44,8 @@ class BoardIndexItem extends React.Component {
                     );
                 }
             });
-        return (
+
+            return (
             <li key={board.id}>
                 <Link key={`${board.id}`} to={`/boards/${board.id}`}>
              

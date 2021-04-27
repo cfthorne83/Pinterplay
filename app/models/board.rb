@@ -12,7 +12,7 @@ class Board < ApplicationRecord
     validates :title, presence: true
 
     belongs_to :user 
-    has_many :pins
+    has_many :pins, dependent: :destroy
 
     # has_many :board_pins, 
     #     primary_key: :id,
