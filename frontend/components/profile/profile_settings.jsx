@@ -3,7 +3,14 @@ import React from "react";
 class ProfileSettings extends React.Component {
     constructor(props) {
         super(props);
-        this.state = this.props.currentUser;
+        this.state = Object.assign( this.props.currentUser, {image: false})
+        // this.state = { 
+        //                 email: this.props.currentUser.email,
+        //                 fname: this.props.currentUser.fname,
+        //                 lname: this.props.currentUser.lname, 
+        //                 username: this.props.currentUser.username,
+        //                 description: this.props.currentUser.description
+        //             }
 
         this.updateFname = this.updateFname.bind(this);
         this.updateLname = this.updateLname.bind(this);
@@ -17,8 +24,8 @@ class ProfileSettings extends React.Component {
 
     updatePhoto(e) {
         e.preventDefault();
-        this.props.openModal( "editPhoto", this.props.currentUser );
-        this.setState({ image_url: this.props.currentUser.image_url})
+        this.props.openModal( "editPhoto", this.props.currentUser )
+        this.setState({ image: !this.state.image})
     }
 
     updateFname(e) {
