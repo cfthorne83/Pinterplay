@@ -1,4 +1,5 @@
 import React from "react";
+import { openModal } from "../../actions/modal_actions";
 
 class ProfileSettings extends React.Component {
     constructor(props) {
@@ -21,15 +22,16 @@ class ProfileSettings extends React.Component {
         this.handleReset = this.handleReset.bind(this);
     }
 
-    // componentDidUpdate() {
-    //     this.setState({ image_url: this.props.currentUser.image_url })
-    // }
+    componentDidUpdate() {
+        if (this.state.image_url !== this.props.currentUser.image_url){
+            this.setState({ image_url: this.props.currentUser.image_url })
+        }
+    }
 
 
     updatePhoto(e) {
         e.preventDefault();
         this.props.openModal( "editPhoto", this.props.currentUser )
-        this.setState({ image: !this.state.image})
     }
 
     updateFname(e) {
@@ -84,7 +86,7 @@ class ProfileSettings extends React.Component {
     render() {
 
         if (!this.props.currentUser) return null;
-        console.log(this.state);
+        // console.log(this.state.image_url);
         return (
             <div className="edit-profile-form">
                 <form onSubmit={this.handleSubmit}>
