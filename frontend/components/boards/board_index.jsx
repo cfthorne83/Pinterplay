@@ -15,7 +15,7 @@ class BoardIndex extends React.Component {
         
         let that = this; 
         let boards = this.props.boards.map(board => {
-            
+            debugger
             return (
                 <BoardIndexItem
                     board={board}

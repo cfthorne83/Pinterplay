@@ -8,17 +8,17 @@ import { fetchPins } from "../../util/pin_api_util";
 const msp = (state, ownProps) => {
     return { 
         boards: Object.values(state.entities.boards),
-        board: ownProps.board,
-        pins: Object.values(state.entities.pins),
+        // board: ownProps.board,
+        // pins: Object.values(state.entities.pins),
     }
 }
 
 const mdp = (dispatch, ownProps) => {
     return {
         fetchBoards: () => dispatch(fetchBoards()),
-        deleteBoard: (boardId) => dispatch(deleteBoard(boardId)),
+        // deleteBoard: (boardId) => dispatch(deleteBoard(boardId)),
+        // // fetchPins: (board) => dispatch(fetchPins(board))
         // fetchPins: (board) => dispatch(fetchPins(board))
-        fetchPins: (board) => dispatch(fetchPins(board))
     }
 }
 
