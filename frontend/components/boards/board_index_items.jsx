@@ -2,10 +2,24 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 class BoardIndexItem extends React.Component {
+    constructor(props){
+        super(props);
+
+        this.state = {pins: []}
+    }
 
     componentDidMount() {
-        debugger
-        this.props.fetchPins(this.props.board);
+        let that = this;
+        [0, 1, 2].forEach( i => {
+            // debugger
+            $.ajax({
+                url: `/api/pins/${that.props.board.pins[i].id}`
+            }).then(
+                (response) => {
+                    console.log(response.pin.image_url);
+                }
+            )
+        })
     }
 
     render() {
@@ -16,22 +30,22 @@ class BoardIndexItem extends React.Component {
 
         const {board} = this.props;
         const pins = this.props.pins || [];
-        let pinDivs;
+        // let pinDivs;
         
-            pinDivs = [0, 1, 2].map( i => {
-                if (pins && pins.length >= 3){
-                    return (
-                        <img 
-                            className={`p${i}`}
-                            src={pins[i].image_url} 
-                            alt=""/>
-                    );
-                } else {
-                    return (
-                        <div className={`p${i}`}></div>
-                    );
-                }
-            });
+        //     pinDivs = [0, 1, 2].map( i => {
+        //         if (pins && pins.length >= 3){
+        //             return (
+        //                 <img 
+        //                     className={`p${i}`}
+        //                     src={pins[i].image_url} 
+        //                     alt=""/>
+        //             );
+        //         } else {
+        //             return (
+        //                 <div className={`p${i}`}></div>
+        //             );
+        //         }
+        //     });
          
         return (
             <li key={board.id}>
