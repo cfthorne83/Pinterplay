@@ -10,7 +10,7 @@ class BoardIndex extends React.Component {
     }
 
     render() {  
-
+        
         if (this.props.boards.length === 0) return null;
         
         let that = this; 

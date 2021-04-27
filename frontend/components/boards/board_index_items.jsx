@@ -12,26 +12,33 @@ class BoardIndexItem extends React.Component {
         let that = this;
         const arr = [];
 
-        [0, 1, 2].forEach( i => {
-            if (that.props.board.pins[i])
-            $.ajax({
-                url: `/api/pins/${that.props.board.pins[i].id}`
-            }).then(
-                (response) => {
-                    arr.push(response.pin.image_url);
-                    that.setState({ pinsImages: arr })
-                }
-            )
-        })
+        if (this.props.board.pins){
+
+            [0, 1, 2].forEach( i => {
+                if (that.props.board.pins[i])
+                $.ajax({
+                    url: `/api/pins/${that.props.board.pins[i].id}`
+                }).then(
+                    (response) => {
+                        arr.push(response.pin.image_url);
+                        that.setState({ pinsImages: arr })
+                    }
+                )
+            })
+        }
     }
 
     render() {
-
+        
         const {board} = this.props;
         const pins = board.pins;
+
+        if (!board.pins) {
+            return null;
+        }
         
         const pinDivs = [0, 1, 2].map( i => {
-                if (pins[i]){
+                if (pins && pins[i]){
                     return (
                         <img 
                             className={`p${i}`}
@@ -58,7 +65,7 @@ class BoardIndexItem extends React.Component {
                     </div>
 
                     <h1>{board.title}</h1>
-                    <h2>{pins.length} Pins</h2>
+                    {/* <h2>{pins.length} Pins</h2> */}
                 </Link>
             </li>
         )
