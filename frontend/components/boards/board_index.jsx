@@ -17,6 +17,14 @@ class BoardIndex extends React.Component {
         
         if (this.props.boards.length === 0) return null;
 
+        let reRender = false;
+        this.props.boards.forEach( board => {
+            if (!board.pins){
+                reRender = true;
+            }
+        });
+        
+        if (reRender) return null;
         
         let boards = this.props.boards.map(board => {
             return (
