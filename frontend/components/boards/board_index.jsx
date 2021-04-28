@@ -11,6 +11,7 @@ class BoardIndex extends React.Component {
     
     componentDidUpdate() {
         this.props.fetchBoards();
+        adfjkslhkjahsdf
     }
 
     render() {  
