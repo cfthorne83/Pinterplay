@@ -18,6 +18,7 @@
 ## Features
 
 ### Full User Authorization
+- User authentication with persistence
 
 ### Profile
 - Users may create custom profiles by
@@ -33,11 +34,10 @@
 - Users may view all the pins associated with their profiles.
 <img src="public/images/fullstack.gif" width="500" />
    
-##Future Direction
+## Future Direction
 
-###Follows
+### Follows
 - Ablility to follow and unfolow other users' profiles and boards
  
-
 * ...
 # Pinterplay
