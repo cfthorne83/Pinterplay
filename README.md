@@ -17,16 +17,22 @@
 
 ## Features
 
-###Boards
+### Full User Authorization
+
+### Profile
+- Users may create custom profiles by
+
+### Boards
 - Users may maintain profiles by creating, updating and deleting any number of custom boards. 
 
-###Pins
+### Pins
 - Boards are personalized with pins uploaded by the user or another users pins chosen via the user's discover feed.
+<img src="public/images/fullstack.gif" width="500" />
 
 ### Board CRUD capabilty
   My biggest challenge with this feature was fully implementing all aspects of fontend to backend interaction via the use of modals. A problem I faced was fetching the proper board to edit and without access to the ownProps match object. As a solution, I added an options key to the modal object. This key points to the board id to be updated or deleted. The board id is passed in at the board show page when the modal is opened as a second argument. 
 
-## Full User Authorization
+
   
   
 ##Future Direction
