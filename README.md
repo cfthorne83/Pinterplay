@@ -21,12 +21,16 @@
 
 ### Profile
 - Users may create custom profiles by
+<img src="public/images/profile.gif" width="500" />
 
 ### Boards
 - Users may maintain profiles by creating, updating and deleting any number of custom boards. 
+<img src="public/images/board.gif" width="500" />
 
 ### Pins
-- Boards are personalized with pins uploaded by the user or another users pins chosen via the user's discover feed.
+- Boards are personalized with pins uploaded by the user or another user's pins chosen via the user's discover feed.
+- Users may view, edit, and delete pins associated with a particular board.
+- Users may view all the pins associated with their profiles.
 <img src="public/images/fullstack.gif" width="500" />
 
 ### Board CRUD capabilty
@@ -37,16 +41,9 @@
   
 ##Future Direction
 
-###Pins
-- Ability to pin other users' pins to boards or upload images to pin and share
-- Ability to view, edit, and create a single pin
-- Ability to view all pins associated with a single board
-- Ablility to view all pins associated with a user
-
 ###Follows
 - Ablility to follow and unfolow other users' profiles and boards
-- Searching ca  
  
 
 * ...
-# myPin
+# Pinterplay
