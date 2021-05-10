@@ -1,18 +1,15 @@
 # Pinterplay
-[Pinterplay](https://mypin-ct.herokuapp.com/#/)
+
 ## Overview
 
-Pinterplay is a visual discovery engine for finding ideas like recipes, home and style inspiration, and more. Pinterplay is a pared down Pinterest clone that enables users to create profiles containing any number of custom boards. Boards are personalized with pins uploaded by the user or another users pins chosen via the user's discover feed.  With many Pins on Pinterplay, you'll always find ideas to spark inspiration. When you discover Pins you love, save them to boards to keep your ideas organized and easy to find!
+[Pinterplay](https://mypin-ct.herokuapp.com/#/) is a visual discovery engine for finding ideas like recipes, home and style inspiration, and more. Pinterplay is a pared down Pinterest clone that enables users to create profiles containing any number of custom boards. Boards are personalized with pins uploaded by the user or another users pins chosen via the user's discover feed.  With many Pins on Pinterplay, you'll always find ideas to spark inspiration. When you discover Pins you love, save them to boards to keep your ideas organized and easy to find!
 
 ## Technologies
 - Ruby on Rails
 - Javascript
 - React
 - Redux
-- HTML
-- CSS
-- Postgres
-- AWS photo storage
+- AWS
 
 ## Features
 
