@@ -1,4 +1,5 @@
 # Pinterplay
+<img src="public/images/splash_readme.jpeg" />
 ![](public/images/splash_readme.jpeg)
 ## Overview
 
