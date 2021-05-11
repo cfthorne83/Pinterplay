@@ -2,22 +2,22 @@
 <html>
   <head>
     <title>Pinterplay</title>
-    <meta name="description" property="og:description" content="Pinterplay is a visual discovery engine for finding ideas inspired by Pinterest." />
-    <meta name="title" property="og:title" content="Pinterplay" />
-    <meta name="type" property="og:type" content="Website" />
-    <meta name="image" property="og:image" content="https://media.giphy.com/media/jhEvGya6AUQEmTrcSb/giphy.gif" />
-    <meta name="author" property="og:author" content="Chris Thorne" />
-    <meta property="og:url" content="https://mypin-ct.herokuapp.com/#/">
-
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
     
+    <meta name="title" property="og:title" content="Pinterplay" />
+    <meta name="image" property="og:image" content="https://media.giphy.com/media/jhEvGya6AUQEmTrcSb/giphy.gif" />
+    <meta name="description" property="og:description" content="Pinterplay is a visual discovery engine for finding ideas inspired by Pinterest." />
+    <meta name="url" property="og:url" content="https://mypin-ct.herokuapp.com/#/">
+    <meta name="author" property="og:author" content="Chris Thorne" />
+    <meta name="type" property="og:type" content="Website" />
+
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
     <link rel="shortcut icon" id="favicon" type="img/ico" href="favicon.ico">
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
