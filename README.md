@@ -22,7 +22,7 @@
 <img src="public/images/login.gif" width="500" />
 
 ### Profile
-- Users may create and update custom profiles by adding teir name, username, description and profile photo. 
+- Users may create and update custom profiles with their name, username, description and profile photo. 
 <img src="public/images/profile.gif" width="500" />
 
 ### Boards
