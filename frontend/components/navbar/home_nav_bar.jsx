@@ -44,7 +44,7 @@ class HomeNavBar extends React.Component {
                 </form>
 
                 <ul className="online-presence">
-                        <a href="linkedin" className="online-presence__filter">
+                        <a href="https://www.linkedin.com/in/chris-thorne83/" className="online-presence__filter">
                             <img  src="images/linkedin.png" alt="" />
                         </a>
 
