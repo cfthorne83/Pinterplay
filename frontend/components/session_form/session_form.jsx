@@ -6,7 +6,8 @@ class SessionForm extends React.Component {
         super(props);
         this.state = {
             email: "",
-            password: "" 
+            password: "",
+            errors: []
             // demo: null
         };
 
@@ -17,6 +18,14 @@ class SessionForm extends React.Component {
         this.handleErrors = this.handleErrors.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
     }
+
+    componentWillReceiveProps(nextProps) {
+    // if (nextProps.currentUser === true) {
+    //   this.props.history.push('/tweets');
+    // }
+
+    this.setState({errors: nextProps.errors})
+  }
 
     updateEmail(e) {
         this.setState({ email: e.currentTarget.value });
@@ -83,7 +92,7 @@ class SessionForm extends React.Component {
                                     />
                             </div>
 
-                            <p className="errors">{Object.values(this.props.errors)}</p>
+                            <p className="errors">{Object.values(this.state.errors)}</p>
                             {/* <span className="errors">{this.renderErrors()}</span> */}
                          
                                 <input
