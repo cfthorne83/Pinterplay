@@ -45,6 +45,9 @@ class HomeNavBar extends React.Component {
 
                 <nav className='nav-dropdowns-container'>
                     <ul className='nav-dropdowns'>
+                        <a href="">
+                            <img src="app/assets/images/briefcase-thin-outline-symbol-in-a-circle-1.svg" alt="" />
+                        </a>
                         <Link to={`/users/${this.props.currentUser.id}`}>
                             {this.profileLink()}
                         </Link>
