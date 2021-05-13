@@ -9,9 +9,9 @@ class PinIndex extends React.Component {
         this.state = { loading: true }
     }
 
-    // componentDidMount() {
-    //     this.props.fetchPins(this.props.board).then(this.setState({loading: false}));
-    // }
+    componentDidMount() {
+        this.props.fetchPins(this.props.board).then(this.setState({loading: false}));
+    }
 
     pinCount() {
         if (this.props.pins.length === 1 && this.props.board) {
@@ -61,9 +61,9 @@ class PinIndex extends React.Component {
             
             <div className="pin-index-con">
                 {/* {this.pinCount()} */}
-                {/* <ul className='pin-index'>
+                <ul className='pin-index'>
                     {pins}
-                </ul>   */}
+                </ul>  
             </div>
     
         )
