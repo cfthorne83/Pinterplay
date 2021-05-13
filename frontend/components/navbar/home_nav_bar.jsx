@@ -51,7 +51,7 @@ class HomeNavBar extends React.Component {
                     <a href="github" className="online-presence__filter">
                         <img src="images/github.png" alt="" />
                     </a>
-                    <a href="portfolio" >
+                    <a href="http://cfthorne83.github.io" >
                         <img src="images/briefcase-thin-outline-symbol-in-a-circle-1.svg" alt="" />
                     </a>
                     <a href="email" className="online-presence__email">
