@@ -44,17 +44,17 @@ class HomeNavBar extends React.Component {
                 </form>
 
                 <ul className="online-presence">
-                        <a href="https://www.linkedin.com/in/chris-thorne83/" className="online-presence__filter" target="_blank">
+                        <a href="https://www.linkedin.com/in/chris-thorne83/" className="online-presence__filter" target="_blank" title="my linkedin!">
                             <img  src="images/linkedin.png" alt="" />
                         </a>
 
-                    <a href="https://github.com/cfthorne83/Pinterplay" className="online-presence__filter" target="_blank">
+                    <a href="https://github.com/cfthorne83/Pinterplay" className="online-presence__filter" target="_blank" title="my github!">
                         <img src="images/github.png" alt="" />
                     </a>
-                    <a href="http://cfthorne83.github.io" target="_blank">
+                    <a href="http://cfthorne83.github.io" target="_blank" title="my portfolio site!">
                         <img src="images/briefcase-thin-outline-symbol-in-a-circle-1.svg" alt="" />
                     </a>
-                    <a href="mailto:cfthorne83@gmail.com" className="online-presence__email" target="_blank">
+                    <a href="mailto:cfthorne83@gmail.com" className="online-presence__email" target="_blank" title="email me!">
                         <img src="images/email.png" alt="" />
                     </a>
                 </ul>
