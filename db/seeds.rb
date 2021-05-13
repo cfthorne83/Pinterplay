@@ -46,12 +46,12 @@ boards = [blue, light, pink, dark, gold]
 nums = ["One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen"]
 
 arr = []
-(0..4).each do |board_i|
-    (0..11).each do |i| 
-
-        if (board_i < 3) && (i > 9)
-            next
-        else
+(0..1).each do |board_i|
+    # (0..1).each do |i| 
+i = 0
+        # if (board_i < 3) && (i > 9)
+        #     next
+        # else
             board = boards[board_i]
             initial = board.title[0].downcase + i.to_s
             title = board.title + " " + nums[i]
@@ -61,8 +61,8 @@ arr = []
             pin = Pin.create(title: title, board_id: board.id, user_id: demo_user.id)
             pin.photo.attach(io: file, filename: '#{initial}.jpg')
             pin.save
-        end
-    end
+        # end
+    # end
 end
 
 chris_p_bacon = User.create(
@@ -79,12 +79,12 @@ bacon = Board.create(
                 user_id: chris_p_bacon.id   
             )
 
-bacon_file1 = URI.open(uri)
+bacon_file1 = URI.open("https://mypin-seeds.s3.amazonaws.com/bacon1.jpg")
 bacon_pin1 = Pin.create(title: "bacon one", board_id: bacon.id, user_id: chris_p_bacon.id)
 bacon_pin1.photo.attach(io: bacon_file1, filename: 'bacon1.jpg')
 bacon_pin1.save
 
-bacon_file2 = URI.open(uri)
+bacon_file2 = URI.open("https://mypin-seeds.s3.amazonaws.com/+bacon2.jpg")
 bacon_pin2 = Pin.create(title: "bacon two", board_id: bacon.id, user_id: chris_p_bacon.id)
 bacon_pin2.photo.attach(io: bacon_file2, filename: 'bacon2.jpg')
 bacon_pin2.save
