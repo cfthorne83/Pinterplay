@@ -43,11 +43,24 @@ class HomeNavBar extends React.Component {
                             placeholder="Search" />
                 </form>
 
+                <ul className="online-presence">
+                        <a href="linkedin" className="online-presence__filter">
+                            <img  src="images/linkedin.png" alt="" />
+                        </a>
+
+                    <a href="github" className="online-presence__filter">
+                        <img src="images/github.png" alt="" />
+                    </a>
+                    <a href="portfolio" >
+                        <img src="images/briefcase-thin-outline-symbol-in-a-circle-1.svg" alt="" />
+                    </a>
+                    <a href="email" className="online-presence__email">
+                        <img src="images/email.png" alt="" />
+                    </a>
+                </ul>
+
                 <nav className='nav-dropdowns-container'>
                     <ul className='nav-dropdowns'>
-                        <a href="">
-                            <img src="app/assets/images/briefcase-thin-outline-symbol-in-a-circle-1.svg" alt="" />
-                        </a>
                         <Link to={`/users/${this.props.currentUser.id}`}>
                             {this.profileLink()}
                         </Link>

@@ -182,6 +182,28 @@
 
 .home-nav-bar {
 
+    .online-presence {
+        display: flex;
+
+        a > img {
+            width: 30px;
+            height: 30px;
+            filter: brightness(0%);
+        }
+
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            padding: .7rem;
+        }
+        
+        a:hover, a:focus {
+            background-color: var(--lt-grey);
+        }
+    }
+    
     .nav-dropdowns-container{
 
         li {
@@ -195,11 +217,13 @@
             padding: .7rem;
 
             img {
-                width: 27px;
-                height: 27px;
+                width: 30px;
+                height: 30px;
                 object-fit: cover;
                 clip-path: circle(13px at center);
             }
         }
     }
+
+    
 } 
