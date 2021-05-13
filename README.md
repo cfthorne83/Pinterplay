@@ -39,6 +39,7 @@
 
 ### Follows
 - Ablility to follow and unfolow other users' profiles and boards
+- Ability to search for pins by title
  
 * ...
 # Pinterplay
