@@ -14,7 +14,7 @@ demo_user = User.create(
                         username:"demoUser", 
                         email: "demo@fakemail.com", 
                         password: "123456"
-                    )
+                    ) 
 
 blue = Board.create(
                 title: "Blue", 
@@ -64,3 +64,27 @@ arr = []
         end
     end
 end
+
+chris_p_bacon = User.create(
+                        fname: "Chris P.", 
+                        lname: "Bacon", 
+                        username:"chris.p.bacon", 
+                        email: "chrisp@bacon.com", 
+                        password: "123456"
+                    )
+
+bacon = Board.create(
+                title: "Bacon", 
+                description: "I'm hungry!", 
+                user_id: chris_p_bacon.id   
+            )
+
+bacon_file1 = URI.open(uri)
+bacon_pin1 = Pin.create(title: "bacon one", board_id: bacon.id, user_id: chris_p_bacon.id)
+bacon_pin1.photo.attach(io: bacon_file1, filename: 'bacon1.jpg')
+bacon_pin1.save
+
+bacon_file2 = URI.open(uri)
+bacon_pin2 = Pin.create(title: "bacon two", board_id: bacon.id, user_id: chris_p_bacon.id)
+bacon_pin2.photo.attach(io: bacon_file2, filename: 'bacon2.jpg')
+bacon_pin2.save
