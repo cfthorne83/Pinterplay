@@ -16,8 +16,6 @@ class User < ApplicationRecord
     validates :email, :username, uniqueness: true
     validates :password, allow_nil: true, length: {minimum: 6}
     # validates :username, :password_digest, :session_token, presence: true
-    # validates :username, uniqueness: true
-    # validates :password, length: { minimum: 6 }, allow_nil: true
 
     before_validation :ensure_session_token
 
@@ -43,11 +41,11 @@ class User < ApplicationRecord
         source: :follower
 
     def follow(user)
-        active_friendships.create(follower_id: user_id)
+        active_friendships.create(follower_id: user.id)
     end
 
     def unfollow(user)
-        active_friendships.find_by(follower_id: user_id).destroy
+        active_friendships.find_by(follower_id: user.id).destroy
     end
 
     def following?(user)
