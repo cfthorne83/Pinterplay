@@ -39,9 +39,9 @@ class PinShow extends React.Component {
     }
 
     userDisplay() {
-        if (this.props.pin.username){
+        if (this.props.pin.user.username){
             return (
-                <h2>{this.props.pin.username}</h2>
+                <h2>{this.props.pin.user.username}</h2>
             )
         } else {
             return (
