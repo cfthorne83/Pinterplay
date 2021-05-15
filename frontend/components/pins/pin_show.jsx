@@ -103,7 +103,10 @@ class PinShow extends React.Component {
                             className="pin-show__title">
                                 {this.props.pin.title}
                         </h1>
-                        {this.userDisplay()}
+                        <div className="pin-show__follow">
+                            {this.userDisplay()}
+                            <button>Follow</button>
+                        </div>
                     </div>
                 </div>
 
