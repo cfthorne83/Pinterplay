@@ -15,6 +15,7 @@ class Api::PinsController < ApplicationController
     def show 
         # @goal = current_user.goals.find_by(id: params[:id])
         @pin = Pin.includes(:user).find(params[:id])
+        @user = @pin.user
         render :show
     end
  
