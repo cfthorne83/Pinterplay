@@ -14,6 +14,7 @@ class PinShow extends React.Component {
 
         this.handleGoBack = this.handleGoBack.bind(this);
         this.handleCreatePin = this.handleCreatePin.bind(this);
+        this.userDisplay = this.userDisplay.bind(this);
     }
 
     componentDidMount() {
@@ -35,6 +36,18 @@ class PinShow extends React.Component {
                     }, () => {
                         this.props.createPin(this.state); 
                     });                
+    }
+
+    userDisplay() {
+        if (this.props.pin.username){
+            return (
+                <h2>{this.props.pin.username}</h2>
+            )
+        } else {
+            return (
+                <h2>{this.props.pin.user.email}</h2>
+            )
+        }
     }
 
     render() {
@@ -90,7 +103,7 @@ class PinShow extends React.Component {
                             className="pin-show__title">
                                 {this.props.pin.title}
                         </h1>
-                        <h2>{pin.user.email}</h2>
+                        {this.userDisplay()}
                     </div>
                 </div>
 
