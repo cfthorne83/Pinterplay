@@ -5,6 +5,7 @@ class Api::FriendshipsController < ApplicationController
     
     def create 
         current_user.follow(@user)
+        # @friendship = Friendship.new()
     end
 
     def destroy
