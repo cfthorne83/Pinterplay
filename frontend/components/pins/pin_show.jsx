@@ -38,6 +38,8 @@ class PinShow extends React.Component {
     }
 
     render() {
+
+        const {pin} = this.props;
         
         if (!this.props.pin) {
             return null;
@@ -88,6 +90,7 @@ class PinShow extends React.Component {
                             className="pin-show__title">
                                 {this.props.pin.title}
                         </h1>
+                        <h2>{pin.user.email}</h2>
                     </div>
                 </div>
 
