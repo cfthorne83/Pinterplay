@@ -38,8 +38,8 @@ class BoardIndex extends React.Component {
         return (
                 <ul className='board-index'>
                     <Link to={`/users/${this.props.currentUser.id}/pins`}>
-                            all pins
-                        </Link>
+                        all pins
+                    </Link>
                     {boards}
                 </ul>  
         );

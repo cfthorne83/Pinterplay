@@ -19,6 +19,7 @@ import BoardShowContainer from './boards/board_show_container';
 
 import CreatePinFormContainer from "./pins/create_pin_form_container";
 import PinShowContainer from "./pins/pin_show_container";
+import UserPinIndex from "./pins/user_pin_index"
 
 import FollowingContainer from "./following/following";
 
@@ -41,7 +42,7 @@ const App = () => (
             
             <Route exact path="/following" component={FollowingContainer}/>
 
-            <Route exact path="/users/:userId/pins" component={FollowingContainer}/>
+            <Route exact path="/users/:userId/pins" component={UserPinIndex}/>
 
             <Route path="/" component={MainContainer} />
         </Switch>
