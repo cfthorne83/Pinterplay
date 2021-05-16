@@ -9,7 +9,6 @@ const UserPinIndex = (props) => {
             <h1 className="all-pins">All Pins</h1>
             <PinIndexContainer userPinIndex={true} />
             <CreatePinDropdownContainer className="pin-drop"/>
-
         </div>
     )
 }
