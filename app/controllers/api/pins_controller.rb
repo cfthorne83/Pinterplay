@@ -3,13 +3,14 @@ class Api::PinsController < ApplicationController
     before_action :ensure_logged_in
 
     def index
-        debugger
         if params[:data] && params[:data][:board]
             board = Board.find(params[:data][:board])
             @pins = board.pins
         elsif params[:data] && params[:data][:user]
             user = User.find(params[:data][:user])
             @pins = user.pins
+        elsif params[:data] && params[:data][:follows]
+            @pins = params[:data][:follows].map { |id| User.find(id).pins }.flatten
         else
             @pins = Pin.all
         end
