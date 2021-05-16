@@ -15,6 +15,7 @@ class PinShow extends React.Component {
         this.handleGoBack = this.handleGoBack.bind(this);
         this.handleCreatePin = this.handleCreatePin.bind(this);
         this.userDisplay = this.userDisplay.bind(this);
+        this.handleFollow = this.handleFollow.bind(this);
     }
 
     componentDidMount() {
@@ -39,15 +40,28 @@ class PinShow extends React.Component {
     }
 
     userDisplay() {
-        if (this.props.pin.user.username){
-            return (
-                <h2>{this.props.pin.user.username}</h2>
-            )
-        } else {
+        // if (this.props.pin.user.username){
+        //     return (
+        //         <h2>{this.props.pin.user.username}</h2>
+        //     )
+        // } else {
             return (
                 <h2>{this.props.pin.user.email}</h2>
             )
-        }
+        // }
+    }
+
+    handleFollow() {
+        $.ajax ({
+                    url: "/api/friendships",
+                    method: "POST",
+                    data: {
+                        follower_id: this.props.currentUser.id,
+                        followed_id: this.props.pin.user.id
+                    }
+                })
+        console.log(this.props.currentUser.id)
+        console.log(this.props.pin.user.id)
     }
 
     render() {
@@ -105,7 +119,7 @@ class PinShow extends React.Component {
                         </h1>
                         <div className="pin-show__follow">
                             {this.userDisplay()}
-                            <button>Follow</button>
+                            <button onClick={this.handleFollow}>Follow</button>
                         </div>
                         <h2>{this.props.pin.followers.length} followers</h2>
                     </div>

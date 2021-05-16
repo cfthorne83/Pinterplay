@@ -1,7 +1,7 @@
 class Api::FriendshipsController < ApplicationController
 
-    before_action: :ensure_logged_in
-    before_action: :find_user
+    before_action :ensure_logged_in
+    before_action :find_user
     
     def create 
         current_user.follow(@user)
@@ -15,6 +15,6 @@ class Api::FriendshipsController < ApplicationController
     private 
 
     def find_user 
-        @user = user.find(params[:user_id])
+        @user = User.find(params[:followed_id])
     end
 end
