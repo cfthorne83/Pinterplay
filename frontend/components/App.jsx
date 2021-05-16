@@ -20,6 +20,8 @@ import BoardShowContainer from './boards/board_show_container';
 import CreatePinFormContainer from "./pins/create_pin_form_container";
 import PinShowContainer from "./pins/pin_show_container";
 
+import Following from "./following/following";
+
 const App = () => (
     // const [loading, setLoading] = useState(false);
     <div className="app">
@@ -36,6 +38,8 @@ const App = () => (
 
             <Route exact path="/users/:userId" component={ProfileContainer} />
             <Route exact path="/users/:userId/settings" component={ProfileSettingsContainer}/>
+            
+            <Route exact path="/following" component={Following}/>
 
             <Route path="/" component={MainContainer} />
         </Switch>

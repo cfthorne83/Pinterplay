@@ -60,8 +60,6 @@ class PinShow extends React.Component {
                         followed_id: this.props.pin.user.id
                     }
                 })
-        console.log(this.props.currentUser.id)
-        console.log(this.props.pin.user.id)
     }
 
     render() {

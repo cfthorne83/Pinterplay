@@ -33,7 +33,7 @@ class HomeNavBar extends React.Component {
                             </span>
                         </Link>                      
                         <li><Link to='/'>Home</Link></li>
-                        <li><Link to=''>Following</Link></li>
+                        <li><Link to='/following'>Following</Link></li>
                     </ul>
                 </nav>
 
