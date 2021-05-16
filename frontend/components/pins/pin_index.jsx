@@ -43,7 +43,7 @@ class PinIndex extends React.Component {
         if (this.props.shuffle){
             this.shuffleArray(this.props.pins);
         }
-
+        
         let pins = this.props.pins.map(pin => {
             return (
                 <Link 

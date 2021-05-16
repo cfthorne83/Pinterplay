@@ -5,8 +5,9 @@ import { fetchPins, deletePin } from '../../actions/pin_actions';
 const msp = (state, ownProps) => {
     return { 
         pins: Object.values(state.entities.pins),
-        board: ownProps.board
-        // board: state.entities.boards[ownProps.match.params.boardId]
+        board: ownProps.board,
+        following: ownProps.following,
+        currentUser: state.entities.users[state.session.id]
     }
 }
 

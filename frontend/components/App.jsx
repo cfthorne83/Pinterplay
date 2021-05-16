@@ -23,7 +23,7 @@ import PinShowContainer from "./pins/pin_show_container";
 import FollowingContainer from "./following/following";
 
 const App = () => (
-    // const [loading, setLoading] = useState(false);
+    
     <div className="app">
         <header>
             <NavBarContainer />
