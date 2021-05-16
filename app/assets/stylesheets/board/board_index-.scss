@@ -6,6 +6,10 @@
     justify-content: center;
     margin: 0 4rem;
 
+    .user-pin-index {
+        background-color: red;
+    }
+
     li {
         box-sizing: border-box;
         // margin: 1rem;
@@ -35,6 +39,7 @@
             width: 100%;
             height: 150px;
             border-radius: 1.1rem;
+            background-color: var(--lt-grey);
             
             .p0 {
                 height: 100%;

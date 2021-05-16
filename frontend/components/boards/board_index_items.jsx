@@ -12,6 +12,9 @@ class BoardIndexItem extends React.Component {
         let that = this;
         const arr = [];
 
+        if (this.props.first) {
+            
+        }
         if (this.props.board.pins){
 
             [0, 1, 2].forEach( i => {
@@ -66,6 +69,7 @@ class BoardIndexItem extends React.Component {
 
                     <h1>{board.title}</h1>
                     {/* <h2>{pins.length} Pins</h2> */}
+                    <h1>{this.props.first}</h1>
                 </Link>
             </li>
         )

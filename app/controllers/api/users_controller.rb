@@ -15,6 +15,7 @@ class Api::UsersController < ApplicationController
 
     def show
         @user = User.includes(:followers, :following).find(params[:id])
+        @pins = @user.pins[0..2]
         render :show
     end
 

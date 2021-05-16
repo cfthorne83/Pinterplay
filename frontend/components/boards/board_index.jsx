@@ -5,14 +5,21 @@ import BoardIndexItemContainer from "./board_index_item_container";
 import BoardIndexItem from "./board_index_items";
 
 class BoardIndex extends React.Component {
+    constructor(props){
+        super(props);
+
+        this.state = { first: true }
+
+        this.handleFirst = this.handleFirst.bind(this);
+    }
 
     componentDidMount() {
         this.props.fetchBoards();
     }
     
-    // componentDidUpdate() {
-    //     this.props.fetchBoards();
-    // }
+    handleFirst() {
+        this.setState({ first: false });
+    }
 
     render() {  
         
@@ -27,19 +34,32 @@ class BoardIndex extends React.Component {
         
         if (reRender) return null;
         
-        let boards = this.props.boards.map(board => {
+        let boards = this.props.boards.map( (board, i) => {
+            let first;
+            if (i !== 0 ){
+                first = false;
+            } else {
+                first = true;
+            }
+
             return (
                 <BoardIndexItem
                     board={board}
-                    key={board.id}/>
+                    key={board.id}
+                    first={first}
+                    userId={this.props.currentUser} />
             );
         })
         
         return (
                 <ul className='board-index'>
-                    <Link to={`/users/${this.props.currentUser.id}/pins`}>
-                        all pins
-                    </Link>
+                        {/* <Link className="user-pin-index" to={`/users/${this.props.currentUser.id}/pins`}>
+                            <li>
+                                <div className="outer">
+                                </div>
+                                <h1>All Pins</h1>
+                            </li>
+                        </Link> */}
                     {boards}
                 </ul>  
         );

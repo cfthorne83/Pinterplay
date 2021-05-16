@@ -7,7 +7,8 @@ import { fetchPins, fetchPin } from "../../actions/pin_actions";
 const msp = (state, ownProps) => {
     return { 
         pins: Object.values(state.entities.pins),
-        board: ownProps.board
+        board: ownProps.board,
+        first: ownProps.first
     }
 }
 
