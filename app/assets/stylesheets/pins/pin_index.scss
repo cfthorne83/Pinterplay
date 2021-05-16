@@ -1,4 +1,6 @@
+
 .pin-index-con {
+    padding: 0 3.5rem;
     width: 100%;
 
     h1 {
@@ -64,4 +66,10 @@
     }
 }
 
-
+.all-pins {
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: var(--lett-space);
+    font-size: 1.5rem;
+    padding: 1.5rem 0;
+}
