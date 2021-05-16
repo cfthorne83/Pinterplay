@@ -4,7 +4,7 @@ class Api::PinsController < ApplicationController
 
     def index
         if params[:board]
-            board = Board.find(params[:board][:id])
+            board = Board.find(params[:board])
             @pins = board.pins
         else
             @pins = Pin.all

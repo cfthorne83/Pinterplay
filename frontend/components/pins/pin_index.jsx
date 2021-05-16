@@ -10,7 +10,11 @@ class PinIndex extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchPins(this.props.board).then(this.setState({loading: false}));
+        // if (this.props.following){
+        //     this.props.fetchPins(this.props.board).then(this.setState({loading: false}));
+        // } else {
+            this.props.fetchPins(this.props.board.id).then(this.setState({loading: false}));
+        // }
     }
 
     pinCount() {
@@ -43,7 +47,7 @@ class PinIndex extends React.Component {
         if (this.props.shuffle){
             this.shuffleArray(this.props.pins);
         }
-        
+
         let pins = this.props.pins.map(pin => {
             return (
                 <Link 
