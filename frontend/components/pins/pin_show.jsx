@@ -40,6 +40,7 @@ class PinShow extends React.Component {
     }
 
     userDisplay() {
+        debugger
         // if (this.props.pin.user.username){
         //     return (
         //         <h2>{this.props.pin.user.username}</h2>
@@ -67,6 +68,8 @@ class PinShow extends React.Component {
         const {pin} = this.props;
         
         if (!this.props.pin) {
+            return null;
+        } else if (!this.props.pin.user) {
             return null;
         }
 
@@ -117,6 +120,7 @@ class PinShow extends React.Component {
                         </h1>
                         <div className="pin-show__follow">
                             {this.userDisplay()}
+                            {/* <h2>{this.props.pin.user.email}</h2> */}
                             <button onClick={this.handleFollow}>Follow</button>
                         </div>
                         <h2>{this.props.pin.followers.length} followers</h2>
