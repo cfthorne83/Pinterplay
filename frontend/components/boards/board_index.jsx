@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 
 import BoardIndexItemContainer from "./board_index_item_container";
 import BoardIndexItem from "./board_index_items";
@@ -36,6 +37,7 @@ class BoardIndex extends React.Component {
         
         return (
                 <ul className='board-index'>
+                    <Link to='/user/pins'>all pins</Link>
                     {boards}
                 </ul>  
         );

@@ -11,10 +11,14 @@ class PinIndex extends React.Component {
 
     componentDidMount() {
         // if (this.props.following){
+        //     const boards = this.props.currentUser.following
         //     this.props.fetchPins(this.props.board).then(this.setState({loading: false}));
         // } else {
+        if (this.props.board){
             this.props.fetchPins(this.props.board.id).then(this.setState({loading: false}));
-        // }
+        } else {
+            this.props.fetchPins().then(this.setState({loading: false}));
+        }
     }
 
     pinCount() {
