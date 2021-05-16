@@ -1,9 +1,9 @@
 
-export const fetchPins = (board) => {
+export const fetchPins = (data) => {
     return $.ajax({
         url: '/api/pins',
         method: 'GET',
-        data: {board}
+        data: {data}
     })
 }
 

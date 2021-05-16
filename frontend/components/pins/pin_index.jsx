@@ -15,7 +15,9 @@ class PinIndex extends React.Component {
         //     this.props.fetchPins(this.props.board).then(this.setState({loading: false}));
         // } else {
         if (this.props.board){
-            this.props.fetchPins(this.props.board.id).then(this.setState({loading: false}));
+            this.props.fetchPins({board: this.props.board.id}).then(this.setState({loading: false}));
+        } else if (this.props.userPinIndex){
+            this.props.fetchPins({user: this.props.currentUser.id}).then(this.setState({loading: false}));
         } else {
             this.props.fetchPins().then(this.setState({loading: false}));
         }

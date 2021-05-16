@@ -25,9 +25,9 @@ export const removePin = (pinId) => {
     }
 };
 
-export const fetchPins = (board) => {
+export const fetchPins = (data) => {
     return dispatch => {
-        return PinApiUtil.fetchPins(board).then(pins => {
+        return PinApiUtil.fetchPins(data).then(pins => {
             dispatch(receivePins(pins))
         })
     }
