@@ -41,7 +41,7 @@ const App = () => (
             
             <Route exact path="/following" component={FollowingContainer}/>
 
-            <Route exact path="/pins" component={FollowingContainer}/>
+            <Route exact path="/users/:userId/pins" component={FollowingContainer}/>
 
             <Route path="/" component={MainContainer} />
         </Switch>

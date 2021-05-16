@@ -94,8 +94,7 @@ class Profile extends React.Component{
                         board={this.props.lastBoard}
                     />
                 </section>
-                
-                <BoardIndexContainer />
+                <BoardIndexContainer currentUser={this.props.currentUser}/>
             </div>
 
         );   
