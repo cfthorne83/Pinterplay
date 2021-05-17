@@ -12,8 +12,9 @@ class Api::PinsController < ApplicationController
         elsif params[:data] && params[:data][:follows]
             @pins = params[:data][:follows].map { |id| User.find(id).pins }.flatten
         elsif params[:limit]
-            user = User.find(params[:user_id])
-            @pins = user.pins.limit(3)
+            board = Board.find(params[:board][:id])
+            @limit = true
+            @pins = board.pins.limit(3)
         else
             @pins = Pin.all
         end

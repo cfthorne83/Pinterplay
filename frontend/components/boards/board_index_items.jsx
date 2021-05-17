@@ -5,7 +5,7 @@ class BoardIndexItem extends React.Component {
     constructor(props){
         super(props);
 
-        this.state = { pinsImages: [] }
+        this.state = { pinsImages: null }
     }
 
     componentDidMount() {
@@ -20,12 +20,12 @@ class BoardIndexItem extends React.Component {
                     method: "GET",
                     data: {
                             limit: true,
-                            user_id: userId
+                            board: that.props.board
                     }
                 }).then(
                     (response) => {
                         // arr.push(response.pin.image_url);
-                        that.setState({ pinsImages: response })
+                        that.setState({ pinsImages: [response] })
                     }
                 )
             // })
@@ -33,11 +33,10 @@ class BoardIndexItem extends React.Component {
     }
 
     render() {
-        console.log(this.state)
         const {board} = this.props;
         const pins = board.pins;
 
-        if (!board.pins) {
+        if (!board.pins || !this.state.pinsImages) {
             return null;
         }
         
@@ -56,11 +55,13 @@ class BoardIndexItem extends React.Component {
         //         }
         //     });
         const pinDivs = [0, 1, 2].map( i => {
-                if (pins && pins[i]){
+            // debugger
+                if (this.state.pinsImages && this.state.pinsImages[0][i]){
+                    const pin = this.state.pinsImages[0][i]
                     return (
                         <img 
                             className={`p${i}`}
-                            src={this.state.pinsImages[i]} 
+                            src={pin.image_url} 
                             alt=""/>
                     );
                 } else {
