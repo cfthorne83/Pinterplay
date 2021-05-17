@@ -11,7 +11,6 @@ class BoardIndexItem extends React.Component {
     componentDidMount() {
         let that = this;
         const arr = [];
-        let userId = this.props.userId.id;
         if (this.props.board.pins){
                 $.ajax({
                     url: `/api/pins`,

@@ -9,7 +9,8 @@ class UserPinIndexLink extends React.Component {
     }
 
     componentDidMount() {
-        let userId = this.props.userId;
+        let {userId} = this.props;
+        const that = this;
         // if (this.props.board.pins){
                 $.ajax({
                     url: `/api/pins`,
@@ -35,33 +36,33 @@ class UserPinIndexLink extends React.Component {
         //     return null;
         // }
         
-        // const pinDivs = [0, 1, 2].map( i => {
-        //         if (this.state.pinsImages && this.state.pinsImages[0][i]){
-        //             const pin = this.state.pinsImages[0][i]
-        //             return (
-        //                 <img 
-        //                     className={`p${i}`}
-        //                     src={pin.image_url} 
-        //                     alt=""/>
-        //             );
-        //         } else {
-        //             return (
-        //                 <div className={`p${i}`}></div>
-        //             );
-        //         }
-        //     });
+        const pinDivs = [0, 1, 2].map( i => {
+                if (this.state.pinsImages && this.state.pinsImages[0][i]){
+                    const pin = this.state.pinsImages[0][i]
+                    return (
+                        <img 
+                            className={`p${i}`}
+                            src={pin.image_url} 
+                            alt=""/>
+                    );
+                } else {
+                    return (
+                        <div className={`p${i}`}></div>
+                    );
+                }
+            });
 
             return (
             <li key={userId}>
                 <Link key={`${this.props.userId}`} to={`/users/${userId}/pins`}>
              
-                    {/* <div className="outer">
+                    <div className="outer">
                             {pinDivs[0]}
                         <div className="inner">
                             {pinDivs[1]}
                             {pinDivs[2]}
                         </div>
-                    </div> */}
+                    </div>
 
                     <h1>All Pins</h1>
                 </Link>
