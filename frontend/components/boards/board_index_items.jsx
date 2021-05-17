@@ -13,8 +13,6 @@ class BoardIndexItem extends React.Component {
         const arr = [];
         let userId = this.props.userId.id;
         if (this.props.board.pins){
-            // [0, 1, 2].forEach( i => {
-            //     if (that.props.board.pins[i])
                 $.ajax({
                     url: `/api/pins`,
                     method: "GET",
@@ -28,7 +26,6 @@ class BoardIndexItem extends React.Component {
                         that.setState({ pinsImages: [response] })
                     }
                 )
-            // })
         }
     }
 
@@ -40,22 +37,7 @@ class BoardIndexItem extends React.Component {
             return null;
         }
         
-        // const pinDivs = [0, 1, 2].map( i => {
-        //         if (pins && pins[i]){
-        //             return (
-        //                 <img 
-        //                     className={`p${i}`}
-        //                     src={this.state.pinsImages[i]} 
-        //                     alt=""/>
-        //             );
-        //         } else {
-        //             return (
-        //                 <div className={`p${i}`}></div>
-        //             );
-        //         }
-        //     });
         const pinDivs = [0, 1, 2].map( i => {
-            // debugger
                 if (this.state.pinsImages && this.state.pinsImages[0][i]){
                     const pin = this.state.pinsImages[0][i]
                     return (

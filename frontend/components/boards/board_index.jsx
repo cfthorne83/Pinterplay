@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 
 import BoardIndexItemContainer from "./board_index_item_container";
 import BoardIndexItem from "./board_index_items";
+import UserPinIndexLink from "../pins/user_pin_index_link";
 
 class BoardIndex extends React.Component {
     constructor(props){
@@ -47,7 +48,7 @@ class BoardIndex extends React.Component {
                     board={board}
                     key={board.id}
                     first={first}
-                    userId={this.props.currentUser} />
+                    userId={this.props.currentUser.id} />
             );
         })
         
@@ -60,6 +61,7 @@ class BoardIndex extends React.Component {
                                 <h1>All Pins</h1>
                             </li>
                         </Link> */}
+                        <UserPinIndexLink />
                     {boards}
                 </ul>  
         );
