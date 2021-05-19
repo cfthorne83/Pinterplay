@@ -8,7 +8,7 @@ const UserPinIndex = (props) => {
         <div className="pin-index-outer">
             <h1 className="all-pins">All Pins</h1>
             <PinIndexContainer userPinIndex={true} />
-            <CreatePinDropdownContainer className="pin-drop"/>
+            {/* <CreatePinDropdownContainer className="pin-drop"/> */}
         </div>
     )
 }

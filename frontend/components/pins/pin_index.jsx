@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { BeatLoader } from "react-spinners";
 
+import CreatePinDropdownContainer from "./create_pin_dropdown_container";
+
 class PinIndex extends React.Component {
     constructor(props) {
         super(props);
@@ -76,7 +78,8 @@ class PinIndex extends React.Component {
                 {/* {this.pinCount()} */}
                 <ul className='pin-index'>
                     {pins}
-                </ul>  
+                </ul> 
+                <CreatePinDropdownContainer className="pin-drop"/> 
             </div>
     
         )
