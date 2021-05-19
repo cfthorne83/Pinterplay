@@ -9,6 +9,7 @@ class HomeNavBar extends React.Component {
 
         this.state = { homeLink: "active", followLink: "inactive" };
         this.toggleLink = this.toggleLink.bind(this);
+        this.removeClass = this.removeClass.bind(this);
     }
 
     profileLink() {
@@ -33,6 +34,10 @@ class HomeNavBar extends React.Component {
         } else {
             this.setState({ homeLink: "active", followLink: "inactive"})
         }
+    }
+
+    removeClass() {
+        this.setState({ homeLink: "none", followLink: "none"})
     }
 
     render() {
@@ -74,7 +79,7 @@ class HomeNavBar extends React.Component {
 
                 <nav className='nav-dropdowns-container'>
                     <ul className='nav-dropdowns'>
-                        <Link to={`/users/${this.props.currentUser.id}`}>
+                        <Link onClick={this.removeClass} to={`/users/${this.props.currentUser.id}`}>
                             {this.profileLink()}
                         </Link>
                         
