@@ -8,7 +8,8 @@ class HomeNavBar extends React.Component {
         super(props);
 
         this.state = { homeLink: "active", followLink: "inactive" };
-        this.toggleLink = this.toggleLink.bind(this);
+        this.homeLink = this.homeLink.bind(this);
+        this.followLink = this.followLink.bind(this);
         this.removeClass = this.removeClass.bind(this);
     }
 
@@ -28,12 +29,12 @@ class HomeNavBar extends React.Component {
         }
     }
 
-    toggleLink() {
-        if (this.state.homeLink === "active"){
-            this.setState({ homeLink: "inactive", followLink: "active"})
-        } else {
-            this.setState({ homeLink: "active", followLink: "inactive"})
-        }
+    followLink() {
+        this.setState({ homeLink: "inactive", followLink: "active"})
+    }
+
+    homeLink() {
+        this.setState({ homeLink: "active", followLink: "inactive"})
     }
 
     removeClass() {
@@ -50,8 +51,8 @@ class HomeNavBar extends React.Component {
                                 <img className='home-logo' src="https://seeklogo.com/images/P/pinterest-badge-logo-82C89A5E42-seeklogo.com.png" alt="myPin Logo" />
                             </span>
                         </Link>                      
-                        <li className={this.state.homeLink}><Link onClick={this.toggleLink} to='/'>Home</Link></li>
-                        <li className={this.state.followLink} ><Link onClick={this.toggleLink}to='/following'>Following</Link></li>
+                        <li className={this.state.homeLink}><Link onClick={this.homeLink} to='/'>Home</Link></li>
+                        <li className={this.state.followLink} ><Link onClick={this.followLink}to='/following'>Following</Link></li>
                     </ul>
                 </nav>
 
