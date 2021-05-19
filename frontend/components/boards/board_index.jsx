@@ -65,8 +65,6 @@ class BoardIndex extends React.Component {
         
         return (
                 <ul className='board-index'>
-                    {/* <h1>props: {this.props.boards.length}</h1>
-                    <h1 style={{color: "red"}}>state:{this.state.boards.length}</h1> */}
                     <UserPinIndexLinkContainer userId={this.props.currentUser.id}/>
                     {boards}
                 </ul>  

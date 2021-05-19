@@ -14,11 +14,11 @@ class Api::PinsController < ApplicationController
         elsif params[:limit] && params[:board]
             board = Board.find(params[:board][:id])
             @limit = true
-            @pins = board.pins.limit(3)
+            @pins = board.pins.limit(3).shuffle
         elsif params[:limit] && params[:user_id]
             user = User.find(params[:user_id])
             @limit = true
-            @pins = user.pins.limit(3)
+            @pins = user.pins.limit(3).shuffle
         else
             @pins = Pin.all
         end
