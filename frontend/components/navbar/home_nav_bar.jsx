@@ -7,7 +7,8 @@ class HomeNavBar extends React.Component {
     constructor(props){
         super(props);
 
-        this.state = { homeLink: "active", followLink: "inactive" }
+        this.state = { homeLink: "active", followLink: "inactive" };
+        this.toggleLink = this.toggleLink.bind(this);
     }
 
     profileLink() {
@@ -26,8 +27,12 @@ class HomeNavBar extends React.Component {
         }
     }
 
-    handleLink() {
-        this.setState({ homeLink: inactive, followLink: active})
+    toggleLink() {
+        if (this.state.homeLink === "active"){
+            this.setState({ homeLink: "inactive", followLink: "active"})
+        } else {
+            this.setState({ homeLink: "active", followLink: "inactive"})
+        }
     }
 
     render() {
@@ -40,8 +45,8 @@ class HomeNavBar extends React.Component {
                                 <img className='home-logo' src="https://seeklogo.com/images/P/pinterest-badge-logo-82C89A5E42-seeklogo.com.png" alt="myPin Logo" />
                             </span>
                         </Link>                      
-                        <li className={this.state.homeLink}><Link  to='/'>Home</Link></li>
-                        <li className={this.state.followLink}><Link  to='/following'>Following</Link></li>
+                        <li className={this.state.homeLink}><Link onClick={this.toggleLink} to='/'>Home</Link></li>
+                        <li className={this.state.followLink} ><Link onClick={this.toggleLink}to='/following'>Following</Link></li>
                     </ul>
                 </nav>
 
