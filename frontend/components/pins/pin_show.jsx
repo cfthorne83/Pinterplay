@@ -1,16 +1,12 @@
 import React from "react";
 import BoardDropdown from "../boards/board_dropdown";
+import { Redirect } from 'react-router-dom';
 
 class PinShow extends React.Component {
     constructor(props){
         super(props);
 
-        this.state = this.props.pin;
-        // {
-        //                 image_url: this.props.pin.image_url, 
-        //                 title: this.props.pin.title,
-        //                 board_id: ""
-        //             }
+        this.state = Object.assign(this.props.pin, { mounted: false });
 
         this.handleGoBack = this.handleGoBack.bind(this);
         this.handleCreatePin = this.handleCreatePin.bind(this);
@@ -21,6 +17,7 @@ class PinShow extends React.Component {
     componentDidMount() {
         this.props.fetchPin(this.props.match.params.pinId);
         this.props.fetchBoards();
+        this.setState({ mounted: true })
     }
 
     handleGoBack() {
@@ -66,7 +63,9 @@ class PinShow extends React.Component {
 
         const {pin} = this.props;
         
-        if (!this.props.pin) {
+        if (this.state.mounted && !this.props.pin){
+            return <Redirect to={`/users/${this.props.currentUser.id}`} />
+        } else if (!this.props.pin) {
             return null;
         } else if (!this.props.pin.user) {
             return null;
