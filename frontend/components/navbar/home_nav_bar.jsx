@@ -2,27 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import LogoutDropdown from './logout_drop_down';
+import Searchbar from './searchbar';
 
 class HomeNavBar extends React.Component {
     constructor(props){
         super(props);
 
-        this.state = { homeLink: "active", followLink: "inactive", pins: null };
+        this.state = { homeLink: "active", followLink: "inactive"};
         this.homeLink = this.homeLink.bind(this);
         this.followLink = this.followLink.bind(this);
         this.removeClass = this.removeClass.bind(this);
-    }
-
-    componentDidMount() {
-        const that = this;
-        $.ajax({
-            url: 'api/pins',
-            method: 'GET'
-        }).then(
-            (response) => {
-                that.setState({ pins: response})
-            }
-        )
     }
 
     profileLink() {
@@ -55,12 +44,7 @@ class HomeNavBar extends React.Component {
 
     render() {
 
-        if (!this.state.pins) return null;
-            const pins = Object.values(this.state.pins).map( pin => {
-                return (
-                    <li>{pin.title}</li>
-                )
-            })
+        
         return (
             <header className='home-nav-bar'>
                 <nav className='nav-link-container'>
@@ -75,11 +59,12 @@ class HomeNavBar extends React.Component {
                     </ul>
                 </nav>
 
-                <form className='searchbar-container'>
+                {/* <form className='searchbar-container'>
                     <input  className='searchbar' 
                             type="text" 
                             placeholder="Search" />
-                </form>
+                </form> */}
+                <Searchbar />
 
                 <ul className="online-presence">
                         <a href="https://www.linkedin.com/in/chris-thorne83/" className="online-presence__filter" target="_blank" title="my linkedin!">
@@ -106,9 +91,6 @@ class HomeNavBar extends React.Component {
                         <LogoutDropdown logout={this.props.logout} />
                     </ul>
                 </nav>
-                <ul>
-                    {pins}
-                </ul>
             </header>
         )
     }
