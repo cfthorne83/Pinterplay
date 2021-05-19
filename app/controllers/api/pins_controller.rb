@@ -31,13 +31,13 @@ class Api::PinsController < ApplicationController
         @user = @pin.user
         render :show
     end
- 
+    
     def create
         @pin = Pin.new(pin_params)
         @pin.user_id = current_user.id
         if @pin.save 
+            @user = @pin.user
             render "api/pins/show"
-            # render json: {message: "Wooooh!!"}
         else
             render json: @pin.errors.full_messages
         end
