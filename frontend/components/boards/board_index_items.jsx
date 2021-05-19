@@ -32,9 +32,9 @@ class BoardIndexItem extends React.Component {
         const {board} = this.props;
         const pins = board.pins;
 
-        if (!board.pins || !this.state.pinsImages) {
-            return null;
-        }
+        // if (!board.pins || !this.state.pinsImages) {
+        //     return null;
+        // }
         
         const pinDivs = [0, 1, 2].map( i => {
                 if (this.state.pinsImages && this.state.pinsImages[0][i]){
@@ -65,8 +65,6 @@ class BoardIndexItem extends React.Component {
                     </div>
 
                     <h1>{board.title}</h1>
-                    {/* <h2>{pins.length} Pins</h2> */}
-                    <h1>{this.props.first}</h1>
                 </Link>
             </li>
         )

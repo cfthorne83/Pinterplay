@@ -18,20 +18,17 @@ class BoardIndex extends React.Component {
         this.props.fetchBoards();
     }
     
-    componentDidUpdate() {
-        debugger
-        if (this.props.boards !== this.state.boards){
-            this.setState({boards: this.props.boards})
-            this.forceUpdate();
-        } 
-    }
+    // componentDidUpdate() {
+    //     if (this.props.boards !== this.state.boards){
+    //         this.setState({boards: this.props.boards})
+    //     } 
+    // }
     
     handleFirst() {
         this.setState({ first: false });
     }
 
     render() {  
-        console.log(this.state.boards);
         
         if (this.props.boards.length === 0) return null;
         let reRender = false;
@@ -42,26 +39,35 @@ class BoardIndex extends React.Component {
         });
         
         // if (reRender) return null;
+
+        if (this.props.boards !== this.state.boards){
+            this.setState({boards: this.props.boards})
+            return null;
+        }
         
-        let boards = this.state.boards.map( (board, i) => {
-            let first;
-            if (i !== 0 ){
-                first = false;
-            } else {
-                first = true;
-            }
+        let boards = this.props.boards.map( (board, i) => {
+            // let first;
+            // if (i !== 0 ){
+            //     first = false;
+            // } else {
+            //     first = true;
+            // }
 
             return (
-                <BoardIndexItem
-                    board={board}
-                    key={board.id}
-                    />
+
+                    <BoardIndexItem
+                        board={board}
+                        key={board.id}
+                        />
+                    
             );
         })
         
         return (
                 <ul className='board-index'>
-                    {/* <UserPinIndexLinkContainer userId={this.props.currentUser.id}/> */}
+                    {/* <h1>props: {this.props.boards.length}</h1>
+                    <h1 style={{color: "red"}}>state:{this.state.boards.length}</h1> */}
+                    <UserPinIndexLinkContainer userId={this.props.currentUser.id}/>
                     {boards}
                 </ul>  
         );
