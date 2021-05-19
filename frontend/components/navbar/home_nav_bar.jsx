@@ -7,10 +7,22 @@ class HomeNavBar extends React.Component {
     constructor(props){
         super(props);
 
-        this.state = { homeLink: "active", followLink: "inactive" };
+        this.state = { homeLink: "active", followLink: "inactive", pins: null };
         this.homeLink = this.homeLink.bind(this);
         this.followLink = this.followLink.bind(this);
         this.removeClass = this.removeClass.bind(this);
+    }
+
+    componentDidMount() {
+        const that = this;
+        $.ajax({
+            url: 'api/pins',
+            method: 'GET'
+        }).then(
+            (response) => {
+                that.setState({ pins: response})
+            }
+        )
     }
 
     profileLink() {
@@ -42,6 +54,13 @@ class HomeNavBar extends React.Component {
     }
 
     render() {
+
+        if (!this.state.pins) return null;
+            const pins = Object.values(this.state.pins).map( pin => {
+                return (
+                    <li>{pin.title}</li>
+                )
+            })
         return (
             <header className='home-nav-bar'>
                 <nav className='nav-link-container'>
@@ -87,6 +106,9 @@ class HomeNavBar extends React.Component {
                         <LogoutDropdown logout={this.props.logout} />
                     </ul>
                 </nav>
+                <ul>
+                    {pins}
+                </ul>
             </header>
         )
     }
