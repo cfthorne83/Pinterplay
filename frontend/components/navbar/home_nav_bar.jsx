@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import LogoutDropdown from './logout_drop_down';
-import Searchbar from './searchbar';
+import SearchbarContainer from './searchbar_container';
 
 class HomeNavBar extends React.Component {
     constructor(props){
@@ -64,7 +64,7 @@ class HomeNavBar extends React.Component {
                             type="text" 
                             placeholder="Search" />
                 </form> */}
-                <Searchbar />
+                <SearchbarContainer />
 
                 <ul className="online-presence">
                         <a href="https://www.linkedin.com/in/chris-thorne83/" className="online-presence__filter" target="_blank" title="my linkedin!">

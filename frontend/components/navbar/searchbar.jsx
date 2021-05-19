@@ -4,21 +4,13 @@ class Searchbar extends React.Component{
     constructor(props){
         super(props);
 
-        this.state = { pins: null, searchTerm: "" }
+        this.state = { pins: this.props.pins , searchTerm: "" }
 
         this.handleInput = this.handleInput.bind(this);
     }
 
     componentDidMount() {
-        const that = this;
-        $.ajax({
-            url: 'api/pins',
-            method: 'GET'
-        }).then(
-            (response) => {
-                that.setState({ pins: response})
-            }
-        )
+        this.props.fetchPins();
     }
 
     handleInput(e) {
@@ -28,10 +20,10 @@ class Searchbar extends React.Component{
     }
 
     render() {
-        
+
         if (!this.state.pins) return null;
 
-            const pins = Object.values(this.state.pins).filter( pin => {
+        const pins = this.state.pins.filter( pin => {
                 if (this.state === ""){
                     return pin
                 } else if ( pin.title.toLowerCase().includes( this.state.searchTerm.toLowerCase() )){
