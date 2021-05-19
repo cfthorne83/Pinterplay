@@ -4,7 +4,9 @@ class Searchbar extends React.Component{
     constructor(props){
         super(props);
 
-        this.state = { pins: null }
+        this.state = { pins: null, searchTerm: "" }
+
+        this.handleInput = this.handleInput.bind(this);
     }
 
     componentDidMount() {
@@ -19,12 +21,25 @@ class Searchbar extends React.Component{
         )
     }
 
-    render() {
+    handleInput(e) {
+        this.setState({
+            searchTerm: e.currentTarget.value
+        })
+    }
 
+    render() {
+        
         if (!this.state.pins) return null;
-            const pins = Object.values(this.state.pins).map( (pin, i) => {
+
+            const pins = Object.values(this.state.pins).filter( pin => {
+                if (this.state === ""){
+                    return pin
+                } else if ( pin.title.toLowerCase().includes( this.state.searchTerm.toLowerCase() )){
+                    return pin
+                }
+            }).map( (pin, i) => {
                 return (
-                    <li key={i}>{pin.title}</li>
+                    <li>{pin.title}</li>
                 )
             })
         
@@ -33,7 +48,8 @@ class Searchbar extends React.Component{
                 <form className='searchbar-container'>
                     <input  className='searchbar' 
                             type="text" 
-                            placeholder="Search" />
+                            placeholder="Search" 
+                            onChange={this.handleInput}/>
                 </form>
                 <ul>
                     {pins}
