@@ -4,6 +4,11 @@ import { Link } from 'react-router-dom';
 import LogoutDropdown from './logout_drop_down';
 
 class HomeNavBar extends React.Component {
+    constructor(props){
+        super(props);
+
+        this.state = { homeLink: "active", followLink: "inactive" }
+    }
 
     profileLink() {
         if (this.props.currentUser.image_url) {
@@ -21,8 +26,11 @@ class HomeNavBar extends React.Component {
         }
     }
 
-    render() {
+    handleLink() {
+        this.setState({ homeLink: inactive, followLink: active})
+    }
 
+    render() {
         return (
             <header className='home-nav-bar'>
                 <nav className='nav-link-container'>
@@ -32,8 +40,8 @@ class HomeNavBar extends React.Component {
                                 <img className='home-logo' src="https://seeklogo.com/images/P/pinterest-badge-logo-82C89A5E42-seeklogo.com.png" alt="myPin Logo" />
                             </span>
                         </Link>                      
-                        <li><Link to='/'>Home</Link></li>
-                        <li><Link to='/following'>Following</Link></li>
+                        <li className={this.state.homeLink}><Link  to='/'>Home</Link></li>
+                        <li className={this.state.followLink}><Link  to='/following'>Following</Link></li>
                     </ul>
                 </nav>
 

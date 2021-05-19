@@ -58,6 +58,11 @@
                 font-weight: 600;
                 box-sizing: border-box;
             }
+
+            li.active {
+                background-color: hotpink;
+            }
+
         } 
     }
 }
