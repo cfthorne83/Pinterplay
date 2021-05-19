@@ -7,7 +7,7 @@ class Following extends React.Component{
     render(){
         return (
             <div>
-                {/* <h1>Building your new following feed!</h1> */}
+                <h1 className="follow-header">From people you follow</h1>
                 <PinIndex following={true}/>
             </div>
         )
