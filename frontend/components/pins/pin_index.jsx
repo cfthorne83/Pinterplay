@@ -73,15 +73,15 @@ class PinIndex extends React.Component {
 
             
         return (
-            
-            <div className="pin-index-con">
+            // <div className="pin-index-outer">
+            <div className="pin-index-outer">
                 {/* {this.pinCount()} */}
                 <ul className='pin-index'>
                     {pins}
                 </ul> 
                 <CreatePinDropdownContainer className="pin-drop"/> 
             </div>
-    
+    // </div>
         )
     }
 }

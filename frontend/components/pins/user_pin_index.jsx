@@ -5,7 +5,7 @@ import CreatePinDropdownContainer from "./create_pin_dropdown_container";
 
 const UserPinIndex = (props) => {
     return (
-        <div className="pin-index-outer">
+        <div >
             <h1 className="all-pins">All Pins</h1>
             <PinIndexContainer userPinIndex={true} />
             {/* <CreatePinDropdownContainer className="pin-drop"/> */}
