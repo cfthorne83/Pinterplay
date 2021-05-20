@@ -72,20 +72,21 @@ class PinIndex extends React.Component {
         //     })
         const that = this;
         const pins = this.props.pins.filter( pin => {
-            debugger
             if (that.props.searchInput === ""){
+                return pin
+            } else if ( pin.title.toLowerCase().includes( this.props.searchInput.toLowerCase() )){
                 return pin
             }
         }).map(pin => {
             return (
-                // <Link 
-                //     key={`${pin.id}`} 
-                //     to={`/pins/${pin.id}`}
-                //     className="pin-index__item">
-                //         <img src={`${pin.image_url}`} alt=""/>
-                //         <h2>{this.capitalize(pin.title)}</h2>
-                // </Link>
-                <li>{pin.title}</li>
+                <Link 
+                    key={`${pin.id}`} 
+                    to={`/pins/${pin.id}`}
+                    className="pin-index__item">
+                        <img src={`${pin.image_url}`} alt=""/>
+                        <h2>{this.capitalize(pin.title)}</h2>
+                </Link>
+                // <li>{pin.title}</li>
             )
         })
 
