@@ -12,6 +12,7 @@ class PinIndex extends React.Component {
     }
 
     componentDidMount() {
+        debugger
         if (this.props.following){
             const boards = this.props.currentUser.following;
             this.props.fetchPins(this.props.board).then(this.setState({loading: false}));
