@@ -1,18 +1,14 @@
-import { OPEN_MODAL, CLOSE_MODAL } from '../actions/modal_actions';
-import merge from "lodash/merge";
+import { SEARCH_INPUT } from '../actions/search_actions';
 
-const modalReducer = (state = null, action) => {
+const searchReducer = (state = {}, action) => {
     Object.freeze(state);
 
     switch (action.type) {
-        case OPEN_MODAL:
-            // return action.modal;
-            return Object.assign({}, { modal: action.modal }, { options: action.options })
-        case CLOSE_MODAL:
-            return null;
+        case SEARCH_INPUT:
+            return action.input;
         default:
             return state;
     }
 };
 
-export default modalReducer;
+export default searchReducer;

@@ -10,7 +10,6 @@ class Searchbar extends React.Component{
 
     componentDidMount() {
         const that = this;
-        debugger
         this.props.fetchPins().then(
             this.setState({ pins: Object.values(that.props.pins) }));
     }
@@ -19,6 +18,7 @@ class Searchbar extends React.Component{
         this.setState({
             searchTerm: e.currentTarget.value
         })
+        this.props.searchInput(e.currentTarget.value);
     }
 
     render() {
