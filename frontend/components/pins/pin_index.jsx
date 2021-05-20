@@ -8,7 +8,7 @@ class PinIndex extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = { loading: true }
+        this.state = { loading: true, searchInput: this.props.searchInput }
     }
 
     componentDidMount() {
@@ -51,8 +51,7 @@ class PinIndex extends React.Component {
 
     render() {
 
-        debugger
-        if (!this.props.pins){
+        if (this.props.pins.length === 0){
             return null;
         }
         
@@ -71,19 +70,22 @@ class PinIndex extends React.Component {
         //             <li>{pin.title}</li>
         //         )
         //     })
-        let pins = this.props.pins.filter( pin => {
-            if (this.props.searchInput === ""){
+        const that = this;
+        const pins = this.props.pins.filter( pin => {
+            debugger
+            if (that.props.searchInput === ""){
                 return pin
             }
         }).map(pin => {
             return (
-                <Link 
-                    key={`${pin.id}`} 
-                    to={`/pins/${pin.id}`}
-                    className="pin-index__item">
-                        <img src={`${pin.image_url}`} alt=""/>
-                        <h2>{this.capitalize(pin.title)}</h2>
-                </Link>
+                // <Link 
+                //     key={`${pin.id}`} 
+                //     to={`/pins/${pin.id}`}
+                //     className="pin-index__item">
+                //         <img src={`${pin.image_url}`} alt=""/>
+                //         <h2>{this.capitalize(pin.title)}</h2>
+                // </Link>
+                <li>{pin.title}</li>
             )
         })
 
