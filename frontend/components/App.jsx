@@ -21,7 +21,7 @@ import CreatePinFormContainer from "./pins/create_pin_form_container";
 import PinShowContainer from "./pins/pin_show_container";
 import UserPinIndex from "./pins/user_pin_index"
 
-import FollowingContainer from "./following/following";
+import FollowingContainer from "./following/following_container";
 
 const App = () => (
     

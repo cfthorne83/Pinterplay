@@ -54,24 +54,19 @@ class PinIndex extends React.Component {
         if (this.props.pins.length === 0){
             return null;
         }
-        
+
+        let {pins, following} = this.props;
+        debugger
         if (this.props.shuffle){
             this.shuffleArray(this.props.pins);
         }
 
-        // const pins = this.props.pins.filter( pin => {
-        //         if (this.props.searchInput === ""){
-        //             return pin
-        //         } else if ( pin.title.toLowerCase().includes( this.props.searchInput.toLowerCase() )){
-        //             return pin
-        //         }
-        //     }).map( (pin, i) => {
-        //         return (
-        //             <li>{pin.title}</li>
-        //         )
-        //     })
+        if (this.props.following){
+            
+        }
+
         const that = this;
-        const pins = this.props.pins.filter( pin => {
+        pins = pins.filter( pin => {
             if (that.props.searchInput === ""){
                 return pin
             } else if ( pin.title.toLowerCase().includes( this.props.searchInput.toLowerCase() )){
