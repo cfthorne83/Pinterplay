@@ -6,6 +6,7 @@ class Searchbar extends React.Component{
         this.state = { pins: null , searchTerm: "" }
 
         this.handleInput = this.handleInput.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     componentDidMount() {
@@ -18,6 +19,10 @@ class Searchbar extends React.Component{
         this.setState({
             searchTerm: e.currentTarget.value
         })
+        this.props.searchInput(e.currentTarget.value);
+    }
+    
+    handleSubmit() {
         this.props.searchInput(e.currentTarget.value);
     }
 
