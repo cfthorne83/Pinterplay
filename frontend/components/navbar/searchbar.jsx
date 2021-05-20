@@ -10,7 +10,7 @@ class Searchbar extends React.Component{
     }
 
     componentDidMount() {
-        this.props.fetchPins();
+        // this.props.fetchPins();
         // if (this.props.following){
         //     const boards = this.props.currentUser.following
         //     this.props.fetchPins(this.props.board).then(this.setState({loading: false}));

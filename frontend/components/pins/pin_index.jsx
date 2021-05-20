@@ -12,20 +12,19 @@ class PinIndex extends React.Component {
     }
 
     componentDidMount() {
-        // if (this.props.following){
-        //     const boards = this.props.currentUser.following
-        //     this.props.fetchPins(this.props.board).then(this.setState({loading: false}));
-        // } else {
-        // if (this.props.board){
-        //     this.props.fetchPins({board: this.props.board.id}).then(this.setState({loading: false}));
-        // } else if (this.props.userPinIndex){
-        //     this.props.fetchPins({user: this.props.currentUser.id}).then(this.setState({loading: false}));
-        // } else if (this.props.following){
-        //     const follows = this.props.currentUser.following.map( follow => {return follow.id})
-        //     this.props.fetchPins({follows: follows}).then(this.setState({loading: false}));
-        // } else {
-        //     this.props.fetchPins().then(this.setState({loading: false}));
-        // }
+        if (this.props.following){
+            const boards = this.props.currentUser.following;
+            this.props.fetchPins(this.props.board).then(this.setState({loading: false}));
+        } else if (this.props.board){
+            this.props.fetchPins({board: this.props.board.id}).then(this.setState({loading: false}));
+        } else if (this.props.userPinIndex){
+            this.props.fetchPins({user: this.props.currentUser.id}).then(this.setState({loading: false}));
+        } else if (this.props.following){
+            const follows = this.props.currentUser.following.map( follow => {return follow.id})
+            this.props.fetchPins({follows: follows}).then(this.setState({loading: false}));
+        } else {
+            this.props.fetchPins().then(this.setState({loading: false}));
+        }
     }
 
     pinCount() {
@@ -56,14 +55,16 @@ class PinIndex extends React.Component {
         }
 
         let {pins, following} = this.props;
-        debugger
+
         if (this.props.shuffle){
             this.shuffleArray(this.props.pins);
         }
 
-        if (this.props.following){
-            
-        }
+        // if (this.props.following){
+        //     pin = pins.filter( pin => {
+
+        //     })
+        // }
 
         const that = this;
         pins = pins.filter( pin => {
