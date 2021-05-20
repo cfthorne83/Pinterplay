@@ -86,7 +86,6 @@ class PinIndex extends React.Component {
                         {/* <img src={`${pin.image_url}`} alt=""/> */}
                         <h2>{this.capitalize(pin.title)}</h2>
                 </Link>
-                // <li>{pin.title}</li>
             )
         })
 
