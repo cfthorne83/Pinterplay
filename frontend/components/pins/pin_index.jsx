@@ -51,6 +51,7 @@ class PinIndex extends React.Component {
 
     render() {
 
+        debugger
         if (!this.props.pins){
             return null;
         }
@@ -59,7 +60,22 @@ class PinIndex extends React.Component {
             this.shuffleArray(this.props.pins);
         }
 
-        let pins = this.props.pins.map(pin => {
+        // const pins = this.props.pins.filter( pin => {
+        //         if (this.props.searchInput === ""){
+        //             return pin
+        //         } else if ( pin.title.toLowerCase().includes( this.props.searchInput.toLowerCase() )){
+        //             return pin
+        //         }
+        //     }).map( (pin, i) => {
+        //         return (
+        //             <li>{pin.title}</li>
+        //         )
+        //     })
+        let pins = this.props.pins.filter( pin => {
+            if (this.props.searchInput === ""){
+                return pin
+            }
+        }).map(pin => {
             return (
                 <Link 
                     key={`${pin.id}`} 

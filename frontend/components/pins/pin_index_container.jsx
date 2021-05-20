@@ -8,7 +8,8 @@ const msp = (state, ownProps) => {
         board: ownProps.board,
         following: ownProps.following,
         currentUser: state.entities.users[state.session.id],
-        userPinIndex: ownProps.userPinIndex
+        userPinIndex: ownProps.userPinIndex,
+        searchInput: state.ui.search
     }
 }
 
