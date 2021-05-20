@@ -10,10 +10,9 @@ class Searchbar extends React.Component{
 
     componentDidMount() {
         const that = this;
+        debugger
         this.props.fetchPins().then(
             this.setState({ pins: Object.values(that.props.pins) }));
-            debugger
-            let gooble;
     }
 
     handleInput(e) {
