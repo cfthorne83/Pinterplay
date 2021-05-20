@@ -3,14 +3,17 @@ import React from 'react';
 class Searchbar extends React.Component{
     constructor(props){
         super(props);
-
-        this.state = { pins: this.props.pins , searchTerm: "" }
+        this.state = { pins: null , searchTerm: "" }
 
         this.handleInput = this.handleInput.bind(this);
     }
 
     componentDidMount() {
-        this.props.fetchPins();
+        const that = this;
+        this.props.fetchPins().then(
+            this.setState({ pins: Object.values(that.props.pins) }));
+            debugger
+            let gooble;
     }
 
     handleInput(e) {
@@ -21,10 +24,9 @@ class Searchbar extends React.Component{
 
     render() {
 
-        if (!this.state.pins) return null;
-
-        const pins = this.state.pins.filter( pin => {
-                if (this.state === ""){
+        if (!this.props.pins) return null;
+        const pins = Object.values(this.props.pins).filter( pin => {
+                if (this.state.searchTerm === ""){
                     return pin
                 } else if ( pin.title.toLowerCase().includes( this.state.searchTerm.toLowerCase() )){
                     return pin
@@ -34,6 +36,12 @@ class Searchbar extends React.Component{
                     <li>{pin.title}</li>
                 )
             })
+
+
+        // const pins = Object.values(this.props.pins).map( (pin, i) => {
+        //     return <li key={i}>{pin.title}</li>
+        // })
+
         
         return (
             <div>

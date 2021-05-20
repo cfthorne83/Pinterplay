@@ -5,7 +5,7 @@ import Searchbar from './searchbar';
 
 const msp = (state, ownProps) => {
     return {
-        pins: Object.values(state.entities.pins)
+        pins: state.entities.pins
     };
 };
 
