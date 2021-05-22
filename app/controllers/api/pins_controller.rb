@@ -10,7 +10,12 @@ class Api::PinsController < ApplicationController
             user = User.find(params[:data][:user])
             @pins = user.pins
         elsif params[:data] && params[:data][:follows]
-            @pins = params[:data][:follows].map { |id| User.find(id).pins }.flatten
+            debugger
+            if params[:data][:follows] == "none"
+                @pins = nil
+            else
+                @pins = params[:data][:follows].map { |id| User.find(id).pins }.flatten
+            end
         elsif params[:limit] && params[:board]
             board = Board.find(params[:board][:id])
             @limit = true
