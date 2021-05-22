@@ -41,7 +41,6 @@ dark = Board.create(
 boards = [blue, pink, gold, dark]
 nums = ["One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen"]
 
-arr = []
 (0..3).each do |board_i|
     (0..9).each do |i| 
         # if (board_i < 3) && (i > 9)
@@ -77,7 +76,7 @@ dorothy = User.create(
 light = Board.create(
                 title: "Light", 
                 description: "Pastel!", 
-                user_id: demo_user.id   
+                user_id: dorothy.id   
             )
 
 (0..9).each do |i| 
