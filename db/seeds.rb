@@ -9,10 +9,10 @@
 require 'open-uri'
 
 demo_user = User.create(
-                        fname: "Demo", 
-                        lname: "User", 
-                        username:"demoUser", 
-                        email: "demo@fakemail.com", 
+                        fname: "Sophia", 
+                        lname: "Patrillo", 
+                        username:"Sophia", 
+                        email: "sophia@ggirls.com", 
                         password: "123456"
                     ) 
 
@@ -21,11 +21,6 @@ blue = Board.create(
                 description: "Blue!", 
                 user_id: demo_user.id   
             )            
-light = Board.create(
-                title: "Light", 
-                description: "Pastel!", 
-                user_id: demo_user.id   
-            )
 pink = Board.create(
                 title: "Pink", 
                 description: "Pink!", 
@@ -42,18 +37,22 @@ gold = Board.create(
                 user_id: demo_user.id   
             )
 
-boards = [blue, light, pink, dark, gold]
+boards = [blue, pink, dark, gold]
 nums = ["One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen"]
 
 arr = []
 (0..1).each do |board_i|
-    # (0..1).each do |i| 
+    (0..1).each do |i| 
 i = 0
-        # if (board_i < 3) && (i > 9)
-        #     next
-        # else
+        if (board_i < 3) && (i > 9)
+            next
+        else
             board = boards[board_i]
-            initial = board.title[0].downcase + i.to_s
+                if board != dark
+                    initial = board.title[0].downcase + i.to_s
+                else 
+                    initial = "d"
+                end
             title = board.title + " " + nums[i]
             uri = "https://mypin-seeds.s3.amazonaws.com/#{initial}.jpg"
 
@@ -61,22 +60,22 @@ i = 0
             pin = Pin.create(title: title, board_id: board.id, user_id: demo_user.id)
             pin.photo.attach(io: file, filename: '#{initial}.jpg')
             pin.save
-        # end
-    # end
+        end
+    end
 end
 
 chris_p_bacon = User.create(
-                        fname: "Chris P.", 
-                        lname: "Bacon", 
-                        username:"chris.p.bacon", 
-                        email: "chrisp@bacon.com", 
+                        fname: "Dorothy", 
+                        lname: "Zbornak", 
+                        username:"Dorothy", 
+                        email: "dorothy@ggirl.com", 
                         password: "123456"
                     )
 
-bacon = Board.create(
-                title: "Bacon", 
-                description: "I'm hungry!", 
-                user_id: chris_p_bacon.id   
+light = Board.create(
+                title: "Light", 
+                description: "Pastel!", 
+                user_id: demo_user.id   
             )
 
 bacon_file1 = URI.open("https://mypin-seeds.s3.amazonaws.com/bacon1.jpg")
