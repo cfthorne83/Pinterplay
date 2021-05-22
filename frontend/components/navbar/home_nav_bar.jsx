@@ -23,9 +23,11 @@ class HomeNavBar extends React.Component {
             )
         } else {
             return (
-                <li id='initial'>
-                    {this.props.currentUser.email[0].toUpperCase()}
-                </li>
+                <div className="initial-con">
+                    <li id='initial'>
+                        {this.props.currentUser.email[0].toUpperCase()}
+                    </li>
+                </div>
             )
         }
     }
@@ -59,11 +61,6 @@ class HomeNavBar extends React.Component {
                     </ul>
                 </nav>
 
-                {/* <form className='searchbar-container'>
-                    <input  className='searchbar' 
-                            type="text" 
-                            placeholder="Search" />
-                </form> */}
                 <SearchbarContainer />
 
                 <ul className="online-presence">

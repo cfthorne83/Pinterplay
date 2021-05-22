@@ -133,6 +133,19 @@
     text-align: center;
 }
 
+.initial-con {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    height: 45px;
+    width: 45px;
+}
+
+.initial-con:hover {
+    background-color: var(--lt-grey);
+}
+
 .dropdown-outer {
   position: relative; 
 
