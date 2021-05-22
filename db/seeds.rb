@@ -50,10 +50,11 @@ i = 0
             board = boards[board_i]
                 if board != dark
                     initial = board.title[0].downcase + i.to_s
+                    title = board.title + " " + nums[i]
                 else 
                     initial = "d"
+                    title = "Black " + nums[i]
                 end
-            title = board.title + " " + nums[i]
             uri = "https://mypin-seeds.s3.amazonaws.com/#{initial}.jpg"
 
             file = URI.open(uri)
