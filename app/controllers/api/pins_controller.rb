@@ -23,7 +23,7 @@ class Api::PinsController < ApplicationController
             @pins = Pin.all
         end
         
-        if @pin != nil 
+        if @pin  
             render :index
         end
     end
