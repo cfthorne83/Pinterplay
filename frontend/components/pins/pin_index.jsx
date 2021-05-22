@@ -8,7 +8,7 @@ class PinIndex extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = { loading: true, searchInput: this.props.searchInput }
+        this.state = { loading: true, searchInput: this.props.searchInput, noFollows: false}
     }
 
     componentDidMount() {
@@ -26,6 +26,7 @@ class PinIndex extends React.Component {
         // } else {
         //     this.props.fetchPins().then(this.setState({loading: false}));
         // }
+        const that = this;
         if (this.props.board){
             this.props.fetchPins({board: this.props.board.id}).then(this.setState({loading: false}));
         } else if (this.props.userPinIndex){
@@ -35,9 +36,8 @@ class PinIndex extends React.Component {
             if (this.props.currentUser.following[0]){
                 follows = this.props.currentUser.following.map( follow => {return follow.id})
             } else {
-                follows = "none"
+                that.setState({ noFollows: true});
             }
-            debugger
             this.props.fetchPins({follows: follows}).then(this.setState({loading: false}));
         } else {
             this.props.fetchPins().then(this.setState({loading: false}));
@@ -77,12 +77,6 @@ class PinIndex extends React.Component {
             this.shuffleArray(this.props.pins);
         }
 
-        // if (this.props.following){
-        //     pin = pins.filter( pin => {
-
-        //     })
-        // }
-
         const that = this;
         pins = pins.filter( pin => {
             if (that.props.searchInput === ""){
@@ -102,18 +96,20 @@ class PinIndex extends React.Component {
             )
         })
 
-            
-        return (
-            // <div className="pin-index-outer">
-            <div className="pin-index-outer">
-                {/* {this.pinCount()} */}
-                <ul className='pin-index'>
-                    {pins}
-                </ul> 
-                <CreatePinDropdownContainer className="pin-drop"/> 
-            </div>
-    // </div>
-        )
+        if (this.state.noFollows){
+            return (
+                <div></div>
+            )
+        } else {
+            return (
+                <div className="pin-index-outer">
+                    <ul className='pin-index'>
+                        {pins}
+                    </ul> 
+                    <CreatePinDropdownContainer className="pin-drop"/> 
+                </div>
+            )
+        }
     }
 }
 
