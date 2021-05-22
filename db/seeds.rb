@@ -12,8 +12,9 @@ demo_user = User.create(
                         fname: "Sophia", 
                         lname: "Patrillo", 
                         username:"Sophia", 
-                        email: "sophia@ggirls.com", 
-                        password: "123456"
+                        email: "demo@fakemail.com", 
+                        password: "123456",
+                        image_url: "images/sophia.jpeg"
                     ) 
 
 blue = Board.create(
@@ -52,7 +53,7 @@ arr = []
             initial = board.title[0].downcase + i.to_s
             title = board.title + " " + nums[i]
         else 
-            initial = "d"
+            initial = "d" + i.to_s
             title = "Black " + nums[i]
         end
 
