@@ -58,13 +58,20 @@
                 font-weight: 600;
                 box-sizing: border-box;
             }
-
+            
             li.active {
                 background-color: black;
                 color: white;
             }
-
+            
         } 
+    }
+    .searchbar-container {
+        width: 100%; 
+    }
+
+    .searchbar-outer {
+        width: 100%;
     }
 }
 
@@ -96,9 +103,6 @@
     width: 13px;
 }
 
-.home-nav-bar .searchbar-container {
-    width: 100%;  
-}
 
 .home-nav-bar .searchbar {
     background-color: var(--lt-grey);
