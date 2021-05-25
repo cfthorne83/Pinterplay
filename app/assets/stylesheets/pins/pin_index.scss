@@ -92,7 +92,6 @@
 }
 
 .pin-index-loader {
-    background-color: chartreuse;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -102,5 +101,6 @@
         letter-spacing: var(--lett-space);
         font-weight: 600;
         font-size: 2rem;
+        padding: 1rem;
     }
 }
