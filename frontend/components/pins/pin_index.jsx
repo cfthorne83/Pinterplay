@@ -27,21 +27,21 @@ class PinIndex extends React.Component {
         //     this.props.fetchPins().then(this.setState({loading: false}));
         // }
         const that = this;
-        // if (this.props.board){
-        //     this.props.fetchPins({board: this.props.board.id}).then(this.setState({loading: false}));
-        // } else if (this.props.userPinIndex){
-        //     this.props.fetchPins({user: this.props.currentUser.id}).then(this.setState({loading: false}));
-        // } else if (this.props.following){
-        //     let follows;
-        //     if (this.props.currentUser.following[0]){
-        //         follows = this.props.currentUser.following.map( follow => {return follow.id})
-        //     } else {
-        //         that.setState({ noFollows: true});
-        //     }
-        //     this.props.fetchPins({follows: follows}).then(this.setState({loading: false}));
-        // } else {
-        //     this.props.fetchPins().then(this.setState({loading: false}));
-        // }
+        if (this.props.board){
+            this.props.fetchPins({board: this.props.board.id}).then(this.setState({loading: false}));
+        } else if (this.props.userPinIndex){
+            this.props.fetchPins({user: this.props.currentUser.id}).then(this.setState({loading: false}));
+        } else if (this.props.following){
+            let follows;
+            if (this.props.currentUser.following[0]){
+                follows = this.props.currentUser.following.map( follow => {return follow.id})
+            } else {
+                that.setState({ noFollows: true});
+            }
+            this.props.fetchPins({follows: follows}).then(this.setState({loading: false}));
+        } else {
+            this.props.fetchPins().then(this.setState({loading: false}));
+        }
     }
 
     pinCount() {
@@ -98,7 +98,7 @@ class PinIndex extends React.Component {
                     key={`${pin.id}`} 
                     to={`/pins/${pin.id}`}
                     className="pin-index__item">
-                        {/* <img src={`${pin.image_url}`} alt=""/> */}
+                        <img src={`${pin.image_url}`} alt=""/>
                         <h2>{this.capitalize(pin.title)}</h2>
                 </Link>
             )
@@ -112,7 +112,7 @@ class PinIndex extends React.Component {
             return (
                 <div className="pin-index-outer">
                     <ul className='pin-index'>
-                        {/* {pins} */}
+                        {pins}
                     </ul> 
                     <CreatePinDropdownContainer className="pin-drop"/> 
                 </div>
