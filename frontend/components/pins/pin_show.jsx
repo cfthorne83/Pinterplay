@@ -6,7 +6,8 @@ class PinShow extends React.Component {
     constructor(props){
         super(props);
 
-        this.state = Object.assign(this.props.pin, { mounted: false });
+        // this.state = Object.assign(this.props.pin, { mounted: false });
+        this.state = { pin: null, mounted: false };
 
         this.handleGoBack = this.handleGoBack.bind(this);
         this.handleCreatePin = this.handleCreatePin.bind(this);
@@ -15,8 +16,18 @@ class PinShow extends React.Component {
         this.displayFollow = this.displayFollow.bind(this);
     }
 
+    // componentWillMount() {
+    //     if (!this.props.pins) {
+    //         this.props.fetchPins();
+    //     }
+    // }
     componentDidMount() {
-        this.props.fetchPin(this.props.match.params.pinId);
+        debugger
+        if (this.props.pins.length === 0){
+            debugger
+            this.props.fetchPins();
+        }
+        this.props.fetchPin(this.props.match.params.pinId).then(this.setState({pin: this.props.pin}));
         this.props.fetchBoards();
         this.setState({ mounted: true })
     }
@@ -74,10 +85,14 @@ class PinShow extends React.Component {
 
     render() {
         const {pin} = this.props;
-        
-        if (this.state.mounted && !this.props.pin){
-            return <Redirect to={`/users/${this.props.currentUser.id}`} />
+        // if (this.state.mounted && !this.props.pin){
+        //     // return <Redirect to={`/users/${this.props.currentUser.id}`} />
+        // } else 
+        if (this.props.pins.length === 0) {
+            debugger
+            return null;
         } else if (!this.props.pin) {
+            debugger
             return null;
         } else if (!this.props.pin.user) {
             return null;
