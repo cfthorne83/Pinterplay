@@ -74,7 +74,7 @@ class PinIndex extends React.Component {
                         className="create-pin-form__loader"
                         size={35} color="red" 
                         loading={this.state.loading}/>
-                    <h1>Retrieving Pins...</h1>
+                    <h1>Retrieving Pins</h1>
                 </div>
             )
         }
