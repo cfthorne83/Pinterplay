@@ -16,17 +16,17 @@ class PinShow extends React.Component {
         this.displayFollow = this.displayFollow.bind(this);
     }
 
-    // componentWillMount() {
-    //     if (!this.props.pins) {
-    //         this.props.fetchPins();
-    //     }
-    // }
-    componentDidMount() {
-        debugger
-        if (this.props.pins.length === 0){
-            debugger
+    componentWillMount() {
+        if (this.props.pins.length === 0) {
             this.props.fetchPins();
         }
+    }
+
+    componentDidMount() {
+        // if (this.props.pins.length === 0){
+        //     debugger
+        //     this.props.fetchPins();
+        // }
         this.props.fetchPin(this.props.match.params.pinId).then(this.setState({pin: this.props.pin}));
         this.props.fetchBoards();
         this.setState({ mounted: true })
@@ -94,9 +94,11 @@ class PinShow extends React.Component {
         } else if (!this.props.pin) {
             debugger
             return null;
-        } else if (!this.props.pin.user) {
-            return null;
         }
+        // } else if (!this.props.pin.user) {
+        //     debugger
+        //     return null;
+        // }
         return (
             <div className="pin-show">
                 <button 
@@ -143,10 +145,10 @@ class PinShow extends React.Component {
                                 {this.props.pin.title}
                         </h1>
                         <div className="pin-show__follow">
-                            {this.userDisplay()}
+                            {/* {this.userDisplay()} */}
                             <button onClick={this.handleFollow}>Follow</button>
                         </div>
-                        <h2>{this.props.pin.followers.length}&nbsp;{this.displayFollow()}</h2>
+                        {/* <h2>{this.props.pin.followers.length}&nbsp;{this.displayFollow()}</h2> */}
                     </div>
                 </div>
 
