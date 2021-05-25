@@ -12,20 +12,6 @@ class PinIndex extends React.Component {
     }
 
     componentDidMount() {
-        // debugger
-        // if (this.props.following){
-        //     const boards = this.props.currentUser.following;
-        //     this.props.fetchPins(this.props.board).then(this.setState({loading: false}));
-        // } else if (this.props.board){
-        //     this.props.fetchPins({board: this.props.board.id}).then(this.setState({loading: false}));
-        // } else if (this.props.userPinIndex){
-        //     this.props.fetchPins({user: this.props.currentUser.id}).then(this.setState({loading: false}));
-        // } else if (this.props.following){
-        //     const follows = this.props.currentUser.following.map( follow => {return follow.id})
-        //     this.props.fetchPins({follows: follows}).then(this.setState({loading: false}));
-        // } else {
-        //     this.props.fetchPins().then(this.setState({loading: false}));
-        // }
         const that = this;
         if (this.props.board){
             this.props.fetchPins({board: this.props.board.id}).then(this.setState({loading: false}));
@@ -98,7 +84,7 @@ class PinIndex extends React.Component {
                     key={`${pin.id}`} 
                     to={`/pins/${pin.id}`}
                     className="pin-index__item">
-                        <img src={`${pin.image_url}`} alt=""/>
+                        {/* <img src={`${pin.image_url}`} alt=""/> */}
                         <h2>{this.capitalize(pin.title)}</h2>
                 </Link>
             )
