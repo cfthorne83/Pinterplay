@@ -68,7 +68,9 @@ class PinIndex extends React.Component {
     render() {
 
         if (this.props.pins.length === 0){
-            return null;
+            return (
+                <h4>Retrieving Pins!</h4>
+            )
         }
 
         let {pins, following} = this.props;
