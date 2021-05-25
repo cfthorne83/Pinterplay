@@ -72,7 +72,7 @@ class PinIndex extends React.Component {
                 <div className="pin-index-loader">
                     <BeatLoader 
                         className="create-pin-form__loader"
-                        size={30} color="red" 
+                        size={35} color="red" 
                         loading={this.state.loading}/>
                     <h1>Retrieving Pins...</h1>
                 </div>
