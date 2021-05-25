@@ -12,6 +12,7 @@ class PinShow extends React.Component {
         this.handleCreatePin = this.handleCreatePin.bind(this);
         this.userDisplay = this.userDisplay.bind(this);
         this.handleFollow = this.handleFollow.bind(this);
+        this.displayFollow = this.displayFollow.bind(this);
     }
 
     componentDidMount() {
@@ -60,8 +61,14 @@ class PinShow extends React.Component {
     }
 
     displayFollow() {
-        if (this.props.pin.follows){
-            return null;
+        if (this.props.pin.followers.length === 1){
+            return (
+                <span>follower</span>
+            )
+        } else {
+            return (
+                <span>followers</span>
+            )
         }
     }
 
@@ -124,7 +131,7 @@ class PinShow extends React.Component {
                             {this.userDisplay()}
                             <button onClick={this.handleFollow}>Follow</button>
                         </div>
-                        <h2>{this.props.pin.followers.length} followers</h2>
+                        <h2>{this.props.pin.followers.length}&nbsp;{this.displayFollow()}</h2>
                     </div>
                 </div>
 

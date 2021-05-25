@@ -6,7 +6,6 @@ import { fetchBoards } from '../../actions/board_actions';
 import { openModal } from "../../actions/modal_actions";
 
 const msp = (state, ownProps) => {
-    debugger
     return {
         pin: state.entities.pins[ownProps.match.params.pinId],
         boards: Object.values(state.entities.boards),
