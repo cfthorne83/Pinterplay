@@ -59,8 +59,13 @@ class PinShow extends React.Component {
                 })
     }
 
-    render() {
+    displayFollow() {
+        if (this.props.pin.follows){
+            return null;
+        }
+    }
 
+    render() {
         const {pin} = this.props;
         
         if (this.state.mounted && !this.props.pin){
@@ -70,7 +75,6 @@ class PinShow extends React.Component {
         } else if (!this.props.pin.user) {
             return null;
         }
-
         return (
             <div className="pin-show">
                 <button 
