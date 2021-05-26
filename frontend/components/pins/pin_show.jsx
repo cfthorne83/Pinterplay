@@ -22,10 +22,10 @@ class PinShow extends React.Component {
         // if (this.props.pins.length === 0) {
         //     this.props.fetchPins();
         // }
-        this.props.fetchPin(this.props.match.params.pinId);
     }
-
+    
     componentDidMount() {
+        this.props.fetchPin(this.props.match.params.pinId);
         // if (this.props.pins.length === 0){
         //     this.props.fetchPins();
         // }
@@ -51,16 +51,16 @@ class PinShow extends React.Component {
     }
 
     userDisplay() {
-        if (this.props.pin && this.props.pin.user.fname && this.props.pin.user.lname){
+        if (this.props.pin && this.props.pin.user && this.props.pin.user.fname && this.props.pin.user.lname){
             return (
                 <h2>{this.props.pin.user.fname}&nbsp;{this.props.pin.user.lname}</h2>
             )
         } else 
-        if (this.props.pin && this.props.pin.user.username){
+        if (this.props.pin && this.props.pin.user && this.props.pin.user.username){
             return (
                 <h2>{this.props.pin.user.username}</h2>
             )
-        } else {
+        } else if (this.props.pin && this.props.pin.user) {
             return (
                 <h2>{this.props.pin.user.email}</h2>
             )
@@ -106,7 +106,7 @@ class PinShow extends React.Component {
     }
 
     followBtn() {
-        if (this.props.pin.user.id !== this.props.currentUser.id) {
+        if (this.props.pin.user && this.props.pin.user.id !== this.props.currentUser.id) {
             if (this.props.currentUser.following.includes(this.props.pin.user)){
                 return <button onClick={this.handleFollow}>Follow</button>
             } else {
@@ -125,9 +125,11 @@ class PinShow extends React.Component {
         } else if (!this.state.pin) {
             this.handleState();
         } else if (!this.props.pin.user) {
+            debugger
+            return null;
+        } else if (!this.props.pin.followers){
             return null;
         }
-        debugger
         return (
             <div className="pin-show">
                 <button 
