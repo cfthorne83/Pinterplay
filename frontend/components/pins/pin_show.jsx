@@ -14,6 +14,7 @@ class PinShow extends React.Component {
         this.handleFollow = this.handleFollow.bind(this);
         this.displayFollow = this.displayFollow.bind(this);
         this.handleState = this.handleState.bind(this);
+        this.followBtn = this.followBtn.bind(this);
     }
 
     componentWillMount() {
@@ -49,11 +50,12 @@ class PinShow extends React.Component {
     }
 
     userDisplay() {
-        if (this.props.pin.user.fname && this.props.pin.user.lname){
+        if (this.props.pin && this.props.pin.user.fname && this.props.pin.user.lname){
             return (
                 <h2>{this.props.pin.user.fname}&nbsp;{this.props.pin.user.lname}</h2>
             )
-        } else if (this.props.pin.user.username){
+        } else 
+        if (this.props.pin && this.props.pin.user.username){
             return (
                 <h2>{this.props.pin.user.username}</h2>
             )
@@ -91,6 +93,16 @@ class PinShow extends React.Component {
         this.setState({ pin: this.props.pin });
     }
 
+    followBtn() {
+        if (this.props.pin.user.id !== this.props.currentUser.id) {
+            if (this.props.currentUser.following.includes(this.props.pin.user)){
+                return <button onClick={this.handleFollow}>Follow</button>
+            } else {
+                return <button onClick={this.handleFollow}>Unfollow</button>
+            }
+        }
+    }
+
     render() {
         const {pin} = this.props;
         // if (this.state.mounted && !this.props.pin){
@@ -103,7 +115,7 @@ class PinShow extends React.Component {
         } else if (!this.props.pin.user) {
             return null;
         }
-        
+        debugger
         return (
             <div className="pin-show">
                 <button 
@@ -151,7 +163,7 @@ class PinShow extends React.Component {
                         </h1>
                         <div className="pin-show__follow">
                             {this.userDisplay()}
-                            <button onClick={this.handleFollow}>Follow</button>
+                            {this.followBtn()}
                         </div>
                         <h3>{this.props.pin.followers.length}&nbsp;{this.displayFollow()}</h3>
                     </div>
