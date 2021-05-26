@@ -49,7 +49,11 @@ class PinShow extends React.Component {
     }
 
     userDisplay() {
-        if (this.props.pin.user.username){
+        if (this.props.pin.user.fname && this.props.pin.user.lname){
+            return (
+                <h2>{this.props.pin.user.fname}&nbsp;{this.props.pin.user.lname}</h2>
+            )
+        } else if (this.props.pin.user.username){
             return (
                 <h2>{this.props.pin.user.username}</h2>
             )
@@ -146,10 +150,10 @@ class PinShow extends React.Component {
                                 {this.props.pin.title}
                         </h1>
                         <div className="pin-show__follow">
-                            {/* {this.userDisplay()} */}
+                            {this.userDisplay()}
                             <button onClick={this.handleFollow}>Follow</button>
                         </div>
-                        {/* <h2>{this.props.pin.followers.length}&nbsp;{this.displayFollow()}</h2> */}
+                        <h2>{this.props.pin.followers.length}&nbsp;{this.displayFollow()}</h2>
                     </div>
                 </div>
 
