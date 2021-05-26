@@ -84,27 +84,22 @@ class PinShow extends React.Component {
     }
 
     handleState() {
-        debugger
         this.setState({ pin: this.props.pin });
     }
 
     render() {
         const {pin} = this.props;
         // if (this.state.mounted && !this.props.pin){
-        //     // return <Redirect to={`/users/${this.props.currentUser.id}`} />
+        //     return <Redirect to={`/users/${this.props.currentUser.id}`} />
         // } else 
-        // if (this.props.pins.length === 0) {
-        //     return null;
-        // } else 
-        // 
         if (!this.props.pin) {
             return null;
         } else if (!this.state.pin) {
             this.handleState();
+        } else if (!this.props.pin.user) {
+            return null;
         }
-        // } else if (!this.props.pin.user) {
-        //     return null;
-        // }
+        
         return (
             <div className="pin-show">
                 <button 
