@@ -12,6 +12,7 @@ class PinShow extends React.Component {
         this.handleCreatePin = this.handleCreatePin.bind(this);
         this.userDisplay = this.userDisplay.bind(this);
         this.handleFollow = this.handleFollow.bind(this);
+        this.handleUnfollow = this.handleUnfollow.bind(this);
         this.displayFollow = this.displayFollow.bind(this);
         this.handleState = this.handleState.bind(this);
         this.followBtn = this.followBtn.bind(this);
@@ -77,6 +78,17 @@ class PinShow extends React.Component {
                 })
     }
 
+    handleUnfollow() {
+        $.ajax ({
+                    url: "/api/friendships",
+                    method: "DELETE",
+                    data: {
+                        follower_id: this.props.currentUser.id,
+                        followed_id: this.props.pin.user.id
+                    }
+                })
+    }
+
     displayFollow() {
         if (this.props.pin.followers.length === 1){
             return (
@@ -98,7 +110,7 @@ class PinShow extends React.Component {
             if (this.props.currentUser.following.includes(this.props.pin.user)){
                 return <button onClick={this.handleFollow}>Follow</button>
             } else {
-                return <button onClick={this.handleFollow}>Unfollow</button>
+                return <button onClick={this.handleUnfollow}>Unfollow</button>
             }
         }
     }
