@@ -24,9 +24,9 @@ class PinShow extends React.Component {
 
     componentDidMount() {
         // if (this.props.pins.length === 0){
-        //     debugger
         //     this.props.fetchPins();
         // }
+        debugger
         this.props.fetchPin(this.props.match.params.pinId).then(this.setState({pin: this.props.pin}));
         this.props.fetchBoards();
         this.setState({ mounted: true })
@@ -89,14 +89,11 @@ class PinShow extends React.Component {
         //     // return <Redirect to={`/users/${this.props.currentUser.id}`} />
         // } else 
         if (this.props.pins.length === 0) {
-            debugger
             return null;
         } else if (!this.props.pin) {
-            debugger
             return null;
         }
         // } else if (!this.props.pin.user) {
-        //     debugger
         //     return null;
         // }
         return (
