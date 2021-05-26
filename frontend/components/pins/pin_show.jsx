@@ -5,7 +5,7 @@ import { Redirect } from 'react-router-dom';
 class PinShow extends React.Component {
     constructor(props){
         super(props);
-
+debugger
         // this.state = Object.assign(this.props.pin, { mounted: false });
         this.state = { pin: null, mounted: false };
 
@@ -26,10 +26,12 @@ class PinShow extends React.Component {
         // if (this.props.pins.length === 0){
         //     this.props.fetchPins();
         // }
-        debugger
-        this.props.fetchPin(this.props.match.params.pinId).then(this.setState({pin: this.props.pin}));
+        // debugger
+        this.props.fetchPin(this.props.match.params.pinId);
         this.props.fetchBoards();
-        this.setState({ mounted: true })
+        this.setState({ mounted: true });
+        debugger
+        (this.setState({pin: this.props.pin}))
     }
 
     handleGoBack() {
@@ -91,6 +93,7 @@ class PinShow extends React.Component {
         // if (this.props.pins.length === 0) {
         //     return null;
         // } else 
+        // debugger
         if (!this.props.pin) {
             return null;
         }
