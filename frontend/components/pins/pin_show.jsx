@@ -153,7 +153,7 @@ class PinShow extends React.Component {
                             {this.userDisplay()}
                             <button onClick={this.handleFollow}>Follow</button>
                         </div>
-                        <h2>{this.props.pin.followers.length}&nbsp;{this.displayFollow()}</h2>
+                        <h3>{this.props.pin.followers.length}&nbsp;{this.displayFollow()}</h3>
                     </div>
                 </div>
 
