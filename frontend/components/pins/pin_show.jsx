@@ -5,7 +5,6 @@ import { Redirect } from 'react-router-dom';
 class PinShow extends React.Component {
     constructor(props){
         super(props);
-debugger
         // this.state = Object.assign(this.props.pin, { mounted: false });
         this.state = { pin: null, mounted: false };
 
@@ -14,24 +13,23 @@ debugger
         this.userDisplay = this.userDisplay.bind(this);
         this.handleFollow = this.handleFollow.bind(this);
         this.displayFollow = this.displayFollow.bind(this);
+        this.handleState = this.handleState.bind(this);
     }
 
-    // componentWillMount() {
-    //     if (this.props.pins.length === 0) {
-    //         this.props.fetchPins();
-    //     }
-    // }
+    componentWillMount() {
+        // if (this.props.pins.length === 0) {
+        //     this.props.fetchPins();
+        // }
+        this.props.fetchPin(this.props.match.params.pinId);
+    }
 
     componentDidMount() {
         // if (this.props.pins.length === 0){
         //     this.props.fetchPins();
         // }
-        // debugger
-        this.props.fetchPin(this.props.match.params.pinId);
         this.props.fetchBoards();
         this.setState({ mounted: true });
-        debugger
-        (this.setState({pin: this.props.pin}))
+        // (this.setState({pin: this.props.pin}))
     }
 
     handleGoBack() {
@@ -85,6 +83,11 @@ debugger
         }
     }
 
+    handleState() {
+        debugger
+        this.setState({ pin: this.props.pin });
+    }
+
     render() {
         const {pin} = this.props;
         // if (this.state.mounted && !this.props.pin){
@@ -93,9 +96,11 @@ debugger
         // if (this.props.pins.length === 0) {
         //     return null;
         // } else 
-        // debugger
+        // 
         if (!this.props.pin) {
             return null;
+        } else if (!this.state.pin) {
+            this.handleState();
         }
         // } else if (!this.props.pin.user) {
         //     return null;
