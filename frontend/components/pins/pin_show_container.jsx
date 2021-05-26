@@ -8,7 +8,7 @@ import { openModal } from "../../actions/modal_actions";
 const msp = (state, ownProps) => {
     
     return {
-        pins: Object.values(state.entities.pins),
+        // pins: Object.values(state.entities.pins),
         pin: state.entities.pins[ownProps.match.params.pinId],
         boards: Object.values(state.entities.boards),
         newPin: { board_id: "" },

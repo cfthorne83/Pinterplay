@@ -16,11 +16,11 @@ class PinShow extends React.Component {
         this.displayFollow = this.displayFollow.bind(this);
     }
 
-    componentWillMount() {
-        if (this.props.pins.length === 0) {
-            this.props.fetchPins();
-        }
-    }
+    // componentWillMount() {
+    //     if (this.props.pins.length === 0) {
+    //         this.props.fetchPins();
+    //     }
+    // }
 
     componentDidMount() {
         // if (this.props.pins.length === 0){
@@ -88,9 +88,10 @@ class PinShow extends React.Component {
         // if (this.state.mounted && !this.props.pin){
         //     // return <Redirect to={`/users/${this.props.currentUser.id}`} />
         // } else 
-        if (this.props.pins.length === 0) {
-            return null;
-        } else if (!this.props.pin) {
+        // if (this.props.pins.length === 0) {
+        //     return null;
+        // } else 
+        if (!this.props.pin) {
             return null;
         }
         // } else if (!this.props.pin.user) {
