@@ -125,7 +125,6 @@ class PinShow extends React.Component {
         } else if (!this.state.pin) {
             this.handleState();
         } else if (!this.props.pin.user) {
-            debugger
             return null;
         } else if (!this.props.pin.followers){
             return null;
