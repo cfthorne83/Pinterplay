@@ -105,8 +105,11 @@ class PinShow extends React.Component {
     }
 
     followBtn() {
+        const followIds = this.props.currentUser.following.map( follow => {
+            return follow.id
+        })
         if (this.props.pin.user && this.props.pin.user.id !== this.props.currentUser.id) {
-            if (this.props.currentUser.following.includes(this.props.pin.user)){
+            if (followIds.includes(this.props.pin.user.id)){
                 return <button onClick={this.handleUnfollow}>Unfollow</button>
             } else {
                 return <button onClick={this.handleFollow}>Follow</button>
