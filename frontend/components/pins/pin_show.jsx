@@ -110,10 +110,10 @@ class PinShow extends React.Component {
         })
         if (this.props.pin.user && this.props.pin.user.id !== this.props.currentUser.id) {
             if (followIds.includes(this.props.pin.user.id)){
-                this.setState({ following: true})
+                this.setState({ following: true});
                 return <button onClick={this.handleUnfollow}>Unfollow</button>
             } else {
-                this.setState({ following: false})
+                this.setState({ following: false});
                 return <button onClick={this.handleFollow}>Follow</button>
             }
         }
