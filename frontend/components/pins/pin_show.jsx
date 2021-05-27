@@ -120,12 +120,11 @@ class PinShow extends React.Component {
         // if (this.state.mounted && !this.props.pin){
         //     return <Redirect to={`/users/${this.props.currentUser.id}`} />
         // } else 
-        // if (!this.props.pin) {
-        //     return null;
+        if (!this.props.pin) {
+            return null;
         // } else if (!this.state.pin) {
         //     this.handleState();
-        // } else 
-        if (!this.props.pin.user) {
+        } else if (!this.props.pin.user) {
             return null;
         } else if (!this.props.pin.followers){
             return null;
