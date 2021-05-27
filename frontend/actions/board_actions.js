@@ -42,6 +42,7 @@ export const fetchBoard = (boardId) => {
 }
 
 export const createBoard = (board) => {
+    debugger
     return dispatch => {
         return BoardApiUtil.createBoard(board).then(board => {
             dispatch(receiveBoard(board))

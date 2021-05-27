@@ -17,9 +17,10 @@ export const removeFollow = (followId) => {
     }
 }
 
-export const createFollow = (follower_id, followed_id) => {
+export const createFollow = (friendship) => {
+    debugger
     return dispatch => {
-        return FollowApiUtil.createFollow(follower_id, followed_id).then( follow => {
+        return FollowApiUtil.createFollow(friendship).then( follow => {
             dispatch(receiveFollow(follow))
         })
     }

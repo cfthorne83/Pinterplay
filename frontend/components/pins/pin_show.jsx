@@ -6,7 +6,7 @@ class PinShow extends React.Component {
     constructor(props){
         super(props);
         // this.state = Object.assign(this.props.pin, { mounted: false });
-        this.state = { pin: null, mounted: false, following: null };
+        this.state = { pin: null, mounted: false, following: null, friendship: this.props.friendship };
 
         this.handleGoBack = this.handleGoBack.bind(this);
         this.handleCreatePin = this.handleCreatePin.bind(this);
@@ -75,7 +75,10 @@ class PinShow extends React.Component {
         //                 followed_id: this.props.pin.user.id
         //             }
         //         })
-        this.props.createFollow(this.props.currentUser.id, this.props.pin.user.id);
+        // this.props.createFollow(this.props.currentUser.id, this.props.pin.user.id);
+        // this.setState({friendship[follower_id]: 1 })
+        debugger
+        this.props.createFollow(this.props.friendship);
     }
 
     handleUnfollow() {
