@@ -25,6 +25,7 @@ class Api::BoardsController < ApplicationController
         
         if @board.save
             render 'api/boards/show'
+            # render :show
         else
             render json: @board.errors.full_messages, status: 422
         end
