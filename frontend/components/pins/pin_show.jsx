@@ -67,14 +67,15 @@ class PinShow extends React.Component {
     }
 
     handleFollow() {
-        $.ajax ({
-                    url: "/api/friendships",
-                    method: "POST",
-                    data: {
-                        follower_id: this.props.currentUser.id,
-                        followed_id: this.props.pin.user.id
-                    }
-                })
+        // $.ajax ({
+        //             url: "/api/friendships",
+        //             method: "POST",
+        //             data: {
+        //                 follower_id: this.props.currentUser.id,
+        //                 followed_id: this.props.pin.user.id
+        //             }
+        //         })
+        this.props.createFollow(this.props.currentUser.id, this.props.pin.user.id);
     }
 
     handleUnfollow() {

@@ -4,6 +4,7 @@ import PinShow from "./pin_show";
 import { fetchPin, fetchPins, createPin } from "../../actions/pin_actions";
 import { fetchBoards } from '../../actions/board_actions';
 import { openModal } from "../../actions/modal_actions";
+import { createFollow, deleteFollow } from "../../actions/follow_actions";
 
 const msp = (state, ownProps) => {
     return {
@@ -22,7 +23,9 @@ const mdp = (dispatch, ownProps) => {
         fetchPins: () => dispatch(fetchPins()),
         openModal: (modal, options) => {dispatch(openModal(modal, options))},
         fetchBoards: () => dispatch(fetchBoards()),
-        createPin: (pin) => dispatch(createPin(pin))
+        createPin: (pin) => dispatch(createPin(pin)),
+        createFollow: (follower_id, followed_id) => dispatch(createFollow(follower_id, followed_id)),
+        // deleteFollow: ()
     }
 }
 
