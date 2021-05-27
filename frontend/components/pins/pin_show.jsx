@@ -55,8 +55,7 @@ class PinShow extends React.Component {
             return (
                 <h2>{this.props.pin.user.fname}&nbsp;{this.props.pin.user.lname}</h2>
             )
-        } else 
-        if (this.props.pin && this.props.pin.user && this.props.pin.user.username){
+        } else if (this.props.pin && this.props.pin.user && this.props.pin.user.username){
             return (
                 <h2>{this.props.pin.user.username}</h2>
             )
@@ -122,14 +121,14 @@ class PinShow extends React.Component {
         // } else 
         if (!this.props.pin) {
             return null;
-        // } else if (!this.state.pin) {
-        //     this.handleState();
         } else if (!this.props.pin.user) {
             return null;
         } else if (!this.props.pin.followers){
             return null;
+        } else if (!this.state.pin) {
+            this.handleState();
         }
-        debugger
+
         return (
             <div className="pin-show">
                 <button 
