@@ -20,7 +20,7 @@ class Api::PinsController < ApplicationController
             @limit = true
             @pins = user.pins.limit(3).shuffle
         else
-            @pins = Pin.all
+            @pins = Pin.all[-3..-1]
         end
         
         if @pin  
