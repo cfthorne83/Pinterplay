@@ -74,7 +74,7 @@ class PinShow extends React.Component {
                         follower_id: this.props.currentUser.id,
                         followed_id: this.props.pin.user.id
                     }
-                }).then(this.setState({ following: true }))
+                })
     }
 
     handleUnfollow() {
@@ -85,7 +85,7 @@ class PinShow extends React.Component {
                         follower_id: this.props.currentUser.id,
                         followed_id: this.props.pin.user.id
                     }
-                }).then(this.setState({ following: false }))
+                })
     }
 
     displayFollow() {
