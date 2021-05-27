@@ -4,8 +4,10 @@ class Api::FriendshipsController < ApplicationController
     before_action :find_user
     
     def create 
-        current_user.follow(@user)
-        # @friendship = Friendship.new()
+        # current_user.follow(@user)
+        debugger
+        @friendship = Friendship.new(friendship_params)
+        # current_user.active_friendships.create(followed_id: user.id)
     end
 
     def destroy
@@ -17,4 +19,9 @@ class Api::FriendshipsController < ApplicationController
     def find_user 
         @user = User.find(params[:followed_id])
     end
-end
+
+    def friendship_params
+        params.require(:friendship).permit(:follower_id, :followed_id)
+    end
+
+    end
