@@ -5,7 +5,6 @@ class Api::FriendshipsController < ApplicationController
     
     def create 
         # current_user.follow(@user)
-        debugger
         @friendship = Friendship.new(friendship_params)
         # current_user.active_friendships.create(followed_id: user.id)
     end
@@ -24,4 +23,4 @@ class Api::FriendshipsController < ApplicationController
         params.require(:friendship).permit(:follower_id, :followed_id)
     end
 
-    end
+end
