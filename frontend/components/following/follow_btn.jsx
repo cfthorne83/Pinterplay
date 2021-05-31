@@ -4,7 +4,8 @@ class FollowBtn extends React.Component {
     constructor(props) {
         super(props);
         
-        this.state = this.props.friendship;
+        // this.state = this.props.friendship;
+        this.state = { followers: this.props.followers }
 
         this.followBtn = this.followBtn.bind(this);
         this.handleFollow = this.handleFollow.bind(this);
@@ -49,7 +50,7 @@ class FollowBtn extends React.Component {
                         follower_id: this.props.currentUser.id,
                         followed_id: this.props.pin.user.id
                     }
-                })
+                }).then(this.setState({followers: this.state.followers + 1}))
         // this.props.createFollow(this.state);
     }
 
@@ -79,13 +80,14 @@ class FollowBtn extends React.Component {
     }
 
     render() {
+        debugger
         return (
             <div>
                 <div className="pin-show__follow">
                     {this.userDisplay()}
-                 {this.followBtn()}
+                    {this.followBtn()}
                 </div>
-                <h3>{this.props.pin.followers.length}&nbsp;{this.displayFollow()}</h3>
+                <h3>{this.state.followers}&nbsp;{this.displayFollow()}</h3>
 
             </div>
         )
