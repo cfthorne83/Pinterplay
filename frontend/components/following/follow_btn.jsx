@@ -7,6 +7,7 @@ class FollowBtn extends React.Component {
         this.state = this.props.friendship;
 
         this.followBtn = this.followBtn.bind(this);
+        this.handleFollow = this.handleFollow.bind(this);
     }
     
     followBtn() {
@@ -48,6 +49,7 @@ class FollowBtn extends React.Component {
     }
 
     render() {
+        debugger
         return (
             <div>
                 {this.followBtn()}
