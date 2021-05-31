@@ -16,7 +16,6 @@ class Api::FriendshipsController < ApplicationController
     private 
 
     def find_user 
-        debugger
         @user = User.find(params[:friendship][:followed_id])
     end
 
