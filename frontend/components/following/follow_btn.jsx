@@ -32,7 +32,6 @@ class FollowBtn extends React.Component {
         //             }
         //         })
         // this.props.createFollow(this.props.currentUser.id, this.props.pin.user.id);
-        this.setState({})
         debugger
         this.props.createFollow(this.state);
     }

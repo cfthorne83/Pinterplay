@@ -2,7 +2,7 @@ import React from "react";
 import BoardDropdown from "../boards/board_dropdown";
 import { Redirect } from 'react-router-dom';
 
-import FollowBtn from "../following/follow_btn";
+import FollowBtnContainer from "../following/follow_btn_container";
 
 class PinShow extends React.Component {
     constructor(props){
@@ -13,8 +13,6 @@ class PinShow extends React.Component {
         this.handleGoBack = this.handleGoBack.bind(this);
         this.handleCreatePin = this.handleCreatePin.bind(this);
         this.userDisplay = this.userDisplay.bind(this);
-        this.handleFollow = this.handleFollow.bind(this);
-        this.handleUnfollow = this.handleUnfollow.bind(this);
         this.displayFollow = this.displayFollow.bind(this);
         this.handleState = this.handleState.bind(this);
         this.followBtn = this.followBtn.bind(this);
@@ -159,7 +157,7 @@ class PinShow extends React.Component {
                         </h1>
                         <div className="pin-show__follow">
                             {this.userDisplay()}
-                        <FollowBtn currentUser={this.props.currentUser} pin={this.props.pin} />
+                        <FollowBtnContainer currentUser={this.props.currentUser} pin={this.props.pin} />
                         </div>
                         <h3>{this.props.pin.followers.length}&nbsp;{this.displayFollow()}</h3>
                     </div>
