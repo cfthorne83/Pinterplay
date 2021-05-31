@@ -7,8 +7,7 @@ class FollowBtn extends React.Component {
         const followIds = this.props.currentUser.following.map( follow => {
             return follow.id
         })
-        debugger
-        // this.state = this.props.friendship;
+        
         this.state = { followers: this.props.followers, followIds: followIds }
 
         this.followBtn = this.followBtn.bind(this);
@@ -35,7 +34,6 @@ class FollowBtn extends React.Component {
     
     followBtn() {
         if (this.props.pin.user && this.props.pin.user.id !== this.props.currentUser.id) {
-            debugger
             if (this.state.followIds.includes(this.props.pin.user.id)){
                 return <button onClick={this.handleUnfollow}>Unfollow</button>
             } else {

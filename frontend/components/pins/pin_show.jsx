@@ -3,12 +3,13 @@ import BoardDropdown from "../boards/board_dropdown";
 import { Redirect } from 'react-router-dom';
 
 import FollowBtnContainer from "../following/follow_btn_container";
+import { $CombinedState } from "redux";
 
 class PinShow extends React.Component {
     constructor(props){
         super(props);
         // this.state = Object.assign(this.props.pin, { mounted: false });
-        this.state = { pin: null, mounted: false, followers: null};
+        this.state = { pin: this.props.pin };
 
         this.handleGoBack = this.handleGoBack.bind(this);
         this.handleCreatePin = this.handleCreatePin.bind(this);
@@ -44,7 +45,12 @@ class PinShow extends React.Component {
                         title: this.props.pin.title,
                         image_url: this.props.pin.image_url
                     }, () => {
-                        this.props.createPin(this.state); 
+                        // this.props.createPin(this.state); 
+                        $.ajax({
+                            url: "/api/pins",
+                            method: "POST",
+                            data: this.state
+                        })
                     });                
     }
 

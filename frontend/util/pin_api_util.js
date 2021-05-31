@@ -22,7 +22,8 @@ export const createPin = (formData) => {
                     data: formData,
                     contentType: false, 
                     processData: false
-                }).then(
+                })
+                .then(
                     (response) => {
                         screen.style.display = "none";
                 //         // this.setState({loading: false});
