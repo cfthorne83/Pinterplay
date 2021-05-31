@@ -7,6 +7,7 @@ import { openModal } from "../../actions/modal_actions";
 import { createFollow, deleteFollow } from "../../actions/follow_actions";
 
 const msp = (state, ownProps) => {
+    const pin = state.entities.pins[ownProps.match.params.pinId]
     return {
         // pins: Object.values(state.entities.pins),
         pin: state.entities.pins[ownProps.match.params.pinId],
@@ -14,7 +15,7 @@ const msp = (state, ownProps) => {
         newPin: { board_id: "" },
         shuffle: ownProps.shuffle,
         currentUser: state.entities.users[state.session.id], 
-        friendship: {follower_id: "", followed_id: ""} 
+        friendship: {follower_id: state.session.id, followed_id: null} 
     }
 }
 
@@ -25,7 +26,6 @@ const mdp = (dispatch, ownProps) => {
         openModal: (modal, options) => {dispatch(openModal(modal, options))},
         fetchBoards: () => dispatch(fetchBoards()),
         createPin: (pin) => dispatch(createPin(pin)),
-        createFollow: (follower_id, followed_id) => dispatch(createFollow(follower_id, followed_id)),
         // deleteFollow: ()
     }
 }

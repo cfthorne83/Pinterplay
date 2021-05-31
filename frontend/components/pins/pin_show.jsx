@@ -2,6 +2,8 @@ import React from "react";
 import BoardDropdown from "../boards/board_dropdown";
 import { Redirect } from 'react-router-dom';
 
+import FollowBtn from "../following/follow_btn";
+
 class PinShow extends React.Component {
     constructor(props){
         super(props);
@@ -76,7 +78,7 @@ class PinShow extends React.Component {
         //             }
         //         })
         // this.props.createFollow(this.props.currentUser.id, this.props.pin.user.id);
-        // this.setState({friendship[follower_id]: 1 })
+        this.setState({})
         debugger
         this.props.createFollow(this.state);
     }
