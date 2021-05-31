@@ -66,7 +66,13 @@ class FollowBtn extends React.Component {
                         follower_id: this.props.currentUser.id,
                         followed_id: this.props.pin.user.id
                     }
-                })
+                }).then(this.setState({ 
+                                        followIds: this.props.currentUser.following.map( follow => {
+                                            return follow.id
+                                        }),
+                                        followers: this.state.followers - 1
+                                    })
+                        )
     }
 
     displayFollow() {
