@@ -8,14 +8,12 @@ class PinShow extends React.Component {
     constructor(props){
         super(props);
         // this.state = Object.assign(this.props.pin, { mounted: false });
-        this.state = { pin: null, mounted: false, following: null, friendship: this.props.friendship };
+        this.state = { pin: null, mounted: false, followers: null};
 
         this.handleGoBack = this.handleGoBack.bind(this);
         this.handleCreatePin = this.handleCreatePin.bind(this);
-        this.userDisplay = this.userDisplay.bind(this);
-        this.displayFollow = this.displayFollow.bind(this);
         this.handleState = this.handleState.bind(this);
-        this.followBtn = this.followBtn.bind(this);
+        this.handleFollowers = this.handleFollowers.bind(this);
     }
 
     componentWillMount() {
@@ -50,34 +48,6 @@ class PinShow extends React.Component {
                     });                
     }
 
-    userDisplay() {
-        if (this.props.pin && this.props.pin.user && this.props.pin.user.fname && this.props.pin.user.lname){
-            return (
-                <h2>{this.props.pin.user.fname}&nbsp;{this.props.pin.user.lname}</h2>
-            )
-        } else if (this.props.pin && this.props.pin.user && this.props.pin.user.username){
-            return (
-                <h2>{this.props.pin.user.username}</h2>
-            )
-        } else if (this.props.pin && this.props.pin.user) {
-            return (
-                <h2>{this.props.pin.user.email}</h2>
-            )
-        }
-    }
-
-    displayFollow() {
-        if (this.props.pin.followers.length === 1){
-            return (
-                <span>follower</span>
-            )
-        } else {
-            return (
-                <span>followers</span>
-            )
-        }
-    }
-
     handleState() {
         this.setState({ pin: this.props.pin });
     }
@@ -95,6 +65,10 @@ class PinShow extends React.Component {
         }
     }
 
+    handleFollowers() {
+        this.setState({ followers: this.props.pin.followers.length })
+    }
+
     render() {
         const {pin} = this.props;
         // if (this.state.mounted && !this.props.pin){
@@ -108,7 +82,7 @@ class PinShow extends React.Component {
             return null;
         } else if (!this.state.pin) {
             this.handleState();
-        }
+        } 
 
         return (
             <div className="pin-show">
@@ -155,11 +129,8 @@ class PinShow extends React.Component {
                             className="pin-show__title">
                                 {this.props.pin.title}
                         </h1>
-                        <div className="pin-show__follow">
-                            {this.userDisplay()}
                         <FollowBtnContainer currentUser={this.props.currentUser} pin={this.props.pin} />
-                        </div>
-                        <h3>{this.props.pin.followers.length}&nbsp;{this.displayFollow()}</h3>
+                        
                     </div>
                 </div>
 

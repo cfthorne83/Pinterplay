@@ -15,6 +15,7 @@ const msp = (state, ownProps) => {
         newPin: { board_id: "" },
         shuffle: ownProps.shuffle,
         currentUser: state.entities.users[state.session.id], 
+        following: state.entities.users[state.session.id].following,
     }
 }
 

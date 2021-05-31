@@ -9,6 +9,23 @@ class FollowBtn extends React.Component {
         this.followBtn = this.followBtn.bind(this);
         this.handleFollow = this.handleFollow.bind(this);
         this.handleUnfollow = this.handleUnfollow.bind(this);
+        this.userDisplay = this.userDisplay.bind(this);
+    }
+
+    userDisplay() {
+        if (this.props.pin && this.props.pin.user && this.props.pin.user.fname && this.props.pin.user.lname){
+            return (
+                <h2>{this.props.pin.user.fname}&nbsp;{this.props.pin.user.lname}</h2>
+            )
+        } else if (this.props.pin && this.props.pin.user && this.props.pin.user.username){
+            return (
+                <h2>{this.props.pin.user.username}</h2>
+            )
+        } else if (this.props.pin && this.props.pin.user) {
+            return (
+                <h2>{this.props.pin.user.email}</h2>
+            )
+        }
     }
     
     followBtn() {
@@ -25,32 +42,50 @@ class FollowBtn extends React.Component {
     }
 
     handleFollow() {
-        // $.ajax ({
-        //             url: "/api/friendships",
-        //             method: "POST",
-        //             data: {
-        //                 follower_id: this.props.currentUser.id,
-        //                 followed_id: this.props.pin.user.id
-        //             }
-        //         })
-        // this.props.createFollow(this.props.currentUser.id, this.props.pin.user.id);
-        this.props.createFollow(this.state);
+        $.ajax ({
+                    url: "/api/friendships",
+                    method: "POST",
+                    data: {
+                        follower_id: this.props.currentUser.id,
+                        followed_id: this.props.pin.user.id
+                    }
+                })
+        // this.props.createFollow(this.state);
     }
 
     handleUnfollow() {
         // const that = this;
-        // $.ajax ({
-        //             url: "/api/friendships",
-        //             method: "DELETE",
-        //             data: that.state
-        //         })
-        this.props.deleteFollow(this.state)
+        $.ajax ({
+                    url: "/api/friendships",
+                    method: "DELETE",
+                    data: {
+                        follower_id: this.props.currentUser.id,
+                        followed_id: this.props.pin.user.id
+                    }
+                })
+        // this.props.deleteFollow(this.state)
+    }
+
+    displayFollow() {
+        if (this.props.pin.followers.length === 1){
+            return (
+                <span>follower</span>
+            )
+        } else {
+            return (
+                <span>followers</span>
+            )
+        }
     }
 
     render() {
         return (
             <div>
-                {this.followBtn()}
+                <div className="pin-show__follow">
+                    {this.userDisplay()}
+                 {this.followBtn()}
+                </div>
+                <h3>{this.props.pin.followers.length}&nbsp;{this.displayFollow()}</h3>
 
             </div>
         )

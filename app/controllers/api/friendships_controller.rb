@@ -16,11 +16,12 @@ class Api::FriendshipsController < ApplicationController
     private 
 
     def find_user 
-        @user = User.find(params[:friendship][:followed_id])
+        # @user = User.find(params[:friendship][:followed_id])
+        @user = User.find(params[:followed_id])
     end
 
-    def friendship_params
-        params.require(:friendship).permit(:follower_id, :followed_id)
-    end
+    # def friendship_params
+    #     params.require(:friendship).permit(:follower_id, :followed_id)
+    # end
 
 end
