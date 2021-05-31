@@ -14,7 +14,7 @@ const msp = (state, ownProps) => {
 const mdp = (dispatch, ownProps) => {
     return  {
         createFollow: (friendship) => dispatch(createFollow(friendship)),
-        deleteFollow: (friendship) => dispatch(createFollow(friendship))
+        deleteFollow: (friendship) => dispatch(deleteFollow(friendship))
     }
 }
 

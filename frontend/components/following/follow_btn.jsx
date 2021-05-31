@@ -8,6 +8,7 @@ class FollowBtn extends React.Component {
 
         this.followBtn = this.followBtn.bind(this);
         this.handleFollow = this.handleFollow.bind(this);
+        this.handleUnfollow = this.handleUnfollow.bind(this);
     }
     
     followBtn() {
@@ -33,23 +34,20 @@ class FollowBtn extends React.Component {
         //             }
         //         })
         // this.props.createFollow(this.props.currentUser.id, this.props.pin.user.id);
-        debugger
         this.props.createFollow(this.state);
     }
 
     handleUnfollow() {
-        $.ajax ({
-                    url: "/api/friendships",
-                    method: "DELETE",
-                    data: {
-                        follower_id: this.props.currentUser.id,
-                        followed_id: this.props.pin.user.id
-                    }
-                })
+        // const that = this;
+        // $.ajax ({
+        //             url: "/api/friendships",
+        //             method: "DELETE",
+        //             data: that.state
+        //         })
+        this.props.deleteFollow(this.state)
     }
 
     render() {
-        debugger
         return (
             <div>
                 {this.followBtn()}
