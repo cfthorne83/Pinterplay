@@ -78,7 +78,7 @@ class PinShow extends React.Component {
         // this.props.createFollow(this.props.currentUser.id, this.props.pin.user.id);
         // this.setState({friendship[follower_id]: 1 })
         debugger
-        this.props.createFollow(this.props.friendship);
+        this.props.createFollow(this.state);
     }
 
     handleUnfollow() {
