@@ -1,3 +1,4 @@
+
 import * as FollowApiUtil from '../util/follow_api_util';
 
 export const RECEIVE_FOLLOW = 'RECEIVE_FOLLOW';
