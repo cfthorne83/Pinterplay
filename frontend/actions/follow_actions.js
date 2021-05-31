@@ -20,16 +20,19 @@ export const removeFollow = (followId) => {
 
 export const createFollow = (friendship) => {
     return dispatch => {
-        return FollowApiUtil.createFollow(friendship).then( follow => {
+        return FollowApiUtil.createFollow(friendship)
+        .then( follow => {
             dispatch(receiveFollow(follow))
         })
     }
 }
 
 export const deleteFollow = (friendship) => {
-    return dispatch => {
-        return FollowApiUtil.deleteFollow(friendship).then( followId => {
-            dispatch(receiveFollow(followId))
-        })
-    }
+    // return dispatch => {
+        return FollowApiUtil.deleteFollow(friendship)
+        // .then( followId => {
+        //     dispatch(receiveFollow(followId))
+        // }
+        // )
+    // }
 }

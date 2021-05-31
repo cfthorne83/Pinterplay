@@ -51,6 +51,7 @@ class FollowBtn extends React.Component {
         return (
             <div>
                 {this.followBtn()}
+
             </div>
         )
     }
