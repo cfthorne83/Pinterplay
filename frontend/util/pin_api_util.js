@@ -14,7 +14,6 @@ export const fetchPin = (pinId) => {
 }
 
 export const createPin = (pin) => {
-    debugger
     // const screen = document.querySelector(".create-pin-form__screen");
     // return $.ajax ({
     //                 url: "/api/pins",

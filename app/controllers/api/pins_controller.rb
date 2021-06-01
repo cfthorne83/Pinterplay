@@ -40,9 +40,9 @@ class Api::PinsController < ApplicationController
         @pin.user_id = current_user.id
         debugger
         if @pin.save 
-            debugger
             @user = @pin.user
-            render "api/pins/show"
+            # render "api/pins/show"
+            render :show
         else
             render json: @pin.errors.full_messages
         end
