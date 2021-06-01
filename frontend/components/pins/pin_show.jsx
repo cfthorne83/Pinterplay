@@ -3,7 +3,7 @@ import React from "react";
 import { Redirect } from 'react-router-dom';
 
 import FollowBtnContainer from "../following/follow_btn_container";
-import CopyPinDropdown from "./copy_pin_dropdown";
+import CopyPinDropdownContainer from "./copy_pin_dropdown_container";
 
 class PinShow extends React.Component {
     constructor(props){
@@ -131,7 +131,7 @@ class PinShow extends React.Component {
                                         Save
                                 </button>
                             </div> */}
-                            <CopyPinDropdown />
+                            <CopyPinDropdownContainer />
                         </div>
 
                         <h1 
