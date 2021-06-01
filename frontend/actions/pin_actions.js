@@ -41,11 +41,14 @@ export const fetchPin = (pinId) => {
     }
 }
 
-export const createPin = (formData) => {
+export const createPin = (pin) => {
     return dispatch => {
-        return PinApiUtil.createPin(formData).then(pin => {
-            dispatch(receivePin(pin))
-        })
+        return PinApiUtil.createPin(pin).then(
+            (response) => console.log(response)
+        )
+        // (pin => {
+        //     dispatch(receivePin(pin))
+        // })
     }
 }
 
