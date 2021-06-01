@@ -2,6 +2,7 @@ import { connect } from "react-redux";
 
 import CopyPinDropdown from "./copy_pin_dropdown";
 import { fetchBoards } from '../../actions/board_actions'; 
+import { createPin } from "../../actions/pin_actions";
 
 const msp = (state, ownProps) => {
     return {
@@ -12,7 +13,8 @@ const msp = (state, ownProps) => {
 
 const mdp = (dispatch, ownProps) => {
     return {
-        fetchBoards: () => dispatch(fetchBoards())
+        fetchBoards: () => dispatch(fetchBoards()),
+        createPin: (pin) => dispatch(createPin(pin))
     }
 }
 
