@@ -28,7 +28,6 @@ class CopyPinDropdown extends React.Component{
                         //     method: "POST",
                         //     data: { pin: this.state}
                         // })
-                        debugger
                         console.log(this.state)
                     });                
     }
