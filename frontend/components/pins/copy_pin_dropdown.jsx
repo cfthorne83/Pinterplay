@@ -8,10 +8,29 @@ class CopyPinDropdown extends React.Component{
 
         this.state = this.props.pin;
 
+        this.handleCreatePin = this.handleCreatePin.bind(this);
     }
 
     componentDidMount() {
         this.props.fetchBoards();
+    }
+
+    handleCreatePin(e) {
+        let board = document.querySelector(".selected-board");        
+        this.setState({ 
+                        board_id: board.dataset.id, 
+                        title: this.props.pin.title,
+                        image_url: this.props.pin.image_url
+                    }, () => {
+                        // this.props.createPin(this.state); 
+                        // $.ajax({
+                        //     url: "/api/pins",
+                        //     method: "POST",
+                        //     data: this.state
+                        // })
+                        console.log(this.state);
+                        debugger
+                    });                
     }
 
     render() {

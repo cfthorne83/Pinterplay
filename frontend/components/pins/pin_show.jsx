@@ -12,7 +12,6 @@ class PinShow extends React.Component {
         this.state = { pin: this.props.pin };
 
         this.handleGoBack = this.handleGoBack.bind(this);
-        this.handleCreatePin = this.handleCreatePin.bind(this);
         this.handleState = this.handleState.bind(this);
         this.handleFollowers = this.handleFollowers.bind(this);
     }
@@ -34,25 +33,6 @@ class PinShow extends React.Component {
 
     handleGoBack() {
         history.back();
-    }
-
-    handleCreatePin(e) {
-
-        let board = document.querySelector(".selected-board");        
-        this.setState({ 
-                        board_id: board.dataset.id, 
-                        title: this.props.pin.title,
-                        image_url: this.props.pin.image_url
-                    }, () => {
-                        // this.props.createPin(this.state); 
-                        // $.ajax({
-                        //     url: "/api/pins",
-                        //     method: "POST",
-                        //     data: this.state
-                        // })
-                        console.log(this.state);
-                        debugger
-                    });                
     }
 
     handleState() {
