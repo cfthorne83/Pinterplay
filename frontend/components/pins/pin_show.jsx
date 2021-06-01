@@ -46,11 +46,12 @@ class PinShow extends React.Component {
                         image_url: this.props.pin.image_url
                     }, () => {
                         // this.props.createPin(this.state); 
-                        $.ajax({
-                            url: "/api/pins",
-                            method: "POST",
-                            data: this.state
-                        })
+                        // $.ajax({
+                        //     url: "/api/pins",
+                        //     method: "POST",
+                        //     data: this.state
+                        // })
+                        console.log(this.state);
                     });                
     }
 
