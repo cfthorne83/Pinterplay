@@ -51,7 +51,7 @@ class PinShow extends React.Component {
                         //     method: "POST",
                         //     data: this.state
                         // })
-                        console.log(this.state);
+                        console.log(this.state[pin]);
                     });                
     }
 
