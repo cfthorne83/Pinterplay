@@ -1,9 +1,9 @@
 import React from "react";
-import BoardDropdown from "../boards/board_dropdown";
+// import BoardDropdown from "../boards/board_dropdown";
 import { Redirect } from 'react-router-dom';
 
 import FollowBtnContainer from "../following/follow_btn_container";
-import { $CombinedState } from "redux";
+import CopyPinDropdown from "./copy_pin_dropdown";
 
 class PinShow extends React.Component {
     constructor(props){
@@ -123,14 +123,15 @@ class PinShow extends React.Component {
                                     alt="edit-form-link"/>
                             </div>
 
-                            <div className="pin-show__drop-inner">
+                            {/* <div className="pin-show__drop-inner">
                                 <BoardDropdown boards={this.props.boards}/>
                                 <button 
                                     className="pin-show__save"
                                     onClick={this.handleCreatePin}>
                                         Save
                                 </button>
-                            </div>
+                            </div> */}
+                            <CopyPinDropdown />
                         </div>
 
                         <h1 
