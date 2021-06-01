@@ -28,7 +28,6 @@ class PinShow extends React.Component {
         // if (this.props.pins.length === 0){
         //     this.props.fetchPins();
         // }
-        this.props.fetchBoards();
         this.setState({ mounted: true });
         // (this.setState({pin: this.props.pin}))
     }
@@ -131,7 +130,7 @@ class PinShow extends React.Component {
                                         Save
                                 </button>
                             </div> */}
-                            <CopyPinDropdownContainer />
+                            <CopyPinDropdownContainer pin={this.props.pin} />
                         </div>
 
                         <h1 

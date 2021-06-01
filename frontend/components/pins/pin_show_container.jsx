@@ -9,9 +9,7 @@ import { createFollow, deleteFollow } from "../../actions/follow_actions";
 const msp = (state, ownProps) => {
     const pin = state.entities.pins[ownProps.match.params.pinId]
     return {
-        // pins: Object.values(state.entities.pins),
         pin: state.entities.pins[ownProps.match.params.pinId],
-        boards: Object.values(state.entities.boards),
         newPin: { board_id: "" },
         shuffle: ownProps.shuffle,
         currentUser: state.entities.users[state.session.id], 
@@ -24,9 +22,7 @@ const mdp = (dispatch, ownProps) => {
         fetchPin: (pinId) => dispatch(fetchPin(pinId)),
         fetchPins: () => dispatch(fetchPins()),
         openModal: (modal, options) => {dispatch(openModal(modal, options))},
-        fetchBoards: () => dispatch(fetchBoards()),
         createPin: (pin) => dispatch(createPin(pin)),
-        // deleteFollow: ()
     }
 }
 
