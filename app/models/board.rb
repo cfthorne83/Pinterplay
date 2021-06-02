@@ -23,6 +23,6 @@ class Board < ApplicationRecord
     has_many :pins, 
         through: :board_pins,
         source: :pin
-        optional: true
+        # optional: true
 
 end

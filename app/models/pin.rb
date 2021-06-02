@@ -11,9 +11,9 @@
 #
 class Pin < ApplicationRecord
     validates :title, :user_id, presence: true
-    validate :ensure_image
+    # validate :ensure_image
 
-    has_one_attached :photo
+    # has_one_attached :photo
 
     belongs_to :user
     # , 
@@ -33,17 +33,16 @@ class Pin < ApplicationRecord
         primary_key: :id, 
         foreign_key: :pin_id,
         class_name: :BoardPin,
-        optional: true,
         dependent: :destroy
+        # optional: true,
 
     has_many :boards,
         through: :board_pins,
         source: :board, 
-        optional: true
+        # optional: true
 
-    def ensure_image
-        unless self.photo.attached?
-          errors[:photo] << "is required to create a Pin."
-        end
-    end
+    # def ensure_image
+    #     unless self.photo.attached?
+    #     end
+    # end
 end
