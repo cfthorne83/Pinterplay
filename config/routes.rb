@@ -8,7 +8,6 @@ Rails.application.routes.draw do
     resources :pins, only: [:create, :index, :show, :update, :edit, :destroy]
     resources :boards, only: [:create, :index, :show, :update, :edit, :destroy]
     resource :friendships, only: [:create, :destroy],
-    resources :board_pin, only: [:create, :destroy]
   end
 
   
