@@ -1,0 +1,2 @@
+module BoardPinsHelper
+end
