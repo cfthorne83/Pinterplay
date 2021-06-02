@@ -11,7 +11,8 @@ class Api::BoardPinsController < ApplicationController
     end
 
     def destroy
-        @board_pin 
+        board_pin = BoardPin.where(board_id: params[:board_id]).find_by(pin_id: params[:pin_id])
+        board_pin.destroy
     end
 
     private 
