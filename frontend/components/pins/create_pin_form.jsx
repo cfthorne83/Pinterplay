@@ -194,53 +194,53 @@ class CreatePinForm extends React.Component{
                 if (this.state.image_url) {
                     formData.append("pin[photo]", this.state.image_url);
                 }
-
+console.log(formData);
                 // this.props.createPin(formData)//.then(
-                $.ajax ({
-                    url: "/api/pins",
-                    method: "POST",
-                    data: formData,
-                    contentType: false, 
-                    processData: false
-                }).then(
-                    (response) => {
-                        screen.style.display = "none";
-                        this.setState({loading: false});
-                        this.props.openModal("pinShowLink", response.pin.id);
-                        this.props.openModal("pinShowLink", { 
-                                                                id: response.pin.id, 
-                                                                board: board.innerText,
-                                                                image: response.pin.image_url
-                                                            });
-                        this.handleDelete();
-                        const input = document.querySelector(".drop-zone__input");
-                        input.value = null;
-                    } 
-                )
-            }
-        });
-    }
-
-    // handleLoading()  {
-    //     let loader = document.querySelector(".loader");
-    //     loader.remove();
+    //             $.ajax ({
+    //                 url: "/api/pins",
+    //                 method: "POST",
+    //                 data: formData,
+    //                 contentType: false, 
+    //                 processData: false
+    //             }).then(
+    //                 (response) => {
+    //                     screen.style.display = "none";
+    //                     this.setState({loading: false});
+    //                     this.props.openModal("pinShowLink", response.pin.id);
+    //                     this.props.openModal("pinShowLink", { 
+    //                                                             id: response.pin.id, 
+    //                                                             board: board.innerText,
+    //                                                             image: response.pin.image_url
+    //                                                         });
+    //                     this.handleDelete();
+    //                     const input = document.querySelector(".drop-zone__input");
+    //                     input.value = null;
+    //                 } 
+    //             )
+    //         }
+    //     });
     // }
+
+    // // handleLoading()  {
+    // //     let loader = document.querySelector(".loader");
+    // //     loader.remove();
+    // // }
  
-    pinError() {
-        const dropZone = document.querySelector(".drop-zone");
-            dropZone.style.border = "1px solid red";
-            dropZone.style.backgroundColor = "#fef7f8";
+    // pinError() {
+    //     const dropZone = document.querySelector(".drop-zone");
+    //         dropZone.style.border = "1px solid red";
+    //         dropZone.style.backgroundColor = "#fef7f8";
 
-            const dropZoneImg = document.querySelector(".drop-zone__arrow");
-            dropZoneImg.src = "/images/exclamation.png";
-            dropZoneImg.style.filter = "invert(50%) sepia(1) saturate(10000%)";
+    //         const dropZoneImg = document.querySelector(".drop-zone__arrow");
+    //         dropZoneImg.src = "/images/exclamation.png";
+    //         dropZoneImg.style.filter = "invert(50%) sepia(1) saturate(10000%)";
 
-            const dropZonePrompt1 = document.querySelector(".drop-zone__prompt1");
-            dropZonePrompt1.innerText = "An image is required to create a Pin.";
-            dropZonePrompt1.style.color = "red";
+    //         const dropZonePrompt1 = document.querySelector(".drop-zone__prompt1");
+    //         dropZonePrompt1.innerText = "An image is required to create a Pin.";
+    //         dropZonePrompt1.style.color = "red";
 
-            const dropZonePrompt = document.querySelector(".drop-zone__prompt");
-            dropZonePrompt.style.color = "red"; 
+    //         const dropZonePrompt = document.querySelector(".drop-zone__prompt");
+    //         dropZonePrompt.style.color = "red"; 
     }
 
     dropZoneReset() {
