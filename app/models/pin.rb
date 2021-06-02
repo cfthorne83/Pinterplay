@@ -22,23 +22,24 @@ class Pin < ApplicationRecord
         # class_name: :User,
         # optional: true
 
-    belongs_to :board
+    # belongs_to :board
     # p, 
         # primary_key: :id,
         # foreign_key: :board_id,
         # class_name: :Board,
         # optional: true
 
-    # has_many :board_pins,
-    #     primary_key: :id, 
-    #     foreign_key: :pin_id,
-    #     class_name: :BoardPin,
-    #     optional: true
+    has_many :board_pins,
+        primary_key: :id, 
+        foreign_key: :pin_id,
+        class_name: :BoardPin,
+        optional: true,
+        dependent: :destroy
 
-    # has_many :boards,
-    #     through: :board_pins,
-    #     source: :board, 
-    #     # optional: true
+    has_many :boards,
+        through: :board_pins,
+        source: :board, 
+        optional: true
 
     def ensure_image
         unless self.photo.attached?

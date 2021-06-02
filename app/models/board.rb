@@ -12,16 +12,17 @@ class Board < ApplicationRecord
     validates :title, presence: true
 
     belongs_to :user 
-    has_many :pins, dependent: :destroy
+    # has_many :pins, dependent: :destroy
 
-    # has_many :board_pins, 
-    #     primary_key: :id,
-    #     foreign_key: :board_id,
-    #     class_name: :BoardPin
+    has_many :board_pins, 
+        primary_key: :id,
+        foreign_key: :board_id,
+        class_name: :BoardPin,
+        dependent: :destroy
 
-    # has_many :pins, 
-    #     through: :board_pins,
-    #     source: :pin
-        # optional: true
+    has_many :pins, 
+        through: :board_pins,
+        source: :pin
+        optional: true
 
 end
