@@ -194,7 +194,7 @@ class CreatePinForm extends React.Component{
                 if (this.state.image_url) {
                     formData.append("pin[photo]", this.state.image_url);
                 }
-console.log
+
                 // this.props.createPin(formData)//.then(
                 $.ajax ({
                     url: "/api/pins",
