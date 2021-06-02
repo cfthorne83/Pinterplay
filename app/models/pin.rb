@@ -38,7 +38,7 @@ class Pin < ApplicationRecord
 
     has_many :boards,
         through: :board_pins,
-        source: :board, 
+        source: :board
         # optional: true
 
     # def ensure_image
