@@ -53,7 +53,7 @@ class PinIndex extends React.Component {
 
     render() {
 
-        if (this.props.pins.length === 0){
+        if (this.props.pins.length === 0 && this.state.loading === true){
             return (
                 <div className="pin-index-loader">
                     <BeatLoader 
@@ -63,6 +63,10 @@ class PinIndex extends React.Component {
                     <h1>Retrieving Pins</h1>
                 </div>
             )
+        } else if ( this.props.board && this.props.pins.length === 0 && this.state.loading === false ) {
+            return <h1>This board is empty, upload a pin!</h1>
+        } else if ( this.props.pins.length === 0 && this.state.loading === false ){
+            return <h1>There are no pins in the database:(</h1>
         }
 
         let {pins, following} = this.props;
