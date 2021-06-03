@@ -1,4 +1,3 @@
-
 .pin-index-outer {
     padding: 0 3.5rem;
     // width: 100%;
@@ -103,4 +102,13 @@
         font-size: 2rem;
         padding: 1rem;
     }
+}
+
+.pin-index-empty {
+    letter-spacing: var(--lett-space);
+    font-weight: 600;
+    font-size: 2rem;
+    padding: 1rem;
+    text-align: center;
+    padding-top: 2rem;
 }
