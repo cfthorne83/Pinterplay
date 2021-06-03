@@ -6,7 +6,7 @@ class CopyPinDropdown extends React.Component{
     constructor(props){
         super(props);
 
-        this.state = {title: this.props.pin.title, photo: this.props.pin.image_url, description: this.props.pin.description, board_id: ""}
+        this.state = { pin_id: "", board_id: "" }
 
         this.handleCreatePin = this.handleCreatePin.bind(this);
     }
@@ -28,7 +28,8 @@ class CopyPinDropdown extends React.Component{
                         //     method: "POST",
                         //     data: { pin: this.state}
                         // })
-                        console.log(this.state)
+                        // console.log(this.state[board_id])
+                        debugger
                     });                
     }
 
