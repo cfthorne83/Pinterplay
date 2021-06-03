@@ -22,7 +22,6 @@ class Api::PinsController < ApplicationController
         else
             @pins = Pin.all
         end
-        debugger
         if @pins 
             render :index
         end
