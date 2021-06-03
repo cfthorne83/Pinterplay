@@ -94,30 +94,7 @@ class CreatePinForm extends React.Component{
         let dropZone = document.querySelector(".drop-zone");
 
         inputElement.click();
-        // this.setState({ image_url: inputElement.files[0] }, () => {
-        //     console.log(this.state);
-        // });
-        
-        // inputElement.addEventListener("change", e => {
-        //     if (inputElement.files.length) {
-        //         this.addDeleteBtn(dropZone, inputElement.files[0]);
-        //     }
-        // });
     }
-
-    // handleInput(e) {
-    //     let files = e.target.files;
-    //     let image;
-    //     let that = this;
-
-    //     let reader = new FileReader();
-    //     reader.readAsDataURL(files[0]);
-
-    //     reader.onload = () => {
-    //         image = reader.result;
-    //         that.setState({ image_url: image });
-    //     }
-    // }
     
     handleDelete(e) {
         // e.stopPropagation();
@@ -165,10 +142,8 @@ class CreatePinForm extends React.Component{
     
     handleSubmit(e) {
         e.stopPropagation();
-        // let that = this;
         let board = document.querySelector(".selected-board");        
         this.setState({ board_id: board.dataset.id}, () => {
-                // console.log(this.state);
             if (!this.state.title && !this.state.image_url){
                 this.pinError();
                 this.inputError();
@@ -219,11 +194,6 @@ class CreatePinForm extends React.Component{
             }
         });
     }
-
-    // handleLoading()  {
-    //     let loader = document.querySelector(".loader");
-    //     loader.remove();
-    // }
  
     pinError() {
         const dropZone = document.querySelector(".drop-zone");
