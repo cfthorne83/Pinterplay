@@ -142,7 +142,7 @@ class CreatePinForm extends React.Component{
     handleSubmit(e) {
         e.stopPropagation();
         let board = document.querySelector(".selected-board");        
-        // this.setState({ board_id: board.dataset.id}, () => {
+        this.setState({ board_id: board.dataset.id}, () => {
             if (!this.state.title && !this.state.image_url){
                 this.pinError();
                 this.inputError();
@@ -190,7 +190,7 @@ class CreatePinForm extends React.Component{
                     } 
                 )
             }
-        // });
+        });
     }
  
     pinError() {
