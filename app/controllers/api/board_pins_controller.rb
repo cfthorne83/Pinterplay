@@ -3,6 +3,7 @@ class Api::BoardPinsController < ApplicationController
     before_action :ensure_logged_in
 
     def create 
+        debugger
         @board_pin = BoardPin.create(board_pin_params)
 
         # if @board_pin
