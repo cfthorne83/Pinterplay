@@ -6,9 +6,10 @@ class CopyPinDropdown extends React.Component{
     constructor(props){
         super(props);
 
-        this.state = { pin_id: "", board_id: "" }
+        this.state = { pin_id: "", board_id: "", saved: false }
 
         this.handleCreatePin = this.handleCreatePin.bind(this);
+        this.handleSave = this.handleSave.bind(this);
     }
 
     componentDidMount() {
@@ -17,27 +18,41 @@ class CopyPinDropdown extends React.Component{
 
     handleCreatePin(e) {
         let board = document.querySelector(".selected-board"); 
-        console.log("lsdfj"); 
-        e.target.style.backgroundColor = "black";    
-        e.target.innerText = "Saved";  
-        e.target.disabled = true;  
-        // this.setState({ 
-        //                 board_id: board.dataset.id, 
-        //                 pin_id: this.props.pin.id
-        //             }, () => {
-        //                 // this.props.createPin(this.state); 
-        //                 $.ajax({
-        //                     url: "/api/board_pins",
-        //                     method: "POST",
-        //                     data: { board_pin: this.state}
-        //                 })
-        //             });                
+        const button = e.target; 
+        const that = this;
+
+        this.setState({ 
+            board_id: board.dataset.id, 
+            pin_id: this.props.pin.id
+        }, () => {
+            // this.props.createPin(this.state); 
+            $.ajax({
+                url: "/api/board_pins",
+                method: "POST",
+                data: { board_pin: this.state}
+            }).then(
+                (response) => {
+                                button.style.backgroundColor = "black";    
+                                button.innerText = "Saved";  
+                                button.disabled = true;
+                                that.setState({saved: true})  
+                            }
+                        )
+                    });                
+    }
+
+    handleSave() {
+        if (!this.state.saved){
+            return <BoardDropdown boards={this.props.boards}/>
+        } else {
+            return <div>;laksjdf</div>
+        }
     }
 
     render() {
         return (
                 <div className="pin-show__drop-inner">
-                    <BoardDropdown boards={this.props.boards}/>
+                    {this.handleSave()}
                     <button 
                         className="pin-show__save"
                         onClick={this.handleCreatePin}
