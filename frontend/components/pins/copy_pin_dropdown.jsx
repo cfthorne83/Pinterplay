@@ -32,7 +32,6 @@ class CopyPinDropdown extends React.Component{
 
     render() {
         return (
-            // <div>s;lkdfjl;k
                 <div className="pin-show__drop-inner">
                     <BoardDropdown boards={this.props.boards}/>
                     <button 
@@ -41,7 +40,6 @@ class CopyPinDropdown extends React.Component{
                             Save
                     </button>
                 </div>
-            // </div>
         )
     }
 }
