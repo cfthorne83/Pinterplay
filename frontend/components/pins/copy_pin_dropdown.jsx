@@ -16,18 +16,22 @@ class CopyPinDropdown extends React.Component{
     }
 
     handleCreatePin(e) {
-        let board = document.querySelector(".selected-board");        
-        this.setState({ 
-                        board_id: board.dataset.id, 
-                        pin_id: this.props.pin.id
-                    }, () => {
-                        // this.props.createPin(this.state); 
-                        $.ajax({
-                            url: "/api/board_pins",
-                            method: "POST",
-                            data: { board_pin: this.state}
-                        })
-                    });                
+        let board = document.querySelector(".selected-board"); 
+        console.log("lsdfj"); 
+        e.target.style.backgroundColor = "black";    
+        e.target.innerText = "Saved";  
+        e.target.disabled = true;  
+        // this.setState({ 
+        //                 board_id: board.dataset.id, 
+        //                 pin_id: this.props.pin.id
+        //             }, () => {
+        //                 // this.props.createPin(this.state); 
+        //                 $.ajax({
+        //                     url: "/api/board_pins",
+        //                     method: "POST",
+        //                     data: { board_pin: this.state}
+        //                 })
+        //             });                
     }
 
     render() {
@@ -36,7 +40,9 @@ class CopyPinDropdown extends React.Component{
                     <BoardDropdown boards={this.props.boards}/>
                     <button 
                         className="pin-show__save"
-                        onClick={this.handleCreatePin}>
+                        onClick={this.handleCreatePin}
+                        // disabled
+                        >
                             Save
                     </button>
                 </div>
