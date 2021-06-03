@@ -141,7 +141,9 @@ class CreatePinForm extends React.Component{
     
     handleSubmit(e) {
         e.stopPropagation();
-        let board = document.querySelector(".selected-board");        
+        const that = this;
+        let board = document.querySelector(".selected-board");   
+
         this.setState({ board_id: board.dataset.id}, () => {
             if (!this.state.title && !this.state.image_url){
                 this.pinError();
@@ -176,6 +178,11 @@ class CreatePinForm extends React.Component{
                     processData: false
                 }).then(
                     (response) => {
+                        $.ajax({
+                            url: "/api/board_pins",
+                            method: "POST",
+                            data: { board_pin: { pin_id: response.pin.id, board_id: that.state.board_id}}
+                        })
                         screen.style.display = "none";
                         this.setState({loading: false});
                         this.props.openModal("pinShowLink", response.pin.id);
