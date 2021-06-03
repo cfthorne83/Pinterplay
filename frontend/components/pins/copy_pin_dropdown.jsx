@@ -23,12 +23,12 @@ class CopyPinDropdown extends React.Component{
                         // photo: this.props.pin.image_url
                     }, () => {
                         // this.props.createPin(this.state); 
-                        $.ajax({
-                            url: "/api/pins",
-                            method: "POST",
-                            data: { pin: this.state}
-                        })
-                        // console.log(this.state)
+                        // $.ajax({
+                        //     url: "/api/pins",
+                        //     method: "POST",
+                        //     data: { pin: this.state}
+                        // })
+                        console.log(this.state)
                     });                
     }
 
