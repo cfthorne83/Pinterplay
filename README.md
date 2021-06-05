@@ -9,7 +9,7 @@
 - Ruby on Rails
 - Javascript
 - React
-- Redux
+- Red
 - HTML
 - CSS
 - Postgres
