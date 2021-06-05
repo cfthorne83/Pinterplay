@@ -13,7 +13,7 @@
 - HTML
 - CSS
 - Postgres
-- AWS photo storage
+- AWS photo stora
 
 ## Features
 
