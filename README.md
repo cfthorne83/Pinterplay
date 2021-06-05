@@ -12,7 +12,7 @@
 - Redux
 - HTML
 - CSS
-- Postgres
+- Postgr
 - AWS photo storage
 
 ## Features
