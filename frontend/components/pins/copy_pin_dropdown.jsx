@@ -7,7 +7,7 @@ class CopyPinDropdown extends React.Component{
     constructor(props){
         super(props);
 
-        this.state = { pin_id: "", board_id: "", saved: false }
+        this.state = { pin_id: "", board_id: "", saved: false, title: "" }
 
         this.handleCreatePin = this.handleCreatePin.bind(this);
         this.handleSave = this.handleSave.bind(this);
@@ -24,7 +24,8 @@ class CopyPinDropdown extends React.Component{
 
         this.setState({ 
             board_id: board.dataset.id, 
-            pin_id: this.props.pin.id
+            pin_id: this.props.pin.id,
+            title: board.innerText
         }, () => {
             // this.props.createPin(this.state); 
             $.ajax({
@@ -34,6 +35,7 @@ class CopyPinDropdown extends React.Component{
             }).then(
                 (response) => {
                                 button.style.backgroundColor = "black";    
+                                button.style.cursor = "auto";    
                                 button.innerText = "Saved";  
                                 button.disabled = true;
                                 that.setState({saved: true})  
@@ -46,7 +48,12 @@ class CopyPinDropdown extends React.Component{
         if (!this.state.saved){
             return <BoardDropdown boards={this.props.boards}/>
         } else {
-            return <div>;laksjdf</div>
+            return (
+                    <Link to={`/boards/${this.state.board_id}`}
+                            className='board-link'>
+                        {this.state.title}  
+                    </Link>
+                )
         }
     }
 
