@@ -9,7 +9,7 @@ class PinShow extends React.Component {
     constructor(props){
         super(props);
         // this.state = Object.assign(this.props.pin, { mounted: false });
-        this.state = { pin: this.props.pin };
+        this.state = { pin: this.props.pin, fetched: false };
 
         this.handleGoBack = this.handleGoBack.bind(this);
         this.handleState = this.handleState.bind(this);
@@ -20,15 +20,19 @@ class PinShow extends React.Component {
         // if (this.props.pins.length === 0) {
         //     this.props.fetchPins();
         // }
-        this.props.fetchPin(this.props.match.params.pinId);
     }
     
     componentDidMount() {
+        this.props.fetchPin(this.props.match.params.pinId);
+        this.setState({ fetched: true });
         // if (this.props.pins.length === 0){
         //     this.props.fetchPins();
         // }
-        this.setState({ mounted: true });
         // (this.setState({pin: this.props.pin}))
+    }
+
+    componentDidUpdate() {
+        debugger
     }
 
     handleGoBack() {
@@ -58,9 +62,6 @@ class PinShow extends React.Component {
 
     render() {
         const {pin} = this.props;
-        // if (this.state.mounted && !this.props.pin){
-        //     return <Redirect to={`/users/${this.props.currentUser.id}`} />
-        // } else 
         if (!this.props.pin) {
             return null;
         } else if (!this.props.pin.user) {
@@ -69,7 +70,7 @@ class PinShow extends React.Component {
             return null;
         } else if (!this.state.pin) {
             this.handleState();
-        } 
+        }  
 
         return (
             <div className="pin-show">
