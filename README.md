@@ -6,7 +6,7 @@
 [Pinterplay](https://mypin-ct.herokuapp.com/#/) is a visual discovery engine for finding ideas like recipes, home and style inspiration, and more. With many Pins on Pinterplay, you'll always find ideas to spark inspiration. When you discover Pins you love, save them to boards to keep your ideas organized and easy to find!
 
 ## Technologies
-- Ruby on Railsssssssssssss
+- Ruby on Railsssssssssssssss
 - Javascript
 - React
 - Redux
