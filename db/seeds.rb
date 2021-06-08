@@ -59,7 +59,9 @@ nums = ["One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", 
         pin.photo.attach(io: file, filename: '#{initial}.jpg')
         pin.save
     
-        board_pin = BoardPin.create(board_id: board.id, pin_id: pin.id)
+        board_pin = BoardPin.new
+        board_pin.board_id = board.id
+        board_pin.pin_id = pin.id
         board_pin.save
     end
 end
@@ -90,9 +92,11 @@ light = Board.create(
     pin.photo.attach(io: file, filename: '#{initial}.jpg')
     pin.save
 
-    board_pin = BoardPin.create(board_id: board.id, pin_id: pin.id)
+    board_pin = BoardPin.new
+    board_pin.board_id = board.id
+    board_pin.pin_id = pin.id
     board_pin.save
-
+    
 end
 
 # demo_user.follow(dorothy)
