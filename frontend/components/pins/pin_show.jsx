@@ -20,12 +20,10 @@ class PinShow extends React.Component {
         // if (this.props.pins.length === 0) {
         //     this.props.fetchPins();
         // }
-        debugger
         this.props.fetchPin(this.props.match.params.pinId);
     }
     
     componentDidMount() {
-        debugger
         this.setState({ fetched: true });
         // if (this.props.pins.length === 0){
         //     this.props.fetchPins();
@@ -59,14 +57,11 @@ class PinShow extends React.Component {
     }
 
     render() {
-        const {pin} = this.props;
-        debugger
+        const {pin} = this.props
         if (!this.props.pin && !this.state.fetched) {
-            debugger
             return null;
         } else if ( !this.props.pin && this.state.fetched){
-            debugger
-            return <div>Redirect</div>
+            // return <div>Redirect</div>
         } 
         else if (!this.props.pin.user) {
             return null;

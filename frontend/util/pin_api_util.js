@@ -36,7 +36,6 @@ export const createPin = (pin) => {
                 //     } 
                 // )
                 //
-                debugger
     $.ajax({
         url: '/api/pins',
         method: 'POST',
