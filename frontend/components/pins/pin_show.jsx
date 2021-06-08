@@ -57,11 +57,11 @@ class PinShow extends React.Component {
     }
 
     render() {
-        const {pin} = this.props
+        const {pin} = this.props;
         if (!this.props.pin && !this.state.fetched) {
             return null;
         } else if ( !this.props.pin && this.state.fetched){
-            // return <div>Redirect</div>
+            return <div>Redirect</div>
         } 
         else if (!this.props.pin.user) {
             return null;
