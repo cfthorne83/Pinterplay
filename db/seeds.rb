@@ -58,7 +58,7 @@ nums = ["One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", 
 
         uri = "https://mypin-seeds.s3.amazonaws.com/#{initial}.jpg"
         file = URI.open(uri)
-        pin = Pin.create(title: title, board_id: board.id, user_id: demo_user.id)
+        pin = Pin.create(title: title, user_id: demo_user.id)
         pin.photo.attach(io: file, filename: '#{initial}.jpg')
         pin.save
         # end
@@ -87,13 +87,13 @@ light = Board.create(
     
     uri = "https://mypin-seeds.s3.amazonaws.com/#{initial}.jpg"
     file = URI.open(uri)
-    pin = Pin.create(title: title, board_id: board.id, user_id: dorothy.id)
+    pin = Pin.create(title: title, user_id: dorothy.id)
     pin.photo.attach(io: file, filename: '#{initial}.jpg')
     pin.save
 end
 
-demo_user.follow(dorothy)
-dorothy.follow(demo_user)
+# demo_user.follow(dorothy)
+# dorothy.follow(demo_user)
 
 # bacon_file1 = URI.open("https://mypin-seeds.s3.amazonaws.com/bacon1.jpg")
 # bacon_pin1 = Pin.create(title: "bacon one", board_id: bacon.id, user_id: chris_p_bacon.id)
