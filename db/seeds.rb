@@ -93,7 +93,7 @@ light = Board.create(
 end
 
 # demo_user.follow(dorothy)
-# dorothy.follow(demo_user)
+dorothy.follow(demo_user)
 
 # bacon_file1 = URI.open("https://mypin-seeds.s3.amazonaws.com/bacon1.jpg")
 # bacon_pin1 = Pin.create(title: "bacon one", board_id: bacon.id, user_id: chris_p_bacon.id)
