@@ -8,7 +8,7 @@
 ## Technologies
 - Ruby on Rails
 - Javascript
-- Reactffgggg333tt5566
+- React
 - Redux
 - HTML
 - CSS
