@@ -32,18 +32,11 @@ class LogoutDropdown extends React.Component{
                     <img src="/images/dropdwn-icon.png" alt=""/>
                 </span>
                     {this.state.show && (
-                        <div className='dropdown-inner'>
-                            
-                               
-                        <h3>Options</h3>
-                        <button onClick={this.props.logout}>
-                            Log out
-                        </button> 
-                                            {/* type="submit" 
-                                            value='' 
-                                             /> */}
-                                    
-                
+                        <div className='dropdown-inner'>     
+                            <h3>Options</h3>
+                            <button onClick={this.props.logout}>
+                                Log out
+                            </button>                 
                         </div>
                     )}
             </button>
