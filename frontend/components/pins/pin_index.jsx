@@ -112,3 +112,4 @@ class PinIndex extends React.Component {
 }
 
 export default PinIndex;
+export default PinIndex;
