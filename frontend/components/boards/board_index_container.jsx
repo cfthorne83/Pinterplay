@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import BoardIndex from './board_index';
 import { fetchBoards, deleteBoard } from '../../actions/board_actions';
-// import { fetchPins } from "../../actions/pin_actions";
 import { fetchPins } from "../../util/pin_api_util";
 
 
