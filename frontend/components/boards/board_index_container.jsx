@@ -13,10 +13,7 @@ const msp = (state, ownProps) => {
 
 const mdp = (dispatch, ownProps) => {
     return {
-        fetchBoards: () => dispatch(fetchBoards()),
-        // deleteBoard: (boardId) => dispatch(deleteBoard(boardId)),
-        // // fetchPins: (board) => dispatch(fetchPins(board))
-        // fetchPins: (board) => dispatch(fetchPins(board))
+        fetchBoards: () => dispatch(fetchBoards())
     }
 }
 
