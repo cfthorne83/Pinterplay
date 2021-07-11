@@ -72,3 +72,4 @@ class UserPinIndexLink extends React.Component {
 }
 
 export default UserPinIndexLink;
+export default UserPinIndexLink;
