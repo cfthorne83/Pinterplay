@@ -22,4 +22,3 @@ const mdp = (dispatch, ownProps) => {
 }
 
 export default connect(msp, mdp)(PinIndex);
-export default connect(msp, mdp)(PinIndex);
