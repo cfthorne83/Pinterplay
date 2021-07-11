@@ -25,3 +25,4 @@ const mdp = (dispatch, ownProps) => {
 }
 
 export default connect(msp, mdp)(PinShow);
+export default connect(msp, mdp)(PinShow);
