@@ -8,8 +8,6 @@ const msp = (state, ownProps) => {
     return { 
         boards: Object.values(state.entities.boards),
         currentUser: state.entities.users[state.session.id]
-        // board: ownProps.board,
-        // pins: Object.values(state.entities.pins),
     }
 }
 
