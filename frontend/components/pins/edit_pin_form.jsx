@@ -109,4 +109,3 @@ class EditPinForm extends React.Component {
 }
 
 export default EditPinForm;
-export default 
