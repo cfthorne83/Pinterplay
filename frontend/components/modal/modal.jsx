@@ -77,13 +77,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        closeModal: () => dispatch(closeModal()),
-        // closeScreen: () => {
-        //     const screen = document.querySelector(".create-pin-form__screen");
-        //     if (screen) {
-        //         screen.style.display = "none";
-        //     }
-        // }
+        closeModal: () => dispatch(closeModal())
     };
 };
 
