@@ -21,7 +21,6 @@ class BoardIndexItem extends React.Component {
                     }
                 }).then(
                     (response) => {
-                        // arr.push(response.pin.image_url);
                         that.setState({ pinsImages: [response] })
                     }
                 )
