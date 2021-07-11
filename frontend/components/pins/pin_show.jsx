@@ -1,5 +1,4 @@
 import React from "react";
-// import BoardDropdown from "../boards/board_dropdown";
 import { Redirect } from 'react-router-dom';
 
 import FollowBtnContainer from "../following/follow_btn_container";
