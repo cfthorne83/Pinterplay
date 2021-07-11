@@ -35,7 +35,6 @@ class EditBoardForm extends React.Component {
     }
 
     render() {
-        // if (!this.props.board) return null;
         if (!this.props.board) {
             // return <Redirect to='/' />
             return <Redirect to={`/users/${this.props.currentUser.id}`} />
