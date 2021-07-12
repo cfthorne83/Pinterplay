@@ -8,6 +8,9 @@
 
 require 'open-uri'
 
+
+# users-------------------------------------------------------------------------
+
 sophia = User.create(
                         fname: "Sophia", 
                         lname: "Patrillo", 
@@ -41,27 +44,38 @@ rose = User.create(
                         password: "123456"
                     )
 
-blue = Board.create(
-                title: "Blue", 
-                description: "Blue!", 
-                user_id: demo_user.id   
-            ) 
+
+# boards------------------------------------------------------------------------
 
 pink = Board.create(
-                title: "Pink", 
-                description: "Pink!", 
-                user_id: demo_user.id   
-            )
+                        title: "Pink", 
+                        description: "Pink!", 
+                        user_id: sophia.id   
+                    )
+
+blue = Board.create(
+                        title: "Blue", 
+                        description: "Blue!", 
+                        user_id: sophia.id   
+                    ) 
+
 gold = Board.create(
-                title: "Gold", 
-                description: "Gold!", 
-                user_id: demo_user.id   
-            )
+                        title: "Gold", 
+                        description: "Gold!", 
+                        user_id: blanche.id   
+                    )
+
 dark = Board.create(
-                title: "Black", 
-                description: "Shadow!", 
-                user_id: demo_user.id   
-            )
+                        title: "Black", 
+                        description: "Shadow!", 
+                        user_id: dorothy.id   
+                    )
+
+light = Board.create(
+                        title: "Light", 
+                        description: "Pastel!", 
+                        user_id: blanche.id   
+                    )
 
 boards = [blue, pink, gold, dark]
 nums = ["One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen"]
@@ -93,12 +107,6 @@ end
 # demo_user.follow(dorothy)
 
 # ----------------------------------------------------------------------------
-    
-    light = Board.create(
-        title: "Light", 
-        description: "Pastel!", 
-        user_id: dorothy.id   
-        )
         
         (0..9).each do |i| 
             
@@ -122,12 +130,6 @@ end
         dorothy.follow(demo_user)
         
 # ------------------------------------------------------------------------------
-
-light = Board.create(
-        title: "Light", 
-        description: "Pastel!", 
-        user_id: dorothy.id   
-        )
         
         (0..9).each do |i| 
             
@@ -149,7 +151,3 @@ light = Board.create(
         end
         
         dorothy.follow(demo_user)
-
-
-
-# ------------------------------------------------------------------------------
