@@ -62,13 +62,13 @@ blue = Board.create(
 gold = Board.create(
                         title: "Gold", 
                         description: "Gold!", 
-                        user_id: blanche.id   
+                        user_id: dorothy.id   
                     )
 
 dark = Board.create(
                         title: "Black", 
                         description: "Shadow!", 
-                        user_id: dorothy.id   
+                        user_id: blanche.id   
                     )
 
 light = Board.create(
@@ -85,6 +85,13 @@ users = [sophia, dorothy, blanche, rose]
     (0..9).each do |i| 
 
         board = boards[board_i]
+
+        if board_i == 0 || board_i == 1
+            user = sophia
+        else
+            user = users[board_i - 1]
+        end
+
         if board != dark
             initial = board.title[0].downcase + i.to_s
             title = board.title + " " + nums[i]
@@ -95,7 +102,7 @@ users = [sophia, dorothy, blanche, rose]
 
         uri = "https://mypin-seeds.s3.amazonaws.com/#{initial}.jpg"
         file = URI.open(uri)
-        pin = Pin.create(title: title, user_id: demo_user.id)
+        pin = Pin.create(title: title, user_id: user.id)
         pin.photo.attach(io: file, filename: '#{initial}.jpg')
         pin.save
     
@@ -106,23 +113,6 @@ users = [sophia, dorothy, blanche, rose]
     end
 end
 
-# ----------------------------------------------------------------------------
- (0..9).each do |i| 
-            
-            board = light
-            initial = board.title[0].downcase + i.to_s
-            title = board.title + " " + nums[i]
-            
-            uri = "https://mypin-seeds.s3.amazonaws.com/#{initial}.jpg"
-            file = URI.open(uri)
-            pin = Pin.create(title: title, user_id: dorothy.id)
-            pin.photo.attach(io: file, filename: '#{initial}.jpg')
-            pin.save
-            
-            board_pin = BoardPin.new
-            board_pin.board_id = board.id
-            board_pin.pin_id = pin.id
-            board_pin.save
-            
-end
-dorothy.follow(demo_user)
+dorothy.follow(sophia)
+blanche.follow(sophia)
+rose.follow(sophia)
