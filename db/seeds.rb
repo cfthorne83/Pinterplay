@@ -74,12 +74,12 @@ dark = Board.create(
 light = Board.create(
                         title: "Light", 
                         description: "Pastel!", 
-                        user_id: blanche.id   
+                        user_id: rose.id   
                     )
 
 boards = [blue, pink, gold, dark]
 nums = ["One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen"]
-
+users = [sophia, dorothy, blanche, rose]
 
 (0..9).each do |i| 
             
