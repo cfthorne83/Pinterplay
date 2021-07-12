@@ -8,8 +8,7 @@
 
 require 'open-uri'
 
-# Sophia
-demo_user = User.create(
+sophia = User.create(
                         fname: "Sophia", 
                         lname: "Patrillo", 
                         username:"Sophia", 
@@ -18,11 +17,36 @@ demo_user = User.create(
                         image_url: "images/sophia.jpeg"
                     ) 
 
+dorothy = User.create(
+                        fname: "Dorothy", 
+                        lname: "Zbornak", 
+                        username:"Dorothy", 
+                        email: "dorothy@ggirl.com", 
+                        password: "123456"
+                    )
+
+blanche = User.create(
+                        fname: "Blanche", 
+                        lname: "Devereaux", 
+                        username:"Blanche", 
+                        email: "blanche@ggirl.com", 
+                        password: "123456"
+                    )
+
+rose = User.create(
+                        fname: "Rose", 
+                        lname: "Nylund", 
+                        username:"Rose", 
+                        email: "rose@ggirl.com", 
+                        password: "123456"
+                    )
+
 blue = Board.create(
                 title: "Blue", 
                 description: "Blue!", 
                 user_id: demo_user.id   
-            )            
+            ) 
+
 pink = Board.create(
                 title: "Pink", 
                 description: "Pink!", 
@@ -68,15 +92,7 @@ nums = ["One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", 
 end
 # demo_user.follow(dorothy)
 
-# ------------------------------------------------------------------------------
-# Dorothy
-dorothy = User.create(
-    fname: "Dorothy", 
-    lname: "Zbornak", 
-    username:"Dorothy", 
-    email: "dorothy@ggirl.com", 
-    password: "123456"
-    )
+# ----------------------------------------------------------------------------
     
     light = Board.create(
         title: "Light", 
@@ -105,32 +121,35 @@ dorothy = User.create(
         
         dorothy.follow(demo_user)
         
-    # ------------------------------------------------------------------------------
-    # Blanche
-    dorothy = User.create(
-        fname: "Blanche", 
-        lname: "Devereaux", 
-        username:"Blanche", 
-        email: "blanche@ggirl.com", 
-        password: "123456"
-    )
+# ------------------------------------------------------------------------------
 
-    # ------------------------------------------------------------------------------
-    # Blanche
-    dorothy = User.create(
-        fname: "Blanche", 
-        lname: "Devereaux", 
-        username:"Blanche", 
-        email: "blanche@ggirl.com", 
-        password: "123456"
-    )
+light = Board.create(
+        title: "Light", 
+        description: "Pastel!", 
+        user_id: dorothy.id   
+        )
+        
+        (0..9).each do |i| 
+            
+            board = light
+            initial = board.title[0].downcase + i.to_s
+            title = board.title + " " + nums[i]
+            
+            uri = "https://mypin-seeds.s3.amazonaws.com/#{initial}.jpg"
+            file = URI.open(uri)
+            pin = Pin.create(title: title, user_id: dorothy.id)
+            pin.photo.attach(io: file, filename: '#{initial}.jpg')
+            pin.save
+            
+            board_pin = BoardPin.new
+            board_pin.board_id = board.id
+            board_pin.pin_id = pin.id
+            board_pin.save
+            
+        end
+        
+        dorothy.follow(demo_user)
 
-    # ------------------------------------------------------------------------------
-    # Rose
-    dorothy = User.create(
-        fname: "Rose", 
-        lname: "Nylund", 
-        username:"Rose", 
-        email: "rose@ggirl.com", 
-        password: "123456"
-    )
+
+
+# ------------------------------------------------------------------------------
