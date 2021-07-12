@@ -16,6 +16,7 @@ class Profile extends React.Component{
         this.name = this.name.bind(this);
         this.image = this.image.bind(this);
         this.username = this.username.bind(this);
+        this.followers = this.followers.bind(this);
     }
 
     handleSubmit(e){
@@ -65,9 +66,19 @@ class Profile extends React.Component{
 
     followers() {
         if (this.props.currentUser.followers.length == 1){
-            return <h4>{this.props.currentUser.followers.length} follower</h4>
+            return (
+                    <h4>
+                        {this.props.currentUser.followers.length} follower |&nbsp;
+                        {this.props.currentUser.following.length} following
+                    </h4>
+            )
         } else {
-            return <h4>{this.props.currentUser.followers.length} followers</h4>
+            return (
+                    <h4>
+                        {this.props.currentUser.followers.length} followers |&nbsp;
+                        {this.props.currentUser.following.length} following
+                    </h4>
+            )
         }
     }
 
@@ -86,8 +97,7 @@ class Profile extends React.Component{
                     {this.image()}
                     {this.name()}
                     {this.username()}
-                    <h4> |&nbsp;
-                        {this.props.currentUser.following.length} following</h4>
+                    {this.followers()}
                 </section>
 
                 <section className='mid'>
