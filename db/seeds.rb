@@ -77,30 +77,9 @@ light = Board.create(
                         user_id: rose.id   
                     )
 
-boards = [blue, pink, gold, dark]
+boards = [pink, blue, gold, dark, light]
 nums = ["One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen"]
 users = [sophia, dorothy, blanche, rose]
-
-(0..9).each do |i| 
-            
-            board = light
-            initial = board.title[0].downcase + i.to_s
-            title = board.title + " " + nums[i]
-            
-            uri = "https://mypin-seeds.s3.amazonaws.com/#{initial}.jpg"
-            file = URI.open(uri)
-            pin = Pin.create(title: title, user_id: dorothy.id)
-            pin.photo.attach(io: file, filename: '#{initial}.jpg')
-            pin.save
-            
-            board_pin = BoardPin.new
-            board_pin.board_id = board.id
-            board_pin.pin_id = pin.id
-            board_pin.save
-            
-        end
-        
-        dorothy.follow(demo_user)
 
 (0..3).each do |board_i|
     (0..9).each do |i| 
@@ -126,15 +105,9 @@ users = [sophia, dorothy, blanche, rose]
         board_pin.save
     end
 end
-# demo_user.follow(dorothy)
 
 # ----------------------------------------------------------------------------
-        
-        
-        
-# ------------------------------------------------------------------------------
-        
-        (0..9).each do |i| 
+ (0..9).each do |i| 
             
             board = light
             initial = board.title[0].downcase + i.to_s
@@ -151,6 +124,5 @@ end
             board_pin.pin_id = pin.id
             board_pin.save
             
-        end
-        
-        dorothy.follow(demo_user)
+end
+dorothy.follow(demo_user)
