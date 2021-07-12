@@ -63,6 +63,13 @@ class Profile extends React.Component{
         }
     }
 
+    followers() {
+        if (this.props.currentUser.followers.length == 1){
+            return <h4>{this.props.currentUser.followers.length} follower</h4>
+        } else {
+            return <h4>{this.props.currentUser.followers.length} followers</h4>
+        }
+    }
 
     render() {
 
@@ -79,6 +86,8 @@ class Profile extends React.Component{
                     {this.image()}
                     {this.name()}
                     {this.username()}
+                    <h4> |&nbsp;
+                        {this.props.currentUser.following.length} following</h4>
                 </section>
 
                 <section className='mid'>
