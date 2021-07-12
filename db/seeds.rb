@@ -66,50 +66,71 @@ nums = ["One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", 
         board_pin.save
     end
 end
+# demo_user.follow(dorothy)
 
+# ------------------------------------------------------------------------------
 # Dorothy
 dorothy = User.create(
-                        fname: "Dorothy", 
-                        lname: "Zbornak", 
-                        username:"Dorothy", 
-                        email: "dorothy@ggirl.com", 
-                        password: "123456"
-                    )
-
-light = Board.create(
-                title: "Light", 
-                description: "Pastel!", 
-                user_id: dorothy.id   
-            )
-
-(0..9).each do |i| 
-
-    board = light
-    initial = board.title[0].downcase + i.to_s
-    title = board.title + " " + nums[i]
+    fname: "Dorothy", 
+    lname: "Zbornak", 
+    username:"Dorothy", 
+    email: "dorothy@ggirl.com", 
+    password: "123456"
+    )
     
-    uri = "https://mypin-seeds.s3.amazonaws.com/#{initial}.jpg"
-    file = URI.open(uri)
-    pin = Pin.create(title: title, user_id: dorothy.id)
-    pin.photo.attach(io: file, filename: '#{initial}.jpg')
-    pin.save
+    light = Board.create(
+        title: "Light", 
+        description: "Pastel!", 
+        user_id: dorothy.id   
+        )
+        
+        (0..9).each do |i| 
+            
+            board = light
+            initial = board.title[0].downcase + i.to_s
+            title = board.title + " " + nums[i]
+            
+            uri = "https://mypin-seeds.s3.amazonaws.com/#{initial}.jpg"
+            file = URI.open(uri)
+            pin = Pin.create(title: title, user_id: dorothy.id)
+            pin.photo.attach(io: file, filename: '#{initial}.jpg')
+            pin.save
+            
+            board_pin = BoardPin.new
+            board_pin.board_id = board.id
+            board_pin.pin_id = pin.id
+            board_pin.save
+            
+        end
+        
+        dorothy.follow(demo_user)
+        
+    # ------------------------------------------------------------------------------
+    # Blanche
+    dorothy = User.create(
+        fname: "Blanche", 
+        lname: "Devereaux", 
+        username:"Blanche", 
+        email: "blanche@ggirl.com", 
+        password: "123456"
+    )
 
-    board_pin = BoardPin.new
-    board_pin.board_id = board.id
-    board_pin.pin_id = pin.id
-    board_pin.save
-    
-end
+    # ------------------------------------------------------------------------------
+    # Blanche
+    dorothy = User.create(
+        fname: "Blanche", 
+        lname: "Devereaux", 
+        username:"Blanche", 
+        email: "blanche@ggirl.com", 
+        password: "123456"
+    )
 
-# demo_user.follow(dorothy)
-dorothy.follow(demo_user)
-
-# bacon_file1 = URI.open("https://mypin-seeds.s3.amazonaws.com/bacon1.jpg")
-# bacon_pin1 = Pin.create(title: "bacon one", board_id: bacon.id, user_id: chris_p_bacon.id)
-# bacon_pin1.photo.attach(io: bacon_file1, filename: 'bacon1.jpg')
-# bacon_pin1.save
-
-# bacon_file2 = URI.open("https://mypin-seeds.s3.amazonaws.com/+bacon2.jpg")
-# bacon_pin2 = Pin.create(title: "bacon two", board_id: bacon.id, user_id: chris_p_bacon.id)
-# bacon_pin2.photo.attach(io: bacon_file2, filename: 'bacon2.jpg')
-# bacon_pin2.save
+    # ------------------------------------------------------------------------------
+    # Rose
+    dorothy = User.create(
+        fname: "Rose", 
+        lname: "Nylund", 
+        username:"Rose", 
+        email: "rose@ggirl.com", 
+        password: "123456"
+    )
