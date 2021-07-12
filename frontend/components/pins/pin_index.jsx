@@ -63,11 +63,12 @@ class PinIndex extends React.Component {
                     <h1>Retrieving Pins</h1>
                 </div>
             )
-        } else if ( this.props.board && this.props.pins.length === 0 && this.state.loading === false ) {
-            return <h1 className="pin-index-empty">This board is empty, upload a pin!</h1>
-        } else if ( !this.props.following && this.props.pins.length === 0 && this.state.loading === false ){
-            return <h1 className="pin-index-empty">There are no pins in the database:(</h1>
-        }
+        } 
+        // else if ( this.props.board && this.props.pins.length === 0 && this.state.loading === false ) {
+        //     return <h1 className="pin-index-empty">This board is empty, upload a pin!</h1>
+        // } else if ( !this.props.following && this.props.pins.length === 0 && this.state.loading === false ){
+        //     return <h1 className="pin-index-empty">There are no pins in the database:(</h1>
+        // }
 
         let {pins, following} = this.props;
 
