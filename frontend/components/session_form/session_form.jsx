@@ -52,6 +52,7 @@ class SessionForm extends React.Component {
     }
 
     renderErrors() {
+        // debugger
         return (
             <ul>
                 {this.props.errors.map((error, i) => (
@@ -92,8 +93,8 @@ class SessionForm extends React.Component {
                                     />
                             </div>
 
-                            <p className="errors">{Object.values(this.state.errors)}</p>
-                            {/* <span className="errors">{this.renderErrors()}</span> */}
+                            {/* <p className="errors">{Object.values(this.state.errors)}</p> */}
+                            <div className="errors">{this.renderErrors()}</div>
                          
                                 <input
                                     type="password"
