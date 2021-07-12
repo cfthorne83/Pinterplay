@@ -80,7 +80,7 @@ class FollowBtn extends React.Component {
             )
         } else {
             return (
-                <span>followers</span>
+                <span>follors</span>
             )
         }
     }
