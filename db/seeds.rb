@@ -8,6 +8,7 @@
 
 require 'open-uri'
 
+# Sophia
 demo_user = User.create(
                         fname: "Sophia", 
                         lname: "Patrillo", 
@@ -66,6 +67,7 @@ nums = ["One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", 
     end
 end
 
+# Dorothy
 dorothy = User.create(
                         fname: "Dorothy", 
                         lname: "Zbornak", 
