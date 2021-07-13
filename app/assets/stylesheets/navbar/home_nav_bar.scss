@@ -180,10 +180,15 @@
         padding: 1rem;
         cursor: auto;
 
-        // .dropdown-inner:hover {
-        //     background-color: rgb(219, 218, 218);
-        //     cursor: pointer;
-        // }
+        input {
+            width: 100%;
+            padding: .5rem;
+            border-radius: .5rem;
+        }
+
+        input:hover{
+            background-color: var(--lt-grey);
+        }
 
         h3 {
             padding: .6rem;
