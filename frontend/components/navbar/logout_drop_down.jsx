@@ -34,9 +34,9 @@ class LogoutDropdown extends React.Component{
                     {this.state.show && (
                         <div className='dropdown-inner'>     
                             <h3>Options</h3>
-                            <button onClick={this.props.logout}>
+                            <input type="submit" onClick={this.props.logout}>
                                 Log out
-                            </button>                 
+                            </input>                 
                         </div>
                     )}
             </button>
