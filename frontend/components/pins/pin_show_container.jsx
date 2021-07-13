@@ -7,14 +7,20 @@ import { openModal } from "../../actions/modal_actions";
 import { createFollow, deleteFollow } from "../../actions/follow_actions";
 
 const msp = (state, ownProps) => {
-    const pin = state.entities.pins[ownProps.match.params.pinId]
-    debugger
+    const pin = state.entities.pins[ownProps.match.params.pinId];
+    const currentUser = state.entities.users[state.session.id];
+    let following = null;
+    if (currentUser){
+        following = state.entities.users[state.session.id].following;
+    }
+    // debugger
     return {
         pin: state.entities.pins[ownProps.match.params.pinId],
         newPin: { board_id: "" },
         shuffle: ownProps.shuffle,
         currentUser: state.entities.users[state.session.id], 
-        following: state.entities.users[state.session.id].following,
+        // following: state.entities.users[state.session.id].following
+        following: 
     }
 }
 
