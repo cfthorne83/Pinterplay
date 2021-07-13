@@ -8,6 +8,7 @@ import { createFollow, deleteFollow } from "../../actions/follow_actions";
 
 const msp = (state, ownProps) => {
     const pin = state.entities.pins[ownProps.match.params.pinId]
+    debugger
     return {
         pin: state.entities.pins[ownProps.match.params.pinId],
         newPin: { board_id: "" },
