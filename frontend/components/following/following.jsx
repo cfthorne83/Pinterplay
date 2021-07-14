@@ -18,6 +18,11 @@ class Following extends React.Component{
     }
 
     render(){
+
+        if (!this.props.currentUser) {
+            return <Redirect to='/' />
+        }
+
         return (
             <div>
                 {this.header()}

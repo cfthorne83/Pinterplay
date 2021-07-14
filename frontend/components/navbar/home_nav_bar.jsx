@@ -47,7 +47,6 @@ class HomeNavBar extends React.Component {
     render() {
 
         
-        debugger
         return (
             <header className='home-nav-bar'>
                 <nav className='nav-link-container'>
