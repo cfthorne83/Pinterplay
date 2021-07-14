@@ -1,4 +1,6 @@
 import React from "react";
+import { Redirect } from 'react-router-dom';
+
 import { openModal } from "../../actions/modal_actions";
 
 class ProfileSettings extends React.Component {
@@ -85,8 +87,12 @@ class ProfileSettings extends React.Component {
 
     render() {
 
-        if (!this.props.currentUser) return null;
-        // console.log(this.state.image_url);
+        // if (!this.props.currentUser) return null;
+        // // console.log(this.state.image_url);
+        if (!this.props.currentUser) {
+            return <Redirect to='/' />
+        }
+        
         return (
             <div className="edit-profile-form">
                 <form onSubmit={this.handleSubmit}>
