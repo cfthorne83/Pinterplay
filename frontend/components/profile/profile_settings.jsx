@@ -25,7 +25,8 @@ class ProfileSettings extends React.Component {
     }
 
     componentDidUpdate() {
-        if (this.state.image_url !== this.props.currentUser.image_url){
+        // debugger
+        if ((this.props.currentUser) && (this.state.image_url !== this.props.currentUser.image_url)){
             this.setState({ image_url: this.props.currentUser.image_url })
         }
     }
@@ -92,7 +93,7 @@ class ProfileSettings extends React.Component {
         if (!this.props.currentUser) {
             return <Redirect to='/' />
         }
-        
+
         return (
             <div className="edit-profile-form">
                 <form onSubmit={this.handleSubmit}>
