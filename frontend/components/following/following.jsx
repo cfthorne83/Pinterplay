@@ -20,7 +20,6 @@ class Following extends React.Component{
     }
 
     render(){
-debugger
         if (!this.props.currentUser) {
             return <Redirect to='/' />
         }
