@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 
 import PinIndex from '../pins/pin_index_container'
 
