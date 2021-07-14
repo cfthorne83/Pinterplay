@@ -25,7 +25,6 @@ class ProfileSettings extends React.Component {
     }
 
     componentDidUpdate() {
-        // debugger
         if ((this.props.currentUser) && (this.state.image_url !== this.props.currentUser.image_url)){
             this.setState({ image_url: this.props.currentUser.image_url })
         }
