@@ -179,6 +179,7 @@
         box-shadow: var(--drop-box-shad);
         padding: 1rem;
         cursor: auto;
+        z-index: 2;
 
         input {
             width: 100%;
