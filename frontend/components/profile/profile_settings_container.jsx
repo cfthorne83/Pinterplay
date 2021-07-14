@@ -6,10 +6,14 @@ import { openModal } from "../../actions/modal_actions";
 import { updateUser } from "../../actions/user_actions";
 
 const msp = (state, ownProps) => {
-    const currentUser = state.entities.users[state.session.id],
+    const currentUser = state.entities.users[state.session.id]
+    let imageUrl = null;
+    if (currentUser){
+        imageUrl = state.entities.users[state.session.id].image_url
+    }
     return {
-        currentUser: state.entities.users[state.session.id],
-        imageUrl: state.entities.users[state.session.id].image_url
+        currentUser: currentUser,
+        imageUrl: imageUrl
     }
 }
 
