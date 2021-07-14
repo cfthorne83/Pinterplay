@@ -7,6 +7,7 @@ class Following extends React.Component{
     constructor(props){
         super(props);
 
+        this.state = this.props.currentUser.following;
         this.header = this.header.bind(this);
     }
 
@@ -19,7 +20,7 @@ class Following extends React.Component{
     }
 
     render(){
-
+debugger
         if (!this.props.currentUser) {
             return <Redirect to='/' />
         }
