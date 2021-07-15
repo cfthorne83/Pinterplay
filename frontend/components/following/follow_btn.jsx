@@ -8,7 +8,7 @@ class FollowBtn extends React.Component {
             return follow.id
         })
         
-        this.state = { followers: this.props.followers, followIds: followIds }
+        // this.state = { followers: this.props.followers, followIds: followIds }
 
         this.followBtn = this.followBtn.bind(this);
         this.handleFollow = this.handleFollow.bind(this);
@@ -54,6 +54,7 @@ class FollowBtn extends React.Component {
         //                                 followIds: this.state.followIds.concat([this.props.pin.user.id]),
         //                                 followers: this.state.followers + 1
         //                             }))
+        this.props.createFollow(this.state);
     }
 
     handleUnfollow() {

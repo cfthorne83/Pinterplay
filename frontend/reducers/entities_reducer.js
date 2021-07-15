@@ -9,7 +9,7 @@ const entitiesReducer = combineReducers({
     users: usersReducer,
     boards: boardsReducer,
     pins: pinsReducer, 
-    follows: followsReducer
+    friendships: followsReducer
 });
 
 export default entitiesReducer;
