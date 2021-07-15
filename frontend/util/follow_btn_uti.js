@@ -19,7 +19,11 @@
 // }
 
 // export const createFollow = (follow) => {
-//     return 
+//     return $.ajax({
+//         url: '/api/friendships',
+//         method: 'POST',
+//         data: { follow }
+//     }) 
 // }
 
 // export const updateBoard = (board) => {
