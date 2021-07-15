@@ -4,35 +4,13 @@
 //     })
 // }
 
-// export const fetchBoard = (boardId) => {
-//     return $.ajax({
-//         url: `/api/boards/${boardId}`
-//     })
-// }
-
-// export const createBoard = (board) => {
-//     return $.ajax({
-//         url: '/api/boards',
-//         method: 'POST',
-//         data: { board }
-//     })
-// }
-
-// export const createFollow = (follow) => {
-//     return $.ajax({
-//         url: '/api/friendships',
-//         method: 'POST',
-//         data: { follow }
-//     }) 
-// }
-
-// export const updateBoard = (board) => {
-//     return $.ajax({
-//         url: `/api/boards/${board.id}`,
-//         method: 'PATCH',
-//         data: { board }
-//     })
-// }
+export const createFollow = (follow) => {
+    return $.ajax({
+        url: '/api/friendships',
+        method: 'POST',
+        data: { follow }
+    }) 
+}
 
 // export const deleteBoard = (boardId) => {
 //     return $.ajax({
