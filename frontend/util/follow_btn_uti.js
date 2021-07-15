@@ -1,6 +1,6 @@
-// export const fetchBoards = () => {
+// export const fetchFollows = () => {
 //     return $.ajax({
-//         url: '/api/boards'
+//         url: '/api/follows'
 //     })
 // }
 
@@ -12,9 +12,10 @@ export const createFollow = (follow) => {
     }) 
 }
 
-// export const deleteBoard = (boardId) => {
-//     return $.ajax({
-//         url: `/api/boards/${boardId}`,
-//         method: "DELETE"
-//     })
-// }
+export const deleteFollow = (follow) => {
+    return $.ajax({
+        url: '/api/friendships',
+        method: 'DELETE',
+        data: { follow }
+    }) 
+}
