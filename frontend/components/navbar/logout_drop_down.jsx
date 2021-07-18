@@ -6,18 +6,20 @@ class LogoutDropdown extends React.Component{
         this.state = { show: false }
 
         this.handleClick = this.handleClick.bind(this);
-        // this.handleBlur = this.handleBlur.bind(this);
+        this.handleBlur = this.handleBlur.bind(this);
     }
 
     handleClick(){
         this.setState({ show: !this.state.show })
     }
 
-    // handleBlur(){
-    //     window.setTimeout(() => {
-    //         this.setState({ show: false })
-    //     }, 100);
-    // }
+    handleBlur(){
+        if (this.props.currentUser){
+            window.setTimeout(() => {
+                this.setState({ show: false })
+            }, 100);
+        }
+    }
 
     render() {
 

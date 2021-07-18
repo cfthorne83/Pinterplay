@@ -85,7 +85,10 @@ class HomeNavBar extends React.Component {
                             {this.profileLink()}
                         </Link>
                         
-                        <LogoutDropdown logout={this.props.logout} />
+                        <LogoutDropdown 
+                            logout={this.props.logout}
+                            currentUser={this.props.currentUser}
+                        />
                     </ul>
                 </nav>
             </header>
