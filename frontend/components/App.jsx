@@ -44,7 +44,7 @@ const App = () => (
 
             <Route exact path="/users/:userId/pins" component={UserPinIndex}/>
 
-            <Route path="/" component={MainContainer} />
+            <Route exact path="/" component={MainContainer} />
         </Switch>
     </div>
 );
