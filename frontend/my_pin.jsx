@@ -27,20 +27,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     const root = document.getElementById('root');
 
-    window.store = store;
-    window.getState = store.getState;
-    window.dispatch = store.dispatch;
-    window.fetchBoards = fetchBoards;
-    window.fetchBoard = fetchBoard;
-    window.createBoard = createBoard;
-    window.deleteBoard = deleteBoard;
+    // window.store = store;
+    // window.getState = store.getState;
+    // window.dispatch = store.dispatch;
+    // window.fetchBoards = fetchBoards;
+    // window.fetchBoard = fetchBoard;
+    // window.createBoard = createBoard;
+    // window.deleteBoard = deleteBoard;
 
-    window.fetchPins = fetchPins;
-    window.createPin = createPin;
-    window.fetchPin = fetchPin;
-    window.deletePin = deletePin;
+    // window.fetchPins = fetchPins;
+    // window.createPin = createPin;
+    // window.fetchPin = fetchPin;
+    // window.deletePin = deletePin;
 
-    window.updateUser = updateUser;
+    // window.updateUser = updateUser;
 
 
     ReactDOM.render(<Root store={store}/>, root)
