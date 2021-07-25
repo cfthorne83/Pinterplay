@@ -34,14 +34,14 @@ const App = () => (
         <Switch >
             {/* <Route exact path="/pins/:pinId" component={PinShowContainer} /> */}
             <Route path="/pins/:pinId" component={PinShowContainer} />
-            <Route exact path="/pin-builder" component={CreatePinFormContainer} />
-            {/* <ProtectedRoute path="/pin-builder" component={CreatePinFormContainer} /> */}
+            {/* <Route exact path="/pin-builder" component={CreatePinFormContainer} /> */}
+            <ProtectedRoute exact path="/pin-builder" component={CreatePinFormContainer} />
 
             {/* <Route exact path="/boards/:boardId" component={BoardShowContainer} /> */}
             <Route path="/boards/:boardId" component={BoardShowContainer} />
 
             {/* <Route exact path="/users/:userId" component={ProfileContainer} /> */}
-            <Route exact path="/users/:userId/settings" component={ProfileSettingsContainer}/>
+            <ProtectedRoute exact path="/users/:userId/settings" component={ProfileSettingsContainer}/>
             <Route path="/users/:userId" component={ProfileContainer} />
             {/* <Route path="/users/:userId/settings" component={ProfileSettingsContainer}/> */}
             
