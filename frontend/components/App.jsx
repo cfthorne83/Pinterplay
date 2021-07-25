@@ -32,19 +32,24 @@ const App = () => (
         <Modal />
 
         <Switch >
-            <Route exact path="/pins/:pinId" component={PinShowContainer} />
+            {/* <Route exact path="/pins/:pinId" component={PinShowContainer} /> */}
+            <Route path="/pins/:pinId" component={PinShowContainer} />
             {/* <Route exact path="/pin-builder" component={CreatePinFormContainer} /> */}
             <ProtectedRoute exact path="/pin-builder" component={CreatePinFormContainer} />
 
             {/* <Route exact path="/boards/:boardId" component={BoardShowContainer} /> */}
             <Route path="/boards/:boardId" component={BoardShowContainer} />
 
-            <Route exact path="/users/:userId" component={ProfileContainer} />
-            <Route exact path="/users/:userId/settings" component={ProfileSettingsContainer}/>
+            {/* <Route exact path="/users/:userId" component={ProfileContainer} />
+            <Route exact path="/users/:userId/settings" component={ProfileSettingsContainer}/> */}
+            <Route path="/users/:userId" component={ProfileContainer} />
+            <Route path="/users/:userId/settings" component={ProfileSettingsContainer}/>
             
-            <Route exact path="/following" component={FollowingContainer}/>
+            {/* <Route exact path="/following" component={FollowingContainer}/> */}
+            <Route path="/following" component={FollowingContainer}/>
 
-            <Route exact path="/users/:userId/pins" component={UserPinIndex}/>
+            {/* <Route exact path="/users/:userId/pins" component={UserPinIndex}/> */}
+            <Route path="/users/:userId/pins" component={UserPinIndex}/>
 
             <Route exact path="/" component={MainContainer} />
         </Switch>
