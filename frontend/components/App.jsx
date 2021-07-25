@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import { AuthRoute } from '../util/route_util'
+import { AuthRoute, ProtectedRoute } from '../util/route_util'
 import {
     Route,
     Redirect,
@@ -33,9 +33,11 @@ const App = () => (
 
         <Switch >
             <Route exact path="/pins/:pinId" component={PinShowContainer} />
-            <Route exact path="/pin-builder" component={CreatePinFormContainer} />
+            {/* <Route exact path="/pin-builder" component={CreatePinFormContainer} /> */}
+            <ProtectedRoute exact path="/pin-builder" component={CreatePinFormContainer} />
 
-            <Route exact path="/boards/:boardId" component={BoardShowContainer} />
+            {/* <Route exact path="/boards/:boardId" component={BoardShowContainer} /> */}
+            <Route path="/boards/:boardId" component={BoardShowContainer} />
 
             <Route exact path="/users/:userId" component={ProfileContainer} />
             <Route exact path="/users/:userId/settings" component={ProfileSettingsContainer}/>
