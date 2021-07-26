@@ -11,24 +11,24 @@ class PinIndex extends React.Component {
         this.state = { loading: true, searchInput: this.props.searchInput, noFollows: false}
     }
 
-    componentDidMount() {
-        const that = this;
-        if (this.props.board){
-            this.props.fetchPins({board: this.props.board.id}).then(this.setState({loading: false}));
-        } else if (this.props.userPinIndex){
-            this.props.fetchPins({user: this.props.currentUser.id}).then(this.setState({loading: false}));
-        } else if (this.props.following){
-            let follows;
-            if (this.props.currentUser.following[0]){
-                follows = this.props.currentUser.following.map( follow => {return follow.id})
-            } else {
-                that.setState({ noFollows: true});
-            }
-            this.props.fetchPins({follows: follows}).then(this.setState({loading: false}));
-        } else {
-            this.props.fetchPins().then(this.setState({loading: false}));
-        }
-    }
+    // componentDidMount() {
+    //     const that = this;
+    //     if (this.props.board){
+    //         this.props.fetchPins({board: this.props.board.id}).then(this.setState({loading: false}));
+    //     } else if (this.props.userPinIndex){
+    //         this.props.fetchPins({user: this.props.currentUser.id}).then(this.setState({loading: false}));
+    //     } else if (this.props.following){
+    //         let follows;
+    //         if (this.props.currentUser.following[0]){
+    //             follows = this.props.currentUser.following.map( follow => {return follow.id})
+    //         } else {
+    //             that.setState({ noFollows: true});
+    //         }
+    //         this.props.fetchPins({follows: follows}).then(this.setState({loading: false}));
+    //     } else {
+    //         this.props.fetchPins().then(this.setState({loading: false}));
+    //     }
+    // }
 
     pinCount() {
         if (this.props.pins.length === 1 && this.props.board) {

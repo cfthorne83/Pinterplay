@@ -14,9 +14,9 @@ class BoardIndex extends React.Component {
         this.handleFirst = this.handleFirst.bind(this);
     }
 
-    componentDidMount() {
-        this.props.fetchBoards();
-    }
+    // componentDidMount() {
+    //     this.props.fetchBoards();
+    // }
     
     // componentDidUpdate() {
     //     if (this.props.boards !== this.state.boards){
@@ -30,45 +30,45 @@ class BoardIndex extends React.Component {
 
     render() {  
         
-        if (this.props.boards.length === 0) return null;
-        let reRender = false;
-        this.props.boards.forEach( board => {
-            if (!board.pins){
-                reRender = true;
-            }
-        });
+        // if (this.props.boards.length === 0) return null;
+        // let reRender = false;
+        // this.props.boards.forEach( board => {
+        //     if (!board.pins){
+        //         reRender = true;
+        //     }
+        // });
         
-        // if (reRender) return null;
+        // // if (reRender) return null;
 
-        if (this.props.boards !== this.state.boards){
-            this.setState({boards: this.props.boards})
-            return null;
-        }
+        // if (this.props.boards !== this.state.boards){
+        //     this.setState({boards: this.props.boards})
+        //     return null;
+        // }
         
-        let boards = this.props.boards.map( (board, i) => {
-            // let first;
-            // if (i !== 0 ){
-            //     first = false;
-            // } else {
-            //     first = true;
-            // }
+        // let boards = this.props.boards.map( (board, i) => {
+        //     // let first;
+        //     // if (i !== 0 ){
+        //     //     first = false;
+        //     // } else {
+        //     //     first = true;
+        //     // }
 
-            return (
+        //     return (
 
-                    <BoardIndexItem
-                        board={board}
-                        key={board.id}
-                        />
+        //             <BoardIndexItem
+        //                 board={board}
+        //                 key={board.id}
+        //                 />
                     
-            );
-        })
-        
-        return (
-                <ul className='board-index'>
-                    <UserPinIndexLinkContainer userId={this.props.currentUser.id}/>
-                    {boards}
-                </ul>  
-        );
+        //     );
+        // })
+        return null;
+        // return (
+        //         <ul className='board-index'>
+        //             <UserPinIndexLinkContainer userId={this.props.currentUser.id}/>
+        //             {boards}
+        //         </ul>  
+        // );
     }
 }
 
