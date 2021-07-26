@@ -69,7 +69,6 @@ class SessionForm extends React.Component {
         if (this.props.currentUser) {
             return <Redirect to='/' />
         }
-        debugger
         return (
             <div>
                 <div className='session-form'>
