@@ -59,14 +59,21 @@ class FollowBtn extends React.Component {
     }
 
     handleUnfollow() {
-        $.ajax ({
-                    url: "/api/friendships",
-                    method: "DELETE",
-                    data: {
-                        follower_id: this.props.currentUser.id,
-                        followed_id: this.props.pin.user.id
-                    }
-                }).then(this.setState({ 
+        // $.ajax ({
+        //             url: "/api/friendships",
+        //             method: "DELETE",
+        //             data: {
+        //                 follower_id: this.props.currentUser.id,
+        //                 followed_id: this.props.pin.user.id
+        //             }
+        //         }).then(this.setState({ 
+        //                                 followIds: this.props.currentUser.following.map( follow => {
+        //                                     return follow.id
+        //                                 }),
+        //                                 followers: this.state.followers - 1
+        //                             })
+        //                 )
+        this.props.deleteFollow(this.state.friendship).then(this.setState({ 
                                         followIds: this.props.currentUser.following.map( follow => {
                                             return follow.id
                                         }),

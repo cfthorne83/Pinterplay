@@ -5,7 +5,6 @@ import {
 
 const followsReducer = (state = {}, action) => {
     Object.freeze(state);
-
     switch (action.type) {
         case RECEIVE_FOLLOW:
             return Object.assign({}, state, { [action.follow.id]: action.follow });
