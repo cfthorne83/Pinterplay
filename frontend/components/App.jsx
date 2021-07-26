@@ -37,7 +37,7 @@ const App = () => (
             {/* <Route exact path="/pin-builder" component={CreatePinFormContainer} /> */}
             <ProtectedRoute exact path="/pin-builder" component={CreatePinFormContainer} />
 
-            <Route path="/users/:userId/pins" component={UserPinIndex}/>
+            <Route path="/users/:userId/pins" component={UserPinIndex}
             {/* <Route exact path="/boards/:boardId" component={BoardShowContainer} /> */}
             <Route path="/boards/:boardId" component={BoardShowContainer} />
 
