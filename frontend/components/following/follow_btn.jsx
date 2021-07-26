@@ -55,7 +55,7 @@ class FollowBtn extends React.Component {
         //                                 followIds: this.state.followIds.concat([this.props.pin.user.id]),
         //                                 followers: this.state.followers + 1
         //                             }))
-        this.props.createFollow(this.state);
+        this.props.createFollow(this.state.friendship);
     }
 
     handleUnfollow() {

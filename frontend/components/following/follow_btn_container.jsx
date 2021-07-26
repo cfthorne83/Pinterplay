@@ -7,6 +7,8 @@ const msp = (state, ownProps) => {
     return {
         // friendship: {follower_id: state.session.id, followed_id: ownProps.pin.user.id},
         friendship: {follower_id: state.session.id, followed_id: ownProps.pin.user.id},
+        // follower_id: state.sesssion.id,
+        // followed_id: ownProps.pin.user.id,
         pin: ownProps.pin,
         currentUser: ownProps.currentUser,
         followers: ownProps.pin.followers.length
