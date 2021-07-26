@@ -44,18 +44,18 @@ class FollowBtn extends React.Component {
     }
 
     handleFollow() {
-        $.ajax ({
-                    url: "/api/friendships",
-                    method: "POST",
-                    data: {
-                        follower_id: this.props.currentUser.id,
-                        followed_id: this.props.pin.user.id
-                    }
-                }).then(this.setState({ 
-                                        followIds: this.state.followIds.concat([this.props.pin.user.id]),
-                                        followers: this.state.followers + 1
-                                    }))
-        // this.props.createFollow(this.state);
+        // $.ajax ({
+        //             url: "/api/friendships",
+        //             method: "POST",
+        //             data: {
+        //                 follower_id: this.props.currentUser.id,
+        //                 followed_id: this.props.pin.user.id
+        //             }
+        //         }).then(this.setState({ 
+        //                                 followIds: this.state.followIds.concat([this.props.pin.user.id]),
+        //                                 followers: this.state.followers + 1
+        //                             }))
+        this.props.createFollow(this.state);
     }
 
     handleUnfollow() {
