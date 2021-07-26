@@ -1,3 +1,5 @@
 json.friendship do 
-    json.extract! @user, :follower, :followed
+    debugger
+    json.extract! @current_user, :follower, :followed
+    # json.
 end
