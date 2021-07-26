@@ -8,7 +8,7 @@ const Main = (props) => {
         return <MainHome/>
     } else {
         return <MainSplash
-            currentUser={props.currentUser}
+            // currentUser={props.currentUser}
         />     
     }
 }

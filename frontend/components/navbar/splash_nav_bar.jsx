@@ -9,7 +9,7 @@ class SplashNavBar extends React.Component {
             <section className='splash-nav-bar'>
                 <ul className='header-logo'>
                     <li><img className='logo' src="https://seeklogo.com/images/P/pinterest-badge-logo-82C89A5E42-seeklogo.com.png" alt="myPin Logo" /></li>
-                    <li className='app-name'>myPin</li>
+                    <li className='app-name'>Pinterplay</li>
                 </ul>
 
         
