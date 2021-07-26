@@ -49,7 +49,7 @@ const App = () => (
             <Route path="/following" component={FollowingContainer}/>
 
             {/* <Route exact path="/users/:userId/pins" component={UserPinIndex}/> */}
-            <Route path="/users/:userId/pins" component={UserPinIndex}/>
+            <Route exact path="/users/:userId/pins" component={UserPinIndex}/>
 
             <Route exact path="/" component={MainContainer} />
         </Switch>
