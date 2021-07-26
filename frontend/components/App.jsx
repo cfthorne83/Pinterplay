@@ -43,7 +43,7 @@ const App = () => (
 
             {/* <Route exact path="/users/:userId" component={ProfileContainer} /> */}
             <ProtectedRoute exact path="/users/:userId/settings" component={ProfileSettingsContainer}/>
-            <Route path="/users/:userId" component={ProfileContainer} />
+            <Route exact path="/users/:userId" component={ProfileContainer} />
             {/* <Route path="/users/:userId/settings" component={ProfileSettingsContainer}/> */}
             
             {/* <Route exact path="/following" component={FollowingContainer}/> */}
