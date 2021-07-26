@@ -20,7 +20,7 @@ class Api::PinsController < ApplicationController
             @limit = true
             @pins = user.pins.limit(3).shuffle
         else
-            @pins = Pin.all.limit(5)
+            @pins = Pin.all
         end
         if @pins 
             render :index

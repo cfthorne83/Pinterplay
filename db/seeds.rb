@@ -82,7 +82,7 @@ nums = ["One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", 
 users = [sophia, dorothy, blanche, rose]
 
 (0..4).each do |board_i|
-    (0..1).each do |i| 
+    (0..9).each do |i| 
 
         board = boards[board_i]
 
