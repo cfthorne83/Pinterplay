@@ -5,12 +5,15 @@ class Api::PinsController < ApplicationController
     def index
         if params[:data] && params[:data][:board]
             board = Board.find(params[:data][:board])
-            @pins = board.pins
+            # @pins = board.pins
+            @pins = board.pins.limit(2)
         elsif params[:data] && params[:data][:user]
             user = User.find(params[:data][:user])
-            @pins = user.pins
+            # @pins = user.pins
+            @pins = user.pins.limit(2)
         elsif params[:data] && params[:data][:follows]
-            @pins = params[:data][:follows].map { |id| User.find(id).pins }.flatten
+            # @pins = params[:data][:follows].map { |id| User.find(id).pins }.flatten
+            @pins = params[:data][:follows].map { |id| User.find(id).pins.limit(2) }.flatten
         elsif params[:limit] && params[:board]
             board = Board.find(params[:board][:id])
             @limit = true
