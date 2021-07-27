@@ -14,11 +14,11 @@ class LogoutDropdown extends React.Component{
     }
 
     handleBlur(){
-        // if (this.props.currentUser){
-        //     window.setTimeout(() => {
-        //         this.setState({ show: false })
-        //     }, 100);
-        // }
+        if (this.props.currentUser){
+            window.setTimeout(() => {
+                this.setState({ show: false })
+            }, 100);
+        }
     }
 
     render() {
