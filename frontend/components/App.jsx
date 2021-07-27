@@ -37,17 +37,17 @@ const App = () => (
             {/* <Route exact path="/pin-builder" component={CreatePinFormContainer} /> */}
             <ProtectedRoute exact path="/pin-builder" component={CreatePinFormContainer} />
 
-            <Route path="/users/:userId/pins" component={UserPinIndex}/>
+            <ProtectedRoute path="/users/:userId/pins" component={UserPinIndex}/>
             {/* <Route exact path="/boards/:boardId" component={BoardShowContainer} /> */}
-            <Route path="/boards/:boardId" component={BoardShowContainer} />
+            <ProtectedRoute path="/boards/:boardId" component={BoardShowContainer} />
 
             {/* <Route exact path="/users/:userId" component={ProfileContainer} /> */}
             <ProtectedRoute exact path="/users/:userId/settings" component={ProfileSettingsContainer}/>
-            <Route exact path="/users/:userId" component={ProfileContainer} />
+            <ProtectedRoute exact path="/users/:userId" component={ProfileContainer} />
             {/* <Route path="/users/:userId/settings" component={ProfileSettingsContainer}/> */}
             
             {/* <Route exact path="/following" component={FollowingContainer}/> */}
-            <Route path="/following" component={FollowingContainer}/>
+            <ProtectedRoute path="/following" component={FollowingContainer}/>
 
             {/* <Route path="/users/:userId/pins" component={UserPinIndex}/> */}
 

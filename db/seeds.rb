@@ -16,7 +16,7 @@ sophia = User.create(
                         lname: "Patrillo", 
                         username:"Sophia", 
                         email: "demo@fakemail.com", 
-                        password: "123456",
+                        password: "123456"
                         # image_url: "images/sophia.jpg"
                     ) 
 
@@ -77,42 +77,42 @@ light = Board.create(
                         user_id: rose.id   
                     )
 
-boards = [pink, blue, gold, dark, light]
-nums = ["One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen"]
-users = [sophia, dorothy, blanche, rose]
+# boards = [pink, blue, gold, dark, light]
+# nums = ["One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen"]
+# users = [sophia, dorothy, blanche, rose]
 
-(0..4).each do |board_i|
-    (0..9).each do |i| 
+# (0..4).each do |board_i|
+#     (0..9).each do |i| 
 
-        board = boards[board_i]
+#         board = boards[board_i]
 
-        if board_i == 0 || board_i == 1
-            user = sophia
-        else
-            user = users[board_i - 1]
-        end
+#         if board_i == 0 || board_i == 1
+#             user = sophia
+#         else
+#             user = users[board_i - 1]
+#         end
 
-        if board != dark
-            initial = board.title[0].downcase + i.to_s
-            title = board.title + " " + nums[i]
-        else 
-            initial = "d" + i.to_s
-            title = "Black " + nums[i]
-        end
+#         if board != dark
+#             initial = board.title[0].downcase + i.to_s
+#             title = board.title + " " + nums[i]
+#         else 
+#             initial = "d" + i.to_s
+#             title = "Black " + nums[i]
+#         end
 
-        uri = "https://mypin-seeds.s3.amazonaws.com/#{initial}.jpg"
-        file = URI.open(uri)
-        pin = Pin.create(title: title, user_id: user.id)
-        pin.photo.attach(io: file, filename: '#{initial}.jpg')
-        pin.save
+#         uri = "https://mypin-seeds.s3.amazonaws.com/#{initial}.jpg"
+#         file = URI.open(uri)
+#         pin = Pin.create(title: title, user_id: user.id)
+#         pin.photo.attach(io: file, filename: '#{initial}.jpg')
+#         pin.save
     
-        board_pin = BoardPin.new
-        board_pin.board_id = board.id
-        board_pin.pin_id = pin.id
-        board_pin.save
-    end
-end
+#         board_pin = BoardPin.new
+#         board_pin.board_id = board.id
+#         board_pin.pin_id = pin.id
+#         board_pin.save
+#     end
+# end
 
-dorothy.follow(sophia)
-blanche.follow(sophia)
-rose.follow(sophia)
+# dorothy.follow(sophia)
+# blanche.follow(sophia)
+# rose.follow(sophia)
