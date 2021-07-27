@@ -51,9 +51,7 @@ class SessionForm extends React.Component {
         // this.props.login({ email: "demo@fakemail.com", password: "123456" }).then(this.props.closeModal);
         e.preventDefault();
         const user = Object.assign({}, this.state.demo);
-        debugger
         this.props.processForm(user).then(this.props.closeModal);
-        debugger
     }
 
     renderErrors() {
