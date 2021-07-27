@@ -17,7 +17,7 @@ sophia = User.create(
                         username:"Sophia", 
                         email: "demo@fakemail.com", 
                         password: "123456",
-                        image_url: "images/sophia.jpg"
+                        # image_url: "images/sophia.jpg"
                     ) 
 
 dorothy = User.create(
