@@ -43,10 +43,10 @@ class SessionForm extends React.Component {
     
     handleDemo(){
         // this.setState({demo: 'demo'});
-        this.setState({ email: "demo@fakemail.com", password: "123456" }, 
-            this.props.login(this.state)
-        ).then(this.props.closeModal);
-        // this.props.login({ email: "demo@fakemail.com", password: "123456" }).then(this.props.closeModal);
+        // this.setState({ email: "demo@fakemail.com", password: "123456" }, 
+        //     this.props.login(this.state)
+        // )
+        this.props.login({ email: "demo@fakemail.com", password: "123456" }).then(this.props.closeModal);
     }
 
     renderErrors() {
