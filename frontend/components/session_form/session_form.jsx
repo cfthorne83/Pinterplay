@@ -7,8 +7,8 @@ class SessionForm extends React.Component {
         this.state = {
             email: "",
             password: "",
-            errors: []
-            // demo: null
+            errors: [],
+            demo: { email: "demo@fakemail.com", password: "123456"}
         };
 
         this.updatePassword = this.updatePassword.bind(this);
@@ -36,17 +36,24 @@ class SessionForm extends React.Component {
     }
 
     handleSubmit(e) {
+        debugger
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.processForm(this.state).then(this.props.closeModal);
+        // this.props.processForm(this.state).then(this.props.closeModal);
+        this.props.processForm(user).then(this.props.closeModal);
     }
     
-    handleDemo(){
+    handleDemo(e){
         // this.setState({demo: 'demo'});
         // this.setState({ email: "demo@fakemail.com", password: "123456" }, 
         //     this.props.login(this.state)
         // )
-        this.props.login({ email: "demo@fakemail.com", password: "123456" }).then(this.props.closeModal);
+        // this.props.login({ email: "demo@fakemail.com", password: "123456" }).then(this.props.closeModal);
+        e.preventDefault();
+        const user = Object.assign({}, this.state.demo);
+        debugger
+        this.props.processForm(user).then(this.props.closeModal);
+        debugger
     }
 
     renderErrors() {
