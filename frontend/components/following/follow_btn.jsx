@@ -16,6 +16,7 @@ class FollowBtn extends React.Component {
         this.handleUnfollow = this.handleUnfollow.bind(this);
         this.userDisplay = this.userDisplay.bind(this);
     }
+    
 
     userDisplay() {
         if (this.props.pin && this.props.pin.user && this.props.pin.user.fname && this.props.pin.user.lname){

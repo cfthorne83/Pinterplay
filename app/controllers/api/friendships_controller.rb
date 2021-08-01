@@ -4,11 +4,12 @@ class Api::FriendshipsController < ApplicationController
     before_action :find_user
     
     def create 
-        # current_user.follow(@user)
-        @friendship = Friendship.new(friendship_params)
+        current_user.follow(@user)
+        # @friendship = Friendship.new(friendship_params)
+        
         # current_user.active_friendships.create(followed_id: user.id)
-        @current_user = current_user
-        render :show
+        # @current_user = current_user
+        # render :show
     end
 
     def destroy
