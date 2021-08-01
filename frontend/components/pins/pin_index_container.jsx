@@ -7,7 +7,7 @@ const msp = (state, ownProps) => {
         pins: Object.values(state.entities.pins),
         board: ownProps.board,
         following: ownProps.following,
-        currentUser: state.entities.users[state.session.id],
+        currentUser: ownProps.currentUser,
         userPinIndex: ownProps.userPinIndex,
         searchInput: state.ui.search
     }

@@ -7,13 +7,17 @@ class Following extends React.Component{
     constructor(props){
         super(props);
 
-        this.state = this.props.currentUser.following;
+        this.state = { currentUser: this.props.currentUser, fetched: false };
         this.header = this.header.bind(this);
     }
 
-    componentWillMount() {
+    componentDidMount() {
         debugger
         this.props.fetchUser(this.props.currentUser.id);
+        // .then
+        //     this.setState({
+        //         currentUser: 
+        //     });
     }
 
     header() {
@@ -32,7 +36,7 @@ debugger
         return (
             <div>
                 {this.header()}
-                <PinIndex following={true}/>
+                <PinIndex currentUser={this.props.currentUser} following={true}/>
             </div>
         )
     }

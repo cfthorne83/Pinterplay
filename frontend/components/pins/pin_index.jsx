@@ -8,7 +8,7 @@ class PinIndex extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = { loading: true, searchInput: this.props.searchInput, noFollows: false}
+        this.state = { loading: true, searchInput: this.props.searchInput, noFollows: false, fetched: false}
     }
 
     componentDidMount() {
@@ -29,6 +29,7 @@ class PinIndex extends React.Component {
         } else {
             this.props.fetchPins().then(this.setState({loading: false}));
         }
+        this.setState({ fetched: true });
     }
 
     pinCount() {
@@ -54,6 +55,11 @@ class PinIndex extends React.Component {
 
     
     render() {
+
+        if (this.state.fetched === false) {
+            debugger
+            return null;
+        }
         if (this.props.pins.length === 0 ){
             return (
                 <div className="pin-index-loader">
