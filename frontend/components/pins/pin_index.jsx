@@ -13,6 +13,7 @@ class PinIndex extends React.Component {
 
     componentDidMount() {
         const that = this;
+        debugger
         if (this.props.board){
             this.props.fetchPins({board: this.props.board.id}).then(this.setState({loading: false}));
         } else if (this.props.userPinIndex){
@@ -108,6 +109,7 @@ class PinIndex extends React.Component {
                 <div></div>
             )
         } else {
+            debugger
             return (
                 <div className="pin-index-outer">
                     <ul className='pin-index'>

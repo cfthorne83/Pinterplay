@@ -35,13 +35,12 @@ class FollowBtn extends React.Component {
     }
     
     followBtn() {
-        debugger
         if (this.props.pin.user && this.props.pin.user.id !== this.props.currentUser.id) {
             if (this.state.followIds.includes(this.props.pin.user.id)){
-                debugger
+    
                 return <button onClick={this.handleUnfollow}>Unfollow</button>
             } else {
-                debugger
+    
                 return <button onClick={this.handleFollow}>Follow</button>
             }
         }
@@ -78,7 +77,6 @@ class FollowBtn extends React.Component {
     }
 
     updateFollowIds() {
-        debugger
         let followIds = this.state.followIds;
         let deleted = this.props.pin.user.id;
         let newState = [];
@@ -88,7 +86,6 @@ class FollowBtn extends React.Component {
             }
             newState.push(followIds[i]);
         }
-        debugger
         this.setState({ 
             followIds: newState,
             followers: this.state.followers - 1
@@ -109,7 +106,7 @@ class FollowBtn extends React.Component {
     //         followers: this.state.followers - 1
     //                                 })
     //                                 )
-    //                                 debugger
+    //                              
         // this.props.deleteFollow(this.state.friendship).then(this.setState({ 
         //                                 followIds: this.props.currentUser.following.map( follow => {
         //                                     return follow.id

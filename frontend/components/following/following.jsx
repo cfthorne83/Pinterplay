@@ -18,6 +18,7 @@ class Following extends React.Component{
     }
 
     header() {
+        debugger
         if (this.props.currentUser.following[0]){
             return <h1 className="follow-header">From people you follow</h1>    
         } else {
