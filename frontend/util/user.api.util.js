@@ -6,3 +6,9 @@ export const updateUser = (user) => {
         data: { user }
     })
 }
+
+export const fetchUser = (userId) => {
+    return $.ajax({
+        url: `/api/users/${userId}`
+    })
+}

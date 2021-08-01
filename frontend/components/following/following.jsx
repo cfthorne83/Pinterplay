@@ -11,6 +11,11 @@ class Following extends React.Component{
         this.header = this.header.bind(this);
     }
 
+    componentWillMount() {
+        debugger
+        this.props.fetchUser(this.props.currentUser.id);
+    }
+
     header() {
         if (this.props.currentUser.following[0]){
             return <h1 className="follow-header">From people you follow</h1>    
@@ -23,7 +28,7 @@ class Following extends React.Component{
         if (!this.props.currentUser) {
             return <Redirect to='/' />
         }
-
+debugger
         return (
             <div>
                 {this.header()}
