@@ -13,14 +13,15 @@ class Api::FriendshipsController < ApplicationController
     end
 
     def destroy
+        # debugger
         current_user.unfollow(@user)
     end
 
     private 
 
     def find_user 
-        @user = User.find(params[:friendship][:followed_id])
-        # @user = User.find(params[:followed_id])
+        # @user = User.find(params[:friendship][:followed_id])
+        @user = User.find(params[:followed_id])
     end
 
     def friendship_params
