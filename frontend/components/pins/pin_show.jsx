@@ -8,7 +8,7 @@ class PinShow extends React.Component {
     constructor(props){
         super(props);
         // this.state = Object.assign(this.props.pin, { mounted: false });
-        this.state = { pin: this.props.pin, fetched: false };
+        this.state = { pin: this.props.pin, fetched: false, following: this.props.following };
 
         this.handleGoBack = this.handleGoBack.bind(this);
         this.handleState = this.handleState.bind(this);

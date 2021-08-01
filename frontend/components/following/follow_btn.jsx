@@ -4,12 +4,12 @@ class FollowBtn extends React.Component {
     constructor(props) {
         super(props);
         
-        const followIds = this.props.currentUser.following.map( follow => {
-            return follow.id
-        })
+        // const followIds = this.props.currentUser.following.map( follow => {
+        //     return follow.id
+        // })
         
         // this.state = { followers: this.props.followers, followIds: followIds }
-        this.state = { friendship: this.props.friendship, followers: this.props.followers, followIds: followIds}
+        this.state = { friendship: this.props.friendship, followers: this.props.followers, followIds: this.props.followIds}
 
         this.followBtn = this.followBtn.bind(this);
         this.handleFollow = this.handleFollow.bind(this);
@@ -69,14 +69,27 @@ class FollowBtn extends React.Component {
                         follower_id: this.props.currentUser.id,
                         followed_id: this.props.pin.user.id
                     }
-                }).then(this.setState({ 
-                                        followIds: this.props.currentUser.following.map( follow => {
-                                            return follow.id
-                                        }),
-                                        followers: this.state.followers - 1
-                                    })
-                                    )
-                                    debugger
+                }).then(
+                    
+                )
+    }
+
+    updateFollowIds() {
+        this.setState({
+
+        })
+    }
+    
+    // this.setState({ 
+    //     // followIds: this.props.currentUser.following.map( follow => {
+    //         //     return follow.id
+    //         // }),
+    //         followers: this.state.followers - 1
+                                        
+                                        
+    //                                 })
+    //                                 )
+    //                                 debugger
         // this.props.deleteFollow(this.state.friendship).then(this.setState({ 
         //                                 followIds: this.props.currentUser.following.map( follow => {
         //                                     return follow.id
@@ -84,7 +97,8 @@ class FollowBtn extends React.Component {
         //                                 followers: this.state.followers - 1
         //                             })
         //                 )
-    }
+    
+    
 
     displayFollow() {
         if (this.props.pin.followers.length === 1){

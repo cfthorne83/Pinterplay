@@ -11,7 +11,10 @@ const msp = (state, ownProps) => {
         // followed_id: ownProps.pin.user.id,
         pin: ownProps.pin,
         currentUser: ownProps.currentUser,
-        followers: ownProps.pin.followers.length
+        followers: ownProps.pin.followers.length,
+        followIds: ownProps.currentUser.following.map( follow => {
+            return follow.id
+        })
     }
 }
 
