@@ -13,7 +13,6 @@ class Api::FriendshipsController < ApplicationController
     end
 
     def destroy
-        # debugger
         current_user.unfollow(@user)
     end
 

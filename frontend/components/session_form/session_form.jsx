@@ -36,7 +36,6 @@ class SessionForm extends React.Component {
     }
 
     handleSubmit(e) {
-        debugger
         e.preventDefault();
         const user = Object.assign({}, this.state);
         // this.props.processForm(this.state).then(this.props.closeModal);

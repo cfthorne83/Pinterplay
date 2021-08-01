@@ -31,7 +31,6 @@ class Following extends React.Component{
         } else if (this.state.fetched === false) {
             return null;
         }
-debugger
         return (
             <div>
                 {this.header()}

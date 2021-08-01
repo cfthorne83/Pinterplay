@@ -12,14 +12,13 @@ class PinIndex extends React.Component {
     }
 
     componentDidMount() {
-        debugger
         const that = this;
         if (this.props.board){
             this.props.fetchPins({board: this.props.board.id}).then(this.setState({loading: false}));
         } else if (this.props.userPinIndex){
             this.props.fetchPins({user: this.props.currentUser.id}).then(this.setState({loading: false}));
         } else if (this.props.following){
-            debugger
+
             let follows;
             if (this.props.currentUser.following[0]){
                 follows = this.props.currentUser.following.map( follow => {return follow.id})
@@ -56,10 +55,10 @@ class PinIndex extends React.Component {
 
     
     render() {
-        debugger
+
 
         // if (this.state.fetched === false) {
-        //     debugger
+        //   
         //     return null;
         // }
         if (this.props.pins.length === 0 ){
@@ -104,7 +103,6 @@ class PinIndex extends React.Component {
             )
         })
 
-        debugger
         if (this.state.noFollows){
             return (
                 <div></div>

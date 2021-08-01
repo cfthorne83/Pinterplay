@@ -35,7 +35,6 @@ class FollowBtn extends React.Component {
     }
     
     followBtn() {
-        debugger
         if (this.props.pin.user && this.props.pin.user.id !== this.props.currentUser.id) {
             if (this.state.followIds.includes(this.props.pin.user.id)){
                 return <button onClick={this.handleUnfollow}>Unfollow</button>
@@ -61,7 +60,6 @@ class FollowBtn extends React.Component {
     }
 
     handleUnfollow() {
-        debugger
         $.ajax ({
                     url: "/api/friendships",
                     method: "DELETE",

@@ -6,7 +6,6 @@ import { fetchPins } from '../../actions/pin_actions';
 import Following from './following';
 
 const msp = (state, ownProps) => {
-    debugger
     return {
         currentUser: state.entities.users[state.session.id]
     };
