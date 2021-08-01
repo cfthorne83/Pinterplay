@@ -7,17 +7,14 @@ class Following extends React.Component{
     constructor(props){
         super(props);
 
-        this.state = { currentUser: this.props.currentUser, fetched: false };
+        this.state = { following: this.props.currentUser.following, fetched: false };
         this.header = this.header.bind(this);
     }
 
     componentDidMount() {
-        debugger
-        this.props.fetchUser(this.props.currentUser.id);
-        // .then
-        //     this.setState({
-        //         currentUser: 
-        //     });
+        this.props.fetchUser(this.props.currentUser.id).then(
+            this.setState({ fetched: true })
+        )
     }
 
     header() {
@@ -31,6 +28,8 @@ class Following extends React.Component{
     render(){
         if (!this.props.currentUser) {
             return <Redirect to='/' />
+        } else if (this.state.fetched === false) {
+            return null;
         }
 debugger
         return (
