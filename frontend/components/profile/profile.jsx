@@ -19,6 +19,10 @@ class Profile extends React.Component{
         this.followers = this.followers.bind(this);
     }
 
+    componentDidMount() {
+        this.props.fetchUser(this.props.currentUser.id);
+    }
+
     handleSubmit(e){
         this.props.openModal('createBoard');
     }
