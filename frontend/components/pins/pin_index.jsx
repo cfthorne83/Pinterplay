@@ -20,13 +20,14 @@ class PinIndex extends React.Component {
             this.props.fetchPins({user: this.props.currentUser.id}).then(this.setState({loading: false}));
         } else if (this.props.following){
 debugger
-            let follows;
-            if (this.props.currentUser.following[0]){
-                follows = this.props.currentUser.following.map( follow => {return follow.id})
-            } else {
-                that.setState({ noFollows: true});
-            }
-            this.props.fetchPins({follows: follows, user_id: this.props.currentUser.id}).then(this.setState({loading: false}));
+            // let follows;
+            // if (this.props.currentUser.following[0]){
+            //     follows = this.props.currentUser.following.map( follow => {return follow.id})
+            // } else {
+            //     that.setState({ noFollows: true});
+            // }
+            // this.props.fetchPins({follows: follows, user_id: this.props.currentUser.id}).then(this.setState({loading: false}));
+            this.props.fetchPins({follows: this.props.currentUser.id}).then(this.setState({loading: false}));
         } else {
             this.props.fetchPins().then(this.setState({loading: false}));
         }
