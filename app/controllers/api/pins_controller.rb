@@ -12,8 +12,11 @@ class Api::PinsController < ApplicationController
             # @pins = user.pins
             @pins = user.pins.limit(2)
         elsif params[:data] && params[:data][:follows]
+            user = User.find(params[:data][:user_id])
+            follows = user.following.map{ |follow| follow[:id]}
             # @pins = params[:data][:follows].map { |id| User.find(id).pins }.flatten
-            @pins = params[:data][:follows].map { |id| User.find(id).pins.limit(2) }.flatten
+            # @pins = params[:data][:follows].map { |id| User.find(id).pins.limit(2) }.flatten
+            @pins = follows.map { |id| User.find(id).pins.limit(2) }.flatten
         elsif params[:limit] && params[:board]
             board = Board.find(params[:board][:id])
             @limit = true
