@@ -12,7 +12,6 @@ class Following extends React.Component{
     }
 
     componentDidMount() {
-        debugger
         this.props.fetchUser(this.state.currentUser.id).then(
             this.setState({ fetched: true, currentUser: this.props.currentUser })
         )
@@ -25,7 +24,6 @@ class Following extends React.Component{
     }
 
     header() {
-        debugger
         // this.updateState();
         if (this.props.currentUser.following[0]){
             return <h1 className="follow-header">From people you follow</h1>    
@@ -44,7 +42,6 @@ class Following extends React.Component{
         else if (this.state.fetched === false) {
             return null;
         }
-        debugger
         return (
             <div>
                 {this.header()}

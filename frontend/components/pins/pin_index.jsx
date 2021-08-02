@@ -19,7 +19,7 @@ class PinIndex extends React.Component {
         } else if (this.props.userPinIndex){
             this.props.fetchPins({user: this.props.currentUser.id}).then(this.setState({loading: false}));
         } else if (this.props.following){
-debugger
+
             // let follows;
             // if (this.props.currentUser.following[0]){
             //     follows = this.props.currentUser.following.map( follow => {return follow.id})
@@ -70,7 +70,7 @@ debugger
                         className="create-pin-form__loader"
                         size={35} color="red" 
                         loading={this.state.loading}/>
-                    <h1>Retrieving Pins</h1>
+                    {/* <h1>Retrieving Pins</h1> */}
                 </div>
             )
         } 
@@ -110,7 +110,7 @@ debugger
                 <div></div>
             )
         } else {
-            debugger
+            
             return (
                 <div className="pin-index-outer">
                     <ul className='pin-index'>
