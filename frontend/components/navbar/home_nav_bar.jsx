@@ -8,7 +8,18 @@ class HomeNavBar extends React.Component {
     constructor(props){
         super(props);
 
-        this.state = { homeLink: "active", followLink: "inactive"};
+        let homeLink;
+        let followLink;
+        if (this.props.url === "following"){
+            followLink = "active";
+            homeLink = "inactive";
+        } else if (this.props.url === "") {
+            followLink = "inactive";
+            homeLink = "active";
+        }
+        // debugger
+
+        this.state = { homeLink: homeLink, followLink: followLink};
         this.homeLink = this.homeLink.bind(this);
         this.followLink = this.followLink.bind(this);
         this.removeClass = this.removeClass.bind(this);
