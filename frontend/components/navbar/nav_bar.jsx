@@ -7,6 +7,7 @@ const NavBar = (props) => {
 
     if (props.currentUser) {
         return <HomeNavBar 
+                    url={props.url}
                     openModal={props.openModal}
                     logout={props.logout}
                     currentUser={props.currentUser}

@@ -7,6 +7,7 @@ import NavBar from './nav_bar'
 const mSTP = (state, ownProps) => {
     return {
         currentUser: state.entities.users[state.session.id],
+        url: window.location.href.split("/").pop()
     };
 };
 
