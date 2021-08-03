@@ -20,6 +20,7 @@ class PinShow extends React.Component {
         //     this.props.fetchPins();
         // }
         this.props.fetchPin(this.props.match.params.pinId);
+        this.props.updateUrl(this.props.url);
     }
     
     componentDidMount() {

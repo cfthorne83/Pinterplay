@@ -7,6 +7,9 @@ const NavBar = (props) => {
 
     if (props.currentUser) {
         return <HomeNavBar 
+                    followLink={props.followLink}
+                    homeLink={props.homeLink}
+                    updateUrl={props.updateUrl}
                     url={props.url}
                     openModal={props.openModal}
                     logout={props.logout}

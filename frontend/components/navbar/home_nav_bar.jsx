@@ -8,22 +8,52 @@ class HomeNavBar extends React.Component {
     constructor(props){
         super(props);
 
-        let homeLink;
-        let followLink;
-        if (this.props.url === "following"){
-            followLink = "active";
-            homeLink = "inactive";
-        } else if (this.props.url === "") {
-            followLink = "inactive";
-            homeLink = "active";
-        }
+        // let homeLink;
+        // let followLink;
+        // if (this.props.url === "following"){
+        //     debugger
+        //     followLink = "active";
+        //     homeLink = "inactive";
+        // } else if (this.props.url === "") {
+        //     debugger
+        //     followLink = "inactive";
+        //     homeLink = "active";
+        // } else {
+        //     debugger
+        //     followLink = "none";
+        //     homeLink = "none";
+        // }
         // debugger
 
-        this.state = { homeLink: homeLink, followLink: followLink};
+        this.state = { homeLink: this.props.homeLink, followLink: this.props.followLink, mounted: false};
         this.homeLink = this.homeLink.bind(this);
         this.followLink = this.followLink.bind(this);
         this.removeClass = this.removeClass.bind(this);
     }
+
+    assignClass() {
+        let follow;
+        let home;
+        if (window.location.href === "following"){
+            follow = "active";
+            home = "inactive";
+        } else if (window.location.href === "") {
+            follow = "inactive";
+            home = "active";
+        } else {
+            follow = "none";
+            home = "none";
+        }
+        this.setState({ followLink: follow, homeLink: home })
+    }
+
+    // componentDidUpdate(prevProps) {
+    //     debugger
+    //     if (window.location.href.split("/").pop() != prevProps.url){
+    //         debugger
+    //         this.setState({updated: true})
+    //     }
+    // }
 
     profileLink() {
         if (this.props.currentUser.image_url) {
@@ -56,6 +86,9 @@ class HomeNavBar extends React.Component {
     }
 
     render() {
+        // if( !this.state.mounted ){
+        //     return null;
+        // }
 
         return (
             <header className='home-nav-bar'>

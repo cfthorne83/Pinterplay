@@ -1,6 +1,6 @@
 import { UPDATE_URL } from '../actions/url_action';
 
-const urlReducer = (state = null, action) => {
+const urlReducer = (state = window.location.href.split("/").pop(), action) => {
     Object.freeze(state);
 
     switch (action.type) {
