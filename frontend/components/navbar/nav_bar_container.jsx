@@ -7,8 +7,8 @@ import NavBar from './nav_bar'
 
 const mSTP = (state, ownProps) => {
     debugger
-        let url = state.ui.url;
-        // let url = window.location.href.split("/").pop();
+        // let url = state.ui.url;
+        let url = window.location.href.split("/").pop();
         let homeLink;
         let followLink;
         if ( url === "following"){
@@ -28,8 +28,8 @@ const mSTP = (state, ownProps) => {
         currentUser: state.entities.users[state.session.id],
         homeLink: homeLink,
         followLink: followLink,
-        url: state.ui.url
-        // url: window.location.href.split("/").pop()
+        // url: state.ui.url
+        url: window.location.href.split("/").pop()
     };
 };
 
