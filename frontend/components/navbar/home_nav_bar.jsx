@@ -25,7 +25,7 @@ class HomeNavBar extends React.Component {
         // }
         // debugger
 
-        this.state = { homeLink: this.props.homeLink, followLink: this.props.followLink, mounted: false};
+        this.state = { homeLink: this.props.homeLink, followLink: this.props.followLink, url: this.props.url, mounted: false};
         this.homeLink = this.homeLink.bind(this);
         this.followLink = this.followLink.bind(this);
         this.removeClass = this.removeClass.bind(this);
