@@ -27,6 +27,11 @@ class SessionForm extends React.Component {
     this.setState({errors: nextProps.errors})
   }
 
+    componentDidUpdate(prevProps, prevState){
+        debugger
+        let t;
+    }
+
     updateEmail(e) {
         this.setState({ email: e.currentTarget.value });
     }

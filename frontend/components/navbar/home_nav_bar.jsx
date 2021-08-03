@@ -8,80 +8,30 @@ class HomeNavBar extends React.Component {
     constructor(props){
         super(props);
 
-        // let homeLink;
-        // let followLink;
-        // if (this.props.url === "following"){
-        //     debugger
-        //     followLink = "active";
-        //     homeLink = "inactive";
-        // } else if (this.props.url === "") {
-        //     debugger
-        //     followLink = "inactive";
-        //     homeLink = "active";
-        // } else {
-        //     debugger
-        //     followLink = "none";
-        //     homeLink = "none";
-        // }
-        // debugger
-
         this.state = { homeLink: this.props.homeLink, followLink: this.props.followLink, url: this.props.url, mounted: false};
         this.homeLink = this.homeLink.bind(this);
         this.followLink = this.followLink.bind(this);
         this.removeClass = this.removeClass.bind(this);
     }
 
-    assignClass() {
-        let follow;
-        let home;
-        if (window.location.href === "following"){
-            follow = "active";
-            home = "inactive";
-        } else if (window.location.href === "") {
-            follow = "inactive";
-            home = "active";
-        } else {
-            follow = "none";
-            home = "none";
-        }
-        this.setState({ followLink: follow, homeLink: home })
-    }
-
-    // componentDidMount(){
-    //     debugger
-    //     const url = window.location.href.split("/").pop();
-    //     this.props.updateUrl(url);
-    // }
     componentDidUpdate(prevProps, prevState, snapshot){
-        debugger
         const url = this.props.url;
         let home; 
         let follow;
         if ( url === "following"){
-            // debugger
             follow = "active";
             home = "inactive";
         } else if ( url === "") {
-            // debugger
             follow = "inactive";
             home = "active";
         } else {
-            // debugger
             follow = "none";
             home = "none";
         }
         if (prevProps.url != this.props.url){
             this.setState({ homeLink: home, followLink: follow})
         }
-        let t;
     }
-    // componentDidUpdate(prevProps) {
-    //     debugger
-    //     if (window.location.href.split("/").pop() != prevProps.url){
-    //         debugger
-    //         this.setState({updated: true})
-    //     }
-    // }
 
     profileLink() {
         if (this.props.currentUser.image_url) {
