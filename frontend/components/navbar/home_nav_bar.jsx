@@ -54,6 +54,9 @@ class HomeNavBar extends React.Component {
     // }
     componentDidUpdate(prevProps, prevState, snapshot){
         debugger
+        if (prevProps.url != this.props.url){
+            this.setState({ homeLink: "none", followLink: "none"})
+        }
         let t;
     }
     // componentDidUpdate(prevProps) {
@@ -108,8 +111,8 @@ class HomeNavBar extends React.Component {
                                 <img className='home-logo' src="https://seeklogo.com/images/P/pinterest-badge-logo-82C89A5E42-seeklogo.com.png" alt="myPin Logo" />
                             </span>
                         </Link>                      
-                        <li className={this.state.homeLink}><Link onClick={this.homeLink} to='/'>Home</Link></li>
-                        <li className={this.state.followLink} ><Link onClick={this.followLink}to='/following'>Following</Link></li>
+                        <li id="home-link" className={this.state.homeLink}><Link onClick={this.homeLink} to='/'>Home</Link></li>
+                        <li id="follow-link" className={this.state.followLink} ><Link onClick={this.followLink}to='/following'>Following</Link></li>
                     </ul>
                 </nav>
 

@@ -5,8 +5,8 @@ const urlReducer = (state = window.location.href.split("/").pop(), action) => {
 
     switch (action.type) {
         case  UPDATE_URL:
-            // return action.modal;
-            return Object.assign({}, { url: action.url })
+            return action.url;
+            // return Object.assign({}, { url: action.url })
         default:
             return state;
     }
