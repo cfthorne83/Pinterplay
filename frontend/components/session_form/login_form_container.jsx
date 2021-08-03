@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import SessionForm from './session_form'
-import { login } from '../../actions/session_actions';
+import { login, clearErrors } from '../../actions/session_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
 
 const msp = (state, ownProps) => {
@@ -14,11 +14,19 @@ const msp = (state, ownProps) => {
 }
 
 const mdp = (dispatch, ownProps) => {
+    const signupForm = (e) => {
+        e.preventDefault();
+        dispatch(clearErrors());
+        dispatch(openModal('signup'));
+    }
+
     return {
         processForm: (user) => dispatch(login(user)),
         otherForm: (
-            <button className='other-form' onClick={() => dispatch(openModal('signup'))}>
-                Not on myPin yet? Sign Up
+            <button className='other-form' 
+                // onClick={() => dispatch(openModal('signup'))}>
+                onClick={signupForm}>
+                    Not on myPin yet? Sign Up
             </button>
         ),
         closeModal: () => dispatch(closeModal()),
