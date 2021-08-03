@@ -54,8 +54,24 @@ class HomeNavBar extends React.Component {
     // }
     componentDidUpdate(prevProps, prevState, snapshot){
         debugger
+        const url = this.props.url;
+        let home; 
+        let follow;
+        if ( url === "following"){
+            // debugger
+            follow = "active";
+            home = "inactive";
+        } else if ( url === "") {
+            // debugger
+            follow = "inactive";
+            home = "active";
+        } else {
+            // debugger
+            follow = "none";
+            home = "none";
+        }
         if (prevProps.url != this.props.url){
-            this.setState({ homeLink: "none", followLink: "none"})
+            this.setState({ homeLink: home, followLink: follow})
         }
         let t;
     }
