@@ -6,6 +6,7 @@ import { updateUrl } from '../../actions/url_action';
 import NavBar from './nav_bar'
 
 const mSTP = (state, ownProps) => {
+    debugger
         let url = state.ui.url;
         // let url = window.location.href.split("/").pop();
         let homeLink;
@@ -27,7 +28,7 @@ const mSTP = (state, ownProps) => {
         currentUser: state.entities.users[state.session.id],
         homeLink: homeLink,
         followLink: followLink,
-        url: url
+        url: state.ui.url
         // url: window.location.href.split("/").pop()
     };
 };

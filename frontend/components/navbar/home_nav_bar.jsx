@@ -47,6 +47,15 @@ class HomeNavBar extends React.Component {
         this.setState({ followLink: follow, homeLink: home })
     }
 
+    // componentDidMount(){
+    //     debugger
+    //     const url = window.location.href.split("/").pop();
+    //     this.props.updateUrl(url);
+    // }
+    componentDidUpdate(prevProps, prevState, snapshot){
+        debugger
+        let t;
+    }
     // componentDidUpdate(prevProps) {
     //     debugger
     //     if (window.location.href.split("/").pop() != prevProps.url){
