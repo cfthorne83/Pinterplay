@@ -13,11 +13,11 @@ class PinIndex extends React.Component {
 
     componentDidMount() {
         const that = this;
-        
+        debugger
         if (this.props.board){
-            this.props.fetchPins({board: this.props.board.id}).then(this.setState({loading: false}));
+            this.props.fetchPins({board: this.props.board.id}).then(this.setState({loading: false, fetched: true}));
         } else if (this.props.userPinIndex){
-            this.props.fetchPins({user: this.props.currentUser.id}).then(this.setState({loading: false}));
+            this.props.fetchPins({user: this.props.currentUser.id}).then(this.setState({loading: false, fetched: true}));
         } else if (this.props.following){
 
             // let follows;
@@ -27,11 +27,11 @@ class PinIndex extends React.Component {
             //     that.setState({ noFollows: true});
             // }
             // this.props.fetchPins({follows: follows, user_id: this.props.currentUser.id}).then(this.setState({loading: false}));
-            this.props.fetchPins({follows: this.props.currentUser.id}).then(this.setState({loading: false}));
+            this.props.fetchPins({follows: this.props.currentUser.id}).then(this.setState({loading: false, fetched: true}));
         } else {
-            this.props.fetchPins().then(this.setState({loading: false}));
+            this.props.fetchPins().then(this.setState({loading: false, fetched: true}));
         }
-        this.setState({ fetched: true });
+        // this.setState({ fetched: true });
     }
 
     pinCount() {
@@ -59,10 +59,10 @@ class PinIndex extends React.Component {
     render() {
 
 
-        // if (this.state.fetched === false) {
-        //   
-        //     return null;
-        // }
+        if (this.state.fetched === false) {
+          debugger
+            return null;
+        }
         if (this.props.pins.length === 0 ){
             return (
                 <div className="pin-index-loader">

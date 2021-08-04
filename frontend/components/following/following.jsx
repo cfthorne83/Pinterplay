@@ -11,16 +11,18 @@ class Following extends React.Component{
         this.header = this.header.bind(this);
     }
 
-    // componentDidMount() {
-    //     this.props.fetchUser(this.state.currentUser.id).then(
-    //         this.setState({ fetched: true, currentUser: this.props.currentUser })
-    //     )
-    // }
     componentDidMount() {
+        debugger
         this.props.fetchUser(this.state.currentUser.id).then(
             this.setState({ fetched: true, currentUser: this.props.currentUser })
         )
     }
+
+    // async componentDidMount() {
+    //     await this.props.fetchUser(this.state.currentUser.id);
+
+    //     this.setState({ fetched: true, currentUser: this.props.currentUser });
+    // }
 
     updateState() {
         this.setState({ following: this.props.currentUser.following,
@@ -45,8 +47,10 @@ class Following extends React.Component{
             return <Redirect to='/' />
         } 
         else if (this.state.fetched === false) {
+            debugger
             return null;
         }
+        debugger
         return (
             <div>
                 {this.header()}
