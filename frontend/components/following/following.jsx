@@ -11,6 +11,11 @@ class Following extends React.Component{
         this.header = this.header.bind(this);
     }
 
+    // componentDidMount() {
+    //     this.props.fetchUser(this.state.currentUser.id).then(
+    //         this.setState({ fetched: true, currentUser: this.props.currentUser })
+    //     )
+    // }
     componentDidMount() {
         this.props.fetchUser(this.state.currentUser.id).then(
             this.setState({ fetched: true, currentUser: this.props.currentUser })
