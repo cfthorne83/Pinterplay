@@ -19,7 +19,7 @@ import BoardShowContainer from './boards/board_show_container';
 
 import CreatePinFormContainer from "./pins/create_pin_form_container";
 import PinShowContainer from "./pins/pin_show_container";
-import UserPinIndex from "./pins/user_pin_index"
+import UserPinIndexContainer from "./pins/user_pin_index_container";
 
 import FollowingContainer from "./following/following_container";
 
@@ -37,7 +37,7 @@ const App = () => (
             {/* <Route exact path="/pin-builder" component={CreatePinFormContainer} /> */}
             <ProtectedRoute exact path="/pin-builder" component={CreatePinFormContainer} />
 
-            <ProtectedRoute path="/users/:userId/pins" component={UserPinIndex}/>
+            <ProtectedRoute path="/users/:userId/pins" component={UserPinIndexContainer}/>
             {/* <Route exact path="/boards/:boardId" component={BoardShowContainer} /> */}
             <ProtectedRoute path="/boards/:boardId" component={BoardShowContainer} />
 
