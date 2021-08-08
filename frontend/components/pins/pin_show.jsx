@@ -57,9 +57,17 @@ class PinShow extends React.Component {
     }
 
     editLink() {
-        if (this.state.pin.user.id === this.props.currentUser){
+        if (this.state.pin && this.state.pin.user.id === this.props.currentUser){
             return (
-                
+                <div 
+                    className="pin-show__ellipsis"
+                    onClick={()  => {this.props.openModal("editPin", this.props.pin.id)}} 
+                    >
+                    <img
+                        // className="pin-show__edit-modal"
+                        src="https://static.thenounproject.com/png/384290-200.png" 
+                        alt="edit-form-link"/>
+                </div>
             )
         }
     }
@@ -80,7 +88,7 @@ class PinShow extends React.Component {
         } else if (!this.state.pin) {
             this.handleState();
         }  
-debugger
+
         return (
             <div className="pin-show">
                 <button 
@@ -102,15 +110,7 @@ debugger
                     <div className="pin-show__text">
 
                         <div className="pin-show__drop">
-                            <div 
-                                className="pin-show__ellipsis"
-                                onClick={()  => {this.props.openModal("editPin", this.props.pin.id)}} 
-                                >
-                                <img
-                                    // className="pin-show__edit-modal"
-                                    src="https://static.thenounproject.com/png/384290-200.png" 
-                                    alt="edit-form-link"/>
-                            </div>
+                            {this.editLink()}
 
                             {/* <div className="pin-show__drop-inner">
                                 <BoardDropdown boards={this.props.boards}/>
