@@ -12,6 +12,7 @@ class EditPinForm extends React.Component {
         this.handleCancel = this.handleCancel.bind(this);
         this.updateTitle = this.updateTitle.bind(this);
         this.updateDescription = this.updateDescription.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     componentDidMount() {
@@ -21,10 +22,9 @@ class EditPinForm extends React.Component {
 
     handleUpdate(e) {
         e.preventDefault();
-
+debugger
         let board = document.querySelector(".selected-board");        
         this.setState({ board_id: board.dataset.id});
-        debugger
         this.props.updatePin(this.state).then(this.props.closeModal);
     }
 
@@ -47,6 +47,16 @@ class EditPinForm extends React.Component {
         console.log(this.state);
     }
 
+    handleSubmit(e) {
+        debugger
+        e.preventDefault();
+        if (this.state != this.props.pin){
+            this.handleUpdate();
+        } else {
+            this.closeModal();
+        }     
+    }
+
     render() {
 
         if (!this.state.id) return null;
@@ -55,7 +65,8 @@ class EditPinForm extends React.Component {
             <div className="edit-pin-form">
                 <h1>Edit this pin</h1>
 
-                <form className="edit-pin-form__inner">
+                <form className="edit-pin-form__inner"
+                    onSubmit={this.handleSubmit}>
 
                     <section className="edit-pin-form__mid">
                         <div className="edit-pin-form__mid-inner">

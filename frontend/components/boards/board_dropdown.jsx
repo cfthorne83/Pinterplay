@@ -11,6 +11,7 @@ class BoardDropdown extends React.Component{
     }
 
     handleClick(e){
+        e.preventDefault();
         e.stopPropagation();
         this.setState({ show: !this.state.show });
     }
