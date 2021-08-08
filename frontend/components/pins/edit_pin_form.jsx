@@ -24,7 +24,7 @@ class EditPinForm extends React.Component {
 
         let board = document.querySelector(".selected-board");        
         this.setState({ board_id: board.dataset.id});
-        
+        debugger
         this.props.updatePin(this.state).then(this.props.closeModal);
     }
 
@@ -49,7 +49,7 @@ class EditPinForm extends React.Component {
 
     render() {
 
-        if (!this.props.pin) return null;
+        if (!this.state.id) return null;
 
         return (
             <div className="edit-pin-form">
@@ -70,7 +70,7 @@ class EditPinForm extends React.Component {
                                 <input 
                                     className="edit-pin-form__input"
                                     type="text"
-                                    value={this.props.pin.title}
+                                    value={this.state.title}
                                     onChange={this.updateTitle}
                                     />
                             </label>
@@ -80,7 +80,7 @@ class EditPinForm extends React.Component {
                                 <textarea
                                     placeholder="Tell us about this Pin..."
                                     onChange={this.updateDescription}
-                                    value={this.props.pin.description}
+                                    value={this.state.description}
                                     />
                             </label>
                         </div>
