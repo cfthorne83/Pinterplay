@@ -11,15 +11,12 @@ const mSTP = (state, ownProps) => {
         let homeLink;
         let followLink;
         if ( url === "following"){
-            // debugger
             followLink = "active";
             homeLink = "inactive";
         } else if ( url === "") {
-            // debugger
             followLink = "inactive";
             homeLink = "active";
         } else {
-            // debugger
             followLink = "none";
             homeLink = "none";
         }

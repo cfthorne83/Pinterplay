@@ -21,8 +21,9 @@ class EditPinForm extends React.Component {
     }
 
     handleUpdate(e) {
-        e.preventDefault();
-debugger
+        if (e){
+            e.preventDefault();
+        }
         let board = document.querySelector(".selected-board");        
         this.setState({ board_id: board.dataset.id});
         this.props.updatePin(this.state).then(this.props.closeModal);
@@ -48,8 +49,8 @@ debugger
     }
 
     handleSubmit(e) {
-        debugger
         e.preventDefault();
+        e.stopPropagation();
         if (this.state != this.props.pin){
             this.handleUpdate();
         } else {
@@ -58,24 +59,29 @@ debugger
     }
 
     render() {
-
+debugger
         if (!this.state.id) return null;
 
         return (
             <div className="edit-pin-form">
                 <h1>Edit this pin</h1>
-
-                <form className="edit-pin-form__inner"
-                    onSubmit={this.handleSubmit}>
-
-                    <section className="edit-pin-form__mid">
-                        <div className="edit-pin-form__mid-inner">
-                            <label >
+<label >
                                 <h3>Board</h3>
                                 <BoardDropdown
                                     class="edit-pin-board-drop" 
                                     boards={this.props.boards}/>
                             </label>
+                <form className="edit-pin-form__inner"
+                    onSubmit={this.handleSubmit}>
+
+                    <section className="edit-pin-form__mid">
+                        <div className="edit-pin-form__mid-inner">
+                            {/* <label >
+                                <h3>Board</h3>
+                                <BoardDropdown
+                                    class="edit-pin-board-drop" 
+                                    boards={this.props.boards}/>
+                            </label> */}
                             <label>
                                 <h3>Title</h3>
                                 <input 
