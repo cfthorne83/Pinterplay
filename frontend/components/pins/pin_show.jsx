@@ -56,6 +56,14 @@ class PinShow extends React.Component {
         this.setState({ followers: this.props.pin.followers.length })
     }
 
+    editLink() {
+        if (this.state.pin.user.id === this.props.currentUser){
+            return (
+                
+            )
+        }
+    }
+
     render() {
         const {pin} = this.props;
         if (!this.props.currentUser) {
@@ -72,7 +80,7 @@ class PinShow extends React.Component {
         } else if (!this.state.pin) {
             this.handleState();
         }  
-
+debugger
         return (
             <div className="pin-show">
                 <button 
