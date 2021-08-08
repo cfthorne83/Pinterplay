@@ -25,7 +25,8 @@ class EditPinForm extends React.Component {
             e.preventDefault();
         }
         let board = document.querySelector(".selected-board");        
-        this.setState({ board_id: board.dataset.id});
+        // this.setState({ board_id: board.dataset.id});
+        debugger
         this.props.updatePin(this.state).then(this.props.closeModal);
     }
 
@@ -50,7 +51,7 @@ class EditPinForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        e.stopPropagation();
+        // e.stopPropagation();
         if (this.state != this.props.pin){
             this.handleUpdate();
         } else {
@@ -59,20 +60,20 @@ class EditPinForm extends React.Component {
     }
 
     render() {
-debugger
         if (!this.state.id) return null;
 
         return (
             <div className="edit-pin-form">
                 <h1>Edit this pin</h1>
-<label >
-                                <h3>Board</h3>
-                                <BoardDropdown
-                                    class="edit-pin-board-drop" 
-                                    boards={this.props.boards}/>
-                            </label>
+                    <label >
+                        <h3>Board</h3>
+                        <BoardDropdown
+                            class="edit-pin-board-drop" 
+                            boards={this.props.boards}/>
+                    </label>
                 <form className="edit-pin-form__inner"
-                    onSubmit={this.handleSubmit}>
+                    onSubmit={this.handleSubmit}
+                    >
 
                     <section className="edit-pin-form__mid">
                         <div className="edit-pin-form__mid-inner">
@@ -104,9 +105,10 @@ debugger
                         
                         <img 
                             className="edit-pin-form__pin-img"
-                            src={this.props.pin.image_url} 
+                            src={this.state.image_url} 
                             alt="pin-image"/>
                     </section>
+                </form>
 
                     <section className="edit-pin-form__btns">
                             <button onClick={this.handleDelete}>Delete</button>
@@ -118,7 +120,6 @@ debugger
                             </button>
                         </div>
                     </section>
-                </form>
 
             </div>
         )

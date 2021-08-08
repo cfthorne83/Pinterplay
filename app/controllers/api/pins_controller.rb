@@ -14,7 +14,6 @@ class Api::PinsController < ApplicationController
         elsif params[:data] && params[:data][:follows]
             user = User.find(params[:data][:follows])
             follows = user.following.map{ |follow| follow[:id]}
-            # debugger
             # @pins = params[:data][:follows].map { |id| User.find(id).pins }.flatten
             # @pins = params[:data][:follows].map { |id| User.find(id).pins.limit(2) }.flatten
             @pins = follows.map { |id| User.find(id).pins }.flatten

@@ -12,7 +12,6 @@ class Following extends React.Component{
     }
 
     componentDidMount() {
-        debugger
         this.props.fetchUser(this.state.currentUser.id).then(
             this.setState({ fetched: true, currentUser: this.props.currentUser })
         )
@@ -47,10 +46,8 @@ class Following extends React.Component{
             return <Redirect to='/' />
         } 
         else if (this.state.fetched === false) {
-            debugger
             return null;
         }
-        debugger
         return (
             <div>
                 {this.header()}
