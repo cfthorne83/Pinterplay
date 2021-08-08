@@ -26,7 +26,6 @@ class EditPinForm extends React.Component {
         }
         let board = document.querySelector(".selected-board");        
         // this.setState({ board_id: board.dataset.id});
-        debugger
         this.props.updatePin(this.state).then(this.props.closeModal);
     }
 
