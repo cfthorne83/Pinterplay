@@ -1,15 +1,9 @@
-export const createBoardPin = (board) => {
-    return dispatch => {
-        return BoardApiUtil.createBoard(board).then(board => {
-            dispatch(receiveBoard(board))
-        })
-    }
+import * as BoardPinApiUtil from '.././util/board_pin_api_util';
+
+export const createBoardPin = (boardPin) => {
+        return BoardPinApiUtil.createBoardPin(boardPin);
 }
 
-export const deleteBoard = (boardId) => {
-    return dispatch => {
-        return BoardApiUtil.deleteBoard(boardId).then(() => {
-            dispatch(removeBoard(boardId))
-        })
-    }
+export const deleteBoardPin = (boardPinId) => {
+        return BoardPinApiUtil.deleteBoardPin(boardPinId);
 }
