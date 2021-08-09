@@ -45,7 +45,6 @@ class EditPinForm extends React.Component {
 
     updateDescription(e) {
         this.setState({ description: e.currentTarget.value });
-        console.log(this.state);
     }
 
     handleSubmit(e) {
@@ -60,7 +59,6 @@ class EditPinForm extends React.Component {
 
     render() {
         if (!this.state.id) return null;
-
         return (
             <div className="edit-pin-form">
                 <h1>Edit this pin</h1>
