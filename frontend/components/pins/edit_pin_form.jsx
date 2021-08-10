@@ -65,44 +65,50 @@ class EditPinForm extends React.Component {
         return (
             <div className="edit-pin-form">
                 <h1>Edit this pin</h1>
-                    <label >
-                        <h3>Board</h3>
-                        <BoardDropdown
-                            class="edit-pin-board-drop" 
-                            boards={this.props.boards}/>
-                    </label>
-                <form className="edit-pin-form__inner"
-                    onSubmit={this.handleSubmit}
-                    >
 
-                    <section className="edit-pin-form__mid">
-                        <div className="edit-pin-form__mid-inner">
-                            <label>
-                                <h3>Title</h3>
-                                <input 
-                                    className="edit-pin-form__input"
-                                    type="text"
-                                    value={this.state.title}
-                                    onChange={this.updateTitle}
-                                    />
-                            </label>
-
-                            <label>
-                                <h3>Description</h3>
-                                <textarea
-                                    placeholder="Tell us about this Pin..."
-                                    onChange={this.updateDescription}
-                                    value={this.state.description}
-                                    />
-                            </label>
-                        </div>
-                        
-                        <img 
-                            className="edit-pin-form__pin-img"
-                            src={this.state.image_url} 
-                            alt="pin-image"/>
+                    <section className="edit-pin-form__drop">
+                        <label >
+                            <h3>Board</h3>
+                            <BoardDropdown
+                                class="edit-pin-board-drop" 
+                                boards={this.props.boards}/>
+                        </label>
                     </section>
-                </form>
+                <section className="edit-pin-form__outer">
+
+                    <form className="edit-pin-form__inner"
+                        onSubmit={this.handleSubmit}
+                        >
+
+                            <div className="edit-pin-form__mid-inner">
+                                <label>
+                                    <h3>Title</h3>
+                                    <input 
+                                        className="edit-pin-form__input"
+                                        type="text"
+                                        value={this.state.title}
+                                        onChange={this.updateTitle}
+                                        />
+                                </label>
+
+                                <label>
+                                    <h3>Description</h3>
+                                    <textarea
+                                        placeholder="Tell us about this Pin..."
+                                        onChange={this.updateDescription}
+                                        value={this.state.description}
+                                        />
+                                </label>
+                            </div>
+
+                    </form>
+
+                    <img 
+                    className="edit-pin-form__pin-img"
+                    src={this.state.image_url} 
+                    alt="pin-image"/>
+
+                </section>    
 
                     <section className="edit-pin-form__btns">
                             <button onClick={this.handleDelete}>Delete</button>
