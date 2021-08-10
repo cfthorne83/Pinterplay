@@ -92,12 +92,15 @@ users = [sophia, dorothy, blanche, rose]
             user = users[board_i - 1]
         end
 
-        if board != dark
+        if board != dark && board != light
             initial = board.title[0].downcase + i.to_s
             title = board.title + " " + nums[i]
-        else 
+        elsif board == dark
             initial = "d" + i.to_s
             title = "Black " + nums[i]
+        elsif board == light
+            initial = "l" + i.to_s
+            title = "Pastel " + nums[i]
         end
 
         uri = "https://mypin-seeds.s3.amazonaws.com/#{initial}.jpg"

@@ -16,8 +16,8 @@ class Api::PinsController < ApplicationController
             follows = user.following.map{ |follow| follow[:id]}
             # @pins = params[:data][:follows].map { |id| User.find(id).pins }.flatten
             # @pins = params[:data][:follows].map { |id| User.find(id).pins.limit(2) }.flatten
-            @pins = follows.map { |id| User.find(id).pins }.flatten
-            # @pins = follows.map { |id| User.find(id).pins.limit(2) }.flatten
+            # @pins = follows.map { |id| User.find(id).pins }.flatten
+            @pins = follows.map { |id| User.find(id).pins.limit(2) }.flatten
         elsif params[:limit] && params[:board]
             board = Board.find(params[:board][:id])
             @limit = true
@@ -27,8 +27,8 @@ class Api::PinsController < ApplicationController
             @limit = true
             @pins = user.pins.limit(3).shuffle
         else
-            # @pins = Pin.all
-            @pins = Pin.all[28..32]
+            @pins = Pin.all
+            # @pins = Pin.all[28..32]
         end
         if @pins 
             render :index
