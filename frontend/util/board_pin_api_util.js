@@ -1,8 +1,8 @@
-export const createBoardPin = (boardPin) => {
+export const createBoardPin = (board_pin) => {
     return $.ajax({
             url: "/api/board_pins",
             method: "POST",
-            data: { boardPin }
+            data: { board_pin }
         })
 }
 

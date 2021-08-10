@@ -5,6 +5,7 @@ import EditPinForm from "./edit_pin_form";
 import { fetchPin, updatePin, deletePin } from '../../actions/pin_actions';
 import { closeModal } from "../../actions/modal_actions";
 import { fetchBoards } from '../../actions/board_actions';
+import {createBoardPin} from "../../util/board_pin_api_util";
 
 const msp = (state, ownProps) => {
     return {
@@ -20,7 +21,8 @@ const mdp = (dispatch, ownProps) => {
         updatePin: (pin) => dispatch(updatePin(pin)),
         deletePin: (pinId) => dispatch(deletePin(pinId)),
         closeModal: () => dispatch(closeModal()),
-        fetchBoards: () => dispatch(fetchBoards())
+        fetchBoards: () => dispatch(fetchBoards()),
+        createBoardPin: (boarPin) => createBoardPin(boarPin)
     }
 }
 
