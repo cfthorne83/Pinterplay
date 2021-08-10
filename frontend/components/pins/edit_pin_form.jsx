@@ -77,12 +77,6 @@ class EditPinForm extends React.Component {
 
                     <section className="edit-pin-form__mid">
                         <div className="edit-pin-form__mid-inner">
-                            {/* <label >
-                                <h3>Board</h3>
-                                <BoardDropdown
-                                    class="edit-pin-board-drop" 
-                                    boards={this.props.boards}/>
-                            </label> */}
                             <label>
                                 <h3>Title</h3>
                                 <input 
