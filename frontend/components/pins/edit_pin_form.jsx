@@ -66,6 +66,13 @@ class EditPinForm extends React.Component {
             <div className="edit-pin-form">
                 <h1>Edit this pin</h1>
 
+                <section className="edit-pin-form__outer">
+
+                    <form className="edit-pin-form__inner"
+                        onSubmit={this.handleSubmit}
+                        >
+
+                            <div className="edit-pin-form__mid-inner">
                     <section className="edit-pin-form__drop">
                         <label >
                             <h3>Board</h3>
@@ -74,13 +81,6 @@ class EditPinForm extends React.Component {
                                 boards={this.props.boards}/>
                         </label>
                     </section>
-                <section className="edit-pin-form__outer">
-
-                    <form className="edit-pin-form__inner"
-                        onSubmit={this.handleSubmit}
-                        >
-
-                            <div className="edit-pin-form__mid-inner">
                                 <label>
                                     <h3>Title</h3>
                                     <input 
