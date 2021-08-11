@@ -9,7 +9,7 @@ import EditBoardFormContainer from '../boards/edit_board_form_container';
 import EditPinFormContainer from '../pins/edit_pin_form_container';
 import EditPhotoFormContainer from '../profile/edit_photo_form_container';
 import PinShowLinkContainer from '../pins/pin_show_link_container';
-// import PinShowLinkContainer from '../pins/pin_show_link_container';
+import  FollowersContainer from '../following/followers_index_container';
 // import PinShowLinkContainer from '../pins/pin_show_link_container';
 
 const closeScreen = () => {
@@ -60,7 +60,7 @@ const Modal = ({ modal, closeModal, errors }) =>  {
             break;
         case 'followers':
             component = <FollowersContainer/>;
-            modalClass = "pin-show-link-mod";
+            modalClass = "Follower";
             break;
         case 'following':
             component = <FollowingContainer/>;

@@ -18,6 +18,7 @@ class Profile extends React.Component{
         this.username = this.username.bind(this);
         this.followers = this.followers.bind(this);
         this.handleFollowers = this.handleFollowers.bind(this);
+        this.handleFollowing = this.handleFollowing.bind(this);
     }
 
     componentDidMount() {
@@ -70,23 +71,28 @@ class Profile extends React.Component{
     }
 
     handleFollowers() {
-        console.log("alskdfj");
-        // this.props.opnModal("followers");
+        console.log("followers");
+        debugger
+        this.props.openModal("followers", this.props.currentUser.followers);
+    }
+
+    handleFollowing() {
+        console.log("following");
+        // this.props.opnModal("following", this.props.following);
     }
 
     followers() {
         if (this.props.currentUser.followers.length == 1){
             return (
                     <h4>
-                        <span style="color : blue;">
-                            
+                        <span
+                            onClick={this.handleFollowers}>
                             {this.props.currentUser.followers.length} follower |&nbsp;
                         </span>
-                        <Link  to="/"
-                            
-                        >
+                        <span
+                            onClick={this.handleFollowing}>
                             {this.props.currentUser.following.length} following
-                        </Link>
+                        </span>
                     </h4>
             )
         } else {
@@ -96,7 +102,8 @@ class Profile extends React.Component{
                             onClick={this.handleFollowers}>
                             {this.props.currentUser.followers.length} followers |&nbsp;
                         </span>
-                        <span>
+                        <span
+                            onClick={this.handleFollowing}>
                             {this.props.currentUser.following.length} following
                         </span>
                     </h4>
