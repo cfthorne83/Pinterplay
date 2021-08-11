@@ -5,16 +5,19 @@ class Following extends React.Component {
     constructor(props){
         super(props);
 
-        this.state = { length: this.props.following.length};
+        this.state = { following: this.props.following.map((follow, i) => {
+             return follow.username;
+        })};
 
         this.handleUnfollow = this.handleUnfollow.bind(this);
     }
 
     // componentDidUpdate(){
     //     debugger
+    //     this.props.fetchUser(this.props.currentUser.id);
     // }
 
-    handleUnfollow(e, friendship){
+    handleUnfollow(e, friendship, i){
         e.stopPropagation();
          $.ajax ({
                     url: "/api/friendships",
@@ -26,29 +29,34 @@ class Following extends React.Component {
     }
 
     updateState(){
-        this.setState({length: this.state.length - 1})
+        let following = this.state.following;
+        following = following.splice(i, 1);
+        this.setState({following: following});
     }
 
 
 
     render() {
-        debugger
-        const follows = this.props.following.map( follow => {
+        if (!this.props.following) return null;
+        const follows = this.state.following.map( (follow, i) => {
             return (
-                <li key={follow.id}>
+                <li key={i}>
                     <span>      
-                        {follow.username}
+                        {/* {follow.username} */}
+                        {/* {this.state.following[i]} */}
+                        {follow}
                     </span>                    
-                    <button onClick={(e) => {this.handleUnfollow(e, {
+                    {/* <button onClick={(e) => {this.handleUnfollow(e, {
                             follower_id: this.props.currentUser.id,
                             followed_id: follow.id
-                        })
+                        }, i)
                     }}
                     >Unfollow
-                    </button>
+                    </button> */}
                 </li>
         )
     })
+    debugger
     
     return (
         <div className="following-index">
