@@ -9,6 +9,8 @@ import EditBoardFormContainer from '../boards/edit_board_form_container';
 import EditPinFormContainer from '../pins/edit_pin_form_container';
 import EditPhotoFormContainer from '../profile/edit_photo_form_container';
 import PinShowLinkContainer from '../pins/pin_show_link_container';
+// import PinShowLinkContainer from '../pins/pin_show_link_container';
+// import PinShowLinkContainer from '../pins/pin_show_link_container';
 
 const closeScreen = () => {
     const screen = document.querySelector(".create-pin-form__screen");
@@ -54,6 +56,14 @@ const Modal = ({ modal, closeModal, errors }) =>  {
             break;
         case 'pinShowLink':
             component = <PinShowLinkContainer/>;
+            modalClass = "pin-show-link-mod";
+            break;
+        case 'followers':
+            component = <FollowersContainer/>;
+            modalClass = "pin-show-link-mod";
+            break;
+        case 'following':
+            component = <FollowingContainer/>;
             modalClass = "pin-show-link-mod";
             break;
         default:

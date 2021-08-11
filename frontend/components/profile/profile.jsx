@@ -17,6 +17,7 @@ class Profile extends React.Component{
         this.image = this.image.bind(this);
         this.username = this.username.bind(this);
         this.followers = this.followers.bind(this);
+        this.handleFollowers = this.handleFollowers.bind(this);
     }
 
     componentDidMount() {
@@ -68,19 +69,36 @@ class Profile extends React.Component{
         }
     }
 
+    handleFollowers() {
+        console.log("alskdfj");
+        // this.props.opnModal("followers");
+    }
+
     followers() {
         if (this.props.currentUser.followers.length == 1){
             return (
                     <h4>
-                        {this.props.currentUser.followers.length} follower |&nbsp;
-                        {this.props.currentUser.following.length} following
+                        <span style="color : blue;">
+                            
+                            {this.props.currentUser.followers.length} follower |&nbsp;
+                        </span>
+                        <Link  to="/"
+                            
+                        >
+                            {this.props.currentUser.following.length} following
+                        </Link>
                     </h4>
             )
         } else {
             return (
                     <h4>
-                        {this.props.currentUser.followers.length} followers |&nbsp;
-                        {this.props.currentUser.following.length} following
+                        <span
+                            onClick={this.handleFollowers}>
+                            {this.props.currentUser.followers.length} followers |&nbsp;
+                        </span>
+                        <span>
+                            {this.props.currentUser.following.length} following
+                        </span>
                     </h4>
             )
         }
