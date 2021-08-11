@@ -1,4 +1,9 @@
 .followers-index{
-    background-color: red;
+    background-color: deeppink;
     width: 40vw;
+    border-radius: 1em;
+
+    li, h1 {
+        padding: 1em;
+    }
 }
