@@ -15,7 +15,7 @@ const mSTP = (state, ownProps) => {
 const mDTP = (dispatch, ownProps) => {
     return {
         fetchUser: (userId) => dispatch(fetchUser(userId)),
-        openModal: modal => dispatch(openModal(modal)),
+        openModal: (modal, options) => dispatch(openModal(modal, options)),
         closeModal: () => dispatch(closeModal()) 
     };
 };
