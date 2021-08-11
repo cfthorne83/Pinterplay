@@ -5,12 +5,12 @@ class Api::PinsController < ApplicationController
     def index
         if params[:data] && params[:data][:board]
             board = Board.find(params[:data][:board])
-            @pins = board.pins
-            # @pins = board.pins.limit(2)
+            # @pins = board.pins
+            @pins = board.pins.limit(2)
         elsif params[:data] && params[:data][:user]
             user = User.find(params[:data][:user])
-            @pins = user.pins
-            # @pins = user.pins.limit(2)
+            # @pins = user.pins
+            @pins = user.pins.limit(2)
         elsif params[:data] && params[:data][:follows]
             user = User.find(params[:data][:follows])
             follows = user.following.map{ |follow| follow[:id]}
@@ -27,8 +27,8 @@ class Api::PinsController < ApplicationController
             @limit = true
             @pins = user.pins.limit(3).shuffle
         else
-            @pins = Pin.all
-            # @pins = Pin.all[28..32]
+            # @pins = Pin.all
+            @pins = Pin.all[28..32]
         end
         if @pins 
             render :index
