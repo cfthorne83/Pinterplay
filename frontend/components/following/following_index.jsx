@@ -10,34 +10,40 @@ class Following extends React.Component {
         this.handleUnfollow = this.handleUnfollow.bind(this);
     }
 
-    componentDidUpdate(){
-        debugger
-    }
+    // componentDidUpdate(){
+    //     debugger
+    // }
 
-    handleUnfollow(friendship){
+    handleUnfollow(e, friendship){
+        e.stopPropagation();
          $.ajax ({
                     url: "/api/friendships",
                     method: "DELETE",
                     data: friendship
-                });
+                })
+                .then(this.props.fetchUser(this.props.currentUser.id))
         
-        // this.state.length
+    }
+
+    updateState(){
+        this.setState({length: this.state.length - 1})
     }
 
 
 
     render() {
+        debugger
         const follows = this.props.following.map( follow => {
             return (
                 <li key={follow.id}>
                     <span>      
                         {follow.username}
                     </span>                    
-                    <button onClick={this.handleUnfollow({
+                    <button onClick={(e) => {this.handleUnfollow(e, {
                             follower_id: this.props.currentUser.id,
                             followed_id: follow.id
                         })
-                    }
+                    }}
                     >Unfollow
                     </button>
                 </li>
