@@ -72,13 +72,12 @@ class Profile extends React.Component{
 
     handleFollowers() {
         console.log("followers");
-        debugger
         this.props.openModal("followers", this.props.currentUser.followers);
     }
 
     handleFollowing() {
         console.log("following");
-        // this.props.opnModal("following", this.props.following);
+        this.props.openModal("following", this.props.currentUser.following);
     }
 
     followers() {

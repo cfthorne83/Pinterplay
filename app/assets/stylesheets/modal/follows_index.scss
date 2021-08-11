@@ -7,3 +7,42 @@
         padding: 1em;
     }
 }
+
+.following-index {
+    padding: 1rem;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 1em;
+    li, h1 {
+        padding: 1em;
+    }
+
+    h1 {
+        // background-color: chartreuse;
+        font-size: 2em;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    span {
+        font-weight: 600;
+    }
+
+    button {
+        background-color: var(--lt-grey);
+        font-size: var(--btn-font-size);
+        font-weight: 600;
+        padding: 1em;
+        letter-spacing: var(--lett-space);
+        border-radius: 9999px;
+    }
+    button:hover {
+        background-color: var(--hov-grey);
+    }
+}

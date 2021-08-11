@@ -10,7 +10,7 @@ import EditPinFormContainer from '../pins/edit_pin_form_container';
 import EditPhotoFormContainer from '../profile/edit_photo_form_container';
 import PinShowLinkContainer from '../pins/pin_show_link_container';
 import  FollowersContainer from '../following/followers_index_container';
-// import PinShowLinkContainer from '../pins/pin_show_link_container';
+import  FollowingContainer from '../following/following_index_container';
 
 const closeScreen = () => {
     const screen = document.querySelector(".create-pin-form__screen");
