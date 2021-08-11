@@ -1,27 +1,40 @@
 import React from "react";
+import { fetchBoards } from "../../actions/board_actions";
 
-const Following = (props) => {
-    const follows = props.following.map( follow => {
-        debugger
-        return (
+class Following extends React.Component {
+    constructor(props){
+        super(props);
+    }
+
+    render() {
+
+    
+        const follows = this.props.following.map( follow => {
+            
+            const handleUnfollow = (friendship) => {
+                $.ajax ({
+                    url: "/api/friendships",
+                    method: "DELETE",
+                    data: friendship
+                })
+                
+            }
+            
+            return (
                 <li>
                     <span>      
                         {follow.username}
                     </span>                    
-                    <button onClick={ () => ($.ajax ({
-                                                        url: "/api/friendships",
-                                                        method: "DELETE",
-                                                        data: {
-                                                            follower_id: props.currentUser.id,
-                                                            followed_id: follow.id
-                                                        }
-                                                    })
-                                            )
-                                    }
-                    >Unfollow</button>
+                    <button onClick={handleUnfollow({
+                        follower_id: this.props.currentUser.id,
+                        followed_id: follow.id
+                    })
+                }
+                >Unfollow</button>
                 </li>
         )
     })
+    
     return (
         <div className="following-index">
             <h1>Following</h1>
@@ -30,18 +43,20 @@ const Following = (props) => {
             </ul>
         </div>
     )
+    }
+
 }
-
+    
 export default Following;
-
-// handleFollow() {
-//         $.ajax ({
-//                     url: "/api/friendships",
-//                     method: "POST",
-//                     data: {
-//                         follower_id: this.props.currentUser.id,
-//                         followed_id: this.props.pin.user.id
-//                     }
+    
+    // handleFollow() {
+        //         $.ajax ({
+            //                     url: "/api/friendships",
+            //                     method: "POST",
+            //                     data: {
+                //                         follower_id: this.props.currentUser.id,
+                //                         followed_id: this.props.pin.user.id
+                //                     }
 //                 })
                 
 //         // this.props.createFollow(this.state.friendship)
