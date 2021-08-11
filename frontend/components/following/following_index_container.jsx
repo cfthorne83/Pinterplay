@@ -4,6 +4,7 @@ import Following from "./following_index";
 
 // import { createFollow, deleteFollow } from "../../actions/follow_actions";
 import { closeModal } from "../../actions/modal_actions";
+import { fetchUser } from '../../actions/user_actions';
 
 const msp = (state, ownProps) => {
     return {
@@ -13,14 +14,6 @@ const msp = (state, ownProps) => {
 }
 
 const mdp = (dispatch, ownProps) => {
-    // $.ajax ({
-    //                 url: "/api/friendships",
-    //                 method: "POST",
-    //                 data: {
-    //                     follower_id: this.props.currentUser.id,
-    //                     followed_id: this.props.pin.user.id
-    //                 }
-    //             })
     return  {
         closeModal: () => dispatch(closeModal()),
         deleteFollow: (friendship) => {
@@ -33,7 +26,8 @@ const mdp = (dispatch, ownProps) => {
                     }
                 })
             )
-        }
+        },
+        fetchUser: (userId) => dispatch(fetchUser(userId))
     }
 }
 

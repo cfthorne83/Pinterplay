@@ -4,33 +4,42 @@ import { fetchBoards } from "../../actions/board_actions";
 class Following extends React.Component {
     constructor(props){
         super(props);
+
+        this.state = { length: this.props.following.length};
+
+        this.handleUnfollow = this.handleUnfollow.bind(this);
     }
 
-    render() {
+    componentDidUpdate(){
+        debugger
+    }
 
-    
-        const follows = this.props.following.map( follow => {
-            
-            const handleUnfollow = (friendship) => {
-                $.ajax ({
+    handleUnfollow(friendship){
+         $.ajax ({
                     url: "/api/friendships",
                     method: "DELETE",
                     data: friendship
-                })
-                
-            }
-            
+                });
+        
+        // this.state.length
+    }
+
+
+
+    render() {
+        const follows = this.props.following.map( follow => {
             return (
-                <li>
+                <li key={follow.id}>
                     <span>      
                         {follow.username}
                     </span>                    
-                    <button onClick={handleUnfollow({
-                        follower_id: this.props.currentUser.id,
-                        followed_id: follow.id
-                    })
-                }
-                >Unfollow</button>
+                    <button onClick={this.handleUnfollow({
+                            follower_id: this.props.currentUser.id,
+                            followed_id: follow.id
+                        })
+                    }
+                    >Unfollow
+                    </button>
                 </li>
         )
     })
