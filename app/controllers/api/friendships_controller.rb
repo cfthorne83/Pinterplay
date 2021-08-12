@@ -30,8 +30,7 @@ class Api::FriendshipsController < ApplicationController
     private 
 
     def find_user 
-        debugger
-        # @user = User.find(params[:friendship][:followed_id])
+s        # @user = User.find(params[:friendship][:followed_id])
         @user = User.find(params[:friendship][:followed_id])
     end
 

@@ -9,9 +9,10 @@ import {createFollow, deleteFollow, fetchFollows } from '../../actions/follow_ac
 
 const msp = (state, ownProps) => {
     const currentUser = state.entities.users[state.session.id];
+    debugger
     return {
         // following: state.ui.modal.options,
-        following: currentUser.following,
+        following: Object.values(state.entities.follows),
         currentUser: currentUser
     }
 }

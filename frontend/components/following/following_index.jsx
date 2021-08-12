@@ -5,15 +5,16 @@ class Following extends React.Component {
     constructor(props){
         super(props);
 
-        this.state = { following: this.props.following.map((follow, i) => {
-             return [follow.username, follow.id];
-        })};
+        // this.state = { following: this.props.following.map((follow, i) => {
+        //      return [follow.username, follow.id];
+        // })};
 
         this.handleUnfollow = this.handleUnfollow.bind(this);
         this.updateState = this.updateState.bind(this);
     }
 
     componentDidMount(){
+        debugger
         this.props.fetchFollows();
     }
     // componentDidUpdate(){
@@ -67,24 +68,28 @@ class Following extends React.Component {
 
 
     render() {
+        debugger
         if (!this.props.following) return null;
         const follows = this.state.following.map( (follow, i) => {
             return (
-                <li key={i}>
-                    <span>      
-                        {/* {follow.username} */}
-                        {/* {this.state.following[i]} */}
-                        {follow[0]}
-                    </span>
-                    {this.followBtn(follow[1], i)}                    
-                    {/* <button onClick={(e) => {this.handleUnfollow(e, {
-                            follower_id: this.props.currentUser.id,
-                            followed_id: follow[1]
-                        }, i)
-                    }}
-                    >Unfollow
-                    </button> */}
-                </li>
+                <div>
+
+                </div>
+                // <li key={i}>
+                //     <span>      
+                //         {/* {follow.username} */}
+                //         {/* {this.state.following[i]} */}
+                //         {follow[0]}
+                //     </span>
+                //     {this.followBtn(follow[1], i)}                    
+                //     {/* <button onClick={(e) => {this.handleUnfollow(e, {
+                //             follower_id: this.props.currentUser.id,
+                //             followed_id: follow[1]
+                //         }, i)
+                //     }}
+                //     >Unfollow
+                //     </button> */}
+                // </li>
         )
     })
     
