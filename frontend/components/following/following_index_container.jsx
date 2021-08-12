@@ -8,7 +8,6 @@ import { fetchUser } from '../../actions/user_actions';
 
 const msp = (state, ownProps) => {
     const currentUser = state.entities.users[state.session.id];
-    debugger
     return {
         // following: state.ui.modal.options,
         following: currentUser.following,
