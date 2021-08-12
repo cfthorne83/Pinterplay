@@ -17,6 +17,9 @@ class FollowBtn extends React.Component {
         this.userDisplay = this.userDisplay.bind(this);
     }
     
+    componentDidMount() {
+        this.props.fetchFollows();
+    }
 
     userDisplay() {
         if (this.props.pin && this.props.pin.user && this.props.pin.user.fname && this.props.pin.user.lname){

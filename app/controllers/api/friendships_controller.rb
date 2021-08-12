@@ -1,10 +1,11 @@
 class Api::FriendshipsController < ApplicationController
 
     before_action :ensure_logged_in
-    before_action :find_user
+    before_action :find_user, only: [:create]
 
     def index 
-        @follows = @user.follows
+        @user = current_user
+        @follows = @user.following
         render :index
     end
 
@@ -29,8 +30,8 @@ class Api::FriendshipsController < ApplicationController
     private 
 
     def find_user 
-        # @user = User.find(params[:friendship][:followed_id])
         debugger
+        # @user = User.find(params[:friendship][:followed_id])
         @user = User.find(params[:friendship][:followed_id])
     end
 

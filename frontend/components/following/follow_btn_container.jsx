@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 
 import FollowBtn from "./follow_btn";
-import { createFollow, deleteFollow } from "../../actions/follow_actions";
+import { createFollow, deleteFollow, fetchFollows} from "../../actions/follow_actions";
 
 const msp = (state, ownProps) => {
     return {
@@ -21,7 +21,8 @@ const msp = (state, ownProps) => {
 const mdp = (dispatch, ownProps) => {
     return  {
         createFollow: (friendship) => dispatch(createFollow(friendship)),
-        deleteFollow: (friendship) => dispatch(deleteFollow(friendship))
+        deleteFollow: (friendship) => dispatch(deleteFollow(friendship)),
+        fetchFollows: () => dispatch(fetchFollows())
     }
 }
 

@@ -14,7 +14,7 @@ class Following extends React.Component {
     }
 
     componentDidMount(){
-        
+        this.props.fetchFollows();
     }
     // componentDidUpdate(){
     //     this.props.fetchUser(this.props.currentUser.id);
