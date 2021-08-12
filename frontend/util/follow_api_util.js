@@ -7,10 +7,10 @@ export const createFollow = (friendship) => {
     })
 }
 
-export const deleteFollow = (friendship) => {
+export const deleteFollow = (friendshipId) => {
     $.ajax ({
-                url: "/api/friendships",
+                url: `/api/friendships/${friendshipId}`,
                 method: "DELETE",
-                data: { friendship }
+                data: { friendshipId }
             })
 }

@@ -18,7 +18,12 @@ class Api::FriendshipsController < ApplicationController
     end
 
     def destroy
-        current_user.unfollow(@user)
+        # current_user.unfollow(@user)
+        @follow = Friendship.find(params[:friendship][:follower_id])
+        if @follow 
+            @follow.destroy
+        end
+
     end
 
     private 
@@ -30,7 +35,7 @@ class Api::FriendshipsController < ApplicationController
     end
 
     def friendship_params
-        params.require(:friendship).permit(:follower_id, :followed_id)
+        params.require(:friendship).permit(:follower_id, :followed_id, :follow_id)
     end
 
 end
