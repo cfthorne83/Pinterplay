@@ -47,16 +47,16 @@ class FollowBtn extends React.Component {
     }
 
     handleFollow() {
-        $.ajax ({
-                    url: "/api/friendships",
-                    method: "POST",
-                    data: {
-                        follower_id: this.props.currentUser.id,
-                        followed_id: this.props.pin.user.id
-                    }
-                })
+        // $.ajax ({
+        //             url: "/api/friendships",
+        //             method: "POST",
+        //             data: {
+        //                 follower_id: this.props.currentUser.id,
+        //                 followed_id: this.props.pin.user.id
+        //             }
+        //         })
                 
-        // this.props.createFollow(this.state.friendship)
+        this.props.createFollow(this.state.friendship)
                 .then(this.setState({ 
                                         followIds: this.state.followIds.concat([this.props.pin.user.id]),
                                         followers: this.state.followers + 1
@@ -64,14 +64,16 @@ class FollowBtn extends React.Component {
     }
 
     handleUnfollow() {
-        $.ajax ({
-                    url: "/api/friendships",
-                    method: "DELETE",
-                    data: {
-                        follower_id: this.props.currentUser.id,
-                        followed_id: this.props.pin.user.id
-                    }
-                }).then(
+        // $.ajax ({
+        //             url: "/api/friendships",
+        //             method: "DELETE",
+        //             data: {
+        //                 follower_id: this.props.currentUser.id,
+        //                 followed_id: this.props.pin.user.id
+        //             }
+        //         })
+        this.props.deleteFollow(this.state.friendship)
+                .then(
                     this.updateFollowIds()
                 )
     }

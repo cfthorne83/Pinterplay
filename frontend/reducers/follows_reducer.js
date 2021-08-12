@@ -4,10 +4,12 @@ import {
 } from '../actions/follow_actions';
 
 const followsReducer = (state = {}, action) => {
+    debugger
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_FOLLOW:
-            return Object.assign({}, state, { [action.follow.id]: action.follow });
+            // return Object.assign({}, state, { [action.follow.id]: action.follow });
+            return Object.assign({}, state, action.follow );
         case REMOVE_FOLLOW:
             let newState = Object.assign({}, state);
             delete newState[action.followId];

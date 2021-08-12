@@ -30,9 +30,9 @@ export const createFollow = (friendship) => {
 export const deleteFollow = (friendship) => {
     // return dispatch => {
         return FollowApiUtil.deleteFollow(friendship)
-        // .then( followId => {
-        //     dispatch(receiveFollow(followId))
-        // }
-        // )
+        .then( followId => {
+            dispatch(receiveFollow(followId))
+        }
+        )
     // }
 }

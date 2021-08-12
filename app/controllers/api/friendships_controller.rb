@@ -2,14 +2,19 @@ class Api::FriendshipsController < ApplicationController
 
     before_action :ensure_logged_in
     before_action :find_user
-    
+
+    def index 
+        @follows = @user.follows
+        render :index
+    end
+
     def create 
         current_user.follow(@user)
         # @friendship = Friendship.new(friendship_params)
         
         # current_user.active_friendships.create(followed_id: user.id)
         # @current_user = current_user
-        # render :show
+        render :show
     end
 
     def destroy
@@ -20,7 +25,8 @@ class Api::FriendshipsController < ApplicationController
 
     def find_user 
         # @user = User.find(params[:friendship][:followed_id])
-        @user = User.find(params[:followed_id])
+        debugger
+        @user = User.find(params[:friendship][:followed_id])
     end
 
     def friendship_params

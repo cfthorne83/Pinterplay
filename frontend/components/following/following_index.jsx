@@ -13,8 +13,10 @@ class Following extends React.Component {
         this.updateState = this.updateState.bind(this);
     }
 
+    componentDidMount(){
+        
+    }
     // componentDidUpdate(){
-    //     debugger
     //     this.props.fetchUser(this.props.currentUser.id);
     // }
 
@@ -25,7 +27,8 @@ class Following extends React.Component {
                     method: "DELETE",
                     data: friendship
                 })
-                .then(this.updateState(i))
+        // this.props.deleteFollow({follower_id: this.props.currentUser.id, follower_id:  })
+                // .then(this.updateState(i))
                 // .then(this.props.fetchUser(this.props.currentUser.id))
         
     }
@@ -65,7 +68,6 @@ class Following extends React.Component {
 
     render() {
         if (!this.props.following) return null;
-        debugger
         const follows = this.state.following.map( (follow, i) => {
             return (
                 <li key={i}>
