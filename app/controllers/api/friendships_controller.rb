@@ -1,7 +1,7 @@
 class Api::FriendshipsController < ApplicationController
 
     before_action :ensure_logged_in
-    before_action :find_user, only: [:create]
+    before_action :find_user, only: [:create, :destroy]
 
     def index 
         @user = current_user
@@ -19,11 +19,13 @@ class Api::FriendshipsController < ApplicationController
     end
 
     def destroy
-        # current_user.unfollow(@user)
-        @follow = Friendship.find(params[:friendship][:follower_id])
-        if @follow 
-            @follow.destroy
-        end
+        debugger
+        current_user.unfollow(@user)
+        # debugger
+        # @follow = Friendship.find(params[:friendshipId])
+        # if @follow 
+        #     @follow.destroy
+        # end
 
     end
 
@@ -35,7 +37,7 @@ s        # @user = User.find(params[:friendship][:followed_id])
     end
 
     def friendship_params
-        params.require(:friendship).permit(:follower_id, :followed_id, :follow_id)
+        params.require(:friendship).permit(:follower_id, :followed_id, :id)
     end
 
 end

@@ -43,12 +43,12 @@ export const createFollow = (friendship) => {
     }
 }
 
-export const deleteFollow = (friendship) => {
-    // return dispatch => {
+export const deleteFollow = (friendship, i) => {
+    return dispatch => {
         return FollowApiUtil.deleteFollow(friendship)
-        .then( followId => {
-            dispatch(receiveFollow(followId))
+        .then( i => {
+            dispatch(removeFollow(i))
         }
         )
-    // }
+    }
 }

@@ -8,30 +8,31 @@ class Following extends React.Component {
         // this.state = { following: this.props.following.map((follow, i) => {
         //      return [follow.username, follow.id];
         // })};
-        this.state = {following: this.props.following, mounted: false};
+        this.state = {following: this.props.following};
 
         this.handleUnfollow = this.handleUnfollow.bind(this);
         this.updateState = this.updateState.bind(this);
     }
 
-    componentDidMount(){
-        
-        this.props.fetchFollows().then(this.setState({mounted: true}));
-    }
+    // componentDidMount(){
+    //     this.props.fetchFollows().then(this.setState({mounted: true}));
+    // }
     // componentDidUpdate(){
     //     this.props.fetchUser(this.props.currentUser.id);
     // }
 
-    handleUnfollow(e, friendship, i){
+    handleUnfollow(e, i){
         e.stopPropagation();
-         $.ajax ({
-                    url: "/api/friendships",
-                    method: "DELETE",
-                    data: friendship
-                })
+        //  $.ajax ({
+        //             url: "/api/friendships",
+        //             method: "DELETE",
+        //             data: 
+        //         })
         // this.props.deleteFollow({follower_id: this.props.currentUser.id, follower_id:  })
                 // .then(this.updateState(i))
                 // .then(this.props.fetchUser(this.props.currentUser.id))
+                debugger
+        this.props.deleteFollow({follower_id: this.props.currentUser.id, followed_id: i }, i);
         
     }
 
@@ -43,9 +44,12 @@ class Following extends React.Component {
         console.log(this.state);
     }
 
-    followBtn() {
+    followBtn(i) {
         return (
-            <button>Unfollow</button>
+            <button
+                onClick={ (e) => {this.handleUnfollow(e, i)}}>
+                Unfollow
+            </button>
         )
         
     }
@@ -54,15 +58,13 @@ class Following extends React.Component {
 
     render() {
         
-        if (!this.state.mounted) return null;
-        
         const follows = this.state.following.map( (follow, i) => {
             return (
-                <li>
+                <li key={follow.id}>
                     <span>
                         {follow.username}
                     </span>
-                    {this.followBtn()}
+                    {/* {this.followBtn(follow.id)} */}
                 </li>
         )
     })
