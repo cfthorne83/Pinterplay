@@ -8,16 +8,13 @@ import { fetchUser } from '../../actions/user_actions';
 import {createFollow, deleteFollow, fetchFollows, receiveFollow } from '../../actions/follow_actions';
 
 const msp = (state, ownProps) => {
-    let following = null;
     const currentUser = state.entities.users[state.session.id];
-    if (state.entities.follows){
-        debugger
-        following = Object.values(state.entities.follows);
-    }
-    debugger
+    // if (state.entities.follows){
+    //     following = Object.values(state.entities.follows);
+    // }
     return {
         // following: state.ui.modal.options,
-        following: following,
+        following: Object.values(state.entities.follows),
         currentUser: currentUser
     }
 }

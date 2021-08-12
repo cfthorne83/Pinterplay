@@ -15,7 +15,7 @@ class Following extends React.Component {
     }
 
     componentDidMount(){
-        debugger
+        
         this.props.fetchFollows().then(this.setState({mounted: true}));
     }
     // componentDidUpdate(){
@@ -43,53 +43,27 @@ class Following extends React.Component {
         console.log(this.state);
     }
 
-    followBtn(followId, i) {
-        const followIds = this.state.following.map( follow => {
-            return follow[1];
-        });
-        // if (this.props.pin.user && this.props.pin.user.id !== this.props.currentUser.id) {
-            if (followIds.includes(followId)){
-    
-            return (
-                    <button onClick={(e) => {this.handleUnfollow(e, {
-                            follower_id: this.props.currentUser.id,
-                            followed_id: followId
-                        }, i)
-                    }}
-                    >Unfollow
-                    </button>
-                )
-            } else {
-    
-                return <button >Follow</button>
-            }
+    followBtn() {
+        return (
+            <button>Unfollow</button>
+        )
         
     }
 
 
 
     render() {
-        debugger
+        
         if (!this.state.mounted) return null;
-        debugger
+        
         const follows = this.state.following.map( (follow, i) => {
             return (
-                <li>{follow.username}</li>
-                // <li key={i}>
-                //     <span>      
-                //         {/* {follow.username} */}
-                //         {/* {this.state.following[i]} */}
-                //         {follow[0]}
-                //     </span>
-                //     {this.followBtn(follow[1], i)}                    
-                //     {/* <button onClick={(e) => {this.handleUnfollow(e, {
-                //             follower_id: this.props.currentUser.id,
-                //             followed_id: follow[1]
-                //         }, i)
-                //     }}
-                //     >Unfollow
-                //     </button> */}
-                // </li>
+                <li>
+                    <span>
+                        {follow.username}
+                    </span>
+                    {this.followBtn()}
+                </li>
         )
     })
     
