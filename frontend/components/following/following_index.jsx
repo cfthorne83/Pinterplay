@@ -17,11 +17,12 @@ class Following extends React.Component {
     // componentDidMount(){
     //     this.props.fetchFollows().then(this.setState({mounted: true}));
     // }
-    // componentDidUpdate(){
-    //     this.props.fetchUser(this.props.currentUser.id);
-    // }
+    componentDidUpdate(){
+        debugger
+        // this.props.fetchUser(this.props.currentUser.id);
+    }
 
-    handleUnfollow(e, i){
+    handleUnfollow(e, followId){
         e.stopPropagation();
         //  $.ajax ({
         //             url: "/api/friendships",
@@ -31,8 +32,7 @@ class Following extends React.Component {
         // this.props.deleteFollow({follower_id: this.props.currentUser.id, follower_id:  })
                 // .then(this.updateState(i))
                 // .then(this.props.fetchUser(this.props.currentUser.id))
-                debugger
-        this.props.deleteFollow({follower_id: this.props.currentUser.id, followed_id: i }, i);
+        this.props.deleteFollow({follower_id: this.props.currentUser.id, followed_id: followId }, followId);
         
     }
 
@@ -44,10 +44,10 @@ class Following extends React.Component {
         console.log(this.state);
     }
 
-    followBtn(i) {
+    followBtn(followId) {
         return (
             <button
-                onClick={ (e) => {this.handleUnfollow(e, i)}}>
+                onClick={ (e) => {this.handleUnfollow(e, followId)}}>
                 Unfollow
             </button>
         )
@@ -64,7 +64,7 @@ class Following extends React.Component {
                     <span>
                         {follow.username}
                     </span>
-                    {/* {this.followBtn(follow.id)} */}
+                    {this.followBtn(follow.id)}
                 </li>
         )
     })

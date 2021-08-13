@@ -15,8 +15,8 @@ export const createFollow = (friendship) => {
 }
 
 export const deleteFollow = (friendship) => {
-    $.ajax ({
-                url: `/api/friendships/`,
+    return $.ajax ({
+                url: `/api/friendships`,
                 method: "DELETE",
                 data: { friendship }
             })

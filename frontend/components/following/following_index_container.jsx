@@ -5,7 +5,10 @@ import Following from "./following_index";
 // import { createFollow, deleteFollow } from "../../actions/follow_actions";
 import { closeModal } from "../../actions/modal_actions";
 import { fetchUser } from '../../actions/user_actions';
-import {createFollow, deleteFollow, fetchFollows } from '../../actions/follow_actions';
+import {createFollow, fetchFollows,
+    deleteFollow
+} from '../../actions/follow_actions';
+// import { deleteFollow } from "../../util/follow_api_util";
 
 const msp = (state, ownProps) => {
     const currentUser = state.entities.users[state.session.id];
@@ -33,7 +36,8 @@ const mdp = (dispatch, ownProps) => {
         //         })
         //     )
         // },
-        deleteFollow: (friendship, i) => dispatch(deleteFollow(friendship, i)),
+        deleteFollow: (friendship, followId) => dispatch(deleteFollow(friendship, followId)),
+        // deleteFollow: (friendship, followId) => deleteFollow(friendship),
         createFollow: (friendship) => dispatch(createFollow(friendship)),
         fetchUser: (userId) => dispatch(fetchUser(userId)),
         fetchFollows: () => dispatch(fetchFollows())
