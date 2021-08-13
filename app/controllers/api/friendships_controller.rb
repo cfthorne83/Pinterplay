@@ -20,7 +20,6 @@ class Api::FriendshipsController < ApplicationController
 
     def destroy
         current_user.unfollow(@user)
-        # debugger
         # @follow = Friendship.find(params[:friendshipId])
         # if @follow 
         #     @follow.destroy

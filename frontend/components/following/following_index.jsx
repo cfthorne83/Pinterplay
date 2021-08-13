@@ -17,9 +17,14 @@ class Following extends React.Component {
     // componentDidMount(){
     //     this.props.fetchFollows().then(this.setState({mounted: true}));
     // }
-    componentDidUpdate(){
-        debugger
+    componentDidUpdate(prevProps){
         // this.props.fetchUser(this.props.currentUser.id);
+        // this.props.fetchFollows();
+        if (this.props.following != this.state.following){
+            this.setState({
+                following: this.props.following
+            })
+        }
     }
 
     handleUnfollow(e, followId){
@@ -32,7 +37,8 @@ class Following extends React.Component {
         // this.props.deleteFollow({follower_id: this.props.currentUser.id, follower_id:  })
                 // .then(this.updateState(i))
                 // .then(this.props.fetchUser(this.props.currentUser.id))
-        this.props.deleteFollow({follower_id: this.props.currentUser.id, followed_id: followId }, followId);
+        this.props.deleteFollow({follower_id: this.props.currentUser.id, followed_id: followId }, followId)
+            .then(this.props.fetchFollows());
         
     }
 
@@ -57,7 +63,6 @@ class Following extends React.Component {
 
 
     render() {
-        
         const follows = this.state.following.map( (follow, i) => {
             return (
                 <li key={follow.id}>

@@ -44,7 +44,6 @@ export const createFollow = (friendship) => {
 }
 
 export const deleteFollow = (friendship, followId) => {
-    debugger
     return dispatch => {
         return FollowApiUtil.deleteFollow(friendship,followId).then( (followId) => {
             dispatch(removeFollow(followId))

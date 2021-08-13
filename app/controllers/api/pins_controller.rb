@@ -27,8 +27,8 @@ class Api::PinsController < ApplicationController
             @limit = true
             @pins = user.pins.limit(3).shuffle
         else
-            # @pins = Pin.all
-            @pins = Pin.all[28..32]
+            p = Pin.all
+            @pins = [p[0], p[10], p[20], p[30], p[40]]
         end
         if @pins 
             render :index

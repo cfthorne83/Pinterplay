@@ -9,7 +9,7 @@ class Profile extends React.Component{
     constructor(props){
         super(props);
 
-        this.state = this.props.currentUser;
+        this.state = {currentUser: this.props.currentUser, following: this.props.following};
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.capitalize = this.capitalize.bind(this);
@@ -19,6 +19,12 @@ class Profile extends React.Component{
         this.followers = this.followers.bind(this);
         this.handleFollowers = this.handleFollowers.bind(this);
         this.handleFollowing = this.handleFollowing.bind(this);
+    }
+
+    componentDidUpdate(){
+        if (this.state.following != this.props.following){
+            this.setState({ following: this.props.following})
+        }
     }
 
     componentDidMount() {
@@ -35,24 +41,24 @@ class Profile extends React.Component{
     }
     
     name() {
-        if (this.state.fname && this.state.lname) {
+        if (this.state.currentUser.fname && this.state.currentUser.lname) {
             return (
                 <h2>
-                    {this.capitalize(this.state.fname)}&nbsp;
-                    {this.capitalize(this.state.lname)}
+                    {this.capitalize(this.state.currentUser.fname)}&nbsp;
+                    {this.capitalize(this.state.currentUser.lname)}
                 </h2>
             )
         } else {
             return (
-                <h2>{this.state.email}</h2>
+                <h2>{this.state.currentUser.email}</h2>
             )
         }
     }
 
     image() {
-        if (this.state.image_url) {
+        if (this.state.currentUser.image_url) {
             return (
-                <img src={this.state.image_url} alt="profile-image"/>
+                <img src={this.state.currentUser.image_url} alt="profile-image"/>
             )
         } else {
             return (
@@ -64,20 +70,18 @@ class Profile extends React.Component{
     }
 
     username() {
-        if (this.state.username){
+        if (this.state.currentUser.username){
             return (
-                <h3>@{this.state.username}</h3>
+                <h3>@{this.state.currentUser.username}</h3>
             )
         }
     }
 
     handleFollowers() {
-        console.log("followers");
         this.props.openModal("followers", this.props.currentUser.followers);
     }
 
     handleFollowing() {
-        console.log("following");
         this.props.openModal("following", this.props.currentUser.following);
     }
 
@@ -91,7 +95,7 @@ class Profile extends React.Component{
                         </span>
                         <span
                             onClick={this.handleFollowing}>
-                            {this.props.currentUser.following.length} following
+                            {this.state.following.length} following
                         </span>
                     </h4>
             )
@@ -104,7 +108,7 @@ class Profile extends React.Component{
                         </span>
                         <span
                             onClick={this.handleFollowing}>
-                            {this.props.currentUser.following.length} following
+                            {this.state.following.length} following
                         </span>
                     </h4>
             )
