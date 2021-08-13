@@ -63,16 +63,23 @@ class Following extends React.Component {
 
 
     render() {
-        const follows = this.state.following.map( (follow, i) => {
-            return (
-                <li key={follow.id}>
-                    <span>
-                        {follow.username}
-                    </span>
-                    {this.followBtn(follow.id)}
-                </li>
-        )
-    })
+
+        let follows;
+        if (this.state.following.length > 0){
+
+            follows = this.state.following.map( (follow, i) => {
+                return (
+                    <li key={follow.id}>
+                        <span>
+                            {follow.username}
+                        </span>
+                        {this.followBtn(follow.id)}
+                    </li>
+                )
+            })
+        } else {
+            follows = <h2>You are not following anyone...</h2>
+        }
     
     
     return (

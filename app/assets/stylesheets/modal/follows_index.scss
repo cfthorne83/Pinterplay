@@ -9,7 +9,6 @@
 }
 
 .following-index {
-    background-color: rgb(60, 32, 70);
 
     padding: 1rem;
     box-sizing: border-box;
@@ -17,7 +16,6 @@
     border-radius: 1em;
     li, h1 {
         padding: 1rem;
-        color: rgb(212, 210, 214);
     }
     
     h1 {
@@ -26,6 +24,12 @@
         font-size: 2.5rem;
         font-weight: 600;
         text-align: center;
+    }
+
+    h2 {
+        text-align: center;
+        padding: 1rem;
+        font-size: 1.2rem;
     }
     
     li {
@@ -40,17 +44,13 @@
 
     button {
         background-color: var(--lt-grey);
-        background-color: rgb(253, 24, 112);
         font-size: var(--btn-font-size);
         font-weight: 600;
         padding: 1em;
         letter-spacing: var(--lett-space);
         border-radius: 9999px;
-        color: rgb(248, 242, 248);
     }
     button:hover {
         background-color: var(--hov-grey);
-        background-color: rgb(184, 56, 131);
-        color: black;
     }
 }
