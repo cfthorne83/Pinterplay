@@ -7,16 +7,21 @@ class Followers extends React.Component {
     }
 
     render(){
-    debugger
-        // const followers = this.props.followers.map( follower => {
-        //     return (
-        //             <li>{follower.username}</li>
-        //     )
-        // })
+    // debugger
+        const followers = this.props.followers.map( follower => {
+            return (
+                    <li>
+                        <h2>
+                            {follower.username}
+                        </h2>
+                        <button>unfollow</button>
+                    </li>
+            )
+        })
 
         return (
-            <div className="followers-index">
-                <h1>{props.followers.length} Followers</h1>
+            <div className="following-index">
+                <h1>{this.props.followers.length} Followers</h1>
                 <ul>
                     {followers}
                 </ul>
