@@ -17,7 +17,7 @@ const msp = (state, ownProps) => {
     return {
         // followers: state.ui.modal.options
         // followers: state.entities.users[state.sesssion.id].followers
-        followers: follower,
+        followers: followers,
         following: following
         // currentUser: state.entities.users[state.session.id]
     }
