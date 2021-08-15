@@ -14,7 +14,6 @@ class Followers extends React.Component {
 
     handleUnfollow(e, followId){
         e.stopPropagation();
-        debugger
         this.props.deleteFollow({follower_id: this.props.currentUser.id, followed_id: followId }, followId)
             .then(this.props.fetchFollows());
         
@@ -22,7 +21,6 @@ class Followers extends React.Component {
 
     followBtn(follower) {
                 if(this.state.followIds.includes(follower.id)){
-                    debugger
                     return (
                         <button
                             // onClick={ (e) => {this.handleUnfollow(e, follower.id)}}

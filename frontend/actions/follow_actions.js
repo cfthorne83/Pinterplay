@@ -6,7 +6,6 @@ export const RECEIVE_FOLLOW = 'RECEIVE_FOLLOW';
 export const REMOVE_FOLLOW = 'REMOVE_FOLLOW';
 
 export const receiveFollows = (follows) => {
-    debugger
     return {
         type: RECEIVE_ALL_FOLLOWS,
         follows

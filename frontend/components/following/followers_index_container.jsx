@@ -7,11 +7,18 @@ import {createFollow, fetchFollows,
 } from '../../actions/follow_actions';
 
 const msp = (state, ownProps) => {
+    let followers = [];
+    let following = [];
+    if (state.entities.follows.followers){
+        followers = Object.values(state.entities.follows.followers)
+    } else if (state.entities.follows.following) {
+        following = Object.values(state.entities.follows.following)
+    }
     return {
         // followers: state.ui.modal.options
         // followers: state.entities.users[state.sesssion.id].followers
-        followers: Object.values(state.entities.follows.followers),
-        following: Object.values(state.entities.follows.following),
+        followers: follower,
+        following: following
         // currentUser: state.entities.users[state.session.id]
     }
 }

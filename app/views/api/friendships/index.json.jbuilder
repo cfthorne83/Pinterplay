@@ -5,7 +5,6 @@
         end
     end
 end
-debugger
 @followers.each do |follower|
     json.set! "followers" do
         json.set! follower.id do 
