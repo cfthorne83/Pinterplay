@@ -1,19 +1,29 @@
 import React from "react";
 
-const Followers = (props) => {
-    const followers = props.followers.map( follower => {
+class Followers extends React.Component {
+    constructor(props){
+        super(props);
+
+    }
+
+    render(){
+    debugger
+        // const followers = this.props.followers.map( follower => {
+        //     return (
+        //             <li>{follower.username}</li>
+        //     )
+        // })
+
         return (
-                <li>{follower.username}</li>
+            <div className="followers-index">
+                <h1>{props.followers.length} Followers</h1>
+                <ul>
+                    {followers}
+                </ul>
+            </div>
         )
-    })
-    return (
-        <div className="followers-index">
-            <h1>{props.followers.length} Followers</h1>
-            <ul>
-                {followers}
-            </ul>
-        </div>
-    )
+    }
 }
+
 
 export default Followers;
