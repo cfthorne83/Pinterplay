@@ -7,10 +7,22 @@ import { fetchFollows } from '../../actions/follow_actions';
 import Profile from './profile';
 
 const mSTP = (state, ownProps) => {
+    let followers = [];
+    let following = [];
+    if (state.entities.follows.followers && state.entities.follows.following){
+        followers = Object.values(state.entities.follows.followers);
+        following = Object.values(state.entities.follows.following);
+    } else if (state.entities.follows.followers && !state.entities.follows.following) {
+        followers = Object.values(state.entities.follows.followers);
+    } else if (state.entities.follows.following && !state.entities.follows.followers) {
+        following = Object.values(state.entities.follows.following);
+    }
+
     return {
         currentUser: state.entities.users[state.session.id],
         lastBoard: Object.values(state.entities.boards)[0],
-        following: Object.values(state.entities.follows)
+        following: following,
+        followers: followers
     };
 };
 
