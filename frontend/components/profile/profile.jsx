@@ -9,7 +9,7 @@ class Profile extends React.Component{
     constructor(props){
         super(props);
 
-        this.state = {currentUser: this.props.currentUser, following: this.props.following};
+        this.state = {currentUser: this.props.currentUser, following: this.props.following, followers: this.props.followers};
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.capitalize = this.capitalize.bind(this);
@@ -21,11 +21,11 @@ class Profile extends React.Component{
         this.handleFollowing = this.handleFollowing.bind(this);
     }
 
-    componentDidUpdate(){
-        if (this.state.following != this.props.following){
-            this.setState({ following: this.props.following})
-        }
-    }
+    // componentDidUpdate(){
+    //     if ((this.state.following != this.props.following) || (this.state.followers != this.props.followers)){
+    //         this.setState({ following: this.props.following, followers: this.props.following  })
+    //     }
+    // }
 
     componentDidMount() {
         this.props.fetchUser(this.props.currentUser.id);
@@ -86,7 +86,7 @@ class Profile extends React.Component{
     }
 
     followers() {
-        if (this.props.currentUser.followers.length == 1){
+        if (this.props.followers.length == 1){
             return (
                     <h4>
                         <span
@@ -104,11 +104,13 @@ class Profile extends React.Component{
                     <h4>
                         <span
                             onClick={this.handleFollowers}>
-                            {this.props.currentUser.followers.length} followers |&nbsp;
+                            {/* {this.props.currentUser.followers.length} followers |&nbsp; */}
+                            {this.props.followers.length} followers |&nbsp;
                         </span>
                         <span
                             onClick={this.handleFollowing}>
-                            {this.state.following.length} following
+                            {/* {this.state.following.length} following */}
+                            {this.props.following.length} following
                         </span>
                     </h4>
             )
