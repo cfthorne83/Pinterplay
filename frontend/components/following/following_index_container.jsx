@@ -12,12 +12,13 @@ import {createFollow, fetchFollows,
 
 const msp = (state, ownProps) => {
     const currentUser = state.entities.users[state.session.id];
-    // if (state.entities.follows){
-    //     following = Object.values(state.entities.follows);
-    // }
+    let following = [];
+    if (state.entities.follows.following){
+        following = Object.values(state.entities.follows.following);
+    }
     return {
         // following: state.ui.modal.options,
-        following: Object.values(state.entities.follows),
+        following: following,
         currentUser: currentUser
     }
 }
@@ -25,19 +26,7 @@ const msp = (state, ownProps) => {
 const mdp = (dispatch, ownProps) => {
     return  {
         closeModal: () => dispatch(closeModal()),
-        // deleteFollow: (friendship) => {
-        //     return (
-        //         $.ajax ({
-        //             url: "/api/friendships",
-        //             method: "POST",
-        //             data: {
-        //                 friendship
-        //             }
-        //         })
-        //     )
-        // },
         deleteFollow: (friendship, followId) => dispatch(deleteFollow(friendship, followId)),
-        // deleteFollow: (friendship, followId) => deleteFollow(friendship),
         createFollow: (friendship) => dispatch(createFollow(friendship)),
         fetchUser: (userId) => dispatch(fetchUser(userId)),
         fetchFollows: () => dispatch(fetchFollows())

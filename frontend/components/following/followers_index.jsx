@@ -3,14 +3,23 @@ import React from "react";
 class Followers extends React.Component {
     constructor(props){
         super(props);
-        this.state = { followIds: this.props.following.map(follow => (follow.id)) }
+        this.state = { following: this.props.following,
+            followers: this.props.followers, 
+            followIds: this.props.following.map(follow => (follow.id)) }
 
         this.handleUnfollow = this.handleUnfollow.bind(this);
+        this.handleFollow = this.handleFollow.bind(this);
     }
 
-    componentDidMount(){
-        this.props.fetchFollows();
+    componentDidUpdate(){
+        if ( (this.props.following != this.state.following) || (this.props.followers != this.state.followers) ){
+            this.setState({following: this.props.following, followers: this.props.followers})
+        }
     }
+
+    // componentDidMount(){
+    //     this.props.fetchFollows();
+    // }
 
     handleUnfollow(e, followId){
         e.stopPropagation();
@@ -19,23 +28,34 @@ class Followers extends React.Component {
         
     }
 
+    handleFollow(e, followId){
+        e.stopPropagation();
+        this.props.createFollow({follower_id: this.props.currentUser.id, followed_id: followId })
+            .then(this.props.fetchFollows());
+        
+    }
+
     followBtn(follower) {
                 if(this.state.followIds.includes(follower.id)){
                     return (
                         <button
-                            // onClick={ (e) => {this.handleUnfollow(e, follower.id)}}
+                            onClick={ (e) => {this.handleUnfollow(e, follower.id)}}
                             >
                             Unfollow
                         </button>
                     )
                 }else if(!this.state.followIds.includes(follower.id)){
                     return(
-                        <button>Follow</button>
+                        <button
+                            onClick={ (e) => {this.handleFollow(e, follower.id)}}
+                            >Follow
+                        </button>
                     )
                 }
     }
 
     render(){
+        
         const followers = this.props.followers.map( follower => {
 
             return (
