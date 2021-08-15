@@ -13,7 +13,12 @@ class Followers extends React.Component {
 
     componentDidUpdate(){
         if ( (this.props.following != this.state.following) || (this.props.followers != this.state.followers) ){
-            this.setState({following: this.props.following, followers: this.props.followers})
+            this.props.fetchFollows()
+            .then(
+                this.setState({following: this.props.following, 
+                                followers: this.props.followers,
+                                followIds: this.props.following.map(follow => (follow.id))})
+            )
         }
     }
 
@@ -30,6 +35,7 @@ class Followers extends React.Component {
 
     handleFollow(e, followId){
         e.stopPropagation();
+        debugger
         this.props.createFollow({follower_id: this.props.currentUser.id, followed_id: followId })
             .then(this.props.fetchFollows());
         
@@ -56,7 +62,7 @@ class Followers extends React.Component {
 
     render(){
         
-        const followers = this.props.followers.map( follower => {
+        const followers = this.state.followers.map( follower => {
 
             return (
                     <li>
@@ -67,24 +73,39 @@ class Followers extends React.Component {
                     </li>
             )
         })
-        const following = this.props.following.map( follower => {
+        const followersTwo = this.state.followers.map( follower => {
 
             return (
                     <li>
-                        <h2>
+                        <h3>
                             {follower.username}
-                        </h2>
+                        </h3>
+                    </li>
+            )
+        })
+        const following = this.state.following.map( follower => {
+
+            return (
+                    <li>
+                        <h3>
+                            {follower.username}
+                        </h3>
                         {/* {this.followBtn(follower)} */}
                     </li>
             )
         })
+        debugger
 
         return (
             <div className="following-index">
-                <h1>{this.props.followers.length} Followers</h1>
+                <h1>{this.state.followers.length} Followers</h1>
                 <ul>
                     {followers}
-                    {/* {following} */}
+                </ul>
+                <ul>
+                    <h2>Following</h2>
+                    {following}
+
                 </ul>
             </div>
         )
