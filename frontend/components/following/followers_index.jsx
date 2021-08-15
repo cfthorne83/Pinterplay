@@ -5,16 +5,34 @@ class Followers extends React.Component {
         super(props);
         this.state = { followIds: this.props.following.map(follow => (follow.id)) }
 
+        this.handleUnfollow = this.handleUnfollow.bind(this);
+    }
+
+    componentDidMount(){
+        this.props.fetchFollows();
+    }
+
+    handleUnfollow(e, followId){
+        e.stopPropagation();
+        debugger
+        this.props.deleteFollow({follower_id: this.props.currentUser.id, followed_id: followId }, followId)
+            .then(this.props.fetchFollows());
+        
     }
 
     followBtn(follower) {
                 if(this.state.followIds.includes(follower.id)){
+                    debugger
                     return (
-                        <button>unfollow</button>
+                        <button
+                            // onClick={ (e) => {this.handleUnfollow(e, follower.id)}}
+                            >
+                            Unfollow
+                        </button>
                     )
                 }else if(!this.state.followIds.includes(follower.id)){
                     return(
-                        <button>follow</button>
+                        <button>Follow</button>
                     )
                 }
     }
