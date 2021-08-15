@@ -6,6 +6,7 @@ class Api::FriendshipsController < ApplicationController
     def index 
         @user = current_user
         @follows = @user.following
+        @followers = @user.followers
         render :index
     end
 
