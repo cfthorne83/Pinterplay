@@ -78,11 +78,11 @@ class Profile extends React.Component{
     }
 
     handleFollowers() {
-        this.props.openModal("followers", this.props.currentUser.followers);
+        this.props.openModal("followers", this.props.followers);
     }
 
     handleFollowing() {
-        this.props.openModal("following", this.props.currentUser.following);
+        this.props.openModal("following", this.props.following);
     }
 
     followers() {
@@ -91,11 +91,11 @@ class Profile extends React.Component{
                     <h4>
                         <span
                             onClick={this.handleFollowers}>
-                            {this.props.currentUser.followers.length} follower |&nbsp;
+                            {this.props.followers.length} follower |&nbsp;
                         </span>
                         <span
                             onClick={this.handleFollowing}>
-                            {this.state.following.length} following
+                            {this.props.following.length} following
                         </span>
                     </h4>
             )
