@@ -3,18 +3,32 @@ import React from "react";
 class Followers extends React.Component {
     constructor(props){
         super(props);
+        this.state = { following: this.props.following }
 
     }
 
+    followBtn() {
+                // debugger
+                if(this.props.following.includes(follower)){
+                    return (
+                        <button>unfollow</button>
+                    )
+                }else {
+                    return(
+                        <button>follow</button>
+                    )
+                }
+            }
+
     render(){
-    // debugger
         const followers = this.props.followers.map( follower => {
+
             return (
                     <li>
                         <h2>
                             {follower.username}
                         </h2>
-                        <button>unfollow</button>
+                        {followBtn()}
                     </li>
             )
         })
