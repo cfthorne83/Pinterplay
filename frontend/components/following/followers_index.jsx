@@ -12,9 +12,8 @@ class Followers extends React.Component {
     }
 
     componentDidUpdate(prevProps){
-        debugger
+        
         if (this.props.following.length != prevProps.following.length){
-            debugger
             // this.props.fetchFollows()
             // .then(
             //     this.setState({following: this.props.following, 
