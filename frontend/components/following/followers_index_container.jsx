@@ -17,13 +17,13 @@ const msp = (state, ownProps) => {
     } else if (state.entities.follows.following && !state.entities.follows.followers) {
         following = Object.values(state.entities.follows.following);
     }
-    debugger
     return {
         // followers: state.ui.modal.options
         // followers: state.entities.users[state.sesssion.id].followers
         followers: followers,
         following: following,
-        currentUser: state.entities.users[state.session.id]
+        currentUser: state.entities.users[state.session.id],
+        followIds: following.map(follow => (follow.id)) 
     }
 }
 

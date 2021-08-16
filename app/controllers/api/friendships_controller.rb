@@ -12,6 +12,7 @@ class Api::FriendshipsController < ApplicationController
 
     def create 
         current_user.follow(@user)
+        @follow = User.find(friendship_params[:followed_id])
         # @friendship = Friendship.new(friendship_params)
         
         # current_user.active_friendships.create(followed_id: user.id)

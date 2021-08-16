@@ -10,8 +10,10 @@ const followsReducer = (state = {}, action) => {
         case RECEIVE_ALL_FOLLOWS:
             return action.follows;
         case RECEIVE_FOLLOW:
-            return Object.assign({}, state, { [action.follow.id]: action.follow });
-            // return Object.assign({}, state, action.follow );
+            // return action.follow;
+            let newStateTwo = Object.assign({},state.following);
+            newStateTwo = Object.assign({}, newStateTwo, { [action.follow.id]: action.follow });
+            return {followers: state.followers, following: newStateTwo}
         case REMOVE_FOLLOW:
             let newState = Object.assign({}, state);
             delete newState[action.followId];

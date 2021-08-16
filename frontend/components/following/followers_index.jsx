@@ -5,21 +5,26 @@ class Followers extends React.Component {
         super(props);
         this.state = { following: this.props.following,
             followers: this.props.followers, 
-            followIds: this.props.following.map(follow => (follow.id)) }
+            followIds: this.props.followIds }
 
         this.handleUnfollow = this.handleUnfollow.bind(this);
         this.handleFollow = this.handleFollow.bind(this);
     }
 
-    componentDidUpdate(){
-        if ( (this.props.following != this.state.following) || (this.props.followers != this.state.followers) ){
-            this.props.fetchFollows()
-            .then(
-                this.setState({following: this.props.following, 
-                                followers: this.props.followers,
-                                followIds: this.props.following.map(follow => (follow.id))})
-            )
+    componentDidUpdate(prevProps){
+        debugger
+        if (this.props.following.length != prevProps.following.length){
+            debugger
+            // this.props.fetchFollows()
+            // .then(
+            //     this.setState({following: this.props.following, 
+            //                     followers: this.props.followers,
+            //                     followIds: this.props.followIds})
+            // )
         }
+        // if (prevProps.following != this.props.following){
+        //     this.setState({ following: this.props.following})
+        // }
     }
 
     // componentDidMount(){
@@ -35,14 +40,15 @@ class Followers extends React.Component {
 
     handleFollow(e, followId){
         e.stopPropagation();
-        debugger
         this.props.createFollow({follower_id: this.props.currentUser.id, followed_id: followId })
             .then(this.props.fetchFollows());
         
     }
 
     followBtn(follower) {
-                if(this.state.followIds.includes(follower.id)){
+        const followingIds = this.props.following.map(follow => { return follow.id });
+                // if(this.state.followIds.includes(follower.id)){
+                if(followingIds.includes(follower.id)){
                     return (
                         <button
                             onClick={ (e) => {this.handleUnfollow(e, follower.id)}}
@@ -50,7 +56,7 @@ class Followers extends React.Component {
                             Unfollow
                         </button>
                     )
-                }else if(!this.state.followIds.includes(follower.id)){
+                }else if(!followingIds.includes(follower.id)){
                     return(
                         <button
                             onClick={ (e) => {this.handleFollow(e, follower.id)}}
@@ -62,7 +68,7 @@ class Followers extends React.Component {
 
     render(){
         
-        const followers = this.state.followers.map( follower => {
+        const followers = this.props.followers.map( follower => {
 
             return (
                     <li>
@@ -83,7 +89,8 @@ class Followers extends React.Component {
                     </li>
             )
         })
-        const following = this.state.following.map( follower => {
+
+        const following = this.props.following.map( follower => {
 
             return (
                     <li>
@@ -94,7 +101,6 @@ class Followers extends React.Component {
                     </li>
             )
         })
-        debugger
 
         return (
             <div className="following-index">
