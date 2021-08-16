@@ -45,15 +45,33 @@ class Followers extends React.Component {
                 }
     }
 
+    profilePic(follower) {
+        if (follower.image_url) {
+            return (
+                    <img className="following-index__pic" src={follower.image_url} alt=""/>
+            )
+        } else {
+            return (
+                <div className="following-index__initial-con">
+                    <h3 id='folowing-index__initial'>
+                        {follower.email[0].toUpperCase()}
+                    </h3>
+                </div>
+            )
+        }
+    }
+
     render(){
         
         const followers = this.props.followers.map( follower => {
 
             return (
                     <li>
-                        <img class="following-index__pic" src="" alt="" />
-                        <span>
-                            {follower.username}
+                        <span className="following-index__image-name">
+                            {this.profilePic(follower)}
+                            <span>
+                                {follower.username}
+                            </span>
                         </span>
                         {this.followBtn(follower)}
                     </li>
