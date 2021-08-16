@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 class Followers extends React.Component {
     constructor(props){
@@ -67,12 +68,15 @@ class Followers extends React.Component {
 
             return (
                     <li>
-                        <span className="following-index__image-name">
-                            {this.profilePic(follower)}
-                            <span>
-                                {follower.username}
+                        <Link to={`/users/${follower.id}/browse`}>
+                        {/* <Link to="/"> */}
+                            <span className="following-index__image-name">
+                                {this.profilePic(follower)}
+                                <span>
+                                    {follower.username}
+                                </span>
                             </span>
-                        </span>
+                        </Link>
                         {this.followBtn(follower)}
                     </li>
             )

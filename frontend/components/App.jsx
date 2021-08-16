@@ -14,6 +14,7 @@ import MainContainer from "./main/main_container";
 
 import ProfileSettingsContainer from "./profile/profile_settings_container";
 import ProfileContainer from "./profile/profile_container";
+import BrowseProfileContainer from "./profile/browse_profile_container";
 
 import BoardShowContainer from './boards/board_show_container';
 
@@ -44,6 +45,7 @@ const App = () => (
             {/* <Route exact path="/users/:userId" component={ProfileContainer} /> */}
             <ProtectedRoute exact path="/users/:userId/settings" component={ProfileSettingsContainer}/>
             <ProtectedRoute exact path="/users/:userId" component={ProfileContainer} />
+            <ProtectedRoute exact path="/users/:userId/browse" component={BrowseProfileContainer} />
             {/* <Route path="/users/:userId/settings" component={ProfileSettingsContainer}/> */}
             
             {/* <Route exact path="/following" component={FollowingContainer}/> */}
