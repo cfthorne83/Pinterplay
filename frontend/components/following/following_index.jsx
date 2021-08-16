@@ -52,12 +52,28 @@ class Following extends React.Component {
 
     followBtn(followId) {
         return (
-            <button
+            <button className="following-index__unfollow-btn"
                 onClick={ (e) => {this.handleUnfollow(e, followId)}}>
                 Unfollow
             </button>
         )
         
+    }
+
+    profilePic(follow) {
+        if (follow.image_url) {
+            return (
+                    <img className="following-index__pic" src={follow.image_url} alt=""/>
+            )
+        } else {
+            return (
+                <div className="following-index__initial-con">
+                    <h3 id='folowing-index__initial'>
+                        {follow.email[0].toUpperCase()}
+                    </h3>
+                </div>
+            )
+        }
     }
 
 
@@ -70,8 +86,11 @@ class Following extends React.Component {
             follows = this.state.following.map( (follow, i) => {
                 return (
                     <li key={follow.id}>
-                        <span>
-                            {follow.username}
+                        <span className="following-index__image-name">
+                            {this.profilePic(follow)}
+                            <span>
+                                {follow.username}
+                            </span>
                         </span>
                         {this.followBtn(follow.id)}
                     </li>
