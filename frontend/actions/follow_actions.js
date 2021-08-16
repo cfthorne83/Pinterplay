@@ -20,7 +20,6 @@ export const receiveFollow = (follow) => {
 }
 
 export const removeFollow = (followId) => {
-    debugger
     return {
         type: REMOVE_FOLLOW,
         followId
