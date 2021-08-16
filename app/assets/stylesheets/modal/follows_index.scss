@@ -53,4 +53,11 @@
     button:hover {
         background-color: var(--hov-grey);
     }
+
+    &__pic{
+        background-color: deeppink;
+        min-width: 40px;
+        min-height: 40px;
+        border-radius: 50%;
+    }
 }

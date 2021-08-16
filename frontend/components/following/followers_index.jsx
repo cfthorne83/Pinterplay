@@ -51,6 +51,7 @@ class Followers extends React.Component {
 
             return (
                     <li>
+                        <img class="following-index__pic" src="" alt="" />
                         <span>
                             {follower.username}
                         </span>
