@@ -18,31 +18,34 @@ sophia = User.create(
                         email: "demo@fakemail.com", 
                         password: "123456",
                         image_url: "images/sophia.jpg"
-                    ) 
-
-dorothy = User.create(
+                        ) 
+                    
+                    dorothy = User.create(
                         fname: "Dorothy", 
                         lname: "Zbornak", 
                         username:"Dorothy", 
                         email: "dorothy@ggirl.com", 
-                        password: "123456"
-                    )
-
-blanche = User.create(
+                        password: "123456",
+                        image_url: "images/dorothy.jpeg"
+                        )
+                        
+                    blanche = User.create(
                         fname: "Blanche", 
                         lname: "Devereaux", 
                         username:"Blanche", 
                         email: "blanche@ggirl.com", 
-                        password: "123456"
-                    )
-
-rose = User.create(
+                        password: "123456",
+                        image_url: "images/blanche.jpeg"
+                        )
+                            
+                    rose = User.create(
                         fname: "Rose", 
                         lname: "Nylund", 
                         username:"Rose", 
                         email: "rose@ggirl.com", 
-                        password: "123456"
-                    )
+                        password: "123456",
+                        image_url: "images/rose.jpeg"
+                        )
 
 
 # boards------------------------------------------------------------------------
