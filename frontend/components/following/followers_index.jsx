@@ -51,9 +51,9 @@ class Followers extends React.Component {
 
             return (
                     <li>
-                        <h2>
+                        <span>
                             {follower.username}
-                        </h2>
+                        </span>
                         {this.followBtn(follower)}
                     </li>
             )
@@ -61,7 +61,7 @@ class Followers extends React.Component {
 
         return (
             <div className="following-index">
-                <h1>{this.state.followers.length} Followers</h1>
+                <h1>Followers</h1>
                 <ul>
                     {followers}
                 </ul>

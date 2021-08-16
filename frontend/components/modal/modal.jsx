@@ -60,11 +60,11 @@ const Modal = ({ modal, closeModal, errors }) =>  {
             break;
         case 'followers':
             component = <FollowersContainer/>;
-            modalClass = "Follower";
+            modalClass = "follow-mod";
             break;
         case 'following':
             component = <FollowingContainer/>;
-            modalClass = "pin-show-link-mod";
+            modalClass = "follow-mod";
             break;
         default:
             return null;
