@@ -4,7 +4,8 @@ class Api::FriendshipsController < ApplicationController
     before_action :find_user, only: [:create, :destroy]
 
     def index 
-        @user = current_user
+        # @user = current_user
+        @user = User.find(params[:userId])
         @following = @user.following
         @followers = @user.followers
         render :index
@@ -37,7 +38,7 @@ class Api::FriendshipsController < ApplicationController
     end
 
     def friendship_params
-        params.require(:friendship).permit(:follower_id, :followed_id, :id)
+        params.require(:friendship).permit(:follower_id, :followed_id, :userId)
     end
 
 end

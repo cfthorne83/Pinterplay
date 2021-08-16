@@ -1,8 +1,11 @@
 
 
-export const fetchFollows = () => {
+export const fetchFollows = (userId) => {
+    debugger
     return $.ajax({
-        url: '/api/friendships'
+        url: '/api/friendships',
+        method: "GET",
+        data: { userId }
     })
 }
 

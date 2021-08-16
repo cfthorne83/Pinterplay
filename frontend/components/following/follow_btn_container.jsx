@@ -22,7 +22,7 @@ const mdp = (dispatch, ownProps) => {
     return  {
         createFollow: (friendship) => dispatch(createFollow(friendship)),
         deleteFollow: (friendship) => dispatch(deleteFollow(friendship)),
-        fetchFollows: () => dispatch(fetchFollows())
+        fetchFollows: (userId) => dispatch(fetchFollows(userId))
     }
 }
 
