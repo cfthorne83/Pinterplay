@@ -62,13 +62,18 @@ class Followers extends React.Component {
         }
     }
 
+    linkClick(){
+        console.log("LINKCLICK!");
+    }
+
     render(){
         
         const followers = this.props.followers.map( follower => {
 
             return (
                     <li>
-                        <Link to={`/users/${follower.id}/browse`}>
+                        <Link to={`/users/${follower.id}/browse`}
+                        onClick={this.props.closeModal}>
                         {/* <Link to="/"> */}
                             <span className="following-index__image-name">
                                 {this.profilePic(follower)}

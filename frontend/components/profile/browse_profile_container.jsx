@@ -18,7 +18,8 @@ const mSTP = (state, ownProps) => {
         following = Object.values(state.entities.follows.following);
     }
     return {
-        currentUser: state.entities.follows.followers[ownProps.match.params.userId],
+        currentUser: state.entities.users[ownProps.match.params.userId],
+        // currentUser: state.entities.follows.followers[ownProps.match.params.userId],
         // currentUser: state.entities.users[state.session.id],
         lastBoard: Object.values(state.entities.boards)[0],
         following: following,
