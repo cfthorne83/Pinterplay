@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 import BoardIndexContainer from '../boards/board_index_container';
 import CreateDropdown from "../dropdowns/create_board_pin_dropdown";
+// import PinIndex from "../pins/"
 
 class BrowseProfile extends React.Component{
     constructor(props){
@@ -121,9 +122,9 @@ class BrowseProfile extends React.Component{
 
         const { currentUser } = this.props;
         
-        if (!this.props.currentUser) {
-            return <Redirect to='/'/>
-        } 
+        // if (!this.props.currentUser) {
+        //     return <Redirect to='/'/>
+        // } 
             
         return (
             <div className='profile-page'>
@@ -132,10 +133,10 @@ class BrowseProfile extends React.Component{
                     {this.image()}
                     {this.name()}
                     {this.username()}
-                    {this.followers()}
+                    {/* {this.followers()} */}
                 </section>
 
-                <section className='mid'>
+                {/* <section className='mid'>
                     <div className="edit-link">
                         <Link to={`/users/${currentUser.id}/settings`}>
                             <img src="/images/edit_pen.png" alt=""/>
@@ -147,8 +148,8 @@ class BrowseProfile extends React.Component{
                         openModal={this.props.openModal}
                         board={this.props.lastBoard}
                     />
-                </section>
-                <BoardIndexContainer currentUser={this.props.currentUser}/>
+                </section> */}
+                {/* <BoardIndexContainer currentUser={this.props.currentUser}/> */}
             </div>
 
         );   
