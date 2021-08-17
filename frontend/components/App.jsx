@@ -45,7 +45,7 @@ const App = () => (
             {/* <Route exact path="/users/:userId" component={ProfileContainer} /> */}
             <ProtectedRoute exact path="/users/:userId/settings" component={ProfileSettingsContainer}/>
             <ProtectedRoute exact path="/users/:userId" component={ProfileContainer} />
-            <ProtectedRoute exact path="/users/:userId/browse" component={BrowseProfileContainer} />
+            <Route exact path="/users/:userId/browse" component={BrowseProfileContainer} />
             {/* <Route path="/users/:userId/settings" component={ProfileSettingsContainer}/> */}
             
             {/* <Route exact path="/following" component={FollowingContainer}/> */}

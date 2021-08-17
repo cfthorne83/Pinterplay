@@ -1,7 +1,6 @@
 
 
 export const fetchFollows = (userId) => {
-    debugger
     return $.ajax({
         url: '/api/friendships',
         method: "GET",

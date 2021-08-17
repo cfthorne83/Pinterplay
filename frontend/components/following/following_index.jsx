@@ -38,7 +38,7 @@ class Following extends React.Component {
                 // .then(this.updateState(i))
                 // .then(this.props.fetchUser(this.props.currentUser.id))
         this.props.deleteFollow({follower_id: this.props.currentUser.id, followed_id: followId }, followId)
-            .then(this.props.fetchFollows(this.props.currentUser.id));
+            .then(this.props.fetchFollows());
         
     }
 

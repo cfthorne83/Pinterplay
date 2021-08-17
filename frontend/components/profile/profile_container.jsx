@@ -31,7 +31,7 @@ const mDTP = (dispatch, ownProps) => {
         fetchUser: (userId) => dispatch(fetchUser(userId)),
         openModal: (modal, options) => dispatch(openModal(modal, options)),
         closeModal: () => dispatch(closeModal()),
-        fetchFollows: (userId) => dispatch(fetchFollows(userId)) 
+        fetchFollows: () => dispatch(fetchFollows()) 
     };
 };
 
