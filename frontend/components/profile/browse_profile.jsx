@@ -4,22 +4,24 @@ import { Link } from "react-router-dom";
 
 import BoardIndexContainer from '../boards/board_index_container';
 import CreateDropdown from "../dropdowns/create_board_pin_dropdown";
-// import PinIndex from "../pins/"
+import PinIndexContainer from "../pins/pin_index_container";
 
 class BrowseProfile extends React.Component{
     constructor(props){
         super(props);
 
-        this.state = {currentUser: this.props.currentUser, following: this.props.following, followers: this.props.followers};
+        this.state = {currentUser: this.props.currentUser, 
+            // following: this.props.following, followers: this.props.followers
+        };
 
-        this.handleSubmit = this.handleSubmit.bind(this);
+        // this.handleSubmit = this.handleSubmit.bind(this);
         this.capitalize = this.capitalize.bind(this);
         this.name = this.name.bind(this);
         this.image = this.image.bind(this);
         this.username = this.username.bind(this);
-        this.followers = this.followers.bind(this);
-        this.handleFollowers = this.handleFollowers.bind(this);
-        this.handleFollowing = this.handleFollowing.bind(this);
+        // this.followers = this.followers.bind(this);
+        // this.handleFollowers = this.handleFollowers.bind(this);
+        // this.handleFollowing = this.handleFollowing.bind(this);
     }
 
     // componentDidUpdate(){
@@ -33,9 +35,9 @@ class BrowseProfile extends React.Component{
         // this.props.fetchFollows(this.props.currentUser.id);
     }
 
-    handleSubmit(e){
-        this.props.openModal('createBoard');
-    }
+    // handleSubmit(e){
+    //     this.props.openModal('createBoard');
+    // }
 
     capitalize(name) {
         return name.charAt(0).toUpperCase() + name.slice(1);
@@ -78,45 +80,45 @@ class BrowseProfile extends React.Component{
         }
     }
 
-    handleFollowers() {
-        this.props.openModal("followers", this.props.followers);
-    }
+    // handleFollowers() {
+    //     this.props.openModal("followers", this.props.followers);
+    // }
 
-    handleFollowing() {
-        this.props.openModal("following", this.props.following);
-    }
+    // handleFollowing() {
+    //     this.props.openModal("following", this.props.following);
+    // }
 
-    followers() {
-        if (this.props.followers.length == 1){
-            return (
-                    <h4>
-                        <span
-                            onClick={this.handleFollowers}>
-                            {this.props.followers.length} follower |&nbsp;
-                        </span>
-                        <span
-                            onClick={this.handleFollowing}>
-                            {this.props.following.length} following
-                        </span>
-                    </h4>
-            )
-        } else {
-            return (
-                    <h4>
-                        <span
-                            onClick={this.handleFollowers}>
-                            {/* {this.props.currentUser.followers.length} followers |&nbsp; */}
-                            {this.props.followers.length} followers |&nbsp;
-                        </span>
-                        <span
-                            onClick={this.handleFollowing}>
-                            {/* {this.state.following.length} following */}
-                            {this.props.following.length} following
-                        </span>
-                    </h4>
-            )
-        }
-    }
+    // followers() {
+    //     if (this.props.followers.length == 1){
+    //         return (
+    //                 <h4>
+    //                     <span
+    //                         onClick={this.handleFollowers}>
+    //                         {this.props.followers.length} follower |&nbsp;
+    //                     </span>
+    //                     <span
+    //                         onClick={this.handleFollowing}>
+    //                         {this.props.following.length} following
+    //                     </span>
+    //                 </h4>
+    //         )
+    //     } else {
+    //         return (
+    //                 <h4>
+    //                     <span
+    //                         onClick={this.handleFollowers}>
+    //                         {/* {this.props.currentUser.followers.length} followers |&nbsp; */}
+    //                         {this.props.followers.length} followers |&nbsp;
+    //                     </span>
+    //                     <span
+    //                         onClick={this.handleFollowing}>
+    //                         {/* {this.state.following.length} following */}
+    //                         {this.props.following.length} following
+    //                     </span>
+    //                 </h4>
+    //         )
+    //     }
+    // }
 
     render() {
 
@@ -134,6 +136,10 @@ class BrowseProfile extends React.Component{
                     {this.name()}
                     {this.username()}
                     {/* {this.followers()} */}
+                </section>
+
+                <section>
+                    <PinIndexContainer  userPinIndex={true} currentUser={this.props.currentUser}/>
                 </section>
 
                 {/* <section className='mid'>

@@ -62,10 +62,6 @@ class Followers extends React.Component {
         }
     }
 
-    linkClick(){
-        console.log("LINKCLICK!");
-    }
-
     render(){
         
         const followers = this.props.followers.map( follower => {
@@ -73,15 +69,17 @@ class Followers extends React.Component {
             return (
                     <li>
                         <Link to={`/users/${follower.id}/browse`}
-                        onClick={this.props.closeModal}>
-                        {/* <Link to="/"> */}
+                            onClick={this.props.closeModal}>
+
                             <span className="following-index__image-name">
                                 {this.profilePic(follower)}
                                 <span>
                                     {follower.username}
                                 </span>
                             </span>
+
                         </Link>
+
                         {this.followBtn(follower)}
                     </li>
             )
