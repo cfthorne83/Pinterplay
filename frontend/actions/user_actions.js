@@ -1,14 +1,15 @@
+import usersReducer from "../reducers/users_reducer";
 import * as UserApiUtil from "../util/user.api.util";
 
-export const RECEIVE_USER = 'RECEIVE_USER';
+export const RECEIVE_ALL_USERS = 'RECEIVE_ALL_USERS';
 import { receiveCurrentUser } from "./session_actions";
 
-// export const receiveUser = (user) => {
-//     return {
-//         type: RECEIVE_USER,
-//         user
-//     }
-// };
+export const receiveUsers = (users) => {
+    return {
+        type: RECEIVE_ALL_USERS,
+        users
+    }
+};
 
 // export const updateUser = (user) => {
 //     return dispatch => {
@@ -17,6 +18,14 @@ import { receiveCurrentUser } from "./session_actions";
 //         })
 //     }
 // }
+
+export const fetchUsers = () => {
+    return dispatch => {
+        return UserApiUtil.fetchUsers().then( users => {
+            dispatch(receiveUsers(users))
+        })
+    }
+}
 
 export const updateUser = (user) => {
     return dispatch => {
