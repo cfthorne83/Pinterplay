@@ -31,7 +31,9 @@ class BrowseProfile extends React.Component{
     // }
 
     componentDidMount() {
+        debugger
         // this.props.fetchUser(this.props.currentUser.id);
+        this.props.fetchUsers();
         // this.props.fetchFollows(this.props.currentUser.id);
     }
 
@@ -44,24 +46,25 @@ class BrowseProfile extends React.Component{
     }
     
     name() {
-        if (this.state.currentUser.fname && this.state.currentUser.lname) {
+        if (this.props.currentUser.fname && this.props.currentUser.lname) {
             return (
                 <h2>
-                    {this.capitalize(this.state.currentUser.fname)}&nbsp;
-                    {this.capitalize(this.state.currentUser.lname)}
+                    {this.capitalize(this.props.currentUser.fname)}&nbsp;
+                    {this.capitalize(this.props.currentUser.lname)}
                 </h2>
             )
         } else {
             return (
-                <h2>{this.state.currentUser.email}</h2>
+                <h2>{this.props.currentUser.email}</h2>
             )
         }
     }
 
     image() {
-        if (this.state.currentUser.image_url) {
+        // debugger
+        if (this.props.currentUser.image_url) {
             return (
-                <img src={this.state.currentUser.image_url} alt="profile-image"/>
+                <img src={this.props.currentUser.image_url} alt="profile-image"/>
             )
         } else {
             return (
@@ -73,9 +76,9 @@ class BrowseProfile extends React.Component{
     }
 
     username() {
-        if (this.state.currentUser.username){
+        if (this.props.currentUser.username){
             return (
-                <h3>@{this.state.currentUser.username}</h3>
+                <h3>@{this.props.currentUser.username}</h3>
             )
         }
     }
@@ -124,9 +127,10 @@ class BrowseProfile extends React.Component{
 
         const { currentUser } = this.props;
         
-        // if (!this.props.currentUser) {
-        //     return <Redirect to='/'/>
-        // } 
+        if (!this.props.currentUser) {
+            debugger
+            return null;
+        } 
             
         return (
             <div className='profile-page'>

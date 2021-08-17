@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { openModal, closeModal } from '../../actions/modal_actions';
-import { fetchUser } from '../../actions/user_actions';
+import { fetchUser, fetchUsers } from '../../actions/user_actions';
 import { fetchFollows } from '../../actions/follow_actions';
 
 
@@ -32,7 +32,8 @@ const mDTP = (dispatch, ownProps) => {
         fetchUser: (userId) => dispatch(fetchUser(userId)),
         openModal: (modal, options) => dispatch(openModal(modal, options)),
         closeModal: () => dispatch(closeModal()),
-        fetchFollows: (userId) => dispatch(fetchFollows(userId)) 
+        fetchFollows: (userId) => dispatch(fetchFollows(userId)),
+        fetchUsers: () => dispatch(fetchUsers()) 
     };
 };
 
