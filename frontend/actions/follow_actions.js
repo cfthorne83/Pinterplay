@@ -26,9 +26,9 @@ export const removeFollow = (followId) => {
     }
 }
 
-export const fetchFollows = (data) => {
+export const fetchFollows = (friendship) => {
     return dispatch => {
-        return FollowApiUtil.fetchFollows(data).then(follows => {
+        return FollowApiUtil.fetchFollows(friendship).then(follows => {
             dispatch(receiveFollows(follows))
         })
     }
