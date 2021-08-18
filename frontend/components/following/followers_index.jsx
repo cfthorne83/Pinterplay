@@ -83,7 +83,7 @@ class Followers extends React.Component {
 
                         </Link>
 
-                        {this.followBtn(follower)}
+                        {/* {this.followBtn(follower)} */}
                         <FollowBtnItemContainer user={follower}/>
                     </li>
             )

@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import BoardIndexContainer from '../boards/board_index_container';
 import CreateDropdown from "../dropdowns/create_board_pin_dropdown";
 import PinIndexContainer from "../pins/pin_index_container";
+import FollowBtnItemContainer from "../following/follow_btn_item_container"
 
 class BrowseProfile extends React.Component{
     constructor(props){
@@ -135,6 +136,7 @@ class BrowseProfile extends React.Component{
                     {this.image()}
                     {this.name()}
                     {this.username()}
+                    < FollowBtnItemContainer user={this.props.currentUser}/>
                     {/* {this.followers()} */}
                 </section>
 
