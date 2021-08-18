@@ -134,7 +134,7 @@ class Profile extends React.Component{
                     {this.image()}
                     {this.name()}
                     {this.username()}
-                    {this.followers()}
+                    {/* {this.followers()} */}
                     <FollowLinksContainer user={this.props.currentUser}/>
                 </section>
 

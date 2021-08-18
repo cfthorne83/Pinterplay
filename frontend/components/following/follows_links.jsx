@@ -128,8 +128,8 @@ class FollowLinks extends React.Component{
             
         return (
             <div className='profile-page'>
-                    {/* {this.followers()} */}
-                    follow links
+                    {this.followers()}
+                    {/* follow links */}
             </div>
 
         );   
