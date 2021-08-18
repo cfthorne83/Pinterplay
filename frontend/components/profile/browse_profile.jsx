@@ -31,10 +31,8 @@ class BrowseProfile extends React.Component{
     // }
 
     componentDidMount() {
-        debugger
-        // this.props.fetchUser(this.props.currentUser.id);
-        this.props.fetchUsers();
-        // this.props.fetchFollows(this.props.currentUser.id);
+        this.props.fetchUsers()
+        // .then(this.props.fetchFollows({user_id: this.props.currentUser.id}));
     }
 
     // handleSubmit(e){
@@ -61,7 +59,6 @@ class BrowseProfile extends React.Component{
     }
 
     image() {
-        // debugger
         if (this.props.currentUser.image_url) {
             return (
                 <img src={this.props.currentUser.image_url} alt="profile-image"/>
@@ -128,7 +125,6 @@ class BrowseProfile extends React.Component{
         const { currentUser } = this.props;
         
         if (!this.props.currentUser) {
-            debugger
             return null;
         } 
             
@@ -142,7 +138,7 @@ class BrowseProfile extends React.Component{
                     {/* {this.followers()} */}
                 </section>
 
-                <section>
+                <section className="browse-pin-index">
                     <PinIndexContainer  userPinIndex={true} currentUser={this.props.currentUser}/>
                 </section>
 
