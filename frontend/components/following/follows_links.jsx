@@ -4,13 +4,12 @@ import { Link } from "react-router-dom";
 
 import BoardIndexContainer from '../boards/board_index_container';
 import CreateDropdown from "../dropdowns/create_board_pin_dropdown";
-import FollowLinksContainer from "../following/follows_links_container";
 
-class Profile extends React.Component{
+class FollowLinks extends React.Component{
     constructor(props){
         super(props);
 
-        this.state = {currentUser: this.props.currentUser, following: this.props.following, followers: this.props.followers};
+        this.state = {user: this.props.user, following: this.props.following, followers: this.props.followers};
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.capitalize = this.capitalize.bind(this);
@@ -30,8 +29,8 @@ class Profile extends React.Component{
 
     componentDidMount() {
         // this.props.fetchUser(this.props.currentUser.id);
-        this.props.fetchUsers();
-        this.props.fetchFollows();
+        // this.props.fetchUsers();
+        this.props.fetchFollows({ userId: this.props.user.id });
     }
 
     handleSubmit(e){
@@ -121,41 +120,20 @@ class Profile extends React.Component{
 
     render() {
 
-        const { currentUser } = this.props;
+        const { user } = this.props;
         
-        if (!this.props.currentUser) {
+        if (!this.props.user) {
             return <Redirect to='/'/>
         } 
             
         return (
             <div className='profile-page'>
-
-                <section className='heading'>
-                    {this.image()}
-                    {this.name()}
-                    {this.username()}
-                    {this.followers()}
-                    <FollowLinksContainer user={this.props.currentUser}/>
-                </section>
-
-                <section className='mid'>
-                    <div className="edit-link">
-                        <Link to={`/users/${currentUser.id}/settings`}>
-                            <img src="/images/edit_pen.png" alt=""/>
-                        </Link>
-                    </div>
-
-                    <CreateDropdown 
-                        className="board-pin-drop"
-                        openModal={this.props.openModal}
-                        board={this.props.lastBoard}
-                    />
-                </section>
-                <BoardIndexContainer currentUser={this.props.currentUser}/>
+                    {/* {this.followers()} */}
+                    follow links
             </div>
 
         );   
     }
 }
 
-export default Profile;
+export default FollowLinks;
