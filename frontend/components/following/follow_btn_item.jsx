@@ -49,7 +49,7 @@ class FollowBtnItem extends React.Component {
      
         return (
             <div >
-                {this.followBtn(this.props.user.id)}
+                {this.followBtn(this.props.user)}
             </div>
         )
     }
