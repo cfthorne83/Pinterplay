@@ -1,0 +1,22 @@
+.follow-btn-item, .unfollow-btn-item {
+    padding: var(--btn-pad);
+    border-radius: 9999px;
+    font-weight: 600;
+    letter-spacing: var(--lett-space);
+    font-size: var(--btn-font-size);
+}
+
+.follow-btn-item{
+    background-color: var(--red);
+    color: white;
+}
+.follow-btn-item:hover{
+    background-color: var(--red-btn-hov);
+}
+
+.unfollow-btn-item{
+    background-color: var(--lt-grey);    
+}
+.unfollow-btn-item:hover{
+    background-color: var(--hov-grey);    
+}

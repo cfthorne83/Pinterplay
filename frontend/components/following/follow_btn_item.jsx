@@ -29,7 +29,7 @@ class FollowBtnItem extends React.Component {
                 // if(this.state.followIds.includes(follower.id)){
                 if(followingIds.includes(follower.id)){
                     return (
-                        <button className="following-index__unfollow-btn"
+                        <button className="unfollow-btn-item"
                             onClick={ (e) => {this.handleUnfollow(e, follower.id)}}
                             >
                             Unfollow
@@ -37,7 +37,7 @@ class FollowBtnItem extends React.Component {
                     )
                 }else if(!followingIds.includes(follower.id)){
                     return(
-                        <button className="following-index__follow-btn"
+                        <button className="follow-btn-item"
                             onClick={ (e) => {this.handleFollow(e, follower.id)}}
                             >Follow
                         </button>
