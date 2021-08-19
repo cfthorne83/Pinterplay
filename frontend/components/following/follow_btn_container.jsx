@@ -4,25 +4,21 @@ import FollowBtn from "./follow_btn";
 import { createFollow, deleteFollow, fetchFollows} from "../../actions/follow_actions";
 
 const msp = (state, ownProps) => {
-    let pin;
-    let followers;
-    let followed_id;
     if (ownProps.pin){
-        pin = ownProps.pin;
-        followers = ownProps.pin.followers.length;
-        followed_id = ownProps.pin.user.id
+        let pin = ownProps.pin;
+        followers: ownProps.pin.followers.length
+        followIds: ownProps.currentUser.following.map( follow => {
+            return follow.id
+        })
     }
-
     return {
         // friendship: {follower_id: state.session.id, followed_id: ownProps.pin.user.id},
-        friendship: { follower_id: state.session.id, followed_id: followed_id },
+        friendship: {follower_id: state.session.id, followed_id: ownProps.pin.user.id},
         // follower_id: state.sesssion.id,
         // followed_id: ownProps.pin.user.id,
-        pin: pin,
-        // currentUser: ownProps.currentUser,
-        currentUser: state.entities.users[state.session.id],
-        user: state.entities.users[ownProps.match.params.userId],
-        followers: followers,
+        pin: ownProps.pin,
+        currentUser: ownProps.currentUser,
+        followers: ownProps.pin.followers.length,
         followIds: ownProps.currentUser.following.map( follow => {
             return follow.id
         })
@@ -32,7 +28,7 @@ const msp = (state, ownProps) => {
 const mdp = (dispatch, ownProps) => {
     return  {
         createFollow: (friendship) => dispatch(createFollow(friendship)),
-        deleteFollow: (friendship, followId) => dispatch(deleteFollow(friendship, followId)),
+        deleteFollow: (friendship) => dispatch(deleteFollow(friendship)),
         fetchFollows: () => dispatch(fetchFollows())
     }
 }

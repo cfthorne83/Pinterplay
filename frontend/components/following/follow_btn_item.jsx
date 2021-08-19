@@ -27,6 +27,7 @@ class FollowBtnItem extends React.Component {
     followBtn(follower) {
         const followingIds = this.props.following.map(follow => { return follow.id });
                 // if(this.state.followIds.includes(follower.id)){
+                    
                 if(followingIds.includes(follower.id)){
                     return (
                         <button className="unfollow-btn-item"

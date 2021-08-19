@@ -26,7 +26,7 @@ class FollowLinks extends React.Component{
         //     this.setState({ following: this.props.following, followers: this.props.following  })
         // }
         // if(this.props.following != prevProps.following){
-        //     // debugger
+        //     // 
         //     this.props.fetchFollows({userId: this.props.user.id});
         // }
     }
