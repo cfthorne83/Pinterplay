@@ -1,5 +1,8 @@
 import React from "react";
 import { fetchBoards } from "../../actions/board_actions";
+import FollowBtnItem from "./follow_btn_item";
+
+import FollowBtnItemContainer from "./follow_btn_item_container";
 
 class Following extends React.Component {
     constructor(props){
@@ -38,7 +41,8 @@ class Following extends React.Component {
                 // .then(this.updateState(i))
                 // .then(this.props.fetchUser(this.props.currentUser.id))
         this.props.deleteFollow({follower_id: this.props.currentUser.id, followed_id: followId }, followId)
-            .then(this.props.fetchFollows());
+            .then(this.props.fetchUsers());
+            // .then(this.props.fetchFollows());
         
     }
 
@@ -92,7 +96,8 @@ class Following extends React.Component {
                                 {follow.username}
                             </span>
                         </span>
-                        {this.followBtn(follow.id)}
+                        {/* {this.followBtn(follow.id)} */}
+                        <FollowBtnItemContainer user={follow}/>
                     </li>
                 )
             })

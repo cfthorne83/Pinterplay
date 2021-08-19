@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import FollowBtnItem from "./follow_btn_item";
 
-import FollowBtnItemContainer from "./follow_btn_item_container"
+import FollowBtnItemContainer from "./follow_btn_item_container";
 
 class Followers extends React.Component {
     constructor(props){
