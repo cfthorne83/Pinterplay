@@ -137,7 +137,7 @@ class BrowseProfile extends React.Component{
                     {this.name()}
                     {this.username()}
                     <FollowBtnItemContainer user={this.props.user}/>
-                    {/* <FollowLinksContainer user={this.props.currentUser} /> */}
+                    <FollowLinksContainer user={this.props.user} />
                     {/* {this.followers()} */}
                 </section>
 
