@@ -12,7 +12,7 @@ class BrowseProfile extends React.Component{
     constructor(props){
         super(props);
 
-        this.state = {currentUser: this.props.currentUser, 
+        this.state = {user: this.props.user, 
             // following: this.props.following, followers: this.props.followers
         };
 
@@ -46,38 +46,38 @@ class BrowseProfile extends React.Component{
     }
     
     name() {
-        if (this.props.currentUser.fname && this.props.currentUser.lname) {
+        if (this.props.user.fname && this.props.user.lname) {
             return (
                 <h2>
-                    {this.capitalize(this.props.currentUser.fname)}&nbsp;
-                    {this.capitalize(this.props.currentUser.lname)}
+                    {this.capitalize(this.props.user.fname)}&nbsp;
+                    {this.capitalize(this.props.user.lname)}
                 </h2>
             )
         } else {
             return (
-                <h2>{this.props.currentUser.email}</h2>
+                <h2>{this.props.user.email}</h2>
             )
         }
     }
 
     image() {
-        if (this.props.currentUser.image_url) {
+        if (this.props.user.image_url) {
             return (
-                <img src={this.props.currentUser.image_url} alt="profile-image"/>
+                <img src={this.props.user.image_url} alt="profile-image"/>
             )
         } else {
             return (
                 <h1 className='initial-container'>
-                    <p>{this.props.currentUser.email[0].toUpperCase()}</p>
+                    <p>{this.props.user.email[0].toUpperCase()}</p>
                 </h1>
             )
         }
     }
 
     username() {
-        if (this.props.currentUser.username){
+        if (this.props.user.username){
             return (
-                <h3>@{this.props.currentUser.username}</h3>
+                <h3>@{this.props.user.username}</h3>
             )
         }
     }
@@ -124,9 +124,9 @@ class BrowseProfile extends React.Component{
 
     render() {
 
-        const { currentUser } = this.props;
+        const { user } = this.props;
         
-        if (!this.props.currentUser) {
+        if (!this.props.user) {
             return null;
         } 
         return (
@@ -136,13 +136,13 @@ class BrowseProfile extends React.Component{
                     {this.image()}
                     {this.name()}
                     {this.username()}
-                    <FollowBtnItemContainer user={this.props.currentUser}/>
-                    <FollowLinksContainer user={this.props.currentUser} />
+                    <FollowBtnItemContainer user={this.props.user}/>
+                    {/* <FollowLinksContainer user={this.props.currentUser} /> */}
                     {/* {this.followers()} */}
                 </section>
 
                 <section className="browse-pin-index">
-                    <PinIndexContainer  userPinIndex={true} currentUser={this.props.currentUser}/>
+                    <PinIndexContainer  userPinIndex={true} currentUser={this.props.user}/>
                 </section>
 
                 {/* <section className='mid'>
