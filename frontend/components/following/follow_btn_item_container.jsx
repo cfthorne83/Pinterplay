@@ -5,11 +5,12 @@ import FollowBtnItem from "./follow_btn_item";
 import {createFollow, fetchFollows,
     deleteFollow
 } from '../../actions/follow_actions';
+import {fetchUsers} from "../../actions/user_actions";
 
 const msp = (state, ownProps) => {
     let currentUser = state.entities.users[state.session.id];
-    let followers = [];
-    let following = [];
+    let followers = currentUser.followers;
+    let following = currentUser.following;
 
     // if (state.entities.follows.followers && state.entities.follows.following){
     //     followers = Object.values(state.entities.follows.followers);
@@ -35,7 +36,8 @@ const mdp = (dispatch, ownProps) => {
     return  {
         deleteFollow: (friendship, followId) => dispatch(deleteFollow(friendship, followId)),
         createFollow: (friendship) => dispatch(createFollow(friendship)),
-        fetchFollows: () => dispatch(fetchFollows())
+        fetchFollows: () => dispatch(fetchFollows()),
+        fetchUsers: () => dispatch(fetchUsers())
     }
 }
 

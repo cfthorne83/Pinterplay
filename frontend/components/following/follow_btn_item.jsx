@@ -14,14 +14,16 @@ class FollowBtnItem extends React.Component {
     handleUnfollow(e, followId){
         e.stopPropagation();
         this.props.deleteFollow({follower_id: this.props.currentUser.id, followed_id: followId }, followId)
-            .then(this.props.fetchFollows());
+            .then(this.props.fetchUsers());
+            // .then(this.props.fetchFollows());
         
     }
 
     handleFollow(e, followId){
         e.stopPropagation();
         this.props.createFollow({follower_id: this.props.currentUser.id, followed_id: followId })
-            .then(this.props.fetchFollows());
+            .then(this.props.fetchUsers());
+            // .then(this.props.fetchFollows());
     }
 
     followBtn(follower) {
