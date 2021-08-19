@@ -4,7 +4,8 @@ class Api::FriendshipsController < ApplicationController
     before_action :find_user, only: [:create, :destroy]
 
     def index 
-        if params[:userId]
+        if params[:data]
+            debugger
             @user = User.find(friendship_params[:userId])
         else 
             @user = current_user
