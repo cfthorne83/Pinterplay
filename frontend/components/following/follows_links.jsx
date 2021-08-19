@@ -21,16 +21,19 @@ class FollowLinks extends React.Component{
         this.handleFollowing = this.handleFollowing.bind(this);
     }
 
-    // componentDidUpdate(){
-    //     if ((this.state.following != this.props.following) || (this.state.followers != this.props.followers)){
-    //         this.setState({ following: this.props.following, followers: this.props.following  })
-    //     }
-    // }
+    componentDidUpdate(prevProps){
+        // if ((this.state.following != this.props.following) || (this.state.followers != this.props.followers)){
+        //     this.setState({ following: this.props.following, followers: this.props.following  })
+        // }
+        // if(this.props.following != prevProps.following){
+        //     // debugger
+        //     this.props.fetchFollows({userId: this.props.user.id});
+        // }
+    }
 
     componentDidMount() {
         // this.props.fetchUser(this.props.currentUser.id);
         // this.props.fetchUsers();
-        debugger
         this.props.fetchFollows({userId: this.props.user.id});
     }
 

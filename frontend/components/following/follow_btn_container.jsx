@@ -19,7 +19,9 @@ const msp = (state, ownProps) => {
         // follower_id: state.sesssion.id,
         // followed_id: ownProps.pin.user.id,
         pin: pin,
-        currentUser: ownProps.currentUser,
+        // currentUser: ownProps.currentUser,
+        currentUser: state.entities.users[state.session.id],
+        user: state.entities.users[ownProps.match.params.userId],
         followers: followers,
         followIds: ownProps.currentUser.following.map( follow => {
             return follow.id

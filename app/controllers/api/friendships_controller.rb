@@ -5,8 +5,7 @@ class Api::FriendshipsController < ApplicationController
 
     def index 
         if params[:data]
-            debugger
-            @user = User.find(friendship_params[:userId])
+            @user = User.find(params[:data][:userId])
         else 
             @user = current_user
         end
