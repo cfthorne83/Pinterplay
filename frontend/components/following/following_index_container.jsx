@@ -21,7 +21,7 @@ const msp = (state, ownProps) => {
         following: following,
         currentUser: currentUser,
         // user: state.entities.users[ownProps.match.params.userId]
-        user: state.ui.modal.options
+        // user: s1tate.ui.modal.options
     }
 }
 
