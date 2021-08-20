@@ -11,6 +11,12 @@ class PinIndex extends React.Component {
         this.state = { loading: true, searchInput: this.props.searchInput, noFollows: false, fetched: false}
     }
 
+    componentDidUpdate(prevProps) {
+        if (this.props.currentUser != prevProps.currentUser && this.props.userPinIndex){
+            this.props.fetchPins({user: this.props.currentUser.id});
+        }
+    }
+
     componentDidMount() {
         const that = this;
         if (this.props.board){

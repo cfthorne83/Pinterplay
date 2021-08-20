@@ -26,14 +26,15 @@ class BrowseProfile extends React.Component{
         // this.handleFollowing = this.handleFollowing.bind(this);
     }
 
-    componentDidUpdate(){
-        if ((this.state.following != this.props.following) || (this.state.followers != this.props.followers)){
-            this.setState({ following: this.props.following, followers: this.props.following  })
-        }
-    }
+    // componentDidUpdate(prevProps){
+    //     if (this.props.user.id != prevProps.user.id){
+    //         // debugger
+    //         // this.props.fetchUsers();
+    //     }
+    // }
 
     componentDidMount() {
-        this.props.fetchUsers()
+        this.props.fetchUsers();
     }
 
     capitalize(name) {
