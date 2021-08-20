@@ -26,20 +26,15 @@ class BrowseProfile extends React.Component{
         // this.handleFollowing = this.handleFollowing.bind(this);
     }
 
-    // componentDidUpdate(){
-    //     if ((this.state.following != this.props.following) || (this.state.followers != this.props.followers)){
-    //         this.setState({ following: this.props.following, followers: this.props.following  })
-    //     }
-    // }
+    componentDidUpdate(){
+        if ((this.state.following != this.props.following) || (this.state.followers != this.props.followers)){
+            this.setState({ following: this.props.following, followers: this.props.following  })
+        }
+    }
 
     componentDidMount() {
         this.props.fetchUsers()
-        // .then(this.props.fetchFollows({user_id: this.props.currentUser.id}));
     }
-
-    // handleSubmit(e){
-    //     this.props.openModal('createBoard');
-    // }
 
     capitalize(name) {
         return name.charAt(0).toUpperCase() + name.slice(1);
@@ -82,46 +77,6 @@ class BrowseProfile extends React.Component{
         }
     }
 
-    // handleFollowers() {
-    //     this.props.openModal("followers", this.props.followers);
-    // }
-
-    // handleFollowing() {
-    //     this.props.openModal("following", this.props.following);
-    // }
-
-    // followers() {
-    //     if (this.props.followers.length == 1){
-    //         return (
-    //                 <h4>
-    //                     <span
-    //                         onClick={this.handleFollowers}>
-    //                         {this.props.followers.length} follower |&nbsp;
-    //                     </span>
-    //                     <span
-    //                         onClick={this.handleFollowing}>
-    //                         {this.props.following.length} following
-    //                     </span>
-    //                 </h4>
-    //         )
-    //     } else {
-    //         return (
-    //                 <h4>
-    //                     <span
-    //                         onClick={this.handleFollowers}>
-    //                         {/* {this.props.currentUser.followers.length} followers |&nbsp; */}
-    //                         {this.props.followers.length} followers |&nbsp;
-    //                     </span>
-    //                     <span
-    //                         onClick={this.handleFollowing}>
-    //                         {/* {this.state.following.length} following */}
-    //                         {this.props.following.length} following
-    //                     </span>
-    //                 </h4>
-    //         )
-    //     }
-    // }
-
     render() {
 
         const { user } = this.props;
@@ -138,27 +93,12 @@ class BrowseProfile extends React.Component{
                     {this.username()}
                     <FollowBtnItemContainer user={this.props.user}/>
                     <FollowLinksContainer user={this.props.user} />
-                    {/* {this.followers()} */}
                 </section>
 
                 <section className="browse-pin-index">
                     <PinIndexContainer  userPinIndex={true} currentUser={this.props.user}/>
                 </section>
 
-                {/* <section className='mid'>
-                    <div className="edit-link">
-                        <Link to={`/users/${currentUser.id}/settings`}>
-                            <img src="/images/edit_pen.png" alt=""/>
-                        </Link>
-                    </div>
-
-                    <CreateDropdown 
-                        className="board-pin-drop"
-                        openModal={this.props.openModal}
-                        board={this.props.lastBoard}
-                    />
-                </section> */}
-                {/* <BoardIndexContainer currentUser={this.props.currentUser}/> */}
             </div>
 
         );   
