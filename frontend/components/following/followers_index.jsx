@@ -71,7 +71,7 @@ class Followers extends React.Component {
             if (follower.id != this.props.currentUser.id) {
 
                 return (
-                        <li>
+                        <li key={follower.id}>
                             <Link to={`/users/${follower.id}/browse`}
                                 onClick={this.props.closeModal}>
     
@@ -90,7 +90,7 @@ class Followers extends React.Component {
                 )
             } else {
                 return (
-                        <li>
+                        <li key={follower.id}>
                             <Link to={`/users/${this.props.currentUser.id}`}
                                 onClick={this.props.closeModal}>
     

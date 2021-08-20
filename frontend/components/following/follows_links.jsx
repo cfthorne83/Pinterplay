@@ -31,6 +31,13 @@ class FollowLinks extends React.Component{
         // }
     }
 
+    componentDidUpdate(prevProps) {
+        if (prevProps.user != this.props.user){
+            // debugger
+            this.props.fetchFollows({userId: this.props.user.id});
+        }
+    }
+
     componentDidMount() {
         // this.props.fetchUser(this.props.currentUser.id);
         // this.props.fetchUsers();
