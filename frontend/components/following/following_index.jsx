@@ -81,40 +81,60 @@ class Following extends React.Component {
     }
 
 
+    render(){
+        
+        const following = this.props.following.map( follow => {
+            if (follow.id != this.props.currentUser.id) {
 
-    render() {
-
-        let follows;
-        if (this.state.following.length > 0){
-
-            follows = this.state.following.map( (follow, i) => {
                 return (
-                    <li key={follow.id}>
-                        <span className="following-index__image-name">
-                            {this.profilePic(follow)}
-                            <span>
-                                {follow.username}
-                            </span>
-                        </span>
-                        {/* {this.followBtn(follow.id)} */}
-                        <FollowBtnItemContainer user={follow}/>
-                    </li>
+                        <li>
+                            <Link to={`/users/${follow.id}/browse`}
+                                onClick={this.props.closeModal}>
+    
+                                <span className="following-index__image-name">
+                                    {this.profilePic(follow)}
+                                    <span>
+                                        {follow.username}
+                                    </span>
+                                </span>
+    
+                            </Link>
+    
+                            <FollowBtnItemContainer user={follow}/>
+                        </li>
                 )
-            })
-        } else {
-            follows = <h2>You are not following anyone...</h2>
-        }
+            } else {
+                return (
+                        <li>
+                            <Link to={`/users/${this.props.currentUser.id}`}
+                                onClick={this.props.closeModal}>
     
+                                <span className="following-index__image-name">
+                                    {this.profilePic(follower)}
+                                    <span>
+                                        {follower.username}
+                                    </span>
+                                </span>
     
-    return (
-        <div className="following-index">
-            <h1>Following</h1>
-            <ul>
-                {follows}
-            </ul>
-        </div>
-    )
-    }
+                            </Link>
+    
+                            {/* {this.followBtn(follower)} */}
+                            {/* <FollowBtnItemContainer user={follower}/> */}
+                        </li>
+                )
+                
+            }
+        })
+
+        return (
+            <div className="following-index">
+                <h1>Followers</h1>
+                <ul>
+                    {followers}
+                </ul>
+            </div>
+        )
+    }   
 
 }
     
