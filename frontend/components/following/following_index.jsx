@@ -1,6 +1,5 @@
 import React from "react";
-import { fetchBoards } from "../../actions/board_actions";
-import FollowBtnItem from "./follow_btn_item";
+import { Link } from 'react-router-dom';
 
 import FollowBtnItemContainer from "./follow_btn_item_container";
 
@@ -110,19 +109,15 @@ class Following extends React.Component {
                                 onClick={this.props.closeModal}>
     
                                 <span className="following-index__image-name">
-                                    {this.profilePic(follower)}
+                                    {this.profilePic(follow)}
                                     <span>
-                                        {follower.username}
+                                        {follow.username}
                                     </span>
                                 </span>
     
                             </Link>
-    
-                            {/* {this.followBtn(follower)} */}
-                            {/* <FollowBtnItemContainer user={follower}/> */}
                         </li>
-                )
-                
+                    )               
             }
         })
 
@@ -130,7 +125,7 @@ class Following extends React.Component {
             <div className="following-index">
                 <h1>Followers</h1>
                 <ul>
-                    {followers}
+                    {following}
                 </ul>
             </div>
         )
