@@ -21,16 +21,6 @@ class FollowLinks extends React.Component{
         this.handleFollowing = this.handleFollowing.bind(this);
     }
 
-    componentDidUpdate(prevProps){
-        // if ((this.state.following != this.props.following) || (this.state.followers != this.props.followers)){
-        //     this.setState({ following: this.props.following, followers: this.props.following  })
-        // }
-        // if(this.props.following != prevProps.following){
-        //     // 
-        //     this.props.fetchFollows({userId: this.props.user.id});
-        // }
-    }
-
     componentDidUpdate(prevProps) {
         if (prevProps.user != this.props.user){
             this.props.fetchFollows({userId: this.props.user.id});
@@ -113,12 +103,10 @@ class FollowLinks extends React.Component{
                     <h4>
                         <span
                             onClick={this.handleFollowers}>
-                            {/* {this.props.currentUser.followers.length} followers |&nbsp; */}
                             {this.props.followers.length} followers |&nbsp;
                         </span>
                         <span
                             onClick={this.handleFollowing}>
-                            {/* {this.state.following.length} following */}
                             {this.props.following.length} following
                         </span>
                     </h4>
@@ -137,7 +125,6 @@ class FollowLinks extends React.Component{
         return (
             <div className='profile-page'>
                     {this.followers()}
-                    {/* follow links */}
             </div>
 
         );   
