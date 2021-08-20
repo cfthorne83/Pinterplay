@@ -7,6 +7,7 @@ class Searchbar extends React.Component{
 
         this.handleInput = this.handleInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.button = this.button.bind(this);
     }
 
     handleInput(e) {
@@ -17,11 +18,23 @@ class Searchbar extends React.Component{
     }
     
     handleSubmit(e) {
-        this.props.searchInput(e.currentTarget.value);
+        // debugger
+        e.preventDefault();
+        // debugger
+        // this.props.searchInput(this.state.searchTerm);
+        this.setState({
+            searchInput: ""
+        })
+    }
+
+    button() {
+        this.setState({
+            searchInput: ""
+        })
     }
 
     render() {
-        
+        debugger
         return (
             <div className='searchbar-outer'>
                 <form className='searchbar-container'
@@ -29,9 +42,11 @@ class Searchbar extends React.Component{
                 >
                     <input  className='searchbar' 
                             type="text" 
-                            placeholder="Search" 
+                            placeholder="Search"
+                            value={this.state.searchInput}
                             onChange={this.handleInput}/>
                 </form>
+                <button onClick={this.button}>alskdjf;lsakjdfl;kasas;dlfkasldfjkjewrsß</button>
             </div>
         )
     }
