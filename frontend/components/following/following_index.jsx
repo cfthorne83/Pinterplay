@@ -16,9 +16,9 @@ class Following extends React.Component {
         // this.updateState = this.updateState.bind(this);
     }
 
-    // componentDidMount(){
-    //     this.props.fetchFollows().then(this.setState({mounted: true}));
-    // }
+    componentDidMount(){
+        this.props.fetchUsers();
+    }
     // componentDidUpdate(prevProps){
     //     // this.props.fetchUser(this.props.currentUser.id);
     //     // this.props.fetchFollows();
