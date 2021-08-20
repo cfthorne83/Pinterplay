@@ -17,8 +17,9 @@ class Searchbar extends React.Component{
     }
     
     handleSubmit(e) {
-        // debugger
+        debugger
         e.preventDefault();
+        e.currentTarget.blur();
         // debugger
         // this.props.searchInput(this.state.searchTerm);
         // this.setState({
@@ -31,8 +32,7 @@ class Searchbar extends React.Component{
         return (
             <div className='searchbar-outer'>
                 <form className='searchbar-container'
-                onSubmit={this.handleSubmit}
-                >
+                onSubmit={this.handleSubmit}>
                     <input  className='searchbar' 
                             type="search" 
                             placeholder="Search"
