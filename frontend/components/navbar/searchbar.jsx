@@ -24,10 +24,12 @@ class Searchbar extends React.Component{
     // }
 
     handleInput(e) { 
+        debugger
         this.setState({
             searchTerm: e.currentTarget.value
         })
-        // this.props.searchInput(e.currentTarget.value);
+        debugger
+        this.props.searchInput(e.currentTarget.value);
     }
     
     handleSubmit(e) {
@@ -36,7 +38,8 @@ class Searchbar extends React.Component{
         //     this.props.searchInput({searchTerm: this.state.searchTerm, submit: this.state.submit})
         // }
         //     );
-        
+        this.props.searchInput(this.state.searchTerm);
+
         // const searchbar = document.querySelector(".searchbar");
         // searchbar.blur();
     }

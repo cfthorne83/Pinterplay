@@ -7,7 +7,7 @@ const searchReducer = (state = "", action) => {
             if (action.input){
                 return action.input;
             } else {
-                return state;
+                return "";
             }
         default:
             return state;
