@@ -84,13 +84,15 @@ class PinIndex extends React.Component {
         }
 
         const that = this;
-        pins = pins.filter( pin => {
+        pins = pins
+        .filter( pin => {
             if (that.props.searchInput === ""){
                 return pin
             } else if ( pin.title.toLowerCase().includes( this.props.searchInput.toLowerCase() )){
                 return pin
             }
-        }).map(pin => {
+        })
+        .map(pin => {
             return (
                 <Link 
                     key={`${pin.id}`} 

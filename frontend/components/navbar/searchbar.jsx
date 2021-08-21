@@ -32,10 +32,13 @@ class Searchbar extends React.Component{
     
     handleSubmit(e) {
         e.preventDefault();
-        // this.props.searchInput(this.state.searchTerm);
+        // this.setState({ submit: true }, () => {
+        //     this.props.searchInput({searchTerm: this.state.searchTerm, submit: this.state.submit})
+        // }
+        //     );
+        
         // const searchbar = document.querySelector(".searchbar");
         // searchbar.blur();
-        this.setState({ submit: true })
     }
 
     render() { 
