@@ -10,6 +10,7 @@ class Searchbar extends React.Component{
     }
 
     handleInput(e) {
+        // debugger
         this.setState({
             searchTerm: e.currentTarget.value
         })
@@ -19,6 +20,7 @@ class Searchbar extends React.Component{
     handleSubmit(e) {
         debugger
         e.preventDefault();
+        const searchbar = document.querySelector(".searchbar")
         e.currentTarget.blur();
         // debugger
         // this.props.searchInput(this.state.searchTerm);
