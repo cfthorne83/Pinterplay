@@ -10,12 +10,12 @@ class Searchbar extends React.Component{
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleClick = this.handleClick.bind(this);
     }
-
+    
     handleClick(e) {
-        this.setState({
-            searchTerm: ""
-        })
-        this.forceUpdate();
+        this.setState({ searchTerm: ""})
+        const searchbar = document.querySelector(".searchbar");
+        searchbar.blur();
+        this.props.searchInput();
     }
 
     // handleChange(e) {
@@ -24,11 +24,9 @@ class Searchbar extends React.Component{
     // }
 
     handleInput(e) { 
-        debugger
         this.setState({
             searchTerm: e.currentTarget.value
         })
-        debugger
         this.props.searchInput(e.currentTarget.value);
     }
     
@@ -40,8 +38,8 @@ class Searchbar extends React.Component{
         //     );
         this.props.searchInput(this.state.searchTerm);
 
-        // const searchbar = document.querySelector(".searchbar");
-        // searchbar.blur();
+        const searchbar = document.querySelector(".searchbar");
+        searchbar.blur();
     }
 
     render() { 
