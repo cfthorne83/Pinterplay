@@ -68,10 +68,20 @@
     }
     .searchbar-container {
         width: 100%; 
+        position: relative;
+        background-color: deeppink;
     }
 
     .searchbar-outer {
         width: 100%;
+        background-color: chartreuse;
+    }
+
+    .searchbar {
+    }
+
+    .searchbar-close {
+        background-color: blue;
     }
 }
 

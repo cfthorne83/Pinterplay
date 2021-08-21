@@ -58,7 +58,9 @@ class Searchbar extends React.Component{
                             onChange={this.handleInput}
                             />
                 </form>
-                <button style={{fontSize: "20px"}}
+                <button 
+                    className="searchbar-close"
+                    style={{fontSize: "20px"}}
                     onClick={this.handleClick}>X</button>
             </div>
         )
