@@ -1,9 +1,10 @@
 import React from 'react';
+import {Redirect} from 'react-router-dom';
 
 class Searchbar extends React.Component{
     constructor(props){
         super(props);
-        this.state = { pins: null , searchTerm: "" }
+        this.state = { pins: null , searchTerm: "", submit: false }
 
         this.handleInput = this.handleInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -14,6 +15,7 @@ class Searchbar extends React.Component{
         this.setState({
             searchTerm: ""
         })
+        this.forceUpdate();
     }
 
     // handleChange(e) {
@@ -21,7 +23,7 @@ class Searchbar extends React.Component{
     //     // this.props.searchInput("");
     // }
 
-    handleInput(e) {
+    handleInput(e) { 
         this.setState({
             searchTerm: e.currentTarget.value
         })
@@ -30,16 +32,16 @@ class Searchbar extends React.Component{
     
     handleSubmit(e) {
         e.preventDefault();
+        // this.props.searchInput(this.state.searchTerm);
         // const searchbar = document.querySelector(".searchbar");
         // searchbar.blur();
-        // this.props.searchInput(this.state.searchTerm);
-        // this.setState({
-        //     searchInput: ""
-        // })
+        this.setState({ submit: true })
     }
 
     render() { 
-
+        // if (this.state.submit){
+        //     return <Redirect to="/" />
+        // }
         return (
             <div className='searchbar-outer'>
                 <form className='searchbar-container'
@@ -49,9 +51,7 @@ class Searchbar extends React.Component{
                             type="input" 
                             placeholder="Search"
                             value={this.state.searchTerm}
-                            onInput={this.handleInput}
-                            // onChange={this.handleChange}
-                            // onClick={this.handleClick}
+                            onChange={this.handleInput}
                             />
                 </form>
                 <button style={{fontSize: "20px"}}
