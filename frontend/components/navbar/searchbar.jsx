@@ -22,9 +22,9 @@ class Searchbar extends React.Component{
     // }
 
     handleInput(e) {
-        // this.setState({
-        //     searchTerm: e.currentTarget.value
-        // })
+        this.setState({
+            searchTerm: e.currentTarget.value
+        })
         // this.props.searchInput(e.currentTarget.value);
     }
     
@@ -48,7 +48,7 @@ class Searchbar extends React.Component{
                     <input  className='searchbar' 
                             type="input" 
                             placeholder="Search"
-                            value={this.state.searchInput}
+                            value={this.state.searchTerm}
                             onInput={this.handleInput}
                             // onChange={this.handleChange}
                             // onClick={this.handleClick}
