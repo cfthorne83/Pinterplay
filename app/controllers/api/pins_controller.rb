@@ -3,7 +3,6 @@ class Api::PinsController < ApplicationController
     before_action :ensure_logged_in
 
     def index
-        debugger
         if params[:data] && params[:data][:board]
             board = Board.find(params[:data][:board])
             # @pins = board.pins
@@ -32,7 +31,7 @@ class Api::PinsController < ApplicationController
             @pins = [p[0], p[10], p[20], p[30], p[40]]
         end
         if @pins 
-            debugger
+            
             render :index
         end
     end

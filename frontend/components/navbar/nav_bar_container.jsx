@@ -8,7 +8,6 @@ import NavBar from './nav_bar'
 const mSTP = (state, ownProps) => {
         // let url = state.ui.url;
         let url = window.location.href.split("/").pop();
-        // debugger
         let homeLink;
         let followLink;
         if ( url === "following"){
