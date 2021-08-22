@@ -4,7 +4,7 @@ import {Redirect} from 'react-router-dom';
 class Searchbar extends React.Component{
     constructor(props){
         super(props);
-        this.state = { pins: null , searchTerm: "", submit: false }
+        this.state = { pins: null , searchTerm: "", submit: false, display: "none" }
 
         this.handleInput = this.handleInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -26,7 +26,16 @@ class Searchbar extends React.Component{
     handleInput(e) { 
         this.setState({
             searchTerm: e.currentTarget.value
-        })
+        });
+        if (e.currentTarget.value != ""){
+            this.setState({
+                display: "inline"
+            })
+        } else {
+            this.setState({
+                display: "none"
+            })
+        }
         this.props.searchInput(e.currentTarget.value);
     }
     
@@ -60,7 +69,7 @@ class Searchbar extends React.Component{
                 </form>
                 <button 
                     className="searchbar-close"
-                    style={{fontSize: "20px"}}
+                    style={{display: this.state.display}}
                     onClick={this.handleClick}>
                         <img src="./images/x.png" alt="close-icon" />
                 </button>
