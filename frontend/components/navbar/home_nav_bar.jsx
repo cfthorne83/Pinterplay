@@ -8,7 +8,13 @@ class HomeNavBar extends React.Component {
     constructor(props){
         super(props);
 
-        this.state = { homeLink: this.props.homeLink, followLink: this.props.followLink, url: this.props.url, mounted: false};
+        this.state = { 
+                        homeLink: this.props.homeLink, 
+                        followLink: this.props.followLink, 
+                        url: this.props.url, 
+                        mounted: false
+                    };
+
         this.homeLink = this.homeLink.bind(this);
         this.followLink = this.followLink.bind(this);
         this.removeClass = this.removeClass.bind(this);
@@ -82,7 +88,7 @@ class HomeNavBar extends React.Component {
                     </ul>
                 </nav>
 
-                <SearchbarContainer />
+                <SearchbarContainer url={this.props.url}/>
 
                 <ul className="online-presence">
                         <a href="https://www.linkedin.com/in/chris-thorne83/" className="online-presence__filter" target="_blank" title="my linkedin!">

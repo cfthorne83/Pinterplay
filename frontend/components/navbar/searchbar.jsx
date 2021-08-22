@@ -10,18 +10,21 @@ class Searchbar extends React.Component{
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleClick = this.handleClick.bind(this);
     }
+
+    componentDidUpdate(prevProps) {
+        if (this.props != prevProps){
+            // debugger
+            this.setState({ searchTerm: "", display: "none"})
+            this.props.searchInput();
+        }
+    }
     
     handleClick(e) {
-        this.setState({ searchTerm: ""})
+        this.setState({ searchTerm: "", display: "none"})
         const searchbar = document.querySelector(".searchbar");
         searchbar.blur();
         this.props.searchInput();
     }
-
-    // handleChange(e) {
-    //     debugger
-    //     // this.props.searchInput("");
-    // }
 
     handleInput(e) { 
         this.setState({
