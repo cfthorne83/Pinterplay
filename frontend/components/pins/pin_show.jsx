@@ -29,14 +29,12 @@ class PinShow extends React.Component {
             //     this.props.fetchPins();
             // }
             // (this.setState({pin: this.props.pin}))
+    }
+        
+    componentDidUpdate(){
+        if (this.props.searchTerm === ""){
+            this.props.fetchPin(this.props.match.params.pinId);
         }
-        
-        componentDidUpdate(){
-            if (this.props.searchTerm === ""){
-                // debugger
-                this.props.fetchPin(this.props.match.params.pinId);
-            }
-        
     }
 
     handleGoBack() {
@@ -81,7 +79,6 @@ class PinShow extends React.Component {
     }
 
     render() {
-        // debugger
         const {pin} = this.props;
         if(!pin){
             return null;
