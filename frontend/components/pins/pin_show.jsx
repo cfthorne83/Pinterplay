@@ -16,24 +16,27 @@ class PinShow extends React.Component {
         this.handleState = this.handleState.bind(this);
         this.handleFollowers = this.handleFollowers.bind(this);
     }
-
-    // componentWillMount() {
-    //     // if (this.props.pins.length === 0) {
-    //     //     this.props.fetchPins();
-    //     // }
-    // }
     
     componentDidMount() {
         
         if (this.props.searchTerm === ""){
+            // debugger
             this.props.fetchPin(this.props.match.params.pinId);
         }
         this.props.updateUrl(this.props.url);
         this.setState({ fetched: true });
         // if (this.props.pins.length === 0){
-        //     this.props.fetchPins();
-        // }
-        // (this.setState({pin: this.props.pin}))
+            //     this.props.fetchPins();
+            // }
+            // (this.setState({pin: this.props.pin}))
+        }
+        
+        componentDidUpdate(){
+            if (this.props.searchTerm === ""){
+                // debugger
+                this.props.fetchPin(this.props.match.params.pinId);
+            }
+        
     }
 
     handleGoBack() {
@@ -78,7 +81,11 @@ class PinShow extends React.Component {
     }
 
     render() {
+        // debugger
         const {pin} = this.props;
+        if(!pin){
+            return null;
+        }
         if (this.props.searchTerm === ""){
 
             if (!this.props.currentUser) {
