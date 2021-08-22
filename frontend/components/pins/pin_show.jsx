@@ -3,6 +3,8 @@ import { Redirect } from 'react-router-dom';
 
 import FollowBtnContainer from "../following/follow_btn_container";
 import CopyPinDropdownContainer from "./copy_pin_dropdown_container";
+import PinIndexContainer from "../pins/pin_index_container";
+import PinIndex from "./pin_index";
 
 class PinShow extends React.Component {
     constructor(props){
@@ -89,51 +91,50 @@ class PinShow extends React.Component {
             this.handleState();
         }  
 
-        return (
-            <div className="pin-show">
-                <button 
-                    className="pin-show__back"
-                    onClick={this.handleGoBack}>
-                    <img 
-                        className="pin-show__back-img"
-                        src="/images/back-arrow2.png" 
-                        alt="back-arrow"
-                        />
-                </button>
+        if (this.props.searchTerm != ""){
+            debugger
+            return (
+                <PinIndexContainer shuffle={true}/> 
+            )
+        }else {
 
-                <div className="pin-show__inner">
-                    <img 
-                        className="pin-show__img"
-                        src={this.props.pin.image_url} 
-                        alt="pin-image"/>
+            return (
+                <div className="pin-show">
+                    <button 
+                        className="pin-show__back"
+                        onClick={this.handleGoBack}>
+                        <img 
+                            className="pin-show__back-img"
+                            src="/images/back-arrow2.png" 
+                            alt="back-arrow"
+                            />
+                    </button>
 
-                    <div className="pin-show__text">
+                    <div className="pin-show__inner">
+                        <img 
+                            className="pin-show__img"
+                            src={this.props.pin.image_url} 
+                            alt="pin-image"/>
 
-                        <div className="pin-show__drop">
-                            {this.editLink()}
+                        <div className="pin-show__text">
 
-                            {/* <div className="pin-show__drop-inner">
-                                <BoardDropdown boards={this.props.boards}/>
-                                <button 
-                                    className="pin-show__save"
-                                    onClick={this.handleCreatePin}>
-                                        Save
-                                </button>
-                            </div> */}
-                            <CopyPinDropdownContainer pin={this.props.pin} />
+                            <div className="pin-show__drop">
+                                {this.editLink()}
+                                <CopyPinDropdownContainer pin=  {this.props.pin} />
+                            </div>
+
+                            <h1 className="pin-show__title">
+                                    {this.props.pin.title}
+                            </h1>
+                            <FollowBtnContainer currentUser=    {this.props.currentUser} pin={this. props.pin} />
+
                         </div>
-
-                        <h1 
-                            className="pin-show__title">
-                                {this.props.pin.title}
-                        </h1>
-                        <FollowBtnContainer currentUser={this.props.currentUser} pin={this.props.pin} />
-                        
                     </div>
-                </div>
 
-            </div>
+                </div>
         )
+        }
+        
     }
 }
 

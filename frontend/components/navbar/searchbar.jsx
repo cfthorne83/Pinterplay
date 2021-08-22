@@ -13,7 +13,6 @@ class Searchbar extends React.Component{
 
     componentDidUpdate(prevProps) {
         if (this.props != prevProps){
-            // debugger
             this.setState({ searchTerm: "", display: "none"})
             this.props.searchInput();
         }
