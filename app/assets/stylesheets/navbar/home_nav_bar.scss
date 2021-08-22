@@ -77,8 +77,12 @@
 
     .searchbar-close {
         position: absolute;
-        top: 12px;
+        top: 13px;
         right: 20px;
+        
+        img {
+            height: 17px;
+        }
     }
 }
 

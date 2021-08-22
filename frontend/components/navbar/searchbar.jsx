@@ -61,7 +61,9 @@ class Searchbar extends React.Component{
                 <button 
                     className="searchbar-close"
                     style={{fontSize: "20px"}}
-                    onClick={this.handleClick}>X</button>
+                    onClick={this.handleClick}>
+                        <img src="./images/x.png" alt="close-icon" />
+                </button>
             </div>
         )
     }
