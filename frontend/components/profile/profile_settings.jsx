@@ -1,19 +1,12 @@
 import React from "react";
 import { Redirect } from 'react-router-dom';
 
-import { openModal } from "../../actions/modal_actions";
+import PinIndexContainer from "../pins/pin_index_container";
 
 class ProfileSettings extends React.Component {
     constructor(props) {
         super(props);
         this.state = this.props.currentUser;
-        // this.state = { 
-        //                 email: this.props.currentUser.email,
-        //                 fname: this.props.currentUser.fname,
-        //                 lname: this.props.currentUser.lname, 
-        //                 username: this.props.currentUser.username,
-        //                 description: this.props.currentUser.description
-        //             }
 
         this.updateFname = this.updateFname.bind(this);
         this.updateLname = this.updateLname.bind(this);
@@ -87,73 +80,78 @@ class ProfileSettings extends React.Component {
 
     render() {
 
-        // if (!this.props.currentUser) return null;
-        // // console.log(this.state.image_url);
         if (!this.props.currentUser) {
             return <Redirect to='/' />
         }
 
-        return (
-            <div className="edit-profile-form">
-                <form onSubmit={this.handleSubmit}>
-                    <section>
-                        <h1>Edit profile</h1>
-                        <h2>People visiting your profile will see the following info</h2>
-                    </section>
-                    
-                    <section className="photo-con">
-                        <h3>Photo</h3>
-                        <div className="photo-change">
-                            {this.profilePic()}
-                            <button onClick={this.updatePhoto}>Change</button>
-                        </div>
-                    </section>
+        if (this.props.searchTerm === ""){
 
-                    <section className="name-input-con">
-                        <div>  
-                            <h3>First Name</h3>
-                                <input 
-                                    type="text"
-                                    value={this.state.fname || ""}
-                                    onChange={this.updateFname}/>
-                        </div>
+            return (
+                <div className="edit-profile-form">
+                    <form onSubmit={this.handleSubmit}>
+                        <section>
+                            <h1>Edit profile</h1>
+                            <h2>People visiting your profile will see the following info</h2>
+                        </section>
                         
-                        <div className="lname__input">
-                            <h3>Last Name</h3>
+                        <section className="photo-con">
+                            <h3>Photo</h3>
+                            <div className="photo-change">
+                                {this.profilePic()}
+                                <button onClick={this.updatePhoto}>Change</button>
+                            </div>
+                        </section>
+    
+                        <section className="name-input-con">
+                            <div>  
+                                <h3>First Name</h3>
+                                    <input 
+                                        type="text"
+                                        value={this.state.fname || ""}
+                                        onChange={this.updateFname}/>
+                            </div>
+                            
+                            <div className="lname__input">
+                                <h3>Last Name</h3>
+                                    <input 
+                                        type="text"
+                                        value={this.state.lname || ""}
+                                        onChange={this.updateLname}/>
+                            </div>
+                        </section>
+                        
+    
+                        <section>
+                            <h3>Username</h3>
                                 <input 
+                                    className="username__input"
                                     type="text"
-                                    value={this.state.lname || ""}
-                                    onChange={this.updateLname}/>
-                        </div>
-                    </section>
-                    
-
-                    <section>
-                        <h3>Username</h3>
-                            <input 
-                                className="username__input"
-                                type="text"
-                                value={this.state.username || ""}
-                                onChange={this.updateUsername}/>
-                                <h4>www.mypin.com/{this.state.username}</h4>
-                    </section>
-                    
-                    <section>
-                        <h3>About your profile</h3>
-                            <textarea 
-                                className="about__input"
-                                type="text"
-                                placeholder="Write a little bit about yourself here"
-                                onChange={this.updateDescription}/>        
-                    </section>
-
-                    <section className="btn-con">
-                        <button onClick={this.handleReset}>Reset</button>
-                        <button className="red-btn">Save</button>
-                    </section>
-                </form>
-            </div>
-        )
+                                    value={this.state.username || ""}
+                                    onChange={this.updateUsername}/>
+                                    <h4>www.mypin.com/{this.state.username}</h4>
+                        </section>
+                        
+                        <section>
+                            <h3>About your profile</h3>
+                                <textarea 
+                                    className="about__input"
+                                    type="text"
+                                    placeholder="Write a little bit about yourself here"
+                                    onChange={this.updateDescription}/>        
+                        </section>
+    
+                        <section className="btn-con">
+                            <button onClick={this.handleReset}>Reset</button>
+                            <button className="red-btn">Save</button>
+                        </section>
+                    </form>
+                </div>
+            );
+        } else {
+            return (
+                <PinIndexContainer shuffle={true}/> 
+            );        
+        }
     }
 }
 

@@ -13,7 +13,8 @@ const msp = (state, ownProps) => {
     }
     return {
         currentUser: currentUser,
-        imageUrl: imageUrl
+        imageUrl: imageUrl,
+        searchTerm: state.ui.search
     }
 }
 
