@@ -119,10 +119,10 @@ users = [sophia, dorothy, blanche, rose]
         board_pin.save
     end
 end
-sophia = User.first
-dorothy = User.second
-blanche = User.third
-rose = User.last
+# sophia = User.first
+# dorothy = User.second
+# blanche = User.third
+# rose = User.last
 
 dorothy.follow(sophia)
 blanche.follow(sophia)
