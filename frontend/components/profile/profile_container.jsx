@@ -22,7 +22,8 @@ const mSTP = (state, ownProps) => {
         currentUser: state.entities.users[state.session.id],
         lastBoard: Object.values(state.entities.boards)[0],
         following: following,
-        followers: followers
+        followers: followers, 
+        searchTerm: state.ui.search
     };
 };
 

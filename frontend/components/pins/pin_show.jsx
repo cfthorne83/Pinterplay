@@ -4,7 +4,6 @@ import { Redirect } from 'react-router-dom';
 import FollowBtnContainer from "../following/follow_btn_container";
 import CopyPinDropdownContainer from "./copy_pin_dropdown_container";
 import PinIndexContainer from "../pins/pin_index_container";
-import PinIndex from "./pin_index";
 
 class PinShow extends React.Component {
     constructor(props){

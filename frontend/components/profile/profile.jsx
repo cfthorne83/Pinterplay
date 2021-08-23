@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import BoardIndexContainer from '../boards/board_index_container';
 import CreateDropdown from "../dropdowns/create_board_pin_dropdown";
 import FollowLinksContainer from "../following/follows_links_container";
+import PinIndexContainer from "../pins/pin_index_container";
 
 class Profile extends React.Component{
     constructor(props){
@@ -126,35 +127,41 @@ class Profile extends React.Component{
         if (!this.props.currentUser) {
             return <Redirect to='/'/>
         } 
-            
-        return (
-            <div className='profile-page'>
 
-                <section className='heading'>
-                    {this.image()}
-                    {this.name()}
-                    {this.username()}
-                    {/* {this.followers()} */}
-                    <FollowLinksContainer user={this.props.currentUser}/>
-                </section>
+        if (this.props.searchTerm === ""){
 
-                <section className='mid'>
-                    <div className="edit-link">
-                        <Link to={`/users/${currentUser.id}/settings`}>
-                            <img src="/images/edit_pen.png" alt=""/>
-                        </Link>
-                    </div>
-
-                    <CreateDropdown 
-                        className="board-pin-drop"
-                        openModal={this.props.openModal}
-                        board={this.props.lastBoard}
-                    />
-                </section>
-                <BoardIndexContainer currentUser={this.props.currentUser}/>
-            </div>
-
-        );   
+            return (
+                <div className='profile-page'>
+    
+                    <section className='heading'>
+                        {this.image()}
+                        {this.name()}
+                        {this.username()}
+                        <FollowLinksContainer user={this.props.currentUser}/>
+                    </section>
+    
+                    <section className='mid'>
+                        <div className="edit-link">
+                            <Link to={`/users/${currentUser.id}/settings`}>
+                                <img src="/images/edit_pen.png" alt=""/>
+                            </Link>
+                        </div>
+    
+                        <CreateDropdown 
+                            className="board-pin-drop"
+                            openModal={this.props.openModal}
+                            board={this.props.lastBoard}
+                        />
+                    </section>
+                    <BoardIndexContainer currentUser={this.props.currentUser}/>
+                </div>
+    
+            );   
+        } else {
+            return (
+                <PinIndexContainer shuffle={true}/> 
+            );
+        }    
     }
 }
 
