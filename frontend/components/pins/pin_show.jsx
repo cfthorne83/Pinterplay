@@ -19,15 +19,10 @@ class PinShow extends React.Component {
     componentDidMount() {
         
         if (this.props.searchTerm === ""){
-            // debugger
             this.props.fetchPin(this.props.match.params.pinId);
         }
         this.props.updateUrl(this.props.url);
         this.setState({ fetched: true });
-        // if (this.props.pins.length === 0){
-            //     this.props.fetchPins();
-            // }
-            // (this.setState({pin: this.props.pin}))
     }
         
     componentDidUpdate(prevProps){
@@ -69,7 +64,6 @@ class PinShow extends React.Component {
                     onClick={()  => {this.props.openModal("editPin", this.props.pin.id)}} 
                     >
                     <img
-                        // className="pin-show__edit-modal"
                         src="https://static.thenounproject.com/png/384290-200.png" 
                         alt="edit-form-link"/>
                 </div>
@@ -78,7 +72,6 @@ class PinShow extends React.Component {
     }
 
     render() {
-        debugger
         const {pin} = this.props;
         if(!pin){
             return null;
@@ -106,7 +99,6 @@ class PinShow extends React.Component {
                 <PinIndexContainer shuffle={true}/> 
             )
         } else {
-            // return <h1>gooobs!</h1>
             return (
                 <div className="pin-show">
                     <button 
@@ -141,7 +133,7 @@ class PinShow extends React.Component {
                     </div>
 
                 </div>
-        )
+            )
         }
         
     }

@@ -24,9 +24,8 @@ class EditPinForm extends React.Component {
         if (e){
             e.preventDefault();
         }
-        let board = document.querySelector(".selected-board");        
-        // this.setState({ board_id: board.dataset.id});
-        // this.props.updatePin(this.state).then(this.props.closeModal);
+        let board = document.querySelector(".selected-board");
+        debugger
         this.props.updatePin(this.state)
             .then(this.props.createBoardPin({ pin_id: this.state.id , board_id: board.dataset.id}))
             .then(this.props.closeModal);
@@ -52,7 +51,6 @@ class EditPinForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        // e.stopPropagation();
         if (this.state != this.props.pin){
             this.handleUpdate();
         } else {
@@ -61,7 +59,9 @@ class EditPinForm extends React.Component {
     }
 
     render() {
+
         if (!this.state.id) return null;
+
         return (
             <div className="edit-pin-form">
                 <h1>Edit this pin</h1>

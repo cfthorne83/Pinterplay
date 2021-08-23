@@ -8,7 +8,6 @@ import { createFollow, deleteFollow } from "../../actions/follow_actions";
 import { updateUrl } from "../../actions/url_action";
 
 const msp = (state, ownProps) => {
-    // debugger
     const pin = state.entities.pins[ownProps.match.params.pinId];
     const currentUser = state.entities.users[state.session.id];
     let following = null;
