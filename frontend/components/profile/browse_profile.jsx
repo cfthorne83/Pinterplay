@@ -1,9 +1,5 @@
 import React from 'react'
-import { Redirect } from "react-router-dom";
-import { Link } from "react-router-dom";
 
-import BoardIndexContainer from '../boards/board_index_container';
-import CreateDropdown from "../dropdowns/create_board_pin_dropdown";
 import PinIndexContainer from "../pins/pin_index_container";
 import FollowBtnItemContainer from "../following/follow_btn_item_container";
 import FollowLinksContainer from "../following/follows_links_container";
@@ -12,26 +8,13 @@ class BrowseProfile extends React.Component{
     constructor(props){
         super(props);
 
-        this.state = {user: this.props.user, 
-            // following: this.props.following, followers: this.props.followers
-        };
+        this.state = {user: this.props.user};
 
-        // this.handleSubmit = this.handleSubmit.bind(this);
         this.capitalize = this.capitalize.bind(this);
         this.name = this.name.bind(this);
         this.image = this.image.bind(this);
         this.username = this.username.bind(this);
-        // this.followers = this.followers.bind(this);
-        // this.handleFollowers = this.handleFollowers.bind(this);
-        // this.handleFollowing = this.handleFollowing.bind(this);
     }
-
-    // componentDidUpdate(prevProps){
-    //     if (this.props.user.id != prevProps.user.id){
-    //         // 
-    //         // this.props.fetchUsers();
-    //     }
-    // }
 
     componentDidMount() {
         this.props.fetchUsers();
@@ -79,30 +62,36 @@ class BrowseProfile extends React.Component{
     }
 
     render() {
-
         const { user } = this.props;
         
         if (!this.props.user) {
             return null;
         } 
-        return (
-            <div className='profile-page'>
 
-                <section className='heading'>
-                    {this.image()}
-                    {this.name()}
-                    {this.username()}
-                    <FollowBtnItemContainer user={this.props.user}/>
-                    <FollowLinksContainer user={this.props.user} />
-                </section>
+        if (this.props.searchTerm === ""){
 
-                <section className="browse-pin-index">
-                    <PinIndexContainer  userPinIndex={true} currentUser={this.props.user}/>
-                </section>
-
-            </div>
-
-        );   
+            return (
+                <div className='profile-page'>
+    
+                    <section className='heading'>
+                        {this.image()}
+                        {this.name()}
+                        {this.username()}
+                        <FollowBtnItemContainer user={this.props.user}/>
+                        <FollowLinksContainer user={this.props.user} />
+                    </section>
+    
+                    <section className="browse-pin-index">
+                        <PinIndexContainer  userPinIndex={true} currentUser={this.props.user}/>
+                    </section>
+    
+                </div>
+            );   
+        } else {
+            return (
+                <PinIndexContainer shuffle={true}/> 
+            ) 
+        }
     }
 }
 
