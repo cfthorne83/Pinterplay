@@ -30,8 +30,8 @@ class PinShow extends React.Component {
             // (this.setState({pin: this.props.pin}))
     }
         
-    componentDidUpdate(){
-        if (this.props.searchTerm === ""){
+    componentDidUpdate(prevProps){
+        if (this.props.searchTerm != prevProps.searchTerm){
             this.props.fetchPin(this.props.match.params.pinId);
         }
     }
@@ -78,6 +78,7 @@ class PinShow extends React.Component {
     }
 
     render() {
+        debugger
         const {pin} = this.props;
         if(!pin){
             return null;
