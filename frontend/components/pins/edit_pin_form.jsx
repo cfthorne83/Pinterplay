@@ -25,7 +25,6 @@ class EditPinForm extends React.Component {
             e.preventDefault();
         }
         let board = document.querySelector(".selected-board");
-        debugger
         this.props.updatePin(this.state)
             .then(this.props.createBoardPin({ pin_id: this.state.id , board_id: board.dataset.id}))
             .then(this.props.closeModal);
