@@ -9,13 +9,15 @@
 .follow-btn-item{
     background-color: var(--red);
     color: white;
+    margin: 1rem 0 1rem 0  
 }
 .follow-btn-item:hover{
     background-color: var(--red-btn-hov);
 }
 
 .unfollow-btn-item{
-    background-color: var(--lt-grey);    
+    background-color: var(--lt-grey);  
+    margin: 1rem 0 1rem 0  
 }
 .unfollow-btn-item:hover{
     background-color: var(--hov-grey);    

@@ -248,10 +248,10 @@ class CreatePinForm extends React.Component{
             
             <div className="create-pin-form-con">
 
-                <form className="create-pin-form">  
+                {/* <form className="create-pin-form">   */}
+                <div className="create-pin-form">  
 
                     <div className="create-pin-form__drop">
-        
                         <div className="create-pin-form__drop-inner">
                             <BoardDropdown boards={this.props.boards}/>
                             <button 
@@ -325,7 +325,8 @@ class CreatePinForm extends React.Component{
                             </div>
                         </div>
                     </div>
-                </form>
+                {/* </form> */}
+                </div>
             </div>
 
         )
