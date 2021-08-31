@@ -54,7 +54,6 @@ class ProfileSettings extends React.Component {
     handleReset(e) {
         e.preventDefault();
         this.setState(this.props.currentUser);
-        console.log(this.state);
     }
 
     profilePic() {

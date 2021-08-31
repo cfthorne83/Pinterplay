@@ -9,7 +9,7 @@ class PinShow extends React.Component {
     constructor(props){
         super(props);
         // this.state = Object.assign(this.props.pin, { mounted: false });
-        this.state = { pin: this.props.pin, fetched: false, following: this.props.following };
+        this.state = { pin: this.props.pin, fetched: false, following: this.props.following, redirect: false };
 
         this.handleGoBack = this.handleGoBack.bind(this);
         this.handleState = this.handleState.bind(this);
@@ -17,7 +17,7 @@ class PinShow extends React.Component {
     }
     
     componentDidMount() {
-        
+        debugger
         if (this.props.searchTerm === ""){
             this.props.fetchPin(this.props.match.params.pinId);
         }
@@ -26,8 +26,11 @@ class PinShow extends React.Component {
     }
         
     componentDidUpdate(prevProps){
+        debugger
         if (this.props.searchTerm != prevProps.searchTerm){
             this.props.fetchPin(this.props.match.params.pinId);
+        } else if (this.props.pin != prevProps.pin){
+            this.setState({ redirect: true })
         }
     }
 
@@ -73,9 +76,13 @@ class PinShow extends React.Component {
 
     render() {
         const {pin} = this.props;
-        if(!pin){
+        if(!pin && !this.state.fetched){
+            debugger
             return null;
-        }
+        } 
+        // else if (this.state.redirect){
+        //     return <Redirect to="/"></Redirect>
+        // }
         if (this.props.searchTerm === ""){
 
             if (!this.props.currentUser) {
@@ -83,7 +90,10 @@ class PinShow extends React.Component {
             } else if (!this.props.pin && !this.state.fetched) {
                 return null;
             } else if ( !this.props.pin && this.state.fetched){
-                return <div>Redirect</div>
+                // return <div>Redirect</div>
+                return <Redirect to='/' />
+                // this.handleGoBack();
+                // history.goBack();
             } 
             else if (!this.props.pin.user) {
                 return null;
