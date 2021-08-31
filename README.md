@@ -36,7 +36,8 @@
 <img src="public/images/fullstack.gif" width="500" />
    
 ### Follows
-- Users may follow and unfolow other users' profiles
+- Users may follow and unfollow other users' profiles
+- Users may browse other users' profiles
 
 ### Search
 - Users may search for pins by title
