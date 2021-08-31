@@ -35,11 +35,11 @@
 - Users may view all the pins associated with their profiles.
 <img src="public/images/fullstack.gif" width="500" />
    
-## Future Direction
-
 ### Follows
-- Ablility to follow and unfolow other users' profiles and boards
-- Ability to search for pins by title
+- Users may follow and unfolow other users' profiles
+
+### Search
+- Users may search for pins by title
  
 ...
 # Pinterplay
