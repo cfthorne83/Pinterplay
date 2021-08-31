@@ -51,8 +51,15 @@ class CreatePinForm extends React.Component{
         let deleteIcon;
 
         let that = this;
-
-        const file = e.currentTarget.files[0];
+        let file;
+        
+        if (e.currentTarget && e.currentTarget.files[0]){
+            
+            file = e.currentTarget.files[0];
+        } else if (e.files[0]){
+            
+            file = e.files[0];
+        }
         const reader = new FileReader();
         reader.onloadend = () => {
             let image = reader.result;
@@ -122,7 +129,9 @@ class CreatePinForm extends React.Component{
         
         if (e.dataTransfer.files.length) {
             inputElement.files = e.dataTransfer.files;
-            this.addDeleteBtn(dropZone, inputElement.files[0]);
+            
+            // this.addDeleteBtn(dropZone, inputElement.files[0]);
+            this.handleFile(inputElement);
         }
         
         dropZone.classList.remove("drop-zone--over");
