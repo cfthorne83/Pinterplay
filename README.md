@@ -38,7 +38,7 @@
 ### Follows
 - Users may follow and unfollow other users' profiles
 - Users may browse other users' profiles
-- <img src="public/images/search_code.png" width="500" />
+- <img src="public/images/rose.jpeg" width="500" />
 
 ### Search
 - Users may search for pins by title
