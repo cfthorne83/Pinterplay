@@ -38,11 +38,11 @@
 ### Follows
 - Users may follow and unfollow other users' profiles
 - Users may browse other users' profiles
-<img src="public/images/follow_code.png" width="600" />
+<img src="public/images/follow_code.png" width="700" />
 
 ### Search
 - Users may search for pins by title
-<img src="public/images/search_code.jpeg" width="600" />
+<img src="public/images/search_code.jpeg" width="700" />
  
 ...
 # Pinterplay
