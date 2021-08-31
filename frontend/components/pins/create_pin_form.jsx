@@ -3,6 +3,7 @@ import { BeatLoader } from "react-spinners";
 import { Redirect } from "react-router-dom";
 
 import BoardDropdown from "../boards/board_dropdown";
+import PinIndexContainer from "./pin_index_container";
 
 class CreatePinForm extends React.Component{
     constructor(props){
@@ -253,92 +254,99 @@ class CreatePinForm extends React.Component{
             return <Redirect to='/' />
         } 
         
-        return (
-            
-            <div className="create-pin-form-con">
+        if (this.props.searchTerm === ""){
 
-                {/* <form className="create-pin-form">   */}
-                <div className="create-pin-form">  
-
-                    <div className="create-pin-form__drop">
-                        <div className="create-pin-form__drop-inner">
-                            <BoardDropdown boards={this.props.boards}/>
-                            <button 
-                                className="create-pin-form__save"
-                                onClick={this.handleSubmit}>
-                                    Save
-                            </button>
-                        </div>
-                    </div>
-
-                    <div className="create-pin-form__inner">
-                        <div className="drop-zone"
-                            onDragOver={this.handleDragOver}
-                            onDragLeave={this.handleDragLeave}
-                            onDragEnd={this.handleDragEnter}
-                            onDrop={this.handleDrop}
-                            onClick={this.handleClick}> 
-
-                            <div className="drop-zone__inner">
-                                <div className="drop-zone__text">
-                    
-                                    
-                                    <img 
-                                        className="drop-zone__arrow"
-                                        src="/images/arrow.png"/>
-                                    <h1 className="drop-zone__prompt1">
-                                        Drag and drop or click to upload
-                                    </h1>
-                                </div>
-                                <h2 className="drop-zone__prompt">
-                                    Recommendation: Use high-quality .jpg files less than 20MB
-                                </h2>
+            return (
+                
+                <div className="create-pin-form-con">
+    
+                    {/* <form className="create-pin-form">   */}
+                    <div className="create-pin-form">  
+    
+                        <div className="create-pin-form__drop">
+                            <div className="create-pin-form__drop-inner">
+                                <BoardDropdown boards={this.props.boards}/>
+                                <button 
+                                    className="create-pin-form__save"
+                                    onClick={this.handleSubmit}>
+                                        Save
+                                </button>
                             </div>
-
-                                <img className="drop-zone__img" src="" alt=""/>
-                                <input 
-                                    type="file"
-                                    className="drop-zone__input"
-                                    multiple accept="image/*"
-                                    onInput={this.handleFile} 
-                                />
                         </div>
-
-                        <div className="create-pin-form__text">
-                            <div className="create-pin-form__text-inner">
-                                
-                                <div className="create-pin-form__screen">
-                                    <div className="create-pin-form__loader">
-                                        <BeatLoader 
-                                            className="create-pin-form__loader"
-                                            size={30} color="red" 
-                                            loading={this.state.loading}/>
+    
+                        <div className="create-pin-form__inner">
+                            <div className="drop-zone"
+                                onDragOver={this.handleDragOver}
+                                onDragLeave={this.handleDragLeave}
+                                onDragEnd={this.handleDragEnter}
+                                onDrop={this.handleDrop}
+                                onClick={this.handleClick}> 
+    
+                                <div className="drop-zone__inner">
+                                    <div className="drop-zone__text">
+                        
+                                        
+                                        <img 
+                                            className="drop-zone__arrow"
+                                            src="/images/arrow.png"/>
+                                        <h1 className="drop-zone__prompt1">
+                                            Drag and drop or click to upload
+                                        </h1>
                                     </div>
+                                    <h2 className="drop-zone__prompt">
+                                        Recommendation: Use high-quality .jpg files less than 20MB
+                                    </h2>
                                 </div>
-
-                                <input 
-                                    className="create-pin-form__input"
-                                    type="text"
-                                    value={this.state.title}  
-                                    onChange={this.updateTitle} 
-                                    onClick={this.updateTitle} 
-                                    placeholder='Add your title'/> 
-
-                                <h3 className="create-pin-form__input-error"></h3>
-
-                                <textarea 
-                                    className="create-pin-form__textarea"
-                                    onChange={this.updateDescription}
-                                    placeholder="Tell everyone what your Pin is about"/>
-                                <div className="create-pin-form__border"></div>
+    
+                                    <img className="drop-zone__img" src="" alt=""/>
+                                    <input 
+                                        type="file"
+                                        className="drop-zone__input"
+                                        multiple accept="image/*"
+                                        onInput={this.handleFile} 
+                                    />
+                            </div>
+    
+                            <div className="create-pin-form__text">
+                                <div className="create-pin-form__text-inner">
+                                    
+                                    <div className="create-pin-form__screen">
+                                        <div className="create-pin-form__loader">
+                                            <BeatLoader 
+                                                className="create-pin-form__loader"
+                                                size={30} color="red" 
+                                                loading={this.state.loading}/>
+                                        </div>
+                                    </div>
+    
+                                    <input 
+                                        className="create-pin-form__input"
+                                        type="text"
+                                        value={this.state.title}  
+                                        onChange={this.updateTitle} 
+                                        onClick={this.updateTitle} 
+                                        placeholder='Add your title'/> 
+    
+                                    <h3 className="create-pin-form__input-error"></h3>
+    
+                                    <textarea 
+                                        className="create-pin-form__textarea"
+                                        onChange={this.updateDescription}
+                                        placeholder="Tell everyone what your Pin is about"/>
+                                    <div className="create-pin-form__border"></div>
+                                </div>
                             </div>
                         </div>
+                    {/* </form> */}
                     </div>
-                {/* </form> */}
                 </div>
-            </div>
-
-        )
+    
+            )
+        } else {
+            return (
+                <PinIndexContainer shuffle={true}/> 
+            );
+        } 
     }
 }
 

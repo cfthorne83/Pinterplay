@@ -10,8 +10,8 @@ const msp = (state, ownProps) => {
         pin: { title: "", image_url: "", description: "", board_id: ""},
         boards: Object.values(state.entities.boards),
         loading: state.entities.loading,
-        currentUser: state.entities.users[state.session.id]
-        
+        currentUser: state.entities.users[state.session.id],
+        searchTerm: state.ui.search
     }
 }
 
