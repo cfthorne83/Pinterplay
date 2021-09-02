@@ -18,10 +18,10 @@ class PinShow extends React.Component {
     }
     
     componentDidMount() {
-        
         if (this.props.searchTerm === ""){
             this.props.fetchPin(this.props.match.params.pinId);
         }
+        this.props.searchInput();
         this.props.updateUrl(this.props.url);
         this.setState({ fetched: true });
     }
@@ -88,39 +88,46 @@ class PinShow extends React.Component {
 
     render() {
         const {pin} = this.props;
-        if(!pin && !this.state.fetched){
-            
+        if(!pin){
+            // debugger
             return null;
         } 
-        // else if (this.state.redirect){
-        //     return <Redirect to="/"></Redirect>
-        // }
-        if (this.props.searchTerm === ""){
+        // if (this.props.searchTerm === ""){
 
-            if (!this.props.currentUser) {
-                return <Redirect to='/' />
-            } else if (!this.props.pin && !this.state.fetched) {
-                return null;
-            } else if ( !this.props.pin && this.state.fetched){
-                // return <div>Redirect</div>
-                return <Redirect to='/' />
-                // this.handleGoBack();
-                // history.goBack();
-            } 
-            else if (!this.props.pin.user) {
-                return null;
-            } else if (!this.props.pin.followers){
-                return null;
-            } else if (!this.state.pin) {
-                this.handleState();
-            }  
-        }
+        //     if (!this.props.currentUser) {
+        //         debugger
+        //         return <Redirect to='/' />
+        //     } else if (!this.props.pin && !this.state.fetched) {
+        //         debugger
+        //         return null;
+        //     } else if ( !this.props.pin && this.state.fetched){
+        //         debugger
+
+        //         // return <div>Redirect</div>
+        //         return <Redirect to='/' />
+        //         // this.handleGoBack();
+        //         // history.goBack();
+        //     } 
+        //     else if (!this.props.pin.user) {
+        //         debugger
+
+        //         return null;
+        //     } else if (!this.props.pin.followers){
+        //         debugger
+        //         return null;
+        //     } else if (!this.state.pin) {
+        //         debugger
+        //         this.handleState();
+        //     }  
+        // }
 
         if (this.props.searchTerm != ""){
+            // debugger
             return (
                 <PinIndexContainer shuffle={true}/> 
             )
         } else {
+            // debugger
             return (
                 <div className="pin-show">
                     <button 
