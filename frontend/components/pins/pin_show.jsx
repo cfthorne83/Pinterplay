@@ -150,7 +150,7 @@ class PinShow extends React.Component {
                             <h1 className="pin-show__title">
                                     {this.props.pin.title}
                             </h1>
-                            <FollowBtnContainer currentUser=    {this.props.currentUser} pin={this. props.pin} />
+                            <FollowBtnContainer currentUser={this.props.currentUser} pin={this. props.pin} />
 
                         </div>
                     </div>

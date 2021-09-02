@@ -1,5 +1,7 @@
 import React from "react";
 
+import { Link } from 'react-router-dom';
+
 class FollowBtn extends React.Component {
     constructor(props) {
         super(props);
@@ -26,15 +28,21 @@ class FollowBtn extends React.Component {
     userDisplay() {
         if (this.props.pin && this.props.pin.user && this.props.pin.user.fname && this.props.pin.user.lname){
             return (
-                <h2>{this.props.pin.user.fname}&nbsp;{this.props.pin.user.lname}</h2>
+                <Link to={`/users/${this.props.pin.user.id}/browse`}>
+                    <h2>{this.props.pin.user.fname}&nbsp;{this.props.pin.user.lname}</h2>
+                </Link>
             )
         } else if (this.props.pin && this.props.pin.user && this.props.pin.user.username){
             return (
-                <h2>{this.props.pin.user.username}</h2>
+                <Link to={`/users/${this.props.pin.user.id}/browse`}>
+                    <h2>{this.props.pin.user.username}</h2>
+                </Link>
             )
         } else if (this.props.pin && this.props.pin.user) {
             return (
-                <h2>{this.props.pin.user.email}</h2>
+                <Link to={`/users/${this.props.pin.user.id}/browse`}>
+                    <h2>{this.props.pin.user.email}</h2>
+                </Link>
             )
         }
     }
