@@ -36,7 +36,9 @@ class CreatePinDropdown extends React.Component{
     }
 
     render() {
-
+        if (this.props.boards.length === 0 ){
+            return null;
+        }
         return (
             <div className="crt-pin-drop">
                 <button
