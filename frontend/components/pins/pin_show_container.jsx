@@ -21,7 +21,8 @@ const msp = (state, ownProps) => {
         shuffle: ownProps.shuffle,
         currentUser: state.entities.users[state.session.id], 
         following: following, 
-        searchTerm: state.ui.search
+        searchTerm: state.ui.search,
+        boards: Object.values(state.entities.boards)
     }
 }
 

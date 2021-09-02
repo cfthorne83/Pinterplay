@@ -14,6 +14,7 @@ class PinShow extends React.Component {
         this.handleGoBack = this.handleGoBack.bind(this);
         this.handleState = this.handleState.bind(this);
         this.handleFollowers = this.handleFollowers.bind(this);
+        // this.handleBoardDrop = this.handleBoardDrop.bind(this);
     }
     
     componentDidMount() {
@@ -74,6 +75,17 @@ class PinShow extends React.Component {
         }
     }
 
+    handleBoardDrop() {
+        if (this.props.boards.length != 0){
+            return (
+                <div className="pin-show__drop">
+                                {this.editLink()}
+                                <CopyPinDropdownContainer pin=  {this.props.pin} />
+                            </div>
+            )
+        }
+    }
+
     render() {
         const {pin} = this.props;
         if(!pin && !this.state.fetched){
@@ -129,10 +141,11 @@ class PinShow extends React.Component {
 
                         <div className="pin-show__text">
 
-                            <div className="pin-show__drop">
+                            {/* <div className="pin-show__drop">
                                 {this.editLink()}
                                 <CopyPinDropdownContainer pin=  {this.props.pin} />
-                            </div>
+                            </div> */}
+                            {this.handleBoardDrop()}
 
                             <h1 className="pin-show__title">
                                     {this.props.pin.title}
