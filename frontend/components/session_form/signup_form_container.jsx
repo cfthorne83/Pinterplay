@@ -6,7 +6,6 @@ import { signup, login, clearErrors } from '../../actions/session_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
 
 const msp = (state, ownProps) => {
-    debugger
     return {
         currentUser: state.entities.users[state.session.id],
         errors: state.errors.session, 

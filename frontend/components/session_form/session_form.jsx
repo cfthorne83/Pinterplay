@@ -8,7 +8,7 @@ class SessionForm extends React.Component {
             email: "",
             password: "",
             errors: [],
-            // demo: { email: "demo@fakemail.com", password: "123456"}
+            demo: { email: "demo@fakemail.com", password: "123456"}
         };
 
         this.updatePassword = this.updatePassword.bind(this);
@@ -23,23 +23,23 @@ class SessionForm extends React.Component {
     // if (nextProps.currentUser === true) {
     //   this.props.history.push('/tweets');
     // }
-debugger
+
     this.setState({errors: nextProps.errors})
   }
 
     updateEmail(e) {
-        debugger
+        
         this.setState({ email: e.currentTarget.value });
     }
 
     updatePassword(e) {
-        debugger
+        
     
         this.setState({ password: e.currentTarget.value });
     }
 
     handleSubmit(e) {
-        debugger
+        
         e.preventDefault();
         const user = Object.assign({}, this.state);
         // this.props.processForm(this.state).then(this.props.closeModal);
@@ -47,7 +47,7 @@ debugger
     }
     
     handleDemo(e){
-        debugger
+        
         // this.setState({demo: 'demo'});
         // this.setState({ email: "demo@fakemail.com", password: "123456" }, 
         //     this.props.login(this.state)
@@ -60,7 +60,7 @@ debugger
     }
 
     renderErrors() {
-        debugger
+        
         return (
             <ul>
                 {this.props.errors.map((error, i) => (
@@ -73,14 +73,14 @@ debugger
     }
 
     handleErrors() {
-        debugger
+        
         if (this.props.errors.length === 0){
             return this.props.closeModal();
         } 
     }
 
     render() {
-        debugger
+        
         if (this.props.currentUser) {
             return <Redirect to='/' />
         }
@@ -95,7 +95,7 @@ debugger
                             <br />
                             <div >
                                 <input
-                                    type="text"
+                                    type="email"
                                     value={this.state.email}
                                     placeholder="   Email"
                                     onChange={this.updateEmail} 

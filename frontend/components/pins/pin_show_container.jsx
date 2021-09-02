@@ -6,6 +6,7 @@ import { fetchBoards } from '../../actions/board_actions';
 import { openModal } from "../../actions/modal_actions";
 import { createFollow, deleteFollow } from "../../actions/follow_actions";
 import { updateUrl } from "../../actions/url_action";
+import { searchInput } from "../../actions/search_actions";
 
 const msp = (state, ownProps) => {
     const pin = state.entities.pins[ownProps.match.params.pinId];
@@ -21,7 +22,8 @@ const msp = (state, ownProps) => {
         shuffle: ownProps.shuffle,
         currentUser: state.entities.users[state.session.id], 
         following: following, 
-        searchTerm: state.ui.search
+        searchTerm: state.ui.search,
+        boards: Object.values(state.entities.boards)
     }
 }
 
@@ -30,6 +32,7 @@ const mdp = (dispatch, ownProps) => {
         updateUrl: (url) => dispatch(updateUrl(url)),
         fetchPin: (pinId) => dispatch(fetchPin(pinId)),
         openModal: (modal, options) => {dispatch(openModal(modal, options))},
+        searchInput: () => dispatch(searchInput())
     }
 }
 

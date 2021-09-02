@@ -1,15 +1,16 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
 
 class PinShowLink extends React.Component{
     constructor(props){
         super(props);
-
+        this.state = {redirect: "false"}
         this.handleClick = this.handleClick.bind(this);
     }
 
     handleClick() {
         this.props.closeModal();
+        // this.setState
     }
 
     render() {
@@ -22,9 +23,11 @@ class PinShowLink extends React.Component{
                 {/* </div> */}
                 <div className="pin-show-link__btn-con">
                     <Link 
-                        onClick={this.handleClick}
                         to={`/pins/${this.props.pinId}`}>
-                            <button className="pin-show-link__btn">
+                        onClick={this.handleClick}
+                            <button 
+                                // onClick={this.handleClick}
+                                className="pin-show-link__btn">
                                 See it now
                             </button>
                     </Link>

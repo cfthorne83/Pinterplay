@@ -49,6 +49,7 @@ class ProfileSettings extends React.Component {
         e.preventDefault();
         this.setState({ image_url: this.props.currentUser.image_url})
         this.props.updateUser(this.state);
+        this.props.history.push(`/users/${this.props.currentUser.id}`);
     }
 
     handleReset(e) {
