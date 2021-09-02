@@ -96,7 +96,7 @@ debugger
                             <div >
                                 <input
                                     type="text"
-                                    value={this.stat e.email}
+                                    value={this.state.email}
                                     placeholder="   Email"
                                     onChange={this.updateEmail} 
                                     />
