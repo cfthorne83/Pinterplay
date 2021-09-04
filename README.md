@@ -7,7 +7,7 @@
 
 ## Technologies
 - Ruby on Railsdff
-- Javascript
+- Javascriptf
 - React
 - Redux
 - HTML
