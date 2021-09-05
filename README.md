@@ -1,5 +1,5 @@
 # [Pinterplay](https://mypin-ct.herokuapp.com/#/)
-<img src="public/images/splash_readme.jpeg" width="500" />
+
 
 ## Overview
 
