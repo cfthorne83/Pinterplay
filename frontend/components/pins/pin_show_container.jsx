@@ -10,6 +10,7 @@ import { searchInput } from "../../actions/search_actions";
 
 const msp = (state, ownProps) => {
     const pin = state.entities.pins[ownProps.match.params.pinId];
+    debugger
     const currentUser = state.entities.users[state.session.id];
     let following = null;
     if (currentUser){
