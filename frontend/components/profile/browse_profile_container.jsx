@@ -8,7 +8,8 @@ import BrowseProfile from './browse_profile';
 const mSTP = (state, ownProps) => {
     return {
         user: state.entities.users[ownProps.match.params.userId],
-        searchTerm: state.ui.search
+        searchTerm: state.ui.search,
+        currentUser: state.entities.users[state.session.id]
     };
 };
 

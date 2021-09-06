@@ -61,7 +61,6 @@ class PinShow extends React.Component {
 
     editLink() {
         if (this.props.pin && (this.props.pin.user.id === this.props.currentUser.id)){
-            debugger
             return (
                 <div 
                     className="pin-show__ellipsis"

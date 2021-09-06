@@ -21,6 +21,11 @@ class LogoutDropdown extends React.Component{
         }
     }
 
+    logout = () => {
+        this.props.logout();
+        this.props.clearSearchTerm();
+    }
+
     render() {
 
         return (
@@ -41,7 +46,8 @@ class LogoutDropdown extends React.Component{
                             </button>  */}
                             <input 
                                 type="submit"
-                                onClick={this.props.logout}
+                                // onClick={this.props.logout}
+                                onClick={this.logout}
                                 value="Log out"
                             />
                             {/* <input type="text" 

@@ -14,12 +14,14 @@ const NavBar = (props) => {
                     openModal={props.openModal}
                     logout={props.logout}
                     currentUser={props.currentUser}
+                    clearSearchTerm={props.clearSearchTerm}
                 />
     } else {
         return <SplashNavBar
                     openModal={props.openModal}
                     logout={props.logout}
                     currentUser={props.currentUser}
+                    clearSearchTerm={props.clearSearchTerm}
                 />
     }
 }

@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import { openModal } from '../../actions/modal_actions';
 import { updateUrl } from '../../actions/url_action';
+import { clearSearchTerm } from '../../actions/search_actions';
+
 import NavBar from './nav_bar'
 
 const mSTP = (state, ownProps) => {
@@ -33,7 +35,8 @@ const mDTP = (dispatch, ownProps) => {
     return {
         logout: () => dispatch(logout()),
         openModal: modal => dispatch(openModal(modal)),
-        updateUrl: url => dispatch(updateUrl(url))
+        updateUrl: url => dispatch(updateUrl(url)),
+        clearSearchTerm: () => dispatch(clearSearchTerm())
     };
 };
 

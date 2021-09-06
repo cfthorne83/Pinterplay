@@ -115,6 +115,7 @@ class HomeNavBar extends React.Component {
                         <LogoutDropdown 
                             logout={this.props.logout}
                             currentUser={this.props.currentUser}
+                            clearSearchTerm={this.props.clearSearchTerm}
                         />
                     </ul>
                 </nav>

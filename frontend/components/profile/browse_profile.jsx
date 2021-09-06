@@ -60,6 +60,14 @@ class BrowseProfile extends React.Component{
             )
         }
     }
+    
+    followBtn = () => {
+        if (this.props.currentUser.id != this.props.user.id){
+            return (
+            <FollowBtnItemContainer user={this.props.user}/>
+            )
+        }
+    }
 
     render() {
         const { user } = this.props;
@@ -77,7 +85,8 @@ class BrowseProfile extends React.Component{
                         {this.image()}
                         {this.name()}
                         {this.username()}
-                        <FollowBtnItemContainer user={this.props.user}/>
+                        {/* <FollowBtnItemContainer user={this.props.user}/> */}
+                        {this.followBtn()}
                         <FollowLinksContainer user={this.props.user} />
                     </section>
     
