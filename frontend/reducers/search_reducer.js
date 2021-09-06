@@ -1,4 +1,4 @@
-import { SEARCH_INPUT } from '../actions/search_actions';
+import { SEARCH_INPUT, CLEAR_SEARCH_TERM } from '../actions/search_actions';
 
 const searchReducer = (state = "", action) => {
     Object.freeze(state);
@@ -9,6 +9,8 @@ const searchReducer = (state = "", action) => {
             } else {
                 return "";
             }
+        case CLEAR_SEARCH_TERM: 
+            return [];
         default:
             return state;
     }

@@ -1,4 +1,5 @@
 export const SEARCH_INPUT = 'SEARCH_INPUT';
+export const CLEAR_SEARCH_TERM = 'CLEAR_SEARCH_TERM';
 
 export const searchInput = (input) => {
     return {
@@ -6,3 +7,9 @@ export const searchInput = (input) => {
         input
     };
 };
+
+export const clearSearchTerm = () => {
+  return {
+    type: CLEAR_SEARCH_TERM
+  }
+}
