@@ -4,7 +4,6 @@ import FollowBtn from "./follow_btn";
 import { createFollow, deleteFollow, fetchFollows} from "../../actions/follow_actions";
 
 const msp = (state, ownProps) => {
-    debugger
     if (ownProps.pin){
         let pin = ownProps.pin;
         followers: ownProps.pin.followers.length

@@ -10,7 +10,7 @@ const searchReducer = (state = "", action) => {
                 return "";
             }
         case CLEAR_SEARCH_TERM: 
-            return [];
+            return "";
         default:
             return state;
     }

@@ -9,6 +9,7 @@ class PinIndex extends React.Component {
         super(props);
 
         this.state = { loading: true, searchInput: this.props.searchInput, noFollows: false, fetched: false}
+        this.clearSearch = this.clearSearch.bind(this);
     }
 
     componentDidUpdate(prevProps) {
@@ -60,6 +61,10 @@ class PinIndex extends React.Component {
         }
     }
 
+    clearSearch() {
+        this.props.clearSearchTerm();
+    }
+
     
     render() {
         if (this.state.fetched === false) {
@@ -94,8 +99,12 @@ class PinIndex extends React.Component {
                 <Link 
                     key={`${pin.id}`} 
                     to={`/pins/${pin.id}`}
-                    className="pin-index__item">
-                        <img src={`${pin.image_url}`} alt=""/>
+                    className="pin-index__item"
+                    >
+                        <img src={`${pin.image_url}`} alt=""
+                                            onClick={this.clearSearch}
+
+                        />
                         <h2>{this.capitalize(pin.title)}</h2>
                 </Link>
             )
