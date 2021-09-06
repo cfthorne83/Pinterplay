@@ -14,6 +14,7 @@ class PinShowLink extends React.Component{
     }
 
     render() {
+        const test = this.props.pinId.toString();
         return (
 
             <div className="pin-show-link">
@@ -23,10 +24,9 @@ class PinShowLink extends React.Component{
                 {/* </div> */}
                 <div className="pin-show-link__btn-con">
                     <Link 
-                        to={`/pins/${this.props.pinId}`}>
-                        onClick={this.handleClick}
+                        to={`pins/${this.props.pinId}`}>
                             <button 
-                                // onClick={this.handleClick}
+                                onClick={this.handleClick}
                                 className="pin-show-link__btn">
                                 See it now
                             </button>
