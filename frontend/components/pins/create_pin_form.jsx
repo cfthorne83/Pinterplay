@@ -193,6 +193,7 @@ class CreatePinForm extends React.Component{
                             method: "POST",
                             data: { board_pin: { pin_id: response.pin.id, board_id: that.state.board_id}}
                         })
+                        this.props.fetchPin(response.pin.id);
                         screen.style.display = "none";
                         this.setState({loading: false});
                         // this.props.openModal("pinShowLink", response.pin.id);
@@ -205,7 +206,7 @@ class CreatePinForm extends React.Component{
                         const input = document.querySelector(".drop-zone__input");
                         input.value = null;
                     } 
-                ).then(this.props.fetchPins())
+                )
             }
         });
     }
