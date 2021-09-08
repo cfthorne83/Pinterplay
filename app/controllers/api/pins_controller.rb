@@ -88,6 +88,7 @@ class Api::PinsController < ApplicationController
     private
 
     def pin_params
+        debugger
         params.require(:pin).permit(:title, :photo, :description, :board_id, :user_id)
     end
 end

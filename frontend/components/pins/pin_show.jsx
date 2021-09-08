@@ -16,10 +16,8 @@ class PinShow extends React.Component {
         this.handleFollowers = this.handleFollowers.bind(this);
     }
     
-    componentDidMount() {
-        debugger
+    componentDidMount() 
         if (this.props.searchTerm === ""){
-            debugger
             this.props.fetchPin(this.props.match.params.pinId);
         }
         this.props.updateUrl(this.props.url);
@@ -79,7 +77,6 @@ class PinShow extends React.Component {
 
         const {pin} = this.props;
         if(!pin && !this.state.fetched){
-            debugger
             return null;
         } 
         // else if (this.state.redirect){
@@ -88,26 +85,26 @@ class PinShow extends React.Component {
         if (this.props.searchTerm === ""){
 
             if (!this.props.currentUser) {
-                debugger
+
                 return <Redirect to='/' />
             } else if (!this.props.pin && !this.state.fetched) {
-                debugger
+
                 return null;
             } else if ( !this.props.pin && this.state.fetched){
                 // return <div>Redirect</div>
-                debugger
+
                 return <Redirect to='/' />
                 // this.handleGoBack();
                 // history.goBack();
             } 
             else if (!this.props.pin.user) {
-                debugger
+
                 return null;
             } else if (!this.props.pin.followers){
-                debugger
+
                 return null;
             } else if (!this.state.pin) {
-                debugger
+
                 this.handleState();
             }  
         }
