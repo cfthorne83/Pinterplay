@@ -123,7 +123,7 @@ class Following extends React.Component {
 
         return (
             <div className="following-index">
-                <h1>Followers</h1>
+                <h1>Following</h1>
                 <ul>
                     {following}
                 </ul>

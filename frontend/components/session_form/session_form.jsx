@@ -89,7 +89,7 @@ class SessionForm extends React.Component {
                 <div className='session-form'>
                     <div onClick={this.props.closeModal} className="close-x">X</div>
                     <img className='form-logo' src="https://seeklogo.com/images/P/pinterest-badge-logo-82C89A5E42-seeklogo.com.png" alt="myPin Logo" />
-                    <h1>Welcome to myPin</h1>
+                    <h1>Welcome to Pinterplay</h1>
 
                     <form className='session-inputs' onSubmit={this.handleSubmit}>
                             <br />
