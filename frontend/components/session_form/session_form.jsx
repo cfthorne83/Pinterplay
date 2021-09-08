@@ -48,7 +48,6 @@ class SessionForm extends React.Component {
     
     handleDemo(e){
         e.preventDefault();
-        debugger
         this.setState({ email: "demo@fakemail.com", password: "123456" }, 
             () => this.props.login(this.state).then(this.props.closeModal)
         )
