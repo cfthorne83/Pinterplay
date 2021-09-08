@@ -7,8 +7,8 @@ class SessionForm extends React.Component {
         this.state = {
             email: "",
             password: "",
-            errors: [],
-            demo: { email: "demo@fakemail.com", password: "123456"}
+            errors: []
+            // demo: { email: "demo@fakemail.com", password: "123456"}
         };
 
         this.updatePassword = this.updatePassword.bind(this);
@@ -42,21 +42,22 @@ class SessionForm extends React.Component {
         
         e.preventDefault();
         const user = Object.assign({}, this.state);
+        debugger
         // this.props.processForm(this.state).then(this.props.closeModal);
         this.props.processForm(user).then(this.props.closeModal);
     }
     
     handleDemo(e){
-        
-        // this.setState({demo: 'demo'});
-        // this.setState({ email: "demo@fakemail.com", password: "123456" }, 
-        //     this.props.login(this.state)
-        // )
-        // this.props.login({ email: "demo@fakemail.com", password: "123456" }).then(this.props.closeModal);
         e.preventDefault();
-        const user = Object.assign({}, this.state.demo);
+        debugger
+        this.setState({ email: "demo@fakemail.com", password: "123456" }, 
+            () => this.props.login(this.state).then(this.props.closeModal)
+        )
+        // this.props.login({ email: "demo@fakemail.com", password: "123456" }).then(this.props.closeModal);
+        // const user = Object.assign({}, this.state.demo);
+        // const user = { email: "demo@fakemail.com", password: "123456"};
         // this.props.processForm(user).then(this.props.closeModal);
-        this.props.login(user).then(this.props.closeModal);
+        // this.props.login(user).then(this.props.closeModal);
     }
 
     renderErrors() {
