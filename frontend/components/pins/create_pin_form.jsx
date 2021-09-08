@@ -205,7 +205,7 @@ class CreatePinForm extends React.Component{
                         const input = document.querySelector(".drop-zone__input");
                         input.value = null;
                     } 
-                )
+                ).then(this.props.fetchPins())
             }
         });
     }
