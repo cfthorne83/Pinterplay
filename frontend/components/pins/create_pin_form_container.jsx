@@ -17,7 +17,7 @@ const msp = (state, ownProps) => {
 
 const mdp = (dispatch, ownProps) => {
     return {
-        createPin: (formData) => dispatch(createPin(formData)),
+        // createPin: (formData) => dispatch(createPin(formData)),
         fetchBoards: () => dispatch(fetchBoards()), 
         openModal: (modal, options) => dispatch(openModal(modal, options)),
         fetchPins: (board) => dispatch(fetchPins(board)),

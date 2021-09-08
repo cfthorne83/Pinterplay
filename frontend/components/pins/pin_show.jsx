@@ -84,42 +84,20 @@ class PinShow extends React.Component {
         if (this.props.searchTerm === ""){
 
             if (!this.props.currentUser) {
-<<<<<<< HEAD
-
-                return <Redirect to='/' />
-            } else if (!this.props.pin && !this.state.fetched) {
-
-                return null;
-            } else if ( !this.props.pin && this.state.fetched){
-                // return <div>Redirect</div>
-
-=======
                 return <Redirect to='/' />
             } else if (!this.props.pin && !this.state.fetched) {
                 return null;
             } else if ( !this.props.pin && this.state.fetched){
                 // return <div>Redirect</div>
->>>>>>> fix-create-pin
                 return <Redirect to='/' />
                 // this.handleGoBack();
                 // history.goBack();
             } 
-<<<<<<< HEAD
-            else if (!this.props.pin.user) {
-
-                return null;
-            } else if (!this.props.pin.followers){
-
-                return null;
-            } else if (!this.state.pin) {
-
-=======
             else if (!this.props.pin.user_id) {
                 return null;
             } else if (!this.props.pin.followers){
                 return null;
             } else if (!this.state.pin) {
->>>>>>> fix-create-pin
                 this.handleState();
             }  
         }
