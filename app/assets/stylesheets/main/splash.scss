@@ -91,9 +91,13 @@
     height: 100%
 }
 
-.splash {
-     
-    &__footer {
-        background-color: chartreuse;
+.nav-links {
+    a {
+        font-size: .95rem;
+        padding: 0 1rem 0 1rem;
+    }
+
+    &__online-pres {
+        padding: 0 1rem 0 1rem; 
     }
 }

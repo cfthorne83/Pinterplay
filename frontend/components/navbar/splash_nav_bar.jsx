@@ -14,25 +14,12 @@ class SplashNavBar extends React.Component {
 
         
                 <ul className='nav-links'>
-                    <a href="">LinkedIn</a>
-                    <a href="">Github</a>
-                    <a href="">Portfolio</a>
-                    <a href="">Email</a>
-                    {/* <ul className="online-presence">
-                        <a href="https://www.linkedin.com/in/chris-thorne83/" className="online-presence__filter" target="_blank" title="my linkedin!">
-                            <img  src="images/linkedin.png" alt="" />
-                        </a>
-
-                    <a href="https://github.com/cfthorne83/Pinterplay" className="online-presence__filter" target="_blank" title="my github!">
-                        <img src="images/github.png" alt="" />
-                    </a>
-                    <a href="http://cfthorne83.github.io" target="_blank" title="my portfolio site!">
-                        <img src="images/briefcase-thin-outline-symbol-in-a-circle-1.svg" alt="" />
-                    </a>
-                    <a href="mailto:cfthorne83@gmail.com" className="online-presence__email" target="_blank" title="email me!">
-                        <img src="images/email.png" alt="" />
-                    </a>
-                    </ul> */}
+                    <div className="nav-links__online-pres">
+                        <a href="https://www.linkedin.com/in/chris-thorne83/" target="_blank" title="my linkedin!">LinkedIn</a>
+                        <a href="https://github.com/cfthorne83/Pinterplay" target="_blank" title="my github!">Github</a>
+                        <a href="http://cfthorne83.github.io" target="_blank" title="my portfolio site!">Portfolio</a>
+                        <a href="mailto:cfthorne83@gmail.com" target="_blank" title="email me!">Email</a>
+                    </div>
                     <button className='login' onClick={() => this.props.openModal('login')}>Log in</button>
                     <button className='signup' onClick={() => this.props.openModal('signup')}>Sign up</button>
                 </ul>    
