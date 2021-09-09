@@ -61,7 +61,7 @@ class BrowseProfile extends React.Component{
         }
     }
     
-    followBtn = () => {
+    followBtn() {
         if (this.props.currentUser.id != this.props.user.id){
             return (
             <FollowBtnItemContainer user={this.props.user}/>
