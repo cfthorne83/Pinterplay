@@ -7,6 +7,7 @@ class LogoutDropdown extends React.Component{
 
         this.handleClick = this.handleClick.bind(this);
         this.handleBlur = this.handleBlur.bind(this);
+        this.logout = this.logout.bind(this);
     }
 
     handleClick(){
@@ -21,7 +22,7 @@ class LogoutDropdown extends React.Component{
         }
     }
 
-    logout = () => {
+    logout() {
         this.props.logout();
         this.props.clearSearchTerm();
     }
