@@ -73,6 +73,12 @@ class PinShow extends React.Component {
         }
     }
 
+    boardDropdown() {
+        if (this.props.boards.length){
+            return <CopyPinDropdownContainer pin=  {this.props.pin} />
+        }
+    }
+
     render() {
         const {pin} = this.props;
         if(!pin && !this.state.fetched){
@@ -129,7 +135,8 @@ class PinShow extends React.Component {
 
                             <div className="pin-show__drop">
                                 {this.editLink()}
-                                <CopyPinDropdownContainer pin=  {this.props.pin} />
+                                {/* <CopyPinDropdownContainer pin=  {this.props.pin} /> */}
+                                {this.boardDropdown()}
                             </div>
 
                             <h1 className="pin-show__title">
