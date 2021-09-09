@@ -4,6 +4,7 @@ class MainSplash extends React.Component{
 
     render() {
         return (
+
             <div className="splash">
                 <ul className='left'>
                     <img src="images/splash5.jpg" alt=""/>
@@ -53,6 +54,7 @@ class MainSplash extends React.Component{
                 </ul>
                 
             </div>
+
         );
     }
 }
