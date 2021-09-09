@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Redirect } from 'react-router-dom';
 
 import PinIndexContainer from "../pins/pin_index_container";
 import FollowBtnItemContainer from "../following/follow_btn_item_container";
@@ -74,7 +75,9 @@ class BrowseProfile extends React.Component{
         
         if (!this.props.user) {
             return null;
-        } 
+        } else if (!this.props.currentUser){
+            return <Redirect to='/' />
+        }
 
         if (this.props.searchTerm === ""){
 
